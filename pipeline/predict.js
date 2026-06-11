@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { spawn } = require("child_process");
 const { getConfig } = require("./config");
 const { loadProjectEnv } = require("./lib/env");
 const { sealMatch } = require("./lib/seal");
@@ -10,7 +11,7 @@ const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 
 const PROVIDERS = {
-  "claude-fable-5": { env: "DK_ANTHROPIC_API_KEY", baseEnv: "DK_ANTHROPIC_API_BASE", base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_FABLE_MODEL", modelEnvFallbacks: ["CLAUDE_FABLE_MODEL"], model: "claude-fable-5", protocol: "anthropic", maxTokens: 180 },
+  "claude-fable-5": { env: "DK_ANTHROPIC_API_KEY", baseEnv: "DK_ANTHROPIC_API_BASE", base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_FABLE_MODEL", modelEnvFallbacks: ["CLAUDE_FABLE_MODEL"], model: "claude-fable-5", protocol: "claude-cli", maxTurns: 1 },
   "claude-opus-4-8": { env: "DK_OPUS_ANTHROPIC_API_KEY", envFallbacks: ["DK_CLAUDE_OPUS_API_KEY", "ANTHROPIC_API_KEY"], baseEnv: "DK_OPUS_ANTHROPIC_API_BASE", baseEnvFallbacks: ["DK_ANTHROPIC_API_BASE", "ANTHROPIC_API_BASE"], base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_OPUS_MODEL", modelEnvFallbacks: ["DK_ANTHROPIC_MODEL", "CLAUDE_OPUS_MODEL"], model: "claude-opus-4-8" },
   "gpt-5-5": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GPT_5_5_MODEL", modelEnvFallbacks: ["OPENAI_MODEL"], model: "openai/gpt-5.5", protocol: "responses" },
   "gemini-3-1": { env: "GEMINI_API_KEY", envFallbacks: ["ZENMUX_API_KEY", "GOOGLE_API_KEY"], baseEnv: "GOOGLE_GEMINI_BASE_URL", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GEMINI_MODEL", modelEnvFallbacks: ["GOOGLE_MODEL"], model: "gemini-3.1-pro" },
@@ -63,6 +64,13 @@ function providerModel(provider) {
 
 function providerBase(provider) {
   return firstEnv([provider.baseEnv, ...(provider.baseEnvFallbacks || [])]) || provider.base || "";
+}
+
+function splitArgs(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return [];
+  const matches = raw.match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g) || [];
+  return matches.map((item) => item.replace(/^["']|["']$/g, ""));
 }
 
 function normalizePrediction(modelId, track, payload) {
@@ -167,6 +175,84 @@ async function callAnthropic(provider, prompt, apiKey, options = {}) {
   return lastQuoted || "";
 }
 
+function extractClaudeCliText(stdout) {
+  const raw = String(stdout || "").trim();
+  if (!raw) return "";
+  let payload;
+  try {
+    payload = JSON.parse(raw);
+  } catch (_) {
+    return raw;
+  }
+  if (payload.is_error) {
+    throw new Error(payload.result || payload.error || "Claude Code CLI 返回错误");
+  }
+  if (payload.subtype && payload.subtype !== "success") {
+    throw new Error(payload.result || `Claude Code CLI 返回 ${payload.subtype}`);
+  }
+  return String(payload.result || payload.text || "").trim();
+}
+
+async function callClaudeCli(provider, prompt, apiKey) {
+  const timeoutMs = Math.max(1000, Number(process.env.CLAUDE_CLI_TIMEOUT_MS || process.env.API_TIMEOUT_MS) || 180000);
+  const model = providerModel(provider);
+  const args = [
+    "-p",
+    prompt,
+    "--model",
+    model,
+    "--output-format",
+    "json",
+    "--max-turns",
+    String(provider.maxTurns || 1),
+    "--no-session-persistence",
+    ...splitArgs(process.env.CLAUDE_CLI_EXTRA_ARGS),
+  ];
+  return new Promise((resolve, reject) => {
+    const child = spawn("claude", args, {
+      cwd: process.cwd(),
+      env: process.env,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+    let settled = false;
+    const timer = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      child.kill("SIGTERM");
+      reject(new Error(`Claude Code CLI 超时: ${timeoutMs}ms`));
+    }, timeoutMs);
+
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk.toString();
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk.toString();
+    });
+    child.on("error", (err) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      reject(err);
+    });
+    child.on("close", (code) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      if (code !== 0) {
+        reject(new Error(`Claude Code CLI 退出 ${code}: ${(stderr || stdout).slice(0, 500)}`));
+        return;
+      }
+      try {
+        resolve(extractClaudeCliText(stdout));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  });
+}
+
 async function callGemini(provider, prompt, apiKey, options = {}) {
   const model = providerModel(provider);
   const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
@@ -203,7 +289,8 @@ async function callModel(modelId, track, match, config) {
 
   const prompt = buildPrompt(track, match);
   let text;
-  if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
+  if (provider.protocol === "claude-cli") text = await callClaudeCli(provider, prompt, apiKey);
+  else if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
   else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
   else if (provider.protocol === "anthropic" || modelId.startsWith("claude-")) text = await callAnthropic(provider, prompt, apiKey);
   else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
@@ -216,6 +303,7 @@ async function callModelText(modelId, prompt) {
   const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
+  if (provider.protocol === "claude-cli") return callClaudeCli(provider, prompt, apiKey);
   if (provider.protocol === "responses") return callResponsesCompatible(provider, prompt, apiKey);
   if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   if (provider.protocol === "anthropic" || modelId.startsWith("claude-")) {

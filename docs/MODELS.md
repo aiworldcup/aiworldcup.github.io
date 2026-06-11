@@ -4,7 +4,7 @@
 
 | 序号 | 模型 | 公司 | 接入变量 |
 |----|------|------|---------|
-| 1 | Claude Fable 5 | Anthropic | dk: `DK_ANTHROPIC_API_KEY` / `DK_ANTHROPIC_API_BASE` / `DK_CLAUDE_FABLE_MODEL` |
+| 1 | Claude Fable 5 | Anthropic | Claude Code CLI: `DK_ANTHROPIC_API_KEY` / `DK_CLAUDE_FABLE_MODEL` / `CLAUDE_CLI_TIMEOUT_MS` |
 | 2 | Claude Opus 4.8 | Anthropic | dk: `DK_OPUS_ANTHROPIC_API_KEY` / `DK_OPUS_ANTHROPIC_API_BASE` / `DK_CLAUDE_OPUS_MODEL` |
 | 3 | GPT-5.5 | OpenAI | ZenMux: `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GPT_5_5_MODEL` |
 | 4 | Gemini 3.1 | Google | ZenMux Vertex 或 Gemini: `GEMINI_API_KEY` 或 `ZENMUX_API_KEY` / `GOOGLE_GEMINI_BASE_URL` / `GEMINI_MODEL` |
@@ -44,6 +44,14 @@
 - Claude Opus 4.8 每场最多 2 句。
 - GPT-5.5 每场最多 2 句。
 - 其他模型每场最多 3 句。
+
+## Claude Fable 5 接入方式
+
+- Fable 5 不走普通 Anthropic HTTP 请求;DK 网关会返回 "only allows Claude Code clients"。
+- 本项目改为通过本机 Claude Code CLI 调用:`claude -p ... --model claude-fable-5 --output-format json --max-turns 1 --no-session-persistence`。
+- 即使当前 Claude Code 默认配置是 Opus 4.8,单次调用也会用 `--model claude-fable-5` 覆盖,不需要改全局默认配置。
+- `DK_ANTHROPIC_API_KEY` 只作为项目侧启用开关,实际认证和网关路由由 Claude Code 客户端配置负责。
+- 当前最小测试已绕开 "only allows Claude Code clients",但 DK 返回 `503 no available accounts`;这属于网关账户可用性问题,不是项目调用协议问题。
 
 ## 反作弊 / 存证
 
