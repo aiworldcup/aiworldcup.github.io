@@ -10,18 +10,20 @@ const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 
 const PROVIDERS = {
-  "gpt-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5" },
-  claude: { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "ANTHROPIC_MODEL", model: "claude-opus-4-1" },
-  gemini: { env: "GOOGLE_API_KEY", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GOOGLE_MODEL", model: "gemini-2.5-pro" },
-  deepseek: { env: "DEEPSEEK_API_KEY", base: "https://api.deepseek.com/v1", modelEnv: "DEEPSEEK_MODEL", model: "deepseek-chat" },
-  qwen: { env: "DASHSCOPE_API_KEY", base: "https://dashscope.aliyuncs.com/compatible-mode/v1", modelEnv: "DASHSCOPE_MODEL", model: "qwen-max" },
-  grok: { env: "XAI_API_KEY", base: "https://api.x.ai/v1", modelEnv: "XAI_MODEL", model: "grok-4" },
-  llama: { env: "LLAMA_API_KEY", baseEnv: "LLAMA_API_BASE", modelEnv: "LLAMA_MODEL", model: "llama-4" },
-  mistral: { env: "MISTRAL_API_KEY", base: "https://api.mistral.ai/v1", modelEnv: "MISTRAL_MODEL", model: "mistral-large-latest" },
-  glm: { env: "ZHIPU_API_KEY", base: "https://open.bigmodel.cn/api/paas/v4", modelEnv: "ZHIPU_MODEL", model: "glm-4-plus" },
-  kimi: { env: "MOONSHOT_API_KEY", base: "https://api.moonshot.cn/v1", modelEnv: "MOONSHOT_MODEL", model: "moonshot-v1-128k" },
-  doubao: { env: "DOUBAO_API_KEY", baseEnv: "DOUBAO_API_BASE", modelEnv: "DOUBAO_MODEL", model: "doubao-pro" },
-  minimax: { env: "MINIMAX_API_KEY", base: "https://api.minimax.chat/v1", modelEnv: "MINIMAX_MODEL", model: "abab6.5s-chat" },
+  "claude-fable-5": { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_FABLE_MODEL", model: "claude-fable-5" },
+  "claude-opus-4-8": { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_OPUS_MODEL", model: "claude-opus-4-8" },
+  "gpt-5-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5.5" },
+  "gemini-3-1": { env: "GOOGLE_API_KEY", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GOOGLE_MODEL", model: "gemini-3.1-pro" },
+  "qwen-3-7-max": { env: "DASHSCOPE_API_KEY", base: "https://dashscope.aliyuncs.com/compatible-mode/v1", modelEnv: "DASHSCOPE_MODEL", model: "qwen3.7-max" },
+  "minimax-m3": { env: "MINIMAX_API_KEY", base: "https://api.minimax.chat/v1", modelEnv: "MINIMAX_MODEL", model: "minimax-m3" },
+  "kimi-k2-6": { env: "MOONSHOT_API_KEY", base: "https://api.moonshot.cn/v1", modelEnv: "MOONSHOT_MODEL", model: "kimi-k2.6" },
+  "mimo-v2-5-pro": { env: "MIMO_API_KEY", baseEnv: "MIMO_API_BASE", modelEnv: "MIMO_MODEL", model: "mimo-v2.5-pro" },
+  "grok-4-3": { env: "XAI_API_KEY", base: "https://api.x.ai/v1", modelEnv: "XAI_MODEL", model: "grok-4.3" },
+  "muse-spark": { env: "MUSE_API_KEY", baseEnv: "MUSE_API_BASE", modelEnv: "MUSE_MODEL", model: "muse-spark" },
+  "claude-sonnet-4-6": { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_SONNET_MODEL", model: "claude-sonnet-4-6" },
+  "deepseek-v4pro": { env: "DEEPSEEK_API_KEY", base: "https://api.deepseek.com/v1", modelEnv: "DEEPSEEK_MODEL", model: "deepseek-v4pro" },
+  "glm-5-1": { env: "ZHIPU_API_KEY", base: "https://open.bigmodel.cn/api/paas/v4", modelEnv: "ZHIPU_MODEL", model: "glm-5.1" },
+  "doubao-seed-1-5-thinking-pro": { env: "DOUBAO_API_KEY", baseEnv: "DOUBAO_API_BASE", modelEnv: "DOUBAO_MODEL", model: "doubao-1-5-thinking-pro-250428" },
 };
 
 function readJson(filePath) {
@@ -134,8 +136,8 @@ async function callModel(modelId, track, match, config) {
 
   const prompt = buildPrompt(track, match, { maxStakePerMatch: config.maxStakePerMatch });
   let text;
-  if (modelId === "claude") text = await callAnthropic(provider, prompt, apiKey);
-  else if (modelId === "gemini") text = await callGemini(provider, prompt, apiKey);
+  if (modelId.startsWith("claude-")) text = await callAnthropic(provider, prompt, apiKey);
+  else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey);
   else text = await callOpenAICompatible(provider, prompt, apiKey);
   return normalizePrediction(modelId, track, extractJson(text), config.maxStakePerMatch);
 }

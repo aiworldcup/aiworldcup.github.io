@@ -1,21 +1,27 @@
 # 参赛模型清单
 
-目标:**至少 10 个大模型**同场竞技。下面是建议清单,执行 AI 可按可用 API 调整,但数量不少于 10。
+本项目当前保留以下 14 个模型。页面展示必须标注模型名与公司。
 
-| 序号 | 模型 | 厂商 | 接入方式 | 备注 |
-|----|------|------|---------|------|
-| 1 | GPT-5.x | OpenAI | OpenAI API | |
-| 2 | Claude Opus 4.x | Anthropic | Anthropic API | |
-| 3 | Gemini 2.5/3 Pro | Google | Google API | |
-| 4 | DeepSeek V3/R1 | DeepSeek | DeepSeek API | 中文社区粉丝多,有话题性 |
-| 5 | Qwen Max | 阿里 | DashScope | |
-| 6 | Grok | xAI | xAI API | |
-| 7 | Llama 4 | Meta | 开源/托管 | |
-| 8 | Mistral Large | Mistral | Mistral API | |
-| 9 | GLM-4.x | 智谱 | 智谱 API | |
-| 10 | Kimi | 月之暗面 | Moonshot API | |
-| 11 | Doubao | 字节 | 火山方舟 | 可选,凑话题 |
-| 12 | MiniMax | MiniMax | MiniMax API | 可选 |
+| 序号 | 模型 | 公司 | 接入变量 |
+|----|------|------|---------|
+| 1 | Claude Fable 5 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_FABLE_MODEL` |
+| 2 | Claude Opus 4.8 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_OPUS_MODEL` |
+| 3 | GPT-5.5 | OpenAI | `OPENAI_API_KEY` / `OPENAI_MODEL` |
+| 4 | Gemini 3.1 | Google | `GOOGLE_API_KEY` / `GOOGLE_MODEL` |
+| 5 | Qwen 3.7 Max | 阿里云 / 通义千问 | `DASHSCOPE_API_KEY` / `DASHSCOPE_MODEL` |
+| 6 | MiniMax-M3 | MiniMax | `MINIMAX_API_KEY` / `MINIMAX_MODEL` |
+| 7 | Kimi K2.6 | 月之暗面 / Moonshot AI | `MOONSHOT_API_KEY` / `MOONSHOT_MODEL` |
+| 8 | Mimo v2.5 Pro | 小米 / MiMo | `MIMO_API_KEY` / `MIMO_API_BASE` / `MIMO_MODEL` |
+| 9 | Grok 4.3 | xAI | `XAI_API_KEY` / `XAI_MODEL` |
+| 10 | Muse Spark | Muse AI | `MUSE_API_KEY` / `MUSE_API_BASE` / `MUSE_MODEL` |
+| 11 | Claude Sonnet 4.6 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_SONNET_MODEL` |
+| 12 | DeepSeek V4 Pro | DeepSeek | `DEEPSEEK_API_KEY` / `DEEPSEEK_MODEL` |
+| 13 | GLM-5.1 | 智谱 AI | `ZHIPU_API_KEY` / `ZHIPU_MODEL` |
+| 14 | 豆包 Seed 1.5 Thinking Pro | 字节跳动 / 火山方舟 | `DOUBAO_API_KEY` / `DOUBAO_API_BASE` / `DOUBAO_MODEL` |
+
+## 豆包选择说明
+
+火山方舟文档页面需要浏览器 JS 才能完整读取。可公开检索到的 ByteDance Seed 技术报告说明 Seed-Thinking-v1.5 与 Seed1.5-VL 已在 Volcengine 可用,其中给出的火山方舟模型 ID 包括 `doubao-1-5-thinking-vision-pro-250428`。本项目当前用文本预测占位 `doubao-1-5-thinking-pro-250428`;如火山方舟控制台显示更新的豆包文本模型,只需改 `.env` 的 `DOUBAO_MODEL`。
 
 ## 接入约束(公平性)
 
