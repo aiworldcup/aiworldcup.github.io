@@ -8,15 +8,15 @@
 | 2 | Claude Opus 4.8 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_OPUS_MODEL` |
 | 3 | GPT-5.5 | OpenAI | `OPENAI_API_KEY` / `OPENAI_MODEL` |
 | 4 | Gemini 3.1 | Google | `GEMINI_API_KEY` 或 `ZENMUX_API_KEY` / `GOOGLE_GEMINI_BASE_URL` / `GEMINI_MODEL` |
-| 5 | Qwen 3.7 Max | 阿里云 / 通义千问 | `DASHSCOPE_API_KEY` / `DASHSCOPE_MODEL` |
-| 6 | MiniMax-M3 | MiniMax | `MINIMAX_API_KEY` / `MINIMAX_MODEL` |
-| 7 | Kimi K2.6 | 月之暗面 / Moonshot AI | `MOONSHOT_API_KEY` / `MOONSHOT_MODEL` |
+| 5 | Qwen 3.7 Max | 阿里云 / 通义千问 | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `QWEN_MODEL` |
+| 6 | MiniMax-M3 | MiniMax | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `MINIMAX_MODEL` |
+| 7 | Kimi K2.6 | 月之暗面 / Moonshot AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `KIMI_MODEL` |
 | 8 | Mimo v2.5 Pro | 小米 / MiMo | `MIMO_API_KEY` / `MIMO_API_BASE` / `MIMO_MODEL` |
-| 9 | Grok 4.3 | xAI | `XAI_API_KEY` / `XAI_MODEL` |
-| 10 | Muse Spark | Muse AI | `MUSE_API_KEY` / `MUSE_API_BASE` / `MUSE_MODEL` |
-| 11 | Claude Sonnet 4.6 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_SONNET_MODEL` |
-| 12 | DeepSeek V4 Pro | DeepSeek | `DEEPSEEK_API_KEY` / `DEEPSEEK_MODEL` |
-| 13 | GLM-5.1 | 智谱 AI | `ZHIPU_API_KEY` / `ZHIPU_MODEL` |
+| 9 | Grok 4.3 | xAI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GROK_MODEL` |
+| 10 | Muse Spark | Muse AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `MUSE_MODEL` |
+| 11 | Claude Sonnet 4.6 | Anthropic | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `CLAUDE_SONNET_MODEL` |
+| 12 | DeepSeek V4 Pro | DeepSeek | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `DEEPSEEK_MODEL` |
+| 13 | GLM-5.1 | 智谱 AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GLM_MODEL` |
 | 14 | 豆包 Seed 1.5 Thinking Pro | 字节跳动 / 火山方舟 | `DOUBAO_API_KEY` / `DOUBAO_API_BASE` / `DOUBAO_MODEL` |
 
 ## 豆包选择说明
@@ -30,6 +30,11 @@
 - 所有模型用**默认温度**或统一温度,记录在存证里。
 - 模型返回必须是**结构化 JSON**(见 DATA-SCHEMA.md 的 prediction 结构),便于结算。
 - 如某模型 API 暂不可用,在 `models.json` 标 `"enabled": false`,不影响其他模型。
+
+## ZenMux 接入状态
+
+- 已验证通过 ZenMux `/api/v1/responses` 接通:Qwen 3.7 Max、GLM-5.1、MiniMax-M3、Kimi K2.6、Grok 4.3、Claude Sonnet 4.6、DeepSeek V4 Pro。
+- Muse Spark 已预留 `muse-spark` provider,但 ZenMux `/api/v1/models` 当前未返回 `muse` 或 `spark` 相关模型 ID;需要 ZenMux 提供准确 ID 后再把 `.env` 的 `MUSE_MODEL` 改成真实值。
 
 ## 反作弊 / 存证
 

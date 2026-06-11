@@ -14,15 +14,15 @@ const PROVIDERS = {
   "claude-opus-4-8": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_OPUS_MODEL", model: "claude-opus-4-8" },
   "gpt-5-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5.5" },
   "gemini-3-1": { env: "GEMINI_API_KEY", envFallbacks: ["ZENMUX_API_KEY", "GOOGLE_API_KEY"], baseEnv: "GOOGLE_GEMINI_BASE_URL", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GEMINI_MODEL", modelEnvFallbacks: ["GOOGLE_MODEL"], model: "gemini-3.1-pro" },
-  "qwen-3-7-max": { env: "DASHSCOPE_API_KEY", base: "https://dashscope.aliyuncs.com/compatible-mode/v1", modelEnv: "DASHSCOPE_MODEL", model: "qwen3.7-max" },
-  "minimax-m3": { env: "MINIMAX_API_KEY", base: "https://api.minimax.chat/v1", modelEnv: "MINIMAX_MODEL", model: "minimax-m3" },
-  "kimi-k2-6": { env: "MOONSHOT_API_KEY", base: "https://api.moonshot.cn/v1", modelEnv: "MOONSHOT_MODEL", model: "kimi-k2.6" },
+  "qwen-3-7-max": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "QWEN_MODEL", modelEnvFallbacks: ["DASHSCOPE_MODEL"], model: "qwen/qwen3.7-max", protocol: "responses" },
+  "minimax-m3": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "MINIMAX_MODEL", model: "minimax/minimax-m3", protocol: "responses" },
+  "kimi-k2-6": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "KIMI_MODEL", modelEnvFallbacks: ["MOONSHOT_MODEL"], model: "moonshotai/kimi-k2.6", protocol: "responses" },
   "mimo-v2-5-pro": { env: "MIMO_API_KEY", baseEnv: "MIMO_API_BASE", modelEnv: "MIMO_MODEL", model: "mimo-v2.5-pro", protocol: "anthropic" },
-  "grok-4-3": { env: "XAI_API_KEY", base: "https://api.x.ai/v1", modelEnv: "XAI_MODEL", model: "grok-4.3" },
-  "muse-spark": { env: "MUSE_API_KEY", baseEnv: "MUSE_API_BASE", modelEnv: "MUSE_MODEL", model: "muse-spark" },
-  "claude-sonnet-4-6": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_SONNET_MODEL", model: "claude-sonnet-4-6" },
-  "deepseek-v4pro": { env: "DEEPSEEK_API_KEY", base: "https://api.deepseek.com/v1", modelEnv: "DEEPSEEK_MODEL", model: "deepseek-v4pro" },
-  "glm-5-1": { env: "ZHIPU_API_KEY", base: "https://open.bigmodel.cn/api/paas/v4", modelEnv: "ZHIPU_MODEL", model: "glm-5.1" },
+  "grok-4-3": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GROK_MODEL", modelEnvFallbacks: ["XAI_MODEL"], model: "x-ai/grok-4.3", protocol: "responses" },
+  "muse-spark": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "MUSE_MODEL", model: "muse-spark", protocol: "responses" },
+  "claude-sonnet-4-6": { env: "ZENMUX_API_KEY", envFallbacks: ["ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_API_KEY"], baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "CLAUDE_SONNET_MODEL", modelEnvFallbacks: ["ANTHROPIC_DEFAULT_SONNET_MODEL"], model: "anthropic/claude-sonnet-4.6", protocol: "responses" },
+  "deepseek-v4pro": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "DEEPSEEK_MODEL", model: "deepseek/deepseek-v4-pro", protocol: "responses" },
+  "glm-5-1": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GLM_MODEL", modelEnvFallbacks: ["ZHIPU_MODEL"], model: "z-ai/glm-5.1", protocol: "responses" },
   "doubao-seed-1-5-thinking-pro": { env: "DOUBAO_API_KEY", baseEnv: "DOUBAO_API_BASE", modelEnv: "DOUBAO_MODEL", model: "doubao-1-5-thinking-pro-250428" },
 };
 
@@ -61,6 +61,10 @@ function providerModel(provider) {
   return firstEnv([provider.modelEnv, ...(provider.modelEnvFallbacks || [])]) || provider.model;
 }
 
+function providerBase(provider) {
+  return firstEnv([provider.baseEnv, ...(provider.baseEnvFallbacks || [])]) || provider.base || "";
+}
+
 function normalizePrediction(modelId, track, payload, maxStakePerMatch) {
   const result = RESULT_VALUES.includes(payload.result) ? payload.result : "draw";
   const score = /^\d+\-\d+$/.test(String(payload.score || "")) ? String(payload.score) : "1-1";
@@ -86,7 +90,7 @@ function normalizePrediction(modelId, track, payload, maxStakePerMatch) {
 }
 
 async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
-  const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
+  const base = String(providerBase(provider)).replace(/\/+$/, "");
   if (!base) throw new Error("缺少 OpenAI-compatible API base");
   const body = {
     model: providerModel(provider),
@@ -108,10 +112,46 @@ async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
     : "";
 }
 
+function extractResponsesText(payload) {
+  if (payload.output_text) return payload.output_text;
+  const parts = [];
+  for (const item of payload.output || []) {
+    for (const content of item.content || []) {
+      if (content.text) parts.push(content.text);
+      if (content.type === "output_text" && content.text) parts.push(content.text);
+    }
+  }
+  return parts.join("\n").trim();
+}
+
+async function callResponsesCompatible(provider, prompt, apiKey, options = {}) {
+  const base = String(providerBase(provider)).replace(/\/+$/, "");
+  if (!base) throw new Error("缺少 Responses API base");
+  const body = {
+    model: providerModel(provider),
+    input: prompt,
+  };
+  if (options.json) {
+    body.text = { format: { type: "json_object" } };
+  }
+  const res = await fetch(`${base}/responses`, {
+    method: "POST",
+    signal: AbortSignal.timeout(Math.max(1000, Number(process.env.API_TIMEOUT_MS) || 60000)),
+    headers: {
+      authorization: `Bearer ${apiKey}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`Responses 请求失败: ${res.status} ${await res.text()}`);
+  return extractResponsesText(await res.json());
+}
+
 async function callAnthropic(provider, prompt, apiKey, options = {}) {
-  const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
+  const base = String(providerBase(provider)).replace(/\/+$/, "");
+  const endpoint = /zenmux\.ai\/api\/anthropic$/.test(base) ? `${base}/v1/messages` : `${base}/messages`;
   const timeoutMs = Math.max(1000, Number(process.env.API_TIMEOUT_MS) || 60000);
-  const res = await fetch(`${base}/messages`, {
+  const res = await fetch(endpoint, {
     method: "POST",
     signal: AbortSignal.timeout(timeoutMs),
     headers: {
@@ -177,6 +217,7 @@ async function callModel(modelId, track, match, config) {
   let text;
   if (modelId.startsWith("claude-") || provider.protocol === "anthropic") text = await callAnthropic(provider, prompt, apiKey);
   else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
+  else if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
   else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
   return normalizePrediction(modelId, track, extractJson(text), config.maxStakePerMatch);
 }
@@ -189,6 +230,7 @@ async function callModelText(modelId, prompt) {
 
   if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 900 });
   if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
+  if (provider.protocol === "responses") return callResponsesCompatible(provider, prompt, apiKey);
   return callOpenAICompatible(provider, prompt, apiKey);
 }
 
