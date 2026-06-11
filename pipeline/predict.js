@@ -13,7 +13,7 @@ const PROVIDERS = {
   "claude-fable-5": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_FABLE_MODEL", model: "claude-fable-5" },
   "claude-opus-4-8": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_OPUS_MODEL", model: "claude-opus-4-8" },
   "gpt-5-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5.5" },
-  "gemini-3-1": { env: "GOOGLE_API_KEY", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GOOGLE_MODEL", model: "gemini-3.1-pro" },
+  "gemini-3-1": { env: "GEMINI_API_KEY", envFallbacks: ["ZENMUX_API_KEY", "GOOGLE_API_KEY"], baseEnv: "GOOGLE_GEMINI_BASE_URL", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GEMINI_MODEL", modelEnvFallbacks: ["GOOGLE_MODEL"], model: "gemini-3.1-pro" },
   "qwen-3-7-max": { env: "DASHSCOPE_API_KEY", base: "https://dashscope.aliyuncs.com/compatible-mode/v1", modelEnv: "DASHSCOPE_MODEL", model: "qwen3.7-max" },
   "minimax-m3": { env: "MINIMAX_API_KEY", base: "https://api.minimax.chat/v1", modelEnv: "MINIMAX_MODEL", model: "minimax-m3" },
   "kimi-k2-6": { env: "MOONSHOT_API_KEY", base: "https://api.moonshot.cn/v1", modelEnv: "MOONSHOT_MODEL", model: "kimi-k2.6" },
@@ -45,6 +45,22 @@ function extractJson(text) {
   }
 }
 
+function firstEnv(keys) {
+  for (const key of keys.filter(Boolean)) {
+    const value = String(process.env[key] || "").trim();
+    if (value) return value;
+  }
+  return "";
+}
+
+function providerApiKey(provider) {
+  return firstEnv([provider.env, ...(provider.envFallbacks || [])]);
+}
+
+function providerModel(provider) {
+  return firstEnv([provider.modelEnv, ...(provider.modelEnvFallbacks || [])]) || provider.model;
+}
+
 function normalizePrediction(modelId, track, payload, maxStakePerMatch) {
   const result = RESULT_VALUES.includes(payload.result) ? payload.result : "draw";
   const score = /^\d+\-\d+$/.test(String(payload.score || "")) ? String(payload.score) : "1-1";
@@ -73,7 +89,7 @@ async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
   const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
   if (!base) throw new Error("缺少 OpenAI-compatible API base");
   const body = {
-    model: process.env[provider.modelEnv] || provider.model,
+    model: providerModel(provider),
     messages: [{ role: "user", content: prompt }],
   };
   if (options.json) body.response_format = { type: "json_object" };
@@ -104,7 +120,7 @@ async function callAnthropic(provider, prompt, apiKey, options = {}) {
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: process.env[provider.modelEnv] || provider.model,
+      model: providerModel(provider),
       max_tokens: options.maxTokens || 600,
       messages: [{ role: "user", content: prompt }],
     }),
@@ -124,15 +140,24 @@ async function callAnthropic(provider, prompt, apiKey, options = {}) {
 }
 
 async function callGemini(provider, prompt, apiKey, options = {}) {
-  const model = process.env[provider.modelEnv] || provider.model;
-  const url = `${provider.base}/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const model = providerModel(provider);
+  const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
+  const isZenmuxVertex = /zenmux\.ai\/api\/vertex-ai/.test(base);
+  const [publisher, ...modelParts] = model.includes("/") ? model.split("/") : ["google", model];
+  const vertexModel = modelParts.join("/");
+  const url = isZenmuxVertex
+    ? `${base}/v1/publishers/${encodeURIComponent(publisher)}/models/${encodeURIComponent(vertexModel)}:generateContent`
+    : `${base}/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
   const body = {
-    contents: [{ parts: [{ text: prompt }] }],
+    contents: [{ role: "user", parts: [{ text: prompt }] }],
   };
   if (options.json) body.generationConfig = { responseMimeType: "application/json" };
   const res = await fetch(url, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: {
+      ...(isZenmuxVertex ? { authorization: `Bearer ${apiKey}` } : {}),
+      "content-type": "application/json",
+    },
     body: JSON.stringify(body),
   });
   if (!res.ok) throw new Error(`Gemini 请求失败: ${res.status} ${await res.text()}`);
@@ -145,7 +170,7 @@ async function callGemini(provider, prompt, apiKey, options = {}) {
 async function callModel(modelId, track, match, config) {
   const provider = PROVIDERS[modelId];
   if (!provider) throw new Error(`未配置模型 provider: ${modelId}`);
-  const apiKey = String(process.env[provider.env] || "").trim();
+  const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
   const prompt = buildPrompt(track, match, { maxStakePerMatch: config.maxStakePerMatch });
@@ -159,7 +184,7 @@ async function callModel(modelId, track, match, config) {
 async function callModelText(modelId, prompt) {
   const provider = PROVIDERS[modelId];
   if (!provider) throw new Error(`未配置模型 provider: ${modelId}`);
-  const apiKey = String(process.env[provider.env] || "").trim();
+  const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
   if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 900 });
