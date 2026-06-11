@@ -8,6 +8,16 @@ let CHAMPIONS = [];
 let DISCUSSIONS = [];
 let selectedDateKey = '';
 const ACTIVE_TRACK = 'open';
+const ASIA_SHANGHAI = 'Asia/Shanghai';
+
+window.addEventListener('error', event => {
+  const el = document.getElementById('matches');
+  if (!el) return;
+  el.innerHTML = `<div class="empty-state">
+    <strong>页面数据加载异常</strong>
+    <span>${escapeHTML(event.message || '请刷新重试')}</span>
+  </div>`;
+});
 
 async function loadJSON(path, fallback) {
   try {
@@ -58,7 +68,7 @@ function formatKickoff(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return date.toLocaleString('zh-CN', {
-    timeZone: 'Asia/Shanghai',
+    timeZone: ASIA_SHANGHAI,
     month: '2-digit',
     day: '2-digit',
     hour: '2-digit',
@@ -70,7 +80,7 @@ function formatKickoff(value) {
 function beijingParts(value = new Date()) {
   const date = value instanceof Date ? value : new Date(value);
   const parts = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Asia/Shanghai',
+    timeZone: ASIA_SHANGHAI,
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -441,7 +451,7 @@ function renderMatchDiscussion(match) {
 
   const finalCount = finalMessagesByModel(messages).length;
   const status = thread?.sealedAt
-    ? `封盘 ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}`
+    ? `封盘 ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}`
     : '已生成';
 
   return `<div class="match-discussion">
@@ -476,7 +486,7 @@ function renderDiscussions() {
     const messages = thread?.messages || [];
     const title = `${match.home.team} vs ${match.away.team}`;
     const status = thread?.sealedAt
-      ? `已封盘 · ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`
+      ? `已封盘 · ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI })}`
       : '讨论待生成';
     const body = messages.length ? renderChatMessages(messages) : `<div class="chat-empty">
       <strong>这场还没开聊</strong>
@@ -510,7 +520,7 @@ async function init() {
   if (lb) {
     LEADERBOARD = lb;
       const u = document.getElementById('lb-updated');
-    if (lb.updatedAt) u.textContent = '更新于 ' + new Date(lb.updatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+    if (lb.updatedAt) u.textContent = '更新于 ' + new Date(lb.updatedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI });
   }
 
   const champions = await loadJSON('data/champion-predictions.json');
