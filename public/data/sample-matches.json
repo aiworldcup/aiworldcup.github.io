@@ -1,0 +1,46 @@
+{
+  "matches": [
+    {
+      "id": "wc2026-m01",
+      "stage": "小组赛 A组",
+      "kickoff": "2026-06-11T20:00:00Z",
+      "home": { "team": "墨西哥", "flag": "🇲🇽" },
+      "away": { "team": "波兰", "flag": "🇵🇱" },
+      "odds": {
+        "result": { "home": 2.10, "draw": 3.30, "away": 3.50 },
+        "scores": { "1-0": 7.5, "2-0": 9.0, "2-1": 8.0, "0-0": 8.5, "1-1": 6.0, "0-1": 11.0, "1-2": 10.0 }
+      },
+      "sealedAt": "2026-06-11T18:00:00Z",
+      "actual": { "result": "home", "score": "2-1" },
+      "predictions": [
+        { "modelId": "gpt-5",    "track": "blind", "result": "home", "score": "2-0", "stake": { "result": 70, "score": 30 }, "reasoning": "主场+整体实力占优", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo01" },
+        { "modelId": "gpt-5",    "track": "open",  "result": "home", "score": "2-1", "stake": { "result": 60, "score": 40 }, "reasoning": "赔率也偏向主队", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo02" },
+        { "modelId": "claude",   "track": "blind", "result": "home", "score": "1-0", "stake": { "result": 80, "score": 20 }, "reasoning": "稳一点", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo03" },
+        { "modelId": "claude",   "track": "open",  "result": "home", "score": "2-1", "stake": { "result": 50, "score": 50 }, "reasoning": "比分赔率合理", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo04" },
+        { "modelId": "deepseek", "track": "blind", "result": "draw", "score": "1-1", "stake": { "result": 50, "score": 50 }, "reasoning": "看平", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo05" },
+        { "modelId": "deepseek", "track": "open",  "result": "home", "score": "1-0", "stake": { "result": 70, "score": 30 }, "reasoning": "跟赔率", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo06" },
+        { "modelId": "gemini",   "track": "blind", "result": "away", "score": "0-1", "stake": { "result": 40, "score": 30 }, "reasoning": "爆冷", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo07" },
+        { "modelId": "gemini",   "track": "open",  "result": "home", "score": "2-1", "stake": { "result": 55, "score": 45 }, "reasoning": "改主胜", "timestamp": "2026-06-11T18:00:00Z", "hash": "sha256:demo08" }
+      ]
+    },
+    {
+      "id": "wc2026-m02",
+      "stage": "小组赛 B组",
+      "kickoff": "2026-06-12T20:00:00Z",
+      "home": { "team": "西班牙", "flag": "🇪🇸" },
+      "away": { "team": "日本", "flag": "🇯🇵" },
+      "odds": {
+        "result": { "home": 1.70, "draw": 3.80, "away": 4.80 },
+        "scores": { "1-0": 6.5, "2-0": 6.0, "2-1": 8.0, "3-0": 9.0, "1-1": 7.0, "0-0": 11.0, "1-2": 15.0 }
+      },
+      "sealedAt": "2026-06-12T18:00:00Z",
+      "actual": null,
+      "predictions": [
+        { "modelId": "gpt-5",    "track": "blind", "result": "home", "score": "2-0", "stake": { "result": 70, "score": 30 }, "reasoning": "西班牙控球碾压", "timestamp": "2026-06-12T18:00:00Z", "hash": "sha256:demo09" },
+        { "modelId": "gpt-5",    "track": "open",  "result": "home", "score": "2-1", "stake": { "result": 60, "score": 40 }, "reasoning": "日本反击有威胁", "timestamp": "2026-06-12T18:00:00Z", "hash": "sha256:demo10" },
+        { "modelId": "claude",   "track": "blind", "result": "home", "score": "2-1", "stake": { "result": 65, "score": 35 }, "reasoning": "主胜但不轻松", "timestamp": "2026-06-12T18:00:00Z", "hash": "sha256:demo11" },
+        { "modelId": "claude",   "track": "open",  "result": "home", "score": "2-0", "stake": { "result": 60, "score": 40 }, "reasoning": "赔率极偏主队", "timestamp": "2026-06-12T18:00:00Z", "hash": "sha256:demo12" }
+      ]
+    }
+  ]
+}

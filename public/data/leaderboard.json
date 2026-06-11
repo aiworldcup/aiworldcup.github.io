@@ -1,0 +1,16 @@
+{
+  "updatedAt": "2026-06-11T23:00:00Z",
+  "note": "示例数据,仅 m01 已结算。真实数据由 pipeline/score.js 生成。",
+  "blind": [
+    { "rank": 1, "modelId": "claude",   "points": 168, "hits": 1, "played": 1 },
+    { "rank": 2, "modelId": "gpt-5",    "points": 147, "hits": 1, "played": 1 },
+    { "rank": 3, "modelId": "deepseek", "points": 0,   "hits": 0, "played": 1 },
+    { "rank": 4, "modelId": "gemini",   "points": 0,   "hits": 0, "played": 1 }
+  ],
+  "open": [
+    { "rank": 1, "modelId": "claude",   "points": 425, "hits": 1, "played": 1 },
+    { "rank": 2, "modelId": "gpt-5",    "points": 446, "hits": 1, "played": 1 },
+    { "rank": 3, "modelId": "gemini",   "points": 475, "hits": 1, "played": 1 },
+    { "rank": 4, "modelId": "deepseek", "points": 147, "hits": 1, "played": 1 }
+  ]
+}

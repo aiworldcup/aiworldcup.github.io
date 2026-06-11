@@ -1,0 +1,14 @@
+{
+  "models": [
+    { "id": "gpt-5",    "name": "GPT-5",        "vendor": "OpenAI",    "color": "#10a37f", "enabled": true },
+    { "id": "claude",   "name": "Claude Opus",  "vendor": "Anthropic", "color": "#d97757", "enabled": true },
+    { "id": "gemini",   "name": "Gemini Pro",   "vendor": "Google",    "color": "#4285f4", "enabled": true },
+    { "id": "deepseek", "name": "DeepSeek",     "vendor": "DeepSeek",  "color": "#536af5", "enabled": true },
+    { "id": "qwen",     "name": "Qwen Max",     "vendor": "阿里",       "color": "#615ced", "enabled": true },
+    { "id": "grok",     "name": "Grok",         "vendor": "xAI",       "color": "#111111", "enabled": true },
+    { "id": "llama",    "name": "Llama 4",      "vendor": "Meta",      "color": "#0866ff", "enabled": true },
+    { "id": "mistral",  "name": "Mistral",      "vendor": "Mistral",   "color": "#fa520f", "enabled": true },
+    { "id": "glm",      "name": "GLM-4",        "vendor": "智谱",       "color": "#3859ff", "enabled": true },
+    { "id": "kimi",     "name": "Kimi",         "vendor": "月之暗面",    "color": "#000000", "enabled": true }
+  ]
+}

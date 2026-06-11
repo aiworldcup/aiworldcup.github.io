@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/tom/worldcup-ai-arena/**)",
+      "Write(//Users/tom/worldcup-ai-arena/**)",
+      "Edit(//Users/tom/worldcup-ai-arena/**)",
+      "Bash(cd /Users/tom/worldcup-ai-arena:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(touch:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(python3:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /:*)",
+      "Bash(git push:*)",
+      "Read(//Users/tom/.ssh/**)",
+      "Read(//Users/tom/.aws/**)",
+      "Read(//Users/tom/.config/**)"
+    ]
+  }
+}
