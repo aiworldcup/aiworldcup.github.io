@@ -69,20 +69,21 @@ function normalizePrediction(modelId, track, payload, maxStakePerMatch) {
   };
 }
 
-async function callOpenAICompatible(provider, prompt, apiKey) {
+async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
   const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
   if (!base) throw new Error("缺少 OpenAI-compatible API base");
+  const body = {
+    model: process.env[provider.modelEnv] || provider.model,
+    messages: [{ role: "user", content: prompt }],
+  };
+  if (options.json) body.response_format = { type: "json_object" };
   const res = await fetch(`${base}/chat/completions`, {
     method: "POST",
     headers: {
       authorization: `Bearer ${apiKey}`,
       "content-type": "application/json",
     },
-    body: JSON.stringify({
-      model: process.env[provider.modelEnv] || provider.model,
-      messages: [{ role: "user", content: prompt }],
-      response_format: { type: "json_object" },
-    }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) throw new Error(`模型 API 请求失败: ${res.status} ${await res.text()}`);
   const payload = await res.json();
@@ -110,16 +111,17 @@ async function callAnthropic(provider, prompt, apiKey) {
   return (payload.content || []).map((part) => part.text || "").join("\n");
 }
 
-async function callGemini(provider, prompt, apiKey) {
+async function callGemini(provider, prompt, apiKey, options = {}) {
   const model = process.env[provider.modelEnv] || provider.model;
   const url = `${provider.base}/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const body = {
+    contents: [{ parts: [{ text: prompt }] }],
+  };
+  if (options.json) body.generationConfig = { responseMimeType: "application/json" };
   const res = await fetch(url, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { responseMimeType: "application/json" },
-    }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) throw new Error(`Gemini 请求失败: ${res.status} ${await res.text()}`);
   const payload = await res.json();
@@ -137,9 +139,20 @@ async function callModel(modelId, track, match, config) {
   const prompt = buildPrompt(track, match, { maxStakePerMatch: config.maxStakePerMatch });
   let text;
   if (modelId.startsWith("claude-")) text = await callAnthropic(provider, prompt, apiKey);
-  else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey);
-  else text = await callOpenAICompatible(provider, prompt, apiKey);
+  else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
+  else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
   return normalizePrediction(modelId, track, extractJson(text), config.maxStakePerMatch);
+}
+
+async function callModelText(modelId, prompt) {
+  const provider = PROVIDERS[modelId];
+  if (!provider) throw new Error(`未配置模型 provider: ${modelId}`);
+  const apiKey = String(process.env[provider.env] || "").trim();
+  if (!apiKey) return null;
+
+  if (modelId.startsWith("claude-")) return callAnthropic(provider, prompt, apiKey);
+  if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
+  return callOpenAICompatible(provider, prompt, apiKey);
 }
 
 async function predictAll() {
@@ -192,4 +205,5 @@ module.exports = {
   predictAll,
   normalizePrediction,
   extractJson,
+  callModelText,
 };

@@ -16,6 +16,10 @@
 - 新增 `package.json` scripts:`predict` / `score` / `score:sample` / `serve`。
 - 前端新增北京时间日期切换、空日期预告态和冠军预测模块;真实数据同步为 104 个比赛席位(API 已确定赛程 + 淘汰赛待定占位),不再展示模拟预测。
 - 模型清单按最新要求调整为 14 个指定模型,并在页面数据中保留公司字段。
+- 新增 `AI 圆桌群聊` 模块:
+  - 前端读取 `public/data/discussions.json`,跟随日期切换展示每场比赛的模型短评。
+  - `pipeline/discuss.js` 直接调用各模型 API 生成群聊气泡,默认跑北京时间明天的比赛;没有 key 时不造假,页面展示待讨论。
+  - 当前主链路不依赖飞书群或机器人轮询,飞书可作为后续传播/互动层。
 
 ## 本地预览
 
@@ -33,6 +37,7 @@ cd /Users/tom/worldcup-ai-arena
 cp .env.example .env
 # 填 ODDS_API_KEY、MATCH_DATE、至少一个模型 API key
 npm run predict
+npm run discuss
 npm run score
 ```
 
@@ -48,4 +53,4 @@ npm run score:sample
 - 真实赔率当前对接 API-SPORTS 足球 API,与 `/Users/tom/.openclaw/workspace/football` 项目的 API base/header 保持一致。
 - 若要固定某家博彩公司,填写 `ODDS_BOOKMAKER_ID`;不填时默认取 API 返回的第一个 bookmaker。
 - 真实比赛赛果需要赛后写入 `public/data/matches.json` 的 `actual`,再跑 `npm run score`。
-- 最后一次 commit 尚未执行。
+- `npm run discuss -- --date YYYY-MM-DD` 可为指定北京时间日期生成 AI 圆桌;`--match fixture-id` 可只生成单场。

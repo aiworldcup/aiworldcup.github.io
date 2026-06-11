@@ -5,6 +5,7 @@ let MODELS = {};
 let MATCHES = [];
 let LEADERBOARD = { rankings: [], open: [] };
 let CHAMPIONS = [];
+let DISCUSSIONS = [];
 let selectedDateKey = '';
 const ACTIVE_TRACK = 'open';
 
@@ -25,6 +26,15 @@ async function loadJSON(path, fallback) {
 
 function modelMeta(id) {
   return MODELS[id] || { name: id, vendor: '', color: '#888' };
+}
+
+function escapeHTML(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 
 const RESULT_LABEL = { home: '主胜', draw: '平', away: '客胜' };
@@ -143,6 +153,7 @@ function renderDateQuick() {
       selectedDateKey = button.dataset.date;
       renderDateQuick();
       renderMatches();
+      renderDiscussions();
     });
   });
 }
@@ -334,6 +345,59 @@ function renderChampionPredictions() {
   </div>`;
 }
 
+function discussionForMatch(matchId) {
+  return DISCUSSIONS.find(item => item.matchId === matchId);
+}
+
+function renderDiscussions() {
+  const el = document.getElementById('discussion-feed');
+  if (!el) return;
+  const selectedMatches = matchesForSelectedDate();
+  if (!selectedMatches.length) {
+    el.innerHTML = `<div class="empty-state">
+      <strong>${dateLabel(selectedDateKey)}暂无群聊</strong>
+      <span>没有比赛的日期不会生成模型讨论。</span>
+    </div>`;
+    return;
+  }
+
+  const blocks = selectedMatches.map(match => {
+    const thread = discussionForMatch(match.id);
+    const messages = thread?.messages || [];
+    const title = `${match.home.team} vs ${match.away.team}`;
+    const status = thread?.sealedAt
+      ? `已封盘 · ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`
+      : '讨论待生成';
+    const body = messages.length ? messages.map(message => {
+      const meta = modelMeta(message.modelId);
+      const side = message.turn % 2 === 0 ? ' is-right' : '';
+      return `<div class="chat-message${side}">
+        <div class="chat-avatar" style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</div>
+        <div class="chat-bubble">
+          <div class="chat-name">${escapeHTML(meta.name)}<span>${escapeHTML(meta.vendor)}</span></div>
+          <p>${escapeHTML(message.text)}</p>
+        </div>
+      </div>`;
+    }).join('') : `<div class="chat-empty">
+      <strong>这场还没开聊</strong>
+      <span>跑一次 <code>npm run discuss</code> 后,这里会显示模型短评。每个模型默认两句。</span>
+    </div>`;
+
+    return `<article class="discussion-card">
+      <div class="discussion-head">
+        <div>
+          <strong>${escapeHTML(title)}</strong>
+          <span>${escapeHTML(formatKickoff(match.kickoff))}</span>
+        </div>
+        <small>${escapeHTML(status)}</small>
+      </div>
+      <div class="chat-window">${body}</div>
+    </article>`;
+  }).join('');
+
+  el.innerHTML = blocks;
+}
+
 async function init() {
   const models = await loadJSON('data/models.json');
   if (models?.models) models.models.forEach(m => { MODELS[m.id] = m; });
@@ -352,10 +416,14 @@ async function init() {
   const champions = await loadJSON('data/champion-predictions.json');
   CHAMPIONS = champions?.predictions || [];
 
+  const discussions = await loadJSON('data/discussions.json');
+  DISCUSSIONS = discussions?.discussions || [];
+
   renderDateQuick();
   renderLeaderboard();
   renderMatches();
   renderChampionPredictions();
+  renderDiscussions();
 }
 
 init();

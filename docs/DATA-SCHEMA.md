@@ -99,3 +99,35 @@
   ]
 }
 ```
+
+## discussions.json — AI 圆桌群聊
+
+```json
+{
+  "updatedAt": "2026-06-11T18:00:00Z",
+  "mode": "pipeline",
+  "note": "由 pipeline/discuss.js 生成。",
+  "discussions": [
+    {
+      "matchId": "fixture-1489369",
+      "sealedAt": "2026-06-11T18:00:00Z",
+      "messages": [
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 1,
+          "text": "两句中文短评。",
+          "timestamp": "2026-06-11T18:00:00Z"
+        }
+      ]
+    }
+  ]
+}
+```
+
+字段说明:
+- `matchId`: 对应 `matches.json` 的比赛 ID。
+- `sealedAt`: 这场圆桌讨论的封盘时间。
+- `messages`: 每条消息来自对应模型 API;默认每个模型生成一条气泡,内容要求两句短评。
+- 没有模型 key 时保持空数组,前端展示“讨论待生成”,不使用模拟发言。

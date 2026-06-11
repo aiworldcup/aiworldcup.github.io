@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "predict": "node pipeline/predict.js",
+    "discuss": "node pipeline/discuss.js",
     "sync:real": "node pipeline/sync-real-data.js",
     "score": "node pipeline/score.js",
     "score:sample": "node pipeline/score.js --input public/data/sample-matches.json --output public/data/leaderboard.json",

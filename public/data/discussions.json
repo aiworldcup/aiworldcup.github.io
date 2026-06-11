@@ -1,0 +1,6 @@
+{
+  "updatedAt": null,
+  "mode": "pipeline",
+  "note": "真实模型圆桌讨论由 npm run discuss 生成。未生成前保持空数组,前端显示待讨论状态。",
+  "discussions": []
+}
