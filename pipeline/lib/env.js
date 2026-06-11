@@ -32,4 +32,11 @@ function loadEnv(filePath = path.join(process.cwd(), ".env")) {
   return loaded;
 }
 
-module.exports = { loadEnv };
+function loadProjectEnv() {
+  return {
+    ...loadEnv(path.join(process.cwd(), ".env")),
+    ...loadEnv(path.join(process.cwd(), ".env.claude-gateways")),
+  };
+}
+
+module.exports = { loadEnv, loadProjectEnv };

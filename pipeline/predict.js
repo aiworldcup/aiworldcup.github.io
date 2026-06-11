@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getConfig } = require("./config");
-const { loadEnv } = require("./lib/env");
+const { loadProjectEnv } = require("./lib/env");
 const { sealMatch } = require("./lib/seal");
 const { buildPrompt, RESULT_VALUES } = require("./prompts");
 const { fetchMatchesWithOdds } = require("./odds");
@@ -11,13 +11,13 @@ const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "matches.json")
 
 const PROVIDERS = {
   "claude-fable-5": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_FABLE_MODEL", model: "claude-fable-5" },
-  "claude-opus-4-8": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_OPUS_MODEL", model: "claude-opus-4-8" },
+  "claude-opus-4-8": { env: "DK_ANTHROPIC_API_KEY", envFallbacks: ["ANTHROPIC_API_KEY"], baseEnv: "DK_ANTHROPIC_API_BASE", baseEnvFallbacks: ["ANTHROPIC_API_BASE"], base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_OPUS_MODEL", modelEnvFallbacks: ["DK_ANTHROPIC_MODEL", "CLAUDE_OPUS_MODEL"], model: "claude-opus-4-8" },
   "gpt-5-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5.5" },
   "gemini-3-1": { env: "GEMINI_API_KEY", envFallbacks: ["ZENMUX_API_KEY", "GOOGLE_API_KEY"], baseEnv: "GOOGLE_GEMINI_BASE_URL", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GEMINI_MODEL", modelEnvFallbacks: ["GOOGLE_MODEL"], model: "gemini-3.1-pro" },
   "qwen-3-7-max": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "QWEN_MODEL", modelEnvFallbacks: ["DASHSCOPE_MODEL"], model: "qwen/qwen3.7-max", protocol: "responses" },
   "minimax-m3": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "MINIMAX_MODEL", model: "minimax/minimax-m3", protocol: "responses" },
   "kimi-k2-6": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "KIMI_MODEL", modelEnvFallbacks: ["MOONSHOT_MODEL"], model: "moonshotai/kimi-k2.6", protocol: "responses" },
-  "mimo-v2-5-pro": { env: "MIMO_API_KEY", baseEnv: "MIMO_API_BASE", modelEnv: "MIMO_MODEL", model: "mimo-v2.5-pro", protocol: "anthropic" },
+  "mimo-v2-5-pro": { env: "MIMO_ANTHROPIC_API_KEY", envFallbacks: ["MIMO_API_KEY"], baseEnv: "MIMO_ANTHROPIC_API_BASE", baseEnvFallbacks: ["MIMO_API_BASE"], modelEnv: "MIMO_ANTHROPIC_MODEL", modelEnvFallbacks: ["MIMO_MODEL"], model: "mimo-v2.5-pro", protocol: "anthropic" },
   "grok-4-3": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GROK_MODEL", modelEnvFallbacks: ["XAI_MODEL"], model: "x-ai/grok-4.3", protocol: "responses" },
   "muse-spark": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "MUSE_MODEL", model: "muse-spark", protocol: "responses" },
   "claude-sonnet-4-6": { env: "ZENMUX_API_KEY", envFallbacks: ["ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_API_KEY"], baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "CLAUDE_SONNET_MODEL", modelEnvFallbacks: ["ANTHROPIC_DEFAULT_SONNET_MODEL"], model: "anthropic/claude-sonnet-4.6", protocol: "responses" },
@@ -235,7 +235,7 @@ async function callModelText(modelId, prompt) {
 }
 
 async function predictAll() {
-  loadEnv();
+  loadProjectEnv();
   const config = getConfig();
   const models = readJson(MODELS_PATH).models.filter((model) => model.enabled !== false);
   const matchesData = await fetchMatchesWithOdds();

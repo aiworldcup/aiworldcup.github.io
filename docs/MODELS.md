@@ -5,13 +5,13 @@
 | 序号 | 模型 | 公司 | 接入变量 |
 |----|------|------|---------|
 | 1 | Claude Fable 5 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_FABLE_MODEL` |
-| 2 | Claude Opus 4.8 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_OPUS_MODEL` |
+| 2 | Claude Opus 4.8 | Anthropic | dk: `DK_ANTHROPIC_API_KEY` / `DK_ANTHROPIC_API_BASE` / `DK_CLAUDE_OPUS_MODEL` |
 | 3 | GPT-5.5 | OpenAI | `OPENAI_API_KEY` / `OPENAI_MODEL` |
 | 4 | Gemini 3.1 | Google | `GEMINI_API_KEY` 或 `ZENMUX_API_KEY` / `GOOGLE_GEMINI_BASE_URL` / `GEMINI_MODEL` |
 | 5 | Qwen 3.7 Max | 阿里云 / 通义千问 | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `QWEN_MODEL` |
 | 6 | MiniMax-M3 | MiniMax | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `MINIMAX_MODEL` |
 | 7 | Kimi K2.6 | 月之暗面 / Moonshot AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `KIMI_MODEL` |
-| 8 | Mimo v2.5 Pro | 小米 / MiMo | `MIMO_API_KEY` / `MIMO_API_BASE` / `MIMO_MODEL` |
+| 8 | Mimo v2.5 Pro | 小米 / MiMo | `MIMO_ANTHROPIC_API_KEY` / `MIMO_ANTHROPIC_API_BASE` / `MIMO_ANTHROPIC_MODEL` |
 | 9 | Grok 4.3 | xAI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GROK_MODEL` |
 | 10 | Muse Spark | Muse AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `MUSE_MODEL` |
 | 11 | Claude Sonnet 4.6 | Anthropic | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `CLAUDE_SONNET_MODEL` |

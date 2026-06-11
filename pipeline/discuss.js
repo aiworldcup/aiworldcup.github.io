@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { loadEnv } = require("./lib/env");
+const { loadProjectEnv } = require("./lib/env");
 const { callModelText } = require("./predict");
 
 const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
@@ -184,7 +184,7 @@ function buildTurnSchedule(models) {
 }
 
 async function discuss() {
-  loadEnv();
+  loadProjectEnv();
   const args = parseArgs(process.argv.slice(2));
   const models = readJson(MODELS_PATH, { models: [] }).models
     .filter((model) => model.enabled !== false)

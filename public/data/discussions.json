@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-11T11:33:57.925Z",
+  "updatedAt": "2026-06-11T20:22:43.785Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
     {
       "matchId": "fixture-1489369",
-      "sealedAt": "2026-06-11T11:24:39.496Z",
+      "sealedAt": "2026-06-11T20:22:43.785Z",
       "messages": [
         {
           "modelId": "qwen-3-7-max",
@@ -195,6 +195,51 @@
           "round": 3,
           "text": "结论平局,比分1-1;胜平负押55,比分押40。",
           "timestamp": "2026-06-11T11:33:57.923Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 22,
+          "round": 1,
+          "text": "Kimi随大流压平局，可1.42的主胜赔率已隐含约70%概率，整桌齐刷1-1是在跟市场对赌，我更认主胜2-0。",
+          "timestamp": "2026-06-11T20:21:55.029Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 23,
+          "round": 2,
+          "text": "Qwen搏0-1客胜是逆天而行，8.7的负赔率就是市场判它死刑，我仍守主胜逻辑。结论:主胜,比分2-0;胜平负押70,比分押20。",
+          "timestamp": "2026-06-11T20:21:59.611Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 24,
+          "round": 1,
+          "text": "我看好主胜，但提醒南非反击速度别小看！",
+          "timestamp": "2026-06-11T20:22:21.395Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 25,
+          "round": 2,
+          "text": "同意Claude主胜逻辑，但南非若摆541铁桶阵，墨西哥边路传中质量不稳才是真风险。",
+          "timestamp": "2026-06-11T20:22:32.530Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 26,
+          "round": 3,
+          "text": "Claude Opus说的市场信号我认同，但南非摆铁桶时墨西哥边路传中确实软肋——结论:主胜,比分2-1;胜平负押65,比分押25。",
+          "timestamp": "2026-06-11T20:22:43.785Z"
         }
       ]
     }
