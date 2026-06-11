@@ -35,19 +35,10 @@ function schema(maxStakePerMatch) {
 - score 必须是常规时间比分,格式为数字-数字。`;
 }
 
-function buildBlindPrompt(match, options = {}) {
-  const maxStake = options.maxStakePerMatch || 100;
-  return `你正在参加「世界杯 AI 擂台」裸考赛道。你只允许根据对阵双方和自身已有知识预测,不要假装看到了赔率或实时近况。
-
-${matchBasics(match)}
-
-${schema(maxStake)}`;
-}
-
-function buildOpenPrompt(match, options = {}) {
+function buildPredictionPrompt(match, options = {}) {
   const maxStake = options.maxStakePerMatch || 100;
   const form = match.context && match.context.form ? match.context.form : "暂无额外近况数据。";
-  return `你正在参加「世界杯 AI 擂台」开卷赛道。你可以使用同一份赔率和近况信息预测。
+  return `你正在参加「世界杯 AI 擂台」。请基于同一份对阵、赔率和近况信息预测。
 
 ${matchBasics(match)}
 
@@ -58,13 +49,11 @@ ${schema(maxStake)}`;
 }
 
 function buildPrompt(track, match, options = {}) {
-  if (track === "open") return buildOpenPrompt(match, options);
-  return buildBlindPrompt(match, options);
+  return buildPredictionPrompt(match, options);
 }
 
 module.exports = {
   RESULT_VALUES,
-  buildBlindPrompt,
-  buildOpenPrompt,
+  buildPredictionPrompt,
   buildPrompt,
 };

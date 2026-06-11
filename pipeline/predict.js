@@ -152,7 +152,7 @@ async function predictAll() {
   for (const match of matchesData.matches || []) {
     const predictions = [];
     for (const model of models) {
-      for (const track of ["blind", "open"]) {
+      for (const track of ["open"]) {
         try {
           const prediction = await callModel(model.id, track, match, config);
           if (!prediction) {

@@ -20,7 +20,7 @@
 ## 接入约束(公平性)
 
 - **同一时刻**触发所有模型(或尽量靠近),记录每个预测的真实时间戳。
-- **同一套 prompt**(见 `pipeline/prompts.js`),裸考一套、开卷一套,不为某个模型特调。
+- **同一套 prompt**(见 `pipeline/prompts.js`),不为某个模型特调。
 - 所有模型用**默认温度**或统一温度,记录在存证里。
 - 模型返回必须是**结构化 JSON**(见 DATA-SCHEMA.md 的 prediction 结构),便于结算。
 - 如某模型 API 暂不可用,在 `models.json` 标 `"enabled": false`,不影响其他模型。

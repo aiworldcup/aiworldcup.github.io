@@ -3,8 +3,8 @@
 
 let MODELS = {};
 let MATCHES = [];
-let LEADERBOARD = { blind: [], open: [] };
-let currentTrack = 'blind';
+let LEADERBOARD = { rankings: [], open: [] };
+const ACTIVE_TRACK = 'open';
 
 async function loadJSON(path, fallback) {
   try {
@@ -64,7 +64,7 @@ function renderMatchSummary() {
 
 function renderLeaderboard() {
   const el = document.getElementById('leaderboard');
-  const rows = (LEADERBOARD[currentTrack] || []).slice().sort((a, b) => b.points - a.points);
+  const rows = (LEADERBOARD.rankings || LEADERBOARD.open || []).slice().sort((a, b) => b.points - a.points);
   if (!rows.length) { el.innerHTML = '<li class="empty">暂无排名数据</li>'; return; }
   el.innerHTML = rows.map((r, i) => {
     const m = modelMeta(r.modelId);
@@ -96,7 +96,7 @@ function renderMatchCard(m) {
     ? `<span class="match-status status-final">已结束 · ${m.actual.score} · ${RESULT_LABEL[m.actual.result] || ''}</span>`
     : `<span class="match-status status-sealed">已封盘 · 待开赛</span>`;
 
-  const trackPredictions = (m.predictions || []).filter(p => p.track === currentTrack);
+  const trackPredictions = (m.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
   const counts = trackPredictions.reduce((acc, p) => {
     acc[p.result] = (acc[p.result] || 0) + 1;
     return acc;
@@ -131,7 +131,7 @@ function renderMatchCard(m) {
         <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}</span>
         <span>${mark}</span>
       </div>`;
-    }).join('') || '<div class="empty">该赛道暂无预测</div>';
+    }).join('') || '<div class="empty">暂无预测</div>';
 
   return `<article class="match">
     <div class="match-head">
@@ -184,17 +184,6 @@ function renderMatchCard(m) {
   </article>`;
 }
 
-function switchTrack(track) {
-  currentTrack = track;
-  document.querySelectorAll('.track-btn').forEach(b => {
-    const active = b.dataset.track === track;
-    b.classList.toggle('active', active);
-    b.setAttribute('aria-selected', active);
-  });
-  renderLeaderboard();
-  renderMatches();
-}
-
 async function init() {
   const models = await loadJSON('data/models.json');
   if (models?.models) models.models.forEach(m => { MODELS[m.id] = m; });
@@ -209,10 +198,8 @@ async function init() {
     if (lb.updatedAt) u.textContent = '更新于 ' + new Date(lb.updatedAt).toLocaleString('zh-CN');
   }
 
-  document.querySelectorAll('.track-btn').forEach(b =>
-    b.addEventListener('click', () => switchTrack(b.dataset.track)));
-
-  switchTrack('blind');
+  renderLeaderboard();
+  renderMatches();
 }
 
 init();

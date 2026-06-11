@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-06-11T01:35:08.977Z",
-  "blind": [
+  "updatedAt": "2026-06-11T04:37:58.148Z",
+  "rankings": [
     {
       "rank": 1,
-      "modelId": "mistral",
+      "modelId": "claude",
       "points": 1061,
       "hits": 2,
       "scoreHits": 2,
@@ -11,71 +11,71 @@
     },
     {
       "rank": 2,
+      "modelId": "mistral",
+      "points": 1061,
+      "hits": 2,
+      "scoreHits": 2,
+      "played": 2
+    },
+    {
+      "rank": 3,
+      "modelId": "kimi",
+      "points": 911,
+      "hits": 2,
+      "scoreHits": 2,
+      "played": 2
+    },
+    {
+      "rank": 4,
+      "modelId": "deepseek",
+      "points": 719,
+      "hits": 2,
+      "scoreHits": 1,
+      "played": 2
+    },
+    {
+      "rank": 5,
+      "modelId": "grok",
+      "points": 697.5,
+      "hits": 2,
+      "scoreHits": 1,
+      "played": 2
+    },
+    {
+      "rank": 6,
       "modelId": "gemini",
-      "points": 540,
+      "points": 475.5,
       "hits": 1,
       "scoreHits": 1,
       "played": 2
     },
     {
-      "rank": 3,
-      "modelId": "qwen",
+      "rank": 7,
+      "modelId": "glm",
       "points": 446,
       "hits": 1,
       "scoreHits": 1,
       "played": 2
     },
     {
-      "rank": 4,
-      "modelId": "kimi",
-      "points": 328.5,
-      "hits": 2,
-      "scoreHits": 0,
-      "played": 2
-    },
-    {
-      "rank": 5,
-      "modelId": "claude",
-      "points": 168,
-      "hits": 1,
-      "scoreHits": 0,
-      "played": 2
-    },
-    {
-      "rank": 6,
-      "modelId": "gpt-5",
-      "points": 147,
-      "hits": 1,
-      "scoreHits": 0,
-      "played": 2
-    },
-    {
-      "rank": 7,
-      "modelId": "llama",
-      "points": 115.5,
-      "hits": 1,
-      "scoreHits": 0,
-      "played": 2
-    },
-    {
       "rank": 8,
-      "modelId": "deepseek",
-      "points": 0,
-      "hits": 0,
-      "scoreHits": 0,
+      "modelId": "gpt-5",
+      "points": 446,
+      "hits": 1,
+      "scoreHits": 1,
       "played": 2
     },
     {
       "rank": 9,
-      "modelId": "glm",
-      "points": 0,
-      "hits": 0,
+      "modelId": "qwen",
+      "points": 136.5,
+      "hits": 1,
       "scoreHits": 0,
       "played": 2
     },
     {
       "rank": 10,
-      "modelId": "grok",
+      "modelId": "llama",
       "points": 0,
       "hits": 0,
       "scoreHits": 0,

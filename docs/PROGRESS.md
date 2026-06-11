@@ -5,13 +5,13 @@
 ## 已完成
 
 - 保留并校验已有移动端静态前端:`public/index.html`、`public/styles.css`、`public/app.js`。
-- 补齐 `public/data/sample-matches.json`:3 场示例比赛、10 个模型、裸考/开卷两条赛道,其中 2 场带 `actual` 用于结算验证。
+- 补齐 `public/data/sample-matches.json`:3 场示例比赛、10 个模型、统一预测版本,其中 2 场带 `actual` 用于结算验证。
 - 使用 `pipeline/score.js` 重新生成 `public/data/leaderboard.json`,rank 与 points 顺序一致。
 - 新增数据管线:
-  - `pipeline/prompts.js`:裸考/开卷统一 prompt,强制 JSON 输出。
+  - `pipeline/prompts.js`:统一 prompt,强制 JSON 输出。
   - `pipeline/odds.js`:复用 football 项目的 API-SPORTS 约定,通过 `ODDS_API_KEY`/`APISPORTS_API_KEY` 调 `/fixtures` 和 `/odds`;缺 key 或缺日期时回退 sample。
   - `pipeline/lib/seal.js`:稳定 JSON 哈希与封盘时间戳。
-  - `pipeline/predict.js`:遍历 enabled 模型,两赛道预测,缺 key 自动跳过;没有任何模型 key 时不覆盖 `matches.json`。
+  - `pipeline/predict.js`:遍历 enabled 模型预测,缺 key 自动跳过;没有任何模型 key 时不覆盖 `matches.json`。
   - `pipeline/score.js`:按真实赔率结算胜平负和比分下注,生成排行榜。
 - 新增 `package.json` scripts:`predict` / `score` / `score:sample` / `serve`。
 

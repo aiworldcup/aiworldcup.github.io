@@ -59,16 +59,17 @@ function scorePrediction(match, prediction, maxStakePerMatch) {
 
 function makeLeaderboard(matches, options = {}) {
   const maxStake = options.maxStakePerMatch || getConfig().maxStakePerMatch;
-  const tracks = { blind: new Map(), open: new Map() };
+  const tracks = { open: new Map() };
 
   (matches || []).forEach((match) => {
     if (!match.actual) return;
     (match.predictions || []).forEach((prediction) => {
-      if (!tracks[prediction.track]) return;
+      const track = prediction.track || "open";
+      if (!tracks[track]) return;
       const scored = scorePrediction(match, prediction, maxStake);
       if (!scored) return;
       const key = prediction.modelId;
-      const row = tracks[prediction.track].get(key) || {
+      const row = tracks[track].get(key) || {
         modelId: key,
         points: 0,
         hits: 0,
@@ -79,7 +80,7 @@ function makeLeaderboard(matches, options = {}) {
       row.hits += scored.resultHit ? 1 : 0;
       row.scoreHits += scored.scoreHit ? 1 : 0;
       row.played += 1;
-      tracks[prediction.track].set(key, row);
+      tracks[track].set(key, row);
     });
   });
 
@@ -96,10 +97,11 @@ function makeLeaderboard(matches, options = {}) {
       }));
   }
 
+  const rankings = rank(tracks.open);
   return {
     updatedAt: new Date().toISOString(),
-    blind: rank(tracks.blind),
-    open: rank(tracks.open),
+    rankings,
+    open: rankings,
   };
 }
 

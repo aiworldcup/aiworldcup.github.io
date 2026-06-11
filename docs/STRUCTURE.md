@@ -13,7 +13,7 @@ worldcup-ai-arena/
 ├── public/                    # 静态站点根目录(部署即指向这里)
 │   ├── index.html             # 首页 = 排行榜 + 比赛列表
 │   ├── styles.css             # 移动端优先样式
-│   ├── app.js                 # 前端逻辑:fetch JSON、渲染、切赛道
+│   ├── app.js                 # 前端逻辑:fetch JSON、渲染排行榜与比赛卡
 │   └── data/
 │       ├── models.json        # 参赛模型清单(名字/厂商/logo色)
 │       ├── matches.json       # 比赛 + 赔率 + 各模型预测(封盘后的真数据)
@@ -24,7 +24,7 @@ worldcup-ai-arena/
 │   ├── config.js              # 下注上限、API base、超时等配置
 │   ├── odds.js                # 赔率 API 适配层(预留,读 .env)
 │   ├── predict.js             # 调各大模型 API,生成封盘预测
-│   ├── prompts.js             # 统一 prompt 模板(裸考/开卷两套)
+│   ├── prompts.js             # 统一 prompt 模板
 │   ├── score.js               # 按真实赛果+赔率结算,生成 leaderboard.json
 │   └── lib/
 │       ├── env.js             # 轻量 .env 读取(不引入依赖)

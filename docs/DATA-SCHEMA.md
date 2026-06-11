@@ -41,7 +41,7 @@
       "predictions": [
         {
           "modelId": "gpt-5",
-          "track": "blind",
+          "track": "open",
           "result": "home",
           "score": "2-1",
           "stake": { "result": 60, "score": 40 },
@@ -57,7 +57,7 @@
 ```
 
 字段说明:
-- `track`: `"blind"`(裸考) 或 `"open"`(开卷)。同一模型两条赛道各一条预测。
+- `track`: 当前统一使用 `"open"`;前端只展示这一版预测。
 - `stake`: 该场 100 积分的分配,`result + score` 之和 ≤ 每场上限(默认 100)。
 - `result`: `"home"` / `"draw"` / `"away"`。
 - `score`: 形如 `"2-1"`(主-客)。
@@ -68,10 +68,7 @@
 ```json
 {
   "updatedAt": "2026-06-12T00:00:00Z",
-  "blind": [
-    { "rank": 1, "modelId": "gpt-5", "points": 1340, "hits": 5, "scoreHits": 2, "played": 8 }
-  ],
-  "open": [
+  "rankings": [
     { "rank": 1, "modelId": "claude", "points": 1580, "hits": 6, "played": 8 }
   ]
 }
@@ -83,5 +80,5 @@
 - 命中胜平负:`+ stake.result × odds.result[选项]`,否则该部分归零。
 - 命中比分:`+ stake.score × odds.scores[比分]`,否则归零。
 - 未押(stake=0)不计盈亏。
-- 该场所得累加到对应赛道的累计积分。
+- 该场所得累加到模型累计积分。
 - `hits` = 胜平负命中场次;`scoreHits` = 比分命中场次;`played` = 已结算场次。

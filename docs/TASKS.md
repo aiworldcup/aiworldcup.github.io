@@ -10,18 +10,18 @@
 
 ## 阶段 1:假数据 + 前端跑通(优先级最高)
 - [x] 写 `public/data/models.json`,放 ≥10 个模型
-- [x] 写 `public/data/sample-matches.json`,造 3~4 场比赛假数据,含赔率、每个模型在两条赛道的预测,其中 1~2 场带 `actual` 赛果
+- [x] 写 `public/data/sample-matches.json`,造 3~4 场比赛假数据,含赔率、每个模型的预测,其中 1~2 场带 `actual` 赛果
 - [x] 写 `public/data/leaderboard.json`(可先手算或用 score.js 生成)
-- [x] 写 `public/index.html`:移动端优先,含①赛道切换(裸考/开卷)②排行榜③比赛卡片列表
+- [x] 写 `public/index.html`:移动端优先,含①排行榜②比赛卡片列表
 - [x] 写 `public/styles.css`:响应式、单列、大字号、触摸友好;深色背景擂台风
-- [x] 写 `public/app.js`:fetch 数据(失败时回退到 sample-matches.json)、渲染排行榜与比赛卡、赛道切换交互
+- [x] 写 `public/app.js`:fetch 数据(失败时回退到 sample-matches.json)、渲染排行榜与比赛卡
 - [x] 本地用 `python3 -m http.server` 或 `npx serve public` 验证页面能打开、手机宽度正常
 
 ## 阶段 2:数据管线(能跑通即可,真实 key 等作者填)
-- [x] 写 `pipeline/prompts.js`:裸考/开卷两套统一 prompt 模板,要求模型输出结构化 JSON
+- [x] 写 `pipeline/prompts.js`:统一 prompt 模板,要求模型输出结构化 JSON
 - [x] 写 `pipeline/odds.js`:赔率 API 适配层,读 `.env`;缺 key 时返回 sample 数据并打日志
 - [x] 写 `pipeline/lib/seal.js`:对预测内容算 sha256 哈希 + 打时间戳
-- [x] 写 `pipeline/predict.js`:遍历 enabled 模型,两条赛道各调一次,封盘写入 matches.json;缺 key 的模型跳过并提示
+- [x] 写 `pipeline/predict.js`:遍历 enabled 模型,封盘写入 matches.json;缺 key 的模型跳过并提示
 - [x] 写 `pipeline/score.js`:读 matches.json 的 actual + odds,按 DATA-SCHEMA 结算,生成 leaderboard.json
 - [x] `package.json` 加 scripts:`predict` / `score` / `serve`
 
