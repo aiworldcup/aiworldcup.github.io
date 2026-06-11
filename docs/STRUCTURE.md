@@ -7,6 +7,7 @@ worldcup-ai-arena/
 │   └── settings.local.json    # 权限配置(已放行项目内操作)
 ├── .env.example               # 环境变量模板(真实 key 作者填 .env)
 ├── .gitignore
+├── package.json               # Node 脚本入口:predict / score / serve
 ├── README.md                  # 面向人类的项目说明
 │
 ├── public/                    # 静态站点根目录(部署即指向这里)
@@ -20,11 +21,13 @@ worldcup-ai-arena/
 │       └── leaderboard.json   # 计算好的排行榜(由 pipeline 生成)
 │
 ├── pipeline/                  # 数据管线(Node 脚本,手动跑)
+│   ├── config.js              # 下注上限、API base、超时等配置
 │   ├── odds.js                # 赔率 API 适配层(预留,读 .env)
 │   ├── predict.js             # 调各大模型 API,生成封盘预测
 │   ├── prompts.js             # 统一 prompt 模板(裸考/开卷两套)
 │   ├── score.js               # 按真实赛果+赔率结算,生成 leaderboard.json
 │   └── lib/
+│       ├── env.js             # 轻量 .env 读取(不引入依赖)
 │       └── seal.js            # 封盘:加时间戳 + 内容哈希,写入存证
 │
 └── docs/

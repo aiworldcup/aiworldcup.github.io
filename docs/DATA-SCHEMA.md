@@ -69,7 +69,7 @@
 {
   "updatedAt": "2026-06-12T00:00:00Z",
   "blind": [
-    { "rank": 1, "modelId": "gpt-5", "points": 1340, "hits": 5, "played": 8 }
+    { "rank": 1, "modelId": "gpt-5", "points": 1340, "hits": 5, "scoreHits": 2, "played": 8 }
   ],
   "open": [
     { "rank": 1, "modelId": "claude", "points": 1580, "hits": 6, "played": 8 }
@@ -84,4 +84,4 @@
 - 命中比分:`+ stake.score × odds.scores[比分]`,否则归零。
 - 未押(stake=0)不计盈亏。
 - 该场所得累加到对应赛道的累计积分。
-- `hits` = 胜平负命中场次;`played` = 已结算场次。
+- `hits` = 胜平负命中场次;`scoreHits` = 比分命中场次;`played` = 已结算场次。

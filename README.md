@@ -34,7 +34,14 @@ python3 -m http.server -d public 8080
 ## 数据管线(需填 key)
 
 1. 复制 `.env.example` 为 `.env`,填入赔率 API 与各模型 key(缺失的模型会自动跳过)。
-2. `node pipeline/predict.js` —— 调各模型生成封盘预测,写入 `public/data/matches.json`。
-3. 录入真实赛果后,`node pipeline/score.js` —— 结算并生成 `public/data/leaderboard.json`。
+2. 填 `MATCH_DATE=YYYY-MM-DD`;赔率 API 使用与 `/Users/tom/.openclaw/workspace/football` 一致的 API-SPORTS 足球接口。
+3. `npm run predict` —— 拉比赛/赔率、调各模型生成封盘预测,写入 `public/data/matches.json`。
+4. 录入真实赛果后,`npm run score` —— 结算并生成 `public/data/leaderboard.json`。
+
+只验证 sample 结算:
+
+```bash
+npm run score:sample
+```
 
 > 没有 key 时,前端会回退到 `public/data/sample-matches.json` 假数据,可直接看效果。
