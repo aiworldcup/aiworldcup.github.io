@@ -11,12 +11,6 @@ const ACTIVE_TRACK = 'open';
 const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
-const STAKE_LIMITS = {
-  result: 200,
-  score: 100,
-  total: 300
-};
-const MATCH_GRANT_POINTS = 100;
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -229,25 +223,44 @@ function renderLeaderboard() {
       <span>待结算预测</span><strong>${pendingMatches}</strong>
     </div>
     <div class="lb-summary-card">
-      <span>排行榜口径</span><strong>累计余额</strong>
+      <span>排行榜口径</span><strong>命中率</strong>
     </div>`;
   }
-  if (!rows.length) {
+  if (!rows.resultRows.length && !rows.scoreRows.length) {
     el.innerHTML = '<div class="empty">暂无模型数据</div>';
     return;
   }
 
-  const podium = rows.slice(0, 3).map((row, index) => `<div class="lb-podium-card rank-${index + 1}">
+  el.innerHTML = `${renderLeaderboardBlock('赛果榜', '胜平负命中率', rows.resultRows, 'result')}
+    ${renderLeaderboardBlock('比分榜', '具体比分命中数', rows.scoreRows, 'score')}`;
+}
+
+function renderLeaderboardBlock(title, subtitle, rows, type) {
+  const activeRows = rows.filter(row => row.predictions > 0);
+  if (!activeRows.length) {
+    return `<section class="leaderboard-block">
+      <div class="leaderboard-block-head">
+        <strong>${title}</strong>
+        <span>${subtitle}</span>
+      </div>
+      <div class="empty-state">
+        <strong>${title}赛后更新</strong>
+        <span>有真实赛果和封盘预测后,这里会自动生成排名。</span>
+      </div>
+    </section>`;
+  }
+
+  const podium = activeRows.slice(0, 3).map((row, index) => `<div class="lb-podium-card rank-${index + 1}">
     <span class="lb-crown">#${index + 1}</span>
     <div class="lb-podium-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
     <small>${escapeHTML(row.vendor || '')}</small>
-    <strong>${formatNumber(row.points, row.points % 1 ? 1 : 0)}</strong>
-    <span>${row.picks ? `胜率 ${formatPercent(row.hits, row.picks)}` : `${row.pending} 场待结算`}</span>
+    <strong>${type === 'score' ? row.scoreHits : formatPercent(row.resultHits, row.predictions)}</strong>
+    <span>${row.predictions ? `${row.predictions} 场预测` : `${row.pending} 场待结算`}</span>
   </div>`).join('');
 
-  const table = rows.map((row, index) => {
-    const activeText = row.played
-      ? `已发分 ${row.played} 场`
+  const table = activeRows.map((row, index) => {
+    const activeText = row.predictions
+      ? `已结算预测 ${row.predictions} 场`
       : row.pending
         ? `${row.pending} 场等待赛果`
         : '等待预测';
@@ -258,25 +271,32 @@ function renderLeaderboard() {
         <div class="lb-vendor">${escapeHTML(row.vendor || '')} · ${activeText}</div>
       </div>
       <div class="lb-stat">
-        <span>积分</span>
-        <strong>${formatNumber(row.points, row.points % 1 ? 1 : 0)}</strong>
+        <span>赛果</span>
+        <strong>${row.resultHits}/${row.predictions || 0}</strong>
       </div>
       <div class="lb-stat">
         <span>胜率</span>
-        <strong>${formatPercent(row.hits, row.picks)}</strong>
+        <strong>${formatPercent(row.resultHits, row.predictions)}</strong>
       </div>
       <div class="lb-stat">
         <span>比分</span>
-        <strong>${formatPercent(row.scoreHits, row.picks)}</strong>
+        <strong>${row.scoreHits}</strong>
       </div>
       <div class="lb-stat">
-        <span>均分</span>
-        <strong>${row.played ? formatNumber(row.avgPoints, 1) : '-'}</strong>
+        <span>比分率</span>
+        <strong>${formatPercent(row.scoreHits, row.predictions)}</strong>
       </div>
     </div>`;
   }).join('');
 
-  el.innerHTML = `<div class="lb-podium">${podium}</div><div class="lb-table">${table}</div>`;
+  return `<section class="leaderboard-block">
+    <div class="leaderboard-block-head">
+      <strong>${title}</strong>
+      <span>${subtitle}</span>
+    </div>
+    <div class="lb-podium">${podium}</div>
+    <div class="lb-table">${table}</div>
+  </section>`;
 }
 
 function renderMatches() {
@@ -314,50 +334,6 @@ function scoreFromDiscussionText(text) {
     .replace(/\s+/g, '');
 }
 
-function stakeFromDiscussionText(text) {
-  const value = String(text || '').replace(/[０-９]/g, char => String.fromCharCode(char.charCodeAt(0) - 0xFEE0));
-  const resultMatch = value.match(/(?:胜平负|方向|赛果|结果|主胜|平局|客胜)[^0-9]{0,8}(?:押|投|下注)\s*(\d+)/);
-  const scoreMatch = value.match(/比分[^0-9]{0,8}(?:押|投|下注)\s*(\d+)/);
-  const result = resultMatch ? Number(resultMatch[1]) : 0;
-  const score = scoreMatch ? Number(scoreMatch[1]) : 0;
-  return { result, score };
-}
-
-function stakeText(prediction) {
-  const result = Number(prediction.stake?.result) || 0;
-  const score = Number(prediction.stake?.score) || 0;
-  if (!result && !score) return '';
-  return `赛果${result} / 比分${score}`;
-}
-
-function safeStake(stake, limits = STAKE_LIMITS) {
-  let result = Math.min(limits.result, Math.max(0, Number(stake?.result) || 0));
-  let score = Math.min(limits.score, Math.max(0, Number(stake?.score) || 0));
-  const total = result + score;
-  if (!total || total <= limits.total) return { result, score, total };
-  const ratio = limits.total / total;
-  result = Math.min(limits.result, result * ratio);
-  score = Math.min(limits.score, score * ratio);
-  return { result, score, total: result + score };
-}
-
-function scorePrediction(match, prediction) {
-  if (!match.actual) return null;
-  const stake = safeStake(prediction.stake);
-  const resultOdds = match.odds?.result || {};
-  const scoreOdds = match.odds?.scores || {};
-  const resultHit = prediction.result === match.actual.result;
-  const scoreHit = prediction.score === match.actual.score;
-  const resultPoints = resultHit ? stake.result * (Number(resultOdds[prediction.result]) || 0) : 0;
-  const scorePoints = scoreHit ? stake.score * (Number(scoreOdds[prediction.score]) || 0) : 0;
-  return {
-    points: resultPoints + scorePoints,
-    staked: stake.total,
-    resultHit,
-    scoreHit
-  };
-}
-
 function discussionPredictionsForMatch(matchId) {
   const thread = discussionForMatch(matchId);
   const messages = finalMessagesByModel(thread?.messages || []);
@@ -366,7 +342,6 @@ function discussionPredictionsForMatch(matchId) {
       modelId: message.modelId,
       result: resultFromDiscussionText(message.text),
       score: scoreFromDiscussionText(message.text),
-      stake: stakeFromDiscussionText(message.text),
       source: 'discussion'
     }))
     .filter(prediction => prediction.result && prediction.score);
@@ -414,7 +389,7 @@ function matchLifecycle(match, now = new Date()) {
   if (Math.abs(diff) <= MATCH_SETTLEMENT_GRACE_MS) {
     return { key: 'live', tone: 'live', label: '比赛进行中', detail: '赛后同步真实赛果再结算' };
   }
-  return { key: 'needs-result', tone: 'needs-result', label: '待赛果结算', detail: '赛果同步后自动进入积分榜' };
+  return { key: 'needs-result', tone: 'needs-result', label: '待赛果结算', detail: '赛果同步后自动进入排行榜' };
 }
 
 function buildLeaderboardRows() {
@@ -428,16 +403,12 @@ function buildLeaderboardRows() {
         vendor: meta.vendor,
         color: meta.color,
         enabled: meta.enabled !== false,
-        points: 0,
-        hits: 0,
+        resultHits: 0,
         scoreHits: 0,
-        played: 0,
-        picks: 0,
-        grants: 0,
+        predictions: 0,
+        settledMatches: 0,
         predicted: 0,
-        pending: 0,
-        staked: 0,
-        returns: 0
+        pending: 0
       };
     }
     return rowsByModel[modelId];
@@ -449,56 +420,51 @@ function buildLeaderboardRows() {
     predictionsForMatch(match).forEach(prediction => {
       const row = ensure(prediction.modelId);
       row.predicted += 1;
-      const stake = safeStake(prediction.stake);
       if (!match.actual) {
         row.pending += 1;
-        row.staked += stake.total;
         return;
       }
-      const scored = scorePrediction(match, prediction);
-      if (!scored) return;
-      row.played += 1;
-      row.picks += 1;
-      row.grants += MATCH_GRANT_POINTS;
-      row.hits += scored.resultHit ? 1 : 0;
-      row.scoreHits += scored.scoreHit ? 1 : 0;
-      row.points += MATCH_GRANT_POINTS - scored.staked + scored.points;
-      row.returns += scored.points;
-      row.staked += scored.staked;
+      row.predictions += 1;
+      row.settledMatches += 1;
+      row.resultHits += prediction.result === match.actual.result ? 1 : 0;
+      row.scoreHits += prediction.score === match.actual.score ? 1 : 0;
     });
   });
 
-  const scoredRows = LEADERBOARD.rankings || LEADERBOARD.open || [];
-  scoredRows.forEach(source => {
+  const mergeRows = sourceRows => (sourceRows || []).forEach(source => {
     const row = ensure(source.modelId);
-    row.points = Number(source.points) || 0;
-    row.hits = Number(source.hits) || 0;
+    row.resultHits = Number(source.resultHits ?? source.hits) || 0;
     row.scoreHits = Number(source.scoreHits) || 0;
-    row.played = Number(source.played) || 0;
-    row.picks = Number(source.picks) || row.picks || row.played;
-    row.grants = Number(source.grants) || row.played * MATCH_GRANT_POINTS;
-    if (source.staked !== undefined) row.staked = Number(source.staked) || row.staked;
-    if (source.returns !== undefined) row.returns = Number(source.returns) || row.points;
-    if (source.profit !== undefined) row.profit = Number(source.profit) || 0;
-    if (source.bettingProfit !== undefined) row.bettingProfit = Number(source.bettingProfit) || 0;
+    row.predictions = Number(source.predictions ?? source.played) || 0;
+    row.settledMatches = Number(source.settledMatches) || row.settledMatches;
   });
+  mergeRows(LEADERBOARD.resultRankings || LEADERBOARD.rankings || LEADERBOARD.open);
+  mergeRows(LEADERBOARD.scoreRankings);
 
-  return Object.values(rowsByModel)
+  const rows = Object.values(rowsByModel)
     .filter(row => row.enabled)
     .map(row => ({
       ...row,
-      profit: row.profit ?? (row.points - row.grants),
-      bettingProfit: row.bettingProfit ?? (row.returns - row.staked),
-      avgPoints: row.played ? row.points / row.played : 0,
-      hitRate: row.picks ? row.hits / row.picks : null,
-      scoreHitRate: row.picks ? row.scoreHits / row.picks : null
-    }))
-    .sort((a, b) =>
-      b.points - a.points ||
-      b.played - a.played ||
-      b.predicted - a.predicted ||
+      resultHitRate: row.predictions ? row.resultHits / row.predictions : null,
+      scoreHitRate: row.predictions ? row.scoreHits / row.predictions : null
+    }));
+
+  return {
+    resultRows: rows.slice().sort((a, b) =>
+      (b.resultHitRate || 0) - (a.resultHitRate || 0) ||
+      b.resultHits - a.resultHits ||
+      b.predictions - a.predictions ||
+      b.scoreHits - a.scoreHits ||
       a.name.localeCompare(b.name, 'zh-CN')
-    );
+    ),
+    scoreRows: rows.slice().sort((a, b) =>
+      b.scoreHits - a.scoreHits ||
+      (b.scoreHitRate || 0) - (a.scoreHitRate || 0) ||
+      b.resultHits - a.resultHits ||
+      b.predictions - a.predictions ||
+      a.name.localeCompare(b.name, 'zh-CN')
+    )
+  };
 }
 
 function renderHeroMetrics() {
@@ -540,10 +506,7 @@ function renderMatchCard(m) {
   }, {});
   const hotScore = Object.entries(scoreCounts).sort((a, b) => b[1] - a[1])[0];
   const hotScoreText = hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无';
-  const totalStake = displayPredictions.reduce((acc, p) => acc + (Number(p.stake?.result) || 0) + (Number(p.stake?.score) || 0), 0);
-  const avgStakeText = displayPredictions.length && totalStake
-    ? `${Math.round(totalStake / displayPredictions.length)} / ${STAKE_LIMITS.total}`
-    : '待定';
+  const predictionCountText = displayPredictions.length ? `${displayPredictions.length} 位模型` : '待定';
   const kickoff = formatKickoff(m.kickoff);
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
   const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
@@ -560,7 +523,7 @@ function renderMatchCard(m) {
       }
       return `<div class="pred">
         <span class="pred-model"><span class="lb-dot" style="background:${meta.color}"></span>${meta.name}</span>
-        <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}<small>${stakeText(p)}</small></span>
+        <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}</span>
         <span>${mark || (p.source === 'discussion' ? '<span class="pred-source">圆桌</span>' : '')}</span>
       </div>`;
     }).join('') || '<div class="empty">暂无预测</div>';
@@ -609,8 +572,8 @@ function renderMatchCard(m) {
           <strong>${hotScoreText}</strong>
         </div>
         <div class="info-box">
-          <span class="info-label">平均下注</span>
-          <strong>${avgStakeText}</strong>
+          <span class="info-label">预测模型</span>
+          <strong>${predictionCountText}</strong>
         </div>
       </div>
       <div class="lean-bars" aria-hidden="true">

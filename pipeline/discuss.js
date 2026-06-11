@@ -111,8 +111,7 @@ function hasFinalPrediction(value) {
   const text = String(value || "");
   const hasResult = /(主胜|客胜|平局|打平|平|胜|负)/.test(text);
   const hasScore = /[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/.test(text);
-  const hasStake = /(胜平负|方向|赛果|结果|主胜|平局|客胜|比分).{0,8}(押|投|下注)[0-9０-９]+|[0-9０-９]+.{0,4}(分|积分).{0,8}(胜平负|方向|赛果|结果|主胜|平局|客胜|比分)/.test(text);
-  return hasResult && hasScore && hasStake;
+  return hasResult && hasScore;
 }
 
 function oddsLine(match) {
@@ -132,7 +131,7 @@ function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTur
     ? "必须接住前面至少一位 AI 的观点:可以同意、反驳、补充遗漏风险,但不要重复原话。"
     : "你负责开场,给出一个明确判断,为后面的 AI 留出可讨论的风险点。";
   const finalRule = isFinalTurn
-    ? "\n这是你本场最后一次发言,必须导向预测结论,并自己决定下注分配:每场先给累计账户新增 100 积分,下注从累计余额扣;胜平负最多 200,比分最多 100,总下注最多 300。必须包含胜平负方向、具体比分、胜平负下注和比分下注,格式可类似:「结论:主胜,比分2-1;胜平负押130,比分押60」。"
+    ? "\n这是你本场最后一次发言,必须导向预测结论。必须包含胜平负方向和具体比分,格式可类似:「结论:主胜,比分2-1」。"
     : "";
   return `你在「世界杯 AI 擂台」的赛前圆桌群聊里发言。
 
@@ -157,7 +156,7 @@ function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = f
   const lastLine = last ? `${last.modelName}: ${last.text}` : "暂无。";
   const style = STYLE_PROFILES[model.id] || "简短直接。";
   const finalRule = isFinalTurn
-    ? "这是你最后一句,必须给出胜平负方向、比分、胜平负下注和比分下注;每场先给账户新增100,下注从累计余额扣,胜平负最多200,比分最多100,总下注最多300,例如:结论主胜,比分2-1;胜平负押130,比分押60。"
+    ? "这是你最后一句,必须给出胜平负方向和比分,例如:结论主胜,比分2-1。"
     : "必须回应上一句或补充一个新风险。";
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
 你的风格:${style}

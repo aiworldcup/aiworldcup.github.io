@@ -1,16 +1,10 @@
 {
-  "updatedAt": "2026-06-11T20:53:48.698Z",
+  "updatedAt": "2026-06-11T21:13:15.744Z",
   "settlement": {
     "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-06-11T20:53:48.698Z",
+    "generatedAt": "2026-06-11T21:13:15.743Z",
     "graceMinutes": 150,
-    "matchGrantPoints": 100,
-    "stakeLimits": {
-      "maxResultStakePerMatch": 200,
-      "maxScoreStakePerMatch": 100,
-      "maxStakePerMatch": 300
-    },
-    "scoring": "每个模型每场已结算比赛先获得 100 基础积分,再从累计余额扣除下注,命中后按赔率返还;排行榜按累计余额 points 排序。",
+    "scoring": "赛果榜按胜平负命中率排序;比分榜按具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
       "in_progress": 1,
       "pre_match": 71,
@@ -19,6 +13,8 @@
     "pendingResult": [],
     "nextAction": "暂无待赛果结算队列"
   },
+  "resultRankings": [],
+  "scoreRankings": [],
   "rankings": [],
   "open": []
 }

@@ -22,7 +22,7 @@
 - [x] 写 `pipeline/odds.js`:赔率 API 适配层,读 `.env`;缺 key 时返回 sample 数据并打日志
 - [x] 写 `pipeline/lib/seal.js`:对预测内容算 sha256 哈希 + 打时间戳
 - [x] 写 `pipeline/predict.js`:遍历 enabled 模型,封盘写入 matches.json;缺 key 的模型跳过并提示
-- [x] 写 `pipeline/score.js`:读 matches.json 的 actual + odds,按 DATA-SCHEMA 结算,生成 leaderboard.json
+- [x] 写 `pipeline/score.js`:读 matches.json 的 actual,按 DATA-SCHEMA 统计赛果榜/比分榜,生成 leaderboard.json
 - [x] `package.json` 加 scripts:`predict` / `score` / `serve`
 
 ## 阶段 3:收尾

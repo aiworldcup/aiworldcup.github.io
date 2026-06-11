@@ -46,16 +46,13 @@ function hasFinalPrediction(value) {
   const text = String(value || "");
   const hasResult = /(主胜|客胜|平局|打平|平|胜|负)/.test(text);
   const hasScore = /[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/.test(text);
-  const hasStake = /(胜平负|方向|赛果|结果|主胜|平局|客胜|比分).{0,8}(押|投|下注)[0-9０-９]+|[0-9０-９]+.{0,4}(分|积分).{0,8}(胜平负|方向|赛果|结果|主胜|平局|客胜|比分)/.test(text);
-  return hasResult && hasScore && hasStake;
+  return hasResult && hasScore;
 }
 
 function buildFinalRetryPrompt(match, model) {
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
-只输出一句中文,必须包含胜平负方向、具体比分、胜平负下注、比分下注。
-每场先给累计账户新增100积分,下注从累计余额扣。
-胜平负最多200,比分最多100,总下注最多300。
-格式类似:结论主胜,比分2-1;胜平负押130,比分押60。`;
+只输出一句中文,必须包含胜平负方向和具体比分。
+格式类似:结论主胜,比分2-1。`;
 }
 
 async function appendDiscussionModels() {
@@ -93,7 +90,7 @@ async function appendDiscussionModels() {
         cleaned = cleanText(text);
       }
       if (isFinalTurn && !hasFinalPrediction(cleaned)) {
-        throw new Error(`${model.id} 最后发言缺少预测/比分/下注: ${cleaned}`);
+        throw new Error(`${model.id} 最后发言缺少预测/比分: ${cleaned}`);
       }
       if (!cleaned) throw new Error(`${model.id} 返回空文本`);
       thread.messages.push({

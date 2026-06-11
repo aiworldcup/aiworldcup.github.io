@@ -44,7 +44,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": { "result": 130, "score": 60 },
           "reasoning": "一句话理由(可选展示)",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:..."
@@ -58,7 +57,6 @@
 
 字段说明:
 - `track`: 当前统一使用 `"open"`;前端只展示这一版预测。
-- `stake`: 下注积分分配。`result` 是胜平负下注,单场 ≤ 200;`score` 是比分下注,单场 ≤ 100;总下注默认 ≤ 300。
 - `result`: `"home"` / `"draw"` / `"away"`。
 - `score`: 形如 `"2-1"`(主-客)。
 - `actual`: 赛后填,未开赛为 `null`。
@@ -72,37 +70,35 @@
     "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
     "generatedAt": "2026-06-12T00:00:00Z",
     "graceMinutes": 150,
-    "matchGrantPoints": 100,
-    "stakeLimits": {
-      "maxResultStakePerMatch": 200,
-      "maxScoreStakePerMatch": 100,
-      "maxStakePerMatch": 300
-    },
-    "scoring": "每个模型每场已结算比赛先获得 100 基础积分,再从累计余额扣除下注,命中后按赔率返还;排行榜按累计余额 points 排序。",
+    "scoring": "赛果榜按胜平负命中率排序;比分榜按具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": { "settled": 1, "pending_result": 1, "sealed": 2 },
     "pendingResult": [
       { "matchId": "fixture-1489369", "kickoff": "2026-06-11T19:00:00+00:00", "home": "墨西哥", "away": "南非" }
     ],
     "nextAction": "同步或录入真实赛果后运行 npm run score"
   },
-  "rankings": [
+  "resultRankings": [
     {
       "rank": 1,
       "modelId": "claude",
-      "points": 1580,
-      "grants": 800,
-      "hits": 6,
+      "predictions": 8,
+      "resultHits": 6,
       "scoreHits": 1,
       "played": 8,
-      "picks": 8,
-      "hitRate": 0.75,
-      "scoreHitRate": 0.125,
-      "avgPoints": 197.5,
-      "staked": 800,
-      "returns": 1580,
-      "profit": 780,
-      "bettingProfit": 780,
-      "roi": 0.975
+      "resultHitRate": 0.75,
+      "scoreHitRate": 0.125
+    }
+  ],
+  "scoreRankings": [
+    {
+      "rank": 1,
+      "modelId": "claude",
+      "predictions": 8,
+      "resultHits": 6,
+      "scoreHits": 1,
+      "played": 8,
+      "resultHitRate": 0.75,
+      "scoreHitRate": 0.125
     }
   ]
 }
@@ -110,16 +106,10 @@
 
 ## 结算逻辑 (score.js)
 
-对每场每模型:
-- 每场已结算比赛先给每个启用模型账户新增 100 基础积分。
-- 下注从模型的累计账户余额里扣除,不能透支;余额不足时按下注比例缩放。
-- 胜平负下注最多 200,比分下注最多 100,总下注默认最多 300。
-- 命中胜平负:`+ 实际胜平负下注 × odds.result[选项]`,否则该部分归零。
-- 命中比分:`+ 实际比分下注 × odds.scores[比分]`,否则归零。
-- `points` = 模型累计账户余额,排行榜按它排序。
-- `profit` = `points - grants`;`bettingProfit` = `returns - staked`。
-- `hits` = 胜平负命中场次;`scoreHits` = 比分命中场次;`played` = 已发基础积分的已结算场次;`picks` = 有预测的已结算场次。
-- 下注上限可用 `.env` 调整:`MATCH_GRANT_POINTS`、`MAX_RESULT_STAKE_PER_MATCH`、`MAX_SCORE_STAKE_PER_MATCH`、`MAX_TOTAL_STAKE_PER_MATCH`。
+- 赛果榜:按 `resultHitRate` 排序,再按 `resultHits`、`predictions`、`scoreHits` 破同分。
+- 比分榜:按 `scoreHits` 排序,再按 `scoreHitRate`、`resultHits`、`predictions` 破同分。
+- `predictions` = 有预测且已结算的场次;`played` 为兼容旧字段,等同于 `predictions`。
+- 不再使用下注、积分、赔率结算。赔率仍可作为赛前信息展示。
 - 结算触发:只要 `match.actual` 存在,`score.js` 就结算;开赛后 `SETTLEMENT_GRACE_MINUTES`(默认 150)仍无 `actual`,该场进入 `settlement.pendingResult` 队列,页面展示“待赛果结算”。
 - 推荐赛后入口:`npm run settle`。它会先同步真实赛程/赛果并保留已有预测/封盘信息,再生成 `leaderboard.json`。
 
@@ -170,5 +160,5 @@
 - `matchId`: 对应 `matches.json` 的比赛 ID。
 - `sealedAt`: 这场圆桌讨论的封盘时间。
 - `messages`: 每条消息来自对应模型 API;默认每个模型生成一条气泡,内容要求两句短评。
-- 每个模型最后一次发言必须包含预测方向、具体比分、胜平负下注和比分下注;前端会从最后发言提取比赛卡里的模型倾向、热门比分和下注展示。
+- 每个模型最后一次发言必须包含预测方向和具体比分;前端会从最后发言提取比赛卡里的模型倾向和热门比分。
 - 没有模型 key 时保持空数组,前端展示“讨论待生成”,不使用模拟发言。

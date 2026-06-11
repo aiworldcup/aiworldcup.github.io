@@ -65,34 +65,14 @@ function providerBase(provider) {
   return firstEnv([provider.baseEnv, ...(provider.baseEnvFallbacks || [])]) || provider.base || "";
 }
 
-function normalizeStake(stake, limits) {
-  const maxResult = Number(limits.maxResultStakePerMatch) || 200;
-  const maxScore = Number(limits.maxScoreStakePerMatch) || 100;
-  const maxTotal = Number(limits.maxStakePerMatch) || maxResult + maxScore;
-  let resultStake = Math.min(maxResult, Math.max(0, Number(stake && stake.result) || 0));
-  let scoreStake = Math.min(maxScore, Math.max(0, Number(stake && stake.score) || 0));
-  const total = resultStake + scoreStake;
-  if (total <= 0) {
-    scoreStake = Math.min(maxScore, maxTotal);
-    resultStake = Math.min(maxResult, Math.max(0, maxTotal - scoreStake));
-  } else if (total > maxTotal) {
-    const ratio = maxTotal / total;
-    resultStake = Math.min(maxResult, Math.floor(resultStake * ratio));
-    scoreStake = Math.min(maxScore, Math.max(0, maxTotal - resultStake));
-  }
-  return { result: resultStake, score: scoreStake };
-}
-
-function normalizePrediction(modelId, track, payload, limits) {
+function normalizePrediction(modelId, track, payload) {
   const result = RESULT_VALUES.includes(payload.result) ? payload.result : "draw";
   const score = /^\d+\-\d+$/.test(String(payload.score || "")) ? String(payload.score) : "1-1";
-  const normalizedStake = normalizeStake(payload.stake || {}, limits);
   return {
     modelId,
     track,
     result,
     score,
-    stake: normalizedStake,
     reasoning: String(payload.reasoning || "").slice(0, 120),
   };
 }
@@ -221,17 +201,13 @@ async function callModel(modelId, track, match, config) {
   const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
-  const prompt = buildPrompt(track, match, {
-    maxResultStakePerMatch: config.maxResultStakePerMatch,
-    maxScoreStakePerMatch: config.maxScoreStakePerMatch,
-    maxStakePerMatch: config.maxStakePerMatch,
-  });
+  const prompt = buildPrompt(track, match);
   let text;
   if (modelId.startsWith("claude-") || provider.protocol === "anthropic") text = await callAnthropic(provider, prompt, apiKey);
   else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
   else if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
   else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
-  return normalizePrediction(modelId, track, extractJson(text), config);
+  return normalizePrediction(modelId, track, extractJson(text));
 }
 
 async function callModelText(modelId, prompt) {
@@ -295,7 +271,6 @@ module.exports = {
   PROVIDERS,
   predictAll,
   normalizePrediction,
-  normalizeStake,
   extractJson,
   callModelText,
 };

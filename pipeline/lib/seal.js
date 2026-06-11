@@ -19,7 +19,6 @@ function hashPrediction(prediction) {
     track: prediction.track,
     result: prediction.result,
     score: prediction.score,
-    stake: prediction.stake,
     reasoning: prediction.reasoning || "",
     timestamp: prediction.timestamp,
   };

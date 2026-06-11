@@ -6,13 +6,13 @@
 
 - 保留并校验已有移动端静态前端:`public/index.html`、`public/styles.css`、`public/app.js`。
 - 补齐 `public/data/sample-matches.json`:3 场示例比赛、10 个模型、统一预测版本,其中 2 场带 `actual` 用于结算验证。
-- 使用 `pipeline/score.js` 重新生成 `public/data/leaderboard.json`,rank 与 points 顺序一致。
+- 使用 `pipeline/score.js` 重新生成 `public/data/leaderboard.json`,输出赛果榜与比分榜。
 - 新增数据管线:
   - `pipeline/prompts.js`:统一 prompt,强制 JSON 输出。
   - `pipeline/odds.js`:复用 football 项目的 API-SPORTS 约定,通过 `ODDS_API_KEY`/`APISPORTS_API_KEY` 调 `/fixtures` 和 `/odds`;缺 key 或缺日期时回退 sample。
   - `pipeline/lib/seal.js`:稳定 JSON 哈希与封盘时间戳。
   - `pipeline/predict.js`:遍历 enabled 模型预测,缺 key 自动跳过;没有任何模型 key 时不覆盖 `matches.json`。
-  - `pipeline/score.js`:按真实赔率结算胜平负和比分下注,生成排行榜。
+  - `pipeline/score.js`:按真实赛果统计赛果命中与比分命中,生成排行榜。
 - 新增 `package.json` scripts:`predict` / `score` / `score:sample` / `serve`。
 - 前端新增北京时间日期切换、空日期预告态和冠军预测模块;真实数据同步为 104 个比赛席位(API 已确定赛程 + 淘汰赛待定占位),不再展示模拟预测。
 - 模型清单按最新要求调整为 14 个指定模型,并在页面数据中保留公司字段。
@@ -24,11 +24,10 @@
 - 重新排布移动端前端:
   - 首屏改为赛事控制台风格,比赛仍为主体。
   - 比赛卡新增结算链路状态,清楚展示预测、封盘、赛果、结算四步。
-  - 排行榜升级为积分面板,展示积分、胜率、比分命中率、均分和待结算预测。
+  - 排行榜升级为双榜面板,展示赛果榜与比分榜。
 - 补强结算逻辑:
   - `score.js` 输出 `settlement` 摘要;`actual` 存在即结算,开赛后默认 150 分钟仍无赛果则进入 `pending_result`。
-  - 结算改为累计账户余额:每场已结算比赛先给每个启用模型发 100 基础积分,下注从累计余额扣,命中按赔率返还,排行榜按累计余额排序。
-  - 下注上限拆分为胜平负最多 200、比分最多 100、总下注默认 300,预测 prompt、归一化和结算全部按此口径裁剪。
+  - 全局取消下注、积分和赔率结算,只保留赛果命中榜与比分命中榜,降低传播理解成本。
   - 新增 `npm run settle`,先同步真实赛程/赛果并保留已有预测与封盘信息,再生成排行榜。
   - `sync-real-data.js` 现在合并已有比赛数据,不会把封盘预测冲掉。
 

@@ -40,10 +40,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 60,
-            "score": 40
-          },
           "reasoning": "赔率偏主且比分赔率合理",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo02"
@@ -53,10 +49,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 50,
-            "score": 50
-          },
           "reasoning": "主胜和 2-1 同向",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo04"
@@ -66,10 +58,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 55,
-            "score": 45
-          },
           "reasoning": "赔率修正到主队",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo06"
@@ -79,10 +67,6 @@
           "track": "open",
           "result": "home",
           "score": "1-0",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "跟随主胜方向",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo08"
@@ -92,10 +76,6 @@
           "track": "open",
           "result": "home",
           "score": "1-0",
-          "stake": {
-            "result": 65,
-            "score": 35
-          },
           "reasoning": "低比分主胜更稳",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo10"
@@ -105,10 +85,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 75,
-            "score": 25
-          },
           "reasoning": "盘口支持主队",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo12"
@@ -118,10 +94,6 @@
           "track": "open",
           "result": "draw",
           "score": "1-1",
-          "stake": {
-            "result": 50,
-            "score": 50
-          },
           "reasoning": "平局赔率有吸引力",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo14"
@@ -131,10 +103,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 50,
-            "score": 50
-          },
           "reasoning": "主胜与比分收益兼顾",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo16"
@@ -144,10 +112,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 60,
-            "score": 40
-          },
           "reasoning": "赔率不支持冷门",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo18"
@@ -157,10 +121,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "主胜为主比分加仓",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:demo20"
@@ -206,10 +166,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 60,
-            "score": 40
-          },
           "reasoning": "赔率偏主队",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo22"
@@ -219,10 +175,6 @@
           "track": "open",
           "result": "draw",
           "score": "1-1",
-          "stake": {
-            "result": 45,
-            "score": 55
-          },
           "reasoning": "平局赔率补偿充分",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo24"
@@ -232,10 +184,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "赔率压低主胜",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo26"
@@ -245,10 +193,6 @@
           "track": "open",
           "result": "draw",
           "score": "1-1",
-          "stake": {
-            "result": 40,
-            "score": 60
-          },
           "reasoning": "比分赔率更有价值",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo28"
@@ -258,10 +202,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "主胜赔率最稳",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo30"
@@ -271,10 +211,6 @@
           "track": "open",
           "result": "draw",
           "score": "1-1",
-          "stake": {
-            "result": 50,
-            "score": 50
-          },
           "reasoning": "反常识押平",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo32"
@@ -284,10 +220,6 @@
           "track": "open",
           "result": "home",
           "score": "1-0",
-          "stake": {
-            "result": 80,
-            "score": 20
-          },
           "reasoning": "盘口稳主胜",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo34"
@@ -297,10 +229,6 @@
           "track": "open",
           "result": "draw",
           "score": "1-1",
-          "stake": {
-            "result": 45,
-            "score": 55
-          },
           "reasoning": "平局回报更好",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo36"
@@ -310,10 +238,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 75,
-            "score": 25
-          },
           "reasoning": "赔率强支持",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo38"
@@ -323,10 +247,6 @@
           "track": "open",
           "result": "draw",
           "score": "1-1",
-          "stake": {
-            "result": 55,
-            "score": 45
-          },
           "reasoning": "分散押平和比分",
           "timestamp": "2026-06-12T18:00:00Z",
           "hash": "sha256:demo40"
@@ -369,10 +289,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "赔率高度支持主胜",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo42"
@@ -382,10 +298,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 80,
-            "score": 20
-          },
           "reasoning": "主胜赔率最可靠",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo44"
@@ -395,10 +307,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 65,
-            "score": 35
-          },
           "reasoning": "比分回报更高",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo46"
@@ -408,10 +316,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "主胜确定性高",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo48"
@@ -421,10 +325,6 @@
           "track": "open",
           "result": "home",
           "score": "3-1",
-          "stake": {
-            "result": 65,
-            "score": 35
-          },
           "reasoning": "追求比分回报",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo50"
@@ -434,10 +334,6 @@
           "track": "open",
           "result": "home",
           "score": "1-0",
-          "stake": {
-            "result": 80,
-            "score": 20
-          },
           "reasoning": "赔率不支持冷门",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo52"
@@ -447,10 +343,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 75,
-            "score": 25
-          },
           "reasoning": "主胜和零封方向一致",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo54"
@@ -460,10 +352,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 70,
-            "score": 30
-          },
           "reasoning": "赔率支持 2-0",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo56"
@@ -473,10 +361,6 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": {
-            "result": 65,
-            "score": 35
-          },
           "reasoning": "保留客队进球",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo58"
@@ -486,10 +370,6 @@
           "track": "open",
           "result": "home",
           "score": "2-0",
-          "stake": {
-            "result": 75,
-            "score": 25
-          },
           "reasoning": "强队方向明确",
           "timestamp": "2026-06-13T18:00:00Z",
           "hash": "sha256:demo60"

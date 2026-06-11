@@ -2,7 +2,7 @@
   "name": "worldcup-ai-arena",
   "version": "0.1.0",
   "private": true,
-  "description": "Static World Cup AI prediction arena with sealed model picks and odds-weighted scoring.",
+  "description": "Static World Cup AI prediction arena with sealed model picks and result/score accuracy leaderboards.",
   "type": "commonjs",
   "scripts": {
     "predict": "node pipeline/predict.js",
