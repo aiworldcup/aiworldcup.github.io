@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "predict": "node pipeline/predict.js",
+    "sync:real": "node pipeline/sync-real-data.js",
     "score": "node pipeline/score.js",
     "score:sample": "node pipeline/score.js --input public/data/sample-matches.json --output public/data/leaderboard.json",
     "export:mobile": "node pipeline/export-standalone.js worldcup-ai-arena-mobile.html",

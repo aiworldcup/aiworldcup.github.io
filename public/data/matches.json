@@ -1,0 +1,3172 @@
+{
+  "source": {
+    "provider": "API-SPORTS",
+    "league": "1",
+    "season": "2026",
+    "apiFixtures": 72,
+    "totalMatches": 104,
+    "placeholders": 32,
+    "syncedAt": "2026-06-11T05:09:25.515Z"
+  },
+  "matches": [
+    {
+      "id": "fixture-1489369",
+      "sourceFixtureId": 1489369,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-11T19:00:00+00:00",
+      "home": {
+        "team": "Mexico",
+        "flag": "MX"
+      },
+      "away": {
+        "team": "South Africa",
+        "flag": "ZA"
+      },
+      "odds": {
+        "result": {
+          "home": 1.42,
+          "draw": 4.2,
+          "away": 8.4
+        },
+        "scores": {
+          "1-0": 3.3,
+          "2-0": 5.5,
+          "2-1": 13,
+          "3-0": 12,
+          "3-1": 29,
+          "4-0": 34,
+          "4-1": 71,
+          "0-0": 3.25,
+          "1-1": 7.5,
+          "2-2": 56,
+          "0-1": 8,
+          "0-2": 41,
+          "1-2": 34,
+          "3-2": 91,
+          "0-3": 91,
+          "1-3": 101,
+          "5-0": 91
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:16.418Z"
+    },
+    {
+      "id": "fixture-1538999",
+      "sourceFixtureId": 1538999,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-12T02:00:00+00:00",
+      "home": {
+        "team": "South Korea",
+        "flag": "KR"
+      },
+      "away": {
+        "team": "Czech Republic",
+        "flag": "CZ"
+      },
+      "odds": {
+        "result": {
+          "home": 2.6,
+          "draw": 3.05,
+          "away": 2.78
+        },
+        "scores": {
+          "1-0": 4.33,
+          "2-0": 11,
+          "2-1": 15,
+          "3-0": 34,
+          "3-1": 41,
+          "0-0": 3.3,
+          "1-1": 6,
+          "2-2": 34,
+          "0-1": 4.5,
+          "0-2": 12,
+          "0-3": 34,
+          "1-2": 15,
+          "1-3": 41,
+          "3-2": 81,
+          "4-0": 101,
+          "2-3": 81
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:17.115Z"
+    },
+    {
+      "id": "fixture-1539000",
+      "sourceFixtureId": 1539000,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-12T19:00:00+00:00",
+      "home": {
+        "team": "Canada",
+        "flag": "CA"
+      },
+      "away": {
+        "team": "Bosnia & Herzegovina",
+        "flag": "BA"
+      },
+      "odds": {
+        "result": {
+          "home": 1.83,
+          "draw": 3.45,
+          "away": 4.3
+        },
+        "scores": {
+          "1-0": 3.6,
+          "2-0": 7.5,
+          "2-1": 13,
+          "3-0": 19,
+          "3-1": 34,
+          "4-0": 61,
+          "0-0": 3.2,
+          "1-1": 6.5,
+          "2-2": 41,
+          "0-1": 5.75,
+          "0-2": 19,
+          "0-3": 67,
+          "1-2": 21,
+          "1-3": 71,
+          "3-2": 81,
+          "4-1": 91
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:17.778Z"
+    },
+    {
+      "id": "fixture-1489370",
+      "sourceFixtureId": 1489370,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-13T01:00:00+00:00",
+      "home": {
+        "team": "USA",
+        "flag": "US"
+      },
+      "away": {
+        "team": "Paraguay",
+        "flag": "PY"
+      },
+      "odds": {
+        "result": {
+          "home": 1.91,
+          "draw": 3.3,
+          "away": 4.2
+        },
+        "scores": {
+          "1-0": 3.8,
+          "2-0": 8,
+          "2-1": 13,
+          "3-0": 21,
+          "3-1": 34,
+          "4-0": 67,
+          "0-0": 3.35,
+          "1-1": 6.25,
+          "2-2": 34,
+          "0-1": 5.5,
+          "0-2": 17,
+          "0-3": 56,
+          "1-2": 19,
+          "1-3": 61,
+          "3-2": 76,
+          "4-1": 91,
+          "2-3": 101
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:18.430Z"
+    },
+    {
+      "id": "fixture-1489373",
+      "sourceFixtureId": 1489373,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-13T19:00:00+00:00",
+      "home": {
+        "team": "Qatar",
+        "flag": "QA"
+      },
+      "away": {
+        "team": "Switzerland",
+        "flag": "CH"
+      },
+      "odds": {
+        "result": {
+          "home": 16,
+          "draw": 5.75,
+          "away": 1.21
+        },
+        "scores": {
+          "1-0": 11,
+          "2-0": 46,
+          "2-1": 34,
+          "0-0": 4.8,
+          "1-1": 7.5,
+          "2-2": 41,
+          "0-1": 3.7,
+          "0-2": 4.5,
+          "0-3": 7.5,
+          "1-2": 10,
+          "1-3": 17,
+          "2-3": 61,
+          "0-4": 19,
+          "1-4": 41,
+          "0-5": 51,
+          "1-5": 81
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:18.865Z"
+    },
+    {
+      "id": "fixture-1489371",
+      "sourceFixtureId": 1489371,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-13T22:00:00+00:00",
+      "home": {
+        "team": "Brazil",
+        "flag": "BR"
+      },
+      "away": {
+        "team": "Morocco",
+        "flag": "MA"
+      },
+      "odds": {
+        "result": {
+          "home": 1.66,
+          "draw": 3.7,
+          "away": 5.3
+        },
+        "scores": {
+          "1-0": 3.45,
+          "2-0": 6.5,
+          "2-1": 13,
+          "3-0": 15,
+          "3-1": 29,
+          "3-2": 76,
+          "4-0": 51,
+          "4-1": 76,
+          "0-0": 3.35,
+          "1-1": 6.5,
+          "2-2": 41,
+          "0-1": 6.25,
+          "0-2": 23,
+          "0-3": 76,
+          "1-2": 23,
+          "1-3": 76,
+          "2-3": 101
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:19.565Z"
+    },
+    {
+      "id": "fixture-1489372",
+      "sourceFixtureId": 1489372,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-14T01:00:00+00:00",
+      "home": {
+        "team": "Haiti",
+        "flag": "HT"
+      },
+      "away": {
+        "team": "Scotland",
+        "flag": "GB"
+      },
+      "odds": {
+        "result": {
+          "home": 6.2,
+          "draw": 4.1,
+          "away": 1.53
+        },
+        "scores": {
+          "1-0": 7.5,
+          "2-0": 26,
+          "2-1": 23,
+          "3-0": 91,
+          "3-1": 81,
+          "0-0": 3.8,
+          "1-1": 6.5,
+          "2-2": 41,
+          "0-1": 3.7,
+          "0-2": 6,
+          "0-3": 13,
+          "1-2": 11,
+          "1-3": 23,
+          "2-3": 67,
+          "0-4": 34,
+          "1-4": 61,
+          "3-2": 101,
+          "0-5": 101
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:20.300Z"
+    },
+    {
+      "id": "fixture-1539001",
+      "sourceFixtureId": 1539001,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-14T04:00:00+00:00",
+      "home": {
+        "team": "Australia",
+        "flag": "AU"
+      },
+      "away": {
+        "team": "Türkiye",
+        "flag": "TR"
+      },
+      "odds": {
+        "result": {
+          "home": 4.75,
+          "draw": 3.65,
+          "away": 1.7
+        },
+        "scores": {
+          "1-0": 6.25,
+          "2-0": 21,
+          "2-1": 21,
+          "3-0": 67,
+          "3-1": 67,
+          "0-0": 3.55,
+          "1-1": 6.25,
+          "2-2": 34,
+          "0-1": 3.6,
+          "0-2": 7,
+          "0-3": 17,
+          "1-2": 12,
+          "1-3": 26,
+          "0-4": 51,
+          "3-2": 101,
+          "2-3": 71,
+          "1-4": 71
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:20.947Z"
+    },
+    {
+      "id": "fixture-1489374",
+      "sourceFixtureId": 1489374,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-14T17:00:00+00:00",
+      "home": {
+        "team": "Germany",
+        "flag": "DE"
+      },
+      "away": {
+        "team": "Curaçao",
+        "flag": "CW"
+      },
+      "odds": {
+        "result": {
+          "home": 1.03,
+          "draw": 16.5,
+          "away": 29
+        },
+        "scores": {
+          "1-0": 3.95,
+          "2-0": 3.5,
+          "2-1": 12,
+          "3-0": 4.2,
+          "3-1": 15,
+          "3-2": 81,
+          "4-0": 7,
+          "4-1": 26,
+          "0-0": 7.5,
+          "1-1": 13,
+          "2-2": 67,
+          "0-1": 26,
+          "0-2": 91,
+          "1-2": 71,
+          "5-0": 13,
+          "5-1": 46,
+          "6-0": 29,
+          "4-2": 101,
+          "6-1": 81,
+          "7-0": 67
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:21.375Z"
+    },
+    {
+      "id": "fixture-1489376",
+      "sourceFixtureId": 1489376,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-14T20:00:00+00:00",
+      "home": {
+        "team": "Netherlands",
+        "flag": "NL"
+      },
+      "away": {
+        "team": "Japan",
+        "flag": "JP"
+      },
+      "odds": {
+        "result": {
+          "home": 1.97,
+          "draw": 3.5,
+          "away": 3.6
+        },
+        "scores": {
+          "1-0": 4,
+          "2-0": 8,
+          "2-1": 12,
+          "3-0": 19,
+          "3-1": 29,
+          "3-2": 61,
+          "4-0": 61,
+          "0-0": 3.95,
+          "1-1": 6,
+          "2-2": 29,
+          "0-1": 5.5,
+          "0-2": 15,
+          "0-3": 46,
+          "1-2": 15,
+          "1-3": 46,
+          "4-1": 76,
+          "2-3": 76
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:22.020Z"
+    },
+    {
+      "id": "fixture-1489375",
+      "sourceFixtureId": 1489375,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-14T23:00:00+00:00",
+      "home": {
+        "team": "Ivory Coast",
+        "flag": "CI"
+      },
+      "away": {
+        "team": "Ecuador",
+        "flag": "EC"
+      },
+      "odds": {
+        "result": {
+          "home": 3.55,
+          "draw": 2.76,
+          "away": 2.35
+        },
+        "scores": {
+          "1-0": 4.75,
+          "2-0": 17,
+          "2-1": 23,
+          "3-0": 56,
+          "3-1": 67,
+          "0-0": 2.7,
+          "1-1": 6.5,
+          "2-2": 51,
+          "0-1": 3.8,
+          "0-2": 10,
+          "0-3": 31,
+          "1-2": 17,
+          "1-3": 46,
+          "2-3": 91,
+          "0-4": 91
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:22.680Z"
+    },
+    {
+      "id": "fixture-1539002",
+      "sourceFixtureId": 1539002,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-15T02:00:00+00:00",
+      "home": {
+        "team": "Sweden",
+        "flag": "SE"
+      },
+      "away": {
+        "team": "Tunisia",
+        "flag": "TN"
+      },
+      "odds": {
+        "result": {
+          "home": 1.82,
+          "draw": 3.5,
+          "away": 4.3
+        },
+        "scores": {
+          "1-0": 3.6,
+          "2-0": 8,
+          "2-1": 13,
+          "3-0": 21,
+          "3-1": 34,
+          "4-0": 67,
+          "0-0": 3.2,
+          "1-1": 6.5,
+          "2-2": 46,
+          "0-1": 5.5,
+          "0-2": 19,
+          "0-3": 67,
+          "1-2": 23,
+          "1-3": 71,
+          "3-2": 91,
+          "4-1": 91
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:23.390Z"
+    },
+    {
+      "id": "fixture-1489380",
+      "sourceFixtureId": 1489380,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-15T16:00:00+00:00",
+      "home": {
+        "team": "Spain",
+        "flag": "ES"
+      },
+      "away": {
+        "team": "Cape Verde Islands",
+        "flag": "CV"
+      },
+      "odds": {
+        "result": {
+          "home": 1.09,
+          "draw": 8.9,
+          "away": 24
+        },
+        "scores": {
+          "1-0": 3.5,
+          "2-0": 3.8,
+          "2-1": 11,
+          "3-0": 5.5,
+          "3-1": 15,
+          "3-2": 67,
+          "4-0": 10,
+          "4-1": 29,
+          "0-0": 6.2,
+          "1-1": 10,
+          "2-2": 51,
+          "0-1": 15,
+          "0-2": 67,
+          "1-2": 46,
+          "5-0": 26,
+          "5-1": 61,
+          "6-0": 61,
+          "4-2": 101
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:23.811Z"
+    },
+    {
+      "id": "fixture-1489377",
+      "sourceFixtureId": 1489377,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-15T19:00:00+00:00",
+      "home": {
+        "team": "Belgium",
+        "flag": "BE"
+      },
+      "away": {
+        "team": "Egypt",
+        "flag": "EG"
+      },
+      "odds": {
+        "result": {
+          "home": 1.65,
+          "draw": 3.7,
+          "away": 5.2
+        },
+        "scores": {
+          "1-0": 3.55,
+          "2-0": 6.5,
+          "2-1": 12,
+          "3-0": 15,
+          "3-1": 29,
+          "3-2": 71,
+          "4-0": 51,
+          "4-1": 71,
+          "0-0": 3.55,
+          "1-1": 6.5,
+          "2-2": 41,
+          "0-1": 6.5,
+          "0-2": 21,
+          "0-3": 71,
+          "1-2": 21,
+          "1-3": 71,
+          "2-3": 101
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:24.454Z"
+    },
+    {
+      "id": "fixture-1489379",
+      "sourceFixtureId": 1489379,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-15T22:00:00+00:00",
+      "home": {
+        "team": "Saudi Arabia",
+        "flag": "SA"
+      },
+      "away": {
+        "team": "Uruguay",
+        "flag": "UY"
+      },
+      "odds": {
+        "result": {
+          "home": 8.4,
+          "draw": 4.1,
+          "away": 1.42
+        },
+        "scores": {
+          "1-0": 8,
+          "2-0": 34,
+          "2-1": 29,
+          "0-0": 3.7,
+          "1-1": 7,
+          "2-2": 46,
+          "0-1": 3.55,
+          "0-2": 5.5,
+          "0-3": 12,
+          "1-2": 11,
+          "1-3": 23,
+          "0-4": 34,
+          "1-4": 61,
+          "3-0": 101,
+          "3-1": 101,
+          "2-3": 71,
+          "0-5": 91
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.096Z"
+    },
+    {
+      "id": "fixture-1489378",
+      "sourceFixtureId": 1489378,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-16T01:00:00+00:00",
+      "home": {
+        "team": "Iran",
+        "flag": "IR"
+      },
+      "away": {
+        "team": "New Zealand",
+        "flag": "NZ"
+      },
+      "odds": {
+        "result": {
+          "home": 1.88,
+          "draw": 3.3,
+          "away": 4.2
+        },
+        "scores": {
+          "1-0": 3.75,
+          "2-0": 8,
+          "2-1": 13,
+          "3-0": 21,
+          "3-1": 34,
+          "4-0": 67,
+          "0-0": 3.35,
+          "1-1": 6.25,
+          "2-2": 41,
+          "0-1": 5.5,
+          "0-2": 17,
+          "0-3": 56,
+          "1-2": 19,
+          "1-3": 61,
+          "3-2": 76,
+          "4-1": 91,
+          "2-3": 101
+        }
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489383",
+      "sourceFixtureId": 1489383,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-16T19:00:00+00:00",
+      "home": {
+        "team": "France",
+        "flag": "FR"
+      },
+      "away": {
+        "team": "Senegal",
+        "flag": "SN"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539016",
+      "sourceFixtureId": 1539016,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-16T22:00:00+00:00",
+      "home": {
+        "team": "Iraq",
+        "flag": "IQ"
+      },
+      "away": {
+        "team": "Norway",
+        "flag": "NO"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489381",
+      "sourceFixtureId": 1489381,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-17T01:00:00+00:00",
+      "home": {
+        "team": "Argentina",
+        "flag": "AR"
+      },
+      "away": {
+        "team": "Algeria",
+        "flag": "DZ"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489382",
+      "sourceFixtureId": 1489382,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-17T04:00:00+00:00",
+      "home": {
+        "team": "Austria",
+        "flag": "AT"
+      },
+      "away": {
+        "team": "Jordan",
+        "flag": "JO"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539003",
+      "sourceFixtureId": 1539003,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-17T17:00:00+00:00",
+      "home": {
+        "team": "Portugal",
+        "flag": "PT"
+      },
+      "away": {
+        "team": "Congo DR",
+        "flag": "CD"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489384",
+      "sourceFixtureId": 1489384,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-17T20:00:00+00:00",
+      "home": {
+        "team": "England",
+        "flag": "GB"
+      },
+      "away": {
+        "team": "Croatia",
+        "flag": "HR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489385",
+      "sourceFixtureId": 1489385,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-17T23:00:00+00:00",
+      "home": {
+        "team": "Ghana",
+        "flag": "GH"
+      },
+      "away": {
+        "team": "Panama",
+        "flag": "PA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489386",
+      "sourceFixtureId": 1489386,
+      "stage": "World Cup · Group Stage - 1",
+      "kickoff": "2026-06-18T02:00:00+00:00",
+      "home": {
+        "team": "Uzbekistan",
+        "flag": "UZ"
+      },
+      "away": {
+        "team": "Colombia",
+        "flag": "CO"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539004",
+      "sourceFixtureId": 1539004,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-18T16:00:00+00:00",
+      "home": {
+        "team": "Czech Republic",
+        "flag": "CZ"
+      },
+      "away": {
+        "team": "South Africa",
+        "flag": "ZA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539005",
+      "sourceFixtureId": 1539005,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-18T19:00:00+00:00",
+      "home": {
+        "team": "Switzerland",
+        "flag": "CH"
+      },
+      "away": {
+        "team": "Bosnia & Herzegovina",
+        "flag": "BA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489387",
+      "sourceFixtureId": 1489387,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-18T22:00:00+00:00",
+      "home": {
+        "team": "Canada",
+        "flag": "CA"
+      },
+      "away": {
+        "team": "Qatar",
+        "flag": "QA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489388",
+      "sourceFixtureId": 1489388,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-19T01:00:00+00:00",
+      "home": {
+        "team": "Mexico",
+        "flag": "MX"
+      },
+      "away": {
+        "team": "South Korea",
+        "flag": "KR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489391",
+      "sourceFixtureId": 1489391,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-19T19:00:00+00:00",
+      "home": {
+        "team": "USA",
+        "flag": "US"
+      },
+      "away": {
+        "team": "Australia",
+        "flag": "AU"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489390",
+      "sourceFixtureId": 1489390,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-19T22:00:00+00:00",
+      "home": {
+        "team": "Scotland",
+        "flag": "GB"
+      },
+      "away": {
+        "team": "Morocco",
+        "flag": "MA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489389",
+      "sourceFixtureId": 1489389,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-20T00:30:00+00:00",
+      "home": {
+        "team": "Brazil",
+        "flag": "BR"
+      },
+      "away": {
+        "team": "Haiti",
+        "flag": "HT"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539006",
+      "sourceFixtureId": 1539006,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-20T03:00:00+00:00",
+      "home": {
+        "team": "Türkiye",
+        "flag": "TR"
+      },
+      "away": {
+        "team": "Paraguay",
+        "flag": "PY"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539007",
+      "sourceFixtureId": 1539007,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-20T17:00:00+00:00",
+      "home": {
+        "team": "Netherlands",
+        "flag": "NL"
+      },
+      "away": {
+        "team": "Sweden",
+        "flag": "SE"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489393",
+      "sourceFixtureId": 1489393,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-20T20:00:00+00:00",
+      "home": {
+        "team": "Germany",
+        "flag": "DE"
+      },
+      "away": {
+        "team": "Ivory Coast",
+        "flag": "CI"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489392",
+      "sourceFixtureId": 1489392,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-21T00:00:00+00:00",
+      "home": {
+        "team": "Ecuador",
+        "flag": "EC"
+      },
+      "away": {
+        "team": "Curaçao",
+        "flag": "CW"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489394",
+      "sourceFixtureId": 1489394,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-21T04:00:00+00:00",
+      "home": {
+        "team": "Tunisia",
+        "flag": "TN"
+      },
+      "away": {
+        "team": "Japan",
+        "flag": "JP"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489397",
+      "sourceFixtureId": 1489397,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-21T16:00:00+00:00",
+      "home": {
+        "team": "Spain",
+        "flag": "ES"
+      },
+      "away": {
+        "team": "Saudi Arabia",
+        "flag": "SA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489395",
+      "sourceFixtureId": 1489395,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-21T19:00:00+00:00",
+      "home": {
+        "team": "Belgium",
+        "flag": "BE"
+      },
+      "away": {
+        "team": "Iran",
+        "flag": "IR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489398",
+      "sourceFixtureId": 1489398,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-21T22:00:00+00:00",
+      "home": {
+        "team": "Uruguay",
+        "flag": "UY"
+      },
+      "away": {
+        "team": "Cape Verde Islands",
+        "flag": "CV"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489396",
+      "sourceFixtureId": 1489396,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-22T01:00:00+00:00",
+      "home": {
+        "team": "New Zealand",
+        "flag": "NZ"
+      },
+      "away": {
+        "team": "Egypt",
+        "flag": "EG"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1489399",
+      "sourceFixtureId": 1489399,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-22T17:00:00+00:00",
+      "home": {
+        "team": "Argentina",
+        "flag": "AR"
+      },
+      "away": {
+        "team": "Austria",
+        "flag": "AT"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.514Z"
+    },
+    {
+      "id": "fixture-1539017",
+      "sourceFixtureId": 1539017,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-22T21:00:00+00:00",
+      "home": {
+        "team": "France",
+        "flag": "FR"
+      },
+      "away": {
+        "team": "Iraq",
+        "flag": "IQ"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489401",
+      "sourceFixtureId": 1489401,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-23T00:00:00+00:00",
+      "home": {
+        "team": "Norway",
+        "flag": "NO"
+      },
+      "away": {
+        "team": "Senegal",
+        "flag": "SN"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489400",
+      "sourceFixtureId": 1489400,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-23T03:00:00+00:00",
+      "home": {
+        "team": "Jordan",
+        "flag": "JO"
+      },
+      "away": {
+        "team": "Algeria",
+        "flag": "DZ"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489404",
+      "sourceFixtureId": 1489404,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-23T17:00:00+00:00",
+      "home": {
+        "team": "Portugal",
+        "flag": "PT"
+      },
+      "away": {
+        "team": "Uzbekistan",
+        "flag": "UZ"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489402",
+      "sourceFixtureId": 1489402,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-23T20:00:00+00:00",
+      "home": {
+        "team": "England",
+        "flag": "GB"
+      },
+      "away": {
+        "team": "Ghana",
+        "flag": "GH"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489403",
+      "sourceFixtureId": 1489403,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-23T23:00:00+00:00",
+      "home": {
+        "team": "Panama",
+        "flag": "PA"
+      },
+      "away": {
+        "team": "Croatia",
+        "flag": "HR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539008",
+      "sourceFixtureId": 1539008,
+      "stage": "World Cup · Group Stage - 2",
+      "kickoff": "2026-06-24T02:00:00+00:00",
+      "home": {
+        "team": "Colombia",
+        "flag": "CO"
+      },
+      "away": {
+        "team": "Congo DR",
+        "flag": "CD"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489408",
+      "sourceFixtureId": 1489408,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-24T19:00:00+00:00",
+      "home": {
+        "team": "Switzerland",
+        "flag": "CH"
+      },
+      "away": {
+        "team": "Canada",
+        "flag": "CA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539009",
+      "sourceFixtureId": 1539009,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-24T19:00:00+00:00",
+      "home": {
+        "team": "Bosnia & Herzegovina",
+        "flag": "BA"
+      },
+      "away": {
+        "team": "Qatar",
+        "flag": "QA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489405",
+      "sourceFixtureId": 1489405,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-24T22:00:00+00:00",
+      "home": {
+        "team": "Morocco",
+        "flag": "MA"
+      },
+      "away": {
+        "team": "Haiti",
+        "flag": "HT"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489406",
+      "sourceFixtureId": 1489406,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-24T22:00:00+00:00",
+      "home": {
+        "team": "Scotland",
+        "flag": "GB"
+      },
+      "away": {
+        "team": "Brazil",
+        "flag": "BR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539010",
+      "sourceFixtureId": 1539010,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-25T01:00:00+00:00",
+      "home": {
+        "team": "Czech Republic",
+        "flag": "CZ"
+      },
+      "away": {
+        "team": "Mexico",
+        "flag": "MX"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489407",
+      "sourceFixtureId": 1489407,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-25T01:00:00+00:00",
+      "home": {
+        "team": "South Africa",
+        "flag": "ZA"
+      },
+      "away": {
+        "team": "South Korea",
+        "flag": "KR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489410",
+      "sourceFixtureId": 1489410,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-25T20:00:00+00:00",
+      "home": {
+        "team": "Ecuador",
+        "flag": "EC"
+      },
+      "away": {
+        "team": "Germany",
+        "flag": "DE"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489409",
+      "sourceFixtureId": 1489409,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-25T20:00:00+00:00",
+      "home": {
+        "team": "Curaçao",
+        "flag": "CW"
+      },
+      "away": {
+        "team": "Ivory Coast",
+        "flag": "CI"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539011",
+      "sourceFixtureId": 1539011,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-25T23:00:00+00:00",
+      "home": {
+        "team": "Japan",
+        "flag": "JP"
+      },
+      "away": {
+        "team": "Sweden",
+        "flag": "SE"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489412",
+      "sourceFixtureId": 1489412,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-25T23:00:00+00:00",
+      "home": {
+        "team": "Tunisia",
+        "flag": "TN"
+      },
+      "away": {
+        "team": "Netherlands",
+        "flag": "NL"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539012",
+      "sourceFixtureId": 1539012,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-26T02:00:00+00:00",
+      "home": {
+        "team": "Türkiye",
+        "flag": "TR"
+      },
+      "away": {
+        "team": "USA",
+        "flag": "US"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489411",
+      "sourceFixtureId": 1489411,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-26T02:00:00+00:00",
+      "home": {
+        "team": "Paraguay",
+        "flag": "PY"
+      },
+      "away": {
+        "team": "Australia",
+        "flag": "AU"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539074",
+      "sourceFixtureId": 1539074,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-26T19:00:00+00:00",
+      "home": {
+        "team": "Senegal",
+        "flag": "SN"
+      },
+      "away": {
+        "team": "Iraq",
+        "flag": "IQ"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489416",
+      "sourceFixtureId": 1489416,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-26T19:00:00+00:00",
+      "home": {
+        "team": "Norway",
+        "flag": "NO"
+      },
+      "away": {
+        "team": "France",
+        "flag": "FR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489417",
+      "sourceFixtureId": 1489417,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T00:00:00+00:00",
+      "home": {
+        "team": "Uruguay",
+        "flag": "UY"
+      },
+      "away": {
+        "team": "Spain",
+        "flag": "ES"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489413",
+      "sourceFixtureId": 1489413,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T00:00:00+00:00",
+      "home": {
+        "team": "Cape Verde Islands",
+        "flag": "CV"
+      },
+      "away": {
+        "team": "Saudi Arabia",
+        "flag": "SA"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489414",
+      "sourceFixtureId": 1489414,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T03:00:00+00:00",
+      "home": {
+        "team": "Egypt",
+        "flag": "EG"
+      },
+      "away": {
+        "team": "Iran",
+        "flag": "IR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489415",
+      "sourceFixtureId": 1489415,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T03:00:00+00:00",
+      "home": {
+        "team": "New Zealand",
+        "flag": "NZ"
+      },
+      "away": {
+        "team": "Belgium",
+        "flag": "BE"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489420",
+      "sourceFixtureId": 1489420,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T21:00:00+00:00",
+      "home": {
+        "team": "Croatia",
+        "flag": "HR"
+      },
+      "away": {
+        "team": "Ghana",
+        "flag": "GH"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489422",
+      "sourceFixtureId": 1489422,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T21:00:00+00:00",
+      "home": {
+        "team": "Panama",
+        "flag": "PA"
+      },
+      "away": {
+        "team": "England",
+        "flag": "GB"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489419",
+      "sourceFixtureId": 1489419,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T23:30:00+00:00",
+      "home": {
+        "team": "Colombia",
+        "flag": "CO"
+      },
+      "away": {
+        "team": "Portugal",
+        "flag": "PT"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1539013",
+      "sourceFixtureId": 1539013,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-27T23:30:00+00:00",
+      "home": {
+        "team": "Congo DR",
+        "flag": "CD"
+      },
+      "away": {
+        "team": "Uzbekistan",
+        "flag": "UZ"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489418",
+      "sourceFixtureId": 1489418,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-28T02:00:00+00:00",
+      "home": {
+        "team": "Algeria",
+        "flag": "DZ"
+      },
+      "away": {
+        "team": "Austria",
+        "flag": "AT"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "fixture-1489421",
+      "sourceFixtureId": 1489421,
+      "stage": "World Cup · Group Stage - 3",
+      "kickoff": "2026-06-28T02:00:00+00:00",
+      "home": {
+        "team": "Jordan",
+        "flag": "JO"
+      },
+      "away": {
+        "team": "Argentina",
+        "flag": "AR"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "dataSource": "api-sports",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-01",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-28",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-02",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-28",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-03",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-28",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-04",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-29",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-05",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-29",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-06",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-29",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-07",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-30",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-08",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-30",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-09",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-06-30",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-10",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-01",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-11",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-01",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-12",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-01",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-13",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-02",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-14",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-02",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-15",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-03",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-16",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 32",
+      "dateKey": "2026-07-03",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-17",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-04",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-18",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-04",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-19",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-05",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-20",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-05",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-21",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-06",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-22",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-06",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-23",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-07",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-24",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Round of 16",
+      "dateKey": "2026-07-07",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-25",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Quarter-finals",
+      "dateKey": "2026-07-09",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-26",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Quarter-finals",
+      "dateKey": "2026-07-10",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-27",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Quarter-finals",
+      "dateKey": "2026-07-10",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-28",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Quarter-finals",
+      "dateKey": "2026-07-11",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-29",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Semi-finals",
+      "dateKey": "2026-07-14",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-30",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Semi-finals",
+      "dateKey": "2026-07-15",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-31",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Match for third place",
+      "dateKey": "2026-07-18",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    },
+    {
+      "id": "wc2026-ko-32",
+      "sourceFixtureId": null,
+      "stage": "World Cup · Final",
+      "dateKey": "2026-07-19",
+      "kickoff": null,
+      "home": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "away": {
+        "team": "待定",
+        "flag": "🏆"
+      },
+      "odds": {
+        "result": {
+          "home": null,
+          "draw": null,
+          "away": null
+        },
+        "scores": {}
+      },
+      "sealedAt": null,
+      "actual": null,
+      "predictions": [],
+      "placeholder": true,
+      "dataSource": "fifa-schedule-placeholder",
+      "syncedAt": "2026-06-11T05:09:25.515Z"
+    }
+  ]
+}

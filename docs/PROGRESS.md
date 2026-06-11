@@ -14,7 +14,7 @@
   - `pipeline/predict.js`:遍历 enabled 模型预测,缺 key 自动跳过;没有任何模型 key 时不覆盖 `matches.json`。
   - `pipeline/score.js`:按真实赔率结算胜平负和比分下注,生成排行榜。
 - 新增 `package.json` scripts:`predict` / `score` / `score:sample` / `serve`。
-- 前端新增北京时间日期切换、空日期预告态和冠军预测模块。
+- 前端新增北京时间日期切换、空日期预告态和冠军预测模块;真实数据同步为 104 个比赛席位(API 已确定赛程 + 淘汰赛待定占位),不再展示模拟预测。
 
 ## 本地预览
 

@@ -44,7 +44,7 @@ function flagIcon(value) {
 }
 
 function formatKickoff(value) {
-  if (!value) return '时间待定';
+  if (!value) return '时间待定 · 北京时间';
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return date.toLocaleString('zh-CN', {
@@ -98,6 +98,7 @@ function dateSubLabel(dateKey) {
 }
 
 function matchDateKey(match) {
+  if (match.dateKey) return match.dateKey;
   return beijingDateKey(match.kickoff);
 }
 
@@ -192,11 +193,14 @@ function renderMatches() {
 function renderMatchCard(m) {
   const o = m.odds?.result || {};
   const finished = !!m.actual;
+  const trackPredictions = (m.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
+  const hasPredictions = trackPredictions.length > 0;
   const status = finished
     ? `<span class="match-status status-final">已结束 · ${m.actual.score} · ${RESULT_LABEL[m.actual.result] || ''}</span>`
-    : `<span class="match-status status-sealed">已封盘 · 待开赛</span>`;
+    : hasPredictions || m.sealedAt
+      ? `<span class="match-status status-sealed">已封盘 · 待开赛</span>`
+      : `<span class="match-status status-pending">预测待更新</span>`;
 
-  const trackPredictions = (m.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
   const counts = trackPredictions.reduce((acc, p) => {
     acc[p.result] = (acc[p.result] || 0) + 1;
     return acc;
@@ -213,8 +217,8 @@ function renderMatchCard(m) {
   const hotScore = Object.entries(scoreCounts).sort((a, b) => b[1] - a[1])[0];
   const hotScoreText = hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无';
   const kickoff = formatKickoff(m.kickoff);
-  const homeFlag = flagIcon(m.home.flag);
-  const awayFlag = flagIcon(m.away.flag);
+  const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
+  const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
 
   const preds = trackPredictions
     .map(p => {
@@ -288,7 +292,10 @@ function renderChampionPredictions() {
   const el = document.getElementById('champion-predictions');
   if (!el) return;
   if (!CHAMPIONS.length) {
-    el.innerHTML = '<div class="empty">暂无冠军预测</div>';
+    el.innerHTML = `<div class="empty-state">
+      <strong>冠军预测待封盘</strong>
+      <span>真实模型预测生成后,这里会展示冠军共识和逐模型选择。</span>
+    </div>`;
     return;
   }
   const consensus = CHAMPIONS.reduce((acc, item) => {

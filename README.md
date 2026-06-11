@@ -21,7 +21,7 @@ python3 -m http.server -d public 8080
 
 打开 http://localhost:8080 ,手机宽度下应为单列、可读、可点。
 
-首页支持按北京时间日期切换比赛;没有比赛的日期会展示预告空态。冠军预测模块读取 `public/data/champion-predictions.json`。
+首页支持按北京时间日期切换比赛;没有比赛的日期会展示预告空态。当前真实数据同步 104 个比赛席位:API 已返回的小组赛赛程 + 淘汰赛待定占位。冠军预测模块读取 `public/data/champion-predictions.json`,没有真实模型预测时保持空态。
 
 ## 部署
 

@@ -220,6 +220,7 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
 .match-status { display: block; font-size: 11px; font-weight: 600; margin-top: 4px; }
 .status-final { color: var(--accent); }
 .status-sealed { color: var(--gold); }
+.status-pending { color: var(--muted); }
 
 .pred-title {
   color: var(--muted);
