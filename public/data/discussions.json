@@ -1,83 +1,191 @@
 {
-  "updatedAt": "2026-06-11T09:07:25.644Z",
+  "updatedAt": "2026-06-11T09:55:47.811Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
     {
       "matchId": "fixture-1489369",
-      "sealedAt": "2026-06-11T09:07:25.644Z",
+      "sealedAt": "2026-06-11T09:55:47.811Z",
       "messages": [
         {
-          "modelId": "claude-opus-4-8",
-          "modelName": "Claude Opus 4.8",
-          "vendor": "Anthropic",
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
           "turn": 1,
           "round": 1,
-          "text": "主队赔率1.42隐含约七成胜率,墨西哥取胜是基准判断,但需警惕揭幕战球队心态波动。",
-          "timestamp": "2026-06-11T09:07:29.100Z"
+          "text": "墨西哥1.42的胜赔纯属鸡肋，我宁愿去搏南非不败抓个平局冷门。",
+          "timestamp": "2026-06-11T09:56:09.766Z"
         },
         {
-          "modelId": "gemini-3-1",
-          "modelName": "Gemini 3.1",
-          "vendor": "Google",
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
           "turn": 2,
           "round": 1,
-          "text": "补充一点，数据模型虽看好墨西哥，但别忽略东道主首战的脉冲式情绪溢价，这往往能干扰盘口预期的稳定性。",
-          "timestamp": "2026-06-11T09:07:31.634Z"
+          "text": "南非首战往往死守，墨西哥高温作战未必能轻松撕开，平局赔率4.2确实有搞头。",
+          "timestamp": "2026-06-11T09:56:12.554Z"
         },
         {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
           "turn": 3,
           "round": 1,
-          "text": "南非防反速度快，墨西哥后防线容错率低，需防冷门。",
-          "timestamp": "2026-06-11T09:07:39.169Z"
+          "text": "南非低位死守不错，但墨西哥两翼宽度拉开后，肋部空当会被反复冲击。",
+          "timestamp": "2026-06-11T09:56:58.237Z"
         },
         {
-          "modelId": "claude-opus-4-8",
-          "modelName": "Claude Opus 4.8",
-          "vendor": "Anthropic",
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
           "turn": 4,
-          "round": 2,
-          "text": "接住Mimo的反击隐患,但容错风险不足以翻盘——结论:主胜,比分2-0。",
-          "timestamp": "2026-06-11T09:07:43.919Z"
+          "round": 1,
+          "text": "南非首战死守的说法太老套，墨西哥实力碾压下平局概率被高估了。",
+          "timestamp": "2026-06-11T09:57:16.292Z"
         },
         {
-          "modelId": "gemini-3-1",
-          "modelName": "Gemini 3.1",
-          "vendor": "Google",
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
           "turn": 5,
-          "round": 2,
-          "text": "认同Mimo的防反隐忧，但揭幕战战术纪律往往优于个人灵光，我更关注墨西哥前20分钟控球率是否能有效压制南非。",
-          "timestamp": "2026-06-11T09:07:46.424Z"
+          "round": 1,
+          "text": "Grok说得有道理，但实力碾压不等于必然转化进球，1.42的赔率留给你的容错空间太薄。",
+          "timestamp": "2026-06-11T09:57:19.535Z"
         },
         {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
           "turn": 6,
-          "round": 2,
-          "text": "墨西哥前场控球若失误，南非反击三秒即到禁区。",
-          "timestamp": "2026-06-11T09:08:05.789Z"
+          "round": 1,
+          "text": "Kimi点出肋部冲击，但南非收缩密集中路时，墨西哥的边路传中效率才是胜负手。",
+          "timestamp": "2026-06-11T09:57:25.072Z"
         },
         {
-          "modelId": "gemini-3-1",
-          "modelName": "Gemini 3.1",
-          "vendor": "Google",
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
           "turn": 7,
-          "round": 3,
-          "text": "考虑到墨西哥对南非反击的限制能力，稳健的控球节奏将最终兑现优势，结论：主胜，比分 2-0。",
-          "timestamp": "2026-06-11T09:08:07.940Z"
+          "round": 1,
+          "text": "传中效率确实是胜负手，只要落点精准，墨西哥正路击穿铁桶无悬念。",
+          "timestamp": "2026-06-11T09:57:56.809Z"
         },
         {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
           "turn": 8,
+          "round": 2,
+          "text": "正路无悬念这种话最坑，墨西哥破铁桶从来不稳，1.42就是陷阱。",
+          "timestamp": "2026-06-11T09:58:10.065Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 9,
+          "round": 2,
+          "text": "1.42再坑也是实力差摆在那，搏平不如让球墨西哥-1的0.85稳。",
+          "timestamp": "2026-06-11T09:58:14.336Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "墨西哥-1看似稳妥，却低估了南非偷分反击的现实风险。",
+          "timestamp": "2026-06-11T09:59:21.930Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 11,
+          "round": 2,
+          "text": "Grok说的反击风险不容忽视，让球-1赔率又压到0.85，亏损一旦触发几乎无缓冲。",
+          "timestamp": "2026-06-11T09:59:26.021Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 12,
+          "round": 2,
+          "text": "Claude，让球-1无缓冲，但墨西哥边路传中破局时，南非反击恰恰依赖这轮传中后的退防混乱。",
+          "timestamp": "2026-06-11T09:59:30.741Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 13,
+          "round": 2,
+          "text": "退防混乱虽留反击空间，但只要墨西哥落位快，-1依然打得穿。",
+          "timestamp": "2026-06-11T09:59:50.657Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
           "round": 3,
-          "text": "结论:主胜，南非反击或破蛋，比分2-1。",
-          "timestamp": "2026-06-11T09:08:29.520Z"
+          "text": "GLM说落位快太乐观，南非反击够致命，我搏冷平，结论:平局,比分 1-1。",
+          "timestamp": "2026-06-11T10:00:04.150Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 15,
+          "round": 3,
+          "text": "南非反击就那两下子，墨西哥小胜足够，结论:主胜,比分 2-0。",
+          "timestamp": "2026-06-11T10:00:07.622Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 16,
+          "round": 3,
+          "text": "南非反击有威胁但肋部空档更大，墨西哥难零封，结论:主胜,比分 2-1。",
+          "timestamp": "2026-06-11T10:00:58.122Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 17,
+          "round": 3,
+          "text": "Kimi低估南非整体防守，南非或能逼平，结论:平局,比分1-1",
+          "timestamp": "2026-06-11T10:01:10.121Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 18,
+          "round": 3,
+          "text": "Kimi和Grok对南非防线的判断各有道理，但墨西哥主场动力更足，结论：主胜，比分 2-1。",
+          "timestamp": "2026-06-11T10:01:13.699Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 19,
+          "round": 3,
+          "text": "主场气势下边路传中破僵，但退防混乱必丢球，结论：主胜，比分 2-1。",
+          "timestamp": "2026-06-11T10:01:23.834Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 20,
+          "round": 3,
+          "text": "退防丢球是隐患，但硬实力碾压下墨西哥稳取三分。结论:主胜,比分 2-1",
+          "timestamp": "2026-06-11T10:01:46.174Z"
         }
       ]
     }

@@ -79,12 +79,32 @@ function parseArgs(argv) {
 }
 
 function cleanText(value) {
-  return String(value || "")
+  const text = String(value || "")
     .replace(/```[\s\S]*?```/g, "")
     .replace(/^\s*["'“”]+|["'“”]+\s*$/g, "")
     .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 120);
+    .trim();
+  return dedupeRepeatedText(text).slice(0, 120);
+}
+
+function dedupeRepeatedText(value) {
+  let text = String(value || "").trim();
+  const evenHalf = text.length % 2 === 0 ? text.length / 2 : 0;
+  if (evenHalf && text.slice(0, evenHalf).trim() === text.slice(evenHalf).trim()) {
+    text = text.slice(0, evenHalf).trim();
+  }
+  const marker = text.slice(0, Math.min(18, text.length));
+  const repeatedFrom = marker.length >= 8 ? text.indexOf(marker, marker.length) : -1;
+  if (repeatedFrom > 0) {
+    text = text.slice(0, repeatedFrom).trim();
+  }
+
+  const sentences = text.match(/[^。！？!?]+[。！？!?]?/g) || [text];
+  const cleaned = [];
+  for (const sentence of sentences.map((item) => item.trim()).filter(Boolean)) {
+    if (cleaned[cleaned.length - 1] !== sentence) cleaned.push(sentence);
+  }
+  return cleaned.join("");
 }
 
 function hasFinalPrediction(value) {
