@@ -213,12 +213,29 @@ function resultFromDiscussionText(text) {
 }
 
 function scoreFromDiscussionText(text) {
-  const match = String(text || '').match(/[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/);
+  const matches = Array.from(String(text || '').matchAll(/[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/g));
+  const match = matches[matches.length - 1];
   if (!match) return '';
   return match[0]
     .replace(/[０-９]/g, char => String.fromCharCode(char.charCodeAt(0) - 0xFEE0))
     .replace(/[：比]/g, '-')
     .replace(/\s+/g, '');
+}
+
+function stakeFromDiscussionText(text) {
+  const value = String(text || '').replace(/[０-９]/g, char => String.fromCharCode(char.charCodeAt(0) - 0xFEE0));
+  const resultMatch = value.match(/(?:胜平负|方向|赛果|结果|主胜|平局|客胜)[^0-9]{0,8}(?:押|投|下注)\s*(\d+)/);
+  const scoreMatch = value.match(/比分[^0-9]{0,8}(?:押|投|下注)\s*(\d+)/);
+  const result = resultMatch ? Number(resultMatch[1]) : 0;
+  const score = scoreMatch ? Number(scoreMatch[1]) : 0;
+  return { result, score };
+}
+
+function stakeText(prediction) {
+  const result = Number(prediction.stake?.result) || 0;
+  const score = Number(prediction.stake?.score) || 0;
+  if (!result && !score) return '';
+  return `赛果${result} / 比分${score}`;
 }
 
 function discussionPredictionsForMatch(matchId) {
@@ -229,6 +246,7 @@ function discussionPredictionsForMatch(matchId) {
       modelId: message.modelId,
       result: resultFromDiscussionText(message.text),
       score: scoreFromDiscussionText(message.text),
+      stake: stakeFromDiscussionText(message.text),
       source: 'discussion'
     }))
     .filter(prediction => prediction.result && prediction.score);
@@ -261,6 +279,10 @@ function renderMatchCard(m) {
   }, {});
   const hotScore = Object.entries(scoreCounts).sort((a, b) => b[1] - a[1])[0];
   const hotScoreText = hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无';
+  const totalStake = displayPredictions.reduce((acc, p) => acc + (Number(p.stake?.result) || 0) + (Number(p.stake?.score) || 0), 0);
+  const avgStakeText = displayPredictions.length && totalStake
+    ? `${Math.round(totalStake / displayPredictions.length)} / 100`
+    : '待定';
   const kickoff = formatKickoff(m.kickoff);
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
   const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
@@ -277,7 +299,7 @@ function renderMatchCard(m) {
       }
       return `<div class="pred">
         <span class="pred-model"><span class="lb-dot" style="background:${meta.color}"></span>${meta.name}</span>
-        <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}</span>
+        <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}<small>${stakeText(p)}</small></span>
         <span>${mark || (p.source === 'discussion' ? '<span class="pred-source">圆桌</span>' : '')}</span>
       </div>`;
     }).join('') || '<div class="empty">暂无预测</div>';
@@ -318,8 +340,8 @@ function renderMatchCard(m) {
           <strong>${hotScoreText}</strong>
         </div>
         <div class="info-box">
-          <span class="info-label">规则</span>
-          <strong>每模型 100 积分</strong>
+          <span class="info-label">平均下注</span>
+          <strong>${avgStakeText}</strong>
         </div>
       </div>
       <div class="lean-bars" aria-hidden="true">

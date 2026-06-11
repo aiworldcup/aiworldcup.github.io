@@ -241,6 +241,12 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
 .pred-model { display: flex; align-items: center; gap: 6px; font-weight: 600; }
 .pred-pick { color: var(--muted); }
 .pred-pick b { color: var(--text); }
+.pred-pick small {
+  display: block;
+  color: var(--gold);
+  font-size: 10px;
+  margin-top: 2px;
+}
 .pred-hit { color: var(--accent); }
 .pred-miss { color: #f85149; }
 .pred-source {

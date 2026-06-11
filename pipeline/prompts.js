@@ -32,6 +32,7 @@ function schema(maxStakePerMatch) {
 要求:
 - result 必须是 ${RESULT_VALUES.join("/")};
 - stake.result + stake.score <= ${maxStakePerMatch};
+- stake 由你自己按信心和赔率回报决定,不要默认固定比例,也不要必然用满 ${maxStakePerMatch};
 - score 必须是常规时间比分,格式为数字-数字。`;
 }
 

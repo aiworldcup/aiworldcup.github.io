@@ -111,7 +111,8 @@ function hasFinalPrediction(value) {
   const text = String(value || "");
   const hasResult = /(主胜|客胜|平局|打平|平|胜|负)/.test(text);
   const hasScore = /[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/.test(text);
-  return hasResult && hasScore;
+  const hasStake = /(胜平负|方向|赛果|结果|主胜|平局|客胜|比分).{0,8}(押|投|下注)[0-9０-９]+|[0-9０-９]+.{0,4}(分|积分).{0,8}(胜平负|方向|赛果|结果|主胜|平局|客胜|比分)/.test(text);
+  return hasResult && hasScore && hasStake;
 }
 
 function oddsLine(match) {
@@ -131,7 +132,7 @@ function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTur
     ? "必须接住前面至少一位 AI 的观点:可以同意、反驳、补充遗漏风险,但不要重复原话。"
     : "你负责开场,给出一个明确判断,为后面的 AI 留出可讨论的风险点。";
   const finalRule = isFinalTurn
-    ? "\n这是你本场最后一次发言,必须导向预测结论,并包含胜平负方向和具体比分,格式可类似:「结论:主胜,比分 2-1」。"
+    ? "\n这是你本场最后一次发言,必须导向预测结论,并自己决定 100 积分以内的下注分配。必须包含胜平负方向、具体比分、胜平负下注和比分下注,格式可类似:「结论:主胜,比分2-1;胜平负押65,比分押25」。"
     : "";
   return `你在「世界杯 AI 擂台」的赛前圆桌群聊里发言。
 
@@ -148,7 +149,7 @@ ${history}
 
 请只输出中文自然语言,不要 JSON,不要 Markdown。
 ${relationRule}
-你这次只说一句话,不超过 45 个中文字符。${finalRule}`;
+你这次只说一句话,带情绪和人设口吻,不超过 70 个中文字符。${finalRule}`;
 }
 
 function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = false) {
@@ -156,14 +157,14 @@ function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = f
   const lastLine = last ? `${last.modelName}: ${last.text}` : "暂无。";
   const style = STYLE_PROFILES[model.id] || "简短直接。";
   const finalRule = isFinalTurn
-    ? "这是你最后一句,必须给出胜平负方向和比分,例如:结论主胜,比分2-1。"
+    ? "这是你最后一句,必须给出胜平负方向、比分、胜平负下注和比分下注,例如:结论主胜,比分2-1;胜平负押65,比分押25。"
     : "必须回应上一句或补充一个新风险。";
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
 你的风格:${style}
 上一句:${lastLine}
 这是你本场第 ${round} 次发言。
 ${finalRule}
-只输出一句中文短句,不超过 35 个中文字符。`;
+只输出一句中文短句,带情绪和人设口吻,不超过 70 个中文字符。`;
 }
 
 function buildTurnSchedule(models) {
