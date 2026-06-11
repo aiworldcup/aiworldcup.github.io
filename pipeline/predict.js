@@ -17,7 +17,7 @@ const PROVIDERS = {
   "qwen-3-7-max": { env: "DASHSCOPE_API_KEY", base: "https://dashscope.aliyuncs.com/compatible-mode/v1", modelEnv: "DASHSCOPE_MODEL", model: "qwen3.7-max" },
   "minimax-m3": { env: "MINIMAX_API_KEY", base: "https://api.minimax.chat/v1", modelEnv: "MINIMAX_MODEL", model: "minimax-m3" },
   "kimi-k2-6": { env: "MOONSHOT_API_KEY", base: "https://api.moonshot.cn/v1", modelEnv: "MOONSHOT_MODEL", model: "kimi-k2.6" },
-  "mimo-v2-5-pro": { env: "MIMO_API_KEY", baseEnv: "MIMO_API_BASE", modelEnv: "MIMO_MODEL", model: "mimo-v2.5-pro" },
+  "mimo-v2-5-pro": { env: "MIMO_API_KEY", baseEnv: "MIMO_API_BASE", modelEnv: "MIMO_MODEL", model: "mimo-v2.5-pro", protocol: "anthropic" },
   "grok-4-3": { env: "XAI_API_KEY", base: "https://api.x.ai/v1", modelEnv: "XAI_MODEL", model: "grok-4.3" },
   "muse-spark": { env: "MUSE_API_KEY", baseEnv: "MUSE_API_BASE", modelEnv: "MUSE_MODEL", model: "muse-spark" },
   "claude-sonnet-4-6": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_SONNET_MODEL", model: "claude-sonnet-4-6" },
@@ -141,7 +141,7 @@ async function callModel(modelId, track, match, config) {
 
   const prompt = buildPrompt(track, match, { maxStakePerMatch: config.maxStakePerMatch });
   let text;
-  if (modelId.startsWith("claude-")) text = await callAnthropic(provider, prompt, apiKey);
+  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") text = await callAnthropic(provider, prompt, apiKey);
   else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
   else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
   return normalizePrediction(modelId, track, extractJson(text), config.maxStakePerMatch);
@@ -153,7 +153,7 @@ async function callModelText(modelId, prompt) {
   const apiKey = String(process.env[provider.env] || "").trim();
   if (!apiKey) return null;
 
-  if (modelId.startsWith("claude-")) return callAnthropic(provider, prompt, apiKey, { maxTokens: 160 });
+  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 160 });
   if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   return callOpenAICompatible(provider, prompt, apiKey);
 }
