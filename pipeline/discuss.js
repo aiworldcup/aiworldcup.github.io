@@ -87,12 +87,19 @@ function cleanText(value) {
     .slice(0, 120);
 }
 
+function hasFinalPrediction(value) {
+  const text = String(value || "");
+  const hasResult = /(主胜|客胜|平局|打平|平|胜|负)/.test(text);
+  const hasScore = /[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/.test(text);
+  return hasResult && hasScore;
+}
+
 function oddsLine(match) {
   const odds = match.odds && match.odds.result ? match.odds.result : {};
   return `胜 ${odds.home ?? "未知"} / 平 ${odds.draw ?? "未知"} / 负 ${odds.away ?? "未知"}`;
 }
 
-function buildDiscussionPrompt(match, model, previousMessages, round) {
+function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTurn = false) {
   const history = previousMessages.length
     ? previousMessages
       .slice(-10)
@@ -103,6 +110,9 @@ function buildDiscussionPrompt(match, model, previousMessages, round) {
   const relationRule = previousMessages.length
     ? "必须接住前面至少一位 AI 的观点:可以同意、反驳、补充遗漏风险,但不要重复原话。"
     : "你负责开场,给出一个明确判断,为后面的 AI 留出可讨论的风险点。";
+  const finalRule = isFinalTurn
+    ? "\n这是你本场最后一次发言,必须导向预测结论,并包含胜平负方向和具体比分,格式可类似:「结论:主胜,比分 2-1」。"
+    : "";
   return `你在「世界杯 AI 擂台」的赛前圆桌群聊里发言。
 
 比赛: ${match.home.team} vs ${match.away.team}
@@ -118,18 +128,22 @@ ${history}
 
 请只输出中文自然语言,不要 JSON,不要 Markdown。
 ${relationRule}
-你这次只说一句话,不超过 45 个中文字符。`;
+你这次只说一句话,不超过 45 个中文字符。${finalRule}`;
 }
 
-function buildRetryPrompt(match, model, previousMessages, round) {
+function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = false) {
   const last = previousMessages[previousMessages.length - 1];
   const lastLine = last ? `${last.modelName}: ${last.text}` : "暂无。";
   const style = STYLE_PROFILES[model.id] || "简短直接。";
+  const finalRule = isFinalTurn
+    ? "这是你最后一句,必须给出胜平负方向和比分,例如:结论主胜,比分2-1。"
+    : "必须回应上一句或补充一个新风险。";
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
 你的风格:${style}
 上一句:${lastLine}
 这是你本场第 ${round} 次发言。
-只输出一句中文短句,必须回应上一句或补充一个新风险,不超过 35 个中文字符。`;
+${finalRule}
+只输出一句中文短句,不超过 35 个中文字符。`;
 }
 
 function buildTurnSchedule(models) {
@@ -175,16 +189,21 @@ async function discuss() {
     const messages = [];
     const turns = buildTurnSchedule(models);
     for (const { model, round } of turns) {
+      const isFinalTurn = round >= turnBudget(model.id);
       try {
-        let text = await callModelText(model.id, buildDiscussionPrompt(match, model, messages, round));
+        let text = await callModelText(model.id, buildDiscussionPrompt(match, model, messages, round, isFinalTurn));
         if (text === null) {
           console.warn(`[discuss] ${model.id} 缺少 key,跳过`);
           continue;
         }
         let cleaned = cleanText(text);
-        if (!cleaned) {
-          text = await callModelText(model.id, buildRetryPrompt(match, model, messages, round));
+        if (!cleaned || (isFinalTurn && !hasFinalPrediction(cleaned))) {
+          text = await callModelText(model.id, buildRetryPrompt(match, model, messages, round, isFinalTurn));
           cleaned = cleanText(text);
+        }
+        if (isFinalTurn && cleaned && !hasFinalPrediction(cleaned)) {
+          console.warn(`[discuss] ${model.id} 最后发言缺少预测方向或比分,跳过`);
+          continue;
         }
         if (!cleaned) {
           console.warn(`[discuss] ${model.id} 返回空文本,跳过`);
