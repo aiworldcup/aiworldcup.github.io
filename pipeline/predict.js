@@ -10,8 +10,8 @@ const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 
 const PROVIDERS = {
-  "claude-fable-5": { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_FABLE_MODEL", model: "claude-fable-5" },
-  "claude-opus-4-8": { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_OPUS_MODEL", model: "claude-opus-4-8" },
+  "claude-fable-5": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_FABLE_MODEL", model: "claude-fable-5" },
+  "claude-opus-4-8": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_OPUS_MODEL", model: "claude-opus-4-8" },
   "gpt-5-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5.5" },
   "gemini-3-1": { env: "GOOGLE_API_KEY", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GOOGLE_MODEL", model: "gemini-3.1-pro" },
   "qwen-3-7-max": { env: "DASHSCOPE_API_KEY", base: "https://dashscope.aliyuncs.com/compatible-mode/v1", modelEnv: "DASHSCOPE_MODEL", model: "qwen3.7-max" },
@@ -20,7 +20,7 @@ const PROVIDERS = {
   "mimo-v2-5-pro": { env: "MIMO_API_KEY", baseEnv: "MIMO_API_BASE", modelEnv: "MIMO_MODEL", model: "mimo-v2.5-pro" },
   "grok-4-3": { env: "XAI_API_KEY", base: "https://api.x.ai/v1", modelEnv: "XAI_MODEL", model: "grok-4.3" },
   "muse-spark": { env: "MUSE_API_KEY", baseEnv: "MUSE_API_BASE", modelEnv: "MUSE_MODEL", model: "muse-spark" },
-  "claude-sonnet-4-6": { env: "ANTHROPIC_API_KEY", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_SONNET_MODEL", model: "claude-sonnet-4-6" },
+  "claude-sonnet-4-6": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_SONNET_MODEL", model: "claude-sonnet-4-6" },
   "deepseek-v4pro": { env: "DEEPSEEK_API_KEY", base: "https://api.deepseek.com/v1", modelEnv: "DEEPSEEK_MODEL", model: "deepseek-v4pro" },
   "glm-5-1": { env: "ZHIPU_API_KEY", base: "https://open.bigmodel.cn/api/paas/v4", modelEnv: "ZHIPU_MODEL", model: "glm-5.1" },
   "doubao-seed-1-5-thinking-pro": { env: "DOUBAO_API_KEY", baseEnv: "DOUBAO_API_BASE", modelEnv: "DOUBAO_MODEL", model: "doubao-1-5-thinking-pro-250428" },
@@ -93,7 +93,8 @@ async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
 }
 
 async function callAnthropic(provider, prompt, apiKey) {
-  const res = await fetch(`${provider.base}/messages`, {
+  const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
+  const res = await fetch(`${base}/messages`, {
     method: "POST",
     headers: {
       "x-api-key": apiKey,
