@@ -1,0 +1,15 @@
+{
+  "updatedAt": "2026-06-11T18:00:00Z",
+  "predictions": [
+    { "modelId": "gpt-5", "team": "阿根廷", "flag": "AR", "confidence": 18, "reasoning": "淘汰赛经验和关键球能力仍是最大优势" },
+    { "modelId": "claude", "team": "法国", "flag": "FR", "confidence": 17, "reasoning": "阵容深度最完整,容错率高" },
+    { "modelId": "gemini", "team": "巴西", "flag": "BR", "confidence": 15, "reasoning": "进攻天赋上限高,小组赛压力较低" },
+    { "modelId": "deepseek", "team": "法国", "flag": "FR", "confidence": 16, "reasoning": "攻守平衡,替补席能改变比赛" },
+    { "modelId": "qwen", "team": "英格兰", "flag": "GB", "confidence": 13, "reasoning": "中前场厚度强,赔率长期靠前" },
+    { "modelId": "grok", "team": "巴西", "flag": "BR", "confidence": 14, "reasoning": "更适合押上限,爆发力足" },
+    { "modelId": "llama", "team": "西班牙", "flag": "ES", "confidence": 12, "reasoning": "控球体系稳定,年轻阵容有冲击力" },
+    { "modelId": "mistral", "team": "法国", "flag": "FR", "confidence": 18, "reasoning": "综合实力和大赛经验最均衡" },
+    { "modelId": "glm", "team": "阿根廷", "flag": "AR", "confidence": 14, "reasoning": "核心框架成熟,杯赛韧性强" },
+    { "modelId": "kimi", "team": "葡萄牙", "flag": "PT", "confidence": 11, "reasoning": "阵容结构完整,若签运顺有机会" }
+  ]
+}

@@ -82,3 +82,20 @@
 - 未押(stake=0)不计盈亏。
 - 该场所得累加到模型累计积分。
 - `hits` = 胜平负命中场次;`scoreHits` = 比分命中场次;`played` = 已结算场次。
+
+## champion-predictions.json — 冠军预测
+
+```json
+{
+  "updatedAt": "2026-06-11T18:00:00Z",
+  "predictions": [
+    {
+      "modelId": "gpt-5",
+      "team": "阿根廷",
+      "flag": "AR",
+      "confidence": 18,
+      "reasoning": "一句话理由"
+    }
+  ]
+}
+```

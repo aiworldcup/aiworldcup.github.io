@@ -21,6 +21,8 @@ python3 -m http.server -d public 8080
 
 打开 http://localhost:8080 ,手机宽度下应为单列、可读、可点。
 
+首页支持按北京时间日期切换比赛;没有比赛的日期会展示预告空态。冠军预测模块读取 `public/data/champion-predictions.json`。
+
 ## 部署
 
 `public/` 为站点根,可直接部署到 GitHub Pages / Vercel / Netlify。

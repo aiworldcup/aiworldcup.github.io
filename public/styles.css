@@ -34,6 +34,59 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
 .muted { color: var(--muted); font-size: 12px; font-weight: 400; }
 .section-head { display: flex; justify-content: space-between; align-items: end; gap: 12px; }
 .section-sub { color: var(--muted); font-size: 13px; margin-top: -6px; }
+.date-quick {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 0 10px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.date-btn {
+  flex: 0 0 92px;
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  padding: 10px 8px;
+  text-align: left;
+}
+.date-btn span {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+}
+.date-btn small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 2px;
+}
+.date-btn.active {
+  border-color: var(--gold);
+  background: var(--card-2);
+  box-shadow: 0 0 0 1px var(--gold) inset;
+}
+.date-btn.empty-date {
+  opacity: 0.68;
+}
+.prediction-note {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid rgba(255, 210, 74, 0.22);
+  background: rgba(255, 210, 74, 0.07);
+  border-radius: 10px;
+  padding: 9px 10px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.prediction-note strong {
+  color: var(--gold);
+  flex: none;
+}
 
 /* 排行榜 */
 .leaderboard { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -190,6 +243,70 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
 .pred-hit { color: var(--accent); }
 .pred-miss { color: #f85149; }
 .empty { color: var(--muted); font-size: 13px; padding: 12px; text-align: center; }
+.empty-state {
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 28px 16px;
+  text-align: center;
+}
+.empty-state strong {
+  display: block;
+  font-size: 18px;
+}
+.empty-state span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* 冠军预测 */
+.champion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.champion-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+}
+.champion-title {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.champion-leader {
+  display: grid;
+  grid-template-columns: 24px 38px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.champion-leader:last-child { border-bottom: none; }
+.champion-rank { color: var(--gold); font-weight: 800; text-align: center; }
+.champion-flag { font-size: 28px; line-height: 1; }
+.champion-leader strong { color: var(--accent); }
+.champion-list { display: flex; flex-direction: column; gap: 8px; }
+.champion-pick {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 10px;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 8px;
+}
+.champion-pick:last-child { border-bottom: none; padding-bottom: 0; }
+.champion-model { display: flex; align-items: center; gap: 6px; font-weight: 700; }
+.champion-team { display: flex; align-items: center; gap: 6px; color: var(--gold); }
+.champion-team span { font-size: 20px; line-height: 1; }
+.champion-reason {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+}
 
 @media (min-width: 600px) {
   .hero h1 { font-size: 32px; }
@@ -198,4 +315,5 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
   .team-flag { font-size: 78px; }
   .team-name { font-size: 30px; }
   .match-info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .champion-grid { grid-template-columns: 0.8fr 1.2fr; }
 }

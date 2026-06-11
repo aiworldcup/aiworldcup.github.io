@@ -42,6 +42,7 @@ function buildStandalone() {
     "matches.json": readJson("data/sample-matches.json"),
     "sample-matches.json": readJson("data/sample-matches.json"),
     "leaderboard.json": readJson("data/leaderboard.json"),
+    "champion-predictions.json": readJson("data/champion-predictions.json"),
   };
 
   return html.replace(

@@ -4,6 +4,8 @@
 let MODELS = {};
 let MATCHES = [];
 let LEADERBOARD = { rankings: [], open: [] };
+let CHAMPIONS = [];
+let selectedDateKey = '';
 const ACTIVE_TRACK = 'open';
 
 async function loadJSON(path, fallback) {
@@ -55,12 +57,102 @@ function formatKickoff(value) {
   }) + ' 北京时间';
 }
 
+function beijingParts(value = new Date()) {
+  const date = value instanceof Date ? value : new Date(value);
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    weekday: 'short'
+  }).formatToParts(date);
+  return Object.fromEntries(parts.map(part => [part.type, part.value]));
+}
+
+function beijingDateKey(value = new Date()) {
+  const parts = beijingParts(value);
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function addDays(dateKey, days) {
+  const base = new Date(`${dateKey}T00:00:00+08:00`);
+  base.setUTCDate(base.getUTCDate() + days);
+  return beijingDateKey(base);
+}
+
+function dateLabel(dateKey) {
+  const today = beijingDateKey();
+  const tomorrow = addDays(today, 1);
+  const afterTomorrow = addDays(today, 2);
+  if (dateKey === today) return '今天';
+  if (dateKey === tomorrow) return '明天';
+  if (dateKey === afterTomorrow) return '后天';
+  const parts = beijingParts(`${dateKey}T00:00:00+08:00`);
+  return `${parts.month}/${parts.day}`;
+}
+
+function dateSubLabel(dateKey) {
+  const parts = beijingParts(`${dateKey}T00:00:00+08:00`);
+  const weekMap = { Sun: '周日', Mon: '周一', Tue: '周二', Wed: '周三', Thu: '周四', Fri: '周五', Sat: '周六' };
+  return weekMap[parts.weekday] || parts.weekday || '';
+}
+
+function matchDateKey(match) {
+  return beijingDateKey(match.kickoff);
+}
+
+function availableDateKeys() {
+  const today = beijingDateKey();
+  const matchDates = MATCHES.map(matchDateKey).sort();
+  const maxDate = matchDates[matchDates.length - 1] || addDays(today, 6);
+  const keys = new Set([today, addDays(today, 1), addDays(today, 2)]);
+  matchDates.forEach(key => keys.add(key));
+  for (let key = today; key <= maxDate; key = addDays(key, 1)) keys.add(key);
+  return Array.from(keys).sort();
+}
+
+function matchesForSelectedDate() {
+  return MATCHES.filter(match => matchDateKey(match) === selectedDateKey);
+}
+
+function pickInitialDate() {
+  const today = beijingDateKey();
+  const upcoming = MATCHES
+    .map(matchDateKey)
+    .filter(key => key >= today)
+    .sort()[0];
+  return upcoming || today;
+}
+
+function renderDateQuick() {
+  const el = document.getElementById('date-quick');
+  if (!el) return;
+  const keys = availableDateKeys();
+  el.innerHTML = keys.map(key => {
+    const count = MATCHES.filter(match => matchDateKey(match) === key).length;
+    const active = key === selectedDateKey ? ' active' : '';
+    const empty = count ? '' : ' empty-date';
+    return `<button class="date-btn${active}${empty}" data-date="${key}">
+      <span>${dateLabel(key)}</span>
+      <small>${dateSubLabel(key)} · ${count ? `${count} 场` : '待更新'}</small>
+    </button>`;
+  }).join('');
+  el.querySelectorAll('.date-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      selectedDateKey = button.dataset.date;
+      renderDateQuick();
+      renderMatches();
+    });
+  });
+}
+
 function renderMatchSummary() {
   const el = document.getElementById('match-summary');
   if (!el) return;
-  const finished = MATCHES.filter(m => m.actual).length;
-  const sealed = MATCHES.filter(m => !m.actual && m.sealedAt).length;
-  el.textContent = `${MATCHES.length} 场比赛 · ${finished} 场已结算 · ${sealed} 场已封盘`;
+  const selectedMatches = matchesForSelectedDate();
+  const finished = selectedMatches.filter(m => m.actual).length;
+  const sealed = selectedMatches.filter(m => !m.actual && m.sealedAt).length;
+  el.textContent = `${selectedDateKey} · ${selectedMatches.length} 场比赛 · ${finished} 场已结算 · ${sealed} 场已封盘`;
 }
 
 function renderLeaderboard() {
@@ -86,8 +178,15 @@ function renderLeaderboard() {
 function renderMatches() {
   const el = document.getElementById('matches');
   renderMatchSummary();
-  if (!MATCHES.length) { el.innerHTML = '<div class="empty">暂无比赛数据</div>'; return; }
-  el.innerHTML = MATCHES.map(renderMatchCard).join('');
+  const selectedMatches = matchesForSelectedDate();
+  if (!selectedMatches.length) {
+    el.innerHTML = `<div class="empty-state">
+      <strong>${dateLabel(selectedDateKey)}暂无比赛</strong>
+      <span>预测席位先留空。下一批比赛会在开赛前一天封盘后更新。</span>
+    </div>`;
+    return;
+  }
+  el.innerHTML = selectedMatches.map(renderMatchCard).join('');
 }
 
 function renderMatchCard(m) {
@@ -185,22 +284,71 @@ function renderMatchCard(m) {
   </article>`;
 }
 
+function renderChampionPredictions() {
+  const el = document.getElementById('champion-predictions');
+  if (!el) return;
+  if (!CHAMPIONS.length) {
+    el.innerHTML = '<div class="empty">暂无冠军预测</div>';
+    return;
+  }
+  const consensus = CHAMPIONS.reduce((acc, item) => {
+    const key = item.team;
+    acc[key] = acc[key] || { team: item.team, flag: item.flag, count: 0, confidence: 0 };
+    acc[key].count += 1;
+    acc[key].confidence += Number(item.confidence) || 0;
+    return acc;
+  }, {});
+  const leaders = Object.values(consensus)
+    .sort((a, b) => b.count - a.count || b.confidence - a.confidence)
+    .slice(0, 3);
+  const leaderRows = leaders.map((item, index) => `<div class="champion-leader">
+    <span class="champion-rank">${index + 1}</span>
+    <span class="champion-flag">${flagIcon(item.flag)}</span>
+    <span>${item.team}</span>
+    <strong>${item.count} 票</strong>
+  </div>`).join('');
+
+  const modelRows = CHAMPIONS.map(item => {
+    const meta = modelMeta(item.modelId);
+    return `<div class="champion-pick">
+      <div class="champion-model"><span class="lb-dot" style="background:${meta.color}"></span>${meta.name}</div>
+      <div class="champion-team"><span>${flagIcon(item.flag)}</span><strong>${item.team}</strong></div>
+      <div class="champion-reason">${item.reasoning || ''}</div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `<div class="champion-card champion-consensus">
+    <div class="champion-title">模型共识</div>
+    ${leaderRows}
+  </div>
+  <div class="champion-card">
+    <div class="champion-title">逐模型选择</div>
+    <div class="champion-list">${modelRows}</div>
+  </div>`;
+}
+
 async function init() {
   const models = await loadJSON('data/models.json');
   if (models?.models) models.models.forEach(m => { MODELS[m.id] = m; });
 
   const matches = await loadJSON('data/matches.json', 'data/sample-matches.json');
   MATCHES = matches?.matches || [];
+  selectedDateKey = pickInitialDate();
 
   const lb = await loadJSON('data/leaderboard.json');
   if (lb) {
     LEADERBOARD = lb;
-    const u = document.getElementById('lb-updated');
-    if (lb.updatedAt) u.textContent = '更新于 ' + new Date(lb.updatedAt).toLocaleString('zh-CN');
+      const u = document.getElementById('lb-updated');
+    if (lb.updatedAt) u.textContent = '更新于 ' + new Date(lb.updatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
   }
 
+  const champions = await loadJSON('data/champion-predictions.json');
+  CHAMPIONS = champions?.predictions || [];
+
+  renderDateQuick();
   renderLeaderboard();
   renderMatches();
+  renderChampionPredictions();
 }
 
 init();
