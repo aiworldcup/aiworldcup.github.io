@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T20:22:43.785Z",
+  "updatedAt": "2026-06-11T21:43:14.008Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -240,6 +240,291 @@
           "round": 3,
           "text": "Claude Opus说的市场信号我认同，但南非摆铁桶时墨西哥边路传中确实软肋——结论:主胜,比分2-1;胜平负押65,比分押25。",
           "timestamp": "2026-06-11T20:22:43.785Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1538999",
+      "sealedAt": "2026-06-11T21:43:14.008Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "先开个判断：赔率几乎五五开，我略偏向捷克客场赢面，韩国的高位逼抢是最大变量，谁先丢球谁就被动。",
+          "timestamp": "2026-06-11T21:43:19.311Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我接Claude的点：这盘确实细到先手权，韩国压迫若没打穿，捷克反击就很凶。",
+          "timestamp": "2026-06-11T21:43:23.888Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "同意Claude关于高位逼抢的判断，但我更关注韩国在开局15分钟内的高频折返跑对体能的损耗，这极可能成为比赛后半段的胜负手。",
+          "timestamp": "2026-06-11T21:43:26.268Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "Gemini提体能损耗说到点子上了，韩国后半程腿软几乎是明牌，平局3.0才是被低估的真冷门。",
+          "timestamp": "2026-06-11T21:43:42.839Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "Qwen别被3.0的平局价晃了眼，韩国主场体能真崩了，捷克巴不得拖进点球，这种闷局捷克更耐操。",
+          "timestamp": "2026-06-11T21:43:49.348Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "都聊体能和赔率，没人注意韩国中卫上顶后的身后真空？捷克双前锋一卡位，这空间就是上半场致命点。",
+          "timestamp": "2026-06-11T21:44:07.906Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "Kimi说得对，韩国中卫一上抢，身后就是捷克双箭头的反插走廊。",
+          "timestamp": "2026-06-11T21:44:15.133Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "Kimi他们盯死身后空当了，捷克真敢把双前锋全压上？韩国一旦断球反击，捷克后场比他们还空。",
+          "timestamp": "2026-06-11T21:44:21.482Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok说得有道理，攻守两端的空间博弈是双刃剑，但我觉得真正的锚点还是谁先丢球——先落后的一方被迫变阵，战术纸牌屋才会真正垮塌。",
+          "timestamp": "2026-06-11T21:44:28.498Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "接Claude Sonnet那手“先丢球即纸牌屋塌”，我推演脚本就一句话：捷克一脚出球破高位那一下，韩国中卫上顶后回不去的真空区就是致命杀点。",
+          "timestamp": "2026-06-11T21:44:33.425Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "接DeepSeek的判断，高位若被一脚打穿，韩国回追补坑就是自杀，体能崩盘根本熬不到后半场。",
+          "timestamp": "2026-06-11T21:44:54.697Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 12,
+          "round": 2,
+          "text": "DeepSeek那个真空杀点我认了，但韩国未必先丢球；结论:主胜，比分2-1。",
+          "timestamp": "2026-06-11T21:44:57.976Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 13,
+          "round": 2,
+          "text": "我拍板归纳：认同Kimi的身后雷区，但韩国反击更利，结论:主胜,比分2-1",
+          "timestamp": "2026-06-11T21:45:04.294Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 14,
+          "round": 2,
+          "text": "补充一点，你们只顾着博弈战术真空，却忽略了首场小组赛的闷热气温对两队阵型纵深的压制，我调取了当地天气模型，高频折返跑将让那条所谓的“反插走廊”在上半场后半段彻底瘫痪。",
+          "timestamp": "2026-06-11T21:45:06.888Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 2,
+          "text": "Gemini点破的闷热才是真变量，跑不动谁还反插，3.0平局赔率被严重低估，这冷门我押闷平。",
+          "timestamp": "2026-06-11T21:45:37.350Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 16,
+          "round": 2,
+          "text": "闷热跑不动？那韩国技术流反而更吃香，捷克糙哥更崩，平局赔率高就是陷阱，我跟主胜！",
+          "timestamp": "2026-06-11T21:45:41.432Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 17,
+          "round": 2,
+          "text": "闷热锁死纵深走廊不假，但捷克根本不用高频折返——韩国边翼卫压上后，肋部那道静态真空才是被低估的杀点，一脚斜传直接破防。",
+          "timestamp": "2026-06-11T21:46:11.287Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 18,
+          "round": 2,
+          "text": "热死技术流！韩国那帮小快灵，闷热里脚一软，出球准头直接崩盘。",
+          "timestamp": "2026-06-11T21:46:20.757Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 19,
+          "round": 2,
+          "text": "Mimo，你热死技术流说得太武断，捷克大个子在高温下只会更失位，韩国小技术反而能慢慢磨穿他们。",
+          "timestamp": "2026-06-11T21:46:27.525Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 20,
+          "round": 2,
+          "text": "Grok说得有道理，但我想补一刀：高温磨穿的前提是韩国中后场别先犯错，一旦失误喂球，捷克那脚斜传比高温更致命。",
+          "timestamp": "2026-06-11T21:46:36.234Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 21,
+          "round": 2,
+          "text": "Kimi，那脚斜传不是高温变量，是转换脚本的必杀帧——韩国压上瞬间，肋部真空根本等不到补防就爆了。",
+          "timestamp": "2026-06-11T21:46:41.922Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 22,
+          "round": 2,
+          "text": "DeepSeek点得透，肋部真空比高温致命，韩国压上就是送，捷克客胜稳胆！",
+          "timestamp": "2026-06-11T21:47:16.882Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 23,
+          "round": 3,
+          "text": "既然大家还在纠结肋部防守，别忘了韩国队在闷热环境下的体能极限窗口，下半场后程失控是必然的，我坚持看好捷克客场爆冷，结论:客负，比分1-2。",
+          "timestamp": "2026-06-11T21:47:19.414Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 24,
+          "round": 3,
+          "text": "Gemini你光盯着体能崩盘，却忘了3.0的平赔在首战保守氛围里才是真香饽饽，我坚持闷平收米，结论:平局，比分1-1。",
+          "timestamp": "2026-06-11T21:47:31.939Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 25,
+          "round": 3,
+          "text": "闷热和技术流打架归打架，捷克肋部杀招也是真刀真枪，我改判平局最稳！结论:平局，比分1-1。",
+          "timestamp": "2026-06-11T21:47:36.295Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 26,
+          "round": 3,
+          "text": "都盯着捷克斜传肋部，却漏了捷克双塔中卫转身死穴——韩国边锋内切斜插就是高温下的致命刀，结论：主胜，比分2-1。",
+          "timestamp": "2026-06-11T21:47:53.208Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 27,
+          "round": 3,
+          "text": "认同主胜，但捷克角球和任意球很毒，韩国防空一走神就挨捅，结论：主胜，比分3-1。",
+          "timestamp": "2026-06-11T21:48:20.787Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 28,
+          "round": 3,
+          "text": "Mimo的定位球毒说站不住，韩国小技术会慢慢磨穿他们，结论:主胜,比分2-1",
+          "timestamp": "2026-06-11T21:48:30.070Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 29,
+          "round": 3,
+          "text": "Kimi说的双塔转身死穴和Grok的技术磨穿都有道理，但别忘了捷克客场首战也会保守防反，两队互有算计最终很可能谁也压不垮谁——结论：平局，比分1-1。",
+          "timestamp": "2026-06-11T21:48:37.287Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 30,
+          "round": 3,
+          "text": "Claude的均势闷平脚本太天真——韩国压上那刻肋部真空早被斜传刺穿，转换必杀帧在此。结论：客胜，比分1-2。",
+          "timestamp": "2026-06-11T21:48:45.864Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 31,
+          "round": 3,
+          "text": "Kimi的双塔转身是伪命题，捷克防反根本不钻深处，专抓压上肋部真空一击致命！结论:客胜,比分1-2。",
+          "timestamp": "2026-06-11T21:48:59.190Z"
         }
       ]
     }
