@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getConfig } = require("./config");
-const { loadEnv } = require("./lib/env");
+const { loadProjectEnv } = require("./lib/env");
 const { fetchApi, hydrateOddsForMatch, normalizeFixture } = require("./odds");
 
 const MATCHES_OUT = path.join(__dirname, "..", "public", "data", "matches.json");
@@ -145,6 +145,17 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+function readExistingMatches() {
+  try {
+    if (!fs.existsSync(MATCHES_OUT)) return new Map();
+    const data = JSON.parse(fs.readFileSync(MATCHES_OUT, "utf8"));
+    return new Map((data.matches || []).map((match) => [match.id, match]));
+  } catch (err) {
+    console.warn(`[sync] existing matches ignored: ${err.message}`);
+    return new Map();
+  }
+}
+
 function flagFor(teamName) {
   return TEAM_FLAGS[teamName] || "";
 }
@@ -201,6 +212,27 @@ function createKnockoutPlaceholders(existingCount) {
   return placeholders.slice(0, Math.max(0, TARGET_MATCH_COUNT - existingCount));
 }
 
+function mergeExistingMatch(fresh, existing) {
+  if (!existing) return fresh;
+  return {
+    ...fresh,
+    sealedAt: existing.sealedAt || fresh.sealedAt || null,
+    predictions: Array.isArray(existing.predictions) ? existing.predictions : fresh.predictions || [],
+    odds: {
+      result: {
+        ...(existing.odds && existing.odds.result ? existing.odds.result : {}),
+        ...(fresh.odds && fresh.odds.result ? fresh.odds.result : {}),
+      },
+      scores: {
+        ...(existing.odds && existing.odds.scores ? existing.odds.scores : {}),
+        ...(fresh.odds && fresh.odds.scores ? fresh.odds.scores : {}),
+      },
+    },
+    actual: fresh.actual || existing.actual || null,
+    preservedAt: new Date().toISOString(),
+  };
+}
+
 async function fetchWorldCupFixtures(config) {
   const payload = await fetchApi("/fixtures", {
     league: WORLD_CUP_LEAGUE_ID,
@@ -222,7 +254,7 @@ async function hydrateOddsSafely(match, config) {
 }
 
 async function syncRealData() {
-  loadEnv();
+  loadProjectEnv();
   const config = getConfig();
   if (!config.oddsApiKey) {
     throw new Error("缺少 API-SPORTS key。请配置 ODDS_API_KEY/APISPORTS_API_KEY 或保留 football config。");
@@ -233,22 +265,27 @@ async function syncRealData() {
     throw new Error("API 未返回 2026 World Cup fixtures。");
   }
 
+  const existingById = readExistingMatches();
   const limit = Number(process.env.SYNC_ODDS_LIMIT || 16);
   const matches = [];
   for (const fixture of fixtures) {
     const needOdds = matches.length < limit;
     const match = needOdds ? await hydrateOddsSafely(fixture, config) : fixture;
-    matches.push({
+    const fresh = {
       ...match,
       predictions: [],
       dataSource: "api-sports",
       syncedAt: new Date().toISOString(),
-    });
+    };
+    matches.push(mergeExistingMatch(fresh, existingById.get(fresh.id)));
   }
 
   const allMatches = matches.length >= TARGET_MATCH_COUNT
     ? matches
-    : [...matches, ...createKnockoutPlaceholders(matches.length)];
+    : [
+      ...matches,
+      ...createKnockoutPlaceholders(matches.length).map((match) => mergeExistingMatch(match, existingById.get(match.id))),
+    ];
 
   writeJson(MATCHES_OUT, {
     source: {

@@ -9,6 +9,8 @@ let DISCUSSIONS = [];
 let selectedDateKey = '';
 const ACTIVE_TRACK = 'open';
 const ASIA_SHANGHAI = 'Asia/Shanghai';
+const DAY_MS = 24 * 60 * 60 * 1000;
+const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -49,6 +51,32 @@ function escapeHTML(value) {
 
 const RESULT_LABEL = { home: '主胜', draw: '平', away: '客胜' };
 const RESULT_SHORT = { home: '主', draw: '平', away: '客' };
+
+function formatNumber(value, digits = 0) {
+  const num = Number(value);
+  if (!Number.isFinite(num)) return digits ? '0.0' : '0';
+  return num.toLocaleString('zh-CN', {
+    maximumFractionDigits: digits,
+    minimumFractionDigits: digits
+  });
+}
+
+function formatPercent(part, total) {
+  const p = Number(part) || 0;
+  const t = Number(total) || 0;
+  if (!t) return '-';
+  return `${Math.round((p / t) * 100)}%`;
+}
+
+function relativeTime(ms) {
+  const abs = Math.abs(ms);
+  const days = Math.floor(abs / DAY_MS);
+  const hours = Math.floor((abs % DAY_MS) / (60 * 60 * 1000));
+  const minutes = Math.max(1, Math.round((abs % (60 * 60 * 1000)) / (60 * 1000)));
+  if (days > 0) return `${days}天${hours ? `${hours}小时` : ''}`;
+  if (hours > 0) return `${hours}小时${minutes ? `${minutes}分` : ''}`;
+  return `${minutes}分钟`;
+}
 
 function flagIcon(value) {
   const raw = String(value || '').trim();
@@ -172,29 +200,77 @@ function renderMatchSummary() {
   const el = document.getElementById('match-summary');
   if (!el) return;
   const selectedMatches = matchesForSelectedDate();
-  const finished = selectedMatches.filter(m => m.actual).length;
-  const sealed = selectedMatches.filter(m => !m.actual && m.sealedAt).length;
-  el.textContent = `${selectedDateKey} · ${selectedMatches.length} 场比赛 · ${finished} 场已结算 · ${sealed} 场已封盘`;
+  const states = selectedMatches.map(match => matchLifecycle(match));
+  const settled = states.filter(item => item.key === 'settled').length;
+  const sealed = states.filter(item => item.key === 'sealed').length;
+  const live = states.filter(item => item.key === 'live').length;
+  const needsResult = states.filter(item => item.key === 'needs-result').length;
+  el.textContent = `${selectedDateKey} · ${selectedMatches.length} 场比赛 · ${sealed} 场已封盘 · ${live} 场进行中 · ${needsResult} 场待赛果 · ${settled} 场已结算`;
 }
 
 function renderLeaderboard() {
   const el = document.getElementById('leaderboard');
-  const rows = (LEADERBOARD.rankings || LEADERBOARD.open || []).slice().sort((a, b) => b.points - a.points);
-  if (!rows.length) { el.innerHTML = '<li class="empty">暂无排名数据</li>'; return; }
-  el.innerHTML = rows.map((r, i) => {
-    const m = modelMeta(r.modelId);
-    return `<li class="lb-row">
-      <div class="lb-rank">${i + 1}</div>
-      <div>
-        <div class="lb-name"><span class="lb-dot" style="background:${m.color}"></span>${m.name}
-          <span class="lb-vendor">${m.vendor}</span></div>
+  if (!el) return;
+  const rows = buildLeaderboardRows();
+  const summary = document.getElementById('leaderboard-summary');
+  const settledMatches = MATCHES.filter(match => !!match.actual).length;
+  const pendingMatches = MATCHES.filter(match => !match.actual && predictionsForMatch(match).length).length;
+  if (summary) {
+    summary.innerHTML = `<div class="lb-summary-card">
+      <span>已结算比赛</span><strong>${settledMatches}</strong>
+    </div>
+    <div class="lb-summary-card">
+      <span>待结算预测</span><strong>${pendingMatches}</strong>
+    </div>
+    <div class="lb-summary-card">
+      <span>排行榜口径</span><strong>赔率积分</strong>
+    </div>`;
+  }
+  if (!rows.length) {
+    el.innerHTML = '<div class="empty">暂无模型数据</div>';
+    return;
+  }
+
+  const podium = rows.slice(0, 3).map((row, index) => `<div class="lb-podium-card rank-${index + 1}">
+    <span class="lb-crown">#${index + 1}</span>
+    <div class="lb-podium-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
+    <small>${escapeHTML(row.vendor || '')}</small>
+    <strong>${formatNumber(row.points, row.points % 1 ? 1 : 0)}</strong>
+    <span>${row.played ? `胜率 ${formatPercent(row.hits, row.played)}` : `${row.pending} 场待结算`}</span>
+  </div>`).join('');
+
+  const table = rows.map((row, index) => {
+    const activeText = row.played
+      ? `已结算 ${row.played} 场`
+      : row.pending
+        ? `${row.pending} 场等待赛果`
+        : '等待预测';
+    return `<div class="lb-row">
+      <div class="lb-rank">${index + 1}</div>
+      <div class="lb-main">
+        <div class="lb-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
+        <div class="lb-vendor">${escapeHTML(row.vendor || '')} · ${activeText}</div>
       </div>
-      <div style="text-align:right">
-        <div class="lb-points">${Math.round(r.points)}</div>
-        <div class="lb-sub">命中 ${r.hits}/${r.played}</div>
+      <div class="lb-stat">
+        <span>积分</span>
+        <strong>${formatNumber(row.points, row.points % 1 ? 1 : 0)}</strong>
       </div>
-    </li>`;
+      <div class="lb-stat">
+        <span>胜率</span>
+        <strong>${formatPercent(row.hits, row.played)}</strong>
+      </div>
+      <div class="lb-stat">
+        <span>比分</span>
+        <strong>${formatPercent(row.scoreHits, row.played)}</strong>
+      </div>
+      <div class="lb-stat">
+        <span>均分</span>
+        <strong>${row.played ? formatNumber(row.avgPoints, 1) : '-'}</strong>
+      </div>
+    </div>`;
   }).join('');
+
+  el.innerHTML = `<div class="lb-podium">${podium}</div><div class="lb-table">${table}</div>`;
 }
 
 function renderMatches() {
@@ -248,6 +324,32 @@ function stakeText(prediction) {
   return `赛果${result} / 比分${score}`;
 }
 
+function safeStake(stake, max = 100) {
+  const result = Math.max(0, Number(stake?.result) || 0);
+  const score = Math.max(0, Number(stake?.score) || 0);
+  const total = result + score;
+  if (!total || total <= max) return { result, score, total };
+  const ratio = max / total;
+  return { result: result * ratio, score: score * ratio, total: max };
+}
+
+function scorePrediction(match, prediction) {
+  if (!match.actual) return null;
+  const stake = safeStake(prediction.stake);
+  const resultOdds = match.odds?.result || {};
+  const scoreOdds = match.odds?.scores || {};
+  const resultHit = prediction.result === match.actual.result;
+  const scoreHit = prediction.score === match.actual.score;
+  const resultPoints = resultHit ? stake.result * (Number(resultOdds[prediction.result]) || 0) : 0;
+  const scorePoints = scoreHit ? stake.score * (Number(scoreOdds[prediction.score]) || 0) : 0;
+  return {
+    points: resultPoints + scorePoints,
+    staked: stake.total,
+    resultHit,
+    scoreHit
+  };
+}
+
 function discussionPredictionsForMatch(matchId) {
   const thread = discussionForMatch(matchId);
   const messages = finalMessagesByModel(thread?.messages || []);
@@ -262,17 +364,149 @@ function discussionPredictionsForMatch(matchId) {
     .filter(prediction => prediction.result && prediction.score);
 }
 
+function predictionsForMatch(match) {
+  const trackPredictions = (match.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
+  return trackPredictions.length ? trackPredictions : discussionPredictionsForMatch(match.id);
+}
+
+function matchLifecycle(match, now = new Date()) {
+  if (match.placeholder) {
+    return { key: 'placeholder', tone: 'pending', label: '席位待定', detail: '淘汰赛对阵确认后开放预测' };
+  }
+  if (match.actual) {
+    return {
+      key: 'settled',
+      tone: 'final',
+      label: '已结算',
+      detail: `${match.actual.score} · ${RESULT_LABEL[match.actual.result] || ''}`
+    };
+  }
+  if (!match.kickoff) {
+    return { key: 'unscheduled', tone: 'pending', label: '时间待定', detail: '等待官方赛程确认' };
+  }
+  const kickoff = new Date(match.kickoff);
+  if (Number.isNaN(kickoff.getTime())) {
+    return { key: 'unscheduled', tone: 'pending', label: '时间待定', detail: '等待官方赛程确认' };
+  }
+  const diff = kickoff.getTime() - now.getTime();
+  const hasPredictions = predictionsForMatch(match).length > 0 || !!match.sealedAt;
+  if (diff > DAY_MS) {
+    return {
+      key: 'scheduled',
+      tone: 'pending',
+      label: '等待预测',
+      detail: `距开赛${relativeTime(diff)},赛前一天进入预测窗口`
+    };
+  }
+  if (diff > 0) {
+    return hasPredictions
+      ? { key: 'sealed', tone: 'sealed', label: '已封盘', detail: `距开赛${relativeTime(diff)},开赛后锁定展示` }
+      : { key: 'prediction-window', tone: 'hot', label: '预测窗口', detail: `距开赛${relativeTime(diff)},等待模型封盘` };
+  }
+  if (Math.abs(diff) <= MATCH_SETTLEMENT_GRACE_MS) {
+    return { key: 'live', tone: 'live', label: '比赛进行中', detail: '赛后同步真实赛果再结算' };
+  }
+  return { key: 'needs-result', tone: 'needs-result', label: '待赛果结算', detail: '赛果同步后自动进入积分榜' };
+}
+
+function buildLeaderboardRows() {
+  const rowsByModel = {};
+  const ensure = modelId => {
+    const meta = modelMeta(modelId);
+    if (!rowsByModel[modelId]) {
+      rowsByModel[modelId] = {
+        modelId,
+        name: meta.name,
+        vendor: meta.vendor,
+        color: meta.color,
+        enabled: meta.enabled !== false,
+        points: 0,
+        hits: 0,
+        scoreHits: 0,
+        played: 0,
+        predicted: 0,
+        pending: 0,
+        staked: 0,
+        returns: 0
+      };
+    }
+    return rowsByModel[modelId];
+  };
+
+  Object.keys(MODELS).forEach(ensure);
+
+  MATCHES.forEach(match => {
+    predictionsForMatch(match).forEach(prediction => {
+      const row = ensure(prediction.modelId);
+      row.predicted += 1;
+      const stake = safeStake(prediction.stake);
+      if (!match.actual) {
+        row.pending += 1;
+        row.staked += stake.total;
+        return;
+      }
+      const scored = scorePrediction(match, prediction);
+      if (!scored) return;
+      row.played += 1;
+      row.hits += scored.resultHit ? 1 : 0;
+      row.scoreHits += scored.scoreHit ? 1 : 0;
+      row.points += scored.points;
+      row.returns += scored.points;
+      row.staked += scored.staked;
+    });
+  });
+
+  const scoredRows = LEADERBOARD.rankings || LEADERBOARD.open || [];
+  scoredRows.forEach(source => {
+    const row = ensure(source.modelId);
+    row.points = Number(source.points) || 0;
+    row.hits = Number(source.hits) || 0;
+    row.scoreHits = Number(source.scoreHits) || 0;
+    row.played = Number(source.played) || 0;
+    if (source.staked !== undefined) row.staked = Number(source.staked) || row.staked;
+    if (source.returns !== undefined) row.returns = Number(source.returns) || row.points;
+  });
+
+  return Object.values(rowsByModel)
+    .filter(row => row.enabled)
+    .map(row => ({
+      ...row,
+      profit: row.returns - row.staked,
+      avgPoints: row.played ? row.points / row.played : 0,
+      hitRate: row.played ? row.hits / row.played : null,
+      scoreHitRate: row.played ? row.scoreHits / row.played : null
+    }))
+    .sort((a, b) =>
+      b.points - a.points ||
+      b.played - a.played ||
+      b.predicted - a.predicted ||
+      a.name.localeCompare(b.name, 'zh-CN')
+    );
+}
+
+function renderHeroMetrics() {
+  const el = document.getElementById('hero-metrics');
+  if (!el) return;
+  const lifecycles = MATCHES.map(match => matchLifecycle(match));
+  const settled = lifecycles.filter(item => item.key === 'settled').length;
+  const needsResult = lifecycles.filter(item => item.key === 'needs-result').length;
+  const totalPredictions = MATCHES.reduce((sum, match) => sum + predictionsForMatch(match).length, 0);
+  const enabledModels = Object.values(MODELS).filter(model => model.enabled !== false).length;
+  el.innerHTML = [
+    ['比赛席位', MATCHES.length],
+    ['参赛模型', enabledModels],
+    ['已出预测', totalPredictions],
+    ['待结算', needsResult || settled]
+  ].map(([label, value]) => `<div class="hero-metric"><strong>${value}</strong><span>${label}</span></div>`).join('');
+}
+
 function renderMatchCard(m) {
   const o = m.odds?.result || {};
   const finished = !!m.actual;
-  const trackPredictions = (m.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
-  const displayPredictions = trackPredictions.length ? trackPredictions : discussionPredictionsForMatch(m.id);
+  const displayPredictions = predictionsForMatch(m);
   const hasPredictions = displayPredictions.length > 0;
-  const status = finished
-    ? `<span class="match-status status-final">已结束 · ${m.actual.score} · ${RESULT_LABEL[m.actual.result] || ''}</span>`
-    : hasPredictions || m.sealedAt
-      ? `<span class="match-status status-sealed">已封盘 · 待开赛</span>`
-      : `<span class="match-status status-pending">预测待更新</span>`;
+  const lifecycle = matchLifecycle(m);
+  const status = `<span class="match-status status-${lifecycle.tone}">${lifecycle.label}</span>`;
 
   const counts = displayPredictions.reduce((acc, p) => {
     acc[p.result] = (acc[p.result] || 0) + 1;
@@ -314,6 +548,13 @@ function renderMatchCard(m) {
       </div>`;
     }).join('') || '<div class="empty">暂无预测</div>';
 
+  const settleSteps = [
+    ['预测', hasPredictions || lifecycle.key === 'settled'],
+    ['封盘', !!m.sealedAt || hasPredictions || lifecycle.key === 'settled'],
+    ['赛果', !!m.actual],
+    ['结算', lifecycle.key === 'settled']
+  ].map(([label, done]) => `<span class="${done ? 'done' : ''}">${label}</span>`).join('');
+
   return `<article class="match">
     <div class="match-head">
       <div class="match-meta">
@@ -329,6 +570,7 @@ function renderMatchCard(m) {
         <div class="vs">
           <span>VS</span>
           ${status}
+          <small>${lifecycle.detail}</small>
         </div>
         <div class="team team-away">
           <span class="team-flag" aria-hidden="true">${awayFlag}</span>
@@ -358,6 +600,13 @@ function renderMatchCard(m) {
         <span style="width:${counts.home / total * 100}%"></span>
         <span style="width:${counts.draw / total * 100}%"></span>
         <span style="width:${counts.away / total * 100}%"></span>
+      </div>
+      <div class="settlement-strip settlement-${lifecycle.key}">
+        <div>
+          <span>结算链路</span>
+          <strong>${lifecycle.label}</strong>
+        </div>
+        <div class="settlement-steps">${settleSteps}</div>
       </div>
     </div>
     <div class="pred-title">模型预测</div>
@@ -529,6 +778,7 @@ async function init() {
   const discussions = await loadJSON('data/discussions.json');
   DISCUSSIONS = discussions?.discussions || [];
 
+  renderHeroMetrics();
   renderDateQuick();
   renderLeaderboard();
   renderMatches();

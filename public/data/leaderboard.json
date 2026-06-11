@@ -1,5 +1,17 @@
 {
-  "updatedAt": "2026-06-11T06:16:34.621Z",
+  "updatedAt": "2026-06-11T20:38:50.479Z",
+  "settlement": {
+    "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
+    "generatedAt": "2026-06-11T20:38:50.479Z",
+    "graceMinutes": 150,
+    "counts": {
+      "in_progress": 1,
+      "pre_match": 71,
+      "placeholder": 32
+    },
+    "pendingResult": [],
+    "nextAction": "暂无待赛果结算队列"
+  },
   "rankings": [],
   "open": []
 }

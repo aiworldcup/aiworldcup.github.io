@@ -9,6 +9,7 @@
     "discuss": "node pipeline/discuss.js",
     "sync:real": "node pipeline/sync-real-data.js",
     "score": "node pipeline/score.js",
+    "settle": "node pipeline/settle.js",
     "score:sample": "node pipeline/score.js --input public/data/sample-matches.json --output public/data/leaderboard.json",
     "export:mobile": "node pipeline/export-standalone.js worldcup-ai-arena-mobile.html",
     "serve": "python3 -m http.server -d public 8080"

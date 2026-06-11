@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>世界杯 AI 擂台 · 大模型预测大赛</title>
   <meta name="description" content="10+ 大模型同场竞技,预测世界杯每场比赛。封盘存证、规则透明、赛后排名。" />
-  <link rel="stylesheet" href="styles.css?v=20260612-0005" />
+  <link rel="stylesheet" href="styles.css?v=20260612-0100" />
 </head>
 <body>
   <header class="hero">
-    <h1>🏆 世界杯 AI 擂台</h1>
-    <p class="tagline">10+ 大模型同场竞技 · 预测每场比赛 · 封盘存证 · 赛后排名</p>
+    <div class="hero-kicker">World Cup AI Arena</div>
+    <h1>世界杯 AI 擂台</h1>
+    <p class="tagline">大模型预测能力长期评测基准 · 赔率积分 · 赛前封盘 · 赛后结算</p>
+    <div id="hero-metrics" class="hero-metrics" aria-label="赛事概览"></div>
   </header>
 
   <main>
@@ -29,14 +31,21 @@
       <div id="matches" class="matches"></div>
     </section>
 
+    <section id="leaderboard-section">
+      <div class="section-head">
+        <div>
+          <h2>模型积分榜</h2>
+          <p class="section-sub">积分、胜率、比分命中率和待结算预测会一起展示。</p>
+        </div>
+        <span id="lb-updated" class="muted"></span>
+      </div>
+      <div id="leaderboard-summary" class="leaderboard-summary"></div>
+      <div id="leaderboard" class="leaderboard"></div>
+    </section>
+
     <section id="champion-section">
       <h2>冠军预测</h2>
       <div id="champion-predictions" class="champion-grid"></div>
-    </section>
-
-    <section id="leaderboard-section">
-      <h2>排行榜 <span id="lb-updated" class="muted"></span></h2>
-      <ol id="leaderboard" class="leaderboard"></ol>
     </section>
   </main>
 
@@ -45,6 +54,6 @@
     <p class="muted">大模型预测能力长期评测基准 · 世界杯是第一个舞台</p>
   </footer>
 
-  <script src="app.js?v=20260612-0005"></script>
+  <script src="app.js?v=20260612-0100"></script>
 </body>
 </html>

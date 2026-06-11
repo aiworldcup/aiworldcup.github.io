@@ -1,6 +1,6 @@
 # 进度记录
 
-更新时间: 2026-06-11
+更新时间: 2026-06-12
 
 ## 已完成
 
@@ -21,6 +21,14 @@
   - `pipeline/discuss.js` 直接调用各模型 API 生成群聊气泡,默认跑北京时间明天的比赛;没有 key 时不造假,页面展示待讨论。
   - 当前主链路不依赖飞书群或机器人轮询,飞书可作为后续传播/互动层。
   - 圆桌每个模型的最后一次发言会强制收束到预测方向与具体比分,不满足则自动重试一次。
+- 重新排布移动端前端:
+  - 首屏改为赛事控制台风格,比赛仍为主体。
+  - 比赛卡新增结算链路状态,清楚展示预测、封盘、赛果、结算四步。
+  - 排行榜升级为积分面板,展示积分、胜率、比分命中率、均分和待结算预测。
+- 补强结算逻辑:
+  - `score.js` 输出 `settlement` 摘要;`actual` 存在即结算,开赛后默认 150 分钟仍无赛果则进入 `pending_result`。
+  - 新增 `npm run settle`,先同步真实赛程/赛果并保留已有预测与封盘信息,再生成排行榜。
+  - `sync-real-data.js` 现在合并已有比赛数据,不会把封盘预测冲掉。
 
 ## 本地预览
 
@@ -42,6 +50,12 @@ npm run discuss
 npm run score
 ```
 
+赛后推荐用一条命令同步并结算:
+
+```bash
+npm run settle
+```
+
 也可以只用 sample 验证结算:
 
 ```bash
@@ -54,4 +68,5 @@ npm run score:sample
 - 真实赔率当前对接 API-SPORTS 足球 API,与 `/Users/tom/.openclaw/workspace/football` 项目的 API base/header 保持一致。
 - 若要固定某家博彩公司,填写 `ODDS_BOOKMAKER_ID`;不填时默认取 API 返回的第一个 bookmaker。
 - 真实比赛赛果需要赛后写入 `public/data/matches.json` 的 `actual`,再跑 `npm run score`。
+- 或者赛后运行 `npm run settle`,自动从 API 同步已结束比赛赛果并重算排行榜;若 API 尚未返回赛果,该场会进入 `leaderboard.json` 的 `settlement.pendingResult`。
 - `npm run discuss -- --date YYYY-MM-DD` 可为指定北京时间日期生成 AI 圆桌;`--match fixture-id` 可只生成单场。

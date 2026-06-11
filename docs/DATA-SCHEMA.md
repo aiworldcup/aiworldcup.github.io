@@ -68,8 +68,32 @@
 ```json
 {
   "updatedAt": "2026-06-12T00:00:00Z",
+  "settlement": {
+    "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
+    "generatedAt": "2026-06-12T00:00:00Z",
+    "graceMinutes": 150,
+    "counts": { "settled": 1, "pending_result": 1, "sealed": 2 },
+    "pendingResult": [
+      { "matchId": "fixture-1489369", "kickoff": "2026-06-11T19:00:00+00:00", "home": "墨西哥", "away": "南非" }
+    ],
+    "nextAction": "同步或录入真实赛果后运行 npm run score"
+  },
   "rankings": [
-    { "rank": 1, "modelId": "claude", "points": 1580, "hits": 6, "played": 8 }
+    {
+      "rank": 1,
+      "modelId": "claude",
+      "points": 1580,
+      "hits": 6,
+      "scoreHits": 1,
+      "played": 8,
+      "hitRate": 0.75,
+      "scoreHitRate": 0.125,
+      "avgPoints": 197.5,
+      "staked": 800,
+      "returns": 1580,
+      "profit": 780,
+      "roi": 0.975
+    }
   ]
 }
 ```
@@ -82,6 +106,8 @@
 - 未押(stake=0)不计盈亏。
 - 该场所得累加到模型累计积分。
 - `hits` = 胜平负命中场次;`scoreHits` = 比分命中场次;`played` = 已结算场次。
+- 结算触发:只要 `match.actual` 存在,`score.js` 就结算;开赛后 `SETTLEMENT_GRACE_MINUTES`(默认 150)仍无 `actual`,该场进入 `settlement.pendingResult` 队列,页面展示“待赛果结算”。
+- 推荐赛后入口:`npm run settle`。它会先同步真实赛程/赛果并保留已有预测/封盘信息,再生成 `leaderboard.json`。
 
 ## champion-predictions.json — 冠军预测
 
