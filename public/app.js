@@ -254,8 +254,8 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
     <span class="lb-crown">#${index + 1}</span>
     <div class="lb-podium-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
     <small>${escapeHTML(row.vendor || '')}</small>
-    <strong>${type === 'score' ? row.scoreHits : formatPercent(row.resultHits, row.predictions)}</strong>
-    <span>${row.predictions ? `${row.predictions} 场预测` : `${row.pending} 场待结算`}</span>
+    <strong>${type === 'score' ? `${row.scoreHits}/${row.predictions || 0}` : formatPercent(row.resultHits, row.predictions)}</strong>
+    <span>${type === 'score' ? '精确比分命中' : '赛果命中率'}</span>
   </div>`).join('');
 
   const table = activeRows.map((row, index) => {
@@ -271,20 +271,20 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
         <div class="lb-vendor">${escapeHTML(row.vendor || '')} · ${activeText}</div>
       </div>
       <div class="lb-stat">
-        <span>赛果</span>
-        <strong>${row.resultHits}/${row.predictions || 0}</strong>
+        <span>${type === 'score' ? '比分' : '赛果'}</span>
+        <strong>${type === 'score' ? `${row.scoreHits}/${row.predictions || 0}` : `${row.resultHits}/${row.predictions || 0}`}</strong>
       </div>
       <div class="lb-stat">
-        <span>胜率</span>
-        <strong>${formatPercent(row.resultHits, row.predictions)}</strong>
+        <span>${type === 'score' ? '比分率' : '命中率'}</span>
+        <strong>${type === 'score' ? formatPercent(row.scoreHits, row.predictions) : formatPercent(row.resultHits, row.predictions)}</strong>
       </div>
       <div class="lb-stat">
-        <span>比分</span>
-        <strong>${row.scoreHits}</strong>
+        <span>${type === 'score' ? '赛果辅助' : '精确比分'}</span>
+        <strong>${type === 'score' ? `${row.resultHits}/${row.predictions || 0}` : row.scoreHits}</strong>
       </div>
       <div class="lb-stat">
-        <span>比分率</span>
-        <strong>${formatPercent(row.scoreHits, row.predictions)}</strong>
+        <span>${type === 'score' ? '赛果率' : '比分率'}</span>
+        <strong>${type === 'score' ? formatPercent(row.resultHits, row.predictions) : formatPercent(row.scoreHits, row.predictions)}</strong>
       </div>
     </div>`;
   }).join('');
@@ -431,15 +431,22 @@ function buildLeaderboardRows() {
     });
   });
 
-  const mergeRows = sourceRows => (sourceRows || []).forEach(source => {
+  const mergeResultRows = sourceRows => (sourceRows || []).forEach(source => {
     const row = ensure(source.modelId);
     row.resultHits = Number(source.resultHits ?? source.hits) || 0;
     row.scoreHits = Number(source.scoreHits) || 0;
     row.predictions = Number(source.predictions ?? source.played) || 0;
     row.settledMatches = Number(source.settledMatches) || row.settledMatches;
   });
-  mergeRows(LEADERBOARD.resultRankings || LEADERBOARD.rankings || LEADERBOARD.open);
-  mergeRows(LEADERBOARD.scoreRankings);
+  const mergeScoreRows = sourceRows => (sourceRows || []).forEach(source => {
+    const row = ensure(source.modelId);
+    row.scoreHits = Number(source.scoreHits ?? source.hits) || 0;
+    row.resultHits = Number(source.resultHits) || row.resultHits;
+    row.predictions = Number(source.predictions ?? source.played) || 0;
+    row.settledMatches = Number(source.settledMatches) || row.settledMatches;
+  });
+  mergeResultRows(LEADERBOARD.resultRankings || LEADERBOARD.rankings || LEADERBOARD.open);
+  mergeScoreRows(LEADERBOARD.scoreRankings);
 
   const rows = Object.values(rowsByModel)
     .filter(row => row.enabled)

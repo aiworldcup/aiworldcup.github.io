@@ -125,20 +125,26 @@ function rowFor(rows, modelId) {
   return rows.get(modelId);
 }
 
-function withRates(row) {
+function withRates(row, kind = "result") {
   const predictions = row.predictions || 0;
+  const resultHitRate = predictions ? Number((row.resultHits / predictions).toFixed(4)) : 0;
+  const scoreHitRate = predictions ? Number((row.scoreHits / predictions).toFixed(4)) : 0;
+  const metricHits = kind === "score" ? row.scoreHits : row.resultHits;
+  const metricHitRate = kind === "score" ? scoreHitRate : resultHitRate;
   return {
     ...row,
-    hits: row.resultHits,
+    metric: kind,
+    hits: metricHits,
     played: predictions,
-    resultHitRate: predictions ? Number((row.resultHits / predictions).toFixed(4)) : 0,
-    scoreHitRate: predictions ? Number((row.scoreHits / predictions).toFixed(4)) : 0,
+    hitRate: metricHitRate,
+    resultHitRate,
+    scoreHitRate,
   };
 }
 
 function rankResult(rows) {
   return Array.from(rows.values())
-    .map(withRates)
+    .map((row) => withRates(row, "result"))
     .sort((a, b) =>
       b.resultHitRate - a.resultHitRate ||
       b.resultHits - a.resultHits ||
@@ -151,11 +157,10 @@ function rankResult(rows) {
 
 function rankScore(rows) {
   return Array.from(rows.values())
-    .map(withRates)
+    .map((row) => withRates(row, "score"))
     .sort((a, b) =>
       b.scoreHits - a.scoreHits ||
       b.scoreHitRate - a.scoreHitRate ||
-      b.resultHits - a.resultHits ||
       b.predictions - a.predictions ||
       a.modelId.localeCompare(b.modelId)
     )
