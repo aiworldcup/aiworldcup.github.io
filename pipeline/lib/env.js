@@ -27,7 +27,7 @@ function loadEnv(filePath = path.join(process.cwd(), ".env")) {
     if (!pair) return;
     const [key, value] = pair;
     loaded[key] = value;
-    if (process.env[key] === undefined) process.env[key] = value;
+    if (process.env[key] === undefined || process.env[key] === "") process.env[key] = value;
   });
   return loaded;
 }

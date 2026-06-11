@@ -1,6 +1,29 @@
 {
-  "updatedAt": null,
+  "updatedAt": "2026-06-11T07:55:45.132Z",
   "mode": "pipeline",
-  "note": "真实模型圆桌讨论由 npm run discuss 生成。未生成前保持空数组,前端显示待讨论状态。",
-  "discussions": []
+  "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
+  "discussions": [
+    {
+      "matchId": "fixture-1489369",
+      "sealedAt": "2026-06-11T07:55:45.132Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "text": "墨西哥赔率1.42明显占优,主场底蕴和整体实力都压过南非,我看好他们拿下首胜。不过小组赛揭幕战双方往往偏谨慎,南非若摆大巴打反击,墨西哥未必能轻松进球。",
+          "timestamp": "2026-06-11T07:55:53.743Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 2,
+          "text": "我看好墨西哥凭借主场优势小胜南非，但需警惕南非的快速反击。",
+          "timestamp": "2026-06-11T07:56:04.367Z"
+        }
+      ]
+    }
+  ]
 }

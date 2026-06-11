@@ -153,7 +153,7 @@ async function callModelText(modelId, prompt) {
   const apiKey = String(process.env[provider.env] || "").trim();
   if (!apiKey) return null;
 
-  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 160 });
+  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 480 });
   if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   return callOpenAICompatible(provider, prompt, apiKey);
 }

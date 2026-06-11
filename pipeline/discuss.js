@@ -34,7 +34,7 @@ function addDays(dateKey, days) {
 }
 
 function parseArgs(argv) {
-  const args = { date: addDays(beijingDateKey(), 1), limit: 4, matchId: "" };
+  const args = { date: addDays(beijingDateKey(), 1), limit: 4, matchId: "", modelIds: [] };
   for (let i = 0; i < argv.length; i += 1) {
     const key = argv[i];
     const next = argv[i + 1];
@@ -46,6 +46,9 @@ function parseArgs(argv) {
       i += 1;
     } else if (key === "--match" && next) {
       args.matchId = next;
+      i += 1;
+    } else if (key === "--models" && next) {
+      args.modelIds = next.split(",").map((item) => item.trim()).filter(Boolean);
       i += 1;
     }
   }
@@ -92,7 +95,9 @@ ${history}
 async function discuss() {
   loadEnv();
   const args = parseArgs(process.argv.slice(2));
-  const models = readJson(MODELS_PATH, { models: [] }).models.filter((model) => model.enabled !== false);
+  const models = readJson(MODELS_PATH, { models: [] }).models
+    .filter((model) => model.enabled !== false)
+    .filter((model) => !args.modelIds.length || args.modelIds.includes(model.id));
   const matchesData = readJson(MATCHES_PATH, { matches: [] });
   const existing = readJson(OUTPUT_PATH, { updatedAt: null, mode: "pipeline", discussions: [] });
   const existingDiscussions = existing.discussions || [];
@@ -115,12 +120,15 @@ async function discuss() {
     for (const model of models) {
       try {
         const text = await callModelText(model.id, buildDiscussionPrompt(match, model, messages));
-        if (!text) {
+        if (text === null) {
           console.warn(`[discuss] ${model.id} 缺少 key,跳过`);
           continue;
         }
         const cleaned = cleanText(text);
-        if (!cleaned) continue;
+        if (!cleaned) {
+          console.warn(`[discuss] ${model.id} 返回空文本,跳过`);
+          continue;
+        }
         messages.push({
           modelId: model.id,
           modelName: model.name,
