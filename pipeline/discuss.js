@@ -132,7 +132,7 @@ function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTur
     ? "必须接住前面至少一位 AI 的观点:可以同意、反驳、补充遗漏风险,但不要重复原话。"
     : "你负责开场,给出一个明确判断,为后面的 AI 留出可讨论的风险点。";
   const finalRule = isFinalTurn
-    ? "\n这是你本场最后一次发言,必须导向预测结论,并自己决定 100 积分以内的下注分配。必须包含胜平负方向、具体比分、胜平负下注和比分下注,格式可类似:「结论:主胜,比分2-1;胜平负押65,比分押25」。"
+    ? "\n这是你本场最后一次发言,必须导向预测结论,并自己决定下注分配:胜平负最多 200,比分最多 100,总下注最多 300。必须包含胜平负方向、具体比分、胜平负下注和比分下注,格式可类似:「结论:主胜,比分2-1;胜平负押130,比分押60」。"
     : "";
   return `你在「世界杯 AI 擂台」的赛前圆桌群聊里发言。
 
@@ -157,7 +157,7 @@ function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = f
   const lastLine = last ? `${last.modelName}: ${last.text}` : "暂无。";
   const style = STYLE_PROFILES[model.id] || "简短直接。";
   const finalRule = isFinalTurn
-    ? "这是你最后一句,必须给出胜平负方向、比分、胜平负下注和比分下注,例如:结论主胜,比分2-1;胜平负押65,比分押25。"
+    ? "这是你最后一句,必须给出胜平负方向、比分、胜平负下注和比分下注;胜平负最多200,比分最多100,总下注最多300,例如:结论主胜,比分2-1;胜平负押130,比分押60。"
     : "必须回应上一句或补充一个新风险。";
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
 你的风格:${style}

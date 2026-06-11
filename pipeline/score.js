@@ -30,16 +30,19 @@ function loadMatches(filePath) {
   return readJson(SAMPLE_INPUT);
 }
 
-function safeStake(stake, maxStakePerMatch) {
-  const result = Math.max(0, Number(stake && stake.result) || 0);
-  const score = Math.max(0, Number(stake && stake.score) || 0);
+function safeStake(stake, limits) {
+  const maxResult = Number(limits && limits.maxResultStakePerMatch) || 200;
+  const maxScore = Number(limits && limits.maxScoreStakePerMatch) || 100;
+  const maxTotal = Number(limits && limits.maxStakePerMatch) || maxResult + maxScore;
+  let result = Math.min(maxResult, Math.max(0, Number(stake && stake.result) || 0));
+  let score = Math.min(maxScore, Math.max(0, Number(stake && stake.score) || 0));
   const total = result + score;
-  if (total <= maxStakePerMatch) return { result, score };
-  const ratio = maxStakePerMatch / total;
-  return {
-    result: result * ratio,
-    score: score * ratio,
-  };
+  if (total > maxTotal) {
+    const ratio = maxTotal / total;
+    result = Math.min(maxResult, result * ratio);
+    score = Math.min(maxScore, score * ratio);
+  }
+  return { result, score };
 }
 
 function settlementStatusForMatch(match, options = {}) {
@@ -103,9 +106,9 @@ function settlementStatusForMatch(match, options = {}) {
   };
 }
 
-function scorePrediction(match, prediction, maxStakePerMatch) {
+function scorePrediction(match, prediction, limits) {
   if (!match.actual) return null;
-  const stake = safeStake(prediction.stake, maxStakePerMatch);
+  const stake = safeStake(prediction.stake, limits);
   const resultOdds = match.odds && match.odds.result ? match.odds.result : {};
   const scoreOdds = match.odds && match.odds.scores ? match.odds.scores : {};
   const resultHit = prediction.result === match.actual.result;
@@ -123,7 +126,12 @@ function scorePrediction(match, prediction, maxStakePerMatch) {
 }
 
 function makeLeaderboard(matches, options = {}) {
-  const maxStake = options.maxStakePerMatch || getConfig().maxStakePerMatch;
+  const config = getConfig();
+  const stakeLimits = {
+    maxResultStakePerMatch: options.maxResultStakePerMatch || config.maxResultStakePerMatch,
+    maxScoreStakePerMatch: options.maxScoreStakePerMatch || config.maxScoreStakePerMatch,
+    maxStakePerMatch: options.maxStakePerMatch || config.maxStakePerMatch,
+  };
   const settlementGraceMinutes = options.settlementGraceMinutes || DEFAULT_SETTLEMENT_GRACE_MINUTES;
   const now = options.now instanceof Date ? options.now : new Date(options.now || Date.now());
   const tracks = { open: new Map() };
@@ -146,7 +154,7 @@ function makeLeaderboard(matches, options = {}) {
     (match.predictions || []).forEach((prediction) => {
       const track = prediction.track || "open";
       if (!tracks[track]) return;
-      const scored = scorePrediction(match, prediction, maxStake);
+      const scored = scorePrediction(match, prediction, stakeLimits);
       if (!scored) return;
       const key = prediction.modelId;
       const row = tracks[track].get(key) || {
@@ -201,6 +209,7 @@ function makeLeaderboard(matches, options = {}) {
       rule: `match.actual 存在即结算;开赛后 ${settlementGraceMinutes} 分钟仍无 actual 则进入 pending_result 队列`,
       generatedAt: now.toISOString(),
       graceMinutes: settlementGraceMinutes,
+      stakeLimits,
       counts: settlementCounts,
       pendingResult,
       nextAction: pendingResult.length

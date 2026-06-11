@@ -11,6 +11,11 @@ const ACTIVE_TRACK = 'open';
 const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
+const STAKE_LIMITS = {
+  result: 200,
+  score: 100,
+  total: 300
+};
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -324,13 +329,15 @@ function stakeText(prediction) {
   return `赛果${result} / 比分${score}`;
 }
 
-function safeStake(stake, max = 100) {
-  const result = Math.max(0, Number(stake?.result) || 0);
-  const score = Math.max(0, Number(stake?.score) || 0);
+function safeStake(stake, limits = STAKE_LIMITS) {
+  let result = Math.min(limits.result, Math.max(0, Number(stake?.result) || 0));
+  let score = Math.min(limits.score, Math.max(0, Number(stake?.score) || 0));
   const total = result + score;
-  if (!total || total <= max) return { result, score, total };
-  const ratio = max / total;
-  return { result: result * ratio, score: score * ratio, total: max };
+  if (!total || total <= limits.total) return { result, score, total };
+  const ratio = limits.total / total;
+  result = Math.min(limits.result, result * ratio);
+  score = Math.min(limits.score, score * ratio);
+  return { result, score, total: result + score };
 }
 
 function scorePrediction(match, prediction) {
@@ -525,7 +532,7 @@ function renderMatchCard(m) {
   const hotScoreText = hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无';
   const totalStake = displayPredictions.reduce((acc, p) => acc + (Number(p.stake?.result) || 0) + (Number(p.stake?.score) || 0), 0);
   const avgStakeText = displayPredictions.length && totalStake
-    ? `${Math.round(totalStake / displayPredictions.length)} / 100`
+    ? `${Math.round(totalStake / displayPredictions.length)} / ${STAKE_LIMITS.total}`
     : '待定';
   const kickoff = formatKickoff(m.kickoff);
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));

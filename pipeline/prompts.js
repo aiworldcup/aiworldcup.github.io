@@ -21,23 +21,32 @@ function matchBasics(match) {
   ].join("\n");
 }
 
-function schema(maxStakePerMatch) {
+function schema(limits) {
+  const maxResultStake = limits.maxResultStakePerMatch;
+  const maxScoreStake = limits.maxScoreStakePerMatch;
+  const maxTotalStake = limits.maxStakePerMatch;
   return `只输出 JSON,不要 Markdown,不要额外解释。结构:
 {
   "result": "home|draw|away",
   "score": "主队进球-客队进球,如 2-1",
-  "stake": { "result": 0-${maxStakePerMatch}, "score": 0-${maxStakePerMatch} },
+  "stake": { "result": 0-${maxResultStake}, "score": 0-${maxScoreStake} },
   "reasoning": "一句中文理由,不超过 60 字"
 }
 要求:
 - result 必须是 ${RESULT_VALUES.join("/")};
-- stake.result + stake.score <= ${maxStakePerMatch};
-- stake 由你自己按信心和赔率回报决定,不要默认固定比例,也不要必然用满 ${maxStakePerMatch};
+- stake.result 是胜平负下注,单场最多 ${maxResultStake};
+- stake.score 是比分下注,单场最多 ${maxScoreStake};
+- stake.result + stake.score <= ${maxTotalStake};
+- stake 由你自己按信心和赔率回报决定,不要默认固定比例,也不要必然用满 ${maxTotalStake};
 - score 必须是常规时间比分,格式为数字-数字。`;
 }
 
 function buildPredictionPrompt(match, options = {}) {
-  const maxStake = options.maxStakePerMatch || 100;
+  const limits = {
+    maxResultStakePerMatch: options.maxResultStakePerMatch || 200,
+    maxScoreStakePerMatch: options.maxScoreStakePerMatch || 100,
+    maxStakePerMatch: options.maxStakePerMatch || 300,
+  };
   const form = match.context && match.context.form ? match.context.form : "暂无额外近况数据。";
   return `你正在参加「世界杯 AI 擂台」。请基于同一份对阵、赔率和近况信息预测。
 
@@ -46,7 +55,7 @@ ${matchBasics(match)}
 ${formatOdds(match)}
 近况: ${form}
 
-${schema(maxStake)}`;
+${schema(limits)}`;
 }
 
 function buildPrompt(track, match, options = {}) {

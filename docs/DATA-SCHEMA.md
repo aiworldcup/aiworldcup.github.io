@@ -44,7 +44,7 @@
           "track": "open",
           "result": "home",
           "score": "2-1",
-          "stake": { "result": 60, "score": 40 },
+          "stake": { "result": 130, "score": 60 },
           "reasoning": "一句话理由(可选展示)",
           "timestamp": "2026-06-11T18:00:00Z",
           "hash": "sha256:..."
@@ -58,7 +58,7 @@
 
 字段说明:
 - `track`: 当前统一使用 `"open"`;前端只展示这一版预测。
-- `stake`: 该场 100 积分的分配,`result + score` 之和 ≤ 每场上限(默认 100)。
+- `stake`: 下注积分分配。`result` 是胜平负下注,单场 ≤ 200;`score` 是比分下注,单场 ≤ 100;总下注默认 ≤ 300。
 - `result`: `"home"` / `"draw"` / `"away"`。
 - `score`: 形如 `"2-1"`(主-客)。
 - `actual`: 赛后填,未开赛为 `null`。
@@ -101,11 +101,12 @@
 ## 结算逻辑 (score.js)
 
 对每场每预测:
-- 命中胜平负:`+ stake.result × odds.result[选项]`,否则该部分归零。
-- 命中比分:`+ stake.score × odds.scores[比分]`,否则归零。
+- 命中胜平负:`+ min(stake.result, 200) × odds.result[选项]`,否则该部分归零。
+- 命中比分:`+ min(stake.score, 100) × odds.scores[比分]`,否则归零。
 - 未押(stake=0)不计盈亏。
 - 该场所得累加到模型累计积分。
 - `hits` = 胜平负命中场次;`scoreHits` = 比分命中场次;`played` = 已结算场次。
+- 下注上限可用 `.env` 调整:`MAX_RESULT_STAKE_PER_MATCH`、`MAX_SCORE_STAKE_PER_MATCH`、`MAX_TOTAL_STAKE_PER_MATCH`。
 - 结算触发:只要 `match.actual` 存在,`score.js` 就结算;开赛后 `SETTLEMENT_GRACE_MINUTES`(默认 150)仍无 `actual`,该场进入 `settlement.pendingResult` 队列,页面展示“待赛果结算”。
 - 推荐赛后入口:`npm run settle`。它会先同步真实赛程/赛果并保留已有预测/封盘信息,再生成 `leaderboard.json`。
 
