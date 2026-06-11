@@ -285,30 +285,28 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
   color: var(--accent);
   font-size: 12px;
 }
-.roundtable-finals {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin-bottom: 12px;
-}
-.roundtable-final {
-  display: grid;
-  grid-template-columns: 10px minmax(88px, auto) minmax(0, 1fr);
-  align-items: baseline;
-  gap: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.chat-details summary {
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid rgba(255, 210, 74, 0.22);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.035);
-  padding: 7px 8px;
+  background: rgba(255, 210, 74, 0.07);
+  color: var(--gold);
   font-size: 12px;
+  font-weight: 800;
+  padding: 8px 10px;
 }
-.roundtable-final strong {
-  font-size: 12px;
-  white-space: nowrap;
-}
-.roundtable-final span:last-child {
+.chat-details summary::-webkit-details-marker { display: none; }
+.chat-details summary::after {
+  content: "↓";
+  float: right;
   color: var(--muted);
-  min-width: 0;
+}
+.chat-details[open] summary {
+  margin-bottom: 10px;
+}
+.chat-details[open] summary::after {
+  content: "↑";
 }
 .match-chat {
   max-height: 430px;

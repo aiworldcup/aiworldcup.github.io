@@ -431,7 +431,7 @@ function renderMatchDiscussion(match) {
   const messages = thread?.messages || [];
   if (!messages.length) {
     return `<div class="match-discussion is-empty">
-      <div class="match-discussion-title">赛前圆桌</div>
+      <div class="match-discussion-title">圆桌过程</div>
       <div class="chat-empty">
         <strong>这场还没开聊</strong>
         <span>模型输出生成后,会直接出现在这场比赛下方。</span>
@@ -439,14 +439,7 @@ function renderMatchDiscussion(match) {
     </div>`;
   }
 
-  const finalRows = finalMessagesByModel(messages).map(message => {
-    const meta = modelMeta(message.modelId);
-    return `<div class="roundtable-final">
-      <span class="lb-dot" style="background:${meta.color}"></span>
-      <strong>${escapeHTML(meta.name)}</strong>
-      <span>${escapeHTML(message.text)}</span>
-    </div>`;
-  }).join('');
+  const finalCount = finalMessagesByModel(messages).length;
   const status = thread?.sealedAt
     ? `封盘 ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}`
     : '已生成';
@@ -454,13 +447,15 @@ function renderMatchDiscussion(match) {
   return `<div class="match-discussion">
     <div class="match-discussion-head">
       <div>
-        <div class="match-discussion-title">赛前圆桌</div>
-        <span>${messages.length} 条发言 · ${status}</span>
+        <div class="match-discussion-title">圆桌过程</div>
+        <span>上方模型预测来自各模型最后结论 · ${status}</span>
       </div>
-      <strong>${finalMessagesByModel(messages).length} 位模型</strong>
+      <strong>${finalCount} 位模型</strong>
     </div>
-    <div class="roundtable-finals">${finalRows}</div>
-    <div class="chat-window match-chat">${renderChatMessages(messages)}</div>
+    <details class="chat-details">
+      <summary>展开 ${messages.length} 条讨论记录</summary>
+      <div class="chat-window match-chat">${renderChatMessages(messages)}</div>
+    </details>
   </div>`;
 }
 
