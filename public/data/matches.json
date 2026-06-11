@@ -6,7 +6,7 @@
     "apiFixtures": 72,
     "totalMatches": 104,
     "placeholders": 32,
-    "syncedAt": "2026-06-11T05:09:25.515Z"
+    "syncedAt": "2026-06-11T06:16:24.587Z"
   },
   "matches": [
     {
@@ -15,28 +15,30 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-11T19:00:00+00:00",
       "home": {
-        "team": "Mexico",
-        "flag": "MX"
+        "team": "墨西哥",
+        "flag": "MX",
+        "teamEn": "Mexico"
       },
       "away": {
-        "team": "South Africa",
-        "flag": "ZA"
+        "team": "南非",
+        "flag": "ZA",
+        "teamEn": "South Africa"
       },
       "odds": {
         "result": {
           "home": 1.42,
           "draw": 4.2,
-          "away": 8.4
+          "away": 8.7
         },
         "scores": {
-          "1-0": 3.3,
+          "1-0": 3,
           "2-0": 5.5,
           "2-1": 13,
           "3-0": 12,
           "3-1": 29,
-          "4-0": 34,
+          "4-0": 41,
           "4-1": 71,
-          "0-0": 3.25,
+          "0-0": 3.2,
           "1-1": 7.5,
           "2-2": 56,
           "0-1": 8,
@@ -52,7 +54,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:16.418Z"
+      "syncedAt": "2026-06-11T06:16:14.723Z"
     },
     {
       "id": "fixture-1538999",
@@ -60,21 +62,23 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-12T02:00:00+00:00",
       "home": {
-        "team": "South Korea",
-        "flag": "KR"
+        "team": "韩国",
+        "flag": "KR",
+        "teamEn": "South Korea"
       },
       "away": {
-        "team": "Czech Republic",
-        "flag": "CZ"
+        "team": "捷克",
+        "flag": "CZ",
+        "teamEn": "Czech Republic"
       },
       "odds": {
         "result": {
-          "home": 2.6,
+          "home": 2.7,
           "draw": 3.05,
-          "away": 2.78
+          "away": 2.7
         },
         "scores": {
-          "1-0": 4.33,
+          "1-0": 4.5,
           "2-0": 11,
           "2-1": 15,
           "3-0": 34,
@@ -83,7 +87,7 @@
           "1-1": 6,
           "2-2": 34,
           "0-1": 4.5,
-          "0-2": 12,
+          "0-2": 11,
           "0-3": 34,
           "1-2": 15,
           "1-3": 41,
@@ -96,7 +100,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:17.115Z"
+      "syncedAt": "2026-06-11T06:16:15.396Z"
     },
     {
       "id": "fixture-1539000",
@@ -104,34 +108,36 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-12T19:00:00+00:00",
       "home": {
-        "team": "Canada",
-        "flag": "CA"
+        "team": "加拿大",
+        "flag": "CA",
+        "teamEn": "Canada"
       },
       "away": {
-        "team": "Bosnia & Herzegovina",
-        "flag": "BA"
+        "team": "波黑",
+        "flag": "BA",
+        "teamEn": "Bosnia & Herzegovina"
       },
       "odds": {
         "result": {
-          "home": 1.83,
-          "draw": 3.45,
-          "away": 4.3
+          "home": 1.77,
+          "draw": 3.5,
+          "away": 4.55
         },
         "scores": {
-          "1-0": 3.6,
-          "2-0": 7.5,
+          "1-0": 3.5,
+          "2-0": 7,
           "2-1": 13,
           "3-0": 19,
-          "3-1": 34,
-          "4-0": 61,
+          "3-1": 31,
+          "4-0": 56,
           "0-0": 3.2,
           "1-1": 6.5,
-          "2-2": 41,
-          "0-1": 5.75,
-          "0-2": 19,
-          "0-3": 67,
-          "1-2": 21,
-          "1-3": 71,
+          "2-2": 46,
+          "0-1": 6,
+          "0-2": 21,
+          "0-3": 71,
+          "1-2": 23,
+          "1-3": 76,
           "3-2": 81,
           "4-1": 91
         }
@@ -140,7 +146,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:17.778Z"
+      "syncedAt": "2026-06-11T06:16:16.124Z"
     },
     {
       "id": "fixture-1489370",
@@ -148,27 +154,29 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-13T01:00:00+00:00",
       "home": {
-        "team": "USA",
-        "flag": "US"
+        "team": "美国",
+        "flag": "US",
+        "teamEn": "USA"
       },
       "away": {
-        "team": "Paraguay",
-        "flag": "PY"
+        "team": "巴拉圭",
+        "flag": "PY",
+        "teamEn": "Paraguay"
       },
       "odds": {
         "result": {
           "home": 1.91,
-          "draw": 3.3,
+          "draw": 3.35,
           "away": 4.2
         },
         "scores": {
-          "1-0": 3.8,
+          "1-0": 3.75,
           "2-0": 8,
           "2-1": 13,
           "3-0": 21,
-          "3-1": 34,
+          "3-1": 31,
           "4-0": 67,
-          "0-0": 3.35,
+          "0-0": 3.4,
           "1-1": 6.25,
           "2-2": 34,
           "0-1": 5.5,
@@ -185,7 +193,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:18.430Z"
+      "syncedAt": "2026-06-11T06:16:16.674Z"
     },
     {
       "id": "fixture-1489373",
@@ -193,12 +201,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-13T19:00:00+00:00",
       "home": {
-        "team": "Qatar",
-        "flag": "QA"
+        "team": "卡塔尔",
+        "flag": "QA",
+        "teamEn": "Qatar"
       },
       "away": {
-        "team": "Switzerland",
-        "flag": "CH"
+        "team": "瑞士",
+        "flag": "CH",
+        "teamEn": "Switzerland"
       },
       "odds": {
         "result": {
@@ -229,7 +239,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:18.865Z"
+      "syncedAt": "2026-06-11T06:16:17.311Z"
     },
     {
       "id": "fixture-1489371",
@@ -237,29 +247,31 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-13T22:00:00+00:00",
       "home": {
-        "team": "Brazil",
-        "flag": "BR"
+        "team": "巴西",
+        "flag": "BR",
+        "teamEn": "Brazil"
       },
       "away": {
-        "team": "Morocco",
-        "flag": "MA"
+        "team": "摩洛哥",
+        "flag": "MA",
+        "teamEn": "Morocco"
       },
       "odds": {
         "result": {
-          "home": 1.66,
+          "home": 1.67,
           "draw": 3.7,
-          "away": 5.3
+          "away": 5.2
         },
         "scores": {
           "1-0": 3.45,
           "2-0": 6.5,
           "2-1": 13,
-          "3-0": 15,
+          "3-0": 17,
           "3-1": 29,
           "3-2": 76,
           "4-0": 51,
-          "4-1": 76,
-          "0-0": 3.35,
+          "4-1": 81,
+          "0-0": 3.4,
           "1-1": 6.5,
           "2-2": 41,
           "0-1": 6.25,
@@ -274,7 +286,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:19.565Z"
+      "syncedAt": "2026-06-11T06:16:18.163Z"
     },
     {
       "id": "fixture-1489372",
@@ -282,12 +294,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-14T01:00:00+00:00",
       "home": {
-        "team": "Haiti",
-        "flag": "HT"
+        "team": "海地",
+        "flag": "HT",
+        "teamEn": "Haiti"
       },
       "away": {
-        "team": "Scotland",
-        "flag": "GB"
+        "team": "苏格兰",
+        "flag": "GB",
+        "teamEn": "Scotland"
       },
       "odds": {
         "result": {
@@ -320,7 +334,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:20.300Z"
+      "syncedAt": "2026-06-11T06:16:18.951Z"
     },
     {
       "id": "fixture-1539001",
@@ -328,12 +342,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-14T04:00:00+00:00",
       "home": {
-        "team": "Australia",
-        "flag": "AU"
+        "team": "澳大利亚",
+        "flag": "AU",
+        "teamEn": "Australia"
       },
       "away": {
-        "team": "Türkiye",
-        "flag": "TR"
+        "team": "土耳其",
+        "flag": "TR",
+        "teamEn": "Türkiye"
       },
       "odds": {
         "result": {
@@ -365,7 +381,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:20.947Z"
+      "syncedAt": "2026-06-11T06:16:19.587Z"
     },
     {
       "id": "fixture-1489374",
@@ -373,39 +389,41 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-14T17:00:00+00:00",
       "home": {
-        "team": "Germany",
-        "flag": "DE"
+        "team": "德国",
+        "flag": "DE",
+        "teamEn": "Germany"
       },
       "away": {
-        "team": "Curaçao",
-        "flag": "CW"
+        "team": "库拉索",
+        "flag": "CW",
+        "teamEn": "Curaçao"
       },
       "odds": {
         "result": {
           "home": 1.03,
-          "draw": 16.5,
-          "away": 29
+          "draw": 15.5,
+          "away": 28
         },
         "scores": {
-          "1-0": 3.95,
-          "2-0": 3.5,
-          "2-1": 12,
-          "3-0": 4.2,
-          "3-1": 15,
-          "3-2": 81,
+          "1-0": 4.2,
+          "2-0": 3.65,
+          "2-1": 11,
+          "3-0": 4.33,
+          "3-1": 13,
+          "3-2": 67,
           "4-0": 7,
-          "4-1": 26,
-          "0-0": 7.5,
-          "1-1": 13,
-          "2-2": 67,
-          "0-1": 26,
+          "4-1": 23,
+          "0-0": 8.5,
+          "1-1": 12,
+          "2-2": 56,
+          "0-1": 23,
           "0-2": 91,
-          "1-2": 71,
+          "1-2": 61,
           "5-0": 13,
-          "5-1": 46,
-          "6-0": 29,
-          "4-2": 101,
-          "6-1": 81,
+          "5-1": 41,
+          "6-0": 31,
+          "4-2": 91,
+          "6-1": 76,
           "7-0": 67
         }
       },
@@ -413,7 +431,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:21.375Z"
+      "syncedAt": "2026-06-11T06:16:20.222Z"
     },
     {
       "id": "fixture-1489376",
@@ -421,12 +439,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-14T20:00:00+00:00",
       "home": {
-        "team": "Netherlands",
-        "flag": "NL"
+        "team": "荷兰",
+        "flag": "NL",
+        "teamEn": "Netherlands"
       },
       "away": {
-        "team": "Japan",
-        "flag": "JP"
+        "team": "日本",
+        "flag": "JP",
+        "teamEn": "Japan"
       },
       "odds": {
         "result": {
@@ -458,7 +478,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:22.020Z"
+      "syncedAt": "2026-06-11T06:16:20.866Z"
     },
     {
       "id": "fixture-1489375",
@@ -466,12 +486,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-14T23:00:00+00:00",
       "home": {
-        "team": "Ivory Coast",
-        "flag": "CI"
+        "team": "科特迪瓦",
+        "flag": "CI",
+        "teamEn": "Ivory Coast"
       },
       "away": {
-        "team": "Ecuador",
-        "flag": "EC"
+        "team": "厄瓜多尔",
+        "flag": "EC",
+        "teamEn": "Ecuador"
       },
       "odds": {
         "result": {
@@ -501,7 +523,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:22.680Z"
+      "syncedAt": "2026-06-11T06:16:21.280Z"
     },
     {
       "id": "fixture-1539002",
@@ -509,12 +531,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-15T02:00:00+00:00",
       "home": {
-        "team": "Sweden",
-        "flag": "SE"
+        "team": "瑞典",
+        "flag": "SE",
+        "teamEn": "Sweden"
       },
       "away": {
-        "team": "Tunisia",
-        "flag": "TN"
+        "team": "突尼斯",
+        "flag": "TN",
+        "teamEn": "Tunisia"
       },
       "odds": {
         "result": {
@@ -545,7 +569,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:23.390Z"
+      "syncedAt": "2026-06-11T06:16:21.910Z"
     },
     {
       "id": "fixture-1489380",
@@ -553,12 +577,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-15T16:00:00+00:00",
       "home": {
-        "team": "Spain",
-        "flag": "ES"
+        "team": "西班牙",
+        "flag": "ES",
+        "teamEn": "Spain"
       },
       "away": {
-        "team": "Cape Verde Islands",
-        "flag": "CV"
+        "team": "佛得角",
+        "flag": "CV",
+        "teamEn": "Cape Verde Islands"
       },
       "odds": {
         "result": {
@@ -591,7 +617,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:23.811Z"
+      "syncedAt": "2026-06-11T06:16:22.545Z"
     },
     {
       "id": "fixture-1489377",
@@ -599,12 +625,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-15T19:00:00+00:00",
       "home": {
-        "team": "Belgium",
-        "flag": "BE"
+        "team": "比利时",
+        "flag": "BE",
+        "teamEn": "Belgium"
       },
       "away": {
-        "team": "Egypt",
-        "flag": "EG"
+        "team": "埃及",
+        "flag": "EG",
+        "teamEn": "Egypt"
       },
       "odds": {
         "result": {
@@ -636,7 +664,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:24.454Z"
+      "syncedAt": "2026-06-11T06:16:23.195Z"
     },
     {
       "id": "fixture-1489379",
@@ -644,12 +672,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-15T22:00:00+00:00",
       "home": {
-        "team": "Saudi Arabia",
-        "flag": "SA"
+        "team": "沙特阿拉伯",
+        "flag": "SA",
+        "teamEn": "Saudi Arabia"
       },
       "away": {
-        "team": "Uruguay",
-        "flag": "UY"
+        "team": "乌拉圭",
+        "flag": "UY",
+        "teamEn": "Uruguay"
       },
       "odds": {
         "result": {
@@ -681,7 +711,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.096Z"
+      "syncedAt": "2026-06-11T06:16:23.946Z"
     },
     {
       "id": "fixture-1489378",
@@ -689,18 +719,20 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-16T01:00:00+00:00",
       "home": {
-        "team": "Iran",
-        "flag": "IR"
+        "team": "伊朗",
+        "flag": "IR",
+        "teamEn": "Iran"
       },
       "away": {
-        "team": "New Zealand",
-        "flag": "NZ"
+        "team": "新西兰",
+        "flag": "NZ",
+        "teamEn": "New Zealand"
       },
       "odds": {
         "result": {
-          "home": 1.88,
-          "draw": 3.3,
-          "away": 4.2
+          "home": 1.86,
+          "draw": 3.35,
+          "away": 4.3
         },
         "scores": {
           "1-0": 3.75,
@@ -726,7 +758,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489383",
@@ -734,12 +766,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-16T19:00:00+00:00",
       "home": {
-        "team": "France",
-        "flag": "FR"
+        "team": "法国",
+        "flag": "FR",
+        "teamEn": "France"
       },
       "away": {
-        "team": "Senegal",
-        "flag": "SN"
+        "team": "塞内加尔",
+        "flag": "SN",
+        "teamEn": "Senegal"
       },
       "odds": {
         "result": {
@@ -753,7 +787,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539016",
@@ -761,12 +795,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-16T22:00:00+00:00",
       "home": {
-        "team": "Iraq",
-        "flag": "IQ"
+        "team": "伊拉克",
+        "flag": "IQ",
+        "teamEn": "Iraq"
       },
       "away": {
-        "team": "Norway",
-        "flag": "NO"
+        "team": "挪威",
+        "flag": "NO",
+        "teamEn": "Norway"
       },
       "odds": {
         "result": {
@@ -780,7 +816,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489381",
@@ -788,12 +824,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-17T01:00:00+00:00",
       "home": {
-        "team": "Argentina",
-        "flag": "AR"
+        "team": "阿根廷",
+        "flag": "AR",
+        "teamEn": "Argentina"
       },
       "away": {
-        "team": "Algeria",
-        "flag": "DZ"
+        "team": "阿尔及利亚",
+        "flag": "DZ",
+        "teamEn": "Algeria"
       },
       "odds": {
         "result": {
@@ -807,7 +845,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489382",
@@ -815,12 +853,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-17T04:00:00+00:00",
       "home": {
-        "team": "Austria",
-        "flag": "AT"
+        "team": "奥地利",
+        "flag": "AT",
+        "teamEn": "Austria"
       },
       "away": {
-        "team": "Jordan",
-        "flag": "JO"
+        "team": "约旦",
+        "flag": "JO",
+        "teamEn": "Jordan"
       },
       "odds": {
         "result": {
@@ -834,7 +874,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539003",
@@ -842,12 +882,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-17T17:00:00+00:00",
       "home": {
-        "team": "Portugal",
-        "flag": "PT"
+        "team": "葡萄牙",
+        "flag": "PT",
+        "teamEn": "Portugal"
       },
       "away": {
-        "team": "Congo DR",
-        "flag": "CD"
+        "team": "民主刚果",
+        "flag": "CD",
+        "teamEn": "Congo DR"
       },
       "odds": {
         "result": {
@@ -861,7 +903,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489384",
@@ -869,12 +911,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-17T20:00:00+00:00",
       "home": {
-        "team": "England",
-        "flag": "GB"
+        "team": "英格兰",
+        "flag": "GB",
+        "teamEn": "England"
       },
       "away": {
-        "team": "Croatia",
-        "flag": "HR"
+        "team": "克罗地亚",
+        "flag": "HR",
+        "teamEn": "Croatia"
       },
       "odds": {
         "result": {
@@ -888,7 +932,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489385",
@@ -896,12 +940,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-17T23:00:00+00:00",
       "home": {
-        "team": "Ghana",
-        "flag": "GH"
+        "team": "加纳",
+        "flag": "GH",
+        "teamEn": "Ghana"
       },
       "away": {
-        "team": "Panama",
-        "flag": "PA"
+        "team": "巴拿马",
+        "flag": "PA",
+        "teamEn": "Panama"
       },
       "odds": {
         "result": {
@@ -915,7 +961,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489386",
@@ -923,12 +969,14 @@
       "stage": "World Cup · Group Stage - 1",
       "kickoff": "2026-06-18T02:00:00+00:00",
       "home": {
-        "team": "Uzbekistan",
-        "flag": "UZ"
+        "team": "乌兹别克斯坦",
+        "flag": "UZ",
+        "teamEn": "Uzbekistan"
       },
       "away": {
-        "team": "Colombia",
-        "flag": "CO"
+        "team": "哥伦比亚",
+        "flag": "CO",
+        "teamEn": "Colombia"
       },
       "odds": {
         "result": {
@@ -942,7 +990,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539004",
@@ -950,12 +998,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-18T16:00:00+00:00",
       "home": {
-        "team": "Czech Republic",
-        "flag": "CZ"
+        "team": "捷克",
+        "flag": "CZ",
+        "teamEn": "Czech Republic"
       },
       "away": {
-        "team": "South Africa",
-        "flag": "ZA"
+        "team": "南非",
+        "flag": "ZA",
+        "teamEn": "South Africa"
       },
       "odds": {
         "result": {
@@ -969,7 +1019,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539005",
@@ -977,12 +1027,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-18T19:00:00+00:00",
       "home": {
-        "team": "Switzerland",
-        "flag": "CH"
+        "team": "瑞士",
+        "flag": "CH",
+        "teamEn": "Switzerland"
       },
       "away": {
-        "team": "Bosnia & Herzegovina",
-        "flag": "BA"
+        "team": "波黑",
+        "flag": "BA",
+        "teamEn": "Bosnia & Herzegovina"
       },
       "odds": {
         "result": {
@@ -996,7 +1048,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489387",
@@ -1004,12 +1056,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-18T22:00:00+00:00",
       "home": {
-        "team": "Canada",
-        "flag": "CA"
+        "team": "加拿大",
+        "flag": "CA",
+        "teamEn": "Canada"
       },
       "away": {
-        "team": "Qatar",
-        "flag": "QA"
+        "team": "卡塔尔",
+        "flag": "QA",
+        "teamEn": "Qatar"
       },
       "odds": {
         "result": {
@@ -1023,7 +1077,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489388",
@@ -1031,12 +1085,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-19T01:00:00+00:00",
       "home": {
-        "team": "Mexico",
-        "flag": "MX"
+        "team": "墨西哥",
+        "flag": "MX",
+        "teamEn": "Mexico"
       },
       "away": {
-        "team": "South Korea",
-        "flag": "KR"
+        "team": "韩国",
+        "flag": "KR",
+        "teamEn": "South Korea"
       },
       "odds": {
         "result": {
@@ -1050,7 +1106,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489391",
@@ -1058,12 +1114,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-19T19:00:00+00:00",
       "home": {
-        "team": "USA",
-        "flag": "US"
+        "team": "美国",
+        "flag": "US",
+        "teamEn": "USA"
       },
       "away": {
-        "team": "Australia",
-        "flag": "AU"
+        "team": "澳大利亚",
+        "flag": "AU",
+        "teamEn": "Australia"
       },
       "odds": {
         "result": {
@@ -1077,7 +1135,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489390",
@@ -1085,12 +1143,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-19T22:00:00+00:00",
       "home": {
-        "team": "Scotland",
-        "flag": "GB"
+        "team": "苏格兰",
+        "flag": "GB",
+        "teamEn": "Scotland"
       },
       "away": {
-        "team": "Morocco",
-        "flag": "MA"
+        "team": "摩洛哥",
+        "flag": "MA",
+        "teamEn": "Morocco"
       },
       "odds": {
         "result": {
@@ -1104,7 +1164,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489389",
@@ -1112,12 +1172,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-20T00:30:00+00:00",
       "home": {
-        "team": "Brazil",
-        "flag": "BR"
+        "team": "巴西",
+        "flag": "BR",
+        "teamEn": "Brazil"
       },
       "away": {
-        "team": "Haiti",
-        "flag": "HT"
+        "team": "海地",
+        "flag": "HT",
+        "teamEn": "Haiti"
       },
       "odds": {
         "result": {
@@ -1131,7 +1193,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539006",
@@ -1139,12 +1201,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-20T03:00:00+00:00",
       "home": {
-        "team": "Türkiye",
-        "flag": "TR"
+        "team": "土耳其",
+        "flag": "TR",
+        "teamEn": "Türkiye"
       },
       "away": {
-        "team": "Paraguay",
-        "flag": "PY"
+        "team": "巴拉圭",
+        "flag": "PY",
+        "teamEn": "Paraguay"
       },
       "odds": {
         "result": {
@@ -1158,7 +1222,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539007",
@@ -1166,12 +1230,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-20T17:00:00+00:00",
       "home": {
-        "team": "Netherlands",
-        "flag": "NL"
+        "team": "荷兰",
+        "flag": "NL",
+        "teamEn": "Netherlands"
       },
       "away": {
-        "team": "Sweden",
-        "flag": "SE"
+        "team": "瑞典",
+        "flag": "SE",
+        "teamEn": "Sweden"
       },
       "odds": {
         "result": {
@@ -1185,7 +1251,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489393",
@@ -1193,12 +1259,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-20T20:00:00+00:00",
       "home": {
-        "team": "Germany",
-        "flag": "DE"
+        "team": "德国",
+        "flag": "DE",
+        "teamEn": "Germany"
       },
       "away": {
-        "team": "Ivory Coast",
-        "flag": "CI"
+        "team": "科特迪瓦",
+        "flag": "CI",
+        "teamEn": "Ivory Coast"
       },
       "odds": {
         "result": {
@@ -1212,7 +1280,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489392",
@@ -1220,12 +1288,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-21T00:00:00+00:00",
       "home": {
-        "team": "Ecuador",
-        "flag": "EC"
+        "team": "厄瓜多尔",
+        "flag": "EC",
+        "teamEn": "Ecuador"
       },
       "away": {
-        "team": "Curaçao",
-        "flag": "CW"
+        "team": "库拉索",
+        "flag": "CW",
+        "teamEn": "Curaçao"
       },
       "odds": {
         "result": {
@@ -1239,7 +1309,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489394",
@@ -1247,12 +1317,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-21T04:00:00+00:00",
       "home": {
-        "team": "Tunisia",
-        "flag": "TN"
+        "team": "突尼斯",
+        "flag": "TN",
+        "teamEn": "Tunisia"
       },
       "away": {
-        "team": "Japan",
-        "flag": "JP"
+        "team": "日本",
+        "flag": "JP",
+        "teamEn": "Japan"
       },
       "odds": {
         "result": {
@@ -1266,7 +1338,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489397",
@@ -1274,12 +1346,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-21T16:00:00+00:00",
       "home": {
-        "team": "Spain",
-        "flag": "ES"
+        "team": "西班牙",
+        "flag": "ES",
+        "teamEn": "Spain"
       },
       "away": {
-        "team": "Saudi Arabia",
-        "flag": "SA"
+        "team": "沙特阿拉伯",
+        "flag": "SA",
+        "teamEn": "Saudi Arabia"
       },
       "odds": {
         "result": {
@@ -1293,7 +1367,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489395",
@@ -1301,12 +1375,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-21T19:00:00+00:00",
       "home": {
-        "team": "Belgium",
-        "flag": "BE"
+        "team": "比利时",
+        "flag": "BE",
+        "teamEn": "Belgium"
       },
       "away": {
-        "team": "Iran",
-        "flag": "IR"
+        "team": "伊朗",
+        "flag": "IR",
+        "teamEn": "Iran"
       },
       "odds": {
         "result": {
@@ -1320,7 +1396,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489398",
@@ -1328,12 +1404,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-21T22:00:00+00:00",
       "home": {
-        "team": "Uruguay",
-        "flag": "UY"
+        "team": "乌拉圭",
+        "flag": "UY",
+        "teamEn": "Uruguay"
       },
       "away": {
-        "team": "Cape Verde Islands",
-        "flag": "CV"
+        "team": "佛得角",
+        "flag": "CV",
+        "teamEn": "Cape Verde Islands"
       },
       "odds": {
         "result": {
@@ -1347,7 +1425,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489396",
@@ -1355,12 +1433,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-22T01:00:00+00:00",
       "home": {
-        "team": "New Zealand",
-        "flag": "NZ"
+        "team": "新西兰",
+        "flag": "NZ",
+        "teamEn": "New Zealand"
       },
       "away": {
-        "team": "Egypt",
-        "flag": "EG"
+        "team": "埃及",
+        "flag": "EG",
+        "teamEn": "Egypt"
       },
       "odds": {
         "result": {
@@ -1374,7 +1454,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489399",
@@ -1382,12 +1462,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-22T17:00:00+00:00",
       "home": {
-        "team": "Argentina",
-        "flag": "AR"
+        "team": "阿根廷",
+        "flag": "AR",
+        "teamEn": "Argentina"
       },
       "away": {
-        "team": "Austria",
-        "flag": "AT"
+        "team": "奥地利",
+        "flag": "AT",
+        "teamEn": "Austria"
       },
       "odds": {
         "result": {
@@ -1401,7 +1483,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.514Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539017",
@@ -1409,12 +1491,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-22T21:00:00+00:00",
       "home": {
-        "team": "France",
-        "flag": "FR"
+        "team": "法国",
+        "flag": "FR",
+        "teamEn": "France"
       },
       "away": {
-        "team": "Iraq",
-        "flag": "IQ"
+        "team": "伊拉克",
+        "flag": "IQ",
+        "teamEn": "Iraq"
       },
       "odds": {
         "result": {
@@ -1428,7 +1512,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489401",
@@ -1436,12 +1520,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-23T00:00:00+00:00",
       "home": {
-        "team": "Norway",
-        "flag": "NO"
+        "team": "挪威",
+        "flag": "NO",
+        "teamEn": "Norway"
       },
       "away": {
-        "team": "Senegal",
-        "flag": "SN"
+        "team": "塞内加尔",
+        "flag": "SN",
+        "teamEn": "Senegal"
       },
       "odds": {
         "result": {
@@ -1455,7 +1541,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489400",
@@ -1463,12 +1549,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-23T03:00:00+00:00",
       "home": {
-        "team": "Jordan",
-        "flag": "JO"
+        "team": "约旦",
+        "flag": "JO",
+        "teamEn": "Jordan"
       },
       "away": {
-        "team": "Algeria",
-        "flag": "DZ"
+        "team": "阿尔及利亚",
+        "flag": "DZ",
+        "teamEn": "Algeria"
       },
       "odds": {
         "result": {
@@ -1482,7 +1570,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489404",
@@ -1490,12 +1578,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-23T17:00:00+00:00",
       "home": {
-        "team": "Portugal",
-        "flag": "PT"
+        "team": "葡萄牙",
+        "flag": "PT",
+        "teamEn": "Portugal"
       },
       "away": {
-        "team": "Uzbekistan",
-        "flag": "UZ"
+        "team": "乌兹别克斯坦",
+        "flag": "UZ",
+        "teamEn": "Uzbekistan"
       },
       "odds": {
         "result": {
@@ -1509,7 +1599,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489402",
@@ -1517,12 +1607,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-23T20:00:00+00:00",
       "home": {
-        "team": "England",
-        "flag": "GB"
+        "team": "英格兰",
+        "flag": "GB",
+        "teamEn": "England"
       },
       "away": {
-        "team": "Ghana",
-        "flag": "GH"
+        "team": "加纳",
+        "flag": "GH",
+        "teamEn": "Ghana"
       },
       "odds": {
         "result": {
@@ -1536,7 +1628,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489403",
@@ -1544,12 +1636,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-23T23:00:00+00:00",
       "home": {
-        "team": "Panama",
-        "flag": "PA"
+        "team": "巴拿马",
+        "flag": "PA",
+        "teamEn": "Panama"
       },
       "away": {
-        "team": "Croatia",
-        "flag": "HR"
+        "team": "克罗地亚",
+        "flag": "HR",
+        "teamEn": "Croatia"
       },
       "odds": {
         "result": {
@@ -1563,7 +1657,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539008",
@@ -1571,12 +1665,14 @@
       "stage": "World Cup · Group Stage - 2",
       "kickoff": "2026-06-24T02:00:00+00:00",
       "home": {
-        "team": "Colombia",
-        "flag": "CO"
+        "team": "哥伦比亚",
+        "flag": "CO",
+        "teamEn": "Colombia"
       },
       "away": {
-        "team": "Congo DR",
-        "flag": "CD"
+        "team": "民主刚果",
+        "flag": "CD",
+        "teamEn": "Congo DR"
       },
       "odds": {
         "result": {
@@ -1590,7 +1686,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489408",
@@ -1598,12 +1694,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-24T19:00:00+00:00",
       "home": {
-        "team": "Switzerland",
-        "flag": "CH"
+        "team": "瑞士",
+        "flag": "CH",
+        "teamEn": "Switzerland"
       },
       "away": {
-        "team": "Canada",
-        "flag": "CA"
+        "team": "加拿大",
+        "flag": "CA",
+        "teamEn": "Canada"
       },
       "odds": {
         "result": {
@@ -1617,7 +1715,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539009",
@@ -1625,12 +1723,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-24T19:00:00+00:00",
       "home": {
-        "team": "Bosnia & Herzegovina",
-        "flag": "BA"
+        "team": "波黑",
+        "flag": "BA",
+        "teamEn": "Bosnia & Herzegovina"
       },
       "away": {
-        "team": "Qatar",
-        "flag": "QA"
+        "team": "卡塔尔",
+        "flag": "QA",
+        "teamEn": "Qatar"
       },
       "odds": {
         "result": {
@@ -1644,7 +1744,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489405",
@@ -1652,12 +1752,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-24T22:00:00+00:00",
       "home": {
-        "team": "Morocco",
-        "flag": "MA"
+        "team": "摩洛哥",
+        "flag": "MA",
+        "teamEn": "Morocco"
       },
       "away": {
-        "team": "Haiti",
-        "flag": "HT"
+        "team": "海地",
+        "flag": "HT",
+        "teamEn": "Haiti"
       },
       "odds": {
         "result": {
@@ -1671,7 +1773,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489406",
@@ -1679,12 +1781,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-24T22:00:00+00:00",
       "home": {
-        "team": "Scotland",
-        "flag": "GB"
+        "team": "苏格兰",
+        "flag": "GB",
+        "teamEn": "Scotland"
       },
       "away": {
-        "team": "Brazil",
-        "flag": "BR"
+        "team": "巴西",
+        "flag": "BR",
+        "teamEn": "Brazil"
       },
       "odds": {
         "result": {
@@ -1698,7 +1802,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539010",
@@ -1706,12 +1810,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-25T01:00:00+00:00",
       "home": {
-        "team": "Czech Republic",
-        "flag": "CZ"
+        "team": "捷克",
+        "flag": "CZ",
+        "teamEn": "Czech Republic"
       },
       "away": {
-        "team": "Mexico",
-        "flag": "MX"
+        "team": "墨西哥",
+        "flag": "MX",
+        "teamEn": "Mexico"
       },
       "odds": {
         "result": {
@@ -1725,7 +1831,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489407",
@@ -1733,12 +1839,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-25T01:00:00+00:00",
       "home": {
-        "team": "South Africa",
-        "flag": "ZA"
+        "team": "南非",
+        "flag": "ZA",
+        "teamEn": "South Africa"
       },
       "away": {
-        "team": "South Korea",
-        "flag": "KR"
+        "team": "韩国",
+        "flag": "KR",
+        "teamEn": "South Korea"
       },
       "odds": {
         "result": {
@@ -1752,7 +1860,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489410",
@@ -1760,12 +1868,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-25T20:00:00+00:00",
       "home": {
-        "team": "Ecuador",
-        "flag": "EC"
+        "team": "厄瓜多尔",
+        "flag": "EC",
+        "teamEn": "Ecuador"
       },
       "away": {
-        "team": "Germany",
-        "flag": "DE"
+        "team": "德国",
+        "flag": "DE",
+        "teamEn": "Germany"
       },
       "odds": {
         "result": {
@@ -1779,7 +1889,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489409",
@@ -1787,12 +1897,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-25T20:00:00+00:00",
       "home": {
-        "team": "Curaçao",
-        "flag": "CW"
+        "team": "库拉索",
+        "flag": "CW",
+        "teamEn": "Curaçao"
       },
       "away": {
-        "team": "Ivory Coast",
-        "flag": "CI"
+        "team": "科特迪瓦",
+        "flag": "CI",
+        "teamEn": "Ivory Coast"
       },
       "odds": {
         "result": {
@@ -1806,7 +1918,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539011",
@@ -1814,12 +1926,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-25T23:00:00+00:00",
       "home": {
-        "team": "Japan",
-        "flag": "JP"
+        "team": "日本",
+        "flag": "JP",
+        "teamEn": "Japan"
       },
       "away": {
-        "team": "Sweden",
-        "flag": "SE"
+        "team": "瑞典",
+        "flag": "SE",
+        "teamEn": "Sweden"
       },
       "odds": {
         "result": {
@@ -1833,7 +1947,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489412",
@@ -1841,12 +1955,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-25T23:00:00+00:00",
       "home": {
-        "team": "Tunisia",
-        "flag": "TN"
+        "team": "突尼斯",
+        "flag": "TN",
+        "teamEn": "Tunisia"
       },
       "away": {
-        "team": "Netherlands",
-        "flag": "NL"
+        "team": "荷兰",
+        "flag": "NL",
+        "teamEn": "Netherlands"
       },
       "odds": {
         "result": {
@@ -1860,7 +1976,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539012",
@@ -1868,12 +1984,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-26T02:00:00+00:00",
       "home": {
-        "team": "Türkiye",
-        "flag": "TR"
+        "team": "土耳其",
+        "flag": "TR",
+        "teamEn": "Türkiye"
       },
       "away": {
-        "team": "USA",
-        "flag": "US"
+        "team": "美国",
+        "flag": "US",
+        "teamEn": "USA"
       },
       "odds": {
         "result": {
@@ -1887,7 +2005,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489411",
@@ -1895,12 +2013,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-26T02:00:00+00:00",
       "home": {
-        "team": "Paraguay",
-        "flag": "PY"
+        "team": "巴拉圭",
+        "flag": "PY",
+        "teamEn": "Paraguay"
       },
       "away": {
-        "team": "Australia",
-        "flag": "AU"
+        "team": "澳大利亚",
+        "flag": "AU",
+        "teamEn": "Australia"
       },
       "odds": {
         "result": {
@@ -1914,7 +2034,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539074",
@@ -1922,12 +2042,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-26T19:00:00+00:00",
       "home": {
-        "team": "Senegal",
-        "flag": "SN"
+        "team": "塞内加尔",
+        "flag": "SN",
+        "teamEn": "Senegal"
       },
       "away": {
-        "team": "Iraq",
-        "flag": "IQ"
+        "team": "伊拉克",
+        "flag": "IQ",
+        "teamEn": "Iraq"
       },
       "odds": {
         "result": {
@@ -1941,7 +2063,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489416",
@@ -1949,12 +2071,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-26T19:00:00+00:00",
       "home": {
-        "team": "Norway",
-        "flag": "NO"
+        "team": "挪威",
+        "flag": "NO",
+        "teamEn": "Norway"
       },
       "away": {
-        "team": "France",
-        "flag": "FR"
+        "team": "法国",
+        "flag": "FR",
+        "teamEn": "France"
       },
       "odds": {
         "result": {
@@ -1968,7 +2092,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489417",
@@ -1976,12 +2100,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T00:00:00+00:00",
       "home": {
-        "team": "Uruguay",
-        "flag": "UY"
+        "team": "乌拉圭",
+        "flag": "UY",
+        "teamEn": "Uruguay"
       },
       "away": {
-        "team": "Spain",
-        "flag": "ES"
+        "team": "西班牙",
+        "flag": "ES",
+        "teamEn": "Spain"
       },
       "odds": {
         "result": {
@@ -1995,7 +2121,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489413",
@@ -2003,12 +2129,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T00:00:00+00:00",
       "home": {
-        "team": "Cape Verde Islands",
-        "flag": "CV"
+        "team": "佛得角",
+        "flag": "CV",
+        "teamEn": "Cape Verde Islands"
       },
       "away": {
-        "team": "Saudi Arabia",
-        "flag": "SA"
+        "team": "沙特阿拉伯",
+        "flag": "SA",
+        "teamEn": "Saudi Arabia"
       },
       "odds": {
         "result": {
@@ -2022,7 +2150,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489414",
@@ -2030,12 +2158,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T03:00:00+00:00",
       "home": {
-        "team": "Egypt",
-        "flag": "EG"
+        "team": "埃及",
+        "flag": "EG",
+        "teamEn": "Egypt"
       },
       "away": {
-        "team": "Iran",
-        "flag": "IR"
+        "team": "伊朗",
+        "flag": "IR",
+        "teamEn": "Iran"
       },
       "odds": {
         "result": {
@@ -2049,7 +2179,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489415",
@@ -2057,12 +2187,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T03:00:00+00:00",
       "home": {
-        "team": "New Zealand",
-        "flag": "NZ"
+        "team": "新西兰",
+        "flag": "NZ",
+        "teamEn": "New Zealand"
       },
       "away": {
-        "team": "Belgium",
-        "flag": "BE"
+        "team": "比利时",
+        "flag": "BE",
+        "teamEn": "Belgium"
       },
       "odds": {
         "result": {
@@ -2076,7 +2208,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489420",
@@ -2084,12 +2216,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T21:00:00+00:00",
       "home": {
-        "team": "Croatia",
-        "flag": "HR"
+        "team": "克罗地亚",
+        "flag": "HR",
+        "teamEn": "Croatia"
       },
       "away": {
-        "team": "Ghana",
-        "flag": "GH"
+        "team": "加纳",
+        "flag": "GH",
+        "teamEn": "Ghana"
       },
       "odds": {
         "result": {
@@ -2103,7 +2237,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489422",
@@ -2111,12 +2245,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T21:00:00+00:00",
       "home": {
-        "team": "Panama",
-        "flag": "PA"
+        "team": "巴拿马",
+        "flag": "PA",
+        "teamEn": "Panama"
       },
       "away": {
-        "team": "England",
-        "flag": "GB"
+        "team": "英格兰",
+        "flag": "GB",
+        "teamEn": "England"
       },
       "odds": {
         "result": {
@@ -2130,7 +2266,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489419",
@@ -2138,12 +2274,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T23:30:00+00:00",
       "home": {
-        "team": "Colombia",
-        "flag": "CO"
+        "team": "哥伦比亚",
+        "flag": "CO",
+        "teamEn": "Colombia"
       },
       "away": {
-        "team": "Portugal",
-        "flag": "PT"
+        "team": "葡萄牙",
+        "flag": "PT",
+        "teamEn": "Portugal"
       },
       "odds": {
         "result": {
@@ -2157,7 +2295,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1539013",
@@ -2165,12 +2303,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-27T23:30:00+00:00",
       "home": {
-        "team": "Congo DR",
-        "flag": "CD"
+        "team": "民主刚果",
+        "flag": "CD",
+        "teamEn": "Congo DR"
       },
       "away": {
-        "team": "Uzbekistan",
-        "flag": "UZ"
+        "team": "乌兹别克斯坦",
+        "flag": "UZ",
+        "teamEn": "Uzbekistan"
       },
       "odds": {
         "result": {
@@ -2184,7 +2324,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489418",
@@ -2192,12 +2332,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-28T02:00:00+00:00",
       "home": {
-        "team": "Algeria",
-        "flag": "DZ"
+        "team": "阿尔及利亚",
+        "flag": "DZ",
+        "teamEn": "Algeria"
       },
       "away": {
-        "team": "Austria",
-        "flag": "AT"
+        "team": "奥地利",
+        "flag": "AT",
+        "teamEn": "Austria"
       },
       "odds": {
         "result": {
@@ -2211,7 +2353,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "fixture-1489421",
@@ -2219,12 +2361,14 @@
       "stage": "World Cup · Group Stage - 3",
       "kickoff": "2026-06-28T02:00:00+00:00",
       "home": {
-        "team": "Jordan",
-        "flag": "JO"
+        "team": "约旦",
+        "flag": "JO",
+        "teamEn": "Jordan"
       },
       "away": {
-        "team": "Argentina",
-        "flag": "AR"
+        "team": "阿根廷",
+        "flag": "AR",
+        "teamEn": "Argentina"
       },
       "odds": {
         "result": {
@@ -2238,7 +2382,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-01",
@@ -2267,7 +2411,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-02",
@@ -2296,7 +2440,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-03",
@@ -2325,7 +2469,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-04",
@@ -2354,7 +2498,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-05",
@@ -2383,7 +2527,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-06",
@@ -2412,7 +2556,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-07",
@@ -2441,7 +2585,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-08",
@@ -2470,7 +2614,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-09",
@@ -2499,7 +2643,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-10",
@@ -2528,7 +2672,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-11",
@@ -2557,7 +2701,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-12",
@@ -2586,7 +2730,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-13",
@@ -2615,7 +2759,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.586Z"
     },
     {
       "id": "wc2026-ko-14",
@@ -2644,7 +2788,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-15",
@@ -2673,7 +2817,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-16",
@@ -2702,7 +2846,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-17",
@@ -2731,7 +2875,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-18",
@@ -2760,7 +2904,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-19",
@@ -2789,7 +2933,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-20",
@@ -2818,7 +2962,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-21",
@@ -2847,7 +2991,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-22",
@@ -2876,7 +3020,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-23",
@@ -2905,7 +3049,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-24",
@@ -2934,7 +3078,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-25",
@@ -2963,7 +3107,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-26",
@@ -2992,7 +3136,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-27",
@@ -3021,7 +3165,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-28",
@@ -3050,7 +3194,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-29",
@@ -3079,7 +3223,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-30",
@@ -3108,7 +3252,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-31",
@@ -3137,7 +3281,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     },
     {
       "id": "wc2026-ko-32",
@@ -3166,7 +3310,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-11T05:09:25.515Z"
+      "syncedAt": "2026-06-11T06:16:24.587Z"
     }
   ]
 }
