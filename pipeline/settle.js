@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { loadProjectEnv } = require("./lib/env");
 const { syncRealData } = require("./sync-real-data");
-const { makeLeaderboard } = require("./score");
+const { loadEnabledModelIds, makeLeaderboard } = require("./score");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const LEADERBOARD_PATH = path.join(__dirname, "..", "public", "data", "leaderboard.json");
@@ -20,7 +20,10 @@ async function settle() {
   await syncRealData();
   const data = readJson(MATCHES_PATH);
   const settlementGraceMinutes = Number(process.env.SETTLEMENT_GRACE_MINUTES || 150);
-  const leaderboard = makeLeaderboard(data.matches || [], { settlementGraceMinutes });
+  const leaderboard = makeLeaderboard(data.matches || [], {
+    settlementGraceMinutes,
+    modelIds: loadEnabledModelIds(),
+  });
   writeJson(LEADERBOARD_PATH, leaderboard);
   const pending = leaderboard.settlement && leaderboard.settlement.pendingResult
     ? leaderboard.settlement.pendingResult.length

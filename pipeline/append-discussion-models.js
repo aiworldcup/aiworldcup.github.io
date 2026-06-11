@@ -53,6 +53,7 @@ function hasFinalPrediction(value) {
 function buildFinalRetryPrompt(match, model) {
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
 只输出一句中文,必须包含胜平负方向、具体比分、胜平负下注、比分下注。
+每场先给累计账户新增100积分,下注从累计余额扣。
 胜平负最多200,比分最多100,总下注最多300。
 格式类似:结论主胜,比分2-1;胜平负押130,比分押60。`;
 }

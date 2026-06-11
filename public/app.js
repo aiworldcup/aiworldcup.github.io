@@ -16,6 +16,7 @@ const STAKE_LIMITS = {
   score: 100,
   total: 300
 };
+const MATCH_GRANT_POINTS = 100;
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -228,7 +229,7 @@ function renderLeaderboard() {
       <span>待结算预测</span><strong>${pendingMatches}</strong>
     </div>
     <div class="lb-summary-card">
-      <span>排行榜口径</span><strong>赔率积分</strong>
+      <span>排行榜口径</span><strong>累计余额</strong>
     </div>`;
   }
   if (!rows.length) {
@@ -241,12 +242,12 @@ function renderLeaderboard() {
     <div class="lb-podium-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
     <small>${escapeHTML(row.vendor || '')}</small>
     <strong>${formatNumber(row.points, row.points % 1 ? 1 : 0)}</strong>
-    <span>${row.played ? `胜率 ${formatPercent(row.hits, row.played)}` : `${row.pending} 场待结算`}</span>
+    <span>${row.picks ? `胜率 ${formatPercent(row.hits, row.picks)}` : `${row.pending} 场待结算`}</span>
   </div>`).join('');
 
   const table = rows.map((row, index) => {
     const activeText = row.played
-      ? `已结算 ${row.played} 场`
+      ? `已发分 ${row.played} 场`
       : row.pending
         ? `${row.pending} 场等待赛果`
         : '等待预测';
@@ -262,11 +263,11 @@ function renderLeaderboard() {
       </div>
       <div class="lb-stat">
         <span>胜率</span>
-        <strong>${formatPercent(row.hits, row.played)}</strong>
+        <strong>${formatPercent(row.hits, row.picks)}</strong>
       </div>
       <div class="lb-stat">
         <span>比分</span>
-        <strong>${formatPercent(row.scoreHits, row.played)}</strong>
+        <strong>${formatPercent(row.scoreHits, row.picks)}</strong>
       </div>
       <div class="lb-stat">
         <span>均分</span>
@@ -431,6 +432,8 @@ function buildLeaderboardRows() {
         hits: 0,
         scoreHits: 0,
         played: 0,
+        picks: 0,
+        grants: 0,
         predicted: 0,
         pending: 0,
         staked: 0,
@@ -455,9 +458,11 @@ function buildLeaderboardRows() {
       const scored = scorePrediction(match, prediction);
       if (!scored) return;
       row.played += 1;
+      row.picks += 1;
+      row.grants += MATCH_GRANT_POINTS;
       row.hits += scored.resultHit ? 1 : 0;
       row.scoreHits += scored.scoreHit ? 1 : 0;
-      row.points += scored.points;
+      row.points += MATCH_GRANT_POINTS - scored.staked + scored.points;
       row.returns += scored.points;
       row.staked += scored.staked;
     });
@@ -470,18 +475,23 @@ function buildLeaderboardRows() {
     row.hits = Number(source.hits) || 0;
     row.scoreHits = Number(source.scoreHits) || 0;
     row.played = Number(source.played) || 0;
+    row.picks = Number(source.picks) || row.picks || row.played;
+    row.grants = Number(source.grants) || row.played * MATCH_GRANT_POINTS;
     if (source.staked !== undefined) row.staked = Number(source.staked) || row.staked;
     if (source.returns !== undefined) row.returns = Number(source.returns) || row.points;
+    if (source.profit !== undefined) row.profit = Number(source.profit) || 0;
+    if (source.bettingProfit !== undefined) row.bettingProfit = Number(source.bettingProfit) || 0;
   });
 
   return Object.values(rowsByModel)
     .filter(row => row.enabled)
     .map(row => ({
       ...row,
-      profit: row.returns - row.staked,
+      profit: row.profit ?? (row.points - row.grants),
+      bettingProfit: row.bettingProfit ?? (row.returns - row.staked),
       avgPoints: row.played ? row.points / row.played : 0,
-      hitRate: row.played ? row.hits / row.played : null,
-      scoreHitRate: row.played ? row.scoreHits / row.played : null
+      hitRate: row.picks ? row.hits / row.picks : null,
+      scoreHitRate: row.picks ? row.scoreHits / row.picks : null
     }))
     .sort((a, b) =>
       b.points - a.points ||
