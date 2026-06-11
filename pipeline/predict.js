@@ -12,7 +12,7 @@ const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "matches.json")
 
 const PROVIDERS = {
   "claude-fable-5": { env: "DK_ANTHROPIC_API_KEY", baseEnv: "DK_ANTHROPIC_API_BASE", base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_FABLE_MODEL", modelEnvFallbacks: ["CLAUDE_FABLE_MODEL"], model: "claude-fable-5", protocol: "claude-cli", maxTurns: 1 },
-  "claude-opus-4-8": { env: "DK_OPUS_ANTHROPIC_API_KEY", envFallbacks: ["DK_CLAUDE_OPUS_API_KEY", "ANTHROPIC_API_KEY"], baseEnv: "DK_OPUS_ANTHROPIC_API_BASE", baseEnvFallbacks: ["DK_ANTHROPIC_API_BASE", "ANTHROPIC_API_BASE"], base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_OPUS_MODEL", modelEnvFallbacks: ["DK_ANTHROPIC_MODEL", "CLAUDE_OPUS_MODEL"], model: "claude-opus-4-8" },
+  "claude-opus-4-8": { env: "DK_OPUS_ANTHROPIC_API_KEY", envFallbacks: ["DK_CLAUDE_OPUS_API_KEY", "ANTHROPIC_API_KEY"], baseEnv: "DK_OPUS_ANTHROPIC_API_BASE", baseEnvFallbacks: ["ANTHROPIC_API_BASE"], base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_OPUS_MODEL", modelEnvFallbacks: ["DK_ANTHROPIC_MODEL", "CLAUDE_OPUS_MODEL"], model: "claude-opus-4-8" },
   "gpt-5-5": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GPT_5_5_MODEL", modelEnvFallbacks: ["OPENAI_MODEL"], model: "openai/gpt-5.5", protocol: "responses" },
   "gemini-3-1": { env: "GEMINI_API_KEY", envFallbacks: ["ZENMUX_API_KEY", "GOOGLE_API_KEY"], baseEnv: "GOOGLE_GEMINI_BASE_URL", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GEMINI_MODEL", modelEnvFallbacks: ["GOOGLE_MODEL"], model: "gemini-3.1-pro" },
   "qwen-3-7-max": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "QWEN_MODEL", modelEnvFallbacks: ["DASHSCOPE_MODEL"], model: "qwen/qwen3.7-max", protocol: "responses" },
@@ -196,6 +196,7 @@ function extractClaudeCliText(stdout) {
 async function callClaudeCli(provider, prompt, apiKey) {
   const timeoutMs = Math.max(1000, Number(process.env.CLAUDE_CLI_TIMEOUT_MS || process.env.API_TIMEOUT_MS) || 180000);
   const model = providerModel(provider);
+  const base = providerBase(provider);
   const args = [
     "-p",
     prompt,
@@ -208,10 +209,16 @@ async function callClaudeCli(provider, prompt, apiKey) {
     "--no-session-persistence",
     ...splitArgs(process.env.CLAUDE_CLI_EXTRA_ARGS),
   ];
+  const env = { ...process.env };
+  if (apiKey) env.ANTHROPIC_API_KEY = apiKey;
+  if (base) {
+    env.ANTHROPIC_BASE_URL = base;
+    env.ANTHROPIC_API_BASE = base;
+  }
   return new Promise((resolve, reject) => {
     const child = spawn("claude", args, {
       cwd: process.cwd(),
-      env: process.env,
+      env,
       stdio: ["ignore", "pipe", "pipe"],
     });
     let stdout = "";
