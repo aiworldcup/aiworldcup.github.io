@@ -111,7 +111,16 @@ async function callAnthropic(provider, prompt, apiKey, options = {}) {
   });
   if (!res.ok) throw new Error(`Anthropic 请求失败: ${res.status} ${await res.text()}`);
   const payload = await res.json();
-  return (payload.content || []).map((part) => part.text || "").join("\n");
+  const text = (payload.content || []).map((part) => part.text || "").join("\n").trim();
+  if (text) return text;
+
+  const thinking = (payload.content || []).map((part) => part.thinking || "").join("\n");
+  const quotedSentences = Array.from(thinking.matchAll(/[“"]([^“”"]{6,80}[。！？])["”]/g));
+  const candidates = quotedSentences
+    .map((match) => match[1])
+    .filter((sentence) => !/(输出|JSON|Markdown|字符|一句|这次|不要|只说|中文自然语言)/.test(sentence));
+  const lastQuoted = candidates[candidates.length - 1];
+  return lastQuoted || "";
 }
 
 async function callGemini(provider, prompt, apiKey, options = {}) {
@@ -153,7 +162,7 @@ async function callModelText(modelId, prompt) {
   const apiKey = String(process.env[provider.env] || "").trim();
   if (!apiKey) return null;
 
-  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 480 });
+  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 900 });
   if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   return callOpenAICompatible(provider, prompt, apiKey);
 }

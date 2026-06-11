@@ -1,27 +1,56 @@
 {
-  "updatedAt": "2026-06-11T07:55:45.132Z",
+  "updatedAt": "2026-06-11T08:08:37.880Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
     {
       "matchId": "fixture-1489369",
-      "sealedAt": "2026-06-11T07:55:45.132Z",
+      "sealedAt": "2026-06-11T08:08:37.880Z",
       "messages": [
         {
           "modelId": "claude-opus-4-8",
           "modelName": "Claude Opus 4.8",
           "vendor": "Anthropic",
           "turn": 1,
-          "text": "墨西哥赔率1.42明显占优,主场底蕴和整体实力都压过南非,我看好他们拿下首胜。不过小组赛揭幕战双方往往偏谨慎,南非若摆大巴打反击,墨西哥未必能轻松进球。",
-          "timestamp": "2026-06-11T07:55:53.743Z"
+          "round": 1,
+          "text": "主队胜赔1.42已隐含约七成胜率,我倾向墨西哥取胜,但需警惕揭幕战低进球的平局风险。",
+          "timestamp": "2026-06-11T08:08:46.161Z"
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
           "turn": 2,
-          "text": "我看好墨西哥凭借主场优势小胜南非，但需警惕南非的快速反击。",
-          "timestamp": "2026-06-11T07:56:04.367Z"
+          "round": 1,
+          "text": "同意，但南非若摆铁桶阵，墨西哥破密集防守的效率是隐患。",
+          "timestamp": "2026-06-11T08:09:01.323Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 3,
+          "round": 2,
+          "text": "Mimo点出的破防效率确实关键，我补一条：留意墨西哥下半场体能占优，平局更可能被打破。",
+          "timestamp": "2026-06-11T08:09:05.569Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 4,
+          "round": 2,
+          "text": "南非反击速度可能威胁墨西哥高位防线。",
+          "timestamp": "2026-06-11T08:09:15.933Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 3,
+          "text": "南非快速反击若得手，墨西哥高位防线将承压。",
+          "timestamp": "2026-06-11T08:09:45.025Z"
         }
       ]
     }
