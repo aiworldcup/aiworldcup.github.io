@@ -26,6 +26,41 @@ function modelMeta(id) {
 }
 
 const RESULT_LABEL = { home: '主胜', draw: '平', away: '客胜' };
+const RESULT_SHORT = { home: '主', draw: '平', away: '客' };
+
+function flagIcon(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '🏳';
+  if (/^[A-Za-z]{2}$/.test(raw)) {
+    return raw
+      .toUpperCase()
+      .split('')
+      .map(char => String.fromCodePoint(127397 + char.charCodeAt(0)))
+      .join('');
+  }
+  return raw;
+}
+
+function formatKickoff(value) {
+  if (!value) return '时间待定';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleString('zh-CN', {
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+}
+
+function renderMatchSummary() {
+  const el = document.getElementById('match-summary');
+  if (!el) return;
+  const finished = MATCHES.filter(m => m.actual).length;
+  const sealed = MATCHES.filter(m => !m.actual && m.sealedAt).length;
+  el.textContent = `${MATCHES.length} 场比赛 · ${finished} 场已结算 · ${sealed} 场已封盘`;
+}
 
 function renderLeaderboard() {
   const el = document.getElementById('leaderboard');
@@ -49,6 +84,7 @@ function renderLeaderboard() {
 
 function renderMatches() {
   const el = document.getElementById('matches');
+  renderMatchSummary();
   if (!MATCHES.length) { el.innerHTML = '<div class="empty">暂无比赛数据</div>'; return; }
   el.innerHTML = MATCHES.map(renderMatchCard).join('');
 }
@@ -57,11 +93,30 @@ function renderMatchCard(m) {
   const o = m.odds?.result || {};
   const finished = !!m.actual;
   const status = finished
-    ? `<div class="match-status status-final">已结束 · 比分 ${m.actual.score} · ${RESULT_LABEL[m.actual.result] || ''}</div>`
-    : `<div class="match-status status-sealed">🔒 已封盘 · 待开赛</div>`;
+    ? `<span class="match-status status-final">已结束 · ${m.actual.score} · ${RESULT_LABEL[m.actual.result] || ''}</span>`
+    : `<span class="match-status status-sealed">已封盘 · 待开赛</span>`;
 
-  const preds = (m.predictions || [])
-    .filter(p => p.track === currentTrack)
+  const trackPredictions = (m.predictions || []).filter(p => p.track === currentTrack);
+  const counts = trackPredictions.reduce((acc, p) => {
+    acc[p.result] = (acc[p.result] || 0) + 1;
+    return acc;
+  }, { home: 0, draw: 0, away: 0 });
+  const total = trackPredictions.length || 1;
+  const lean = ['home', 'draw', 'away'].slice().sort((a, b) => counts[b] - counts[a])[0];
+  const leanText = trackPredictions.length
+    ? `${RESULT_LABEL[lean]} ${counts[lean]}/${trackPredictions.length}`
+    : '暂无预测';
+  const scoreCounts = trackPredictions.reduce((acc, p) => {
+    acc[p.score] = (acc[p.score] || 0) + 1;
+    return acc;
+  }, {});
+  const hotScore = Object.entries(scoreCounts).sort((a, b) => b[1] - a[1])[0];
+  const hotScoreText = hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无';
+  const kickoff = formatKickoff(m.kickoff);
+  const homeFlag = flagIcon(m.home.flag);
+  const awayFlag = flagIcon(m.away.flag);
+
+  const preds = trackPredictions
     .map(p => {
       const meta = modelMeta(p.modelId);
       let mark = '';
@@ -80,19 +135,51 @@ function renderMatchCard(m) {
 
   return `<article class="match">
     <div class="match-head">
-      <div class="match-stage">${m.stage || ''}</div>
-      <div class="match-teams">
-        <span>${m.home.flag || ''} ${m.home.team}</span>
-        <span class="vs">VS</span>
-        <span>${m.away.team} ${m.away.flag || ''}</span>
+      <div class="match-meta">
+        <span>${m.stage || '世界杯'}</span>
+        <span>${kickoff}</span>
       </div>
-      <div class="match-odds">
-        <span class="odd">主 <b>${o.home ?? '-'}</b></span>
-        <span class="odd">平 <b>${o.draw ?? '-'}</b></span>
-        <span class="odd">客 <b>${o.away ?? '-'}</b></span>
+      <div class="match-teams" aria-label="${m.home.team} 对阵 ${m.away.team}">
+        <div class="team team-home">
+          <span class="team-flag" aria-hidden="true">${homeFlag}</span>
+          <span class="team-name">${m.home.team}</span>
+          <span class="team-label">主队</span>
+        </div>
+        <div class="vs">
+          <span>VS</span>
+          ${status}
+        </div>
+        <div class="team team-away">
+          <span class="team-flag" aria-hidden="true">${awayFlag}</span>
+          <span class="team-name">${m.away.team}</span>
+          <span class="team-label">客队</span>
+        </div>
       </div>
-      ${status}
+      <div class="match-info-grid">
+        <div class="info-box">
+          <span class="info-label">模型倾向</span>
+          <strong>${leanText}</strong>
+        </div>
+        <div class="info-box">
+          <span class="info-label">胜平负赔率</span>
+          <strong>${RESULT_SHORT.home} ${o.home ?? '-'} · ${RESULT_SHORT.draw} ${o.draw ?? '-'} · ${RESULT_SHORT.away} ${o.away ?? '-'}</strong>
+        </div>
+        <div class="info-box">
+          <span class="info-label">热门比分</span>
+          <strong>${hotScoreText}</strong>
+        </div>
+        <div class="info-box">
+          <span class="info-label">规则</span>
+          <strong>每模型 100 积分</strong>
+        </div>
+      </div>
+      <div class="lean-bars" aria-hidden="true">
+        <span style="width:${counts.home / total * 100}%"></span>
+        <span style="width:${counts.draw / total * 100}%"></span>
+        <span style="width:${counts.away / total * 100}%"></span>
+      </div>
     </div>
+    <div class="pred-title">模型预测</div>
     <div class="preds">${preds}</div>
   </article>`;
 }
