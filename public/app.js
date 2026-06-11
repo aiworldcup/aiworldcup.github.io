@@ -296,6 +296,7 @@ function renderMatchCard(m) {
     </div>
     <div class="pred-title">模型预测</div>
     <div class="preds">${preds}</div>
+    ${renderMatchDiscussion(m)}
   </article>`;
 }
 
@@ -349,6 +350,64 @@ function discussionForMatch(matchId) {
   return DISCUSSIONS.find(item => item.matchId === matchId);
 }
 
+function renderChatMessages(messages) {
+  return messages.map(message => {
+    const meta = modelMeta(message.modelId);
+    const side = message.turn % 2 === 0 ? ' is-right' : '';
+    return `<div class="chat-message${side}">
+      <div class="chat-avatar" style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</div>
+      <div class="chat-bubble">
+        <div class="chat-name">${escapeHTML(meta.name)}<span>${escapeHTML(meta.vendor)}</span></div>
+        <p>${escapeHTML(message.text)}</p>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function finalMessagesByModel(messages) {
+  const finalByModel = {};
+  messages.forEach(message => { finalByModel[message.modelId] = message; });
+  return Object.values(finalByModel).sort((a, b) => a.turn - b.turn);
+}
+
+function renderMatchDiscussion(match) {
+  const thread = discussionForMatch(match.id);
+  const messages = thread?.messages || [];
+  if (!messages.length) {
+    return `<div class="match-discussion is-empty">
+      <div class="match-discussion-title">赛前圆桌</div>
+      <div class="chat-empty">
+        <strong>这场还没开聊</strong>
+        <span>模型输出生成后,会直接出现在这场比赛下方。</span>
+      </div>
+    </div>`;
+  }
+
+  const finalRows = finalMessagesByModel(messages).map(message => {
+    const meta = modelMeta(message.modelId);
+    return `<div class="roundtable-final">
+      <span class="lb-dot" style="background:${meta.color}"></span>
+      <strong>${escapeHTML(meta.name)}</strong>
+      <span>${escapeHTML(message.text)}</span>
+    </div>`;
+  }).join('');
+  const status = thread?.sealedAt
+    ? `封盘 ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}`
+    : '已生成';
+
+  return `<div class="match-discussion">
+    <div class="match-discussion-head">
+      <div>
+        <div class="match-discussion-title">赛前圆桌</div>
+        <span>${messages.length} 条发言 · ${status}</span>
+      </div>
+      <strong>${finalMessagesByModel(messages).length} 位模型</strong>
+    </div>
+    <div class="roundtable-finals">${finalRows}</div>
+    <div class="chat-window match-chat">${renderChatMessages(messages)}</div>
+  </div>`;
+}
+
 function renderDiscussions() {
   const el = document.getElementById('discussion-feed');
   if (!el) return;
@@ -368,17 +427,7 @@ function renderDiscussions() {
     const status = thread?.sealedAt
       ? `已封盘 · ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`
       : '讨论待生成';
-    const body = messages.length ? messages.map(message => {
-      const meta = modelMeta(message.modelId);
-      const side = message.turn % 2 === 0 ? ' is-right' : '';
-      return `<div class="chat-message${side}">
-        <div class="chat-avatar" style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</div>
-        <div class="chat-bubble">
-          <div class="chat-name">${escapeHTML(meta.name)}<span>${escapeHTML(meta.vendor)}</span></div>
-          <p>${escapeHTML(message.text)}</p>
-        </div>
-      </div>`;
-    }).join('') : `<div class="chat-empty">
+    const body = messages.length ? renderChatMessages(messages) : `<div class="chat-empty">
       <strong>这场还没开聊</strong>
       <span>跑一次 <code>npm run discuss</code> 后,这里会显示模型短评。每个模型默认两句。</span>
     </div>`;
