@@ -29,6 +29,7 @@
   - `score.js` 输出 `settlement` 摘要;`actual` 存在即结算,开赛后默认 150 分钟仍无赛果则进入 `pending_result`。
   - 全局取消下注、积分和赔率结算,只保留赛果命中榜与比分命中榜,降低传播理解成本。
   - 新增 `npm run settle`,先同步真实赛程/赛果并保留已有预测与封盘信息,再生成排行榜。
+  - 新增 `npm run settle:watch`,比赛日前后可每 5 分钟轮询 API 并重算排行榜,默认持续 6 小时。
   - `sync-real-data.js` 现在合并已有比赛数据,不会把封盘预测冲掉。
 
 ## 本地预览
@@ -55,6 +56,12 @@ npm run score
 
 ```bash
 npm run settle
+```
+
+比赛进行中或赛后等待 API 更新时,可开启轮询:
+
+```bash
+npm run settle:watch -- --interval 300 --duration 21600
 ```
 
 也可以只用 sample 验证结算:

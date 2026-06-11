@@ -36,7 +36,15 @@ python3 -m http.server -d public 8080
 1. 复制 `.env.example` 为 `.env`,填入赔率 API 与各模型 key(缺失的模型会自动跳过)。
 2. 填 `MATCH_DATE=YYYY-MM-DD`;赔率 API 使用与 `/Users/tom/.openclaw/workspace/football` 一致的 API-SPORTS 足球接口。
 3. `npm run predict` —— 拉比赛/赔率、调各模型生成封盘预测,写入 `public/data/matches.json`。
-4. 录入真实赛果后,`npm run score` —— 统计赛果榜/比分榜并生成 `public/data/leaderboard.json`。
+4. 赛后运行 `npm run settle` —— 同步真实赛果并统计赛果榜/比分榜。
+
+比赛日建议打开轮询:
+
+```bash
+npm run settle:watch -- --interval 300 --duration 21600
+```
+
+这会每 5 分钟同步一次 API-SPORTS 赛果并重算排行榜,持续 6 小时。适合从开赛前后一直挂到赛后。
 
 只验证 sample 结算:
 
