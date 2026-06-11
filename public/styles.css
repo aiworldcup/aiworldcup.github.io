@@ -243,6 +243,10 @@ h2 { font-size: 18px; margin: 22px 0 12px; }
 .pred-pick b { color: var(--text); }
 .pred-hit { color: var(--accent); }
 .pred-miss { color: #f85149; }
+.pred-source {
+  color: var(--gold);
+  font-size: 11px;
+}
 .empty { color: var(--muted); font-size: 13px; padding: 12px; text-align: center; }
 .match-discussion {
   border-top: 1px solid var(--line);

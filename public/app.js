@@ -201,27 +201,61 @@ function renderMatches() {
   el.innerHTML = selectedMatches.map(renderMatchCard).join('');
 }
 
+function resultFromDiscussionText(text) {
+  const value = String(text || '');
+  if (/结论[:：]?\s*(平局|打平|平)/.test(value) || /冷平|逼平/.test(value)) return 'draw';
+  if (/结论[:：]?\s*(客胜|客队胜|负)/.test(value)) return 'away';
+  if (/结论[:：]?\s*(主胜|主队胜|胜)/.test(value)) return 'home';
+  if (/平局|打平/.test(value)) return 'draw';
+  if (/客胜|客队/.test(value)) return 'away';
+  if (/主胜|主场|主队/.test(value)) return 'home';
+  return '';
+}
+
+function scoreFromDiscussionText(text) {
+  const match = String(text || '').match(/[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/);
+  if (!match) return '';
+  return match[0]
+    .replace(/[０-９]/g, char => String.fromCharCode(char.charCodeAt(0) - 0xFEE0))
+    .replace(/[：比]/g, '-')
+    .replace(/\s+/g, '');
+}
+
+function discussionPredictionsForMatch(matchId) {
+  const thread = discussionForMatch(matchId);
+  const messages = finalMessagesByModel(thread?.messages || []);
+  return messages
+    .map(message => ({
+      modelId: message.modelId,
+      result: resultFromDiscussionText(message.text),
+      score: scoreFromDiscussionText(message.text),
+      source: 'discussion'
+    }))
+    .filter(prediction => prediction.result && prediction.score);
+}
+
 function renderMatchCard(m) {
   const o = m.odds?.result || {};
   const finished = !!m.actual;
   const trackPredictions = (m.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
-  const hasPredictions = trackPredictions.length > 0;
+  const displayPredictions = trackPredictions.length ? trackPredictions : discussionPredictionsForMatch(m.id);
+  const hasPredictions = displayPredictions.length > 0;
   const status = finished
     ? `<span class="match-status status-final">已结束 · ${m.actual.score} · ${RESULT_LABEL[m.actual.result] || ''}</span>`
     : hasPredictions || m.sealedAt
       ? `<span class="match-status status-sealed">已封盘 · 待开赛</span>`
       : `<span class="match-status status-pending">预测待更新</span>`;
 
-  const counts = trackPredictions.reduce((acc, p) => {
+  const counts = displayPredictions.reduce((acc, p) => {
     acc[p.result] = (acc[p.result] || 0) + 1;
     return acc;
   }, { home: 0, draw: 0, away: 0 });
-  const total = trackPredictions.length || 1;
+  const total = displayPredictions.length || 1;
   const lean = ['home', 'draw', 'away'].slice().sort((a, b) => counts[b] - counts[a])[0];
-  const leanText = trackPredictions.length
-    ? `${RESULT_LABEL[lean]} ${counts[lean]}/${trackPredictions.length}`
+  const leanText = displayPredictions.length
+    ? `${RESULT_LABEL[lean]} ${counts[lean]}/${displayPredictions.length}`
     : '暂无预测';
-  const scoreCounts = trackPredictions.reduce((acc, p) => {
+  const scoreCounts = displayPredictions.reduce((acc, p) => {
     acc[p.score] = (acc[p.score] || 0) + 1;
     return acc;
   }, {});
@@ -231,7 +265,7 @@ function renderMatchCard(m) {
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
   const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
 
-  const preds = trackPredictions
+  const preds = displayPredictions
     .map(p => {
       const meta = modelMeta(p.modelId);
       let mark = '';
@@ -244,7 +278,7 @@ function renderMatchCard(m) {
       return `<div class="pred">
         <span class="pred-model"><span class="lb-dot" style="background:${meta.color}"></span>${meta.name}</span>
         <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}</span>
-        <span>${mark}</span>
+        <span>${mark || (p.source === 'discussion' ? '<span class="pred-source">圆桌</span>' : '')}</span>
       </div>`;
     }).join('') || '<div class="empty">暂无预测</div>';
 
