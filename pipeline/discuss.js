@@ -27,6 +27,7 @@ const STYLE_PROFILES = {
 function turnBudget(modelId) {
   if (modelId === "claude-fable-5") return 1;
   if (modelId === "claude-opus-4-8") return 2;
+  if (modelId === "gpt-5-5") return 2;
   return 3;
 }
 
@@ -130,6 +131,9 @@ function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTur
   const relationRule = previousMessages.length
     ? "必须接住前面至少一位 AI 的观点:可以同意、反驳、补充遗漏风险,但不要重复原话。"
     : "你负责开场,给出一个明确判断,为后面的 AI 留出可讨论的风险点。";
+  const fableRule = model.id === "claude-fable-5"
+    ? "\n你是本场圆桌首个发言的昂贵模型,只给一句:简要理由 + 赛果方向 + 具体比分,不要铺垫。"
+    : "";
   const finalRule = isFinalTurn
     ? "\n这是你本场最后一次发言,必须导向预测结论。必须包含胜平负方向和具体比分,格式可类似:「结论:主胜,比分2-1」。"
     : "";
@@ -148,7 +152,7 @@ ${history}
 
 请只输出中文自然语言,不要 JSON,不要 Markdown。
 ${relationRule}
-你这次只说一句话,带情绪和人设口吻,不超过 70 个中文字符。${finalRule}`;
+你这次只说一句话,带情绪和人设口吻,不超过 70 个中文字符。${fableRule}${finalRule}`;
 }
 
 function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = false) {

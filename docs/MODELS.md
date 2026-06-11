@@ -4,10 +4,10 @@
 
 | 序号 | 模型 | 公司 | 接入变量 |
 |----|------|------|---------|
-| 1 | Claude Fable 5 | Anthropic | `ANTHROPIC_API_KEY` / `CLAUDE_FABLE_MODEL` |
-| 2 | Claude Opus 4.8 | Anthropic | dk: `DK_ANTHROPIC_API_KEY` / `DK_ANTHROPIC_API_BASE` / `DK_CLAUDE_OPUS_MODEL` |
-| 3 | GPT-5.5 | OpenAI | `OPENAI_API_KEY` / `OPENAI_MODEL` |
-| 4 | Gemini 3.1 | Google | `GEMINI_API_KEY` 或 `ZENMUX_API_KEY` / `GOOGLE_GEMINI_BASE_URL` / `GEMINI_MODEL` |
+| 1 | Claude Fable 5 | Anthropic | dk: `DK_ANTHROPIC_API_KEY` / `DK_ANTHROPIC_API_BASE` / `DK_CLAUDE_FABLE_MODEL` |
+| 2 | Claude Opus 4.8 | Anthropic | dk: `DK_OPUS_ANTHROPIC_API_KEY` / `DK_OPUS_ANTHROPIC_API_BASE` / `DK_CLAUDE_OPUS_MODEL` |
+| 3 | GPT-5.5 | OpenAI | ZenMux: `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GPT_5_5_MODEL` |
+| 4 | Gemini 3.1 | Google | ZenMux Vertex 或 Gemini: `GEMINI_API_KEY` 或 `ZENMUX_API_KEY` / `GOOGLE_GEMINI_BASE_URL` / `GEMINI_MODEL` |
 | 5 | Qwen 3.7 Max | 阿里云 / 通义千问 | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `QWEN_MODEL` |
 | 6 | MiniMax-M3 | MiniMax | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `MINIMAX_MODEL` |
 | 7 | Kimi K2.6 | 月之暗面 / Moonshot AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `KIMI_MODEL` |
@@ -33,8 +33,17 @@
 
 ## ZenMux 接入状态
 
+- 已查询 ZenMux `/api/v1/models`,可用 GPT-5.5 模型 ID:`openai/gpt-5.5`、`openai/gpt-5.5-pro`;当前默认用 `openai/gpt-5.5`,避免直接上更贵的 pro。
+- 已查询 ZenMux `/api/v1/models`,可用 Gemini 3.1 模型 ID:`google/gemini-3.1-flash-lite-preview`、`google/gemini-3.1-pro-preview`;当前默认用 `gemini-3.1-flash-lite-preview` 走 `GOOGLE_GEMINI_BASE_URL=https://zenmux.ai/api/vertex-ai`。
 - 已验证通过 ZenMux `/api/v1/responses` 接通:Qwen 3.7 Max、GLM-5.1、MiniMax-M3、Kimi K2.6、Grok 4.3、Claude Sonnet 4.6、DeepSeek V4 Pro。
 - Muse Spark 已预留 `muse-spark` provider,但 ZenMux `/api/v1/models` 当前未返回 `muse` 或 `spark` 相关模型 ID;需要 ZenMux 提供准确 ID 后再把 `.env` 的 `MUSE_MODEL` 改成真实值。
+
+## 圆桌发言限制
+
+- Claude Fable 5 固定作为首个发言模型,每场只说 1 句,必须直接给简要理由、赛果方向和比分。
+- Claude Opus 4.8 每场最多 2 句。
+- GPT-5.5 每场最多 2 句。
+- 其他模型每场最多 3 句。
 
 ## 反作弊 / 存证
 

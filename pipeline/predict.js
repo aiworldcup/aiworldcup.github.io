@@ -10,9 +10,9 @@ const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 
 const PROVIDERS = {
-  "claude-fable-5": { env: "ANTHROPIC_API_KEY", baseEnv: "ANTHROPIC_API_BASE", base: "https://api.anthropic.com/v1", modelEnv: "CLAUDE_FABLE_MODEL", model: "claude-fable-5" },
-  "claude-opus-4-8": { env: "DK_ANTHROPIC_API_KEY", envFallbacks: ["ANTHROPIC_API_KEY"], baseEnv: "DK_ANTHROPIC_API_BASE", baseEnvFallbacks: ["ANTHROPIC_API_BASE"], base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_OPUS_MODEL", modelEnvFallbacks: ["DK_ANTHROPIC_MODEL", "CLAUDE_OPUS_MODEL"], model: "claude-opus-4-8" },
-  "gpt-5-5": { env: "OPENAI_API_KEY", base: "https://api.openai.com/v1", modelEnv: "OPENAI_MODEL", model: "gpt-5.5" },
+  "claude-fable-5": { env: "DK_ANTHROPIC_API_KEY", baseEnv: "DK_ANTHROPIC_API_BASE", base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_FABLE_MODEL", modelEnvFallbacks: ["CLAUDE_FABLE_MODEL"], model: "claude-fable-5", protocol: "anthropic", maxTokens: 180 },
+  "claude-opus-4-8": { env: "DK_OPUS_ANTHROPIC_API_KEY", envFallbacks: ["DK_CLAUDE_OPUS_API_KEY", "ANTHROPIC_API_KEY"], baseEnv: "DK_OPUS_ANTHROPIC_API_BASE", baseEnvFallbacks: ["DK_ANTHROPIC_API_BASE", "ANTHROPIC_API_BASE"], base: "https://dk.claudecode.love/v1", modelEnv: "DK_CLAUDE_OPUS_MODEL", modelEnvFallbacks: ["DK_ANTHROPIC_MODEL", "CLAUDE_OPUS_MODEL"], model: "claude-opus-4-8" },
+  "gpt-5-5": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GPT_5_5_MODEL", modelEnvFallbacks: ["OPENAI_MODEL"], model: "openai/gpt-5.5", protocol: "responses" },
   "gemini-3-1": { env: "GEMINI_API_KEY", envFallbacks: ["ZENMUX_API_KEY", "GOOGLE_API_KEY"], baseEnv: "GOOGLE_GEMINI_BASE_URL", base: "https://generativelanguage.googleapis.com/v1beta", modelEnv: "GEMINI_MODEL", modelEnvFallbacks: ["GOOGLE_MODEL"], model: "gemini-3.1-pro" },
   "qwen-3-7-max": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "QWEN_MODEL", modelEnvFallbacks: ["DASHSCOPE_MODEL"], model: "qwen/qwen3.7-max", protocol: "responses" },
   "minimax-m3": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "MINIMAX_MODEL", model: "minimax/minimax-m3", protocol: "responses" },
@@ -203,9 +203,9 @@ async function callModel(modelId, track, match, config) {
 
   const prompt = buildPrompt(track, match);
   let text;
-  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") text = await callAnthropic(provider, prompt, apiKey);
+  if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
   else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
-  else if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
+  else if (provider.protocol === "anthropic" || modelId.startsWith("claude-")) text = await callAnthropic(provider, prompt, apiKey);
   else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
   return normalizePrediction(modelId, track, extractJson(text));
 }
@@ -216,9 +216,11 @@ async function callModelText(modelId, prompt) {
   const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
-  if (modelId.startsWith("claude-") || provider.protocol === "anthropic") return callAnthropic(provider, prompt, apiKey, { maxTokens: 900 });
-  if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   if (provider.protocol === "responses") return callResponsesCompatible(provider, prompt, apiKey);
+  if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
+  if (provider.protocol === "anthropic" || modelId.startsWith("claude-")) {
+    return callAnthropic(provider, prompt, apiKey, { maxTokens: provider.maxTokens || 900 });
+  }
   return callOpenAICompatible(provider, prompt, apiKey);
 }
 
