@@ -92,10 +92,12 @@ async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
     : "";
 }
 
-async function callAnthropic(provider, prompt, apiKey) {
+async function callAnthropic(provider, prompt, apiKey, options = {}) {
   const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
+  const timeoutMs = Math.max(1000, Number(process.env.API_TIMEOUT_MS) || 60000);
   const res = await fetch(`${base}/messages`, {
     method: "POST",
+    signal: AbortSignal.timeout(timeoutMs),
     headers: {
       "x-api-key": apiKey,
       "anthropic-version": "2023-06-01",
@@ -103,7 +105,7 @@ async function callAnthropic(provider, prompt, apiKey) {
     },
     body: JSON.stringify({
       model: process.env[provider.modelEnv] || provider.model,
-      max_tokens: 600,
+      max_tokens: options.maxTokens || 600,
       messages: [{ role: "user", content: prompt }],
     }),
   });
@@ -151,7 +153,7 @@ async function callModelText(modelId, prompt) {
   const apiKey = String(process.env[provider.env] || "").trim();
   if (!apiKey) return null;
 
-  if (modelId.startsWith("claude-")) return callAnthropic(provider, prompt, apiKey);
+  if (modelId.startsWith("claude-")) return callAnthropic(provider, prompt, apiKey, { maxTokens: 160 });
   if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   return callOpenAICompatible(provider, prompt, apiKey);
 }
