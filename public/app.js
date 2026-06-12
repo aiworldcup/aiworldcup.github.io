@@ -7,10 +7,19 @@ let LEADERBOARD = { rankings: [], open: [] };
 let CHAMPIONS = [];
 let DISCUSSIONS = [];
 let selectedDateKey = '';
+let activeLbTrack = 'result';
 const ACTIVE_TRACK = 'open';
+
+// 阵营划分:国产军团 vs 海外军团(用于核心传播钩子)
+const DOMESTIC_VENDORS = ['阿里', '通义', '月之暗面', 'Moonshot', '小米', 'MiMo', 'DeepSeek', '智谱', 'MiniMax', '百度', '字节', '腾讯'];
+function campOf(meta) {
+  const v = String(meta?.vendor || '');
+  return DOMESTIC_VENDORS.some(k => v.includes(k)) ? 'domestic' : 'overseas';
+}
 const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
+const DATA_REFRESH_MS = 60 * 1000;
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -226,13 +235,63 @@ function renderLeaderboard() {
       <span>排行榜口径</span><strong>命中率</strong>
     </div>`;
   }
+
+  renderCampBattle(rows.resultRows);
+
   if (!rows.resultRows.length && !rows.scoreRows.length) {
     el.innerHTML = '<div class="empty">暂无模型数据</div>';
     return;
   }
 
-  el.innerHTML = `${renderLeaderboardBlock('赛果榜', '胜平负命中率', rows.resultRows, 'result')}
-    ${renderLeaderboardBlock('比分榜', '具体比分命中数', rows.scoreRows, 'score')}`;
+  el.innerHTML = activeLbTrack === 'score'
+    ? renderLeaderboardBlock('比分榜', '具体比分命中数', rows.scoreRows, 'score')
+    : renderLeaderboardBlock('赛果榜', '胜平负命中率', rows.resultRows, 'result');
+}
+
+// 国产军团 vs 海外军团:把"哪个阵营更会算球"做成可截图的对战条
+function renderCampBattle(resultRows) {
+  const el = document.getElementById('camp-battle');
+  if (!el) return;
+  const camps = { domestic: { hits: 0, preds: 0, n: 0 }, overseas: { hits: 0, preds: 0, n: 0 } };
+  resultRows.forEach(row => {
+    const c = camps[campOf(row)];
+    c.hits += row.resultHits;
+    c.preds += row.predictions;
+    c.n += 1;
+  });
+  const dRate = camps.domestic.preds ? camps.domestic.hits / camps.domestic.preds : 0;
+  const oRate = camps.overseas.preds ? camps.overseas.hits / camps.overseas.preds : 0;
+  const settled = camps.domestic.preds + camps.overseas.preds;
+
+  if (!settled) {
+    el.innerHTML = `<div class="camp-head">🇨🇳 国产军团 <span>VS</span> 🌍 海外军团</div>
+      <div class="camp-waiting">开赛结算后,这里实时比拼两大阵营的赛果命中率 —— 看国产 AI 能不能赢。</div>
+      <div class="camp-roster">
+        <span>国产 ${camps.domestic.n} 个模型</span>
+        <span>海外 ${camps.overseas.n} 个模型</span>
+      </div>`;
+    return;
+  }
+
+  const dPct = Math.round(dRate * 100);
+  const oPct = Math.round(oRate * 100);
+  const total = dRate + oRate || 1;
+  const dWidth = Math.round((dRate / total) * 100);
+  const leader = dRate === oRate ? '平分秋色' : dRate > oRate ? '国产军团领先 🔥' : '海外军团领先';
+
+  el.innerHTML = `<div class="camp-head">🇨🇳 国产军团 <span>VS</span> 🌍 海外军团</div>
+    <div class="camp-scoreline">
+      <div class="camp-side camp-domestic">
+        <strong>${dPct}%</strong>
+        <small>${camps.domestic.hits}/${camps.domestic.preds} 命中 · ${camps.domestic.n} 个模型</small>
+      </div>
+      <div class="camp-verdict">${leader}</div>
+      <div class="camp-side camp-overseas">
+        <strong>${oPct}%</strong>
+        <small>${camps.overseas.hits}/${camps.overseas.preds} 命中 · ${camps.overseas.n} 个模型</small>
+      </div>
+    </div>
+    <div class="camp-bar"><span class="camp-bar-d" style="width:${dWidth}%"></span><span class="camp-bar-o" style="width:${100 - dWidth}%"></span></div>`;
 }
 
 function renderLeaderboardBlock(title, subtitle, rows, type) {
@@ -250,21 +309,14 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
     </section>`;
   }
 
-  const podium = activeRows.slice(0, 3).map((row, index) => `<div class="lb-podium-card rank-${index + 1}">
-    <span class="lb-crown">#${index + 1}</span>
-    <div class="lb-podium-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
-    <small>${escapeHTML(row.vendor || '')}</small>
-    <strong>${type === 'score' ? `${row.scoreHits}/${row.predictions || 0}` : formatPercent(row.resultHits, row.predictions)}</strong>
-    <span>${type === 'score' ? '精确比分命中' : '赛果命中率'}</span>
-  </div>`).join('');
-
   const table = activeRows.map((row, index) => {
     const activeText = row.predictions
       ? `已结算预测 ${row.predictions} 场`
       : row.pending
         ? `${row.pending} 场等待赛果`
         : '等待预测';
-    return `<div class="lb-row">
+    const rankClass = index < 3 ? ` is-top top-${index + 1}` : '';
+    return `<div class="lb-row${rankClass}">
       <div class="lb-rank">${index + 1}</div>
       <div class="lb-main">
         <div class="lb-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
@@ -294,7 +346,6 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
       <strong>${title}</strong>
       <span>${subtitle}</span>
     </div>
-    <div class="lb-podium">${podium}</div>
     <div class="lb-table">${table}</div>
   </section>`;
 }
@@ -535,13 +586,6 @@ function renderMatchCard(m) {
       </div>`;
     }).join('') || '<div class="empty">暂无预测</div>';
 
-  const settleSteps = [
-    ['预测', hasPredictions || lifecycle.key === 'settled'],
-    ['封盘', !!m.sealedAt || hasPredictions || lifecycle.key === 'settled'],
-    ['赛果', !!m.actual],
-    ['结算', lifecycle.key === 'settled']
-  ].map(([label, done]) => `<span class="${done ? 'done' : ''}">${label}</span>`).join('');
-
   return `<article class="match">
     <div class="match-head">
       <div class="match-meta">
@@ -587,13 +631,6 @@ function renderMatchCard(m) {
         <span style="width:${counts.home / total * 100}%"></span>
         <span style="width:${counts.draw / total * 100}%"></span>
         <span style="width:${counts.away / total * 100}%"></span>
-      </div>
-      <div class="settlement-strip settlement-${lifecycle.key}">
-        <div>
-          <span>结算链路</span>
-          <strong>${lifecycle.label}</strong>
-        </div>
-        <div class="settlement-steps">${settleSteps}</div>
       </div>
     </div>
     <div class="pred-title">模型预测</div>
@@ -672,36 +709,259 @@ function finalMessagesByModel(messages) {
   return Object.values(finalByModel).sort((a, b) => a.turn - b.turn);
 }
 
+// 统计这场圆桌每个模型的最终立场分布(主胜/平/客胜)
+function stanceBreakdown(messages) {
+  const finals = finalMessagesByModel(messages);
+  const counts = { home: 0, draw: 0, away: 0 };
+  finals.forEach(message => {
+    const result = resultFromDiscussionText(message.text);
+    if (result) counts[result] += 1;
+  });
+  return { counts, total: counts.home + counts.draw + counts.away };
+}
+
+// 找出最有火药味的一句(带 @反驳/打脸信号的优先)
+function hottestLine(messages) {
+  const CLASH = /(太乐观|想多了|低估|高估|打脸|别|不敢|悬|翻车|爆冷|撕碎|笑|错|未必|过于|未免|然而|但|反而)/;
+  const clashing = messages.filter(m => CLASH.test(String(m.text)));
+  const pick = clashing[clashing.length - 1] || messages[messages.length - 1];
+  if (!pick) return null;
+  return { modelId: pick.modelId, text: pick.text };
+}
+
+function stanceBarHTML(counts, total) {
+  if (!total) return '';
+  const seg = (n, cls, label) => n
+    ? `<span class="stance-seg ${cls}" style="flex:${n}" title="${label} ${n}">${n}</span>`
+    : '';
+  return `<div class="stance-bar">
+    ${seg(counts.home, 'stance-home', '主胜')}
+    ${seg(counts.draw, 'stance-draw', '平局')}
+    ${seg(counts.away, 'stance-away', '客胜')}
+  </div>`;
+}
+
+function renderRoundtableFeed() {
+  const el = document.getElementById('roundtable-feed');
+  if (!el) return;
+  const threads = DISCUSSIONS
+    .map(thread => ({ thread, match: MATCHES.find(m => m.id === thread.matchId) }))
+    .filter(item => item.match && (item.thread.messages || []).length)
+    .sort((a, b) => {
+      const aState = matchLifecycle(a.match).key;
+      const bState = matchLifecycle(b.match).key;
+      const aDone = aState === 'settled' ? 1 : 0;
+      const bDone = bState === 'settled' ? 1 : 0;
+      if (aDone !== bDone) return aDone - bDone;
+      return new Date(a.match.kickoff) - new Date(b.match.kickoff);
+    });
+
+  if (!threads.length) {
+    el.innerHTML = `<div class="empty-state">
+      <strong>圆桌即将开席</strong>
+      <span>跑一次 <code>npm run discuss</code>,模型们就会围着每场比赛开始激辩。</span>
+    </div>`;
+    return;
+  }
+
+  const grouped = threads.reduce((acc, item) => {
+    const key = matchDateKey(item.match);
+    if (!acc.has(key)) acc.set(key, []);
+    acc.get(key).push(item);
+    return acc;
+  }, new Map());
+
+  const renderCard = ({ thread, match }) => {
+    const messages = thread.messages;
+    const { counts, total } = stanceBreakdown(messages);
+    const finalCount = finalMessagesByModel(messages).length;
+    const hot = hottestLine(messages);
+    const hotMeta = hot ? modelMeta(hot.modelId) : null;
+    const homeFlag = flagIcon(match.home.flag);
+    const awayFlag = flagIcon(match.away.flag);
+    const state = matchLifecycle(match);
+    const statusText = state.label;
+    const split = total && counts.home && (counts.draw + counts.away)
+      ? '🔥 分歧激烈' : '观点交锋';
+
+    return `<article class="rt-card" data-match="${match.id}" role="button" tabindex="0">
+      <div class="rt-meta-row">
+        <span>${escapeHTML(formatKickoff(match.kickoff))}</span>
+        <span class="match-status status-${state.tone}">${escapeHTML(statusText)}</span>
+      </div>
+      <div class="rt-card-top">
+        <div class="rt-fixture">
+          <span class="rt-flag">${homeFlag}</span>
+          <span class="rt-team">${escapeHTML(match.home.team)}</span>
+          <span class="rt-vs">VS</span>
+          <span class="rt-team">${escapeHTML(match.away.team)}</span>
+          <span class="rt-flag">${awayFlag}</span>
+        </div>
+        <span class="rt-tag">${split}</span>
+      </div>
+      ${stanceBarHTML(counts, total)}
+      <div class="rt-stance-legend">
+        <span><i class="dot-home"></i>主胜 ${counts.home}</span>
+        <span><i class="dot-draw"></i>平 ${counts.draw}</span>
+        <span><i class="dot-away"></i>客胜 ${counts.away}</span>
+      </div>
+      ${hot ? `<div class="rt-quote">
+        <span class="rt-quote-dot" style="background:${hotMeta.color}"></span>
+        <p>“${escapeHTML(hot.text)}”<small>—— ${escapeHTML(hotMeta.name)}</small></p>
+      </div>` : ''}
+      <div class="rt-card-foot">
+        <span>${finalCount} 个模型 · ${messages.length} 回合</span>
+        <span class="rt-play">▶ 观看激辩回放</span>
+      </div>
+    </article>`;
+  };
+
+  el.innerHTML = Array.from(grouped.entries()).map(([dateKey, items]) => `
+    <section class="rt-day-group">
+      <div class="rt-day-head">
+        <strong>${escapeHTML(dateLabel(dateKey))}</strong>
+        <span>${escapeHTML(dateSubLabel(dateKey))} · ${items.length} 场圆桌</span>
+      </div>
+      <div class="rt-day-list">${items.map(renderCard).join('')}</div>
+    </section>
+  `).join('');
+
+  el.querySelectorAll('.rt-card').forEach(card => {
+    const open = () => openDebateStage(card.dataset.match);
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+}
+
+// ====== 全屏沉浸式辩论回放 ======
+let debateTimer = null;
+
+function debateBubbleHTML(message, prevModelId) {
+  const meta = modelMeta(message.modelId);
+  const camp = campOf(meta);
+  const side = camp === 'domestic' ? '' : ' is-right';
+  const result = resultFromDiscussionText(message.text);
+  const stanceTag = result
+    ? `<span class="db-stance db-${result}">${RESULT_SHORT[result]}</span>` : '';
+  // @ 上一个发言者(高亮交锋感)
+  const replyTo = prevModelId && prevModelId !== message.modelId
+    ? `<span class="db-reply">↩ 回应 ${escapeHTML(modelMeta(prevModelId).name)}</span>` : '';
+  return `<div class="db-msg${side}">
+    <div class="db-avatar" style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</div>
+    <div class="db-bubble">
+      <div class="db-name">${escapeHTML(meta.name)}<em>${camp === 'domestic' ? '🇨🇳' : '🌍'}</em>${stanceTag}</div>
+      ${replyTo}
+      <p>${escapeHTML(message.text)}</p>
+    </div>
+  </div>`;
+}
+
+function openDebateStage(matchId) {
+  const thread = discussionForMatch(matchId);
+  const match = MATCHES.find(m => m.id === matchId);
+  if (!thread || !match) return;
+  // 写入 hash,辩论可直接分享深链
+  if (history.replaceState) history.replaceState(null, '', `#debate=${matchId}`);
+  const messages = (thread.messages || []).slice().sort((a, b) => a.turn - b.turn);
+  const stage = document.getElementById('debate-stage');
+  const scroll = document.getElementById('debate-scroll');
+  const titleEl = document.getElementById('debate-title');
+  const stanceEl = document.getElementById('debate-stance');
+
+  titleEl.innerHTML = `${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}
+    <span>VS</span> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}`;
+  const { counts, total } = stanceBreakdown(messages);
+  stanceEl.innerHTML = `${stanceBarHTML(counts, total)}
+    <div class="rt-stance-legend">
+      <span><i class="dot-home"></i>主胜 ${counts.home}</span>
+      <span><i class="dot-draw"></i>平 ${counts.draw}</span>
+      <span><i class="dot-away"></i>客胜 ${counts.away}</span>
+    </div>`;
+
+  stage.classList.add('is-open');
+  stage.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  playDebate(messages, scroll);
+
+  const replay = () => playDebate(messages, scroll);
+  const skip = () => {
+    if (debateTimer) clearTimeout(debateTimer);
+    let prev = null;
+    scroll.innerHTML = messages.map(m => {
+      const html = debateBubbleHTML(m, prev);
+      prev = m.modelId;
+      return html.replace('db-msg', 'db-msg db-shown');
+    }).join('');
+    scroll.scrollTop = scroll.scrollHeight;
+  };
+  document.getElementById('debate-replay').onclick = replay;
+  document.getElementById('debate-skip').onclick = skip;
+}
+
+function playDebate(messages, scroll) {
+  if (debateTimer) clearTimeout(debateTimer);
+  scroll.innerHTML = '';
+  let i = 0;
+  let prev = null;
+  const step = () => {
+    if (i >= messages.length) return;
+    const message = messages[i];
+    const wrap = document.createElement('div');
+    wrap.innerHTML = debateBubbleHTML(message, prev);
+    const node = wrap.firstElementChild;
+    scroll.appendChild(node);
+    // 强制回流后加 shown,触发入场动画
+    void node.offsetWidth;
+    node.classList.add('db-shown');
+    scroll.scrollTop = scroll.scrollHeight;
+    prev = message.modelId;
+    i += 1;
+    // 按句子长度给一点节奏感,模拟"正在发言"
+    const delay = Math.min(1500, 480 + String(message.text).length * 14);
+    debateTimer = setTimeout(step, delay);
+  };
+  step();
+}
+
+function closeDebateStage() {
+  const stage = document.getElementById('debate-stage');
+  if (!stage) return;
+  if (debateTimer) clearTimeout(debateTimer);
+  stage.classList.remove('is-open');
+  stage.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (history.replaceState && location.hash.startsWith('#debate=')) {
+    history.replaceState(null, '', location.pathname);
+  }
+}
+
 function renderMatchDiscussion(match) {
   const thread = discussionForMatch(match.id);
   const messages = thread?.messages || [];
   if (!messages.length) {
     return `<div class="match-discussion is-empty">
-      <div class="match-discussion-title">圆桌过程</div>
+      <div class="match-discussion-title">圆桌激辩</div>
       <div class="chat-empty">
         <strong>这场还没开聊</strong>
-        <span>模型输出生成后,会直接出现在这场比赛下方。</span>
+        <span>模型输出生成后,会出现在「🔥 AI 圆桌激辩」专区。</span>
       </div>
     </div>`;
   }
 
   const finalCount = finalMessagesByModel(messages).length;
-  const status = thread?.sealedAt
-    ? `封盘 ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}`
-    : '已生成';
 
   return `<div class="match-discussion">
-    <div class="match-discussion-head">
-      <div>
-        <div class="match-discussion-title">圆桌过程</div>
-        <span>上方模型预测来自各模型最后结论 · ${status}</span>
-      </div>
-      <strong>${finalCount} 位模型</strong>
-    </div>
-    <details class="chat-details">
-      <summary>展开 ${messages.length} 条讨论记录</summary>
-      <div class="chat-window match-chat">${renderChatMessages(messages)}</div>
-    </details>
+    <button type="button" class="rt-enter" data-match="${match.id}">
+      <span class="rt-enter-icon">▶</span>
+      <span class="rt-enter-text">
+        <strong>观看 ${finalCount} 个模型激辩</strong>
+        <small>${messages.length} 回合 · 互相 @、互相打脸的封盘前交锋</small>
+      </span>
+      <span class="rt-enter-go">回放 ›</span>
+    </button>
   </div>`;
 }
 
@@ -748,9 +1008,22 @@ async function init() {
   const models = await loadJSON('data/models.json');
   if (models?.models) models.models.forEach(m => { MODELS[m.id] = m; });
 
+  await refreshData({ resetDate: true });
+
+  wireLeaderboardTabs();
+  wireScrollSpy();
+  wireDebateStage();
+  startDataRefresh();
+
+  // 深链直达某场辩论回放
+  const m = location.hash.match(/#debate=([\w-]+)/);
+  if (m) openDebateStage(m[1]);
+}
+
+async function refreshData({ resetDate = false } = {}) {
   const matches = await loadJSON('data/matches.json', 'data/sample-matches.json');
   MATCHES = matches?.matches || [];
-  selectedDateKey = pickInitialDate();
+  if (resetDate || !selectedDateKey) selectedDateKey = pickInitialDate();
 
   const lb = await loadJSON('data/leaderboard.json');
   if (lb) {
@@ -768,9 +1041,60 @@ async function init() {
   renderHeroMetrics();
   renderDateQuick();
   renderLeaderboard();
+  renderRoundtableFeed();
   renderMatches();
   renderChampionPredictions();
   renderDiscussions();
+}
+
+function startDataRefresh() {
+  window.setInterval(() => {
+    refreshData().catch(err => console.warn('刷新数据失败', err));
+  }, DATA_REFRESH_MS);
+}
+
+function wireDebateStage() {
+  const stage = document.getElementById('debate-stage');
+  document.getElementById('debate-close')?.addEventListener('click', closeDebateStage);
+  document.getElementById('debate-close-bottom')?.addEventListener('click', closeDebateStage);
+  stage?.addEventListener('click', e => {
+    if (e.target === stage) closeDebateStage();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDebateStage();
+  });
+  // 比赛卡里的「观看激辩」入口(事件委托)
+  document.getElementById('matches')?.addEventListener('click', e => {
+    const btn = e.target.closest('.rt-enter');
+    if (btn) openDebateStage(btn.dataset.match);
+  });
+}
+
+function wireLeaderboardTabs() {
+  const tabs = document.querySelectorAll('.lb-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activeLbTrack = tab.dataset.lb;
+      tabs.forEach(t => t.classList.toggle('is-active', t === tab));
+      renderLeaderboard();
+    });
+  });
+}
+
+function wireScrollSpy() {
+  const tabs = Array.from(document.querySelectorAll('.tabbar .tab'));
+  if (!tabs.length || !('IntersectionObserver' in window)) return;
+  const sections = tabs
+    .map(tab => document.getElementById(tab.dataset.tab))
+    .filter(Boolean);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      tabs.forEach(tab => tab.classList.toggle('is-active', tab.dataset.tab === id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(section => observer.observe(section));
 }
 
 init();

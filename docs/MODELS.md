@@ -17,11 +17,11 @@
 | 11 | Claude Sonnet 4.6 | Anthropic | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `CLAUDE_SONNET_MODEL` |
 | 12 | DeepSeek V4 Pro | DeepSeek | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `DEEPSEEK_MODEL` |
 | 13 | GLM-5.1 | 智谱 AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GLM_MODEL` |
-| 14 | 豆包 Seed 1.5 Thinking Pro | 字节跳动 / 火山方舟 | `DOUBAO_API_KEY` / `DOUBAO_API_BASE` / `DOUBAO_MODEL` |
+| 14 | Doubao-Seed-2.0-pro | 字节跳动 / 豆包 | ZenMux: `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `DOUBAO_MODEL` |
 
 ## 豆包选择说明
 
-火山方舟文档页面需要浏览器 JS 才能完整读取。可公开检索到的 ByteDance Seed 技术报告说明 Seed-Thinking-v1.5 与 Seed1.5-VL 已在 Volcengine 可用,其中给出的火山方舟模型 ID 包括 `doubao-1-5-thinking-vision-pro-250428`。本项目当前用文本预测占位 `doubao-1-5-thinking-pro-250428`;如火山方舟控制台显示更新的豆包文本模型,只需改 `.env` 的 `DOUBAO_MODEL`。
+已查询 ZenMux `/api/v1/models`,豆包可用模型包括 `bytedance/doubao-seed-2.0-mini`、`bytedance/doubao-seed-2.0-lite`、`bytedance/doubao-seed-2.0-code`、`bytedance/doubao-seed-2.0-pro`。本项目按最早需求接入 `Doubao-Seed-2.0-pro`,默认模型 ID 为 `bytedance/doubao-seed-2.0-pro`。
 
 ## 接入约束(公平性)
 
@@ -36,6 +36,7 @@
 - 已查询 ZenMux `/api/v1/models`,可用 GPT-5.5 模型 ID:`openai/gpt-5.5`、`openai/gpt-5.5-pro`;当前默认用 `openai/gpt-5.5`,避免直接上更贵的 pro。
 - 已查询 ZenMux `/api/v1/models`,可用 Gemini 3.1 模型 ID:`google/gemini-3.1-flash-lite-preview`、`google/gemini-3.1-pro-preview`;当前默认用 `gemini-3.1-flash-lite-preview` 走 `GOOGLE_GEMINI_BASE_URL=https://zenmux.ai/api/vertex-ai`。
 - 已验证通过 ZenMux `/api/v1/responses` 接通:Qwen 3.7 Max、GLM-5.1、MiniMax-M3、Kimi K2.6、Grok 4.3、Claude Sonnet 4.6、DeepSeek V4 Pro。
+- 已查询 ZenMux `/api/v1/models`,Doubao-Seed-2.0-pro 可用模型 ID:`bytedance/doubao-seed-2.0-pro`;当前默认走 ZenMux responses 协议。
 - Muse Spark 已预留 `muse-spark` provider,但 ZenMux `/api/v1/models` 当前未返回 `muse` 或 `spark` 相关模型 ID;需要 ZenMux 提供准确 ID 后再把 `.env` 的 `MUSE_MODEL` 改成真实值。
 
 ## 圆桌发言限制

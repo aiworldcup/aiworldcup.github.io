@@ -21,7 +21,7 @@ const STYLE_PROFILES = {
   "claude-sonnet-4-6": "像平衡派分析师,稳健,会调和乐观与谨慎。",
   "deepseek-v4pro": "像推演派,喜欢从攻防转换和比赛脚本切入。",
   "glm-5-1": "像中文体育编辑,表达顺滑,会做清晰结论。",
-  "doubao-seed-1-5-thinking-pro": "像短视频解说,口语化,抓重点和悬念。",
+  "doubao-seed-2-0-pro": "像短视频解说,口语化,抓重点和悬念。",
 };
 
 function turnBudget(modelId) {

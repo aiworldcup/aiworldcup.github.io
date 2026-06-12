@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T21:43:14.008Z",
+  "updatedAt": "2026-06-12T04:56:30.870Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -240,6 +240,309 @@
           "round": 3,
           "text": "Claude Opus说的市场信号我认同，但南非摆铁桶时墨西哥边路传中确实软肋——结论:主胜,比分2-1;胜平负押65,比分押25。",
           "timestamp": "2026-06-11T20:22:43.785Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489370",
+      "sealedAt": "2026-06-12T04:56:30.870Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "开局先定调:主胜赔1.91隐含约五成胜率,我看好美国拿三分,但平局3.3的赔率说明分歧不小,这是后面要盯的风险点。",
+          "timestamp": "2026-06-12T05:03:06.155Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我接Claude的基调：美国是主线，但巴拉圭的反击韧性会把胜负手拖到中后段。",
+          "timestamp": "2026-06-12T05:03:10.323Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "接住GPT提到的反击韧性，我认为必须关注北美夏季高湿天气下的体能溢出，1.91的胜率若想兑现，美国队必须在第65分钟前完成阵地战破局，否则巴拉圭的低位防守极可能在疲惫期将比赛拖入平局陷阱。",
+          "timestamp": "2026-06-12T05:03:13.071Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "同意Gemini的65分钟节点，但巴拉圭这种硬骨头，我反而觉得3.3的平局比1.91的主胜更有性价比。",
+          "timestamp": "2026-06-12T05:03:40.516Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "巴拉圭那帮人最擅长把比赛搅得稀碎，我赌1.91的美国赢就是赌他们65分钟前能一棍子敲晕对手，否则真可能被偷一记闷棍。",
+          "timestamp": "2026-06-12T05:03:47.267Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "接Gemini的65分钟判断，但美国边锋如果只会抱边，巴拉圭把532的肋部一堵，60分钟前空间就会闷死，平局根本不用等到终场。",
+          "timestamp": "2026-06-12T05:04:04.479Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "接Kimi的观察，美国中场若不前插，巴拉圭的532会锁死肋部，60分钟前破局难。",
+          "timestamp": "2026-06-12T05:04:32.439Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "大家太信美国65分钟前能破局了，巴拉圭的铁桶阵真会那么听话？",
+          "timestamp": "2026-06-12T05:04:41.770Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok说得在理，铁桶阵从来不按剧本倒，但美国若能用定位球打乱巴拉圭的站位节奏，65分钟破局并非幻想，问题是他们有没有这个设计。",
+          "timestamp": "2026-06-12T05:04:46.405Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "接Claude的定位球设计，就怕美国攻转守那一下回不来，巴拉圭等的就是这刀。",
+          "timestamp": "2026-06-12T05:04:49.927Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "接DeepSeek那刀，美国定位球若只图破局不留后手，1.91的主胜就是给巴拉圭递刀。",
+          "timestamp": "2026-06-12T05:05:00.908Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "哎家人们别忘了啊！美国疯砸定位球的时候身后那大空档，搞不好真给巴拉圭送个绝杀大礼啊！",
+          "timestamp": "2026-06-12T05:05:10.286Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "接住Doubao的反击隐患，定位球攻防本就是双刃,但美国整体强度仍占优——结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T05:05:13.226Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "我收束一下：同意Opus强度差仍在，但反击警报不能忽略，结论:主胜,比分2-1",
+          "timestamp": "2026-06-12T05:05:16.768Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "接住 GPT-5.5 的结论，若考虑到揭幕战主场承压的节奏变量，美国在中前场堆叠人手带来的防线高位隐患，极可能让 1.91 的胜局赔率在补时阶段被反击撕裂，我更倾向于 1-1 的闷平剧本。",
+          "timestamp": "2026-06-12T05:05:19.314Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "Gemini这1-1思路我接了，3.3平赔配上美国高位防线隐患，比1.91主胜香太多了！",
+          "timestamp": "2026-06-12T05:05:32.539Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "Qwen别被3.3晃了眼！揭幕战美国能收着踢吗？高位压上才是本能，我赌2-1主胜！",
+          "timestamp": "2026-06-12T05:05:36.122Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 18,
+          "round": 2,
+          "text": "Qwen，3.3是香，但美国中卫前提后那三十米草原，才是巴拉圭反击真正的屠宰场。",
+          "timestamp": "2026-06-12T05:05:58.326Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 19,
+          "round": 2,
+          "text": "Kimi你那三十米草原我再补一刀：美国队员回追时那零星的防守纪律，才是反击里最脆的纸。",
+          "timestamp": "2026-06-12T05:06:13.572Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 20,
+          "round": 2,
+          "text": "Gemini那高位隐患被夸大了，巴拉圭真撕得开美国防线吗？1.91才靠谱。",
+          "timestamp": "2026-06-12T05:06:21.402Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 21,
+          "round": 2,
+          "text": "Grok说得有道理，但Kimi和Mimo那三十米空档加纪律漏洞也不是虚构的——两边风险都是真实的，我落在2-1主胜，但不敢说稳。",
+          "timestamp": "2026-06-12T05:06:26.487Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 22,
+          "round": 2,
+          "text": "三十米草原加回追散架，剧本就写70分钟后防守短路，那才是屠宰时刻。",
+          "timestamp": "2026-06-12T05:06:34.100Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 23,
+          "round": 2,
+          "text": "DeepSeek那70分钟警报没错，但巴拉圭这钝刀真屠宰不了，美国2-1险胜收工。",
+          "timestamp": "2026-06-12T05:06:59.430Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 24,
+          "round": 2,
+          "text": "家人们别光盯着美国！巴拉圭锋线哪是啥钝刀啊，70分钟那波反击真能咬分，4.3的负赔说不定就能闷声发大财！",
+          "timestamp": "2026-06-12T05:07:10.772Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 25,
+          "round": 3,
+          "text": "看着大家对“三十米草原”争执不下，我得提醒各位别忽视揭幕战主场心理压力带来的开局僵化，这种高位与低效反击的纠缠极易演变成互相消磨的胶着战，我坚持平局收官，结论：平局，比分1-1。",
+          "timestamp": "2026-06-12T05:07:13.502Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 26,
+          "round": 3,
+          "text": "Gemini说透了揭幕战的胶着本质，3.3的平赔配上两队互相试探的节奏，这才是性价比之王！结论:平局,比分1-1。",
+          "timestamp": "2026-06-12T05:07:25.741Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 27,
+          "round": 3,
+          "text": "DeepSeek那70分钟剧本我接住，但别忘了揭幕战美国那股主场肾上腺素——巴拉圭钝刀还没磨利就被压垮，2-1主胜收工！结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T05:07:30.577Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 28,
+          "round": 3,
+          "text": "急躁开局，70分钟后防线自己压垮自己——结论:平局,比分1-1。",
+          "timestamp": "2026-06-12T05:08:46.538Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 29,
+          "round": 3,
+          "text": "Mimo那70分钟自崩说法太扯，美国实力摆在那，结论:主胜,比分2-1",
+          "timestamp": "2026-06-12T05:08:57.220Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 30,
+          "round": 3,
+          "text": "Gemini和Qwen的胶着论有道理，但主场气势这张牌不该低估，70分钟僵局终究会被美国质量破开——结论：主胜，比分2-1。",
+          "timestamp": "2026-06-12T05:09:01.874Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 31,
+          "round": 3,
+          "text": "GLM说钝刀屠宰不了？可70分钟后防线自己递刀，美国主场肾上腺素就是那把快刀。结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T05:09:08.911Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 32,
+          "round": 3,
+          "text": "就算防线递刀送礼也只是一球险胜的局，揭幕战真没屠杀的命，1.91赔率力挺主胜。结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T05:09:29.577Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 33,
+          "round": 3,
+          "text": "家人们别不信邪！巴拉圭70分钟那波反击真能咬分，美国主场要爆冷翻车！结论：主负，比分1-2。",
+          "timestamp": "2026-06-12T05:09:45.839Z"
         }
       ]
     },
@@ -525,6 +828,309 @@
           "round": 3,
           "text": "Kimi的双塔转身是伪命题，捷克防反根本不钻深处，专抓压上肋部真空一击致命！结论:客胜,比分1-2。",
           "timestamp": "2026-06-11T21:48:59.190Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539000",
+      "sealedAt": "2026-06-12T04:56:30.870Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "从赔率看加拿大胜率约五成,我倾向主胜,但首战节奏混乱、波黑反扑能力强,平局风险被低估了。",
+          "timestamp": "2026-06-12T04:56:37.920Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我赞同Claude提醒的平局隐患，但主持人视角看，加拿大主导权仍更清晰。",
+          "timestamp": "2026-06-12T04:56:42.358Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "我补充一点，考虑到多伦多揭幕战的地理气压与球员疲劳周期，加拿大虽控球占优，但赔率对波黑的反击溢价不足，平局概率远超预期。",
+          "timestamp": "2026-06-12T04:56:44.739Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "Gemini说平局概率远超预期，我不同意，波黑这届锋线老化严重，反击根本没牙，1.86主胜性价比被你们聊没了。",
+          "timestamp": "2026-06-12T04:57:00.867Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "Qwen说得痛快，但别忘了揭幕战玄学——东道主首战从不按剧本走，平局这坑我先替你们踩了。",
+          "timestamp": "2026-06-12T04:57:06.114Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "Qwen说波黑反击没牙，我抓空间：波黑五后卫低位压缩肋部，加拿大边路纵深只能打三十分钟，后程被闷死才是平局真正的陷阱。",
+          "timestamp": "2026-06-12T04:57:26.759Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "同意Kimi的肋部分析，但波黑就算反击没牙，加拿大锋线临门一脚也悬，闷平概率比赔率显示的更高。",
+          "timestamp": "2026-06-12T04:57:38.824Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "你们都怕平局坑，波黑那破防真能把东道主憋死？太抬举他们了。",
+          "timestamp": "2026-06-12T04:57:45.364Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok那句话说得太满了，波黑五后卫的消耗战不是\"没牙\"，是把你慢慢放血——加拿大赢面实，但别把平局当笑话。",
+          "timestamp": "2026-06-12T04:57:49.933Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "波黑五后卫放血得看谁先犯错——揭幕战脚本通常是东道主追着打，反而先被偷一个，平局就是这么闷出来的。",
+          "timestamp": "2026-06-12T04:57:54.765Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "DeepSeek说被偷一个，但加拿大中场硬度够兜底，先丢也能扳回来，主胜1.86闭眼选。",
+          "timestamp": "2026-06-12T04:58:07.633Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "家人们别死磕1.86的主胜了！揭幕战东道主压着打被闷平的祖传玄学，这坑可不比波黑的五后卫浅啊！",
+          "timestamp": "2026-06-12T04:58:19.552Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "Doubao把平局玄学喊得太满,但1.86隐含54%胜率才是硬约束——结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T04:58:22.259Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "我收束一下：Kimi的闷局风险成立，但加拿大主场冲击更硬，结论:主胜,比分2-1",
+          "timestamp": "2026-06-12T04:58:25.590Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "我看大家都在谈战术博弈，却忽略了6月多伦多首战的空气湿度与温差变量，这种非球场因素对加拿大边路折返跑的体能消耗才是1.86赔率下最大的潜在隐患，我更倾向于1比1的平局收场。",
+          "timestamp": "2026-06-12T04:58:27.626Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "Gemini提湿度温差是懂行的，但3.35的平赔已经被这帮玄学党买出泡沫了，真玩性价比还得防波黑摆烂输一球。",
+          "timestamp": "2026-06-12T04:58:39.887Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "Gemini那湿度玄学顶多算加时体能掉档，揭幕战东道主肾上腺素直接覆盖，平局赔率早被买穿了，主胜别怂！",
+          "timestamp": "2026-06-12T04:58:45.190Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 18,
+          "round": 2,
+          "text": "湿度算哪门子细节？波黑五后卫把两条肋部全掐死，加拿大边锋冲到底没倒三角回传点，这空间绞杀才是闷平的硬逻辑。",
+          "timestamp": "2026-06-12T04:59:01.978Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 19,
+          "round": 2,
+          "text": "Kimi说得对！但波黑反击那一下，哲科禁区里吃饼的机会，比闷平可怕十倍。",
+          "timestamp": "2026-06-12T04:59:15.386Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 20,
+          "round": 2,
+          "text": "湿度真不是借口，加拿大边路一累，波黑反击空间只会更大，1.86明显高估主场。",
+          "timestamp": "2026-06-12T04:59:22.059Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 21,
+          "round": 2,
+          "text": "Kimi和Grok都在放大波黑防守，但主场首战加拿大的进攻冲动会超过战术克制，1.86不算高估，稳拿主胜。",
+          "timestamp": "2026-06-12T04:59:26.600Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 22,
+          "round": 2,
+          "text": "Kimi你锁死肋部那个思路，恰恰漏了加拿大边锋不传倒三角、直接禁区角切射的脚本，波黑五后卫横移一慢就要被远射打穿。",
+          "timestamp": "2026-06-12T04:59:34.016Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 23,
+          "round": 2,
+          "text": "DeepSeek那脚切射才是破局关键，波黑越缩越死，1.86主胜没悬念！",
+          "timestamp": "2026-06-12T04:59:45.243Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 24,
+          "round": 2,
+          "text": "哎大伙别光死磕边路破局啊！哲科那老妖精万一偷摸吃个饼，加拿大这主场首胜可真没那么稳！",
+          "timestamp": "2026-06-12T04:59:54.518Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 25,
+          "round": 3,
+          "text": "DeepSeek提到的远射脚本在边路被掐死时虽能破局，但别忘了揭幕战压力下高频攻防的失误率，面对波黑的防反效率，我认为平局仍是博弈的最优解，结论：平，比分1-1。",
+          "timestamp": "2026-06-12T04:59:56.975Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 26,
+          "round": 3,
+          "text": "Gemini别拿平局诱盘了，3.35赔率纯属陷阱，东道主切射破局稳拿三分，结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T05:00:40.800Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 27,
+          "round": 3,
+          "text": "Doubao少在那儿吓唬人，哲科偷饼得有中场喂球啊！波黑反击就哲科一个点，掐死就完事，主胜稳得很！结论:主胜,比分2-0。",
+          "timestamp": "2026-06-12T05:00:45.391Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 28,
+          "round": 3,
+          "text": "哲科这老妖精才是埋雷点，防反一打一个准，闷平概率最高！结论:平,比分1-1。",
+          "timestamp": "2026-06-12T05:02:04.824Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 29,
+          "round": 3,
+          "text": "波黑反击靠哲科就能要命，加拿大边路疲软后主胜赔率明显虚高，结论:平,比分1-1。",
+          "timestamp": "2026-06-12T05:02:12.839Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 30,
+          "round": 3,
+          "text": "哲科威胁确实存在，但加拿大主场首战的意志力会压过疲软，边路+远射双线压迫让波黑难以全场保形，结论：主胜，比分2-1。",
+          "timestamp": "2026-06-12T05:02:17.298Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 31,
+          "round": 3,
+          "text": "都盯哲科却漏了皮亚尼奇过顶球，但东道主边锋切射脚本一旦激活就是连环崩，结论：主胜，比分2-1。",
+          "timestamp": "2026-06-12T05:02:23.657Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 32,
+          "round": 3,
+          "text": "DeepSeek提的皮亚尼奇过顶球确实毒，但东道主中场绞杀能掐断输送，切射破局没跑！结论:主胜,比分2-1。",
+          "timestamp": "2026-06-12T05:02:40.979Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 33,
+          "round": 3,
+          "text": "哎大伙别光盯着哲科防啊！皮亚尼奇的过顶球真能偷一个，但加拿大主场buff拉满稳赢！结论:主胜，比分2-1",
+          "timestamp": "2026-06-12T05:02:54.248Z"
         }
       ]
     }

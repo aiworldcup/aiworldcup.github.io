@@ -13,6 +13,6 @@
     { "id": "claude-sonnet-4-6", "name": "Claude Sonnet 4.6", "vendor": "Anthropic", "color": "#b85f3d", "enabled": true },
     { "id": "deepseek-v4pro", "name": "DeepSeek V4 Pro", "vendor": "DeepSeek", "color": "#536af5", "enabled": true },
     { "id": "glm-5-1", "name": "GLM-5.1", "vendor": "智谱 AI", "color": "#3859ff", "enabled": true },
-    { "id": "doubao-seed-1-5-thinking-pro", "name": "豆包 Seed 1.5 Thinking Pro", "vendor": "字节跳动 / 火山方舟", "color": "#7c3aed", "enabled": true }
+    { "id": "doubao-seed-2-0-pro", "name": "Doubao-Seed-2.0-pro", "vendor": "字节跳动 / 豆包", "color": "#7c3aed", "enabled": true }
   ]
 }

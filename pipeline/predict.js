@@ -24,7 +24,7 @@ const PROVIDERS = {
   "claude-sonnet-4-6": { env: "ZENMUX_API_KEY", envFallbacks: ["ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_API_KEY"], baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "CLAUDE_SONNET_MODEL", modelEnvFallbacks: ["ANTHROPIC_DEFAULT_SONNET_MODEL"], model: "anthropic/claude-sonnet-4.6", protocol: "responses" },
   "deepseek-v4pro": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "DEEPSEEK_MODEL", model: "deepseek/deepseek-v4-pro", protocol: "responses" },
   "glm-5-1": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "GLM_MODEL", modelEnvFallbacks: ["ZHIPU_MODEL"], model: "z-ai/glm-5.1", protocol: "responses" },
-  "doubao-seed-1-5-thinking-pro": { env: "DOUBAO_API_KEY", baseEnv: "DOUBAO_API_BASE", modelEnv: "DOUBAO_MODEL", model: "doubao-1-5-thinking-pro-250428" },
+  "doubao-seed-2-0-pro": { env: "ZENMUX_API_KEY", baseEnv: "ZENMUX_API_BASE", base: "https://zenmux.ai/api/v1", modelEnv: "DOUBAO_MODEL", model: "bytedance/doubao-seed-2.0-pro", protocol: "responses" },
 };
 
 function readJson(filePath) {

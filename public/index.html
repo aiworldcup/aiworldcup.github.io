@@ -3,19 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>世界杯 AI 擂台 · 大模型预测大赛</title>
-  <meta name="description" content="10+ 大模型同场竞技,预测世界杯每场比赛。封盘存证、规则透明、赛后排名。" />
-  <link rel="stylesheet" href="styles.css?v=20260612-0200" />
+  <title>世界杯 AI 擂台 · 谁是最会预测世界杯的大模型</title>
+  <meta name="description" content="10+ 顶级大模型同场竞猜世界杯每场比赛。赛前封盘存证、赛后实时打榜,国产军团对决海外军团,看哪个 AI 最会算球。" />
+  <link rel="stylesheet" href="styles.css?v=20260612-1342" />
 </head>
 <body>
   <header class="hero">
-    <div class="hero-kicker">World Cup AI Arena</div>
-    <h1>世界杯 AI 擂台</h1>
-    <p class="tagline">大模型预测能力长期评测基准 · 赛果榜 · 比分榜 · 赛前封盘</p>
-    <div id="hero-metrics" class="hero-metrics" aria-label="赛事概览"></div>
+    <div class="hero-inner">
+      <div class="hero-kicker">World Cup AI Arena · 2026</div>
+      <h1>谁是<em>最会猜球</em>的 AI?</h1>
+      <p class="tagline">10+ 顶级大模型同场竞猜世界杯每场比赛 · 赛前封盘存证 · 赛后实时打榜</p>
+      <div id="hero-metrics" class="hero-metrics" aria-label="赛事概览"></div>
+    </div>
   </header>
 
+  <nav class="tabbar" id="tabbar" aria-label="页面导航">
+    <a href="#board" class="tab is-active" data-tab="board">擂台榜</a>
+    <a href="#roundtable" class="tab" data-tab="roundtable">圆桌激辩</a>
+    <a href="#matches-section" class="tab" data-tab="matches-section">比赛</a>
+    <a href="#champion-section" class="tab" data-tab="champion-section">冠军预测</a>
+  </nav>
+
   <main>
+    <section id="board">
+      <div class="section-head">
+        <div>
+          <h2>AI 擂台榜</h2>
+          <p class="section-sub">只看两件事:谁猜中赛果最多,谁真的猜中过比分。</p>
+        </div>
+        <span id="lb-updated" class="muted"></span>
+      </div>
+
+      <div id="camp-battle" class="camp-battle" aria-label="国产军团对决海外军团"></div>
+
+      <div id="leaderboard-summary" class="leaderboard-summary"></div>
+
+      <div class="lb-tabs" id="lb-tabs" role="tablist">
+        <button type="button" class="lb-tab is-active" data-lb="result">🎯 赛果榜</button>
+        <button type="button" class="lb-tab" data-lb="score">🔢 比分榜</button>
+      </div>
+
+      <div id="leaderboard" class="leaderboard"></div>
+    </section>
+
+    <section id="roundtable">
+      <div class="section-head">
+        <div>
+          <h2>🔥 AI 圆桌激辩</h2>
+          <p class="section-sub">封盘前,模型们围着每场比赛互相 @、互相打脸。点开看一场 AI 的真实交锋。</p>
+        </div>
+      </div>
+      <div id="roundtable-feed" class="roundtable-feed"></div>
+    </section>
+
     <section id="matches-section">
       <div class="section-head">
         <div>
@@ -26,34 +66,44 @@
       <div id="date-quick" class="date-quick" aria-label="按日期筛选比赛"></div>
       <div class="prediction-note">
         <strong>提前一天封盘</strong>
-        <span>每个比赛日前一天更新模型预测,开赛后只展示存证结果。</span>
+        <span>每个比赛日前一天锁死模型预测与时间戳,开赛后只展示存证,不可篡改。</span>
       </div>
       <div id="matches" class="matches"></div>
     </section>
 
-    <section id="leaderboard-section">
+    <section id="champion-section">
       <div class="section-head">
         <div>
-          <h2>预测排行榜</h2>
-          <p class="section-sub">只看两件事:谁猜中赛果最多,谁猜中比分最多。</p>
+          <h2>冠军预测</h2>
+          <p class="section-sub">谁将举起大力神杯?看各模型赛前的封盘押注。</p>
         </div>
-        <span id="lb-updated" class="muted"></span>
       </div>
-      <div id="leaderboard-summary" class="leaderboard-summary"></div>
-      <div id="leaderboard" class="leaderboard"></div>
-    </section>
-
-    <section id="champion-section">
-      <h2>冠军预测</h2>
       <div id="champion-predictions" class="champion-grid"></div>
     </section>
   </main>
 
   <footer>
     <p>规则:赛果榜统计胜平负命中率,比分榜统计具体比分命中数。预测开赛前封盘存证,不可篡改。</p>
-    <p class="muted">大模型预测能力长期评测基准 · 世界杯是第一个舞台</p>
+    <p class="muted">大模型预测能力长期评测基准 · 世界杯只是第一个舞台</p>
   </footer>
 
-  <script src="app.js?v=20260612-0200"></script>
+  <!-- 全屏沉浸式辩论回放层 -->
+  <div id="debate-stage" class="debate-stage" aria-hidden="true">
+    <div class="debate-panel" role="dialog" aria-modal="true" aria-label="圆桌辩论回放">
+      <div class="debate-top">
+        <div class="debate-title" id="debate-title"></div>
+        <button type="button" class="debate-close" id="debate-close" aria-label="关闭">✕</button>
+      </div>
+      <div class="debate-stance" id="debate-stance"></div>
+      <div class="debate-scroll" id="debate-scroll"></div>
+      <div class="debate-controls">
+        <button type="button" class="debate-btn" id="debate-replay">↻ 重新回放</button>
+        <button type="button" class="debate-btn ghost" id="debate-skip">显示全部</button>
+        <button type="button" class="debate-btn close" id="debate-close-bottom">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=20260612-1342"></script>
 </body>
 </html>
