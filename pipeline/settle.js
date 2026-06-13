@@ -6,6 +6,7 @@ const { makeLeaderboard } = require("./score");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const LEADERBOARD_PATH = path.join(__dirname, "..", "public", "data", "leaderboard.json");
+const DISCUSSIONS_PATH = path.join(__dirname, "..", "public", "data", "discussions.json");
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -19,8 +20,10 @@ async function settle() {
   loadProjectEnv();
   await syncRealData();
   const data = readJson(MATCHES_PATH);
+  const discussionsData = fs.existsSync(DISCUSSIONS_PATH) ? readJson(DISCUSSIONS_PATH) : { discussions: [] };
   const settlementGraceMinutes = Number(process.env.SETTLEMENT_GRACE_MINUTES || 150);
   const leaderboard = makeLeaderboard(data.matches || [], {
+    discussions: discussionsData.discussions || [],
     settlementGraceMinutes,
   });
   writeJson(LEADERBOARD_PATH, leaderboard);

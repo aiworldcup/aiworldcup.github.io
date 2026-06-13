@@ -5,6 +5,7 @@ const { loadProjectEnv } = require("./lib/env");
 const DEFAULT_INPUT = path.join(__dirname, "..", "public", "data", "matches.json");
 const SAMPLE_INPUT = path.join(__dirname, "..", "public", "data", "sample-matches.json");
 const DEFAULT_OUTPUT = path.join(__dirname, "..", "public", "data", "leaderboard.json");
+const DEFAULT_DISCUSSIONS = path.join(__dirname, "..", "public", "data", "discussions.json");
 const DEFAULT_SETTLEMENT_GRACE_MINUTES = 150;
 
 function argValue(name) {
@@ -98,6 +99,54 @@ function predictionMapFor(match, track = "open") {
   return map;
 }
 
+function resultFromDiscussionText(text) {
+  const value = String(text || "");
+  if (/结论[:：]?\s*(平局|打平|平)/.test(value) || /冷平|逼平/.test(value)) return "draw";
+  if (/结论[:：]?\s*(客胜|客队胜|负)/.test(value)) return "away";
+  if (/结论[:：]?\s*(主胜|主队胜|胜)/.test(value)) return "home";
+  if (/平局|打平/.test(value)) return "draw";
+  if (/客胜|客队/.test(value)) return "away";
+  if (/主胜|主场|主队/.test(value)) return "home";
+  return "";
+}
+
+function scoreFromDiscussionText(text) {
+  const matches = Array.from(String(text || "").matchAll(/[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/g));
+  const match = matches[matches.length - 1];
+  if (!match) return "";
+  return match[0]
+    .replace(/[０-９]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0xFEE0))
+    .replace(/[：比]/g, "-")
+    .replace(/\s+/g, "");
+}
+
+function finalMessagesByModel(messages) {
+  const finalByModel = {};
+  (messages || []).forEach((message) => {
+    if (message.modelId) finalByModel[message.modelId] = message;
+  });
+  return Object.values(finalByModel).sort((a, b) => (a.turn || 0) - (b.turn || 0));
+}
+
+function discussionPredictionMapFor(match, discussions = []) {
+  const thread = discussions.find((item) => item.matchId === match.id);
+  const map = new Map();
+  finalMessagesByModel(thread && thread.messages).forEach((message) => {
+    const result = resultFromDiscussionText(message.text);
+    const score = scoreFromDiscussionText(message.text);
+    if (result && score) {
+      map.set(message.modelId, {
+        modelId: message.modelId,
+        track: "open",
+        result,
+        score,
+        source: "discussion",
+      });
+    }
+  });
+  return map;
+}
+
 function makeRows(modelIds) {
   const rows = new Map();
   modelIds.forEach((modelId) => {
@@ -170,6 +219,7 @@ function rankScore(rows) {
 function makeLeaderboard(matches, options = {}) {
   const settlementGraceMinutes = options.settlementGraceMinutes || DEFAULT_SETTLEMENT_GRACE_MINUTES;
   const now = options.now instanceof Date ? options.now : new Date(options.now || Date.now());
+  const discussions = options.discussions || [];
   const settlementCounts = {};
   const pendingResult = [];
   const predictionModelIds = new Set();
@@ -177,6 +227,9 @@ function makeLeaderboard(matches, options = {}) {
   (matches || []).forEach((match) => {
     (match.predictions || []).forEach((prediction) => {
       if ((prediction.track || "open") === "open" && prediction.modelId) predictionModelIds.add(prediction.modelId);
+    });
+    discussionPredictionMapFor(match, discussions).forEach((prediction) => {
+      if (prediction.modelId) predictionModelIds.add(prediction.modelId);
     });
   });
   const modelIds = Array.from(new Set([...(options.modelIds || []), ...predictionModelIds]));
@@ -196,7 +249,8 @@ function makeLeaderboard(matches, options = {}) {
     }
     if (!status.canScore) return;
 
-    const predictions = predictionMapFor(match, "open");
+    const sealedPredictions = predictionMapFor(match, "open");
+    const predictions = sealedPredictions.size ? sealedPredictions : discussionPredictionMapFor(match, discussions);
     modelIds.forEach((modelId) => {
       const row = rowFor(rows, modelId);
       row.settledMatches += 1;
@@ -234,9 +288,12 @@ function main() {
   loadProjectEnv();
   const input = path.resolve(argValue("input") || DEFAULT_INPUT);
   const output = path.resolve(argValue("output") || DEFAULT_OUTPUT);
+  const discussionsPath = path.resolve(argValue("discussions") || DEFAULT_DISCUSSIONS);
   const data = loadMatches(input);
+  const discussionsData = fs.existsSync(discussionsPath) ? readJson(discussionsPath) : { discussions: [] };
   const settlementGraceMinutes = Number(process.env.SETTLEMENT_GRACE_MINUTES || DEFAULT_SETTLEMENT_GRACE_MINUTES);
   const leaderboard = makeLeaderboard(data.matches || [], {
+    discussions: discussionsData.discussions || [],
     settlementGraceMinutes,
   });
   writeJson(output, leaderboard);
@@ -248,4 +305,5 @@ if (require.main === module) main();
 module.exports = {
   makeLeaderboard,
   settlementStatusForMatch,
+  discussionPredictionMapFor,
 };
