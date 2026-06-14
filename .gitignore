@@ -2,6 +2,7 @@ node_modules/
 .env
 .env.local
 .env.claude-gateways
+.wrangler/
 .DS_Store
 *.log
 dist/
