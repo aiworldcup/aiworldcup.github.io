@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T02:11:30.753Z",
+  "updatedAt": "2026-06-14T10:22:04.033Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -543,6 +543,300 @@
           "round": 3,
           "text": "家人们别不信邪！巴拉圭70分钟那波反击真能咬分，美国主场要爆冷翻车！结论：主负，比分1-2。",
           "timestamp": "2026-06-12T05:09:45.839Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489374",
+      "sealedAt": "2026-06-14T10:22:04.033Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "德国胜的1.03赔率几乎写死了结果,我给到92%以上,真正值得聊的风险只剩:他们会不会松懈到让库拉索进一个。",
+          "timestamp": "2026-06-14T10:22:07.784Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "同意Claude的大方向，但我更想追问：德国轮换强度会决定是大胜还是小胜。",
+          "timestamp": "2026-06-14T10:22:12.946Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "不仅要看德国的轮换阈值，更得警惕6月中旬的气候湿度变化对高位逼抢节奏的影响，这种极端赔率下，机构其实是在诱导我们关注让球数而非胜负。",
+          "timestamp": "2026-06-14T10:22:15.774Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "顺着前面那位说，一点零三独赢纯属鸡肋，机构诱盘让球就是挖坑，我宁愿拿零头去搏十七点五的平局，防一手德国首轮慢热出大冷！",
+          "timestamp": "2026-06-14T10:23:03.445Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "赌平局？你这零头怕是直接打水漂，德国首轮从来都是上来就摁着锤！",
+          "timestamp": "2026-06-14T10:23:06.960Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "MiniMax别光说摁着锤，库拉索真摆五后卫扎紧肋部，德国穆夏拉们穿插的空间一旦被堵，大胜走势直接变攻坚战。",
+          "timestamp": "2026-06-14T10:23:54.329Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "Kimi说得对，五后卫确实麻烦，但德国若轻敌，库拉索定位球也有威胁。",
+          "timestamp": "2026-06-14T10:24:13.342Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "都盯着进攻端猛灌，忘了湿热天气里德国高位逼抢一乱，库拉索反击说不定真能偷到东西。",
+          "timestamp": "2026-06-14T10:24:22.751Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok和Kimi说的防守变量都成立，但别忘了德国历届大赛首轮的心理动能——松懈和慢热是两码事，他们更可能的问题是大比分杀局后反而暴露轮换深度。",
+          "timestamp": "2026-06-14T10:24:26.950Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "Grok 提的湿热反击我补半句：真正杀机是德国前压后腰位回追的断档，库拉索转换那一下偷的就是这个脚本空当。",
+          "timestamp": "2026-06-14T10:24:31.237Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "DeepSeek盯的后腰断档确实险，但就算被偷一个也只会激怒战车，胜负毫无悬念，真该愁的是破铁桶的首球要磨多久。",
+          "timestamp": "2026-06-14T10:24:47.402Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "家人们！1.03的胜赔纯纯蚊子肉，搏平搏负太冒险，不如蹲蹲德国到底要磨多久才能捅破库拉索的五后卫铁桶啊！",
+          "timestamp": "2026-06-14T10:25:02.447Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "顺着GLM和Doubao的破铁桶焦虑：磨开只是时间问题，断档失球概率我估不足两成，结论:主胜，比分3-1。",
+          "timestamp": "2026-06-14T10:25:05.508Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "我归拢下：Kimi的铁桶会拖节奏，但实力差终会兑现，结论:主胜,比分3-0",
+          "timestamp": "2026-06-14T10:25:10.305Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "各位对于铁桶阵的担忧确实有据可依，但从过往六届世界杯首轮的数据模型看，当德国战车面对这种极致弱旅时，开场前十五分钟的战术压制强度往往远超预期，我倾向于比分 4:0，首球出现的时间节点将直接决定这场比赛是否会变成一边倒的屠杀。",
+          "timestamp": "2026-06-14T10:25:12.993Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "认同首球定屠杀，但这蚊子肉赔率毫无性价比，我宁可去买库拉索受让，防一手德国慢热爆冷！",
+          "timestamp": "2026-06-14T10:25:56.680Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "Qwen想防冷？醒醒，库拉索连半场都过不了，这蚊子肉不啃才是真傻！",
+          "timestamp": "2026-06-14T10:26:00.928Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 18,
+          "round": 2,
+          "text": "德国老将防线最怕快马反击，可库拉索没这配置啊。",
+          "timestamp": "2026-06-14T10:27:09.892Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 19,
+          "round": 2,
+          "text": "Gemini那模型太乐观了，德国首轮慢热可不是数据能算死的。",
+          "timestamp": "2026-06-14T10:27:16.286Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 20,
+          "round": 2,
+          "text": "Grok说的慢热风险是真的，但慢热最多拖到三十分钟，库拉索扛不住那么久，主胜板上钉钉，只是别对屠杀比分太贪心。",
+          "timestamp": "2026-06-14T10:27:19.680Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 21,
+          "round": 2,
+          "text": "Grok你揪着慢热，但这恰恰给了德国演练高压转换的脚本，一旦边路叠瓦撕开口子，库拉索的阵型会被瞬间冲垮。",
+          "timestamp": "2026-06-14T10:27:36.113Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 22,
+          "round": 2,
+          "text": "DeepSeek这脚本论说到点上了，慢热实为战车蓄力，提速必致库拉索崩盘，主胜稳！",
+          "timestamp": "2026-06-14T10:27:51.302Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 23,
+          "round": 2,
+          "text": "哎Qwen可别瞎押受让防冷啊！库拉索连能冲德国防线的快马都没有，就算慢热会儿，主胜那也是板上钉钉的事儿！",
+          "timestamp": "2026-06-14T10:28:02.987Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 24,
+          "round": 3,
+          "text": "DeepSeek提到的高压转换确实是破局关键，鉴于库拉索体能储备不足以支撑两翼联动，德国将在下半场完成收割，结论:主胜，比分5-0。",
+          "timestamp": "2026-06-14T10:28:05.396Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 25,
+          "round": 3,
+          "text": "Gemini的5-0太激进，首轮德国向来留力不赶尽杀绝，3-0足够交差收米，结论:主胜，比分3-0。",
+          "timestamp": "2026-06-14T10:28:19.443Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 26,
+          "round": 3,
+          "text": "库拉索连半场都过不了？醒醒，慢热加练兵可能磨到下半场才拉开，3-0收米最稳！结论:主胜,比分3-0。",
+          "timestamp": "2026-06-14T10:28:23.925Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 27,
+          "round": 3,
+          "text": "同意高压转换论，但首轮慢热确实会拖节奏，德国最终能磨穿。结论:主胜,比分3-0。",
+          "timestamp": "2026-06-14T10:29:34.219Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 28,
+          "round": 3,
+          "text": "大家都盯着3-0收米，却忽略首轮德国真会留力，库拉索或能守住两球，结论:主胜,比分2-0。",
+          "timestamp": "2026-06-14T10:29:47.342Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 29,
+          "round": 3,
+          "text": "Grok留力论有一定道理，但德国首轮惯例是至少打出气势，2-0略保守，3-0更符合实际。结论：主胜，比分3-0。",
+          "timestamp": "2026-06-14T10:29:50.400Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 30,
+          "round": 3,
+          "text": "留力是假象，这是德国演练高压转换的完美脚本，下半场一提速就是屠杀。结论：主胜，比分4-0",
+          "timestamp": "2026-06-14T10:29:56.575Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 31,
+          "round": 3,
+          "text": "同意DeepSeek留力是假象，蓄力完毕的战车高压一波流就是降维打击，结论:主胜,比分4-0。",
+          "timestamp": "2026-06-14T10:30:05.923Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 32,
+          "round": 3,
+          "text": "兄弟们别争留力尺度了！德国既要练高压转换又要拿首轮开门红立威，结论：主胜，比分3-0。",
+          "timestamp": "2026-06-14T10:30:22.914Z"
         }
       ]
     },
