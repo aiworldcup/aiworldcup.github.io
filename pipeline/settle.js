@@ -16,6 +16,29 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+function comparable(value) {
+  if (Array.isArray(value)) return value.map(comparable);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => !["updatedAt", "generatedAt"].includes(key))
+      .map(([key, item]) => [key, comparable(item)])
+  );
+}
+
+function writeJsonIfChanged(filePath, data) {
+  if (fs.existsSync(filePath)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      if (JSON.stringify(comparable(existing)) === JSON.stringify(comparable(data))) return false;
+    } catch (_) {
+      // Rewrite invalid JSON.
+    }
+  }
+  writeJson(filePath, data);
+  return true;
+}
+
 async function settle() {
   loadProjectEnv();
   await syncRealData();
@@ -26,11 +49,11 @@ async function settle() {
     discussions: discussionsData.discussions || [],
     settlementGraceMinutes,
   });
-  writeJson(LEADERBOARD_PATH, leaderboard);
+  const changed = writeJsonIfChanged(LEADERBOARD_PATH, leaderboard);
   const pending = leaderboard.settlement && leaderboard.settlement.pendingResult
     ? leaderboard.settlement.pendingResult.length
     : 0;
-  console.log(`[settle] wrote ${LEADERBOARD_PATH}`);
+  console.log(`[settle] ${changed ? "wrote" : "unchanged"} ${LEADERBOARD_PATH}`);
   console.log(`[settle] pending_result=${pending}`);
 }
 

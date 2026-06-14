@@ -147,6 +147,31 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+function comparable(value) {
+  if (Array.isArray(value)) return value.map(comparable);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => !["syncedAt", "preservedAt", "updatedAt"].includes(key))
+      .map(([key, item]) => [key, comparable(item)])
+  );
+}
+
+function writeJsonIfChanged(filePath, data) {
+  if (fs.existsSync(filePath)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      if (JSON.stringify(comparable(existing)) === JSON.stringify(comparable(data))) {
+        return false;
+      }
+    } catch (_) {
+      // Fall through and rewrite invalid JSON.
+    }
+  }
+  writeJson(filePath, data);
+  return true;
+}
+
 function readExistingMatches() {
   try {
     if (!fs.existsSync(MATCHES_OUT)) return new Map();
@@ -231,7 +256,7 @@ function mergeExistingMatch(fresh, existing) {
       },
     },
     actual: fresh.actual || existing.actual || null,
-    preservedAt: new Date().toISOString(),
+    preservedAt: existing.preservedAt || fresh.syncedAt || new Date().toISOString(),
   };
 }
 
@@ -289,7 +314,7 @@ async function syncRealData() {
       ...createKnockoutPlaceholders(matches.length).map((match) => mergeExistingMatch(match, existingById.get(match.id))),
     ];
 
-  writeJson(MATCHES_OUT, {
+  const matchesChanged = writeJsonIfChanged(MATCHES_OUT, {
     source: {
       provider: "API-SPORTS",
       league: WORLD_CUP_LEAGUE_ID,
@@ -302,14 +327,14 @@ async function syncRealData() {
     matches: allMatches,
   });
 
-  writeJson(CHAMPIONS_OUT, {
+  const championsChanged = writeJsonIfChanged(CHAMPIONS_OUT, {
     updatedAt: new Date().toISOString(),
     predictions: [],
     note: "等待真实模型冠军预测封盘后更新。",
   });
 
-  console.log(`[sync] wrote ${allMatches.length} fixtures to ${MATCHES_OUT} (${matches.length} API + ${allMatches.length - matches.length} placeholders)`);
-  console.log(`[sync] cleared simulated champion predictions in ${CHAMPIONS_OUT}`);
+  console.log(`[sync] ${matchesChanged ? "wrote" : "unchanged"} ${allMatches.length} fixtures at ${MATCHES_OUT} (${matches.length} API + ${allMatches.length - matches.length} placeholders)`);
+  console.log(`[sync] ${championsChanged ? "wrote" : "unchanged"} champion predictions at ${CHAMPIONS_OUT}`);
 }
 
 if (require.main === module) {

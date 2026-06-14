@@ -58,7 +58,7 @@ function addDays(dateKey, days) {
 }
 
 function parseArgs(argv) {
-  const args = { date: addDays(beijingDateKey(), 1), limit: 4, matchId: "", modelIds: [] };
+  const args = { date: addDays(beijingDateKey(), 1), limit: 4, matchId: "", modelIds: [], skipExisting: false };
   for (let i = 0; i < argv.length; i += 1) {
     const key = argv[i];
     const next = argv[i + 1];
@@ -74,6 +74,8 @@ function parseArgs(argv) {
     } else if (key === "--models" && next) {
       args.modelIds = next.split(",").map((item) => item.trim()).filter(Boolean);
       i += 1;
+    } else if (key === "--skip-existing") {
+      args.skipExisting = true;
     }
   }
   return args;
@@ -195,9 +197,11 @@ async function discuss() {
   const matchesData = readJson(MATCHES_PATH, { matches: [] });
   const existing = readJson(OUTPUT_PATH, { updatedAt: null, mode: "pipeline", discussions: [] });
   const existingDiscussions = existing.discussions || [];
+  const existingMatchIds = new Set(existingDiscussions.map((item) => item.matchId));
   const targetMatches = (matchesData.matches || [])
     .filter((match) => (args.matchId ? match.id === args.matchId : beijingDateKey(match.kickoff) === args.date))
     .filter((match) => !match.actual)
+    .filter((match) => !args.skipExisting || !existingMatchIds.has(match.id))
     .slice(0, args.limit);
 
   if (!targetMatches.length) {

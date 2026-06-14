@@ -4,7 +4,7 @@
 
 | 序号 | 模型 | 公司 | 接入变量 |
 |----|------|------|---------|
-| 1 | Claude Fable 5 | Anthropic | Claude Code CLI: `DK_ANTHROPIC_API_KEY` / `DK_CLAUDE_FABLE_MODEL` / `CLAUDE_CLI_TIMEOUT_MS` |
+| 1 | Claude Fable 5(已禁用) | Anthropic | 不再自动调用 |
 | 2 | Claude Opus 4.8 | Anthropic | dk: `DK_OPUS_ANTHROPIC_API_KEY` / `DK_OPUS_ANTHROPIC_API_BASE` / `DK_CLAUDE_OPUS_MODEL` |
 | 3 | GPT-5.5 | OpenAI | ZenMux: `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GPT_5_5_MODEL` |
 | 4 | Gemini 3.1 | Google | ZenMux Vertex 或 Gemini: `GEMINI_API_KEY` 或 `ZENMUX_API_KEY` / `GOOGLE_GEMINI_BASE_URL` / `GEMINI_MODEL` |
@@ -13,7 +13,7 @@
 | 7 | Kimi K2.6 | 月之暗面 / Moonshot AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `KIMI_MODEL` |
 | 8 | Mimo v2.5 Pro | 小米 / MiMo | `MIMO_ANTHROPIC_API_KEY` / `MIMO_ANTHROPIC_API_BASE` / `MIMO_ANTHROPIC_MODEL` |
 | 9 | Grok 4.3 | xAI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GROK_MODEL` |
-| 10 | Muse Spark | Muse AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `MUSE_MODEL` |
+| 10 | Muse Spark(已禁用) | Muse AI | 不再自动调用 |
 | 11 | Claude Sonnet 4.6 | Anthropic | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `CLAUDE_SONNET_MODEL` |
 | 12 | DeepSeek V4 Pro | DeepSeek | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `DEEPSEEK_MODEL` |
 | 13 | GLM-5.1 | 智谱 AI | `ZENMUX_API_KEY` / `ZENMUX_API_BASE` / `GLM_MODEL` |
@@ -37,22 +37,19 @@
 - 已查询 ZenMux `/api/v1/models`,可用 Gemini 3.1 模型 ID:`google/gemini-3.1-flash-lite-preview`、`google/gemini-3.1-pro-preview`;当前默认用 `gemini-3.1-flash-lite-preview` 走 `GOOGLE_GEMINI_BASE_URL=https://zenmux.ai/api/vertex-ai`。
 - 已验证通过 ZenMux `/api/v1/responses` 接通:Qwen 3.7 Max、GLM-5.1、MiniMax-M3、Kimi K2.6、Grok 4.3、Claude Sonnet 4.6、DeepSeek V4 Pro。
 - 已查询 ZenMux `/api/v1/models`,Doubao-Seed-2.0-pro 可用模型 ID:`bytedance/doubao-seed-2.0-pro`;当前默认走 ZenMux responses 协议。
-- Muse Spark 已预留 `muse-spark` provider,但 ZenMux `/api/v1/models` 当前未返回 `muse` 或 `spark` 相关模型 ID;需要 ZenMux 提供准确 ID 后再把 `.env` 的 `MUSE_MODEL` 改成真实值。
+- Muse Spark 已停用;ZenMux `/api/v1/models` 当前未返回可用的 `muse` 或 `spark` 相关模型 ID。
 
 ## 圆桌发言限制
 
-- Claude Fable 5 固定作为首个发言模型,每场只说 1 句,必须直接给简要理由、赛果方向和比分。
+- Claude Fable 5 已停用,不再参与自动圆桌。
 - Claude Opus 4.8 每场最多 2 句。
 - GPT-5.5 每场最多 2 句。
 - 其他模型每场最多 3 句。
 
-## Claude Fable 5 接入方式
+## Claude Fable 5 状态
 
-- Fable 5 不走普通 Anthropic HTTP 请求;DK 网关会返回 "only allows Claude Code clients"。
-- 本项目改为通过本机 Claude Code CLI 调用:`claude -p ... --model claude-fable-5 --output-format json --max-turns 1 --no-session-persistence`。
-- 即使当前 Claude Code 默认配置是 Opus 4.8,单次调用也会用 `--model claude-fable-5` 覆盖,不需要改全局默认配置。
-- `DK_ANTHROPIC_API_KEY` 只作为项目侧启用开关,实际认证和网关路由由 Claude Code 客户端配置负责。
-- 当前最小测试已绕开 "only allows Claude Code clients",但 DK 返回 `503 no available accounts`;这属于网关账户可用性问题,不是项目调用协议问题。
+- Fable 5 已按当前运营策略禁用。
+- `public/data/models.json` 中 `enabled:false`,自动预测和自动圆桌不会再尝试调用。
 
 ## 反作弊 / 存证
 
