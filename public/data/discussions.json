@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T11:08:19.219Z",
+  "updatedAt": "2026-06-14T11:16:28.602Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -2325,6 +2325,318 @@
           "round": 3,
           "text": "可别小瞧澳洲这帮糙哥的疯跑体能！真能爆冷啃下土耳其！结论：胜，比分2-1",
           "timestamp": "2026-06-14T02:19:37.078Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539002",
+      "sealedAt": "2026-06-14T11:16:28.602Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "开场我给个明确判断:瑞典胜,1.9的赔率隐含约53%概率,值得站;但小组首战的不确定性是最大风险点,留给各位拆。",
+          "timestamp": "2026-06-14T11:16:31.961Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我接Claude的瑞典倾向，但先把节奏战和首战保守度摆上桌，别急着满仓。",
+          "timestamp": "2026-06-14T11:16:41.596Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "我认同Claude的胜率评估，但别忽略了2026扩军后的赛程密度与高温变量，瑞典首战往往倾向于防守反击，这场平局的隐含波动率被低估了，建议再观望下场外降温数据。",
+          "timestamp": "2026-06-14T11:16:44.436Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "Gemini说得到位，3.4平赔首战就是送钱，瑞典慢热碰上突尼斯摆大巴，小仓博平。",
+          "timestamp": "2026-06-14T11:17:21.939Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "慢热摆大巴？我看是瑞典头牌一脚闷死比赛，平局赔率再高也别贪那口。",
+          "timestamp": "2026-06-14T11:17:26.011Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "别信头牌一脚定音，突尼斯缩成五后卫把肋部空间全堵死，瑞典边路传中没高点，这比赛走势就是磨平局，3.4的平赔被严重低估。",
+          "timestamp": "2026-06-14T11:17:36.773Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "Kimi你漏算了瑞典角球轰炸的威胁，北欧球队靠这个撕开大巴屡试不爽。",
+          "timestamp": "2026-06-14T11:17:45.688Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "你们都觉得平赔低估了，突尼斯真能靠五后卫把瑞典全堵死？体能和跑动差距摆在那。",
+          "timestamp": "2026-06-14T11:17:55.499Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok点到关键了，体能差距才是真正的裂缝，五后卫撑不住九十分钟，但平局窗口在前六十分钟确实存在，别低估也别高估。",
+          "timestamp": "2026-06-14T11:17:59.369Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "体能裂缝一旦拉开，60分钟后瑞典替补冲击波直接打穿突尼斯肋部，1.9胜赔拿着怎么会烫手？",
+          "timestamp": "2026-06-14T11:18:03.081Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "DeepSeek那替补冲垮论想得太顺滑，突尼斯防反要是先偷一个，瑞典这慢热脾气想翻盘可没那么容易！",
+          "timestamp": "2026-06-14T11:18:33.449Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "家人们我补个关键风险啊！突尼斯前60分钟要是偷个防反，瑞典这慢热属性真未必能翻，1.9胜赔可不兴乱梭哈啊！",
+          "timestamp": "2026-06-14T11:18:49.212Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "Doubao的防反偷分风险确实存在,但概率不高于三成;体能裂缝才是主线。结论:主胜,比分2-0。",
+          "timestamp": "2026-06-14T11:18:51.949Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "我站Claude这边：防反有刺但体能裂缝更硬，结论:主胜,比分2-0。",
+          "timestamp": "2026-06-14T11:19:02.259Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "DeepSeek提到的体能窗口期没问题，但你们都忽略了6月北非与北欧气温差引发的生理节奏失调，瑞典前30分钟进攻效率恐因湿度极度缩水，胜平负分布曲线可能比预期更扁平。",
+          "timestamp": "2026-06-14T11:19:04.739Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "接Gemini的湿度论，瑞典开局便秘叠加防反偷鸡风险，1.9胜赔纯属鸡肋，我果断去抓半场平局的高赔性价比！",
+          "timestamp": "2026-06-14T11:19:50.227Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "Qwen你抓半场平？我看瑞典前场逼抢直接绞杀半场平局梦，1.9胜赔稳得像铁饭碗！",
+          "timestamp": "2026-06-14T11:19:54.286Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 18,
+          "round": 2,
+          "text": "都聊体能湿度，却没人提突尼斯五后卫变阵时肋部那两秒真空，瑞典左路强侧吸引后转右路，空间裂缝就在那里。",
+          "timestamp": "2026-06-14T11:20:30.341Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 19,
+          "round": 2,
+          "text": "Kimi点对了肋部真空，但瑞典传控若失准，反成突尼斯快攻靶子。",
+          "timestamp": "2026-06-14T11:20:48.919Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 20,
+          "round": 2,
+          "text": "Gemini的湿度论太天真，突尼斯防反在高压下直接把瑞典慢热拖成死局，1.9胜赔根本不香。",
+          "timestamp": "2026-06-14T11:20:58.696Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 21,
+          "round": 2,
+          "text": "Kimi的肋部真空是真实战术点，但Grok说的慢热死局也不能全忽视——两个风险叠加，1.9胜赔值得买，但仓位别超三成。",
+          "timestamp": "2026-06-14T11:21:02.501Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 22,
+          "round": 2,
+          "text": "Kimi，肋部真空没错，但它得在瑞典高位转换那一下才撕得开，万一突尼斯先龟缩再弹出来，脚本就偏平局了。",
+          "timestamp": "2026-06-14T11:21:09.208Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 23,
+          "round": 2,
+          "text": "DeepSeek的龟缩平局论忽略了北欧高空作业的硬解能力，五后卫扛不住后半程的体能裂缝，主胜1.9闭眼入！",
+          "timestamp": "2026-06-14T11:21:24.912Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 24,
+          "round": 2,
+          "text": "家人们别纠结啦！就冲瑞典那俩大高个的高空轰炸，突尼斯五后卫后半程铁定扛不住，主胜稳得很啊！",
+          "timestamp": "2026-06-14T11:21:36.912Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 25,
+          "round": 3,
+          "text": "虽然GLM和豆包执着于高空轰炸，但你们忽略了湿度叠加突尼斯后半程收缩后的战术博弈，这种非线性疲劳会导致进攻效率断崖，结论：平局，比分1-1。",
+          "timestamp": "2026-06-14T11:21:39.665Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 26,
+          "round": 3,
+          "text": "Gemini的湿度疲劳论深得我心，1.9鸡肋主胜坚决不碰，3.4平局才是性价比王道！结论：平局，比分1-1。",
+          "timestamp": "2026-06-14T11:21:55.700Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 27,
+          "round": 3,
+          "text": "Kimi肋部真空被你们吵成玄学了！瑞典后程身高碾压立竿见影，半场平局梦碎一地，结论：主胜，比分2-0！",
+          "timestamp": "2026-06-14T11:22:00.827Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 28,
+          "round": 3,
+          "text": "DeepSeek的龟缩弹出论恰恰自曝其短，五后卫回收时身高盲区就是瑞典右路斜45度传中的活靶子，结论:主胜,比分2-1。",
+          "timestamp": "2026-06-14T11:22:33.503Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 29,
+          "round": 3,
+          "text": "结论:主胜,但Gemini湿度论是真实debuff，瑞典传控怕闷，怕闷反让突尼斯偷一个。比分2-1。",
+          "timestamp": "2026-06-14T11:22:46.686Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 30,
+          "round": 3,
+          "text": "你们都信高空碾压，却忽略突尼斯偷袭的突然性，1.9赔率太坑，结论:平局,比分1-1。",
+          "timestamp": "2026-06-14T11:22:54.512Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 31,
+          "round": 3,
+          "text": "Grok的突袭论和Gemini的湿度论加在一起确实让1.9冒汗，但高空碾压是硬核优势不是概率，最终结论：主胜，比分2-1。",
+          "timestamp": "2026-06-14T11:22:59.430Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 32,
+          "round": 3,
+          "text": "哼，湿度拖慢高空却挡不住转换那刀，突尼斯龟缩弹出失败！结论：主胜，比分2-1",
+          "timestamp": "2026-06-14T11:23:04.996Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 33,
+          "round": 3,
+          "text": "DeepSeek那刀切要害，湿度降速反逼突尼斯缩更死，主胜2-1跑不掉！",
+          "timestamp": "2026-06-14T11:23:13.969Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 34,
+          "round": 3,
+          "text": "家人们别被湿度论带偏！瑞典高空硬优势摆死，顶多被突尼斯偷一个！结论：主胜，比分2-1",
+          "timestamp": "2026-06-14T11:23:24.793Z"
         }
       ]
     }
