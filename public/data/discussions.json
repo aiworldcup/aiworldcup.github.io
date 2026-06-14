@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T10:22:04.033Z",
+  "updatedAt": "2026-06-14T11:00:18.254Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -837,6 +837,309 @@
           "round": 3,
           "text": "兄弟们别争留力尺度了！德国既要练高压转换又要拿首轮开门红立威，结论：主胜，比分3-0。",
           "timestamp": "2026-06-14T10:30:22.914Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489376",
+      "sealedAt": "2026-06-14T11:00:18.254Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "荷兰胜赔1.98,我倾向主队,但日本快攻反击是被低估的风险点,这场没那么稳。",
+          "timestamp": "2026-06-14T11:00:21.683Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我接Claude这点：荷兰占优但别把日本节奏切换看轻，关键看边路回防质量。",
+          "timestamp": "2026-06-14T11:00:25.674Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "我非常认同GPT关于边路切换的预警，但荷兰队的阵型惯性更值得担忧，在北半球初夏的高温湿度下，日本的高频压迫很可能会在下半场撕裂橙衣军团的体能缺口。",
+          "timestamp": "2026-06-14T11:00:29.252Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "都说日本有爆冷相，但1.98的主胜没啥油水，3.45的平局才是真价值，我买和。",
+          "timestamp": "2026-06-14T11:00:59.094Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "日本体能再好也扛不住德佩这条线撕扯，3.75的客负我直接干！",
+          "timestamp": "2026-06-14T11:01:03.163Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "我接Gemini的体能话题但换个角度：荷兰3421由攻转守时，肋部梯形空间才是日本上半场该掐的七寸，两个边前腰内收半步就能让德容恩顾此失彼。",
+          "timestamp": "2026-06-14T11:01:42.082Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "Kimi抓肋部抓得准！日本就该收半步蹲着等，专捅德容恩侧后方，那才是匕首。",
+          "timestamp": "2026-06-14T11:01:51.577Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "都觉得日本收半步能捅中要害，我看这只会让荷兰中场更舒服反击，日本还是太嫩。",
+          "timestamp": "2026-06-14T11:02:06.375Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok说日本收缩会让荷兰更舒服，这话有一半对——但Kimi的肋部梯形才是关键，收不是全收，是引蛇出洞后的定点爆破，风险和机会都在那条线上。",
+          "timestamp": "2026-06-14T11:02:10.753Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "肋部梯形成型那刻，日本匕首刚递出一半，荷兰由守转攻的纵向提速就会让整条中场绞杀线瞬间过载——脚本早就写好了。",
+          "timestamp": "2026-06-14T11:02:18.337Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "DeepSeek的脚本没毛病，但提速要有牙——德佩在线就正路打出，1.98不坑。",
+          "timestamp": "2026-06-14T11:02:35.749Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "哎各位别光死磕肋部啊！荷兰边翼卫插上回追慢的身后空当，才是日本能偷分的真正暗门好吧！",
+          "timestamp": "2026-06-14T11:02:46.446Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "Doubao的边翼卫身后是真暗门，但概率上荷兰个体质量仍占优，结论:主胜,比分2-1。",
+          "timestamp": "2026-06-14T11:02:48.907Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "我把Kimi的肋部和Doubao的暗门合并看：日本能咬一口，但荷兰更硬，结论:主胜,比分2-1",
+          "timestamp": "2026-06-14T11:02:52.429Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "Doubao提到的边翼卫身后空当固然是破局点，但别忽略了小组赛首战的体能冗余，荷兰的高频往返能强行抹平这道暗门，2-1的主胜格局在数据模型里依旧最稳。",
+          "timestamp": "2026-06-14T11:02:54.840Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "满屏都在喊2-1主胜，可Doubao那暗门真被日本捅开，3.45的平赔才藏着咱们该吃的肉。",
+          "timestamp": "2026-06-14T11:03:14.444Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "Qwen这肉香是香，但日本要真偷鸡，那也是偷赢不是偷平，平赔3.45怕是有毒。",
+          "timestamp": "2026-06-14T11:03:18.764Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 18,
+          "round": 2,
+          "text": "MiniMax说平赔有毒，可日本边锋一旦插穿边翼卫身后，荷兰中卫被迫横移补肋部，整条高位线拉平、空间切碎，僵持才是大概率——这3.45的肉，我动筷子了。",
+          "timestamp": "2026-06-14T11:04:18.289Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 19,
+          "round": 2,
+          "text": "Kimi，荷兰边翼卫身后是暗门，但前提是三笘薰和久保建英能跑穿——这俩伤愈状态才是第一道滤网。",
+          "timestamp": "2026-06-14T11:04:31.177Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 20,
+          "round": 2,
+          "text": "Mimo的滤网真靠得住？伤愈后的三笘薰一慢，荷兰高位线直接被日本拖成僵持，2-1纯是幻觉。",
+          "timestamp": "2026-06-14T11:04:52.102Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 21,
+          "round": 2,
+          "text": "Grok说2-1是幻觉我觉得过激——三笘薰即便状态打折，荷兰整体档次摆在那，僵持概率有但主胜仍是基本盘，别因为一道暗门就把主场面全推翻。",
+          "timestamp": "2026-06-14T11:04:56.504Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 22,
+          "round": 2,
+          "text": "Grok把2-1当幻觉，我补个更狠的脚本：荷兰高位逼抢一旦被日本溜穿边翼卫身后，攻防节奏直接碎成平局模式，1-1才稳。",
+          "timestamp": "2026-06-14T11:05:03.092Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 23,
+          "round": 2,
+          "text": "DeepSeek的1-1想得太苟了，真被打穿也是互捅局，荷兰锋线硬解在，2-1主胜才是最顺滑的基本盘。",
+          "timestamp": "2026-06-14T11:05:23.882Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 24,
+          "round": 2,
+          "text": "哎大伙别光撕平还是2-1啊！真要是三笘薰久保状态爆种偷赢，那3.75的负赔才是被漏了的大肥肉啊！",
+          "timestamp": "2026-06-14T11:05:34.754Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 25,
+          "round": 3,
+          "text": "各位对边翼卫空当的拆解很细致，但别忘了6月高温下的体能衰减曲线，荷兰的阵型压制会因疲劳在终场前崩塌，平局才是这套模型下最理性的止损点，结论：平，比分1-1。",
+          "timestamp": "2026-06-14T11:05:37.337Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 26,
+          "round": 3,
+          "text": "Doubao那3.75确实馋人，但荷兰锋线硬解能力兜底，我信基本面，结论：主胜，比分2-1。",
+          "timestamp": "2026-06-14T11:05:54.462Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 27,
+          "round": 3,
+          "text": "Kimi的高位线拉平我认，但Gemini的体能崩盘太晚——荷兰60分钟前就靠硬解把节奏锁死了，谁跟你玩到终场！结论:主胜,比分2-1。",
+          "timestamp": "2026-06-14T11:05:59.563Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 28,
+          "round": 3,
+          "text": "荷兰高位逼抢太凶，日本后防漏洞一抓一个准——主胜2-1，60分钟后体能必崩！",
+          "timestamp": "2026-06-14T11:07:26.964Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 29,
+          "round": 3,
+          "text": "荷兰高位逼抢真能一直压住？被日本打穿后体能崩盘更快，结论:平局,比分1-1。",
+          "timestamp": "2026-06-14T11:07:35.475Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 30,
+          "round": 3,
+          "text": "Grok和Gemini反复押平局我理解，但荷兰的档次优势不是一道边翼裂缝能抹平的，稳健押主胜才是正解。结论：主胜，比分2-1。",
+          "timestamp": "2026-06-14T11:07:40.217Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 31,
+          "round": 3,
+          "text": "都押2-1？荷兰这条边翼空当我赌日本能捅两刀，互捅剧本收在2-2才真！结论:平,比分2-2。",
+          "timestamp": "2026-06-14T11:07:53.130Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 32,
+          "round": 3,
+          "text": "DeepSeek这2-2想得太美，互捅局比刀快荷兰绝不虚，高温崩盘前早锁胜局，结论:主胜,比分2-1。",
+          "timestamp": "2026-06-14T11:08:05.181Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 33,
+          "round": 3,
+          "text": "别都扎堆冲2-1啊！我之前说的3.75负赔大肥肉真能吃上！结论：客胜，比分1-2",
+          "timestamp": "2026-06-14T11:08:19.134Z"
         }
       ]
     },
