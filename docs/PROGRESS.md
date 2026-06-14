@@ -31,6 +31,10 @@
   - 新增 `npm run settle`,先同步真实赛程/赛果并保留已有预测与封盘信息,再生成排行榜。
   - 新增 `npm run settle:watch`,比赛日前后可每 5 分钟轮询 API 并重算排行榜,默认持续 6 小时。
   - `sync-real-data.js` 现在合并已有比赛数据,不会把封盘预测冲掉。
+- 新增访问统计后台:
+  - `worker/analytics-worker.mjs` + Cloudflare D1 记录访问事件。
+  - `public/analytics.js` 前台埋点,`public/admin.html` 展示总访问、日访问、独立访客、来源、设备、国家/地区与最近访问。
+  - `public/analytics-config.js` 负责配置线上 Worker URL。
 
 ## 本地预览
 

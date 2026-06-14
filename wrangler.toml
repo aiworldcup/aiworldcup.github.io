@@ -1,0 +1,8 @@
+name = "worldcup-ai-arena-analytics"
+main = "worker/analytics-worker.mjs"
+compatibility_date = "2026-06-14"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "worldcup_ai_arena_analytics"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"

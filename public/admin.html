@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>世界杯 AI 擂台 · 访问后台</title>
+  <link rel="stylesheet" href="styles.css?v=20260614-analytics" />
+  <style>
+    body { padding-bottom: 24px; }
+    .admin-shell { width: min(100%, 1080px); margin: 0 auto; padding: 18px 14px 34px; }
+    .admin-top { display: flex; justify-content: space-between; gap: 14px; align-items: flex-end; margin-bottom: 16px; }
+    .admin-top h1 { font-size: 28px; line-height: 1.1; }
+    .admin-top p { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    .admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .admin-actions input { min-width: 220px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.05); color: var(--text); padding: 10px; }
+    .admin-actions button, .admin-actions a { border: 1px solid var(--gold); border-radius: 8px; background: linear-gradient(135deg, var(--gold), #fff0ad); color: #071016; font-weight: 900; text-decoration: none; padding: 10px 12px; font-size: 13px; }
+    .admin-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .admin-card { border: 1px solid var(--line); border-radius: 10px; background: rgba(18,23,34,.88); padding: 14px; }
+    .admin-card span { color: var(--muted); font-size: 12px; }
+    .admin-card strong { display: block; color: var(--gold); font-size: 34px; line-height: 1.1; margin-top: 4px; }
+    .admin-section { border: 1px solid var(--line); border-radius: 10px; background: rgba(18,23,34,.74); padding: 14px; margin-top: 12px; }
+    .admin-section h2 { margin-bottom: 10px; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 1fr) 70px; gap: 10px; align-items: center; margin: 8px 0; font-size: 13px; }
+    .bar-track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; margin-top: 4px; }
+    .bar-fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--green), var(--cyan)); }
+    .admin-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .admin-table th, .admin-table td { text-align: left; padding: 9px 6px; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .admin-table th { color: var(--text); }
+    .status-line { color: var(--muted); font-size: 12px; margin: 8px 0 12px; }
+    .daily { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; align-items: end; min-height: 150px; }
+    .daily-bar { display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; min-height: 130px; color: var(--muted); font-size: 10px; text-align: center; }
+    .daily-bar i { display: block; min-height: 4px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, var(--gold), var(--orange)); }
+    @media (min-width: 760px) {
+      .admin-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .admin-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="admin-shell">
+    <div class="admin-top">
+      <div>
+        <h1>访问数据后台</h1>
+        <p>总访问、日访问、独立访客、来源、设备与最近访问记录。</p>
+      </div>
+      <div class="admin-actions">
+        <input id="endpoint" placeholder="Analytics Worker URL" />
+        <input id="token" placeholder="后台 token，可留空" />
+        <button id="save">刷新</button>
+        <a href="./">返回前台</a>
+      </div>
+    </div>
+    <div id="status" class="status-line">加载中...</div>
+    <div id="cards" class="admin-grid"></div>
+    <section class="admin-section">
+      <h2>最近 7 天</h2>
+      <div id="daily" class="daily"></div>
+    </section>
+    <div class="admin-columns">
+      <section class="admin-section">
+        <h2>热门页面</h2>
+        <div id="paths"></div>
+      </section>
+      <section class="admin-section">
+        <h2>访问来源</h2>
+        <div id="refs"></div>
+      </section>
+      <section class="admin-section">
+        <h2>设备分布</h2>
+        <div id="devices"></div>
+      </section>
+      <section class="admin-section">
+        <h2>国家 / 地区</h2>
+        <div id="countries"></div>
+      </section>
+    </div>
+    <section class="admin-section">
+      <h2>最近访问</h2>
+      <div id="recent"></div>
+    </section>
+  </main>
+  <script src="analytics-config.js?v=20260614-analytics"></script>
+  <script>
+    var endpointInput = document.getElementById('endpoint');
+    var tokenInput = document.getElementById('token');
+    var statusEl = document.getElementById('status');
+    endpointInput.value = localStorage.getItem('wca_admin_endpoint') || window.WCA_ANALYTICS_ENDPOINT || '';
+    tokenInput.value = localStorage.getItem('wca_admin_token') || '';
+
+    function fmt(n) { return Number(n || 0).toLocaleString('zh-CN'); }
+    function esc(v) {
+      return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+      });
+    }
+    function bars(rows, key) {
+      var max = Math.max(1, ...rows.map(function (r) { return Number(r.views) || 0; }));
+      if (!rows.length) return '<p class="muted">暂无数据</p>';
+      return rows.map(function (row) {
+        var label = row[key] || 'unknown';
+        var pct = Math.max(3, Math.round((Number(row.views) || 0) / max * 100));
+        return '<div class="bar-row"><div><strong>' + esc(label) + '</strong><div class="bar-track"><span class="bar-fill" style="width:' + pct + '%"></span></div></div><b>' + fmt(row.views) + '</b></div>';
+      }).join('');
+    }
+    function render(data) {
+      document.getElementById('cards').innerHTML = [
+        ['总访问量', data.total.views],
+        ['总独立访客', data.total.visitors],
+        ['今日访问量', data.todayStats.views],
+        ['今日独立访客', data.todayStats.visitors]
+      ].map(function (item) {
+        return '<div class="admin-card"><span>' + item[0] + '</span><strong>' + fmt(item[1]) + '</strong></div>';
+      }).join('');
+      var last7 = (data.daily || []).slice(-7);
+      var maxDay = Math.max(1, ...last7.map(function (d) { return Number(d.views) || 0; }));
+      document.getElementById('daily').innerHTML = last7.map(function (day) {
+        var height = Math.max(4, Math.round((Number(day.views) || 0) / maxDay * 112));
+        return '<div class="daily-bar"><i style="height:' + height + 'px"></i><b>' + fmt(day.views) + '</b><span>' + esc(day.day.slice(5)) + '</span></div>';
+      }).join('') || '<p class="muted">暂无数据</p>';
+      document.getElementById('paths').innerHTML = bars(data.topPaths || [], 'path');
+      document.getElementById('refs').innerHTML = bars(data.referrers || [], 'referrer');
+      document.getElementById('devices').innerHTML = bars(data.devices || [], 'device');
+      document.getElementById('countries').innerHTML = bars(data.countries || [], 'country');
+      document.getElementById('recent').innerHTML = '<table class="admin-table"><thead><tr><th>时间</th><th>页面</th><th>来源</th><th>设备</th><th>地区</th></tr></thead><tbody>' +
+        (data.recent || []).map(function (row) {
+          return '<tr><td>' + esc(new Date(row.ts).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })) + '</td><td>' + esc(row.path) + '</td><td>' + esc(row.referrer) + '</td><td>' + esc(row.device + ' · ' + row.browser) + '</td><td>' + esc(row.country) + '</td></tr>';
+        }).join('') + '</tbody></table>';
+      statusEl.textContent = '更新于 ' + new Date(data.generatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' · 北京时间';
+    }
+    async function load() {
+      var endpoint = endpointInput.value.trim().replace(/\/$/, '');
+      var token = tokenInput.value.trim();
+      if (!endpoint) {
+        statusEl.textContent = '还没有配置 Analytics Worker URL。';
+        return;
+      }
+      localStorage.setItem('wca_admin_endpoint', endpoint);
+      localStorage.setItem('wca_admin_token', token);
+      statusEl.textContent = '正在拉取后台数据...';
+      var res = await fetch(endpoint + '/api/stats?days=30', {
+        headers: token ? { 'x-admin-token': token } : {}
+      });
+      var data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || res.status);
+      render(data);
+    }
+    document.getElementById('save').addEventListener('click', function () {
+      load().catch(function (err) { statusEl.textContent = '加载失败: ' + err.message; });
+    });
+    load().catch(function (err) { statusEl.textContent = '加载失败: ' + err.message; });
+  </script>
+</body>
+</html>

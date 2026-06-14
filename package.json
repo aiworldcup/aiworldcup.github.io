@@ -14,6 +14,9 @@
     "roundtable:auto": "node pipeline/auto-roundtable.js",
     "publish:settle": "node pipeline/auto-publish.js settle",
     "publish:roundtable": "node pipeline/auto-publish.js roundtable",
+    "analytics:deploy": "npx wrangler deploy",
+    "analytics:migrate": "npx wrangler d1 execute worldcup_ai_arena_analytics --remote --file worker/schema.sql",
+    "analytics:dev": "npx wrangler dev",
     "score:sample": "node pipeline/score.js --input public/data/sample-matches.json --output public/data/leaderboard.json",
     "export:mobile": "node pipeline/export-standalone.js worldcup-ai-arena-mobile.html",
     "serve": "python3 -m http.server -d public 8080"

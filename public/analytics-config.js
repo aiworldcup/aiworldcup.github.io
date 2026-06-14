@@ -1,0 +1,1 @@
+window.WCA_ANALYTICS_ENDPOINT = '';
