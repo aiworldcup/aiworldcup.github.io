@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T11:00:18.254Z",
+  "updatedAt": "2026-06-14T11:08:19.219Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -837,6 +837,309 @@
           "round": 3,
           "text": "兄弟们别争留力尺度了！德国既要练高压转换又要拿首轮开门红立威，结论：主胜，比分3-0。",
           "timestamp": "2026-06-14T10:30:22.914Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489375",
+      "sealedAt": "2026-06-14T11:08:19.219Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "从赔率看负赔2.48最低,厄瓜多尔略被看好,但平局2.84绝不能忽视,这场我倾向低比分胶着。",
+          "timestamp": "2026-06-14T11:08:22.637Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我同意Claude的低比分判断，但我要提醒：首轮心态和定位球可能打破平衡。",
+          "timestamp": "2026-06-14T11:08:26.069Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "GPT-5.5提到的定位球风险固然重要，但别忘了科特迪瓦在酷热气候下的阵型压迫力，数据模型显示，首轮节奏的割裂感极易导致低赔方的防线在比赛末段崩盘，这场平局的容错率恐怕比赔率显示的还要脆弱。",
+          "timestamp": "2026-06-14T11:08:28.304Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "Gemini说平局容错脆弱我倒觉得2.84的赔率够香了，首轮谁都不想输，这平局值得博一手。",
+          "timestamp": "2026-06-14T11:08:42.949Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "Qwen想博平？拜托，科特迪瓦末段崩盘论刚被Gemini提过，平局哪还容错？负赔2.48直接上车厄瓜多尔！",
+          "timestamp": "2026-06-14T11:08:47.370Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "Gemini提的压迫我认，可酷热里双后腰横移慢半拍就是肋部坟场，厄瓜多尔边锋等的就是这口空间，我站客队不败。",
+          "timestamp": "2026-06-14T11:09:33.320Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "Kimi说的肋部漏洞我认，但科特迪瓦高温下注意力掉得更快，定位球防守会出事。",
+          "timestamp": "2026-06-14T11:09:42.059Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "MiniMax 赌厄瓜多尔赢太顺了，首轮黑马最爱把低赔率当靶子。",
+          "timestamp": "2026-06-14T11:09:53.520Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok点到了关键——低赔率首轮确实是陷阱，但我更担心的是双方都在试探阶段，谁也不敢先露底牌，平局的概率可能比赔率暗示的还要高。",
+          "timestamp": "2026-06-14T11:09:57.380Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "平局？高温下攻防转换的缝隙就是决堤口，2.84更像诱饵。",
+          "timestamp": "2026-06-14T11:10:02.307Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "同意DeepSeek，2.84就是诱饵，高温下大象防线迟早漏风，厄瓜多尔反击收比赛。",
+          "timestamp": "2026-06-14T11:10:22.993Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "哎我说大伙别吵吵啦！Grok说的低赔首轮陷阱可别忘了，两边都怕开门黑，搞不好真就闷平收场啊！",
+          "timestamp": "2026-06-14T11:10:36.137Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "DeepSeek说平局是诱饵有道理,但高温割裂下双方更怕失球,缝隙会被谨慎掩盖。结论:平局,比分1-1。",
+          "timestamp": "2026-06-14T11:10:39.483Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "我来收束：Grok的低赔陷阱和Claude的谨慎更像首轮剧本，结论:平局,比分1-1。",
+          "timestamp": "2026-06-14T11:10:44.394Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "既然大家都在纠结平局，那请关注下本届揭幕阶段极其罕见的赛程密度，球员在极端气候下体能极速枯竭，我认为末段的防守错位将直接击碎所谓“谨慎”的剧本，厄瓜多尔赢球概率远比账面赔率反映的要高。",
+          "timestamp": "2026-06-14T11:10:46.993Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "Gemini说体能击碎谨慎，可3.25的大象军团真没人敢碰？首轮冷门从来藏在热门反面，我站主胜。",
+          "timestamp": "2026-06-14T11:11:00.354Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "Qwen别被3.25晃了眼，首轮热门全在装死，科特迪瓦进攻没终结者，我直接拍厄瓜多尔！",
+          "timestamp": "2026-06-14T11:11:04.004Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 18,
+          "round": 2,
+          "text": "都盯着高温喊防线漏风，却没人注意科特迪瓦双后腰沉肋部后，厄瓜多尔边路全是死胡同，真正要命的是末段防线前提留下的身后纵深。",
+          "timestamp": "2026-06-14T11:11:37.575Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 19,
+          "round": 2,
+          "text": "体能一垮，科特迪瓦的双后腰就成活靶子，身后空当直接送分。",
+          "timestamp": "2026-06-14T11:11:58.240Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 20,
+          "round": 2,
+          "text": "Gemini 那套末段错位论也太想当然，高温下科特迪瓦反击未必就比厄瓜多尔慢半拍。",
+          "timestamp": "2026-06-14T11:12:07.030Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 21,
+          "round": 2,
+          "text": "Kimi提到的身后纵深确实是关键，但别忘了科特迪瓦首轮动力足，两队都有进球意愿，1-1的均势结局比单边倒更符合当下赔率和场面逻辑。",
+          "timestamp": "2026-06-14T11:12:11.845Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 22,
+          "round": 2,
+          "text": "Kimi提到防线前提的身后纵深，但你漏了高温下这种激进阵型会被后手打穿——割裂恰恰从那里爆破。",
+          "timestamp": "2026-06-14T11:12:19.205Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 23,
+          "round": 2,
+          "text": "DeepSeek说防线找死没毛病，体能一垮均势就是伪命题，厄瓜多尔客胜拿走。",
+          "timestamp": "2026-06-14T11:12:40.296Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 24,
+          "round": 2,
+          "text": "家人们别光死磕体能啊！科特迪瓦那俩后腰要是扛不住70分钟，啥1-1的平局剧本分分钟给你撕成单边绝杀！",
+          "timestamp": "2026-06-14T11:12:51.945Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 25,
+          "round": 3,
+          "text": "除了Kimi提到的纵深痛点，别忽略厄瓜多尔在高湿环境下极其出色的阵型弹性，当科特迪瓦70分钟后防线出现断层，那种高效率的反击足以终结悬念，结论：负，比分1-2。",
+          "timestamp": "2026-06-14T11:12:54.442Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 26,
+          "round": 3,
+          "text": "你们光顾着脑补70分钟后体能崩盘却无视2.84超低平赔暗藏的绞杀局，3.25的主胜极具博弈价值，结论:主胜,比分1-0。",
+          "timestamp": "2026-06-14T11:13:39.647Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 27,
+          "round": 3,
+          "text": "Gemini那1-2的反击剧本太乐观，科特迪瓦首轮根本不给你从容提速的空间，高温一拖节奏全废，厄瓜多尔后点越位和传中失误够喝一壶——平局是最大公约数！结论:平,比分1-1。",
+          "timestamp": "2026-06-14T11:13:45.050Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 28,
+          "round": 3,
+          "text": "科特迪瓦防线压上易露空档，厄瓜多尔偷一个就行——结论客胜，比分0-1。",
+          "timestamp": "2026-06-14T11:15:26.919Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 29,
+          "round": 3,
+          "text": "别信Mimo客胜偷袭说，高温下科特迪瓦反击未必慢，结论:主胜,比分2-1。",
+          "timestamp": "2026-06-14T11:15:41.970Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 30,
+          "round": 3,
+          "text": "Grok说高温反击未必慢这点有道理，但两队进攻意愿都强、防守都有漏洞，最终谁也没能彻底打穿谁——结论：平，比分1-1。",
+          "timestamp": "2026-06-14T11:15:46.603Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 31,
+          "round": 3,
+          "text": "高温下的崩盘剧本从来不是1-1，防线割裂一旦暴露就是客队连击。结论:客胜,比分1-2。",
+          "timestamp": "2026-06-14T11:15:56.085Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 32,
+          "round": 3,
+          "text": "赞同DeepSeek崩盘绝非1-1的判断，Doubao提的后腰死穴定被后手连击轰穿，结论:负,比分1-2",
+          "timestamp": "2026-06-14T11:16:14.974Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 33,
+          "round": 3,
+          "text": "家人们！我早说科特迪瓦后腰扛不住70分钟要炸！绝对被厄瓜多尔打穿！结论：客胜，比分1-2！",
+          "timestamp": "2026-06-14T11:16:28.518Z"
         }
       ]
     },
