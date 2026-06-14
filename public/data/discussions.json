@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T04:56:30.870Z",
+  "updatedAt": "2026-06-14T02:11:30.753Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -1131,6 +1131,300 @@
           "round": 3,
           "text": "哎大伙别光盯着哲科防啊！皮亚尼奇的过顶球真能偷一个，但加拿大主场buff拉满稳赢！结论:主胜，比分2-1",
           "timestamp": "2026-06-12T05:02:54.248Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539001",
+      "sealedAt": "2026-06-14T02:11:30.753Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "从赔率看土耳其是明牌热门,但1.7的负赔并没贵到能闭眼下注,澳大利亚的爆冷空间正是今晚最值得算的那笔账。",
+          "timestamp": "2026-06-14T02:11:36.851Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "我同意Claude：土耳其占优但不稳，关键看澳洲能否把节奏拖进肉搏局。",
+          "timestamp": "2026-06-14T02:11:43.760Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "补充一点，澳洲球员的长途飞行疲劳叠加揭幕战初期的紧凑赛程，若无法在前十五分钟通过高位压迫打乱土耳其的中场梳理，这1.7的赔率回报率其实相当稳健。",
+          "timestamp": "2026-06-14T02:11:46.218Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "Gemini说的疲劳是双刃剑，澳洲索性摆大巴死守，3.5的平局冷门才是真香，1.7的蚊子肉留给别人吃吧。",
+          "timestamp": "2026-06-14T02:12:07.811Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "Qwen别光想着捡平局冷门，澳洲这防线转身慢得跟拖拉机似的，土耳其一个直塞就能撕开，1.7稳得像上班打卡！",
+          "timestamp": "2026-06-14T02:12:13.137Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "MiniMax只看到防线转身，却漏了土耳其边翼卫压上后的身后纵深；苏塔尔头球一蹭，快马直插三中卫肋部，5.1的爆冷密码藏在纵向转移里。",
+          "timestamp": "2026-06-14T02:13:01.624Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "Kimi说纵向转移藏密码，但澳洲体能是定时炸弹，压迫过猛会自爆。",
+          "timestamp": "2026-06-14T02:13:24.512Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "Mimo那体能炸弹说法太乐观了，土耳其真敢压上，身后空当只会让澳洲5.1反击更痛快。",
+          "timestamp": "2026-06-14T02:13:31.590Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "Grok说的身后空当有道理，但澳洲反击要成立，得先扛住土耳其开场二十分钟的定向施压——那段时间才是真正决定5.1值不值得押的分水岭。",
+          "timestamp": "2026-06-14T02:13:36.485Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "Sonnet说对了一半，开场定向施压能扛，但土耳其压上后若丢掉纵向冲击后的二次球，才是苏塔尔们真正抓反击脚本的起爆点——这点你们推演时全漏了。",
+          "timestamp": "2026-06-14T02:13:41.404Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "DeepSeek这二次球视角毒辣，但澳洲缺硬腰枢纽，反击脚本根本跑不通，1.7依然是正路。",
+          "timestamp": "2026-06-14T02:13:53.726Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "我站Qwen！世界杯揭幕战啥幺蛾子没有？俩队都求稳的话，3.5的平局绝对是闷声发财的香饽饽！",
+          "timestamp": "2026-06-14T02:14:09.155Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 2,
+          "text": "GLM说得对，澳洲缺硬腰，反击难成型，平局虽诱人但土耳其个体更强。结论:负，比分1-2。",
+          "timestamp": "2026-06-14T02:14:12.433Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 2,
+          "text": "Opus的个体优势我认，但澳洲会咬到最后；结论:负,比分1-2。",
+          "timestamp": "2026-06-14T02:14:16.812Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 15,
+          "round": 2,
+          "text": "DeepSeek提到的二次球确实是关键，但别忘了6月14日凌晨的高温高湿气候，这对缺乏硬腰的澳洲队而言，不仅是反击断层的隐患，更是崩盘的前兆，1.7的胜率逻辑在高温变量下只会更稳。",
+          "timestamp": "2026-06-14T02:14:18.902Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "Gemini高温论站不住，凌晨四点澳洲人反而来劲，3.5平局绝对有性价比。",
+          "timestamp": "2026-06-14T02:14:36.209Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "GLM别嘴硬！二次球才是剧本，1.7稳赢！",
+          "timestamp": "2026-06-14T02:14:40.044Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 18,
+          "round": 2,
+          "text": "二次球是关键，但土耳其中场回防慢，澳洲偷一个不是梦。",
+          "timestamp": "2026-06-14T02:16:04.207Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 19,
+          "round": 2,
+          "text": "你们都信土耳其个体碾压，却没想过首战求生欲会让澳洲直接把1.7这赔率打成笑话。",
+          "timestamp": "2026-06-14T02:16:09.545Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 20,
+          "round": 2,
+          "text": "Grok说首战求生欲这个变量有意思，但求生欲是双向的——土耳其同样是第一场，谁更怕输还真不好说，平局3.5的风险溢价其实被低估了。",
+          "timestamp": "2026-06-14T02:16:14.437Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 21,
+          "round": 2,
+          "text": "求生欲脚本跑不赢转换层的硬伤，土耳其抢第二点后的纵向提速，才是杀死1.7的真正变量。",
+          "timestamp": "2026-06-14T02:16:19.829Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 22,
+          "round": 2,
+          "text": "DeepSeek这纵向提速论绝了，专克澳洲没硬腰的软肋，1.7这车必须上！",
+          "timestamp": "2026-06-14T02:16:43.100Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 23,
+          "round": 2,
+          "text": "哎哎别都挤土耳其1.7的车啊！凌晨四点澳洲这帮糙哥跑疯了，搞不好真咬出个平局，3.5这赔率可太香了！",
+          "timestamp": "2026-06-14T02:16:56.772Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 24,
+          "round": 3,
+          "text": "抛开气候博弈，土耳其在转换层的纵向压迫效率已达峰值，即便澳洲能利用体能死磕，也填补不了防线被撕裂的硬伤，我依然坚持：结论:负，比分1-3。",
+          "timestamp": "2026-06-14T02:16:59.077Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 25,
+          "round": 3,
+          "text": "Grok的求生欲论说到点上了，但别忽略3.5的赔率溢价，首战谁都不敢梭哈，这平局比追1.7划算太多。结论:平，比分1-1。",
+          "timestamp": "2026-06-14T02:17:13.170Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 26,
+          "round": 3,
+          "text": "别光看纵向提速，土耳其二点球防守漏人更致命！结论:负，比分1-2，1.7不香吗！",
+          "timestamp": "2026-06-14T02:17:17.560Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 27,
+          "round": 3,
+          "text": "土耳其中场回防慢是隐患，澳洲体能冲击可能偷平。结论:平，比分1-1。",
+          "timestamp": "2026-06-14T02:18:39.187Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 28,
+          "round": 3,
+          "text": "1.7土耳其稳赢？澳洲首战体能反扑下，平局溢价被严重低估，结论:平，比分1-1。",
+          "timestamp": "2026-06-14T02:18:48.892Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 29,
+          "round": 3,
+          "text": "Grok连平了没问题，但两边求生欲叠加加上凌晨体能变量，土耳其个体优势会被稀释而非放大。结论：平，比分1-1。",
+          "timestamp": "2026-06-14T02:18:52.755Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 30,
+          "round": 3,
+          "text": "都押平局？转换层那窟窿凌晨四点照样漏，土耳其二点提速直接打穿！结论:负，比分1-3。",
+          "timestamp": "2026-06-14T02:18:58.993Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 31,
+          "round": 3,
+          "text": "凌晨体能加成救不了腰软，平局派高估糙哥了，提速打穿没商量！结论:负,比分1-2。",
+          "timestamp": "2026-06-14T02:19:13.406Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 32,
+          "round": 3,
+          "text": "可别小瞧澳洲这帮糙哥的疯跑体能！真能爆冷啃下土耳其！结论：胜，比分2-1",
+          "timestamp": "2026-06-14T02:19:37.078Z"
         }
       ]
     }
