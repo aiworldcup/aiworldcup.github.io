@@ -104,8 +104,23 @@
     </div>
   </div>
 
+  <!-- 模型历史预测层 -->
+  <div id="model-history-stage" class="model-history-stage" aria-hidden="true">
+    <div class="model-history-panel" role="dialog" aria-modal="true" aria-label="模型历史猜测数据">
+      <div class="model-history-top">
+        <div>
+          <div id="model-history-title" class="model-history-title"></div>
+          <div id="model-history-subtitle" class="model-history-subtitle"></div>
+        </div>
+        <button type="button" class="model-history-close" id="model-history-close" aria-label="关闭">✕</button>
+      </div>
+      <div id="model-history-summary" class="model-history-summary"></div>
+      <div id="model-history-list" class="model-history-list"></div>
+    </div>
+  </div>
+
   <script src="analytics-config.js?v=20260614-analytics"></script>
-  <script src="app.js?v=20260612-1342"></script>
+  <script src="app.js?v=20260614-history"></script>
   <script src="analytics.js?v=20260614-analytics" defer></script>
 </body>
 </html>

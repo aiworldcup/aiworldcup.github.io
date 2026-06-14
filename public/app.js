@@ -246,6 +246,8 @@ function renderLeaderboard() {
   el.innerHTML = activeLbTrack === 'score'
     ? renderLeaderboardBlock('比分榜', '具体比分命中数', rows.scoreRows, 'score')
     : renderLeaderboardBlock('赛果榜', '胜平负命中率', rows.resultRows, 'result');
+
+  wireLeaderboardHistory();
 }
 
 // 国产军团 vs 海外军团:把"哪个阵营更会算球"做成可截图的对战条
@@ -316,11 +318,11 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
         ? `${row.pending} 场等待赛果`
         : '等待预测';
     const rankClass = index < 3 ? ` is-top top-${index + 1}` : '';
-    return `<div class="lb-row${rankClass}">
+    return `<button type="button" class="lb-row${rankClass}" data-model="${escapeHTML(row.modelId)}" aria-label="查看 ${escapeHTML(row.name)} 的历史猜测数据">
       <div class="lb-rank">${index + 1}</div>
       <div class="lb-main">
         <div class="lb-name"><span class="lb-dot" style="background:${row.color}"></span>${escapeHTML(row.name)}</div>
-        <div class="lb-vendor">${escapeHTML(row.vendor || '')} · ${activeText}</div>
+        <div class="lb-vendor">${escapeHTML(row.vendor || '')} · ${activeText} · 点开看历史</div>
       </div>
       <div class="lb-stat">
         <span>${type === 'score' ? '比分' : '赛果'}</span>
@@ -338,7 +340,7 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
         <span>${type === 'score' ? '赛果率' : '比分率'}</span>
         <strong>${type === 'score' ? formatPercent(row.resultHits, row.predictions) : formatPercent(row.scoreHits, row.predictions)}</strong>
       </div>
-    </div>`;
+    </button>`;
   }).join('');
 
   return `<section class="leaderboard-block">
@@ -523,6 +525,114 @@ function buildLeaderboardRows() {
       a.name.localeCompare(b.name, 'zh-CN')
     )
   };
+}
+
+function modelHistory(modelId) {
+  return MATCHES
+    .map(match => {
+      const prediction = predictionsForMatch(match).find(item => item.modelId === modelId);
+      if (!prediction) return null;
+      const actual = match.actual || null;
+      const resultHit = !!actual && prediction.result === actual.result;
+      const scoreHit = !!actual && prediction.score === actual.score;
+      return {
+        match,
+        prediction,
+        actual,
+        resultHit,
+        scoreHit,
+        settled: !!actual,
+        kickoffTime: new Date(match.kickoff || 0).getTime() || 0
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.kickoffTime - a.kickoffTime);
+}
+
+function hitBadge(label, hit) {
+  return `<span class="history-badge ${hit ? 'is-hit' : 'is-miss'}">${hit ? '✓' : '✗'} ${label}</span>`;
+}
+
+function openModelHistory(modelId) {
+  const meta = modelMeta(modelId);
+  const rows = modelHistory(modelId);
+  const settled = rows.filter(row => row.settled);
+  const resultHits = settled.filter(row => row.resultHit).length;
+  const scoreHits = settled.filter(row => row.scoreHit).length;
+  const pending = rows.length - settled.length;
+  const stage = document.getElementById('model-history-stage');
+  const title = document.getElementById('model-history-title');
+  const subtitle = document.getElementById('model-history-subtitle');
+  const summary = document.getElementById('model-history-summary');
+  const list = document.getElementById('model-history-list');
+  if (!stage || !title || !subtitle || !summary || !list) return;
+
+  title.innerHTML = `<span class="lb-dot" style="background:${meta.color}"></span>${escapeHTML(meta.name)}`;
+  subtitle.textContent = `${meta.vendor || '参赛模型'} · 历史猜测数据`;
+  summary.innerHTML = `<div class="history-metric">
+      <span>参与比赛</span><strong>${rows.length}</strong>
+    </div>
+    <div class="history-metric">
+      <span>赛果命中</span><strong>${resultHits}/${settled.length || 0}</strong>
+    </div>
+    <div class="history-metric">
+      <span>比分命中</span><strong>${scoreHits}/${settled.length || 0}</strong>
+    </div>
+    <div class="history-metric">
+      <span>待结算</span><strong>${pending}</strong>
+    </div>`;
+
+  list.innerHTML = rows.length ? rows.map(({ match, prediction, actual, resultHit, scoreHit, settled }) => {
+    const actualText = actual
+      ? `${RESULT_LABEL[actual.result] || actual.result} · ${actual.score}`
+      : '等待真实赛果';
+    const badges = settled
+      ? `${hitBadge('赛果', resultHit)}${hitBadge('比分', scoreHit)}`
+      : '<span class="history-badge is-pending">待结算</span>';
+    return `<article class="history-item">
+      <div class="history-match">
+        <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
+        <strong>VS</strong>
+        <span>${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</span>
+      </div>
+      <div class="history-meta">
+        <span>${escapeHTML(match.stage || '世界杯')}</span>
+        <span>${escapeHTML(formatKickoff(match.kickoff))}</span>
+      </div>
+      <div class="history-picks">
+        <div>
+          <span>模型预测</span>
+          <strong>${escapeHTML(RESULT_LABEL[prediction.result] || prediction.result)} · ${escapeHTML(prediction.score || '-')}</strong>
+        </div>
+        <div>
+          <span>真实赛果</span>
+          <strong>${escapeHTML(actualText)}</strong>
+        </div>
+      </div>
+      <div class="history-badges">${badges}</div>
+    </article>`;
+  }).join('') : `<div class="empty-state">
+    <strong>暂无历史猜测</strong>
+    <span>这个模型还没有参与过已记录的比赛预测。</span>
+  </div>`;
+
+  stage.classList.add('is-open');
+  stage.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModelHistory() {
+  const stage = document.getElementById('model-history-stage');
+  if (!stage) return;
+  stage.classList.remove('is-open');
+  stage.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function wireLeaderboardHistory() {
+  document.querySelectorAll('.lb-row[data-model]').forEach(row => {
+    row.addEventListener('click', () => openModelHistory(row.dataset.model));
+  });
 }
 
 function renderHeroMetrics() {
@@ -1013,6 +1123,7 @@ async function init() {
   wireLeaderboardTabs();
   wireScrollSpy();
   wireDebateStage();
+  wireModelHistoryStage();
   startDataRefresh();
 
   // 深链直达某场辩论回放
@@ -1061,12 +1172,23 @@ function wireDebateStage() {
     if (e.target === stage) closeDebateStage();
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeDebateStage();
+    if (e.key === 'Escape') {
+      closeDebateStage();
+      closeModelHistory();
+    }
   });
   // 比赛卡里的「观看激辩」入口(事件委托)
   document.getElementById('matches')?.addEventListener('click', e => {
     const btn = e.target.closest('.rt-enter');
     if (btn) openDebateStage(btn.dataset.match);
+  });
+}
+
+function wireModelHistoryStage() {
+  const stage = document.getElementById('model-history-stage');
+  document.getElementById('model-history-close')?.addEventListener('click', closeModelHistory);
+  stage?.addEventListener('click', e => {
+    if (e.target === stage) closeModelHistory();
   });
 }
 

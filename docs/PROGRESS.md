@@ -35,6 +35,10 @@
   - `worker/analytics-worker.mjs` + Cloudflare D1 记录访问事件。
   - `public/analytics.js` 前台埋点,`public/admin.html` 展示总访问、日访问、独立访客、来源、设备、国家/地区与最近访问。
   - `public/analytics-config.js` 负责配置线上 Worker URL。
+- 新增排行榜模型历史弹层:
+  - 排行榜中的每个模型行都可点击,打开后展示该模型参与过的全部比赛预测。
+  - 每场历史记录展示对阵、开赛时间、模型预测、真实赛果,并标记赛果/比分命中或未命中。
+  - 未出真实赛果的参与记录显示为待结算,方便封盘后追踪。
 
 ## 本地预览
 
