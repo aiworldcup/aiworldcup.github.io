@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { loadProjectEnv } = require("./lib/env");
 const { syncRealData } = require("./sync-real-data");
+const { syncJingcaiSingle } = require("./sync-jingcai-single");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const DISCUSSIONS_PATH = path.join(__dirname, "..", "public", "data", "discussions.json");
@@ -43,6 +44,11 @@ async function main() {
   const limit = Number(argValue("limit") || process.env.AUTO_ROUNDTABLE_LIMIT || 8);
 
   await syncRealData();
+  await syncJingcaiSingle({
+    from: addDays(date, -3),
+    to: date,
+    soft: true,
+  });
 
   const matches = readJson(MATCHES_PATH, { matches: [] }).matches || [];
   const discussions = readJson(DISCUSSIONS_PATH, { discussions: [] }).discussions || [];

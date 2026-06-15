@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>世界杯 AI 擂台 · 谁是最会预测世界杯的大模型</title>
   <meta name="description" content="10+ 顶级大模型同场竞猜世界杯每场比赛。赛前封盘存证、赛后实时打榜,国产军团对决海外军团,看哪个 AI 最会算球。" />
-  <link rel="stylesheet" href="styles.css?v=20260616-roundtable-date-fit" />
+  <link rel="stylesheet" href="styles.css?v=20260616-roast-polish" />
 </head>
 <body>
   <header class="hero">
@@ -39,23 +39,6 @@
     </section>
 
     <section id="board">
-      <div class="section-head">
-        <div>
-          <h2>AI 擂台赛</h2>
-          <p class="section-sub">谁猜中赛果最多、谁真敢报比分还报对了——一榜见高下。</p>
-        </div>
-        <span id="lb-updated" class="muted"></span>
-      </div>
-
-      <details class="rule-fold">
-        <summary>ℹ️ 计分规则</summary>
-        <div class="rule-fold-body">
-          <p><strong>赛果榜</strong>:统计每个模型胜平负的命中率,命中越多越靠前。</p>
-          <p><strong>比分榜</strong>:统计猜中具体比分的次数,这是真本事,蒙不来。</p>
-          <p>所有预测在开赛前封盘存证、带时间戳锁死,赛后不可篡改。</p>
-        </div>
-      </details>
-
       <div id="camp-battle" class="camp-battle" aria-label="国产军团对决海外军团"></div>
 
       <div id="leaderboard-summary" class="leaderboard-summary"></div>
@@ -66,6 +49,16 @@
       </div>
 
       <div id="leaderboard" class="leaderboard"></div>
+
+      <details class="rule-fold board-rule-fold">
+        <summary>ℹ️ 计分规则</summary>
+        <div class="rule-fold-body">
+          <p><strong>赛果榜</strong>:统计每个模型胜平负的命中率,命中越多越靠前。</p>
+          <p><strong>比分榜</strong>:统计猜中具体比分的次数,这是真本事,蒙不来。</p>
+          <p>所有预测在开赛前封盘存证、带时间戳锁死,赛后不可篡改。</p>
+          <p id="lb-updated" class="muted"></p>
+        </div>
+      </details>
     </section>
 
     <section id="standings-section">
@@ -80,13 +73,22 @@
     </section>
 
     <section id="matches-section">
-      <div class="section-head">
-        <div>
-          <h2>比赛擂台</h2>
-          <p id="match-summary" class="section-sub">加载比赛中...</p>
-        </div>
-      </div>
+      <p id="match-summary" class="section-sub visually-hidden">加载比赛中...</p>
       <div id="date-quick" class="date-quick" aria-label="按日期筛选比赛"></div>
+      <div class="match-tools">
+        <label class="match-mode-toggle">
+          <input id="compact-match-mode" type="checkbox" />
+          <span class="mode-switch" aria-hidden="true"></span>
+          <span class="match-mode-copy">
+            <span>简约模式</span>
+            <small>对阵、比例、热门比分</small>
+          </span>
+        </label>
+        <button type="button" id="roast-beer-open" class="roast-beer-open">
+          <span>一键烤啤</span>
+          <small>复制赛前文案</small>
+        </button>
+      </div>
       <div class="prediction-note">
         <strong>比赛日前 10:00 更新</strong>
         <span>每个比赛日前一天 10 点更新大模型预测数据,随后锁死预测与时间戳;开赛后只展示存证,不可篡改。</span>
@@ -141,8 +143,48 @@
     </div>
   </div>
 
+  <!-- 一键烤啤复制层 -->
+  <div id="roast-beer-stage" class="roast-beer-stage" aria-hidden="true">
+    <div class="roast-beer-panel" role="dialog" aria-modal="true" aria-label="一键烤啤">
+      <div class="roast-beer-top">
+        <div>
+          <div class="roast-beer-title">一键烤啤</div>
+        </div>
+        <button type="button" class="roast-beer-close" id="roast-beer-close" aria-label="关闭">✕</button>
+      </div>
+      <div class="roast-beer-body">
+        <div class="roast-field">
+          <span>选择比赛范围</span>
+          <div class="roast-scope-tabs" aria-label="选择比赛范围">
+            <button type="button" class="is-active" data-scope="all">当前日期全部比赛</button>
+            <button type="button" data-scope="jingcai">竞彩单关</button>
+          </div>
+          <div id="roast-scope-note" class="roast-scope-note"></div>
+        </div>
+        <div class="roast-field roast-source-field">
+          <span>选择模型口径</span>
+          <div class="roast-source-tabs" aria-label="选择烤啤来源">
+            <button type="button" class="is-active" data-source="majority">模型共识</button>
+            <button type="button" data-source="model">单模型</button>
+          </div>
+        </div>
+        <label class="roast-field" id="roast-model-field">
+          <span>选择模型</span>
+          <select id="roast-model-select"></select>
+        </label>
+        <div id="roast-result" class="roast-result"></div>
+        <textarea id="roast-copy-text" class="roast-copy-text" readonly></textarea>
+        <div id="roast-copy-status" class="roast-copy-status" aria-live="polite"></div>
+      </div>
+      <div class="roast-beer-actions">
+        <button type="button" id="roast-copy-confirm" class="roast-copy-confirm">确认并复制</button>
+        <button type="button" id="roast-beer-cancel" class="roast-beer-cancel">关闭</button>
+      </div>
+    </div>
+  </div>
+
   <script src="analytics-config.js?v=20260614-analytics"></script>
-  <script src="app.js?v=20260616-roundtable-date-fit"></script>
+  <script src="app.js?v=20260616-roast-polish"></script>
   <script src="analytics.js?v=20260614-analytics" defer></script>
 </body>
 </html>

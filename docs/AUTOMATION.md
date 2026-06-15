@@ -12,7 +12,8 @@
 - `com.tom.worldcup-ai-arena-roundtable`
   - 频率:每天北京时间 10:00
   - 命令:`npm run publish:roundtable`
-  - 行为:先同步赛程,只检查次日比赛;如果次日没有未完赛比赛,直接跳过;如果有未生成圆桌的比赛,逐场生成并发布。
+  - 行为:先同步赛程,再 best-effort 同步竞彩单关核对数据,只检查次日比赛;如果次日没有未完赛比赛,直接跳过;如果有未生成圆桌的比赛,逐场生成并发布。
+  - 竞彩单关同步失败不会阻塞圆桌发布,避免中国竞彩网接口或 WAF 抖动时影响主链路。
 
 ## 模型策略
 
@@ -27,6 +28,7 @@
 ```bash
 npm run publish:settle
 npm run publish:roundtable
+npm run sync:jingcai -- --from 2026-06-14 --to 2026-06-16
 ops/install-launchd.sh
 launchctl list com.tom.worldcup-ai-arena-results
 launchctl list com.tom.worldcup-ai-arena-roundtable

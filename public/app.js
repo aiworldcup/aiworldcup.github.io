@@ -7,10 +7,16 @@ let LEADERBOARD = { rankings: [], open: [] };
 let CHAMPIONS = [];
 let DISCUSSIONS = [];
 let GROUPS = {};
+let JINGCAI_SINGLE = { matches: [], sources: [] };
 let selectedDateKey = '';
 let activeLbTrack = 'result';
 let heroRoundtableTimer = null;
+let compactMatchesMode = false;
+let compactExpandedMatchId = '';
+let roastBeerSource = 'majority';
+let roastBeerScope = 'all';
 const ACTIVE_TRACK = 'open';
+const COMPACT_MATCHES_STORAGE_KEY = 'worldcup-ai-arena-compact-matches';
 
 // 阵营划分:国产军团 vs 海外军团(用于核心传播钩子)
 const DOMESTIC_VENDORS = ['阿里', '通义', '月之暗面', 'Moonshot', '小米', 'MiMo', 'DeepSeek', '智谱', 'MiniMax', '百度', '字节', '腾讯'];
@@ -190,6 +196,14 @@ function matchesForSelectedDate() {
   return MATCHES.filter(match => matchDateKey(match) === selectedDateKey);
 }
 
+function restoreMatchViewPreference() {
+  try {
+    compactMatchesMode = localStorage.getItem(COMPACT_MATCHES_STORAGE_KEY) === '1';
+  } catch (_) {
+    compactMatchesMode = false;
+  }
+}
+
 function pickInitialDate(now = new Date()) {
   const today = beijingDateKey(now);
   const keys = availableDateKeys();
@@ -218,6 +232,7 @@ function renderDateQuick() {
   el.querySelectorAll('.date-btn').forEach(button => {
     button.addEventListener('click', () => {
       selectedDateKey = button.dataset.date;
+      compactExpandedMatchId = '';
       renderDateQuick();
       renderMatches();
       renderDiscussions();
@@ -385,16 +400,433 @@ function renderLeaderboardBlock(title, subtitle, rows, type) {
 
 function renderMatches() {
   const el = document.getElementById('matches');
+  const section = document.getElementById('matches-section');
+  if (!el) return;
   renderMatchSummary();
+  section?.classList.toggle('is-compact-match-mode', compactMatchesMode);
   const selectedMatches = matchesForSelectedDate();
   if (!selectedMatches.length) {
+    el.classList.remove('is-compact-list');
     el.innerHTML = `<div class="empty-state">
       <strong>${dateLabel(selectedDateKey)}暂无比赛</strong>
       <span>预测席位先留空。下一批比赛会在开赛前一天封盘后更新。</span>
     </div>`;
     return;
   }
-  el.innerHTML = selectedMatches.map(renderMatchCard).join('');
+  el.classList.toggle('is-compact-list', compactMatchesMode);
+  el.innerHTML = compactMatchesMode
+    ? renderCompactMatchList(selectedMatches)
+    : selectedMatches.map(renderMatchCard).join('');
+  if (compactMatchesMode) wireCompactMatchList(el);
+}
+
+function matchPredictionSummary(match) {
+  const displayPredictions = predictionsForMatch(match);
+  const counts = displayPredictions.reduce((acc, prediction) => {
+    acc[prediction.result] = (acc[prediction.result] || 0) + 1;
+    return acc;
+  }, { home: 0, draw: 0, away: 0 });
+  const total = displayPredictions.length || 0;
+  const scoreCounts = displayPredictions.reduce((acc, prediction) => {
+    if (!prediction.score) return acc;
+    acc[prediction.score] = (acc[prediction.score] || 0) + 1;
+    return acc;
+  }, {});
+  const hotScore = Object.entries(scoreCounts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0];
+  const lean = ['home', 'draw', 'away'].slice().sort((a, b) => counts[b] - counts[a])[0];
+  return {
+    displayPredictions,
+    counts,
+    total,
+    lean,
+    leanText: total ? `${RESULT_LABEL[lean]} ${counts[lean]}/${total}` : '暂无预测',
+    hotScoreText: hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无',
+    predictionCountText: total ? `${total} 位模型` : '待定',
+  };
+}
+
+function renderCompactMatchList(matches) {
+  return `<div class="compact-match-list">
+    ${matches.map(renderCompactMatchRow).join('')}
+  </div>`;
+}
+
+function renderCompactMatchRow(match) {
+  const summary = matchPredictionSummary(match);
+  const lifecycle = matchLifecycle(match);
+  const finished = !!match.actual;
+  const score = finished ? String(match.actual.score || '').replace('-', ':') : 'VS';
+  const expanded = compactExpandedMatchId === match.id;
+  const kickoff = formatKickoff(match.kickoff);
+  const pct = key => summary.total ? Math.round((summary.counts[key] / summary.total) * 100) : 0;
+  const flex = key => summary.total ? (summary.counts[key] || 0.18) : 0;
+  const shareHTML = summary.total
+    ? `<span class="compact-share is-home" style="flex:${flex('home')}"><b>主</b>${pct('home')}%</span>
+        <span class="compact-share is-draw" style="flex:${flex('draw')}"><b>平</b>${pct('draw')}%</span>
+        <span class="compact-share is-away" style="flex:${flex('away')}"><b>客</b>${pct('away')}%</span>`
+    : '<span class="compact-share is-empty" style="flex:1">暂无预测</span>';
+  const homeFlag = flagIcon(match.home.flag || (match.placeholder ? '🏆' : ''));
+  const awayFlag = flagIcon(match.away.flag || (match.placeholder ? '🏆' : ''));
+  return `<section class="compact-match-item ${expanded ? 'is-expanded' : ''}">
+    <button type="button" class="compact-match-toggle" data-match="${escapeHTML(match.id)}" aria-expanded="${expanded ? 'true' : 'false'}">
+      <div class="compact-match-main">
+        <div class="compact-teams">
+          <span>${homeFlag} ${escapeHTML(match.home.team)}</span>
+          <b>${escapeHTML(score)}</b>
+          <span>${escapeHTML(match.away.team)} ${awayFlag}</span>
+        </div>
+        <span class="match-status status-${lifecycle.tone}">${escapeHTML(lifecycle.label)}</span>
+      </div>
+      <div class="compact-pred-row" aria-label="模型预测比例">
+        ${shareHTML}
+      </div>
+      <div class="compact-match-foot">
+        <span class="compact-match-time">${escapeHTML(kickoff)}</span>
+        <span>热门比分 <strong>${escapeHTML(summary.hotScoreText)}</strong></span>
+        <span>${summary.predictionCountText} · ${expanded ? '收起详情' : '查看详情'}</span>
+      </div>
+    </button>
+    ${expanded ? `<div class="compact-match-detail">${renderMatchCard(match)}</div>` : ''}
+  </section>`;
+}
+
+function wireCompactMatchList(root) {
+  root.querySelectorAll('.compact-match-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      compactExpandedMatchId = compactExpandedMatchId === button.dataset.match ? '' : button.dataset.match;
+      renderMatches();
+      window.requestAnimationFrame(() => {
+        initRevealMotion();
+        const expanded = compactExpandedMatchId ? document.querySelector(`.compact-match-item.is-expanded`) : null;
+        if (expanded) expanded.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+      });
+    });
+  });
+}
+
+function roastBeerFixtureLabel(match) {
+  return `${flagIcon(match.home.flag)} ${match.home.team} VS ${match.away.team} ${flagIcon(match.away.flag)}`;
+}
+
+function jingcaiSingleEntries() {
+  return Array.isArray(JINGCAI_SINGLE?.matches) ? JINGCAI_SINGLE.matches : [];
+}
+
+function isSameJingcaiTeamPair(match, entry) {
+  const home = String(entry.homeTeam || entry.home || '').trim();
+  const away = String(entry.awayTeam || entry.away || '').trim();
+  if (!home || !away) return false;
+  return home === match.home.team && away === match.away.team;
+}
+
+function isJingcaiSingleMatch(match) {
+  return jingcaiSingleEntries().some(entry => {
+    if (entry.matchId && entry.matchId === match.id) return true;
+    if (entry.sourceFixtureId && String(entry.sourceFixtureId) === String(match.sourceFixtureId || '')) return true;
+    if (!isSameJingcaiTeamPair(match, entry)) return false;
+    if (!entry.kickoff) return true;
+    return Math.abs(new Date(entry.kickoff).getTime() - new Date(match.kickoff).getTime()) < 90 * 60 * 1000;
+  });
+}
+
+function jingcaiEntriesForDate(dateKey = selectedDateKey) {
+  const selectedIds = new Set(MATCHES.filter(match => matchDateKey(match) === dateKey).map(match => match.id));
+  return jingcaiSingleEntries().filter(entry => {
+    if (entry.matchDate === dateKey) return true;
+    if (entry.matchId && selectedIds.has(entry.matchId)) return true;
+    if (entry.kickoff && beijingDateKey(entry.kickoff) === dateKey) return true;
+    return false;
+  });
+}
+
+function jingcaiSingleMatchesForSelectedDate() {
+  return matchesForSelectedDate().filter(isJingcaiSingleMatch);
+}
+
+function roastBeerScopeMatches() {
+  const selected = matchesForSelectedDate().filter(match => predictionsForMatch(match).length);
+  if (roastBeerScope === 'jingcai') return selected.filter(isJingcaiSingleMatch);
+  return selected;
+}
+
+function roastBeerScopeLabel() {
+  return roastBeerScope === 'jingcai' ? '竞彩单关' : '当前日期全部比赛';
+}
+
+function roastBeerSourceNote() {
+  if (roastBeerScope !== 'jingcai') {
+    const count = matchesForSelectedDate().length;
+    return `${dateLabel(selectedDateKey)}全部 ${count} 场比赛。`;
+  }
+  const source = JINGCAI_SINGLE?.sources?.[0];
+  const verifiedAt = JINGCAI_SINGLE?.updatedAt ? `核对时间 ${new Date(JINGCAI_SINGLE.updatedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI })}` : '核对时间待补';
+  const verifiedCount = jingcaiSingleMatchesForSelectedDate().length || jingcaiEntriesForDate().length;
+  const playableCount = roastBeerScopeMatches().length;
+  const unavailableCount = Math.max(0, verifiedCount - playableCount);
+  const availabilityText = verifiedCount
+    ? `${dateLabel(selectedDateKey)}官方单关 ${verifiedCount} 场,可生成 ${playableCount} 场${unavailableCount ? `,${unavailableCount} 场暂无模型预测` : ''}。`
+    : `${dateLabel(selectedDateKey)}官方单关 0 场。`;
+  return `竞彩单关以中国竞彩网“仅显示胜平负单固场次”口径核对。${availabilityText}${verifiedAt}${source?.href ? ` · ${source.href}` : ''}`;
+}
+
+function roastBeerSplitText(counts, total) {
+  if (!total) return '暂无票型';
+  return `${RESULT_SHORT.home}${counts.home || 0}/${total} · ${RESULT_SHORT.draw}${counts.draw || 0}/${total} · ${RESULT_SHORT.away}${counts.away || 0}/${total}`;
+}
+
+function roastBeerModelFlavor(modelId, meta) {
+  const flavors = {
+    'claude-fable-5': 'Fable 这票像赛前写好寓言:看着温柔,落点挺狠。',
+    'claude-opus-4-8': 'Opus 属于西装革履拍桌派,嘴上克制,选项一点不手软。',
+    'gpt-5-5': 'GPT-5.5 走工整路线,像把战术板擦了三遍才肯下结论。',
+    'gemini-3-1': 'Gemini 这次开了全球视角,连天气和节奏都要一起盘。',
+    'qwen-3-7-max': 'Qwen 这票像国产算盘打出来的,不花哨,但很敢落子。',
+    'minimax-m3': 'MiniMax 讲话短,下手快,有点像替补席突然冲出来补一脚。',
+    'kimi-k2-6': 'Kimi 这波是夜读派,资料翻到最后一页才给你一句狠的。',
+    'mimo-v2-5-pro': 'MiMo 这票带点工程师味,参数调完,啤酒开盖。',
+    'grok-4-3': 'Grok 反骨值拉满,别人还在算概率,它已经开始挑衅比分了。',
+    'muse-spark': 'Muse Spark 像艺术生看球,讲究灵感,但比分也敢写死。',
+    'claude-sonnet-4-6': 'Sonnet 这票有诗意,但诗写到最后还是要落在比分上。',
+    'deepseek-v4pro': 'DeepSeek 这波往深水区扎,看起来冷静,其实刀挺快。',
+    'glm-5-1': 'GLM 像理科生押题,步骤清楚,答案直接交卷。',
+    'doubao-seed-2-0-pro': '豆包这票短平快,不讲废话,直接把锅端上桌。'
+  };
+  return flavors[modelId] || (campOf(meta) === 'domestic'
+    ? `${meta.name} 这票有国产军团的硬气,不绕弯,直接亮牌。`
+    : `${meta.name} 这票带海外军团的视角,看着松弛,其实很会拿捏节奏。`);
+}
+
+function buildRoastBeerText(payload) {
+  const disclaimer = '只负责烤啤,不负责上头;赛后回来挖坟。';
+  const lines = payload.entries.map((entry, index) =>
+    `${index + 1}. ${entry.fixture}: ${entry.result} / ${entry.score}${entry.extra ? `（${entry.extra}）` : ''}`
+  ).join('\n');
+  if (payload.source === 'majority') {
+    return `【世界杯AI烤啤｜${payload.scopeLabel}】
+${payload.scopeMeta}
+AI 模型共识先拍桌:
+${lines}
+人多不一定是真理,但吵架时声音确实最大。
+${disclaimer}`;
+  }
+  return `【世界杯AI烤啤｜${payload.scopeLabel}】
+${payload.scopeMeta}
+我这张跟 ${payload.modelName}:
+${lines}
+${payload.flavor}
+${disclaimer}`;
+}
+
+function roastBeerMajorityEntry(match) {
+  const summary = matchPredictionSummary(match);
+  if (!summary.total) return null;
+  const result = RESULT_LABEL[summary.lean] || summary.lean || '待定';
+  const score = summary.hotScoreText.split(' · ')[0] || '待定';
+  return {
+    match,
+    fixture: roastBeerFixtureLabel(match),
+    kickoff: formatKickoff(match.kickoff),
+    result,
+    score,
+    extra: `${roastBeerSplitText(summary.counts, summary.total)} · 热门 ${summary.hotScoreText}`
+  };
+}
+
+function roastBeerModelEntry(match, modelId) {
+  const prediction = predictionsForMatch(match).find(item => item.modelId === modelId);
+  if (!prediction) return null;
+  return {
+    match,
+    fixture: roastBeerFixtureLabel(match),
+    kickoff: formatKickoff(match.kickoff),
+    result: RESULT_LABEL[prediction.result] || prediction.result || '待定',
+    score: prediction.score || '待定',
+    extra: formatKickoff(match.kickoff)
+  };
+}
+
+function roastBeerPayload(matches, source, modelId) {
+  const sourceMatches = matches || [];
+  if (!sourceMatches.length) return null;
+  if (source === 'model') {
+    const fallbackPrediction = sourceMatches.flatMap(match => predictionsForMatch(match))[0];
+    if (!modelId && fallbackPrediction) modelId = fallbackPrediction.modelId;
+    const entries = sourceMatches.map(match => roastBeerModelEntry(match, modelId)).filter(Boolean);
+    if (!entries.length) return null;
+    const meta = modelMeta(modelId);
+    const payload = {
+      source: 'model',
+      scopeLabel: roastBeerScopeLabel(),
+      scopeMeta: `${dateLabel(selectedDateKey)} · ${entries.length} 场`,
+      modelName: meta.name,
+      modelVendor: meta.vendor || '参赛模型',
+      flavor: roastBeerModelFlavor(modelId, meta),
+      entries
+    };
+    return { ...payload, text: buildRoastBeerText(payload) };
+  }
+  const entries = sourceMatches.map(roastBeerMajorityEntry).filter(Boolean);
+  if (!entries.length) return null;
+  const payload = {
+    source: 'majority',
+    scopeLabel: roastBeerScopeLabel(),
+    scopeMeta: `${dateLabel(selectedDateKey)} · ${entries.length} 场`,
+    modelCount: `${entries.length} 场比赛`,
+    entries
+  };
+  return { ...payload, text: buildRoastBeerText(payload) };
+}
+
+function renderRoastBeerResult(payload) {
+  if (!payload) {
+    const source = JINGCAI_SINGLE?.sources?.[0];
+    let emptyText = '当前范围没有可用模型预测。';
+    if (roastBeerScope === 'jingcai') {
+      const verifiedCount = jingcaiSingleMatchesForSelectedDate().length || jingcaiEntriesForDate().length;
+      emptyText = verifiedCount
+        ? `当前日期核对到 ${verifiedCount} 场竞彩单关,但暂无可用模型预测。核对口径:中国竞彩网“仅显示胜平负单固场次”。${source?.href ? ` 来源:${source.href}` : ''}`
+        : `当前日期未核对到竞彩单关比赛。核对口径:中国竞彩网“仅显示胜平负单固场次”。${source?.href ? ` 来源:${source.href}` : ''}`;
+    }
+    return `<div class="empty-state">
+      <strong>当前范围还没法烤</strong>
+      <span>${escapeHTML(emptyText)}</span>
+    </div>`;
+  }
+  const sourceText = payload.source === 'majority'
+    ? `模型共识 · ${payload.modelCount}`
+    : `${payload.modelName} · ${payload.modelVendor}`;
+  const pickRows = payload.entries.map(entry => `<div class="roast-pick-row">
+    <span>${escapeHTML(entry.fixture)}</span>
+    <strong>${escapeHTML(entry.result)} / ${escapeHTML(entry.score)}</strong>
+  </div>`).join('');
+  return `<h3>${escapeHTML(payload.scopeLabel)}</h3>
+    <div class="roast-result-grid">
+      <div class="roast-result-box"><span>来源</span><strong>${escapeHTML(sourceText)}</strong></div>
+      <div class="roast-result-box"><span>范围</span><strong>${escapeHTML(payload.scopeMeta)}</strong></div>
+    </div>
+    <div class="roast-pick-list">${pickRows}</div>`;
+}
+
+function sortModelIdsByResultRank(modelIds) {
+  const rankRows = buildLeaderboardRows().resultRows || [];
+  const rankMap = new Map(rankRows.map((row, index) => [row.modelId, { index, row }]));
+  return modelIds.slice().sort((a, b) => {
+    const rankA = rankMap.get(a);
+    const rankB = rankMap.get(b);
+    if (rankA && rankB) return rankA.index - rankB.index;
+    if (rankA) return -1;
+    if (rankB) return 1;
+    return modelMeta(a).name.localeCompare(modelMeta(b).name, 'zh-CN');
+  });
+}
+
+function updateRoastBeerModelOptions(matches, preferredModelId = '') {
+  const modelSelect = document.getElementById('roast-model-select');
+  const modelField = document.getElementById('roast-model-field');
+  if (!modelSelect || !modelField) return;
+  const predictions = (matches || []).flatMap(match => predictionsForMatch(match));
+  const modelIds = sortModelIdsByResultRank(Array.from(new Set(predictions.map(prediction => prediction.modelId))));
+  const currentModelId = preferredModelId || modelSelect.value;
+  modelSelect.innerHTML = modelIds.length ? modelIds.map(modelId => {
+    const meta = modelMeta(modelId);
+    const count = (matches || []).filter(match => predictionsForMatch(match).some(prediction => prediction.modelId === modelId)).length;
+    const label = `${meta.name} · 覆盖 ${count} 场`;
+    return `<option value="${escapeHTML(modelId)}">${escapeHTML(label)}</option>`;
+  }).join('') : '<option value="">暂无模型预测</option>';
+  if (currentModelId && modelIds.includes(currentModelId)) {
+    modelSelect.value = currentModelId;
+  }
+  modelSelect.disabled = !modelIds.length;
+  modelField.hidden = roastBeerSource !== 'model';
+}
+
+function updateRoastBeerPreview() {
+  const matches = roastBeerScopeMatches();
+  const preferredModelId = document.getElementById('roast-model-select')?.value || '';
+  updateRoastBeerModelOptions(matches, preferredModelId);
+  const modelId = document.getElementById('roast-model-select')?.value || '';
+  const payload = roastBeerPayload(matches, roastBeerSource, modelId);
+  const result = document.getElementById('roast-result');
+  const text = document.getElementById('roast-copy-text');
+  const status = document.getElementById('roast-copy-status');
+  const note = document.getElementById('roast-scope-note');
+  if (result) result.innerHTML = renderRoastBeerResult(payload);
+  if (text) text.value = payload?.text || '当前没有可复制的烤啤文案。';
+  if (note) note.textContent = roastBeerSourceNote();
+  if (status) status.textContent = '';
+}
+
+function setRoastBeerScope(scope) {
+  roastBeerScope = scope === 'jingcai' ? 'jingcai' : 'all';
+  document.querySelectorAll('.roast-scope-tabs button').forEach(button => {
+    button.classList.toggle('is-active', button.dataset.scope === roastBeerScope);
+  });
+  updateRoastBeerPreview();
+}
+
+function setRoastBeerSource(source) {
+  roastBeerSource = source === 'model' ? 'model' : 'majority';
+  document.querySelectorAll('.roast-source-tabs button').forEach(button => {
+    button.classList.toggle('is-active', button.dataset.source === roastBeerSource);
+  });
+  updateRoastBeerPreview();
+}
+
+function openRoastBeerStage() {
+  const stage = document.getElementById('roast-beer-stage');
+  if (!stage) return;
+  setRoastBeerScope('all');
+  setRoastBeerSource('majority');
+  updateRoastBeerPreview();
+  stage.classList.add('is-open');
+  stage.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRoastBeerStage() {
+  const stage = document.getElementById('roast-beer-stage');
+  if (!stage) return;
+  stage.classList.remove('is-open');
+  stage.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+async function copyRoastBeerText() {
+  const textEl = document.getElementById('roast-copy-text');
+  const status = document.getElementById('roast-copy-status');
+  const text = textEl?.value || '';
+  if (!text || text === '当前没有可复制的烤啤文案。') {
+    if (status) status.textContent = '还没有可复制的内容。';
+    return;
+  }
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
+    await navigator.clipboard.writeText(text);
+    if (status) status.textContent = '已复制,去别处开烤吧。';
+  } catch (_) {
+    const temp = document.createElement('textarea');
+    temp.value = text;
+    temp.setAttribute('readonly', '');
+    temp.style.position = 'fixed';
+    temp.style.left = '-9999px';
+    temp.style.top = '0';
+    document.body.appendChild(temp);
+    temp.focus();
+    temp.select();
+    temp.setSelectionRange(0, temp.value.length);
+    let ok = false;
+    try {
+      ok = !!document.execCommand?.('copy');
+    } catch (e) {
+      ok = false;
+    }
+    temp.remove();
+    if (!ok) {
+      textEl?.focus();
+      textEl?.select();
+    }
+    if (status) status.textContent = ok ? '已复制,去别处开烤吧。' : '已选中文案,可以手动复制。';
+  }
 }
 
 function teamFlag(team) {
@@ -1490,6 +1922,7 @@ function renderDiscussions() {
 }
 
 async function init() {
+  restoreMatchViewPreference();
   const models = await loadJSON('data/models.json');
   if (models?.models) models.models.forEach(m => { MODELS[m.id] = m; });
 
@@ -1499,11 +1932,46 @@ async function init() {
   wireTabs();
   wireDebateStage();
   wireModelHistoryStage();
+  wireMatchViewControls();
+  wireRoastBeerStage();
   startDataRefresh();
 
   // 深链直达某场辩论回放
   const m = location.hash.match(/#debate=([\w-]+)/);
   if (m) openDebateStage(m[1]);
+}
+
+function wireMatchViewControls() {
+  const checkbox = document.getElementById('compact-match-mode');
+  if (!checkbox) return;
+  checkbox.checked = compactMatchesMode;
+  checkbox.addEventListener('change', () => {
+    compactMatchesMode = checkbox.checked;
+    compactExpandedMatchId = '';
+    try {
+      localStorage.setItem(COMPACT_MATCHES_STORAGE_KEY, compactMatchesMode ? '1' : '0');
+    } catch (_) {}
+    renderMatches();
+    window.requestAnimationFrame(initRevealMotion);
+  });
+}
+
+function wireRoastBeerStage() {
+  const stage = document.getElementById('roast-beer-stage');
+  document.getElementById('roast-beer-open')?.addEventListener('click', openRoastBeerStage);
+  document.getElementById('roast-beer-close')?.addEventListener('click', closeRoastBeerStage);
+  document.getElementById('roast-beer-cancel')?.addEventListener('click', closeRoastBeerStage);
+  document.getElementById('roast-copy-confirm')?.addEventListener('click', copyRoastBeerText);
+  document.getElementById('roast-model-select')?.addEventListener('change', updateRoastBeerPreview);
+  document.querySelectorAll('.roast-scope-tabs button').forEach(button => {
+    button.addEventListener('click', () => setRoastBeerScope(button.dataset.scope));
+  });
+  document.querySelectorAll('.roast-source-tabs button').forEach(button => {
+    button.addEventListener('click', () => setRoastBeerSource(button.dataset.source));
+  });
+  stage?.addEventListener('click', e => {
+    if (e.target === stage) closeRoastBeerStage();
+  });
 }
 
 async function refreshData({ resetDate = false } = {}) {
@@ -1526,6 +1994,9 @@ async function refreshData({ resetDate = false } = {}) {
 
   const groups = await loadJSON('data/groups.json');
   GROUPS = groups?.groups || {};
+
+  const jingcai = await loadJSON('data/jingcai-single.json');
+  JINGCAI_SINGLE = jingcai || { matches: [], sources: [] };
 
   renderHeroTicker();
   renderHeroRoundtable();
@@ -1557,6 +2028,7 @@ function wireDebateStage() {
     if (e.key === 'Escape') {
       closeDebateStage();
       closeModelHistory();
+      closeRoastBeerStage();
     }
   });
   
@@ -1635,6 +2107,19 @@ function initRevealMotion() {
   });
 }
 
+function preserveTabScrollHeight(scrollY) {
+  const main = document.querySelector('main');
+  if (!main) return;
+  main.style.minHeight = `${Math.max(window.innerHeight, scrollY + window.innerHeight)}px`;
+}
+
+function restoreTabScrollPosition(scrollY) {
+  preserveTabScrollHeight(scrollY);
+  window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+    window.scrollTo({ top: scrollY, behavior: 'auto' });
+  }));
+}
+
 function wireTabs() {
   const tabs = Array.from(document.querySelectorAll('.tabbar .tab'));
   if (!tabs.length) return;
@@ -1664,23 +2149,19 @@ function wireTabs() {
   tabs.forEach(tab => {
     tab.addEventListener('click', e => {
       e.preventDefault();
+      const previousScrollY = window.scrollY;
       const targetId = tab.dataset.tab;
+      preserveTabScrollHeight(previousScrollY);
       if (targetId === 'matches-section') {
         selectedDateKey = pickInitialDate();
+        compactExpandedMatchId = '';
         renderDateQuick();
         renderMatches();
         renderDiscussions();
       }
       activateTab(targetId);
       history.replaceState?.(null, '', `#${targetId}`);
-      
-      const tabbar = document.getElementById('tabbar');
-      if (tabbar) {
-        const offsetTop = tabbar.offsetTop;
-        if (window.scrollY > offsetTop) {
-          window.scrollTo({ top: offsetTop, behavior: 'auto' });
-        }
-      }
+      restoreTabScrollPosition(previousScrollY);
     });
   });
 }
