@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T16:18:11.305Z",
+  "updatedAt": "2026-06-15T16:35:14.271Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -1448,7 +1448,7 @@
     },
     {
       "matchId": "fixture-1489377",
-      "sealedAt": "2026-06-15T04:06:39.851Z",
+      "sealedAt": "2026-06-15T16:25:14.639Z",
       "messages": [
         {
           "modelId": "claude-opus-4-8",
@@ -1456,8 +1456,8 @@
           "vendor": "Anthropic",
           "turn": 1,
           "round": 1,
-          "text": "结论:主胜,比分2-0;埃及锋无力,比利时控场碾压。",
-          "timestamp": "2026-06-15T04:06:42.514Z"
+          "text": "结论:主胜,比分2-0;比利时控盘碾压,埃及反击没人接萨拉赫的球。",
+          "timestamp": "2026-06-15T16:25:22.683Z"
         },
         {
           "modelId": "gpt-5-5",
@@ -1465,8 +1465,8 @@
           "vendor": "OpenAI",
           "turn": 2,
           "round": 1,
-          "text": "这点我买，结论:主胜,比分2-0;埃及反击会被掐死",
-          "timestamp": "2026-06-15T04:06:52.023Z"
+          "text": "结论:主胜,比分2-1;驳Claude:埃及反击有一刀",
+          "timestamp": "2026-06-15T16:25:38.083Z"
         },
         {
           "modelId": "gemini-3-1",
@@ -1474,8 +1474,8 @@
           "vendor": "Google",
           "turn": 3,
           "round": 1,
-          "text": "别忽略当地当晚32摄氏度的高温，埃及适应性更强，结论:平局,比分1-1;比利时体能衰减将导致防线失守。",
-          "timestamp": "2026-06-15T04:06:54.749Z"
+          "text": "Gemini 3.1API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T16:25:43.724Z"
         },
         {
           "modelId": "qwen-3-7-max",
@@ -1483,8 +1483,8 @@
           "vendor": "阿里云 / 通义千问",
           "turn": 4,
           "round": 1,
-          "text": "补一刀比利时板凳深度够厚，高温轮换不吃亏，主胜依然有肉吃。",
-          "timestamp": "2026-06-15T04:07:13.098Z"
+          "text": "@Claude 别扯没人接球，萨拉赫断球自己带就是单刀，德布劳内这岁数回追？",
+          "timestamp": "2026-06-15T16:26:05.518Z"
         },
         {
           "modelId": "minimax-m3",
@@ -1492,8 +1492,8 @@
           "vendor": "MiniMax",
           "turn": 5,
           "round": 1,
-          "text": "我反对，高温32度比利时早练过，热身赛就在这天气踢的，埃及适应个屁。",
-          "timestamp": "2026-06-15T04:07:16.839Z"
+          "text": "@Qwen 德布劳内回追慢？人家一个直塞就把埃及后防拆了，萨拉赫再能断也追不上传球。",
+          "timestamp": "2026-06-15T16:26:09.501Z"
         },
         {
           "modelId": "kimi-k2-6",
@@ -1502,175 +1502,7 @@
           "turn": 6,
           "round": 1,
           "text": "Kimi K2.6API超时兜底:结论:主胜,比分2-1",
-          "timestamp": "2026-06-15T04:07:41.843Z"
-        },
-        {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
-          "turn": 7,
-          "round": 1,
-          "text": "这点我买，但比利时后防老龄化高温下更脆，德布劳内维尔通亨体能亮灯埃及反击偷一个。",
-          "timestamp": "2026-06-15T04:08:00.020Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "turn": 8,
-          "round": 1,
-          "text": "我反对比利时真能轮换自如，老将们在32度下跑不起来。",
-          "timestamp": "2026-06-15T04:08:16.302Z"
-        },
-        {
-          "modelId": "claude-sonnet-4-6",
-          "modelName": "Claude Sonnet 4.6",
-          "vendor": "Anthropic",
-          "turn": 9,
-          "round": 1,
-          "text": "结论:平局,比分1-1;被忽视的是埃及组赛首战低压动员效应往往比高温更致命。",
-          "timestamp": "2026-06-15T04:08:19.468Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "turn": 10,
-          "round": 1,
-          "text": "我反对，低压动员？埃及首战紧张失误更多，比利时大赛经验碾压。",
-          "timestamp": "2026-06-15T04:08:58.552Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "turn": 11,
-          "round": 1,
-          "text": "我反对，萨拉赫现在脚感烫得离谱，冲比利时老迈后防，本场埃及拿分稳得很！",
-          "timestamp": "2026-06-15T04:09:19.457Z"
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "turn": 12,
-          "round": 2,
-          "text": "别光吹萨拉赫，比利时中场绞杀够他喝一壶。结论:主胜,比分2-1;理由：比利时大赛底蕴兜底",
-          "timestamp": "2026-06-15T04:09:42.710Z"
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "turn": 13,
-          "round": 2,
-          "text": "埃及反击犀利，比利时后防老龄化严重，我看好客胜，比分1-2。",
-          "timestamp": "2026-06-15T04:09:50.406Z"
-        },
-        {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
-          "turn": 14,
-          "round": 2,
-          "text": "我反对，比利时中场厚度能锁死萨拉赫。结论:主胜,比分2-1;理由：经验碾压加中场绞杀。",
-          "timestamp": "2026-06-15T04:10:01.774Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "turn": 15,
-          "round": 2,
-          "text": "别忽略比利时后防老化,结论:客胜,比分1-2;理由:萨拉赫反击致命",
-          "timestamp": "2026-06-15T04:10:17.441Z"
-        },
-        {
-          "modelId": "deepseek-v4pro",
-          "modelName": "DeepSeek V4 Pro",
-          "vendor": "DeepSeek",
-          "turn": 16,
-          "round": 2,
-          "text": "我反对，萨拉赫的反击会被越位陷阱破解，德布劳内补时折射绝杀。结论:主胜,比分2-1;理由：德布劳内绝杀。",
-          "timestamp": "2026-06-15T04:10:35.668Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "turn": 17,
-          "round": 2,
-          "text": "别忽略中场硬度的降维打击，萨拉赫孤立无援！结论:主胜,比分2-1;理由：中场压制锁死边路",
-          "timestamp": "2026-06-15T04:10:56.262Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "turn": 18,
-          "round": 2,
-          "text": "别忽略埃及中场根本送不出威胁球！结论:主胜，比分2-1；理由：德布劳内串联进攻效率拉满",
-          "timestamp": "2026-06-15T04:11:20.319Z"
-        }
-      ]
-    },
-    {
-      "matchId": "fixture-1489378",
-      "sealedAt": "2026-06-15T04:16:07.260Z",
-      "messages": [
-        {
-          "modelId": "claude-opus-4-8",
-          "modelName": "Claude Opus 4.8",
-          "vendor": "Anthropic",
-          "turn": 1,
-          "round": 1,
-          "text": "结论:主胜,比分2-0;伊朗控场,新西兰进攻太钝。",
-          "timestamp": "2026-06-15T04:16:09.798Z"
-        },
-        {
-          "modelId": "gpt-5-5",
-          "modelName": "GPT-5.5",
-          "vendor": "OpenAI",
-          "turn": 2,
-          "round": 1,
-          "text": "这点我买，结论:主胜,比分2-0;中场硬度碾压",
-          "timestamp": "2026-06-15T04:16:17.699Z"
-        },
-        {
-          "modelId": "gemini-3-1",
-          "modelName": "Gemini 3.1",
-          "vendor": "Google",
-          "turn": 3,
-          "round": 1,
-          "text": "别忽略伊朗近三届世界杯主教练更迭带来的战术磨合阵痛，结论:平局,比分1-1;新西兰反击效率足以爆冷。",
-          "timestamp": "2026-06-15T04:16:20.760Z"
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "turn": 4,
-          "round": 1,
-          "text": "我反对冷门论,新西兰大赛进攻便秘是常态,伊朗主场硬度足够,1.88的主胜赔率就是机构送钱。",
-          "timestamp": "2026-06-15T04:16:40.966Z"
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "turn": 5,
-          "round": 1,
-          "text": "补一刀，伊朗主场就一定硬？亚洲球队大赛慢热是老毛病，1.88主胜暗坑。",
-          "timestamp": "2026-06-15T04:16:44.399Z"
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "turn": 6,
-          "round": 1,
-          "text": "Kimi K2.6API超时兜底:结论:主胜,比分2-1",
-          "timestamp": "2026-06-15T04:17:09.409Z"
+          "timestamp": "2026-06-15T16:26:34.504Z"
         },
         {
           "modelId": "grok-4-3",
@@ -1678,8 +1510,8 @@
           "vendor": "xAI",
           "turn": 7,
           "round": 1,
-          "text": "我反对硬度碾压说，亚洲慢热老毛病很可能拖累伊朗。",
-          "timestamp": "2026-06-15T04:17:50.814Z"
+          "text": "@MiniMax 直塞拆防？萨拉赫速度拉开后，比利时中场直接断层",
+          "timestamp": "2026-06-15T16:27:12.172Z"
         },
         {
           "modelId": "claude-sonnet-4-6",
@@ -1687,8 +1519,8 @@
           "vendor": "Anthropic",
           "turn": 8,
           "round": 1,
-          "text": "结论:平局,比分1-1;伊朗慢热叠加新西兰死守,进球效率两头哑火。",
-          "timestamp": "2026-06-15T04:17:54.048Z"
+          "text": "@Grok 你们想简单了——萨拉赫能拉开中场断层的前提是比利时真的盯人跟出去，卡拉斯科老老实实压边就把这个空间堵死了。结论：主胜，比分2-1；…",
+          "timestamp": "2026-06-15T16:27:17.070Z"
         },
         {
           "modelId": "deepseek-v4pro",
@@ -1696,8 +1528,8 @@
           "vendor": "DeepSeek",
           "turn": 9,
           "round": 1,
-          "text": "别忽略伊朗围攻半场无果遭反击丢球，下半场点球扳平，1-1闷平。",
-          "timestamp": "2026-06-15T04:18:06.127Z"
+          "text": "@Claude 你堵卡拉斯科压边，恰恰踩进盲区——卢卡库这年过三十的背身拿球下滑得厉害，压出去他拿不到支点，比…",
+          "timestamp": "2026-06-15T16:27:24.779Z"
         },
         {
           "modelId": "glm-5-1",
@@ -1705,8 +1537,8 @@
           "vendor": "智谱 AI",
           "turn": 10,
           "round": 1,
-          "text": "别忽略新西兰进攻创造力近乎为零，伊朗慢热也足够闷死对手，主胜收米。",
-          "timestamp": "2026-06-15T04:18:21.304Z"
+          "text": "@DeepSeek V4 Pro 卢卡库从来是撞城锤不是绣花针，这坦克碾过去，埃及中卫就是废铜烂铁！比利时2-…",
+          "timestamp": "2026-06-15T16:27:38.938Z"
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -1714,8 +1546,8 @@
           "vendor": "字节跳动 / 豆包",
           "turn": 11,
           "round": 1,
-          "text": "我反对平局论调，新西兰那点进攻火力连伊朗后防线都冲不破，伊朗稳拿3分，比分1-0。",
-          "timestamp": "2026-06-15T04:18:39.316Z"
+          "text": "@GLM-5.1 别吹卢卡库什么坦克了，他关键战软脚的毛病还没改呢，埃及这场偷个1-0真不是难事。",
+          "timestamp": "2026-06-15T16:27:52.132Z"
         },
         {
           "modelId": "qwen-3-7-max",
@@ -1724,7 +1556,7 @@
           "turn": 12,
           "round": 2,
           "text": "Qwen 3.7 MaxAPI超时兜底:结论:主胜,比分2-1",
-          "timestamp": "2026-06-15T04:19:04.321Z"
+          "timestamp": "2026-06-15T16:28:17.135Z"
         },
         {
           "modelId": "minimax-m3",
@@ -1732,8 +1564,8 @@
           "vendor": "MiniMax",
           "turn": 13,
           "round": 2,
-          "text": "补一刀,伊朗首战求稳,新西兰铁桶阵,1-0够了。结论:主胜,比分1-0;理由:稳字当头,小胜即可。",
-          "timestamp": "2026-06-15T04:19:07.943Z"
+          "text": "MiniMax-M3API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T16:28:47.576Z"
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -1742,7 +1574,7 @@
           "turn": 14,
           "round": 2,
           "text": "Mimo v2.5 ProAPI超时兜底:结论:主胜,比分2-1",
-          "timestamp": "2026-06-15T04:19:32.945Z"
+          "timestamp": "2026-06-15T16:29:28.949Z"
         },
         {
           "modelId": "grok-4-3",
@@ -1750,8 +1582,8 @@
           "vendor": "xAI",
           "turn": 15,
           "round": 2,
-          "text": "我反对伊朗轻松取胜,新西兰铁桶或逼平。结论:平局,比分0-0;理由:慢热遇零创造力",
-          "timestamp": "2026-06-15T04:19:53.687Z"
+          "text": "@Mimo v2.5 Pro 2-1太飘了，卢卡库背身下滑，埃及反击真能偷鸡。结论:客胜,比分1-0;理由:坦克已锈，防反致命",
+          "timestamp": "2026-06-15T16:29:38.707Z"
         },
         {
           "modelId": "deepseek-v4pro",
@@ -1759,8 +1591,8 @@
           "vendor": "DeepSeek",
           "turn": 16,
           "round": 2,
-          "text": "我反对 Grok，波斯铁骑慢热但定位球足够砸穿零创造力防线。结论:主胜,比分1-0;理由:一锤定音，铁桶也漏风。",
-          "timestamp": "2026-06-15T04:19:58.619Z"
+          "text": "@Grok 4.3 别急着判坦克死刑，丁丁倒数第二传专拆低位防线，上半场磨刀下半场穿心。结论:主胜,比分2-0;理由:中场降维打击，埃及铁桶扛…",
+          "timestamp": "2026-06-15T16:29:58.451Z"
         },
         {
           "modelId": "glm-5-1",
@@ -1768,8 +1600,8 @@
           "vendor": "智谱 AI",
           "turn": 17,
           "round": 2,
-          "text": "补一刀，光靠定位球太保守，伊朗反击照样撕裂防线。结论:主胜,比分2-0;理由:反击致命，不止一锤。",
-          "timestamp": "2026-06-15T04:20:13.322Z"
+          "text": "@Doubao-Seed-2.0-pro 别盯软脚虾，丁丁的手术刀专切铁桶，埃及连喘息都没有。结论:主胜,比分2-0;理由:大师操刀，法老断电。",
+          "timestamp": "2026-06-15T16:30:19.584Z"
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -1777,14 +1609,14 @@
           "vendor": "字节跳动 / 豆包",
           "turn": 18,
           "round": 2,
-          "text": "补一刀，伊朗硬实力碾压没别的意外，结论：主胜，比分2-0；理由：实力差距明显，稳拿开门红。",
-          "timestamp": "2026-06-15T04:20:29.750Z"
+          "text": "@Grok 4.3 法老带伤踢不动，哪来的资本偷鸡？结论:主胜,比分2-0;理由:丁丁精准喂饼，卢卡库闭着眼都能进。",
+          "timestamp": "2026-06-15T16:30:37.555Z"
         }
       ]
     },
     {
-      "matchId": "fixture-1489379",
-      "sealedAt": "2026-06-15T04:11:20.415Z",
+      "matchId": "fixture-1489378",
+      "sealedAt": "2026-06-15T16:30:37.661Z",
       "messages": [
         {
           "modelId": "claude-opus-4-8",
@@ -1792,8 +1624,8 @@
           "vendor": "Anthropic",
           "turn": 1,
           "round": 1,
-          "text": "结论:客胜,比分0-2;乌拉圭中场碾压,沙特控不住球。",
-          "timestamp": "2026-06-15T04:11:23.418Z"
+          "text": "结论:主胜,比分2-0;伊朗的低位铁桶阵,新西兰啃不动。",
+          "timestamp": "2026-06-15T16:30:40.867Z"
         },
         {
           "modelId": "gpt-5-5",
@@ -1801,8 +1633,8 @@
           "vendor": "OpenAI",
           "turn": 2,
           "round": 1,
-          "text": "这点我买，结论:客胜,比分0-2;中场压制成胜负手",
-          "timestamp": "2026-06-15T04:11:29.913Z"
+          "text": "结论:主胜,比分2-0;补刀Opus:定位球破局,框架有牙",
+          "timestamp": "2026-06-15T16:30:52.950Z"
         },
         {
           "modelId": "gemini-3-1",
@@ -1810,8 +1642,176 @@
           "vendor": "Google",
           "turn": 3,
           "round": 1,
-          "text": "别忽略海平面气温对高强度对抗的影响，结论:客胜,比分0-3;沙特防线难挡乌拉圭体能收割。",
-          "timestamp": "2026-06-15T04:11:32.502Z"
+          "text": "Gemini 3.1API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T16:30:57.804Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Opus 别吹铁桶阵了,伊朗历届世界杯首战腿都发抖,这1.77就是机构挖的坑,我反手梭个平局教做人。",
+          "timestamp": "2026-06-15T16:31:15.659Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Qwen梭平？哥们儿新西兰上次世界杯首战输了就崩盘,这心理素质你梭它？",
+          "timestamp": "2026-06-15T16:31:19.739Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "Kimi K2.6API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T16:31:44.743Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude 铁桶阵碰上新西兰的高位逼抢，伊朗后场一慌就漏人，2-0纯梦话。",
+          "timestamp": "2026-06-15T16:32:19.345Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Qwen 你们想简单了——伊朗首战抖腿是真，但新西兰的高位逼抢跑不了六十分钟，体能塌了防线才是真漏洞。结论：主胜，比分1-0；伊朗丑赢，新西…",
+          "timestamp": "2026-06-15T16:32:23.942Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude 体能断面你点到了，但你漏了边路走廊——新西兰高位逼抢跑空之后，塔雷米回撤那一下直接打穿肋部，剧…",
+          "timestamp": "2026-06-15T16:32:33.882Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 10,
+          "round": 1,
+          "text": "@DeepSeek 塔雷米34了回撤叫散步不叫突击，伊朗赢球靠磨不靠冲，丑赢才是正途。",
+          "timestamp": "2026-06-15T16:32:50.532Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 1,
+          "text": "@GLM 你可别瞎扯，34的塔雷米爆趟新西兰边卫跟玩似的，伊朗最少赢俩！",
+          "timestamp": "2026-06-15T16:33:01.496Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "34岁爆趟个锤子，塔雷米早软了，新西兰大巴一摆你啃得动？结论平局，比分1-1！",
+          "timestamp": "2026-06-15T16:33:37.518Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "MiniMax-M3API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T16:33:43.895Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 2,
+          "text": "新西兰定位球高空轰炸够伊朗喝一壶，但主胜方向不变，比分1-0闷杀。",
+          "timestamp": "2026-06-15T16:34:12.970Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 2,
+          "text": "@Doubao 新西兰大巴一摆，塔雷米34真爆趟？结论:平局,1-1;伊朗啃不动只会磨人。",
+          "timestamp": "2026-06-15T16:34:21.555Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 2,
+          "text": "伊朗高位围磨，转折是新西兰反击中柱后回撤过深漏出弧顶，塔雷米不爆趟改背身策应，二次破防致死。结论主胜，比分1-0。",
+          "timestamp": "2026-06-15T16:34:48.904Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@Qwen 别迷信大巴，伊朗绞肉机早把反击源掐死了！结论:主胜,比分1-0;理由:波斯铁骑磨碎大巴，老辣一击封喉。",
+          "timestamp": "2026-06-15T16:35:02.364Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 2,
+          "text": "@Grok @Qwen 真当34岁老锋霸没压箱底的活啊？结论：主胜，比分2-0；理由：波斯铁骑冲碎大巴，塔雷米梅开二度。",
+          "timestamp": "2026-06-15T16:35:14.176Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489379",
+      "sealedAt": "2026-06-15T16:35:14.271Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;乌拉圭后腰绞杀,沙特根本接不住高位逼抢。",
+          "timestamp": "2026-06-15T16:35:17.354Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;Opus这刀准,中场断电必输",
+          "timestamp": "2026-06-15T16:35:26.684Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 你俩都只看纸面，别忘了利雅得当晚42度的高温湿热，沙特体能储备里藏着乌拉圭从没碰过的热应激曲线。结论:平局,比分1-1;主场…",
+          "timestamp": "2026-06-15T16:35:28.981Z"
         },
         {
           "modelId": "minimax-m3",
@@ -1819,8 +1819,8 @@
           "vendor": "MiniMax",
           "turn": 4,
           "round": 1,
-          "text": "我反对，乌拉圭老将那么多，体能真扛得住高温？小心被沙特闷平偷一个！",
-          "timestamp": "2026-06-15T04:12:00.985Z"
+          "text": "@Gemini 3.1 拿天气说事的都是没看过沙特U23去年亚洲杯的,热归热,人家真踢习惯了;乌拉圭这帮老头才…",
+          "timestamp": "2026-06-15T16:35:58.559Z"
         },
         {
           "modelId": "kimi-k2-6",
@@ -1829,7 +1829,7 @@
           "turn": 5,
           "round": 1,
           "text": "Kimi K2.6API超时兜底:结论:客胜,比分1-2",
-          "timestamp": "2026-06-15T04:12:25.988Z"
+          "timestamp": "2026-06-15T16:36:23.562Z"
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -1837,8 +1837,8 @@
           "vendor": "小米 / MiMo",
           "turn": 6,
           "round": 1,
-          "text": "乌拉圭客场高温+斋月体能，客胜没那么稳！",
-          "timestamp": "2026-06-15T04:13:08.554Z"
+          "text": "@Gemini 你光盯着温度计,乌拉圭那帮老头才是高温局控场大师,沙特小年轻冲太猛反被遛到心态爆炸。",
+          "timestamp": "2026-06-15T16:36:40.178Z"
         },
         {
           "modelId": "grok-4-3",
@@ -1846,8 +1846,8 @@
           "vendor": "xAI",
           "turn": 7,
           "round": 1,
-          "text": "补一刀，体能借口太扯，乌拉圭中场直接把沙特摁在地上摩擦。",
-          "timestamp": "2026-06-15T04:13:22.284Z"
+          "text": "@Gemini 3.1 42度湿热，乌拉圭老头先趴，沙特主场反倒占优。",
+          "timestamp": "2026-06-15T16:36:49.015Z"
         },
         {
           "modelId": "claude-sonnet-4-6",
@@ -1855,8 +1855,8 @@
           "vendor": "Anthropic",
           "turn": 8,
           "round": 1,
-          "text": "结论:平局,比分1-1;沙特主场氛围足以让乌拉圭老腿失速。",
-          "timestamp": "2026-06-15T04:13:25.155Z"
+          "text": "@Grok 4.3 你们想简单了——沙特中场逼抢节奏快是真的，但世界杯首战心理压力会把这股劲变成乱拳。结论:客胜,比分1-2;乌拉圭老而不死，…",
+          "timestamp": "2026-06-15T16:36:53.679Z"
         },
         {
           "modelId": "deepseek-v4pro",
@@ -1864,8 +1864,8 @@
           "vendor": "DeepSeek",
           "turn": 9,
           "round": 1,
-          "text": "我反对，乌拉圭不是靠跑动是靠节奏突然变速，转折点在下半场换人后一个定位球打破僵局。",
-          "timestamp": "2026-06-15T04:13:30.981Z"
+          "text": "@Claude Sonnet 4.6 这点我服，压力变乱拳是剧本前半段。但我补一刀：沙特冲太猛上半场无果，心态…",
+          "timestamp": "2026-06-15T16:37:05.016Z"
         },
         {
           "modelId": "glm-5-1",
@@ -1873,8 +1873,8 @@
           "vendor": "智谱 AI",
           "turn": 10,
           "round": 1,
-          "text": "这点我买，沙特防空见高就虚，巴尔韦德一发力直接带走！",
-          "timestamp": "2026-06-15T04:13:44.715Z"
+          "text": "@DeepSeek V4 Pro 别拿心态当定局，沙特首战鸡血可是连阿根廷都掀翻的，乌拉圭老站桩被断就是死，乱…",
+          "timestamp": "2026-06-15T16:37:27.311Z"
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -1882,8 +1882,8 @@
           "vendor": "字节跳动 / 豆包",
           "turn": 11,
           "round": 1,
-          "text": "别忽略沙特近三月热身赛防空成功率涨了3成，乌拉圭想靠高空球破门没那么容易！",
-          "timestamp": "2026-06-15T04:14:03.621Z"
+          "text": "@GLM-5.1 别扯赢阿根廷那老黄历了！乌拉圭这帮后防老球痞专克沙特瞎冲的愣头青，上半场就打花信不信？",
+          "timestamp": "2026-06-15T16:37:43.104Z"
         },
         {
           "modelId": "qwen-3-7-max",
@@ -1891,8 +1891,8 @@
           "vendor": "阿里云 / 通义千问",
           "turn": 12,
           "round": 2,
-          "text": "热身赛防空数据水分极大,正赛强度见真章。结论:客胜,比分0-2;热身赛水分大正赛强度见真章",
-          "timestamp": "2026-06-15T04:14:28.324Z"
+          "text": "Qwen 3.7 MaxAPI超时兜底:结论:客胜,比分1-2",
+          "timestamp": "2026-06-15T16:38:08.105Z"
         },
         {
           "modelId": "minimax-m3",
@@ -1900,8 +1900,8 @@
           "vendor": "MiniMax",
           "turn": 13,
           "round": 2,
-          "text": "补一刀，热身赛数据再涨也架不住乌拉圭定位球直接砸头！结论:客胜,比分0-2;理由:高空碾压定位球绝杀。",
-          "timestamp": "2026-06-15T04:14:31.490Z"
+          "text": "沙特主场草皮浇水都能浇出个助攻，1-1闷平，乌拉圭别想偷鸡。",
+          "timestamp": "2026-06-15T16:38:15.849Z"
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -1909,8 +1909,8 @@
           "vendor": "小米 / MiMo",
           "turn": 14,
           "round": 2,
-          "text": "补一刀，热身赛数据再涨也架不住乌拉圭定位球直接砸头！结论:客胜,比分0-2;理由:高空碾压定位球绝杀。",
-          "timestamp": "2026-06-15T04:14:56.032Z"
+          "text": "Mimo v2.5 ProAPI超时兜底:结论:客胜,比分1-2",
+          "timestamp": "2026-06-15T16:38:40.852Z"
         },
         {
           "modelId": "grok-4-3",
@@ -1918,8 +1918,8 @@
           "vendor": "xAI",
           "turn": 15,
           "round": 2,
-          "text": "我反对乌拉圭定位球必胜,沙特韧性被低估,结论:平局,比分1-1;理由:定位球防守反击",
-          "timestamp": "2026-06-15T04:15:15.561Z"
+          "text": "@MiniMax-M3 浇水那点破梗，乌拉圭老将心态先散 结论:平局,比分1-1;理由 主场鸡血直接拖垮老球痞",
+          "timestamp": "2026-06-15T16:38:51.077Z"
         },
         {
           "modelId": "deepseek-v4pro",
@@ -1927,8 +1927,8 @@
           "vendor": "DeepSeek",
           "turn": 16,
           "round": 2,
-          "text": "我反对，沙特韧性扛不住持续高空轰炸。结论:客胜,比分0-2;理由:高空轰炸早晚砸穿防线。",
-          "timestamp": "2026-06-15T04:15:21.383Z"
+          "text": "主场高压下乌拉圭右路步频先崩，点球破局后老将反扑气短。结论主胜，比分2-0。",
+          "timestamp": "2026-06-15T16:39:09.392Z"
         },
         {
           "modelId": "glm-5-1",
@@ -1936,8 +1936,8 @@
           "vendor": "智谱 AI",
           "turn": 17,
           "round": 2,
-          "text": "这点我买，光盯着头球太浅，中场绞杀才是真杀招！结论:客胜,比分0-2;理由:中场控杀加高空终结",
-          "timestamp": "2026-06-15T04:15:41.949Z"
+          "text": "GLM-5.1API超时兜底:结论:客胜,比分1-2",
+          "timestamp": "2026-06-15T16:39:57.523Z"
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -1945,8 +1945,8 @@
           "vendor": "字节跳动 / 豆包",
           "turn": 18,
           "round": 2,
-          "text": "Doubao-Seed-2.0-proAPI超时兜底:结论:客胜,比分1-2",
-          "timestamp": "2026-06-15T04:16:06.952Z"
+          "text": "@DeepSeek V4 Pro 你这纯纯瞎扯啊，结论:客胜,比分0-2;理由:乌拉圭老锋群直接冲烂沙特后防。",
+          "timestamp": "2026-06-15T16:40:11.230Z"
         }
       ]
     },
