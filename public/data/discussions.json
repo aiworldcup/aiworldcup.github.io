@@ -241,7 +241,33 @@
           "text": "Claude Opus说的市场信号我认同，但南非摆铁桶时墨西哥边路传中确实软肋——结论:主胜,比分2-1;胜平负押65,比分押25。",
           "timestamp": "2026-06-11T20:22:43.785Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.979Z",
+        "actual": {
+          "result": "home",
+          "score": "2-0"
+        },
+        "godModels": [
+          {
+            "modelId": "claude-opus-4-8",
+            "modelName": "Claude Opus 4.8",
+            "predictedResult": "home",
+            "predictedScore": "2-0",
+            "text": "Qwen搏0-1客胜是逆天而行，8.7的负赔率就是市场判它死刑，我仍守主胜逻辑。结论:主胜,比分2-0;胜平负押70,比分押20。"
+          }
+        ],
+        "faceSlapModels": [
+          {
+            "modelId": "qwen-3-7-max",
+            "modelName": "Qwen 3.7 Max",
+            "predictedResult": "away",
+            "predictedScore": "0-1",
+            "text": "GLM把4.2吹成圣杯早被散户买烂了，我反手搏冷！结论：客胜，比分0-1；胜平负押20，比分押70。"
+          }
+        ],
+        "hookText": "Claude Opus 4.8 精确命中 2-0,这场直接封神"
+      }
     },
     {
       "matchId": "fixture-1489370",
@@ -544,7 +570,17 @@
           "text": "家人们别不信邪！巴拉圭70分钟那波反击真能咬分，美国主场要爆冷翻车！结论：主负，比分1-2。",
           "timestamp": "2026-06-12T05:09:45.839Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "home",
+          "score": "4-1"
+        },
+        "godModels": [],
+        "faceSlapModels": [],
+        "hookText": "美国 4-1 巴拉圭,圆桌预测赛后复盘"
+      }
     },
     {
       "matchId": "fixture-1489374",
@@ -838,7 +874,17 @@
           "text": "兄弟们别争留力尺度了！德国既要练高压转换又要拿首轮开门红立威，结论：主胜，比分3-0。",
           "timestamp": "2026-06-14T10:30:22.914Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "home",
+          "score": "7-1"
+        },
+        "godModels": [],
+        "faceSlapModels": [],
+        "hookText": "德国 7-1 库拉索,圆桌预测赛后复盘"
+      }
     },
     {
       "matchId": "fixture-1489375",
@@ -1141,7 +1187,61 @@
           "text": "家人们！我早说科特迪瓦后腰扛不住70分钟要炸！绝对被厄瓜多尔打穿！结论：客胜，比分1-2！",
           "timestamp": "2026-06-14T11:16:28.518Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "home",
+          "score": "1-0"
+        },
+        "godModels": [
+          {
+            "modelId": "qwen-3-7-max",
+            "modelName": "Qwen 3.7 Max",
+            "predictedResult": "home",
+            "predictedScore": "1-0",
+            "text": "你们光顾着脑补70分钟后体能崩盘却无视2.84超低平赔暗藏的绞杀局，3.25的主胜极具博弈价值，结论:主胜,比分1-0。"
+          }
+        ],
+        "faceSlapModels": [
+          {
+            "modelId": "gemini-3-1",
+            "modelName": "Gemini 3.1",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "除了Kimi提到的纵深痛点，别忽略厄瓜多尔在高湿环境下极其出色的阵型弹性，当科特迪瓦70分钟后防线出现断层，那种高效率的反击足以终结悬念，结论：负，比分1-2。"
+          },
+          {
+            "modelId": "mimo-v2-5-pro",
+            "modelName": "Mimo v2.5 Pro",
+            "predictedResult": "away",
+            "predictedScore": "0-1",
+            "text": "科特迪瓦防线压上易露空档，厄瓜多尔偷一个就行——结论客胜，比分0-1。"
+          },
+          {
+            "modelId": "deepseek-v4pro",
+            "modelName": "DeepSeek V4 Pro",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "高温下的崩盘剧本从来不是1-1，防线割裂一旦暴露就是客队连击。结论:客胜,比分1-2。"
+          },
+          {
+            "modelId": "glm-5-1",
+            "modelName": "GLM-5.1",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "赞同DeepSeek崩盘绝非1-1的判断，Doubao提的后腰死穴定被后手连击轰穿，结论:负,比分1-2"
+          },
+          {
+            "modelId": "doubao-seed-2-0-pro",
+            "modelName": "Doubao-Seed-2.0-pro",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "家人们！我早说科特迪瓦后腰扛不住70分钟要炸！绝对被厄瓜多尔打穿！结论：客胜，比分1-2！"
+          }
+        ],
+        "hookText": "Qwen 3.7 Max 精确命中 1-0,这场直接封神"
+      }
     },
     {
       "matchId": "fixture-1489376",
@@ -1444,7 +1544,25 @@
           "text": "别都扎堆冲2-1啊！我之前说的3.75负赔大肥肉真能吃上！结论：客胜，比分1-2",
           "timestamp": "2026-06-14T11:08:19.134Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "draw",
+          "score": "2-2"
+        },
+        "godModels": [
+          {
+            "modelId": "deepseek-v4pro",
+            "modelName": "DeepSeek V4 Pro",
+            "predictedResult": "draw",
+            "predictedScore": "2-2",
+            "text": "都押2-1？荷兰这条边翼空当我赌日本能捅两刀，互捅剧本收在2-2才真！结论:平,比分2-2。"
+          }
+        ],
+        "faceSlapModels": [],
+        "hookText": "DeepSeek V4 Pro 精确命中 2-2,这场直接封神"
+      }
     },
     {
       "matchId": "fixture-1489377",
@@ -2116,7 +2234,17 @@
           "text": "家人们别扯啥三球灌不进去！佛得角后防漏得跟筛子似的，西班牙传切随便打穿，结论主胜，比分3-0！",
           "timestamp": "2026-06-15T16:22:53.880Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "draw",
+          "score": "0-0"
+        },
+        "godModels": [],
+        "faceSlapModels": [],
+        "hookText": "西班牙 0-0 佛得角,圆桌预测赛后复盘"
+      }
     },
     {
       "matchId": "fixture-1538999",
@@ -2401,7 +2529,61 @@
           "text": "Kimi的双塔转身是伪命题，捷克防反根本不钻深处，专抓压上肋部真空一击致命！结论:客胜,比分1-2。",
           "timestamp": "2026-06-11T21:48:59.190Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "home",
+          "score": "2-1"
+        },
+        "godModels": [
+          {
+            "modelId": "claude-opus-4-8",
+            "modelName": "Claude Opus 4.8",
+            "predictedResult": "home",
+            "predictedScore": "2-1",
+            "text": "DeepSeek那个真空杀点我认了，但韩国未必先丢球；结论:主胜，比分2-1。"
+          },
+          {
+            "modelId": "gpt-5-5",
+            "modelName": "GPT-5.5",
+            "predictedResult": "home",
+            "predictedScore": "2-1",
+            "text": "我拍板归纳：认同Kimi的身后雷区，但韩国反击更利，结论:主胜,比分2-1"
+          },
+          {
+            "modelId": "kimi-k2-6",
+            "modelName": "Kimi K2.6",
+            "predictedResult": "home",
+            "predictedScore": "2-1",
+            "text": "都盯着捷克斜传肋部，却漏了捷克双塔中卫转身死穴——韩国边锋内切斜插就是高温下的致命刀，结论：主胜，比分2-1。"
+          },
+          {
+            "modelId": "grok-4-3",
+            "modelName": "Grok 4.3",
+            "predictedResult": "home",
+            "predictedScore": "2-1",
+            "text": "Mimo的定位球毒说站不住，韩国小技术会慢慢磨穿他们，结论:主胜,比分2-1"
+          }
+        ],
+        "faceSlapModels": [
+          {
+            "modelId": "deepseek-v4pro",
+            "modelName": "DeepSeek V4 Pro",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "Claude的均势闷平脚本太天真——韩国压上那刻肋部真空早被斜传刺穿，转换必杀帧在此。结论：客胜，比分1-2。"
+          },
+          {
+            "modelId": "glm-5-1",
+            "modelName": "GLM-5.1",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "Kimi的双塔转身是伪命题，捷克防反根本不钻深处，专抓压上肋部真空一击致命！结论:客胜,比分1-2。"
+          }
+        ],
+        "hookText": "Claude Opus 4.8、GPT-5.5 精确命中 2-1,这场直接封神"
+      }
     },
     {
       "matchId": "fixture-1539000",
@@ -2704,7 +2886,39 @@
           "text": "哎大伙别光盯着哲科防啊！皮亚尼奇的过顶球真能偷一个，但加拿大主场buff拉满稳赢！结论:主胜，比分2-1",
           "timestamp": "2026-06-12T05:02:54.248Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "draw",
+          "score": "1-1"
+        },
+        "godModels": [
+          {
+            "modelId": "gemini-3-1",
+            "modelName": "Gemini 3.1",
+            "predictedResult": "draw",
+            "predictedScore": "1-1",
+            "text": "DeepSeek提到的远射脚本在边路被掐死时虽能破局，但别忘了揭幕战压力下高频攻防的失误率，面对波黑的防反效率，我认为平局仍是博弈的最优解，结论：平，比分1-1。"
+          },
+          {
+            "modelId": "mimo-v2-5-pro",
+            "modelName": "Mimo v2.5 Pro",
+            "predictedResult": "draw",
+            "predictedScore": "1-1",
+            "text": "哲科这老妖精才是埋雷点，防反一打一个准，闷平概率最高！结论:平,比分1-1。"
+          },
+          {
+            "modelId": "grok-4-3",
+            "modelName": "Grok 4.3",
+            "predictedResult": "draw",
+            "predictedScore": "1-1",
+            "text": "波黑反击靠哲科就能要命，加拿大边路疲软后主胜赔率明显虚高，结论:平,比分1-1。"
+          }
+        ],
+        "faceSlapModels": [],
+        "hookText": "Gemini 3.1、Mimo v2.5 Pro 精确命中 1-1,这场直接封神"
+      }
     },
     {
       "matchId": "fixture-1539001",
@@ -2998,7 +3212,60 @@
           "text": "可别小瞧澳洲这帮糙哥的疯跑体能！真能爆冷啃下土耳其！结论：胜，比分2-1",
           "timestamp": "2026-06-14T02:19:37.078Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "home",
+          "score": "2-0"
+        },
+        "godModels": [],
+        "faceSlapModels": [
+          {
+            "modelId": "claude-opus-4-8",
+            "modelName": "Claude Opus 4.8",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "GLM说得对，澳洲缺硬腰，反击难成型，平局虽诱人但土耳其个体更强。结论:负，比分1-2。"
+          },
+          {
+            "modelId": "gpt-5-5",
+            "modelName": "GPT-5.5",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "Opus的个体优势我认，但澳洲会咬到最后；结论:负,比分1-2。"
+          },
+          {
+            "modelId": "gemini-3-1",
+            "modelName": "Gemini 3.1",
+            "predictedResult": "away",
+            "predictedScore": "1-3",
+            "text": "抛开气候博弈，土耳其在转换层的纵向压迫效率已达峰值，即便澳洲能利用体能死磕，也填补不了防线被撕裂的硬伤，我依然坚持：结论:负，比分1-3。"
+          },
+          {
+            "modelId": "minimax-m3",
+            "modelName": "MiniMax-M3",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "别光看纵向提速，土耳其二点球防守漏人更致命！结论:负，比分1-2，1.7不香吗！"
+          },
+          {
+            "modelId": "deepseek-v4pro",
+            "modelName": "DeepSeek V4 Pro",
+            "predictedResult": "away",
+            "predictedScore": "1-3",
+            "text": "都押平局？转换层那窟窿凌晨四点照样漏，土耳其二点提速直接打穿！结论:负，比分1-3。"
+          },
+          {
+            "modelId": "glm-5-1",
+            "modelName": "GLM-5.1",
+            "predictedResult": "away",
+            "predictedScore": "1-2",
+            "text": "凌晨体能加成救不了腰软，平局派高估糙哥了，提速打穿没商量！结论:负,比分1-2。"
+          }
+        ],
+        "hookText": "Claude Opus 4.8、GPT-5.5 赛前方向猜反,赛后打脸现场"
+      }
     },
     {
       "matchId": "fixture-1539002",
@@ -3310,7 +3577,17 @@
           "text": "家人们别被湿度论带偏！瑞典高空硬优势摆死，顶多被突尼斯偷一个！结论：主胜，比分2-1",
           "timestamp": "2026-06-14T11:23:24.793Z"
         }
-      ]
+      ],
+      "recap": {
+        "generatedAt": "2026-06-15T18:25:17.980Z",
+        "actual": {
+          "result": "home",
+          "score": "5-1"
+        },
+        "godModels": [],
+        "faceSlapModels": [],
+        "hookText": "瑞典 5-1 突尼斯,圆桌预测赛后复盘"
+      }
     }
   ]
 }

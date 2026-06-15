@@ -1,0 +1,18 @@
+{
+  "updatedAt": "2026-06-16T00:00:00+08:00",
+  "sourceNote": "2026 FIFA World Cup A-L group composition cross-checked against public group pages/news summaries and the local group-stage round-robin schedule. Team names match public/data/matches.json.",
+  "groups": {
+    "A": ["墨西哥", "南非", "韩国", "捷克"],
+    "B": ["加拿大", "波黑", "卡塔尔", "瑞士"],
+    "C": ["巴西", "摩洛哥", "海地", "苏格兰"],
+    "D": ["美国", "巴拉圭", "澳大利亚", "土耳其"],
+    "E": ["德国", "库拉索", "科特迪瓦", "厄瓜多尔"],
+    "F": ["荷兰", "日本", "瑞典", "突尼斯"],
+    "G": ["比利时", "埃及", "伊朗", "新西兰"],
+    "H": ["西班牙", "佛得角", "沙特阿拉伯", "乌拉圭"],
+    "I": ["法国", "塞内加尔", "伊拉克", "挪威"],
+    "J": ["阿根廷", "阿尔及利亚", "奥地利", "约旦"],
+    "K": ["葡萄牙", "民主刚果", "乌兹别克斯坦", "哥伦比亚"],
+    "L": ["英格兰", "克罗地亚", "加纳", "巴拿马"]
+  }
+}
