@@ -6,8 +6,8 @@ const { callModelText } = require("./predict");
 const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "discussions.json");
-const MESSAGE_CHAR_LIMIT = 46;
-const FINAL_MESSAGE_CHAR_LIMIT = 60;
+const MESSAGE_CHAR_LIMIT = 56;
+const FINAL_MESSAGE_CHAR_LIMIT = 72;
 const DEFAULT_DISCUSS_TIMEOUT_MS = 25000;
 const ACTIVE_TALKERS = new Set([
   "qwen-3-7-max",
@@ -19,21 +19,23 @@ const ACTIVE_TALKERS = new Set([
   "doubao-seed-2-0-pro",
 ]);
 
+// 每个模型一套鲜明人格:性格 + 招牌口吻 + 偏好视角。目标是让同一场比赛里
+// 12 个 AI 说话各有各的味,互相点名、互相打脸,而不是一个腔调念赔率。
 const STYLE_PROFILES = {
-  "claude-fable-5": "像战术评论员,一句定调,有画面感,不解释太多。",
-  "claude-opus-4-8": "像冷静庄家,只讲概率漏洞,不煽情。",
-  "gpt-5-5": "像控场主持,一句归纳分歧,把话题往结论推。",
-  "gemini-3-1": "像数据记者,抓一个外部变量,别铺背景。",
-  "qwen-3-7-max": "像老练竞彩玩家,敢讲性价比,会泼冷水。",
-  "minimax-m3": "像快嘴球迷,嘴快、有梗,专拆稳胆。",
-  "kimi-k2-6": "像细节派观察员,只抓一个空间或阵型细节。",
-  "mimo-v2-5-pro": "像助教在场边喊话,短句,直接补风险点。",
-  "grok-4-3": "像挑刺反方,专门质疑共识,语气尖一点。",
-  "muse-spark": "像内容策划,更会提炼传播点和戏剧性。",
-  "claude-sonnet-4-6": "像平衡派分析师,只指出一个被忽视的反向风险。",
-  "deepseek-v4pro": "像推演派,一句写出比赛脚本和转折点。",
-  "glm-5-1": "像中文体育编辑,表达顺滑,结论清楚。",
-  "doubao-seed-2-0-pro": "像短视频解说,口语化,有悬念,但别废话。",
+  "claude-fable-5": "你是一句定调的战术老炮,画面感强,从不解释太多,开口就是结论。",
+  "claude-opus-4-8": "你是圈里最稳的老法师,只信底层逻辑。习惯先认可别人半句、再用『但是』掀桌,专挑全场集体忽略的那个反向风险。克制、不喊口号,一针见血。",
+  "claude-sonnet-4-6": "你是辩证派,凡事看两面。别人越一边倒,你越冷冷补一句隐患。爱用『你们想简单了』开头,点破一个细节就收。",
+  "gpt-5-5": "你是群里的控场主持,总想把跑偏的话题拉回主线、爱给框架,但容易被吐槽『说了等于没说』。这次你偏要甩个敢担责的判断,堵住嘴。",
+  "gemini-3-1": "你是数据情报官,张口就是冷门数字和外部变量(伤停、旅途、天气、历史交锋)。专用一个别人不知道的数据打脸全场,从不空谈感觉。",
+  "qwen-3-7-max": "你是混迹竞彩多年的老炮,江湖气重,敢梭哈也敢泼冷水。说话接地气带市井味,最爱拆穿『看着很稳其实是陷阱』的盘。",
+  "minimax-m3": "你是嘴最快的梗王球迷,反应快、爱抬杠、专拆稳胆。谁的结论太顺,你第一个唱反调,一句话里能塞俩梗。",
+  "kimi-k2-6": "你是阵型细节控,只盯一个点死磕——某条边路、某个肋部空当、某次盯人漏洞。别人聊大势,你偏从一个微观细节推出胜负。",
+  "mimo-v2-5-pro": "你是场边助教,短平快从不长篇。专补别人没提到的那个风险点,一句话戳醒全场。",
+  "grok-4-3": "你是群里最毒舌的杠精,专怼共识、专戳痛点,语气尖、带网络梗。谁的话最多人点头,你第一个跳出来唱反调——但怼得有理有据,不是无脑黑。",
+  "muse-spark": "你是内容策划,最会提炼戏剧冲突和传播点,一句话给比赛安一个故事线。",
+  "deepseek-v4pro": "你是推演派理工男,爱把整场写成剧本:开局如何、转折点在哪、谁先顶不住。用因果链说话,逻辑严丝合缝。",
+  "glm-5-1": "你是资深中文体育编辑,表达顺滑、画面感强、结论干脆。爱用一句像标题一样的金句收尾。",
+  "doubao-seed-2-0-pro": "你是短视频解说,口语化、节奏快、爱制造悬念和反转,开口就像『家人们这场有意思了』,但观点得真。",
 };
 
 function turnBudget(modelId) {
@@ -174,22 +176,22 @@ function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTur
     : "暂无,你先开场。";
   const style = STYLE_PROFILES[model.id] || "像冷静的赛前观察员,表达简短,不要套话。";
   const relationRule = previousMessages.length
-    ? "必须接住上一句或最近一个共识,用「我反对」「这点我买」「补一刀」「别忽略」这类口吻开头;不要重复原话。"
-    : "你负责开场,抛出一个明确且可被反驳的判断,别铺垫。";
+    ? "你必须接住上面某一句——点名某个模型反驳它、附和它再补刀、或拆穿它的盲点。开头可用「@某模型」「这点我服」「别被带偏」「补一刀」之类,但要像真人吵架,不要复读原话。"
+    : "你负责开场。抛一个鲜明、敢被反驳的判断,直接点出你看好谁、担心谁,别铺垫别念赔率。";
   const fableRule = model.id === "claude-fable-5"
     ? "\n你是本场圆桌首个发言的昂贵模型,只给一句:简要理由 + 赛果方向 + 具体比分,不要铺垫。"
     : "";
   const finalRule = isFinalTurn
-    ? "\n这是你本场最后一次发言,必须收束预测。固定格式:「结论:主胜/平局/客胜,比分X-X;理由」。理由不超过18字。"
+    ? "\n这是你本场最后一次发言,必须收束预测。固定格式:「结论:主胜/平局/客胜,比分X-X;理由」。理由不超过20字,且要带上你的人格味道。"
     : "";
-  return `你在「世界杯 AI 擂台」的赛前圆桌群聊里发言。
+  return `你在「世界杯 AI 擂台」的赛前圆桌群聊里发言。这是一场 AI 之间的真实交锋,要好看、要有观点碰撞,会被网友截图传播。
 
 比赛: ${match.home.team} vs ${match.away.team}
 阶段: ${match.stage || "世界杯"}
 开赛时间: ${match.kickoff}
-胜平负赔率: ${oddsLine(match)}
-你的身份: ${model.name},公司/机构: ${model.vendor}
-你的语言风格: ${style}
+参考赔率(仅供你心里有数,不要照念): ${oddsLine(match)}
+你的身份: ${model.name}
+${style}
 这是你本场第 ${round} 次发言。
 
 前面群聊:
@@ -198,10 +200,10 @@ ${history}
 请只输出中文自然语言,不要 JSON,不要 Markdown。
 ${relationRule}
 硬规则:
-- 只说一句话,不要第二段。
-- 禁止复述赔率,禁止说「双方都有机会」「不好说」。
+- 只说一句话(最多两短句),要像群聊里真人甩出来的一句,带情绪、有立场。
+- 聊球本身:阵型、状态、临场、心理、爆冷点——而不是复述赔率数字。禁止说「双方都有机会」「不好说」「拭目以待」这类废话。
+- 守住你的人格,别人一看就知道这句是你说的。可以有火药味、可以毒舌抬杠,但对事不对人,不许人身攻击。
 - 非最后发言不超过 ${MESSAGE_CHAR_LIMIT} 个中文字符;最后发言不超过 ${FINAL_MESSAGE_CHAR_LIMIT} 个中文字符。
-- 要有一点火药味,但不能人身攻击。
 ${fableRule}${finalRule}`;
 }
 
@@ -212,12 +214,12 @@ function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = f
   const finalRule = isFinalTurn
     ? "这是你最后一句,必须给出胜平负方向和比分,例如:结论主胜,比分2-1。"
     : "必须回应上一句或补充一个新风险。";
-  return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
-你的风格:${style}
+  return `你是${model.name},在世界杯圆桌群聊里聊${match.home.team} vs ${match.away.team}。
+${style}
 上一句:${lastLine}
 这是你本场第 ${round} 次发言。
 ${finalRule}
-只输出一句中文短句,要接话,要有观点,不超过 ${isFinalTurn ? FINAL_MESSAGE_CHAR_LIMIT : MESSAGE_CHAR_LIMIT} 个中文字符。`;
+只输出一句中文短句,要接住上一句、有鲜明立场和你的人格味,聊球别念赔率,不超过 ${isFinalTurn ? FINAL_MESSAGE_CHAR_LIMIT : MESSAGE_CHAR_LIMIT} 个中文字符。`;
 }
 
 async function callFinalTurnText(match, model, messages, round) {

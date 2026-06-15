@@ -6,8 +6,11 @@ let MATCHES = [];
 let LEADERBOARD = { rankings: [], open: [] };
 let CHAMPIONS = [];
 let DISCUSSIONS = [];
+let GROUPS = {};
 let selectedDateKey = '';
 let activeLbTrack = 'result';
+let heroRoundtableTimer = null;
+let manualTabScrollUntil = 0;
 const ACTIVE_TRACK = 'open';
 
 // 阵营划分:国产军团 vs 海外军团(用于核心传播钩子)
@@ -219,6 +222,10 @@ function renderDateQuick() {
       renderDateQuick();
       renderMatches();
       renderDiscussions();
+      // 补全：切换日期时也触发卡片的渐显动画
+      window.requestAnimationFrame(() => {
+        initRevealMotion();
+      });
     });
   });
   const activeButton = el.querySelector('.date-btn.active');
@@ -389,6 +396,174 @@ function renderMatches() {
     return;
   }
   el.innerHTML = selectedMatches.map(renderMatchCard).join('');
+}
+
+function teamFlag(team) {
+  const match = MATCHES.find(item => item.home.team === team || item.away.team === team);
+  if (!match) return '';
+  return flagIcon(match.home.team === team ? match.home.flag : match.away.flag);
+}
+
+function isGroupMatch(match) {
+  return String(match.stage || '').includes('Group Stage');
+}
+
+function parseScore(score) {
+  const [home, away] = String(score || '').split('-').map(Number);
+  return Number.isFinite(home) && Number.isFinite(away) ? { home, away } : null;
+}
+
+function standingsForGroup(teams) {
+  const rows = teams.map(team => ({
+    team,
+    played: 0,
+    win: 0,
+    draw: 0,
+    loss: 0,
+    gf: 0,
+    ga: 0,
+    gd: 0,
+    points: 0,
+  }));
+  const byTeam = new Map(rows.map(row => [row.team, row]));
+  MATCHES
+    .filter(match => isGroupMatch(match) && match.actual && teams.includes(match.home.team) && teams.includes(match.away.team))
+    .forEach(match => {
+      const score = parseScore(match.actual.score);
+      if (!score) return;
+      const home = byTeam.get(match.home.team);
+      const away = byTeam.get(match.away.team);
+      home.played += 1; away.played += 1;
+      home.gf += score.home; home.ga += score.away;
+      away.gf += score.away; away.ga += score.home;
+      if (score.home > score.away) {
+        home.win += 1; home.points += 3; away.loss += 1;
+      } else if (score.home < score.away) {
+        away.win += 1; away.points += 3; home.loss += 1;
+      } else {
+        home.draw += 1; away.draw += 1; home.points += 1; away.points += 1;
+      }
+    });
+  rows.forEach(row => { row.gd = row.gf - row.ga; });
+  return rows.sort((a, b) =>
+    b.points - a.points ||
+    b.gd - a.gd ||
+    b.gf - a.gf ||
+    a.team.localeCompare(b.team, 'zh-CN')
+  );
+}
+
+function renderStandings() {
+  const el = document.getElementById('standings');
+  if (!el) return;
+  const groupEntries = Object.entries(GROUPS || {});
+  if (!groupEntries.length) {
+    el.innerHTML = `<div class="empty-state">
+      <strong>小组数据待确认</strong>
+      <span>补齐 groups.json 后,这里会展示实时积分榜。</span>
+    </div>`;
+    return;
+  }
+  el.innerHTML = groupEntries.map(([group, teams]) => {
+    const rows = standingsForGroup(teams);
+    const played = MATCHES.filter(match => isGroupMatch(match) && match.actual && teams.includes(match.home.team) && teams.includes(match.away.team)).length;
+    return `<article class="standing-card">
+      <div class="standing-head">
+        <strong>${group} 组</strong>
+        <span>已赛 ${played}/6 场</span>
+      </div>
+      <div class="standing-table">
+        <div class="standing-row standing-row-head">
+          <span>#</span><span>球队</span><span>赛</span><span>胜平负</span><span>进/失</span><span>净</span><span>分</span>
+        </div>
+        ${rows.map((row, index) => `<div class="standing-row ${index < 2 ? 'is-advance' : index === 2 ? 'is-third' : ''}">
+          <span>${index + 1}</span>
+          <span>${teamFlag(row.team)} ${escapeHTML(row.team)}</span>
+          <span>${row.played}</span>
+          <span>${row.win}-${row.draw}-${row.loss}</span>
+          <span>${row.gf}/${row.ga}</span>
+          <span>${row.gd > 0 ? `+${row.gd}` : row.gd}</span>
+          <strong>${row.points}</strong>
+        </div>`).join('')}
+      </div>
+    </article>`;
+  }).join('');
+}
+
+const KNOCKOUT_STAGES = [
+  'World Cup · Round of 32',
+  'World Cup · Round of 16',
+  'World Cup · Quarter-finals',
+  'World Cup · Semi-finals',
+  'World Cup · Match for third place',
+  'World Cup · Final'
+];
+
+function stageShortName(stage) {
+  return String(stage || '')
+    .replace('World Cup · ', '')
+    .replace('Round of 32', '32 强')
+    .replace('Round of 16', '16 强')
+    .replace('Quarter-finals', '8 强')
+    .replace('Semi-finals', '半决赛')
+    .replace('Match for third place', '三四名')
+    .replace('Final', '决赛');
+}
+
+function winnerName(match) {
+  if (!match.actual) return '';
+  if (match.actual.result === 'home') return match.home.team;
+  if (match.actual.result === 'away') return match.away.team;
+  return '待定';
+}
+
+function focusMatch(matchId) {
+  const match = MATCHES.find(item => item.id === matchId);
+  if (!match) return;
+  selectedDateKey = matchDateKey(match);
+  renderDateQuick();
+  renderMatches();
+  window.requestAnimationFrame(() => {
+    const el = document.getElementById(`match-${matchId}`);
+    const offset = (document.getElementById('tabbar')?.offsetHeight || 0) + 10;
+    const top = (el || document.getElementById('matches-section')).getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+  });
+}
+
+function renderBracket() {
+  const el = document.getElementById('bracket-section');
+  if (!el) return;
+  const knockout = MATCHES.filter(match => KNOCKOUT_STAGES.includes(match.stage));
+  if (!knockout.length) {
+    el.innerHTML = '';
+    return;
+  }
+  el.innerHTML = `<div class="bracket-head">
+    <strong>淘汰赛路径</strong>
+    <span>横向滑动查看完整路径</span>
+  </div>
+  <div class="bracket-track">
+    ${KNOCKOUT_STAGES.map(stage => {
+      const items = knockout.filter(match => match.stage === stage);
+      if (!items.length) return '';
+      return `<section class="bracket-round">
+        <h3>${stageShortName(stage)}</h3>
+        ${items.map(match => {
+          const winner = winnerName(match);
+          const score = match.actual?.score || '待定';
+          return `<button type="button" class="bracket-match ${match.actual ? 'is-settled' : ''}" data-match="${escapeHTML(match.id)}">
+            <span class="${winner === match.home.team ? 'is-winner' : ''}">${teamFlag(match.home.team)} ${escapeHTML(match.home.team)}</span>
+            <b>${escapeHTML(score)}</b>
+            <span class="${winner === match.away.team ? 'is-winner' : ''}">${escapeHTML(match.away.team)} ${teamFlag(match.away.team)}</span>
+          </button>`;
+        }).join('')}
+      </section>`;
+    }).join('')}
+  </div>`;
+  el.querySelectorAll('.bracket-match').forEach(btn => {
+    btn.addEventListener('click', () => focusMatch(btn.dataset.match));
+  });
 }
 
 function resultFromDiscussionText(text) {
@@ -676,6 +851,135 @@ function renderHeroMetrics() {
   ].map(([label, value]) => `<div class="hero-metric"><strong>${value}</strong><span>${label}</span></div>`).join('');
 }
 
+function renderHeroTicker() {
+  const el = document.getElementById('hero-ticker');
+  if (!el) return;
+  const rows = buildLeaderboardRows();
+  const resultLeader = rows.resultRows.find(row => row.predictions > 0);
+  const scoreLeader = rows.scoreRows.find(row => row.predictions > 0 && row.scoreHits > 0);
+  const settled = MATCHES.filter(match => match.actual).length;
+  const hot = roundtableThreads().map(({ thread }) => hottestLine(thread.messages || [])).filter(Boolean)[0];
+  const items = [
+    resultLeader ? `${resultLeader.name} 赛果命中 ${resultLeader.resultHits}/${resultLeader.predictions}` : '',
+    scoreLeader ? `${scoreLeader.name} 精确比分命中 ${scoreLeader.scoreHits} 次` : '',
+    settled ? `已结算 ${settled} 场,榜单实时刷新` : '',
+    hot ? `热评: ${hot.text}` : '',
+    '国产军团 vs 海外军团,每场封盘后见真章'
+  ].filter(Boolean);
+  const content = items.concat(items).map(item => `<span>${escapeHTML(item)}</span>`).join('');
+  el.innerHTML = `<div class="hero-ticker-track">${content}</div>`;
+}
+
+function roundtableThreads() {
+  return DISCUSSIONS
+    .map(thread => ({ thread, match: MATCHES.find(m => m.id === thread.matchId) }))
+    .filter(item => item.match && (item.thread.messages || []).length)
+    .sort((a, b) => {
+      const aState = matchLifecycle(a.match).key;
+      const bState = matchLifecycle(b.match).key;
+      const stateScore = state => {
+        if (state === 'upcoming' || state === 'sealed') return 0;
+        if (state === 'live' || state === 'needs-result') return 1;
+        return 2;
+      };
+      const delta = stateScore(aState) - stateScore(bState);
+      if (delta) return delta;
+      return new Date(a.match.kickoff) - new Date(b.match.kickoff);
+    });
+}
+
+function renderHeroRoundtable() {
+  const el = document.getElementById('hero-roundtable');
+  if (!el) return;
+  if (heroRoundtableTimer) clearInterval(heroRoundtableTimer);
+
+  const threads = roundtableThreads();
+  const featured = threads.filter(({ match }) => {
+    const key = matchLifecycle(match).key;
+    return key === 'upcoming' || key === 'sealed' || key === 'live' || key === 'needs-result';
+  });
+  const cards = (featured.length ? featured : threads).slice(0, 6).map(({ thread, match }, index) => {
+    const messages = thread.messages || [];
+    const hot = heroHottestLine(messages, index);
+    const meta = hot ? modelMeta(hot.modelId) : null;
+    const camp = meta ? campOf(meta) : '';
+    const state = matchLifecycle(match);
+    return `<article class="hero-rt-card" data-match="${escapeHTML(match.id)}" role="button" tabindex="0">
+      <div class="hero-rt-kicker">
+        <span>今日最劲爆圆桌</span>
+        <strong class="match-status status-${state.tone}">${escapeHTML(state.label)}</strong>
+      </div>
+      <div class="hero-rt-fixture">
+        <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
+        <b>VS</b>
+        <span>${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</span>
+      </div>
+      ${hot ? `<blockquote>${escapeHTML(hot.text)}</blockquote>
+        <div class="hero-rt-speaker">
+          <i style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</i>
+          <span>${escapeHTML(meta.name)} · ${camp === 'domestic' ? '🇨🇳 国产军团' : '🌍 海外军团'}</span>
+        </div>` : ''}
+      <button type="button" class="hero-rt-play">▶ 看激辩</button>
+    </article>`;
+  });
+
+  if (!cards.length) {
+    el.hidden = true;
+    el.innerHTML = '';
+    return;
+  }
+
+  el.hidden = false;
+  el.innerHTML = `<div class="hero-rt-inner">
+    <div class="hero-rt-head">
+      <div>
+        <strong>AI 圆桌热评</strong>
+        <span>进站先看模型互怼</span>
+      </div>
+      <div class="hero-rt-nav" aria-label="切换圆桌热评">
+        <button type="button" class="hero-rt-arrow" data-dir="-1" aria-label="上一条">‹</button>
+        <button type="button" class="hero-rt-arrow" data-dir="1" aria-label="下一条">›</button>
+      </div>
+    </div>
+    <div class="hero-rt-track">${cards.join('')}</div>
+  </div>`;
+
+  const track = el.querySelector('.hero-rt-track');
+  const open = card => openDebateStage(card.dataset.match);
+  el.querySelectorAll('.hero-rt-card').forEach(card => {
+    card.addEventListener('click', () => open(card));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+    });
+  });
+  let index = 0;
+  const scrollToCard = dir => {
+    if (!track) return;
+    index = (index + dir + cards.length) % cards.length;
+    const card = track.children[index];
+    if (card) track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+  };
+  el.querySelectorAll('.hero-rt-arrow').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      track.dataset.paused = 'true';
+      scrollToCard(Number(btn.dataset.dir) || 1);
+      window.setTimeout(() => { track.dataset.paused = 'false'; }, 1600);
+    });
+  });
+  if (!track || cards.length < 2) return;
+
+  const autoScrollToCard = () => {
+    if (track.dataset.paused === 'true') return;
+    scrollToCard(1);
+  };
+  track.addEventListener('mouseenter', () => { track.dataset.paused = 'true'; });
+  track.addEventListener('mouseleave', () => { track.dataset.paused = 'false'; });
+  track.addEventListener('touchstart', () => { track.dataset.paused = 'true'; }, { passive: true });
+  track.addEventListener('touchend', () => { track.dataset.paused = 'false'; }, { passive: true });
+  heroRoundtableTimer = setInterval(autoScrollToCard, 4600);
+}
+
 function renderMatchCard(m) {
   const o = m.odds?.result || {};
   const finished = !!m.actual;
@@ -703,26 +1007,37 @@ function renderMatchCard(m) {
   const kickoff = formatKickoff(m.kickoff);
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
   const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
+  const actualScore = finished ? String(m.actual.score || '').replace('-', ' : ') : '';
+  const recap = discussionForMatch(m.id)?.recap;
+  const recapHTML = recap?.hookText ? `<div class="recap-hook ${recap.godModels?.length ? 'is-god' : recap.faceSlapModels?.length ? 'is-face' : ''}">
+    <strong>${recap.godModels?.length ? '封神' : recap.faceSlapModels?.length ? '打脸' : '赛后复盘'}</strong>
+    <span>${escapeHTML(recap.hookText)}</span>
+  </div>` : '';
 
   const preds = displayPredictions
     .map(p => {
       const meta = modelMeta(p.modelId);
       let mark = '';
+      let predClass = '';
       if (finished) {
         const rHit = p.result === m.actual.result;
         const sHit = p.score === m.actual.score;
+        predClass = sHit ? ' is-score-hit' : rHit ? ' is-result-hit' : ' is-miss';
         mark = `<span class="${rHit ? 'pred-hit' : 'pred-miss'}">${rHit ? '✓胜负' : '✗胜负'}</span>
-                <span class="${sHit ? 'pred-hit' : 'pred-miss'}">${sHit ? '✓比分' : '✗比分'}</span>`;
+                <span class="${sHit ? 'pred-target' : 'pred-miss'}">${sHit ? '🎯比分' : '✗比分'}</span>`;
       }
-      return `<div class="pred">
-        <span class="pred-model"><span class="lb-dot" style="background:${meta.color}"></span>${meta.name}</span>
+      return `<div class="pred${predClass}">
+        <button type="button" class="pred-model" data-model="${escapeHTML(p.modelId)}" aria-label="查看 ${escapeHTML(meta.name)} 的历史预测数据">
+          <span class="lb-dot" style="background:${meta.color}"></span>${escapeHTML(meta.name)}
+        </button>
         <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}</span>
         <span>${mark || (p.source === 'discussion' ? '<span class="pred-source">圆桌</span>' : '')}</span>
       </div>`;
     }).join('') || '<div class="empty">暂无预测</div>';
 
-  return `<article class="match">
+  return `<article class="match" id="match-${escapeHTML(m.id)}">
     <div class="match-head">
+      ${recapHTML}
       <div class="match-meta">
         <span>${m.stage || '世界杯'}</span>
         <span>${kickoff}</span>
@@ -734,7 +1049,7 @@ function renderMatchCard(m) {
           <span class="team-label">主队</span>
         </div>
         <div class="vs">
-          <span>VS</span>
+          <span>${finished ? escapeHTML(actualScore) : 'VS'}</span>
           ${status}
           <small>${lifecycle.detail}</small>
         </div>
@@ -857,11 +1172,53 @@ function stanceBreakdown(messages) {
 
 // 找出最有火药味的一句(带 @反驳/打脸信号的优先)
 function hottestLine(messages) {
-  const CLASH = /(太乐观|想多了|低估|高估|打脸|别|不敢|悬|翻车|爆冷|撕碎|笑|错|未必|过于|未免|然而|但|反而)/;
+  const CLASH = /(@|反对|太乐观|想多了|低估|高估|打脸|别|不敢|悬|翻车|爆冷|撕碎|笑|错|未必|过于|未免|然而|但是|反而|补一刀|别被带偏)/;
   const clashing = messages.filter(m => CLASH.test(String(m.text)));
   const pick = clashing[clashing.length - 1] || messages[messages.length - 1];
   if (!pick) return null;
   return { modelId: pick.modelId, text: pick.text };
+}
+
+function heroHottestLine(messages, offset = 0) {
+  const CLASH = /(@|反对|太乐观|想多了|低估|高估|打脸|别|不敢|悬|翻车|爆冷|撕碎|笑|错|未必|过于|未免|然而|但是|反而|补一刀|别被带偏)/;
+  const usable = messages.filter(m => !/API超时兜底|兜底/.test(String(m.text)));
+  const clashing = usable.filter(m => CLASH.test(String(m.text)));
+  const pool = (clashing.length ? clashing : usable.length ? usable : messages)
+    .reduce((acc, message) => {
+      if (!acc.some(item => item.modelId === message.modelId)) acc.push(message);
+      return acc;
+    }, []);
+  const pick = pool.length ? pool[offset % pool.length] : null;
+  return pick ? { modelId: pick.modelId, text: pick.text } : hottestLine(messages);
+}
+
+function clashSnippets(messages) {
+  const SIGNAL = /(@|反对|别|打脸|补一刀|这点我服|想简单了|带偏|错|高估|低估|翻车|爆冷|但是|反而)/;
+  const picks = messages.filter(message => SIGNAL.test(String(message.text))).slice(-3);
+  return (picks.length ? picks : messages.slice(-3)).map(message => {
+    const meta = modelMeta(message.modelId);
+    return { message, meta, camp: campOf(meta) };
+  });
+}
+
+function campStanceScore(messages) {
+  const camps = {
+    domestic: { home: 0, draw: 0, away: 0 },
+    overseas: { home: 0, draw: 0, away: 0 }
+  };
+  finalMessagesByModel(messages).forEach(message => {
+    const result = resultFromDiscussionText(message.text);
+    if (!result) return;
+    const camp = campOf(modelMeta(message.modelId));
+    camps[camp][result] += 1;
+  });
+  const main = counts => {
+    const key = ['home', 'draw', 'away'].sort((a, b) => counts[b] - counts[a])[0];
+    return { key, label: RESULT_LABEL[key], count: counts[key] || 0 };
+  };
+  const domestic = main(camps.domestic);
+  const overseas = main(camps.overseas);
+  return { domestic, overseas };
 }
 
 function stanceBarHTML(counts, total) {
@@ -879,17 +1236,7 @@ function stanceBarHTML(counts, total) {
 function renderRoundtableFeed() {
   const el = document.getElementById('roundtable-feed');
   if (!el) return;
-  const threads = DISCUSSIONS
-    .map(thread => ({ thread, match: MATCHES.find(m => m.id === thread.matchId) }))
-    .filter(item => item.match && (item.thread.messages || []).length)
-    .sort((a, b) => {
-      const aState = matchLifecycle(a.match).key;
-      const bState = matchLifecycle(b.match).key;
-      const aDone = aState === 'settled' ? 1 : 0;
-      const bDone = bState === 'settled' ? 1 : 0;
-      if (aDone !== bDone) return aDone - bDone;
-      return new Date(a.match.kickoff) - new Date(b.match.kickoff);
-    });
+  const threads = roundtableThreads();
 
   if (!threads.length) {
     el.innerHTML = `<div class="empty-state">
@@ -912,14 +1259,22 @@ function renderRoundtableFeed() {
     const finalCount = finalMessagesByModel(messages).length;
     const hot = hottestLine(messages);
     const hotMeta = hot ? modelMeta(hot.modelId) : null;
+    const hotCamp = hotMeta ? campOf(hotMeta) : '';
+    const snippets = clashSnippets(messages);
+    const campScore = campStanceScore(messages);
     const homeFlag = flagIcon(match.home.flag);
     const awayFlag = flagIcon(match.away.flag);
     const state = matchLifecycle(match);
     const statusText = state.label;
+    const recap = thread.recap;
     const split = total && counts.home && (counts.draw + counts.away)
       ? '🔥 分歧激烈' : '观点交锋';
 
     return `<article class="rt-card" data-match="${match.id}" role="button" tabindex="0">
+      ${recap?.hookText ? `<div class="recap-hook rt-recap ${recap.godModels?.length ? 'is-god' : recap.faceSlapModels?.length ? 'is-face' : ''}">
+        <strong>${recap.godModels?.length ? '封神' : recap.faceSlapModels?.length ? '打脸' : '复盘'}</strong>
+        <span>${escapeHTML(recap.hookText)}</span>
+      </div>` : ''}
       <div class="rt-meta-row">
         <span>${escapeHTML(formatKickoff(match.kickoff))}</span>
         <span class="match-status status-${state.tone}">${escapeHTML(statusText)}</span>
@@ -940,10 +1295,22 @@ function renderRoundtableFeed() {
         <span><i class="dot-draw"></i>平 ${counts.draw}</span>
         <span><i class="dot-away"></i>客胜 ${counts.away}</span>
       </div>
-      ${hot ? `<div class="rt-quote">
+      ${hot ? `<div class="rt-quote rt-quote-hot">
+        <div class="rt-quote-label">最毒一句</div>
         <span class="rt-quote-dot" style="background:${hotMeta.color}"></span>
-        <p>“${escapeHTML(hot.text)}”<small>—— ${escapeHTML(hotMeta.name)}</small></p>
+        <p>“${escapeHTML(hot.text)}”<small>—— ${escapeHTML(hotMeta.name)} · ${hotCamp === 'domestic' ? '🇨🇳 国产军团' : '🌍 海外军团'}</small></p>
       </div>` : ''}
+      <div class="rt-clash-list">
+        ${snippets.map(({ message, meta, camp }) => `<div class="rt-clash">
+          <span class="rt-clash-avatar" style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</span>
+          <p><b>${escapeHTML(meta.name)} ${camp === 'domestic' ? '🇨🇳' : '🌍'}</b>${escapeHTML(message.text)}</p>
+        </div>`).join('')}
+      </div>
+      <div class="rt-camp-score">
+        <span>🇨🇳 看好${escapeHTML(campScore.domestic.label)} <b>${campScore.domestic.count}</b></span>
+        <strong>:</strong>
+        <span><b>${campScore.overseas.count}</b> 看好${escapeHTML(campScore.overseas.label)} 🌍</span>
+      </div>
       <div class="rt-card-foot">
         <span>${finalCount} 个模型 · ${messages.length} 回合</span>
         <span class="rt-play">▶ 观看激辩回放</span>
@@ -1174,13 +1541,21 @@ async function refreshData({ resetDate = false } = {}) {
   const discussions = await loadJSON('data/discussions.json');
   DISCUSSIONS = discussions?.discussions || [];
 
+  const groups = await loadJSON('data/groups.json');
+  GROUPS = groups?.groups || {};
+
   renderHeroMetrics();
+  renderHeroTicker();
+  renderHeroRoundtable();
   renderDateQuick();
   renderLeaderboard();
   renderRoundtableFeed();
+  renderStandings();
+  renderBracket();
   renderMatches();
   renderChampionPredictions();
   renderDiscussions();
+  initRevealMotion();
 }
 
 function startDataRefresh() {
@@ -1202,8 +1577,32 @@ function wireDebateStage() {
       closeModelHistory();
     }
   });
+  
+  // 增加移动端下拉关闭手势 (Swipe down to close)
+  let startY = 0;
+  stage?.addEventListener('touchstart', e => {
+    // 只有在顶部或非滚动区域时才允许下拉关闭，避免与内部滚动冲突
+    const scrollEl = document.getElementById('debate-scroll');
+    if (scrollEl && scrollEl.scrollTop > 0) return;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  stage?.addEventListener('touchend', e => {
+    if (startY === 0) return;
+    const endY = e.changedTouches[0].clientY;
+    if (endY - startY > 80) { // 下滑超过 80px 触发关闭
+      closeDebateStage();
+    }
+    startY = 0;
+  }, { passive: true });
+
   // 比赛卡里的「观看激辩」入口(事件委托)
   document.getElementById('matches')?.addEventListener('click', e => {
+    const modelBtn = e.target.closest('.pred-model[data-model]');
+    if (modelBtn) {
+      e.stopPropagation();
+      openModelHistory(modelBtn.dataset.model);
+      return;
+    }
     const btn = e.target.closest('.rt-enter');
     if (btn) openDebateStage(btn.dataset.match);
   });
@@ -1215,6 +1614,22 @@ function wireModelHistoryStage() {
   stage?.addEventListener('click', e => {
     if (e.target === stage) closeModelHistory();
   });
+
+  // 增加移动端下拉关闭手势 (Swipe down to close)
+  let startY = 0;
+  stage?.addEventListener('touchstart', e => {
+    const listEl = document.getElementById('model-history-list');
+    if (listEl && listEl.scrollTop > 0) return;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  stage?.addEventListener('touchend', e => {
+    if (startY === 0) return;
+    const endY = e.changedTouches[0].clientY;
+    if (endY - startY > 80) {
+      closeModelHistory();
+    }
+    startY = 0;
+  }, { passive: true });
 }
 
 function wireLeaderboardTabs() {
@@ -1228,19 +1643,57 @@ function wireLeaderboardTabs() {
   });
 }
 
-function wireScrollSpy() {
-  const tabs = Array.from(document.querySelectorAll('.tabbar .tab'));
-  if (!tabs.length || !('IntersectionObserver' in window)) return;
-  const sections = tabs
-    .map(tab => document.getElementById(tab.dataset.tab))
-    .filter(Boolean);
+function initRevealMotion() {
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+  const nodes = document.querySelectorAll('.match, .rt-card, .standing-card, .bracket-round, .lb-row');
+  if (!nodes.length || !('IntersectionObserver' in window)) return;
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const id = entry.target.id;
-      tabs.forEach(tab => tab.classList.toggle('is-active', tab.dataset.tab === id));
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
     });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  nodes.forEach(node => {
+    if (node.classList.contains('is-visible')) return;
+    node.classList.add('reveal-card');
+    observer.observe(node);
+  });
+}
+
+function wireScrollSpy() {
+  const tabs = Array.from(document.querySelectorAll('.tabbar .tab'));
+  if (!tabs.length) return;
+  const sections = tabs
+    .map(tab => document.getElementById(tab.dataset.tab))
+    .filter(Boolean);
+  const activateTab = id => {
+    tabs.forEach(tab => tab.classList.toggle('is-active', tab.dataset.tab === id));
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      const section = document.getElementById(tab.dataset.tab);
+      if (!section) return;
+      e.preventDefault();
+      manualTabScrollUntil = Date.now() + 900;
+      activateTab(tab.dataset.tab);
+      const offset = (document.getElementById('tabbar')?.offsetHeight || 0) + 10;
+      const top = section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+      history.replaceState?.(null, '', `#${tab.dataset.tab}`);
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(entries => {
+    if (Date.now() < manualTabScrollUntil) return;
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      activateTab(id);
+    });
+  }, { rootMargin: '-28% 0px -58% 0px', threshold: 0 });
   sections.forEach(section => observer.observe(section));
 }
 

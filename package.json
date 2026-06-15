@@ -9,6 +9,7 @@
     "discuss": "node pipeline/discuss.js",
     "sync:real": "node pipeline/sync-real-data.js",
     "score": "node pipeline/score.js",
+    "recap": "node pipeline/recap.js",
     "settle": "node pipeline/settle.js",
     "settle:watch": "node pipeline/settle-watch.js",
     "roundtable:auto": "node pipeline/auto-roundtable.js",
