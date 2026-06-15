@@ -6,7 +6,7 @@
     "apiFixtures": 72,
     "totalMatches": 104,
     "placeholders": 32,
-    "syncedAt": "2026-06-14T22:26:24.609Z"
+    "syncedAt": "2026-06-15T01:09:35.489Z"
   },
   "matches": [
     {
@@ -57,7 +57,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:13.814Z",
+      "syncedAt": "2026-06-15T01:09:28.458Z",
       "preservedAt": "2026-06-14T09:54:22.168Z"
     },
     {
@@ -107,7 +107,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:14.524Z",
+      "syncedAt": "2026-06-15T01:09:29.146Z",
       "preservedAt": "2026-06-14T09:54:22.840Z"
     },
     {
@@ -158,7 +158,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:15.056Z",
+      "syncedAt": "2026-06-15T01:09:29.788Z",
       "preservedAt": "2026-06-14T09:54:23.276Z"
     },
     {
@@ -209,7 +209,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:15.520Z",
+      "syncedAt": "2026-06-15T01:09:30.229Z",
       "preservedAt": "2026-06-14T09:54:23.989Z"
     },
     {
@@ -262,7 +262,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:16.386Z",
+      "syncedAt": "2026-06-15T01:09:30.660Z",
       "preservedAt": "2026-06-14T09:54:24.861Z"
     },
     {
@@ -313,7 +313,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:17.029Z",
+      "syncedAt": "2026-06-15T01:09:31.164Z",
       "preservedAt": "2026-06-14T09:54:25.729Z"
     },
     {
@@ -366,7 +366,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:17.891Z",
+      "syncedAt": "2026-06-15T01:09:31.594Z",
       "preservedAt": "2026-06-14T09:54:26.607Z"
     },
     {
@@ -417,7 +417,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:18.643Z",
+      "syncedAt": "2026-06-15T01:09:32.020Z",
       "preservedAt": "2026-06-14T09:54:27.464Z"
     },
     {
@@ -471,7 +471,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:19.394Z",
+      "syncedAt": "2026-06-15T01:09:32.450Z",
       "preservedAt": "2026-06-14T09:54:28.336Z"
     },
     {
@@ -522,7 +522,7 @@
       },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:20.039Z",
+      "syncedAt": "2026-06-15T01:09:32.885Z",
       "preservedAt": "2026-06-14T09:54:29.211Z"
     },
     {
@@ -565,10 +565,13 @@
         }
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "home",
+        "score": "1-0"
+      },
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:20.502Z",
+      "syncedAt": "2026-06-15T01:09:33.319Z",
       "preservedAt": "2026-06-14T09:54:29.898Z"
     },
     {
@@ -616,7 +619,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:21.437Z",
+      "syncedAt": "2026-06-15T01:09:33.752Z",
       "preservedAt": "2026-06-14T09:54:30.766Z"
     },
     {
@@ -665,7 +668,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:22.306Z",
+      "syncedAt": "2026-06-15T01:09:34.182Z",
       "preservedAt": "2026-06-14T09:54:31.421Z"
     },
     {
@@ -713,7 +716,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:23.231Z",
+      "syncedAt": "2026-06-15T01:09:34.615Z",
       "preservedAt": "2026-06-14T09:54:32.076Z"
     },
     {
@@ -761,7 +764,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.142Z",
+      "syncedAt": "2026-06-15T01:09:35.048Z",
       "preservedAt": "2026-06-14T09:54:32.507Z"
     },
     {
@@ -809,7 +812,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.607Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -839,7 +842,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.607Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -869,7 +872,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.607Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -899,7 +902,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.607Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -929,7 +932,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.607Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -959,7 +962,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -989,7 +992,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1019,7 +1022,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1049,7 +1052,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1079,7 +1082,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1109,7 +1112,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1139,7 +1142,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1169,7 +1172,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1199,7 +1202,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1229,7 +1232,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1259,7 +1262,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1289,7 +1292,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1319,7 +1322,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1349,7 +1352,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1379,7 +1382,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1409,7 +1412,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1439,7 +1442,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1469,7 +1472,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1499,7 +1502,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.487Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1529,7 +1532,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1559,7 +1562,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1589,7 +1592,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1619,7 +1622,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1649,7 +1652,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1679,7 +1682,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1709,7 +1712,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1739,7 +1742,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1769,7 +1772,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1799,7 +1802,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1829,7 +1832,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1859,7 +1862,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1889,7 +1892,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1919,7 +1922,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1949,7 +1952,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -1979,7 +1982,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2009,7 +2012,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2039,7 +2042,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2069,7 +2072,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2099,7 +2102,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2129,7 +2132,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2159,7 +2162,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2189,7 +2192,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2219,7 +2222,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2249,7 +2252,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2279,7 +2282,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2309,7 +2312,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2339,7 +2342,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2369,7 +2372,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2399,7 +2402,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2429,7 +2432,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2459,7 +2462,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2489,7 +2492,7 @@
       "actual": null,
       "predictions": [],
       "dataSource": "api-sports",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.163Z"
     },
     {
@@ -2519,7 +2522,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2549,7 +2552,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2579,7 +2582,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.608Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2609,7 +2612,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2639,7 +2642,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2669,7 +2672,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2699,7 +2702,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2729,7 +2732,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2759,7 +2762,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2789,7 +2792,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2819,7 +2822,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2849,7 +2852,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.488Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2879,7 +2882,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2909,7 +2912,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2939,7 +2942,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2969,7 +2972,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -2999,7 +3002,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3029,7 +3032,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3059,7 +3062,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3089,7 +3092,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3119,7 +3122,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3149,7 +3152,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3179,7 +3182,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3209,7 +3212,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3239,7 +3242,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3269,7 +3272,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3299,7 +3302,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3329,7 +3332,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3359,7 +3362,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3389,7 +3392,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3419,7 +3422,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     },
     {
@@ -3449,7 +3452,7 @@
       "predictions": [],
       "placeholder": true,
       "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-14T22:26:24.609Z",
+      "syncedAt": "2026-06-15T01:09:35.489Z",
       "preservedAt": "2026-06-14T09:54:33.164Z"
     }
   ]
