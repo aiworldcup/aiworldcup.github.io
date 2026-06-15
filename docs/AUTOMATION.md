@@ -19,6 +19,8 @@
 - `claude-fable-5` 已禁用,后续不再尝试。
 - `muse-spark` 已禁用,后续不再尝试。
 - 自动圆桌只读取 `public/data/models.json` 中 `enabled !== false` 的模型。
+- 圆桌生成默认把模型调用 timeout 控制在 25 秒左右,避免单个慢模型拖死整场发布。
+- 如果当天已过北京时间 10:00 且改了圆桌策略或日程,需要手动执行 `npm run publish:roundtable` 补跑下一日比赛。
 
 ## 常用命令
 

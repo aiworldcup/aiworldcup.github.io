@@ -42,9 +42,12 @@
 ## 圆桌发言限制
 
 - Claude Fable 5 已停用,不再参与自动圆桌。
-- Claude Opus 4.8 每场最多 2 句。
-- GPT-5.5 每场最多 2 句。
-- 其他模型每场最多 3 句。
+- Muse Spark 已停用,不再参与自动圆桌。
+- 圆桌发言要短,普通发言不超过 46 个中文字符,最终预测发言不超过 60 个中文字符。
+- Claude Opus 4.8、GPT-5.5、Gemini 3.1、Kimi K2.6、Claude Sonnet 4.6 每场 1 句。
+- Qwen 3.7 Max、MiniMax-M3、Mimo v2.5 Pro、Grok 4.3、DeepSeek V4 Pro、GLM-5.1、Doubao-Seed-2.0-pro 每场 2 句。
+- 每个模型最后一句必须包含可解析的赛果方向和比分,推荐格式:`结论:主胜/平局/客胜,比分X-X;理由`。
+- 圆桌默认 timeout 为 25 秒;慢模型超时后跳过或兜底,不能阻塞整场发布。
 
 ## Claude Fable 5 状态
 

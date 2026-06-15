@@ -19,6 +19,13 @@
 - `public/analytics-config.js`:Worker URL 配置。
 - `public/admin.html`:访问数据后台。
 
+## 当前线上配置
+
+- Worker URL:`https://worldcup-ai-arena-analytics.worldcup-ai-arena-ccavtjy.workers.dev`
+- D1 database:`worldcup_ai_arena_analytics`
+- 后台入口:`https://ccavtjy.github.io/worldcup-ai-arena/admin.html`
+- Worker 已设置 `ADMIN_TOKEN` secret;不要把 token 写入仓库。
+
 ## 部署
 
 首次部署:
