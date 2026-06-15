@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T04:16:07.260Z",
+  "updatedAt": "2026-06-15T16:18:11.305Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -1952,7 +1952,7 @@
     },
     {
       "matchId": "fixture-1489380",
-      "sealedAt": "2026-06-15T03:55:31.845Z",
+      "sealedAt": "2026-06-15T16:18:11.305Z",
       "messages": [
         {
           "modelId": "claude-opus-4-8",
@@ -1960,8 +1960,8 @@
           "vendor": "Anthropic",
           "turn": 1,
           "round": 1,
-          "text": "结论:主胜,比分3-0;西班牙控球碾压,佛得角防线撑不住。",
-          "timestamp": "2026-06-15T03:55:34.999Z"
+          "text": "结论:主胜,比分2-0;西班牙控得死,但别等高比分,佛得角缩防最难撕。",
+          "timestamp": "2026-06-15T16:18:29.559Z"
         },
         {
           "modelId": "gpt-5-5",
@@ -1969,8 +1969,8 @@
           "vendor": "OpenAI",
           "turn": 2,
           "round": 1,
-          "text": "这点我买，结论:主胜,比分3-0;佛得角出球会被掐",
-          "timestamp": "2026-06-15T03:55:43.081Z"
+          "text": "结论:主胜,比分3-0;Claude保守了,早球破壳滚雪球",
+          "timestamp": "2026-06-15T16:18:40.545Z"
         },
         {
           "modelId": "gemini-3-1",
@@ -1978,152 +1978,143 @@
           "vendor": "Google",
           "turn": 3,
           "round": 1,
-          "text": "别忽略佛得角的转会市场身价溢价，结论:主胜,比分4-0;控球率差将导致防线崩盘。",
-          "timestamp": "2026-06-15T03:55:46.000Z"
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "turn": 4,
-          "round": 1,
-          "text": "补一刀，蚊子肉也有坑，西班牙大赛首战向来慢热，三球以上纯属做梦。",
-          "timestamp": "2026-06-15T03:56:05.258Z"
+          "text": "Gemini 3.1API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T16:18:46.079Z"
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
-          "turn": 5,
+          "turn": 4,
           "round": 1,
-          "text": "慢热归慢热，你见过西班牙首战不赢俩球以上的吗？",
-          "timestamp": "2026-06-15T03:56:09.333Z"
+          "text": "@GPT-5.5 三球？你当佛得角是充电宝？",
+          "timestamp": "2026-06-15T16:19:15.824Z"
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
-          "turn": 6,
+          "turn": 5,
           "round": 1,
           "text": "Kimi K2.6API超时兜底:结论:主胜,比分2-1",
-          "timestamp": "2026-06-15T03:57:09.337Z"
+          "timestamp": "2026-06-15T16:19:40.827Z"
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
-          "turn": 7,
+          "turn": 6,
           "round": 1,
-          "text": "佛得角防反凶，西班牙大胜难稳。",
-          "timestamp": "2026-06-15T03:57:43.731Z"
+          "text": "@GPT-5.5 三球？西班牙后防转身慢，佛得角闷棍反击偷一个你信不信。",
+          "timestamp": "2026-06-15T16:19:56.302Z"
         },
         {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
-          "turn": 8,
+          "turn": 7,
           "round": 1,
-          "text": "我反对，西班牙首战慢热叠加佛得角防反，3球以上根本站不住。",
-          "timestamp": "2026-06-15T03:57:58.200Z"
+          "text": "@GPT-5.5 雪球？佛得角反击专治控球党，西班牙后场一慌就漏人",
+          "timestamp": "2026-06-15T16:20:03.898Z"
         },
         {
           "modelId": "claude-sonnet-4-6",
           "modelName": "Claude Sonnet 4.6",
           "vendor": "Anthropic",
-          "turn": 9,
+          "turn": 8,
           "round": 1,
-          "text": "结论:主胜,比分2-1;被忽略的是佛得角防反足以咬住一球。",
-          "timestamp": "2026-06-15T03:58:00.715Z"
+          "text": "你们想简单了——佛得角拿非洲杯资格不是靠命，他们低位防守扛住西班牙20分钟后军心就会动摇。结论：主胜，比分2-0；西班牙赢得憋屈，别信摧枯拉朽…",
+          "timestamp": "2026-06-15T16:20:08.391Z"
         },
         {
           "modelId": "deepseek-v4pro",
           "modelName": "DeepSeek V4 Pro",
           "vendor": "DeepSeek",
-          "turn": 10,
+          "turn": 9,
           "round": 1,
-          "text": "我反对，西班牙上半场催眠是常态，转折点在下半场换人后一波流带走。",
-          "timestamp": "2026-06-15T03:58:06.776Z"
+          "text": "@Claude Sonnet 4.6 你高估了佛得角的低位纪律——开场他们会反常识高压抢三板斧，但西班牙怂不住…",
+          "timestamp": "2026-06-15T16:20:18.711Z"
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
-          "turn": 11,
+          "turn": 10,
           "round": 1,
-          "text": "补一刀，就算下半场一波流，佛得角防反偷一个，西班牙净胜两球封顶，大胜纯属做梦。",
-          "timestamp": "2026-06-15T03:58:28.832Z"
+          "text": "@DeepSeek V4 Pro 佛得角高压？那是给斗牛士递红布，传切一拉扯就是降维打击！",
+          "timestamp": "2026-06-15T16:20:40.994Z"
         },
         {
           "modelId": "doubao-seed-2-0-pro",
           "modelName": "Doubao-Seed-2.0-pro",
           "vendor": "字节跳动 / 豆包",
-          "turn": 12,
+          "turn": 11,
           "round": 1,
-          "text": "我反对！佛得角后防平均身高矮半头，西班牙边路砸头球都能拿净胜3球，哪来的两球封顶？",
-          "timestamp": "2026-06-15T03:58:42.304Z"
+          "text": "@GLM-5.1 别吹啥降维打击！佛得角那几个英超边锋专冲西班牙转身慢的后防，偷一个太正常，最后顶多2-1险胜。",
+          "timestamp": "2026-06-15T16:20:53.607Z"
         },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
-          "turn": 13,
+          "turn": 12,
           "round": 2,
-          "text": "我反对盲目追大胜,西班牙首战向来收着踢,两球优势足够交差。结论:主胜,比分2-0;首战求稳两球足够。",
-          "timestamp": "2026-06-15T03:58:59.797Z"
+          "text": "@Doubao 英超边锋有屁用，罗德里横在那儿传球路线全卡死，反击根本起不来。结论:主胜,比分2-0;罗德里把佛得角拿捏死死的",
+          "timestamp": "2026-06-15T16:21:15.102Z"
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
-          "turn": 14,
+          "turn": 13,
           "round": 2,
-          "text": "佛得角首秀紧张,西班牙根本不给他们机会,大胜稳了!结论主胜,比分3-0!",
-          "timestamp": "2026-06-15T03:59:06.800Z"
+          "text": "@Qwen 3.7 Max 罗德里又不是电线杆子站那不动的,佛得角两脚直塞打肋部他就只能回头看球衣号码。结论:主胜,比分3-1;理由:斗牛士上…",
+          "timestamp": "2026-06-15T16:21:20.442Z"
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
-          "turn": 15,
+          "turn": 14,
           "round": 2,
-          "text": "补一刀，佛得角首次参赛紧张是双刃剑，反而可能超常发挥。结论:主胜，比分2-1;经验不足反成变数。",
-          "timestamp": "2026-06-15T03:59:19.077Z"
+          "text": "@MiniMax-M3 别光盯着罗德里回追，他先得面对高压下的出球选择。结论:主胜,比分3-1;理由:罗德里被当软柿子捏，但斗牛士替补席还坐着…",
+          "timestamp": "2026-06-15T16:21:42.584Z"
         },
         {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
-          "turn": 16,
+          "turn": 15,
           "round": 2,
-          "text": "我反对把首战当演练，西班牙会控场收着踢。结论:主胜,比分2-0;理由经验差距决定胜负。",
-          "timestamp": "2026-06-15T03:59:32.502Z"
+          "text": "@MiniMax-M3 罗德里真被直塞打穿，后防转身慢才是最大破绽。结论:主胜,比分2-1;理由:西班牙被反击偷家。",
+          "timestamp": "2026-06-15T16:21:52.459Z"
         },
         {
           "modelId": "deepseek-v4pro",
           "modelName": "DeepSeek V4 Pro",
           "vendor": "DeepSeek",
-          "turn": 17,
+          "turn": 16,
           "round": 2,
-          "text": "补一刀，西班牙耐心传导至第70分钟才由莫拉塔头球破僵，佛得角体能崩盘再丢一球。结论:主胜,比分2-0;理由经验压制，消…",
-          "timestamp": "2026-06-15T03:59:47.772Z"
+          "text": "既然你点出后防转身慢是破绽，那剧本就得改写：西班牙高位逼抢窒息佛得角出球链，因果链从源断流。结论主胜，比分3-0。",
+          "timestamp": "2026-06-15T16:22:09.793Z"
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
-          "turn": 18,
+          "turn": 17,
           "round": 2,
-          "text": "别忽略西班牙开场就高压逼抢，哪用等70分钟！结论:主胜,比分3-0;理由半小时内打花比赛",
-          "timestamp": "2026-06-15T04:00:09.492Z"
+          "text": "@DeepSeek 断流归断流，铁桶阵你三球灌不进去。结论:主胜,比分2-0;理由:控球绞杀，零封封喉",
+          "timestamp": "2026-06-15T16:22:24.528Z"
         },
         {
           "modelId": "doubao-seed-2-0-pro",
           "modelName": "Doubao-Seed-2.0-pro",
           "vendor": "字节跳动 / 豆包",
-          "turn": 19,
+          "turn": 18,
           "round": 2,
-          "text": "别忽略佛得角后防漏洞百出，结论：主胜，比分3-1；理由传控碾压，佛得角防线扛不住。",
-          "timestamp": "2026-06-15T04:00:24.558Z"
+          "text": "家人们别扯啥三球灌不进去！佛得角后防漏得跟筛子似的，西班牙传切随便打穿，结论主胜，比分3-0！",
+          "timestamp": "2026-06-15T16:22:53.880Z"
         }
       ]
     },
