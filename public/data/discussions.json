@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T03:55:31.845Z",
+  "updatedAt": "2026-06-15T04:06:39.851Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -1443,6 +1443,174 @@
           "round": 3,
           "text": "别都扎堆冲2-1啊！我之前说的3.75负赔大肥肉真能吃上！结论：客胜，比分1-2",
           "timestamp": "2026-06-14T11:08:19.134Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489377",
+      "sealedAt": "2026-06-15T04:06:39.851Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;埃及锋无力,比利时控场碾压。",
+          "timestamp": "2026-06-15T04:06:42.514Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "这点我买，结论:主胜,比分2-0;埃及反击会被掐死",
+          "timestamp": "2026-06-15T04:06:52.023Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "别忽略当地当晚32摄氏度的高温，埃及适应性更强，结论:平局,比分1-1;比利时体能衰减将导致防线失守。",
+          "timestamp": "2026-06-15T04:06:54.749Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "补一刀比利时板凳深度够厚，高温轮换不吃亏，主胜依然有肉吃。",
+          "timestamp": "2026-06-15T04:07:13.098Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "我反对，高温32度比利时早练过，热身赛就在这天气踢的，埃及适应个屁。",
+          "timestamp": "2026-06-15T04:07:16.839Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "Kimi K2.6API超时兜底:结论:主胜,比分2-1",
+          "timestamp": "2026-06-15T04:07:41.843Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "这点我买，但比利时后防老龄化高温下更脆，德布劳内维尔通亨体能亮灯埃及反击偷一个。",
+          "timestamp": "2026-06-15T04:08:00.020Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "我反对比利时真能轮换自如，老将们在32度下跑不起来。",
+          "timestamp": "2026-06-15T04:08:16.302Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "结论:平局,比分1-1;被忽视的是埃及组赛首战低压动员效应往往比高温更致命。",
+          "timestamp": "2026-06-15T04:08:19.468Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 10,
+          "round": 1,
+          "text": "我反对，低压动员？埃及首战紧张失误更多，比利时大赛经验碾压。",
+          "timestamp": "2026-06-15T04:08:58.552Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 1,
+          "text": "我反对，萨拉赫现在脚感烫得离谱，冲比利时老迈后防，本场埃及拿分稳得很！",
+          "timestamp": "2026-06-15T04:09:19.457Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "别光吹萨拉赫，比利时中场绞杀够他喝一壶。结论:主胜,比分2-1;理由：比利时大赛底蕴兜底",
+          "timestamp": "2026-06-15T04:09:42.710Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "埃及反击犀利，比利时后防老龄化严重，我看好客胜，比分1-2。",
+          "timestamp": "2026-06-15T04:09:50.406Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 2,
+          "text": "我反对，比利时中场厚度能锁死萨拉赫。结论:主胜,比分2-1;理由：经验碾压加中场绞杀。",
+          "timestamp": "2026-06-15T04:10:01.774Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 2,
+          "text": "别忽略比利时后防老化,结论:客胜,比分1-2;理由:萨拉赫反击致命",
+          "timestamp": "2026-06-15T04:10:17.441Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 2,
+          "text": "我反对，萨拉赫的反击会被越位陷阱破解，德布劳内补时折射绝杀。结论:主胜,比分2-1;理由：德布劳内绝杀。",
+          "timestamp": "2026-06-15T04:10:35.668Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "别忽略中场硬度的降维打击，萨拉赫孤立无援！结论:主胜,比分2-1;理由：中场压制锁死边路",
+          "timestamp": "2026-06-15T04:10:56.262Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 2,
+          "text": "别忽略埃及中场根本送不出威胁球！结论:主胜，比分2-1；理由：德布劳内串联进攻效率拉满",
+          "timestamp": "2026-06-15T04:11:20.319Z"
         }
       ]
     },
