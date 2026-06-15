@@ -1,13 +1,58 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T00:00:00+08:00",
-  "status": "verified-empty",
+  "updatedAt": "2026-06-16T01:00:22+08:00",
+  "status": "verified",
   "sources": [
     {
       "label": "中国竞彩网足球赛果开奖",
       "href": "https://www.sporttery.cn/jc/zqsgkj/",
-      "note": "官方页面提供“仅显示胜平负单固场次”筛选;其公开前端脚本使用 isFix=1 查询单固场次,并用 bettingSingle=1 标记单固。"
+      "note": "官方页面提供“仅显示胜平负单固场次”筛选;其公开前端脚本使用 isFix=1 查询单固场次,并用 bettingSingle=1 标记单固。本文件按 2026-06-14 至 2026-06-16 官方页面筛选结果人工核对。"
     }
   ],
-  "matches": []
+  "matches": [
+    {
+      "matchId": "fixture-1489371",
+      "jingcaiMatchId": "2040167",
+      "matchNum": "周六006",
+      "matchDate": "2026-06-14",
+      "league": "世界杯",
+      "homeTeam": "巴西",
+      "awayTeam": "摩洛哥",
+      "kickoff": "2026-06-13T22:00:00+00:00",
+      "officialScore": "1:1"
+    },
+    {
+      "matchId": "fixture-1539001",
+      "jingcaiMatchId": "2040169",
+      "matchNum": "周六008",
+      "matchDate": "2026-06-14",
+      "league": "世界杯",
+      "homeTeam": "澳大利亚",
+      "awayTeam": "土耳其",
+      "kickoff": "2026-06-14T04:00:00+00:00",
+      "officialScore": "2:0"
+    },
+    {
+      "matchId": "fixture-1489376",
+      "jingcaiMatchId": "2040171",
+      "matchNum": "周日010",
+      "matchDate": "2026-06-15",
+      "league": "世界杯",
+      "homeTeam": "荷兰",
+      "awayTeam": "日本",
+      "kickoff": "2026-06-14T20:00:00+00:00",
+      "officialScore": "2:2"
+    },
+    {
+      "matchId": "fixture-1539002",
+      "jingcaiMatchId": "2040173",
+      "matchNum": "周日012",
+      "matchDate": "2026-06-15",
+      "league": "世界杯",
+      "homeTeam": "瑞典",
+      "awayTeam": "突尼斯",
+      "kickoff": "2026-06-15T02:00:00+00:00",
+      "officialScore": "5:1"
+    }
+  ]
 }
