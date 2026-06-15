@@ -18,4 +18,4 @@ launchctl kickstart -k "gui/$(id -u)/com.tom.worldcup-ai-arena-results" 2>/dev/n
 
 echo "Installed:"
 echo "  com.tom.worldcup-ai-arena-results    every 10 minutes"
-echo "  com.tom.worldcup-ai-arena-roundtable daily 19:00 Asia/Shanghai"
+echo "  com.tom.worldcup-ai-arena-roundtable daily 10:00 Asia/Shanghai"

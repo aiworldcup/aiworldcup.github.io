@@ -10,7 +10,7 @@
   - 行为:同步真实赛程/赛果,重算排行榜;只有 `public/data` 发生语义变化时才 commit + push。
 
 - `com.tom.worldcup-ai-arena-roundtable`
-  - 频率:每天北京时间 19:00
+  - 频率:每天北京时间 10:00
   - 命令:`npm run publish:roundtable`
   - 行为:先同步赛程,只检查次日比赛;如果次日没有未完赛比赛,直接跳过;如果有未生成圆桌的比赛,逐场生成并发布。
 

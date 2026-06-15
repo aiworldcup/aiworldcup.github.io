@@ -85,6 +85,10 @@ function normalizePrediction(modelId, track, payload) {
   };
 }
 
+function apiTimeoutMs() {
+  return Math.max(1000, Number(process.env.API_TIMEOUT_MS) || 60000);
+}
+
 async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
   const base = String(providerBase(provider)).replace(/\/+$/, "");
   if (!base) throw new Error("缺少 OpenAI-compatible API base");
@@ -95,6 +99,7 @@ async function callOpenAICompatible(provider, prompt, apiKey, options = {}) {
   if (options.json) body.response_format = { type: "json_object" };
   const res = await fetch(`${base}/chat/completions`, {
     method: "POST",
+    signal: AbortSignal.timeout(apiTimeoutMs()),
     headers: {
       authorization: `Bearer ${apiKey}`,
       "content-type": "application/json",
@@ -132,7 +137,7 @@ async function callResponsesCompatible(provider, prompt, apiKey, options = {}) {
   }
   const res = await fetch(`${base}/responses`, {
     method: "POST",
-    signal: AbortSignal.timeout(Math.max(1000, Number(process.env.API_TIMEOUT_MS) || 60000)),
+    signal: AbortSignal.timeout(apiTimeoutMs()),
     headers: {
       authorization: `Bearer ${apiKey}`,
       "content-type": "application/json",
@@ -146,7 +151,7 @@ async function callResponsesCompatible(provider, prompt, apiKey, options = {}) {
 async function callAnthropic(provider, prompt, apiKey, options = {}) {
   const base = String(providerBase(provider)).replace(/\/+$/, "");
   const endpoint = /zenmux\.ai\/api\/anthropic$/.test(base) ? `${base}/v1/messages` : `${base}/messages`;
-  const timeoutMs = Math.max(1000, Number(process.env.API_TIMEOUT_MS) || 60000);
+  const timeoutMs = apiTimeoutMs();
   const res = await fetch(endpoint, {
     method: "POST",
     signal: AbortSignal.timeout(timeoutMs),
@@ -275,6 +280,7 @@ async function callGemini(provider, prompt, apiKey, options = {}) {
   if (options.json) body.generationConfig = { responseMimeType: "application/json" };
   const res = await fetch(url, {
     method: "POST",
+    signal: AbortSignal.timeout(apiTimeoutMs()),
     headers: {
       ...(isZenmuxVertex ? { authorization: `Bearer ${apiKey}` } : {}),
       "content-type": "application/json",
