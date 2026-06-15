@@ -173,16 +173,29 @@ function availableDateKeys() {
   return matchDates.length ? matchDates : [today];
 }
 
+function dateHasOpenMatch(dateKey, now = new Date()) {
+  const cutoff = now.getTime() - MATCH_SETTLEMENT_GRACE_MS;
+  return MATCHES
+    .filter(match => matchDateKey(match) === dateKey)
+    .some(match => {
+      if (match.actual) return false;
+      const kickoff = new Date(match.kickoff).getTime();
+      return Number.isFinite(kickoff) ? kickoff >= cutoff : true;
+    });
+}
+
 function matchesForSelectedDate() {
   return MATCHES.filter(match => matchDateKey(match) === selectedDateKey);
 }
 
-function pickInitialDate() {
-  const today = beijingDateKey();
+function pickInitialDate(now = new Date()) {
+  const today = beijingDateKey(now);
   const keys = availableDateKeys();
-  if (keys.includes(today)) return today;
+  if (keys.includes(today) && dateHasOpenMatch(today, now)) return today;
   const upcoming = keys.find(key => key > today);
-  return upcoming || keys[keys.length - 1] || today;
+  if (upcoming) return upcoming;
+  const recent = [...keys].reverse().find(key => key <= today);
+  return recent || keys[keys.length - 1] || today;
 }
 
 function renderDateQuick() {
@@ -208,7 +221,13 @@ function renderDateQuick() {
       renderDiscussions();
     });
   });
-  el.querySelector('.date-btn.active')?.scrollIntoView({ inline: 'center', block: 'nearest' });
+  const activeButton = el.querySelector('.date-btn.active');
+  if (activeButton) {
+    window.requestAnimationFrame(() => {
+      const targetLeft = activeButton.offsetLeft - (el.clientWidth - activeButton.clientWidth) / 2;
+      el.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+    });
+  }
 }
 
 function renderMatchSummary() {
