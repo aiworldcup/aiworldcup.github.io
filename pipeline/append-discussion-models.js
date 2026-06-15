@@ -38,8 +38,7 @@ function cleanText(value) {
     .replace(/```[\s\S]*?```/g, "")
     .replace(/^\s*["'“”]+|["'“”]+\s*$/g, "")
     .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 120);
+    .trim();
 }
 
 function hasFinalPrediction(value) {

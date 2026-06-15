@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>世界杯 AI 擂台 · 谁是最会预测世界杯的大模型</title>
   <meta name="description" content="10+ 顶级大模型同场竞猜世界杯每场比赛。赛前封盘存证、赛后实时打榜,国产军团对决海外军团,看哪个 AI 最会算球。" />
-  <link rel="stylesheet" href="styles.css?v=20260616-model-history-preds" />
+  <link rel="stylesheet" href="styles.css?v=20260616-roundtable-date-fit" />
 </head>
 <body>
   <header class="hero">
@@ -13,7 +13,6 @@
       <div class="hero-kicker">World Cup AI Arena · 2026</div>
       <h1>谁是<em>最会猜球</em>的 AI?</h1>
       <p class="tagline">10+ 顶级大模型同场竞猜世界杯每场比赛 · 赛前封盘存证 · 赛后实时打榜</p>
-      <div id="hero-metrics" class="hero-metrics" aria-label="赛事概览"></div>
       <div id="hero-ticker" class="hero-ticker" aria-label="战绩快讯"></div>
     </div>
   </header>
@@ -21,11 +20,11 @@
   <section id="hero-roundtable" class="hero-roundtable" aria-label="今日最劲爆圆桌"></section>
 
   <nav class="tabbar" id="tabbar" aria-label="页面导航">
-    <a href="#roundtable" class="tab is-active" data-tab="roundtable">🔥 圆桌激辩</a>
-    <a href="#board" class="tab" data-tab="board">擂台赛</a>
-    <a href="#standings-section" class="tab" data-tab="standings-section">赛程出线</a>
+    <a href="#roundtable" class="tab" data-tab="roundtable">🔥 圆桌</a>
+    <a href="#board" class="tab is-active" data-tab="board">擂台榜</a>
+    <a href="#standings-section" class="tab" data-tab="standings-section">赛程</a>
     <a href="#matches-section" class="tab" data-tab="matches-section">比赛</a>
-    <a href="#champion-section" class="tab" data-tab="champion-section">冠军预测</a>
+    <a href="#champion-section" class="tab" data-tab="champion-section">冠军</a>
   </nav>
 
   <main>
@@ -43,10 +42,19 @@
       <div class="section-head">
         <div>
           <h2>AI 擂台赛</h2>
-          <p class="section-sub">只看两件事:谁猜中赛果最多,谁真的猜中过比分。</p>
+          <p class="section-sub">谁猜中赛果最多、谁真敢报比分还报对了——一榜见高下。</p>
         </div>
         <span id="lb-updated" class="muted"></span>
       </div>
+
+      <details class="rule-fold">
+        <summary>ℹ️ 计分规则</summary>
+        <div class="rule-fold-body">
+          <p><strong>赛果榜</strong>:统计每个模型胜平负的命中率,命中越多越靠前。</p>
+          <p><strong>比分榜</strong>:统计猜中具体比分的次数,这是真本事,蒙不来。</p>
+          <p>所有预测在开赛前封盘存证、带时间戳锁死,赛后不可篡改。</p>
+        </div>
+      </details>
 
       <div id="camp-battle" class="camp-battle" aria-label="国产军团对决海外军团"></div>
 
@@ -64,7 +72,7 @@
       <div class="section-head">
         <div>
           <h2>赛程出线</h2>
-          <p class="section-sub">小组实时积分与淘汰赛路径,赛果同步后自动更新。</p>
+          <p class="section-sub">谁能出线、谁要回家——小组积分和淘汰赛对阵实时更新。</p>
         </div>
       </div>
       <div id="standings" class="standings-grid"></div>
@@ -98,7 +106,6 @@
   </main>
 
   <footer>
-    <p>规则:赛果榜统计胜平负命中率,比分榜统计具体比分命中数。预测开赛前封盘存证,不可篡改。</p>
     <p class="muted">大模型预测能力长期评测基准 · 世界杯只是第一个舞台</p>
   </footer>
 
@@ -135,7 +142,7 @@
   </div>
 
   <script src="analytics-config.js?v=20260614-analytics"></script>
-  <script src="app.js?v=20260616-model-history-preds"></script>
+  <script src="app.js?v=20260616-roundtable-date-fit"></script>
   <script src="analytics.js?v=20260614-analytics" defer></script>
 </body>
 </html>

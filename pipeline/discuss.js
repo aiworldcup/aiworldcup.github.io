@@ -130,8 +130,7 @@ function compactSentence(value, limit) {
   if (!text) return "";
   const sentences = text.match(/[^。！？!?]+[。！？!?]?/g) || [text];
   if (sentences.length > 2) text = sentences.slice(0, 2).join("").trim();
-  if (text.length <= limit) return text;
-  return `${text.slice(0, Math.max(0, limit - 1)).trim()}…`;
+  return text;
 }
 
 function hasFinalPrediction(value) {

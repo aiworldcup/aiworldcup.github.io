@@ -10,7 +10,6 @@ let GROUPS = {};
 let selectedDateKey = '';
 let activeLbTrack = 'result';
 let heroRoundtableTimer = null;
-let manualTabScrollUntil = 0;
 const ACTIVE_TRACK = 'open';
 
 // 阵营划分:国产军团 vs 海外军团(用于核心传播钩子)
@@ -835,22 +834,6 @@ function wireLeaderboardHistory() {
   });
 }
 
-function renderHeroMetrics() {
-  const el = document.getElementById('hero-metrics');
-  if (!el) return;
-  const lifecycles = MATCHES.map(match => matchLifecycle(match));
-  const settled = lifecycles.filter(item => item.key === 'settled').length;
-  const needsResult = lifecycles.filter(item => item.key === 'needs-result').length;
-  const totalPredictions = MATCHES.reduce((sum, match) => sum + predictionsForMatch(match).length, 0);
-  const enabledModels = Object.values(MODELS).filter(model => model.enabled !== false).length;
-  el.innerHTML = [
-    ['比赛席位', MATCHES.length],
-    ['参赛模型', enabledModels],
-    ['已出预测', totalPredictions],
-    ['待结算', needsResult || settled]
-  ].map(([label, value]) => `<div class="hero-metric"><strong>${value}</strong><span>${label}</span></div>`).join('');
-}
-
 function renderHeroTicker() {
   const el = document.getElementById('hero-ticker');
   if (!el) return;
@@ -1513,7 +1496,7 @@ async function init() {
   await refreshData({ resetDate: true });
 
   wireLeaderboardTabs();
-  wireScrollSpy();
+  wireTabs();
   wireDebateStage();
   wireModelHistoryStage();
   startDataRefresh();
@@ -1544,7 +1527,6 @@ async function refreshData({ resetDate = false } = {}) {
   const groups = await loadJSON('data/groups.json');
   GROUPS = groups?.groups || {};
 
-  renderHeroMetrics();
   renderHeroTicker();
   renderHeroRoundtable();
   renderDateQuick();
@@ -1646,55 +1628,61 @@ function wireLeaderboardTabs() {
 function initRevealMotion() {
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
   const nodes = document.querySelectorAll('.match, .rt-card, .standing-card, .bracket-round, .lb-row');
-  if (!nodes.length || !('IntersectionObserver' in window)) return;
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  if (!nodes.length) return;
   nodes.forEach(node => {
-    if (node.classList.contains('is-visible')) return;
     node.classList.add('reveal-card');
-    observer.observe(node);
+    node.classList.add('is-visible');
   });
 }
 
-function wireScrollSpy() {
+function wireTabs() {
   const tabs = Array.from(document.querySelectorAll('.tabbar .tab'));
   if (!tabs.length) return;
   const sections = tabs
     .map(tab => document.getElementById(tab.dataset.tab))
     .filter(Boolean);
+
   const activateTab = id => {
     tabs.forEach(tab => tab.classList.toggle('is-active', tab.dataset.tab === id));
+    sections.forEach(section => {
+      if (section.id === id) {
+        section.style.display = 'block';
+        window.requestAnimationFrame(() => {
+          initRevealMotion();
+        });
+      } else {
+        section.style.display = 'none';
+      }
+    });
   };
+
+  // 根据 URL hash 初始化 active tab
+  const hash = location.hash.replace('#', '');
+  const initialTab = tabs.find(t => t.dataset.tab === hash) || tabs.find(t => t.classList.contains('is-active')) || tabs[0];
+  activateTab(initialTab.dataset.tab);
 
   tabs.forEach(tab => {
     tab.addEventListener('click', e => {
-      const section = document.getElementById(tab.dataset.tab);
-      if (!section) return;
       e.preventDefault();
-      manualTabScrollUntil = Date.now() + 900;
-      activateTab(tab.dataset.tab);
-      const offset = (document.getElementById('tabbar')?.offsetHeight || 0) + 10;
-      const top = section.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
-      history.replaceState?.(null, '', `#${tab.dataset.tab}`);
+      const targetId = tab.dataset.tab;
+      if (targetId === 'matches-section') {
+        selectedDateKey = pickInitialDate();
+        renderDateQuick();
+        renderMatches();
+        renderDiscussions();
+      }
+      activateTab(targetId);
+      history.replaceState?.(null, '', `#${targetId}`);
+      
+      const tabbar = document.getElementById('tabbar');
+      if (tabbar) {
+        const offsetTop = tabbar.offsetTop;
+        if (window.scrollY > offsetTop) {
+          window.scrollTo({ top: offsetTop, behavior: 'auto' });
+        }
+      }
     });
   });
-
-  if (!('IntersectionObserver' in window)) return;
-  const observer = new IntersectionObserver(entries => {
-    if (Date.now() < manualTabScrollUntil) return;
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const id = entry.target.id;
-      activateTab(id);
-    });
-  }, { rootMargin: '-28% 0px -58% 0px', threshold: 0 });
-  sections.forEach(section => observer.observe(section));
 }
 
 init();
