@@ -1,6 +1,6 @@
 # 项目决策记忆
 
-更新时间: 2026-06-15
+更新时间: 2026-06-16
 
 ## 产品定位
 
@@ -42,11 +42,11 @@
 
 ## 域名策略
 
-- 当前线上站点继续跑 GitHub Pages:`https://ccavtjy.github.io/worldcup-ai-arena/`
+- 当前线上站点已迁移到 GitHub Organization Pages:`https://aiworldcup.github.io/`
+- 旧个人 Pages 地址保留为备份:`https://ccavtjy.github.io/worldcup-ai-arena/`
 - 已创建 GitHub Organization:`https://github.com/aiworldcup`
 - 已创建组织 Pages 仓库:`https://github.com/aiworldcup/aiworldcup.github.io`
-- 组织 Pages 目标地址:`https://aiworldcup.github.io/`
-- 当前先不搬站点,等前端调整稳定后再迁移。
+- 本地 `origin` 应指向组织 Pages 仓库,让自动赛果/圆桌发布继续更新新站。
 - 主要受众是中国大陆,长期更推荐购买 `.com` 域名,先接 GitHub Pages,后续再做备案和国内 CDN/静态托管。
 - `.ai`、`.io` 适合海外传播,但对大陆访问速度没有直接帮助,未来备案/国内接入不如 `.com` 稳。
 - 候选优先级:短期品牌传播可看 `aiworldcup.io`;面向大陆长期更偏向 `modelwc.com`、`matcharenaai.com`、`footballbrainai.com` 这类 `.com`。
