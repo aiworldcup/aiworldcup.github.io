@@ -159,14 +159,18 @@ function matchDateKey(match) {
   return beijingDateKey(match.kickoff);
 }
 
+function matchDateCounts() {
+  return MATCHES.reduce((counts, match) => {
+    const key = matchDateKey(match);
+    counts.set(key, (counts.get(key) || 0) + 1);
+    return counts;
+  }, new Map());
+}
+
 function availableDateKeys() {
   const today = beijingDateKey();
-  const matchDates = MATCHES.map(matchDateKey).sort();
-  const maxDate = matchDates[matchDates.length - 1] || addDays(today, 6);
-  const keys = new Set([today, addDays(today, 1), addDays(today, 2)]);
-  matchDates.forEach(key => keys.add(key));
-  for (let key = today; key <= maxDate; key = addDays(key, 1)) keys.add(key);
-  return Array.from(keys).sort();
+  const matchDates = Array.from(new Set(MATCHES.map(matchDateKey).filter(Boolean))).sort();
+  return matchDates.length ? matchDates : [today];
 }
 
 function matchesForSelectedDate() {
@@ -175,24 +179,25 @@ function matchesForSelectedDate() {
 
 function pickInitialDate() {
   const today = beijingDateKey();
-  const upcoming = MATCHES
-    .map(matchDateKey)
-    .filter(key => key >= today)
-    .sort()[0];
-  return upcoming || today;
+  const keys = availableDateKeys();
+  if (keys.includes(today)) return today;
+  const upcoming = keys.find(key => key > today);
+  return upcoming || keys[keys.length - 1] || today;
 }
 
 function renderDateQuick() {
   const el = document.getElementById('date-quick');
   if (!el) return;
   const keys = availableDateKeys();
+  const counts = matchDateCounts();
+  if (!keys.includes(selectedDateKey)) selectedDateKey = pickInitialDate();
   el.innerHTML = keys.map(key => {
-    const count = MATCHES.filter(match => matchDateKey(match) === key).length;
+    const count = counts.get(key) || 0;
     const active = key === selectedDateKey ? ' active' : '';
     const empty = count ? '' : ' empty-date';
     return `<button class="date-btn${active}${empty}" data-date="${key}">
       <span>${dateLabel(key)}</span>
-      <small>${dateSubLabel(key)} · ${count ? `${count} 场` : '待更新'}</small>
+      <small>${dateSubLabel(key)} · ${count ? `${count} 场` : '暂无比赛'}</small>
     </button>`;
   }).join('');
   el.querySelectorAll('.date-btn').forEach(button => {
@@ -203,6 +208,7 @@ function renderDateQuick() {
       renderDiscussions();
     });
   });
+  el.querySelector('.date-btn.active')?.scrollIntoView({ inline: 'center', block: 'nearest' });
 }
 
 function renderMatchSummary() {
