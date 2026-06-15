@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T01:00:22+08:00",
+  "updatedAt": "2026-06-15T22:01:23.995Z",
   "status": "verified",
   "sources": [
     {
       "label": "中国竞彩网足球赛果开奖",
       "href": "https://www.sporttery.cn/jc/zqsgkj/",
-      "note": "官方页面提供“仅显示胜平负单固场次”筛选;其公开前端脚本使用 isFix=1 查询单固场次,并用 bettingSingle=1 标记单固。本文件按 2026-06-14 至 2026-06-16 官方页面筛选结果人工核对。"
+      "note": "自动同步使用官方“仅显示胜平负单固场次”口径;官方接口使用 isFix=1 查询单固场次。"
     }
   ],
   "matches": [
