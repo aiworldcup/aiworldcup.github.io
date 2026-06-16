@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T10:51:51.793Z",
+  "updatedAt": "2026-06-16T11:08:21.974Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -2433,20 +2433,19 @@
           "text": "@DeepSeek V4 Pro 笨重肉塔转身慢，小快灵专溜这种蹲坑体格，主胜2-1！",
           "timestamp": "2026-06-16T10:49:51.353Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-16T10:49:22.551Z",
+          "text": "结论:主胜,比分2-0;理由:阿根廷左路套边打穿",
+          "timestamp": "2026-06-16T11:08:21.974Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1489382",
@@ -2638,20 +2637,19 @@
           "text": "奥地利主胜,比分2-0。",
           "timestamp": "2026-06-16T10:50:00.903Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-16T10:51:00.905Z",
+          "text": "结论:主胜,比分2-0;理由:约旦右肋协防失位",
+          "timestamp": "2026-06-16T11:07:02.848Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1489383",
@@ -2826,20 +2824,19 @@
           "text": "@DeepSeek V4 Pro 吉鲁40岁还当杀招？老将退场，新王登基。",
           "timestamp": "2026-06-16T10:46:05.341Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-16T10:45:33.368Z",
+          "text": "结论:主胜,比分2-1;理由:塞内加尔左肋空当大",
+          "timestamp": "2026-06-16T11:05:10.545Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1538999",
@@ -4351,20 +4348,19 @@
           "text": "@Qwen 3.7 Max 韭菜盘？你眼里只有哈兰德，没看见挪威中场跑不动吗？",
           "timestamp": "2026-06-16T10:48:22.547Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-16T10:48:04.698Z",
+          "text": "结论:客胜,比分0-2;理由:中场慢无碍右边锋爆肋",
+          "timestamp": "2026-06-16T11:05:44.780Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     }
   ]
 }

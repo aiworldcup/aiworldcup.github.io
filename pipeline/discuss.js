@@ -187,6 +187,21 @@ function oddsLine(match) {
 }
 
 function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTurn = false) {
+  if (model.id === "kimi-k2-6") {
+    const last = previousMessages[previousMessages.length - 1];
+    const lastLine = last ? `${last.modelName}: ${last.text}` : "无";
+    const style = STYLE_PROFILES[model.id];
+    const finalRule = isFinalTurn
+      ? "只输出一行,格式必须是:结论:主胜/平局/客胜,比分X-X;理由:简短具体。"
+      : "只输出一句短评,必须从一个阵型细节点给出倾向。";
+    return `比赛:${match.home.team} vs ${match.away.team}
+赔率:胜${match.odds?.result?.home ?? "未知"} 平${match.odds?.result?.draw ?? "未知"} 负${match.odds?.result?.away ?? "未知"}
+你是Kimi K2.6。${style}
+上一句:${lastLine}
+${finalRule}
+比分必须按主队-客队。不要解释规则,不要Markdown。`;
+  }
+
   const history = previousMessages.length
     ? previousMessages
       .slice(-6)
