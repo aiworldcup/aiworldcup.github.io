@@ -3107,20 +3107,48 @@ footer p + p { margin-top: 5px; }
 
 .history-roundtable {
   margin-top: 10px;
+}
+
+.history-roundtable summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(245, 197, 66, 0.28);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--gold);
+  background: rgba(245, 197, 66, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.history-roundtable summary::-webkit-details-marker {
+  display: none;
+}
+
+.history-roundtable summary::after {
+  content: "展开";
+  margin-left: 7px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.history-roundtable[open] summary::after {
+  content: "收起";
+}
+
+.history-roundtable-lines {
+  margin-top: 8px;
+  border: 1px solid rgba(245, 197, 66, 0.22);
   border-radius: 8px;
   padding: 9px;
   background: rgba(245, 197, 66, 0.06);
 }
 
-.history-roundtable-title {
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 900;
-  margin-bottom: 6px;
-}
-
-.history-roundtable p {
+.history-roundtable-lines p {
   margin: 0;
   color: var(--text);
   font-size: 12px;
@@ -3128,7 +3156,7 @@ footer p + p { margin-top: 5px; }
   overflow-wrap: anywhere;
 }
 
-.history-roundtable p + p {
+.history-roundtable-lines p + p {
   margin-top: 6px;
   padding-top: 6px;
   border-top: 1px dashed rgba(255, 255, 255, 0.12);

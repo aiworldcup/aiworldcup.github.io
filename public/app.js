@@ -1257,10 +1257,12 @@ function openModelHistory(modelId) {
       ? `${hitBadge('赛果', resultHit)}${hitBadge('比分', scoreHit)}`
       : '<span class="history-badge is-pending">待结算</span>';
     const roundtableMessages = modelRoundtableMessages(match.id, modelId);
-    const roundtableHtml = roundtableMessages.length ? `<div class="history-roundtable">
-        <div class="history-roundtable-title">圆桌发言</div>
-        ${roundtableMessages.map(message => `<p>${escapeHTML(message.text)}</p>`).join('')}
-      </div>` : '';
+    const roundtableHtml = roundtableMessages.length ? `<details class="history-roundtable">
+        <summary>查看圆桌发言（${roundtableMessages.length}）</summary>
+        <div class="history-roundtable-lines">
+          ${roundtableMessages.map(message => `<p>${escapeHTML(message.text)}</p>`).join('')}
+        </div>
+      </details>` : '';
     return `<article class="history-item">
       <div class="history-match">
         <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
