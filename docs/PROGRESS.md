@@ -124,6 +124,10 @@
   - `pipeline/discuss.js` 与 `append-discussion-models.js` 增加最终发言校验:方向必须和比分胜负关系一致,比分始终按主队在前书写。
   - 已按作者确认将比利时 vs 埃及 Grok 4.3 的客胜比分从 `1-0` 修正为 `0-1`;其余已完赛存证消息不改写。
   - 新增 `pipeline/validate-predictions.js` / `npm run validate:predictions`,自动扫描结构化预测和圆桌最终预测;`publish:settle`、`publish:roundtable` 会在 commit 前执行该校验,有冲突则中止发布。
+- 修复 6/17 一键烤啤竞彩单关核对:
+  - `pipeline/sync-jingcai-single.js` 新增中国竞彩网竞彩足球赛前列表接口,按胜平负 `HAD` 玩法的 `cbtSingle=1` 识别单固场次;原赛果开奖接口继续用于已完赛核对。
+  - 已同步 `public/data/jingcai-single.json`:6/17 官方胜平负单固 2 场,分别为法国-塞内加尔、奥地利-约旦。
+  - 已验证 `npm run sync:jingcai -- --date 2026-06-17 --dry-run --strict` 可返回 `officialRows=2 mapped=2`,且 `npm run validate:predictions` 通过。
 
 ## 本地预览
 

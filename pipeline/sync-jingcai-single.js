@@ -5,6 +5,8 @@ const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json"
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "jingcai-single.json");
 const SPORTTERY_URL = "https://www.sporttery.cn/jc/zqsgkj/";
 const SPORTTERY_API = "https://webapi.sporttery.cn/gateway/uniform/football/getUniformMatchResultV1.qry";
+const SPORTTERY_MATCH_LIST_URL = "https://www.sporttery.cn/jc/zqspf/";
+const SPORTTERY_MATCH_LIST_API = "https://webapi.sporttery.cn/gateway/uniform/football/getMatchListV1.qry";
 const ASIA_SHANGHAI = "Asia/Shanghai";
 
 function readJson(filePath, fallback = null) {
@@ -227,7 +229,51 @@ async function fetchOfficialPage(from, to, pageNo = 1, pageSize = 100) {
   }
 }
 
-async function fetchOfficialRows(from, to) {
+function sportteryHeaders(referer = SPORTTERY_URL) {
+  return {
+    Accept: "application/json, text/javascript, */*; q=0.01",
+    Referer: referer,
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  };
+}
+
+async function fetchJson(url, referer) {
+  const response = await fetch(url, { headers: sportteryHeaders(referer) });
+  const text = await response.text();
+  if (!response.ok) throw new Error(`Sporttery ${response.status}: ${text.slice(0, 120)}`);
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    throw new Error(`Sporttery response is not JSON: ${text.slice(0, 120)}`);
+  }
+}
+
+function inDateRange(dateKey, from, to) {
+  return dateKey && dateKey >= from && dateKey <= to;
+}
+
+function isHadSingle(row) {
+  return (row.poolList || []).some((pool) => {
+    return pool.poolCode === "HAD"
+      && Number(pool.cbtSingle) === 1
+      && (!pool.poolStatus || pool.poolStatus === "Selling");
+  });
+}
+
+async function fetchUpcomingSingleRows(from, to) {
+  const url = new URL(SPORTTERY_MATCH_LIST_API);
+  url.searchParams.set("clientCode", "3001");
+  const payload = await fetchJson(url, SPORTTERY_MATCH_LIST_URL);
+  const rows = (((payload.value || {}).matchInfoList || [])
+    .flatMap((group) => group.subMatchList || []));
+  return rows
+    .filter((row) => inDateRange(String(row.matchDate || row.businessDate || "").slice(0, 10), from, to))
+    .filter(isHadSingle)
+    .map(normalizeOfficialRow)
+    .filter(isUsefulOfficialRow);
+}
+
+async function fetchResultRows(from, to) {
   const rows = [];
   const seen = new Set();
   for (let pageNo = 1; pageNo <= 20; pageNo += 1) {
@@ -250,6 +296,38 @@ async function fetchOfficialRows(from, to) {
     if (!added || pageRows.length < 100) break;
   }
   return rows;
+}
+
+async function fetchOfficialRows(from, to) {
+  let resultRows = [];
+  let upcomingRows = [];
+  let lastError = null;
+  try {
+    resultRows = await fetchResultRows(from, to);
+  } catch (err) {
+    lastError = err;
+    console.warn(`[jingcai-single] result sync skipped: ${err.message}`);
+  }
+  try {
+    upcomingRows = await fetchUpcomingSingleRows(from, to);
+  } catch (err) {
+    lastError = err;
+    console.warn(`[jingcai-single] upcoming sync skipped: ${err.message}`);
+  }
+  if (!resultRows.length && !upcomingRows.length && lastError) throw lastError;
+  const seen = new Set();
+  return [...resultRows, ...upcomingRows].filter((row) => {
+    const key = [
+      row.jingcaiMatchId,
+      row.matchNum,
+      row.matchDate,
+      row.homeTeam,
+      row.awayTeam,
+    ].join("|");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function matchDateKey(match) {
@@ -327,9 +405,14 @@ async function syncJingcaiSingle(options = {}) {
     status: "verified",
     sources: [
       {
+        label: "中国竞彩网竞彩足球赛程",
+        href: SPORTTERY_MATCH_LIST_URL,
+        note: "赛前同步使用官方竞彩足球赛程接口,按胜平负 HAD 玩法的 cbtSingle=1 识别单固场次。",
+      },
+      {
         label: "中国竞彩网足球赛果开奖",
         href: SPORTTERY_URL,
-        note: "自动同步使用官方“仅显示胜平负单固场次”口径;官方接口使用 isFix=1 查询单固场次。",
+        note: "赛果核对保留官方“仅显示胜平负单固场次”口径;开奖接口使用 isFix=1 查询单固场次。",
       },
     ],
     matches: merged,
