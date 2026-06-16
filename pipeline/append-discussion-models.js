@@ -4,9 +4,11 @@ const { loadProjectEnv } = require("./lib/env");
 const { callModelText } = require("./predict");
 const {
   buildDiscussionPrompt,
+  buildIssue,
   cleanText: cleanDiscussionText,
   configureDiscussionTimeout,
   hasFinalPrediction,
+  issueStatusFromError,
   turnBudget,
 } = require("./discuss");
 
@@ -106,24 +108,30 @@ function repairItemsForThread(thread, models, args) {
   return items;
 }
 
+function pushIssue(thread, match, model, round, status, message, extra = {}) {
+  thread.issues = thread.issues || [];
+  thread.issues = thread.issues.filter((issue) => !(issue.modelId === model.id && issue.round === round));
+  thread.issues.push(buildIssue(match, model, round, status, message, extra));
+}
+
 async function generateRepairText(match, model, messages, round) {
   const isFinalTurn = round >= turnBudget(model.id);
   let text = await callModelText(model.id, buildDiscussionPrompt(match, model, messages, round, isFinalTurn));
   if (text === null) {
     console.warn(`[append-discussion] ${match.id}/${model.id} 缺少 key,跳过`);
-    return "";
+    return { text: "", status: "missing_key", message: "API key 未配置,本轮跳过" };
   }
   let cleaned = cleanDiscussionText(text, isFinalTurn ? 72 : 56);
   if (isFinalTurn && !hasFinalPrediction(cleaned)) {
     text = await callModelText(model.id, buildFinalRetryPrompt(match, model));
-    if (text === null) return "";
+    if (text === null) return { text: "", status: "missing_key", message: "API key 未配置,本轮跳过" };
     cleaned = cleanDiscussionText(text, 72);
   }
   if (isFinalTurn && !hasFinalPrediction(cleaned)) {
     console.warn(`[append-discussion] ${match.id}/${model.id} r${round} 最终发言仍不可解析,留空`);
-    return "";
+    return { text: "", status: "invalid_final", message: "补跑返回了文本,但最终预测方向/比分不可解析" };
   }
-  return cleaned;
+  return { text: cleaned, status: "", message: "" };
 }
 
 function configureAppendTimeout() {
@@ -131,8 +139,8 @@ function configureAppendTimeout() {
   const current = Number(process.env.DISCUSS_API_TIMEOUT_MS || process.env.API_TIMEOUT_MS);
   const next = Number.isFinite(explicit) && explicit > 0
     ? explicit
-    : (!Number.isFinite(current) || current < 45000)
-      ? 45000
+    : (!Number.isFinite(current) || current < 60000)
+      ? 60000
       : current;
   process.env.DISCUSS_API_TIMEOUT_MS = String(next);
   process.env.API_TIMEOUT_MS = String(next);
@@ -182,12 +190,17 @@ async function appendDiscussionModels() {
       const history = item.message
         ? thread.messages.filter((message) => message !== item.message)
         : thread.messages;
-      let cleaned = "";
+      let result = { text: "", status: "", message: "" };
       try {
-        cleaned = await generateRepairText(match, item.model, history, item.round);
+        result = await generateRepairText(match, item.model, history, item.round);
       } catch (err) {
         console.warn(`[append-discussion] ${match.id}/${item.model.id} r${item.round} 失败: ${err.message}`);
+        pushIssue(thread, match, item.model, item.round, issueStatusFromError(err), err.message || "API 调用失败", { retry: true });
         continue;
+      }
+      const cleaned = result.text;
+      if (!cleaned && result.status) {
+        pushIssue(thread, match, item.model, item.round, result.status, result.message, { retry: true });
       }
       if (!cleaned) continue;
 
@@ -196,6 +209,7 @@ async function appendDiscussionModels() {
         item.message.timestamp = new Date().toISOString();
         item.message.retry = true;
         item.message.syntheticFallbackReplaced = true;
+        thread.issues = (thread.issues || []).filter((issue) => !(issue.modelId === item.model.id && issue.round === item.round));
       } else {
         thread.messages.push({
           modelId: item.model.id,
@@ -207,6 +221,7 @@ async function appendDiscussionModels() {
           timestamp: new Date().toISOString(),
           retry: true,
         });
+        thread.issues = (thread.issues || []).filter((issue) => !(issue.modelId === item.model.id && issue.round === item.round));
       }
       changed += 1;
       console.log(`[append-discussion] ${match.id}/${item.model.id} r${item.round}: ${cleaned}`);

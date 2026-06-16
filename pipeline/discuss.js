@@ -294,6 +294,25 @@ function configureDiscussionTimeout() {
   }
 }
 
+function buildIssue(match, model, round, status, message, extra = {}) {
+  return {
+    modelId: model.id,
+    modelName: model.name,
+    vendor: model.vendor,
+    round,
+    status,
+    message,
+    timestamp: new Date().toISOString(),
+    ...extra,
+  };
+}
+
+function issueStatusFromError(err) {
+  const text = String(err && err.message || err || "");
+  if (/timeout|timed out|aborted|超时/i.test(text)) return "timeout";
+  return "failed";
+}
+
 async function discuss() {
   loadProjectEnv();
   configureDiscussionTimeout();
@@ -324,6 +343,7 @@ async function discuss() {
 
   for (const match of targetMatches) {
     const messages = [];
+    const issues = [];
     const turns = buildTurnSchedule(models);
     for (const { model, round } of turns) {
       const isFinalTurn = round >= turnBudget(model.id);
@@ -331,7 +351,7 @@ async function discuss() {
         if (isFinalTurn) {
           const cleaned = await callFinalTurnText(match, model, messages, round);
           if (!cleaned) {
-            finalRetryQueue.push({ match, model, messages, round });
+            finalRetryQueue.push({ match, model, messages, issues, round });
             continue;
           }
           messages.push({
@@ -350,6 +370,7 @@ async function discuss() {
         let text = await callModelText(model.id, buildDiscussionPrompt(match, model, messages, round, isFinalTurn));
         if (text === null) {
           console.warn(`[discuss] ${model.id} 缺少 key,跳过`);
+          issues.push(buildIssue(match, model, round, "missing_key", "API key 未配置,本轮跳过"));
           continue;
         }
         let cleaned = cleanText(text, MESSAGE_CHAR_LIMIT);
@@ -359,6 +380,7 @@ async function discuss() {
         }
         if (!cleaned) {
           console.warn(`[discuss] ${model.id} 返回空文本,跳过`);
+          issues.push(buildIssue(match, model, round, "empty", "API 返回空文本,本轮跳过"));
           continue;
         }
         messages.push({
@@ -373,14 +395,16 @@ async function discuss() {
         generated += 1;
       } catch (err) {
         console.warn(`[discuss] ${model.id} 失败: ${err.message}`);
+        issues.push(buildIssue(match, model, round, issueStatusFromError(err), err.message || "API 调用失败"));
       }
     }
 
-    if (messages.length) {
+    if (messages.length || issues.length) {
       generatedDiscussions.push({
         matchId: match.id,
         sealedAt: now,
         messages,
+        ...(issues.length ? { issues } : {}),
       });
     }
   }
@@ -395,6 +419,10 @@ async function discuss() {
     const cleaned = await callFinalTurnText(item.match, item.model, messages, item.round, { retry: true });
     if (!cleaned) {
       console.warn(`[discuss] ${item.match.id}/${item.model.id} 补跑仍为空,不写入兜底消息`);
+      const targetIssues = discussion
+        ? (discussion.issues = discussion.issues || [])
+        : item.issues;
+      targetIssues.push(buildIssue(item.match, item.model, item.round, "timeout", "API 超时或补跑仍未返回有效最终预测", { retry: true }));
       continue;
     }
 
@@ -403,6 +431,7 @@ async function discuss() {
         matchId: item.match.id,
         sealedAt: now,
         messages,
+        ...(item.issues.length ? { issues: item.issues } : {}),
       });
     }
     messages.push({
@@ -452,4 +481,6 @@ module.exports = {
   FINAL_MESSAGE_CHAR_LIMIT,
   DEFAULT_DISCUSS_TIMEOUT_MS,
   configureDiscussionTimeout,
+  buildIssue,
+  issueStatusFromError,
 };

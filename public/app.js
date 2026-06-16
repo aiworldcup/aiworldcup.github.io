@@ -422,6 +422,7 @@ function renderMatches() {
 
 function matchPredictionSummary(match) {
   const displayPredictions = predictionsForMatch(match);
+  const issues = discussionIssuesForMatch(match.id);
   const counts = displayPredictions.reduce((acc, prediction) => {
     acc[prediction.result] = (acc[prediction.result] || 0) + 1;
     return acc;
@@ -438,10 +439,11 @@ function matchPredictionSummary(match) {
     displayPredictions,
     counts,
     total,
+    issues,
     lean,
     leanText: total ? `${RESULT_LABEL[lean]} ${counts[lean]}/${total}` : '暂无预测',
     hotScoreText: hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无',
-    predictionCountText: total ? `${total} 位模型` : '待定',
+    predictionCountText: total ? `${total} 位模型` : (issues.length ? `${issues.length} 个异常` : '待定'),
   };
 }
 
@@ -483,7 +485,7 @@ function renderCompactMatchRow(match) {
       <div class="compact-match-foot">
         <span class="compact-match-time">${escapeHTML(kickoff)}</span>
         <span>热门比分 <strong>${escapeHTML(summary.hotScoreText)}</strong></span>
-        <span>${summary.predictionCountText} · ${expanded ? '收起详情' : '查看详情'}</span>
+        <span>${summary.issues.length ? `<b class="compact-issue">API超时 ${summary.issues.length}</b> · ` : ''}${summary.predictionCountText} · ${expanded ? '收起详情' : '查看详情'}</span>
       </div>
     </button>
     ${expanded ? `<div class="compact-match-detail">${renderMatchCard(match)}</div>` : ''}
@@ -1418,6 +1420,7 @@ function renderMatchCard(m) {
   const o = m.odds?.result || {};
   const finished = !!m.actual;
   const displayPredictions = predictionsForMatch(m);
+  const discussionIssues = discussionIssuesForMatch(m.id);
   const hasPredictions = displayPredictions.length > 0;
   const lifecycle = matchLifecycle(m);
   const status = `<span class="match-status status-${lifecycle.tone}">${lifecycle.label}</span>`;
@@ -1437,7 +1440,9 @@ function renderMatchCard(m) {
   }, {});
   const hotScore = Object.entries(scoreCounts).sort((a, b) => b[1] - a[1])[0];
   const hotScoreText = hotScore ? `${hotScore[0]} · ${hotScore[1]} 票` : '暂无';
-  const predictionCountText = displayPredictions.length ? `${displayPredictions.length} 位模型` : '待定';
+  const predictionCountText = displayPredictions.length
+    ? `${displayPredictions.length} 位模型${discussionIssues.length ? ` · ${discussionIssues.length} 个异常` : ''}`
+    : (discussionIssues.length ? `${discussionIssues.length} 个异常` : '待定');
   const kickoff = formatKickoff(m.kickoff);
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
   const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
@@ -1448,7 +1453,7 @@ function renderMatchCard(m) {
     <span>${escapeHTML(recap.hookText)}</span>
   </div>` : '';
 
-  const preds = displayPredictions
+  const predictionRows = displayPredictions
     .map(p => {
       const meta = modelMeta(p.modelId);
       let mark = '';
@@ -1467,7 +1472,19 @@ function renderMatchCard(m) {
         <span class="pred-pick"><b>${RESULT_LABEL[p.result] || p.result}</b> · ${p.score}</span>
         <span>${mark || (p.source === 'discussion' ? '<span class="pred-source">圆桌</span>' : '')}</span>
       </div>`;
-    }).join('') || '<div class="empty">暂无预测</div>';
+    }).join('');
+  const issueRows = discussionIssues
+    .map(issue => {
+      const meta = modelMeta(issue.modelId);
+      return `<div class="pred pred-issue">
+        <button type="button" class="pred-model" data-model="${escapeHTML(issue.modelId)}" aria-label="查看 ${escapeHTML(meta.name)} 的历史预测数据">
+          <span class="lb-dot" style="background:${meta.color}"></span>${escapeHTML(meta.name)}
+        </button>
+        <span class="pred-pick"><b>${escapeHTML(discussionIssueLabel(issue))}</b></span>
+        <span class="pred-issue-text">${escapeHTML(discussionIssueText(issue))}</span>
+      </div>`;
+    }).join('');
+  const preds = `${predictionRows}${issueRows}` || '<div class="empty">暂无预测</div>';
 
   return `<article class="match" id="match-${escapeHTML(m.id)}">
     <div class="match-head">
@@ -1571,6 +1588,27 @@ function renderChampionPredictions() {
 
 function discussionForMatch(matchId) {
   return DISCUSSIONS.find(item => item.matchId === matchId);
+}
+
+function discussionIssuesForMatch(matchId) {
+  const thread = discussionForMatch(matchId);
+  return (thread?.issues || []).filter(issue => issue && issue.modelId);
+}
+
+function discussionIssueLabel(issue) {
+  const status = String(issue.status || '');
+  if (status === 'timeout') return 'API 超时';
+  if (status === 'invalid_final') return '格式无效';
+  if (status === 'missing_key') return '未配置 key';
+  if (status === 'empty') return '空返回';
+  return '调用失败';
+}
+
+function discussionIssueText(issue) {
+  const round = issue.round ? `第 ${issue.round} 轮` : '本轮';
+  const message = String(issue.message || '').trim();
+  const short = /timeout|aborted|超时/i.test(message) ? '补跑后仍超时' : (message || '补跑未完成');
+  return `${round} · ${short}`;
 }
 
 function renderChatMessages(messages) {

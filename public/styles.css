@@ -1297,6 +1297,15 @@ h2 {
   filter: grayscale(0.35);
 }
 
+.pred.pred-issue {
+  margin: 0 -6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-bottom-color: transparent;
+  outline: 1px solid rgba(255, 92, 122, 0.28);
+  background: rgba(255, 92, 122, 0.08);
+}
+
 .pred:last-child { border-bottom: none; }
 
 .pred-model {
@@ -1349,6 +1358,18 @@ h2 {
 .pred-source {
   color: var(--gold);
   font-size: 11px;
+}
+
+.pred-issue .pred-pick b,
+.pred-issue-text,
+.compact-issue {
+  color: var(--red);
+}
+
+.pred-issue-text {
+  font-size: 11px;
+  text-align: right;
+  overflow-wrap: anywhere;
 }
 
 .leaderboard-summary {
