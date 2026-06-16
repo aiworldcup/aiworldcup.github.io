@@ -1257,12 +1257,13 @@ function openModelHistory(modelId) {
       ? `${hitBadge('赛果', resultHit)}${hitBadge('比分', scoreHit)}`
       : '<span class="history-badge is-pending">待结算</span>';
     const roundtableMessages = modelRoundtableMessages(match.id, modelId);
-    const roundtableHtml = roundtableMessages.length ? `<details class="history-roundtable">
-        <summary>查看圆桌发言（${roundtableMessages.length}）</summary>
-        <div class="history-roundtable-lines">
-          ${roundtableMessages.map(message => `<p>${escapeHTML(message.text)}</p>`).join('')}
-        </div>
-      </details>` : '';
+    const roundtableHtml = roundtableMessages.length ? `<div class="history-roundtable" data-loaded="false">
+        <button type="button" class="history-roundtable-toggle" data-match="${escapeHTML(match.id)}" data-model="${escapeHTML(modelId)}" aria-expanded="false">
+          查看圆桌发言（${roundtableMessages.length}）
+          <span>展开</span>
+        </button>
+        <div class="history-roundtable-lines" hidden></div>
+      </div>` : '';
     return `<article class="history-item">
       <div class="history-match">
         <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
@@ -2147,6 +2148,23 @@ function wireModelHistoryStage() {
   document.getElementById('model-history-close')?.addEventListener('click', closeModelHistory);
   stage?.addEventListener('click', e => {
     if (e.target === stage) closeModelHistory();
+  });
+  document.getElementById('model-history-list')?.addEventListener('click', e => {
+    const button = e.target.closest('.history-roundtable-toggle');
+    if (!button) return;
+    const wrap = button.closest('.history-roundtable');
+    const lines = wrap?.querySelector('.history-roundtable-lines');
+    if (!wrap || !lines) return;
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    const label = button.querySelector('span');
+    if (label) label.textContent = expanded ? '展开' : '收起';
+    if (!expanded && wrap.dataset.loaded !== 'true') {
+      const messages = modelRoundtableMessages(button.dataset.match, button.dataset.model);
+      lines.innerHTML = messages.map(message => `<p>${escapeHTML(message.text)}</p>`).join('');
+      wrap.dataset.loaded = 'true';
+    }
+    lines.hidden = expanded;
   });
 
   // 增加移动端下拉关闭手势 (Swipe down to close)
