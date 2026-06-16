@@ -1,5 +1,10 @@
 const { spawnSync } = require("child_process");
 
+const PUBLISH_REMOTE = "origin";
+const PUBLISH_BRANCH = "main";
+const DEFAULT_PUBLISH_REPO = "aiworldcup/aiworldcup.github.io";
+const EXPECTED_PUBLISH_REPO = process.env.PUBLISH_REPO || DEFAULT_PUBLISH_REPO;
+
 const TASKS = {
   settle: {
     command: ["npm", "run", "settle"],
@@ -33,6 +38,27 @@ function changedDataFiles() {
     .filter(Boolean);
 }
 
+function ensurePublishRemote() {
+  const remoteUrl = run("git", ["remote", "get-url", PUBLISH_REMOTE], { capture: true }).trim();
+  if (!remoteUrl.includes(EXPECTED_PUBLISH_REPO)) {
+    throw new Error(`${PUBLISH_REMOTE} points to ${remoteUrl}; expected ${EXPECTED_PUBLISH_REPO}. Refusing to publish.`);
+  }
+}
+
+function localAheadCount() {
+  const output = run("git", ["rev-list", "--left-right", "--count", `${PUBLISH_REMOTE}/${PUBLISH_BRANCH}...HEAD`], { capture: true }).trim();
+  const [, ahead = "0"] = output.split(/\s+/);
+  return Number(ahead) || 0;
+}
+
+function pushIfAhead(taskName) {
+  const ahead = localAheadCount();
+  if (!ahead) return false;
+  console.log(`[auto-publish] ${taskName}: local main is ahead by ${ahead} commit(s); push pending commits.`);
+  run("git", ["push", PUBLISH_REMOTE, PUBLISH_BRANCH]);
+  return true;
+}
+
 function main() {
   const taskName = process.argv[2] || "";
   const task = TASKS[taskName];
@@ -42,18 +68,21 @@ function main() {
   }
 
   const [command, ...args] = task.command;
+  ensurePublishRemote();
   run(command, args);
 
   const changed = changedDataFiles();
   if (!changed.length) {
-    console.log(`[auto-publish] ${taskName}: no public/data changes; skip commit.`);
+    if (!pushIfAhead(taskName)) {
+      console.log(`[auto-publish] ${taskName}: no public/data changes; skip commit.`);
+    }
     return;
   }
 
   console.log(`[auto-publish] ${taskName}: changed files\n${changed.join("\n")}`);
   run("git", ["add", "public/data"]);
   run("git", ["commit", "-m", task.message]);
-  run("git", ["push", "origin", "main"]);
+  run("git", ["push", PUBLISH_REMOTE, PUBLISH_BRANCH]);
 }
 
 if (require.main === module) {

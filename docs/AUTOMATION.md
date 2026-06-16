@@ -2,6 +2,14 @@
 
 本项目的线上站点由 GitHub Pages 发布,本机负责定时生成静态 JSON 并 push 到 `main`。
 
+## 发布目标
+
+- 当前公共网页地址:`https://aiworldcup.github.io/`
+- 当前发布仓库:`https://github.com/aiworldcup/aiworldcup.github.io`
+- 本机自动任务只允许推送到 `origin/main`;`origin` 必须指向 `aiworldcup/aiworldcup.github.io`。
+- 旧个人仓库 `https://github.com/ccavtjy/worldcup-ai-arena` 只作为 `legacy` 备份保留,不参与自动发布。
+- 如果一次自动任务已经生成并提交,但 GitHub 网络问题导致 push 失败,下一次 `publish:*` 任务会先补推本地领先的提交。
+
 ## 任务
 
 - `com.tom.worldcup-ai-arena-results`
