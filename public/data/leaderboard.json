@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-06-16T03:13:28.639Z",
+  "updatedAt": "2026-06-16T04:24:56.004Z",
   "settlement": {
     "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-06-16T03:13:28.622Z",
+    "generatedAt": "2026-06-16T04:24:55.987Z",
     "graceMinutes": 150,
     "scoring": "赛果榜按胜平负命中率排序;比分榜按具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
@@ -59,33 +59,19 @@
     {
       "rank": 4,
       "modelId": "gemini-3-1",
-      "predictions": 11,
+      "predictions": 12,
       "resultHits": 4,
       "scoreHits": 2,
       "settledMatches": 16,
       "metric": "result",
       "hits": 4,
-      "played": 11,
-      "hitRate": 0.3636,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0.1818
+      "played": 12,
+      "hitRate": 0.3333,
+      "resultHitRate": 0.3333,
+      "scoreHitRate": 0.1667
     },
     {
       "rank": 5,
-      "modelId": "doubao-seed-2-0-pro",
-      "predictions": 11,
-      "resultHits": 4,
-      "scoreHits": 0,
-      "settledMatches": 16,
-      "metric": "result",
-      "hits": 4,
-      "played": 11,
-      "hitRate": 0.3636,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0
-    },
-    {
-      "rank": 6,
       "modelId": "gpt-5-5",
       "predictions": 12,
       "resultHits": 4,
@@ -99,8 +85,22 @@
       "scoreHitRate": 0.0833
     },
     {
-      "rank": 7,
+      "rank": 6,
       "modelId": "deepseek-v4pro",
+      "predictions": 13,
+      "resultHits": 4,
+      "scoreHits": 1,
+      "settledMatches": 16,
+      "metric": "result",
+      "hits": 4,
+      "played": 13,
+      "hitRate": 0.3077,
+      "resultHitRate": 0.3077,
+      "scoreHitRate": 0.0769
+    },
+    {
+      "rank": 7,
+      "modelId": "minimax-m3",
       "predictions": 13,
       "resultHits": 4,
       "scoreHits": 1,
@@ -128,17 +128,17 @@
     },
     {
       "rank": 9,
-      "modelId": "minimax-m3",
-      "predictions": 13,
+      "modelId": "doubao-seed-2-0-pro",
+      "predictions": 11,
       "resultHits": 3,
-      "scoreHits": 1,
+      "scoreHits": 0,
       "settledMatches": 16,
       "metric": "result",
       "hits": 3,
-      "played": 13,
-      "hitRate": 0.2308,
-      "resultHitRate": 0.2308,
-      "scoreHitRate": 0.0769
+      "played": 11,
+      "hitRate": 0.2727,
+      "resultHitRate": 0.2727,
+      "scoreHitRate": 0
     },
     {
       "rank": 10,
@@ -201,16 +201,16 @@
     {
       "rank": 2,
       "modelId": "gemini-3-1",
-      "predictions": 11,
+      "predictions": 12,
       "resultHits": 4,
       "scoreHits": 2,
       "settledMatches": 16,
       "metric": "score",
       "hits": 2,
-      "played": 11,
-      "hitRate": 0.1818,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0.1818
+      "played": 12,
+      "hitRate": 0.1667,
+      "resultHitRate": 0.3333,
+      "scoreHitRate": 0.1667
     },
     {
       "rank": 3,
@@ -286,14 +286,14 @@
       "rank": 8,
       "modelId": "minimax-m3",
       "predictions": 13,
-      "resultHits": 3,
+      "resultHits": 4,
       "scoreHits": 1,
       "settledMatches": 16,
       "metric": "score",
       "hits": 1,
       "played": 13,
       "hitRate": 0.0769,
-      "resultHitRate": 0.2308,
+      "resultHitRate": 0.3077,
       "scoreHitRate": 0.0769
     },
     {
@@ -342,14 +342,14 @@
       "rank": 12,
       "modelId": "doubao-seed-2-0-pro",
       "predictions": 11,
-      "resultHits": 4,
+      "resultHits": 3,
       "scoreHits": 0,
       "settledMatches": 16,
       "metric": "score",
       "hits": 0,
       "played": 11,
       "hitRate": 0,
-      "resultHitRate": 0.3636,
+      "resultHitRate": 0.2727,
       "scoreHitRate": 0
     }
   ],
@@ -399,33 +399,19 @@
     {
       "rank": 4,
       "modelId": "gemini-3-1",
-      "predictions": 11,
+      "predictions": 12,
       "resultHits": 4,
       "scoreHits": 2,
       "settledMatches": 16,
       "metric": "result",
       "hits": 4,
-      "played": 11,
-      "hitRate": 0.3636,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0.1818
+      "played": 12,
+      "hitRate": 0.3333,
+      "resultHitRate": 0.3333,
+      "scoreHitRate": 0.1667
     },
     {
       "rank": 5,
-      "modelId": "doubao-seed-2-0-pro",
-      "predictions": 11,
-      "resultHits": 4,
-      "scoreHits": 0,
-      "settledMatches": 16,
-      "metric": "result",
-      "hits": 4,
-      "played": 11,
-      "hitRate": 0.3636,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0
-    },
-    {
-      "rank": 6,
       "modelId": "gpt-5-5",
       "predictions": 12,
       "resultHits": 4,
@@ -439,8 +425,22 @@
       "scoreHitRate": 0.0833
     },
     {
-      "rank": 7,
+      "rank": 6,
       "modelId": "deepseek-v4pro",
+      "predictions": 13,
+      "resultHits": 4,
+      "scoreHits": 1,
+      "settledMatches": 16,
+      "metric": "result",
+      "hits": 4,
+      "played": 13,
+      "hitRate": 0.3077,
+      "resultHitRate": 0.3077,
+      "scoreHitRate": 0.0769
+    },
+    {
+      "rank": 7,
+      "modelId": "minimax-m3",
       "predictions": 13,
       "resultHits": 4,
       "scoreHits": 1,
@@ -468,17 +468,17 @@
     },
     {
       "rank": 9,
-      "modelId": "minimax-m3",
-      "predictions": 13,
+      "modelId": "doubao-seed-2-0-pro",
+      "predictions": 11,
       "resultHits": 3,
-      "scoreHits": 1,
+      "scoreHits": 0,
       "settledMatches": 16,
       "metric": "result",
       "hits": 3,
-      "played": 13,
-      "hitRate": 0.2308,
-      "resultHitRate": 0.2308,
-      "scoreHitRate": 0.0769
+      "played": 11,
+      "hitRate": 0.2727,
+      "resultHitRate": 0.2727,
+      "scoreHitRate": 0
     },
     {
       "rank": 10,
@@ -569,33 +569,19 @@
     {
       "rank": 4,
       "modelId": "gemini-3-1",
-      "predictions": 11,
+      "predictions": 12,
       "resultHits": 4,
       "scoreHits": 2,
       "settledMatches": 16,
       "metric": "result",
       "hits": 4,
-      "played": 11,
-      "hitRate": 0.3636,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0.1818
+      "played": 12,
+      "hitRate": 0.3333,
+      "resultHitRate": 0.3333,
+      "scoreHitRate": 0.1667
     },
     {
       "rank": 5,
-      "modelId": "doubao-seed-2-0-pro",
-      "predictions": 11,
-      "resultHits": 4,
-      "scoreHits": 0,
-      "settledMatches": 16,
-      "metric": "result",
-      "hits": 4,
-      "played": 11,
-      "hitRate": 0.3636,
-      "resultHitRate": 0.3636,
-      "scoreHitRate": 0
-    },
-    {
-      "rank": 6,
       "modelId": "gpt-5-5",
       "predictions": 12,
       "resultHits": 4,
@@ -609,8 +595,22 @@
       "scoreHitRate": 0.0833
     },
     {
-      "rank": 7,
+      "rank": 6,
       "modelId": "deepseek-v4pro",
+      "predictions": 13,
+      "resultHits": 4,
+      "scoreHits": 1,
+      "settledMatches": 16,
+      "metric": "result",
+      "hits": 4,
+      "played": 13,
+      "hitRate": 0.3077,
+      "resultHitRate": 0.3077,
+      "scoreHitRate": 0.0769
+    },
+    {
+      "rank": 7,
+      "modelId": "minimax-m3",
       "predictions": 13,
       "resultHits": 4,
       "scoreHits": 1,
@@ -638,17 +638,17 @@
     },
     {
       "rank": 9,
-      "modelId": "minimax-m3",
-      "predictions": 13,
+      "modelId": "doubao-seed-2-0-pro",
+      "predictions": 11,
       "resultHits": 3,
-      "scoreHits": 1,
+      "scoreHits": 0,
       "settledMatches": 16,
       "metric": "result",
       "hits": 3,
-      "played": 13,
-      "hitRate": 0.2308,
-      "resultHitRate": 0.2308,
-      "scoreHitRate": 0.0769
+      "played": 11,
+      "hitRate": 0.2727,
+      "resultHitRate": 0.2727,
+      "scoreHitRate": 0
     },
     {
       "rank": 10,
