@@ -8,6 +8,7 @@
     "predict": "node pipeline/predict.js",
     "discuss": "node pipeline/discuss.js",
     "sync:jingcai": "node pipeline/sync-jingcai-single.js",
+    "sync:odds": "node pipeline/sync-odds.js",
     "sync:real": "node pipeline/sync-real-data.js",
     "score": "node pipeline/score.js",
     "validate:predictions": "node pipeline/validate-predictions.js",

@@ -24,7 +24,7 @@
 - Claude Opus 4.8、GPT-5.5、Gemini 3.1、Kimi K2.6、Claude Sonnet 4.6 每场 1 句。
 - Qwen 3.7 Max、MiniMax-M3、Mimo v2.5 Pro、Grok 4.3、DeepSeek V4 Pro、GLM-5.1、Doubao-Seed-2.0-pro 每场 2 句。
 - 每个模型最后一句必须包含可解析的赛果方向和比分,格式倾向于:`结论:主胜/平局/客胜,比分X-X;理由`。
-- 慢模型不能拖死自动任务;圆桌默认把模型调用 timeout 压到 25 秒,超时模型跳过或兜底。
+- 慢模型不能拖死自动任务;圆桌默认把模型调用 timeout 压到 25 秒,超时模型先留空,整轮跑完后补跑一次,补跑仍失败就跳过,不得用 1-1 平或赔率最低项做兜底填充。
 
 ## 模型状态
 

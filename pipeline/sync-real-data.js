@@ -241,19 +241,26 @@ function createKnockoutPlaceholders(existingCount) {
 
 function mergeExistingMatch(fresh, existing) {
   if (!existing) return fresh;
+  const mergeNonNull = (existingValues = {}, freshValues = {}) => {
+    const merged = { ...existingValues };
+    Object.entries(freshValues).forEach(([key, value]) => {
+      if (value !== null && value !== undefined && value !== "") merged[key] = value;
+    });
+    return merged;
+  };
   return {
     ...fresh,
     sealedAt: existing.sealedAt || fresh.sealedAt || null,
     predictions: Array.isArray(existing.predictions) ? existing.predictions : fresh.predictions || [],
     odds: {
-      result: {
-        ...(existing.odds && existing.odds.result ? existing.odds.result : {}),
-        ...(fresh.odds && fresh.odds.result ? fresh.odds.result : {}),
-      },
-      scores: {
-        ...(existing.odds && existing.odds.scores ? existing.odds.scores : {}),
-        ...(fresh.odds && fresh.odds.scores ? fresh.odds.scores : {}),
-      },
+      result: mergeNonNull(
+        existing.odds && existing.odds.result ? existing.odds.result : {},
+        fresh.odds && fresh.odds.result ? fresh.odds.result : {},
+      ),
+      scores: mergeNonNull(
+        existing.odds && existing.odds.scores ? existing.odds.scores : {},
+        fresh.odds && fresh.odds.scores ? fresh.odds.scores : {},
+      ),
     },
     actual: fresh.actual || existing.actual || null,
     preservedAt: existing.preservedAt || fresh.syncedAt || new Date().toISOString(),
@@ -293,7 +300,7 @@ async function syncRealData() {
   }
 
   const existingById = readExistingMatches();
-  const limit = Number(process.env.SYNC_ODDS_LIMIT || 16);
+  const limit = Number(process.env.SYNC_ODDS_LIMIT || 32);
   const matches = [];
   for (const fixture of fixtures) {
     const needOdds = matches.length < limit;

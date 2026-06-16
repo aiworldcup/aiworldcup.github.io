@@ -186,27 +186,6 @@ function oddsLine(match) {
   return `胜 ${odds.home ?? "未知"} / 平 ${odds.draw ?? "未知"} / 负 ${odds.away ?? "未知"}`;
 }
 
-function oddsNumber(value) {
-  const number = Number(value);
-  return Number.isFinite(number) && number > 0 ? number : Infinity;
-}
-
-function fallbackPrediction(match) {
-  const odds = match.odds && match.odds.result ? match.odds.result : {};
-  const options = [
-    { result: "主胜", score: "2-1", odds: oddsNumber(odds.home) },
-    { result: "平局", score: "1-1", odds: oddsNumber(odds.draw) },
-    { result: "客胜", score: "1-2", odds: oddsNumber(odds.away) },
-  ].sort((a, b) => a.odds - b.odds);
-  return Number.isFinite(options[0].odds) ? options[0] : options[1];
-}
-
-function buildGuaranteedFinalText(match, model, reason) {
-  const prediction = fallbackPrediction(match);
-  const note = reason ? "API超时兜底" : "兜底";
-  return `${model.name}${note}:结论:${prediction.result},比分${prediction.score}`;
-}
-
 function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTurn = false) {
   const history = previousMessages.length
     ? previousMessages
@@ -263,12 +242,13 @@ ${finalRule}
 只输出一句中文短句,要接住上一句、有鲜明立场和你的人格味,聊球别念赔率,不超过 ${isFinalTurn ? FINAL_MESSAGE_CHAR_LIMIT : MESSAGE_CHAR_LIMIT} 个中文字符。`;
 }
 
-async function callFinalTurnText(match, model, messages, round) {
+async function callFinalTurnText(match, model, messages, round, options = {}) {
+  const phase = options.retry ? "补跑" : "首轮";
   try {
     let text = await callModelText(model.id, buildDiscussionPrompt(match, model, messages, round, true));
     if (text === null) {
-      console.warn(`[discuss] ${model.id} 缺少 key,使用最终预测兜底`);
-      return buildGuaranteedFinalText(match, model, "missing-key");
+      console.warn(`[discuss] ${model.id} 缺少 key,跳过最后发言`);
+      return null;
     }
     let cleaned = cleanText(text, FINAL_MESSAGE_CHAR_LIMIT);
     if (!cleaned || !hasFinalPrediction(cleaned)) {
@@ -276,11 +256,11 @@ async function callFinalTurnText(match, model, messages, round) {
       cleaned = cleanText(text, FINAL_MESSAGE_CHAR_LIMIT);
     }
     if (cleaned && hasFinalPrediction(cleaned)) return cleaned;
-    console.warn(`[discuss] ${model.id} 最后发言缺少预测方向或比分,使用最终预测兜底`);
-    return buildGuaranteedFinalText(match, model, "invalid-final");
+    console.warn(`[discuss] ${model.id} ${phase}最后发言缺少预测方向或比分,留空`);
+    return null;
   } catch (err) {
-    console.warn(`[discuss] ${model.id} 最后发言失败: ${err.message}; 使用最终预测兜底`);
-    return buildGuaranteedFinalText(match, model, err.message);
+    console.warn(`[discuss] ${model.id} ${phase}最后发言失败: ${err.message}; 留空`);
+    return null;
   }
 }
 
@@ -337,6 +317,8 @@ async function discuss() {
   }
 
   const nextDiscussions = existingDiscussions.filter((item) => !targetMatches.some((match) => match.id === item.matchId));
+  const generatedDiscussions = [];
+  const finalRetryQueue = [];
   let generated = 0;
   const now = new Date().toISOString();
 
@@ -348,6 +330,10 @@ async function discuss() {
       try {
         if (isFinalTurn) {
           const cleaned = await callFinalTurnText(match, model, messages, round);
+          if (!cleaned) {
+            finalRetryQueue.push({ match, model, messages, round });
+            continue;
+          }
           messages.push({
             modelId: model.id,
             modelName: model.name,
@@ -391,13 +377,48 @@ async function discuss() {
     }
 
     if (messages.length) {
-      nextDiscussions.push({
+      generatedDiscussions.push({
         matchId: match.id,
         sealedAt: now,
         messages,
       });
     }
   }
+
+  if (finalRetryQueue.length) {
+    console.warn(`[discuss] 首轮最后发言留空 ${finalRetryQueue.length} 条,开始整轮结束后的补跑。`);
+  }
+
+  for (const item of finalRetryQueue) {
+    const discussion = generatedDiscussions.find((entry) => entry.matchId === item.match.id);
+    const messages = discussion ? discussion.messages : item.messages;
+    const cleaned = await callFinalTurnText(item.match, item.model, messages, item.round, { retry: true });
+    if (!cleaned) {
+      console.warn(`[discuss] ${item.match.id}/${item.model.id} 补跑仍为空,不写入兜底消息`);
+      continue;
+    }
+
+    if (!discussion) {
+      generatedDiscussions.push({
+        matchId: item.match.id,
+        sealedAt: now,
+        messages,
+      });
+    }
+    messages.push({
+      modelId: item.model.id,
+      modelName: item.model.name,
+      vendor: item.model.vendor,
+      turn: messages.length + 1,
+      round: item.round,
+      text: cleaned,
+      timestamp: new Date().toISOString(),
+      retry: true,
+    });
+    generated += 1;
+  }
+
+  nextDiscussions.push(...generatedDiscussions);
 
   if (!generated) {
     console.warn("[discuss] 没有生成任何群聊消息,未写入 discussions.json。请填写至少一个模型 API key 后重试。");
@@ -425,8 +446,6 @@ module.exports = {
   buildDiscussionPrompt,
   buildTurnSchedule,
   turnBudget,
-  fallbackPrediction,
-  buildGuaranteedFinalText,
   hasFinalPrediction,
   cleanText,
   MESSAGE_CHAR_LIMIT,

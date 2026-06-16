@@ -47,7 +47,7 @@
 - Claude Opus 4.8、GPT-5.5、Gemini 3.1、Kimi K2.6、Claude Sonnet 4.6 每场 1 句。
 - Qwen 3.7 Max、MiniMax-M3、Mimo v2.5 Pro、Grok 4.3、DeepSeek V4 Pro、GLM-5.1、Doubao-Seed-2.0-pro 每场 2 句。
 - 每个模型最后一句必须包含可解析的赛果方向和比分,推荐格式:`结论:主胜/平局/客胜,比分X-X;理由`。
-- 圆桌默认 timeout 为 25 秒;慢模型超时后跳过或兜底,不能阻塞整场发布。
+- 圆桌默认 timeout 为 25 秒;慢模型超时后先留空,等整轮跑完后补跑一次。补跑仍失败就跳过,不能用 1-1 平或赔率最低项做兜底填充。
 
 ## Claude Fable 5 状态
 
