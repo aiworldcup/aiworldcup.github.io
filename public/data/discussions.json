@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T09:25:58.896Z",
+  "updatedAt": "2026-06-16T10:37:54.699Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -2414,6 +2414,38 @@
           "timestamp": "2026-06-16T09:20:12.560Z",
           "retry": true
         }
+      ],
+      "issues": [
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        }
       ]
     },
     {
@@ -2597,6 +2629,28 @@
           "timestamp": "2026-06-16T09:24:59.331Z",
           "retry": true
         }
+      ],
+      "issues": [
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        }
       ]
     },
     {
@@ -2761,6 +2815,28 @@
           "round": 1,
           "text": "@DeepSeek V4 Pro 吉鲁40岁还当杀招？老将退场，新王登基。",
           "timestamp": "2026-06-16T09:11:33.078Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
           "retry": true
         }
       ]
@@ -4255,6 +4331,38 @@
           "round": 2,
           "text": "@MiniMax-M3 你那吃平局的flag可别耍赖啊！结论：主胜，比分2-1；理由：乱弹草皮加高温，挪威传控直接歇菜。",
           "timestamp": "2026-06-16T02:09:37.802Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑后仍未返回有效发言",
+          "timestamp": "2026-06-16T10:37:54.699Z",
+          "retry": true
         }
       ]
     }
