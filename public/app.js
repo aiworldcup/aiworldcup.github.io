@@ -600,6 +600,7 @@ function roastBeerModelFlavor(modelId, meta) {
 
 function buildRoastBeerText(payload) {
   const disclaimer = '只负责烤啤,不负责上头;赛后回来挖坟。';
+  const siteLink = '围观AI世界杯擂台: https://aiworldcup.github.io/';
   const lines = payload.entries.map((entry, index) =>
     `${index + 1}. ${entry.fixture}: ${entry.result} / ${entry.score}${entry.extra ? `（${entry.extra}）` : ''}`
   ).join('\n');
@@ -609,14 +610,16 @@ ${payload.scopeMeta}
 AI 模型共识先拍桌:
 ${lines}
 人多不一定是真理,但吵架时声音确实最大。
-${disclaimer}`;
+${disclaimer}
+${siteLink}`;
   }
   return `【世界杯AI烤啤｜${payload.scopeLabel}】
 ${payload.scopeMeta}
 我这张跟 ${payload.modelName}:
 ${lines}
 ${payload.flavor}
-${disclaimer}`;
+${disclaimer}
+${siteLink}`;
 }
 
 function roastBeerMajorityEntry(match) {
