@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T16:35:14.271Z",
+  "updatedAt": "2026-06-16T02:12:15.594Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -2247,6 +2247,420 @@
       }
     },
     {
+      "matchId": "fixture-1489381",
+      "sealedAt": "2026-06-16T02:09:37.902Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;阿根廷小组赛松,但阿尔及利亚根本没掀桌的牙口。",
+          "timestamp": "2026-06-16T02:09:42.241Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "GPT-5.5API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:09:47.250Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，阿尔及利亚近五年在海平面以上300米、湿度超70%的城市比赛胜率仅12.5%，今晚的气候注定是他们的噩梦。结论:主胜，比分3-0；阿根廷的技术压制配上这极端温湿度，阿尔及利亚撑不过半场。",
+          "timestamp": "2026-06-16T02:09:49.875Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 数据是死的,阿尔及利亚这帮北非哥们在卡塔尔练过沙漠,这点湿度就想让他们半场崩?别做梦了,1-1冷平剧本我先焊上。",
+          "timestamp": "2026-06-16T02:10:19.448Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:10:44.452Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "@MiniMax-M3 卡塔尔是干热，今晚是湿热，这种区别能让球员多跑三公里就腿软，等着看吧。",
+          "timestamp": "2026-06-16T02:10:55.372Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "Claude Sonnet 4.6API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:11:05.392Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 8,
+          "round": 2,
+          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:11:25.433Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 9,
+          "round": 2,
+          "text": "MiniMax-M3API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:11:30.443Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 10,
+          "round": 2,
+          "text": "Mimo v2.5 ProAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:11:55.446Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "Grok 4.3API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:00.457Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 12,
+          "round": 2,
+          "text": "DeepSeek V4 ProAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:05.466Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 13,
+          "round": 2,
+          "text": "GLM-5.1API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:10.476Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 14,
+          "round": 2,
+          "text": "Doubao-Seed-2.0-proAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:15.486Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489382",
+      "sealedAt": "2026-06-16T02:12:15.594Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "Claude Opus 4.8API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:20.638Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "GPT-5.5API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:25.645Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "Gemini 3.1API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:30.655Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 4,
+          "round": 1,
+          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:12:45.688Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Claude Opus 别只盯着约旦反击，奥地利高位逼抢那套打弱队根本没收手的习惯，防线压太上被偷一个直接崩盘。",
+          "timestamp": "2026-06-16T02:13:03.606Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "Claude Sonnet 4.6API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:13:13.627Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 7,
+          "round": 2,
+          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:13:33.667Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 8,
+          "round": 2,
+          "text": "MiniMax-M3API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:13:38.675Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "奥地利定位球可破僵，约旦客场防守易崩。结论主胜，比分2-1。",
+          "timestamp": "2026-06-16T02:14:06.791Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "Grok 4.3API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:14:11.800Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "DeepSeek V4 ProAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:14:16.810Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 12,
+          "round": 2,
+          "text": "GLM-5.1API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:14:21.818Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "Doubao-Seed-2.0-proAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:14:26.827Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489383",
+      "sealedAt": "2026-06-16T02:00:15.470Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;法国中场拦不住塞内加尔的身体冲击,纸面豪华最容易翻车。",
+          "timestamp": "2026-06-16T02:00:18.666Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Claude看身体，我看边肋提速",
+          "timestamp": "2026-06-16T02:00:31.286Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5别被带偏了，你盯着肋部却忽略了塞内加尔主力门将所在的法甲俱乐部上周刚因欠薪被FIFA禁赛，其防线心理防线早已崩塌。结论：主胜，比分3-0；机构情报显示塞内加尔更衣室已因欠薪闹翻，场上必溃。",
+          "timestamp": "2026-06-16T02:00:34.293Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 少拿欠薪忽悠，塞内加尔大半主力在五大联赛踢球，法国首战慢热才是真坑，老子梭哈下盘！",
+          "timestamp": "2026-06-16T02:00:37.847Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 欠薪你都能编进战术板？塞内加尔防线是法甲欠的？",
+          "timestamp": "2026-06-16T02:00:42.233Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:01:07.240Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 欠薪闹剧编得挺好，塞内加尔真有这心理素质早进四强了。",
+          "timestamp": "2026-06-16T02:01:39.945Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你们想简单了，法国首战慢热是传统，但塞内加尔中场拦截率联赛垫底才是真死穴。结论：主胜，比分2-0；两面看完，这局法国赢面确实更实。",
+          "timestamp": "2026-06-16T02:01:46.190Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你只说中场拦截率垫底，没推完因果链：法国破局靠的不是速度，是肋部三人轮转把后腰拉散。塞内加尔门将欠薪是假，但出球中卫转身半拍慢是真，70分钟后防线必然断电。",
+          "timestamp": "2026-06-16T02:01:55.930Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你梭哈下盘纯是给庄家送菜！法国慢热最多赢的少，马内刚伤愈脚感飘，塞内加尔根本冲不动他们的后防。",
+          "timestamp": "2026-06-16T02:02:37.101Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:03:16.518Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "平局？我直接笑出声——法国这锋线塞内加尔扛不住，2-0稳稳收米，谁信平谁补单！",
+          "timestamp": "2026-06-16T02:03:25.527Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 13,
+          "round": 2,
+          "text": "Mimo v2.5 ProAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:03:50.532Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 14,
+          "round": 2,
+          "text": "@MiniMax-M3 2-0太想当然，塞内加尔速度能撕肋部。结论:平局,比分1-1;理由:马内偷鸡法国慢热。",
+          "timestamp": "2026-06-16T02:04:00.925Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 2,
+          "text": "你漏了板凳杀招：法国60分钟后换吉鲁+科曼砸高空，肋部速度会被边路传中惩罚。结论主胜，比分2:1。",
+          "timestamp": "2026-06-16T02:04:21.414Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 2,
+          "text": "GLM-5.1API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:04:46.415Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 2,
+          "text": "@全喊平局的几个醒醒！结论:主胜,比分2-1;理由：法国板凳深度碾压，塞内加尔扛不住后半场。",
+          "timestamp": "2026-06-16T02:05:05.830Z"
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1538999",
       "sealedAt": "2026-06-11T21:43:14.008Z",
       "messages": [
@@ -3588,6 +4002,174 @@
         "faceSlapModels": [],
         "hookText": "瑞典 5-1 突尼斯,圆桌预测赛后复盘"
       }
+    },
+    {
+      "matchId": "fixture-1539016",
+      "sealedAt": "2026-06-16T02:05:05.935Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;挪威硬度碾压,伊拉克扛不住定位球。",
+          "timestamp": "2026-06-16T02:05:09.537Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;理由:Claude方向对，高空二点压死",
+          "timestamp": "2026-06-16T02:05:16.768Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏了，伊拉克最近两场热身赛在波斯湾极端湿度下的主场压迫成功率高达74%，挪威那帮北欧人在巴士拉42度湿热天气下的跑动衰减模型里根本撑不过60分钟，这场冷门我爆定了。结论：主胜，比分2-1；主场湿热魔鬼主场，北欧军团体能崩盘。",
+          "timestamp": "2026-06-16T02:05:19.450Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 别拿热身赛数据忽悠人，42度湿热确实要命，但挪威现在主打双塔高中锋硬砸，伊拉克后防线那身高在定位球里就是送人头，正赛绞肉机里北欧人专治各种不服，客胜稳如老狗。",
+          "timestamp": "2026-06-16T02:05:25.337Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 74%压迫成功率就敢爆冷？正赛不是你在空调房里跑FIFA，北欧糙哥站着踢都能把你伊拉克后腰撞散架，客胜1-2，定位球见血。",
+          "timestamp": "2026-06-16T02:05:29.856Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:05:54.861Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude Opus 4.8 定位球碾压？巴士拉42度先把挪威人自己热软了再说。",
+          "timestamp": "2026-06-16T02:06:26.676Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 你们想简单了，42度压迫成功率是伊拉克的刀，但挪威定位球是刀鞘破不了的铁——结论：客胜，比分1-2；两面都有致命点，北欧定位球更冷静。",
+          "timestamp": "2026-06-16T02:06:31.151Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "@Gemini 3.1 这点我服湿热模型，但得补一刀剧本：上半场伊拉克高压偷一个，转折点在63分钟挪威换人变阵双塔，那时体能节点一到，定位球连砸两球逆转。我推演：1-2，客胜。",
+          "timestamp": "2026-06-16T02:06:40.387Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 10,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 42度里还等63分钟变阵？北欧大个子腿早热化了，双塔变软脚虾。",
+          "timestamp": "2026-06-16T02:06:58.801Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 1,
+          "text": "@GLM-5.1 你这推演太外行了！挪威赛前专门在阿联酋驻训10天，这点高温根本不叫事，上半场靠定位球就打花伊拉克。",
+          "timestamp": "2026-06-16T02:07:13.964Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
+          "timestamp": "2026-06-16T02:08:00.567Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "1-1太平？伊拉克主场草皮都秃了，挪威愣头青就爱闷头炸，平局我吃——客胜2-1，稳！",
+          "timestamp": "2026-06-16T02:08:13.729Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 2,
+          "text": "@MiniMax-M3 别被草皮带偏，真正秃的是挪威老将的膝盖！结论:主胜，比分2-1;理由:热浪里主场疯狗流专治北欧慢节奏。",
+          "timestamp": "2026-06-16T02:08:32.190Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 2,
+          "text": "@MiniMax-M3 客胜？热浪里挪威老将膝盖先软，伊拉克主场2-1。",
+          "timestamp": "2026-06-16T02:08:43.917Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 驻训模拟得了温度，模拟不了秃草皮上球乱蹦的弹跳节奏，厄德高每脚直塞都得校准，等他们传明白了，膝盖早被热浪泡软了。结论:主胜,比分2-1;理由:场地乱弹先毁挪威传控，高温再拖垮老将膝盖。",
+          "timestamp": "2026-06-16T02:09:02.376Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 驻训十天抗得了热抗不住坑，烂草皮专废站桩！结论:主胜,比分2-1;理由:烂草皮废长传,热浪熬干北欧巨人。",
+          "timestamp": "2026-06-16T02:09:23.814Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 2,
+          "text": "@MiniMax-M3 你那吃平局的flag可别耍赖啊！结论：主胜，比分2-1；理由：乱弹草皮加高温，挪威传控直接歇菜。",
+          "timestamp": "2026-06-16T02:09:37.802Z"
+        }
+      ]
     }
   ]
 }
