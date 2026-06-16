@@ -109,7 +109,7 @@ function resultFromDiscussionText(text) {
   if (/闷平|冷平|逼平|打平|平局/.test(value)) return "draw";
   if (/主负|主队负|客胜(?![？?])|客队胜/.test(value)) return "away";
   if (/主胜(?![？?])|主队胜/.test(value)) return "home";
-  return scoreResultFromScore(scoreFromDiscussionText(value));
+  return "";
 }
 
 function resultFromDirectionToken(token) {
@@ -139,10 +139,18 @@ function scoreFromDiscussionText(text) {
     .replace(/\s+/g, "");
 }
 
+function hasDiscussionPrediction(message) {
+  return Boolean(resultFromDiscussionText(message && message.text) && scoreFromDiscussionText(message && message.text));
+}
+
 function finalMessagesByModel(messages) {
   const finalByModel = {};
   (messages || []).forEach((message) => {
-    if (message.modelId) finalByModel[message.modelId] = message;
+    if (!message.modelId) return;
+    const current = finalByModel[message.modelId];
+    if (hasDiscussionPrediction(message) || !hasDiscussionPrediction(current)) {
+      finalByModel[message.modelId] = message;
+    }
   });
   return Object.values(finalByModel).sort((a, b) => (a.turn || 0) - (b.turn || 0));
 }
@@ -325,4 +333,7 @@ module.exports = {
   makeLeaderboard,
   settlementStatusForMatch,
   discussionPredictionMapFor,
+  finalMessagesByModel,
+  resultFromDiscussionText,
+  scoreFromDiscussionText,
 };

@@ -92,7 +92,7 @@ function runParserSmokeTests() {
       expected: { result: "draw", score: "1-1" },
     },
     {
-      text: "@MiniMax-M3 客胜？热浪里挪威老将膝盖先软，伊拉克主场2-1。",
+      text: "@MiniMax-M3 客胜？热浪里挪威老将膝盖先软，结论:主胜,比分2-1。",
       expected: { result: "home", score: "2-1" },
     },
     {
@@ -106,7 +106,7 @@ function runParserSmokeTests() {
     away: { team: "客队" },
     predictions: [],
   };
-  return cases.flatMap((item, index) => {
+  const errors = cases.flatMap((item, index) => {
     const discussions = [{
       matchId: fakeMatch.id,
       messages: [{ modelId: `case-${index}`, text: item.text, turn: 1 }],
@@ -121,6 +121,24 @@ function runParserSmokeTests() {
       actual: { result: prediction.result || "", score: prediction.score || "" },
     }];
   });
+  const overwriteDiscussions = [{
+    matchId: fakeMatch.id,
+    messages: [
+      { modelId: "case-overwrite", text: "结论:平局,比分1-1;理由:铁桶拖死", turn: 2 },
+      { modelId: "case-overwrite", text: "主队真拿不下2-0。", turn: 1 },
+    ],
+  }];
+  const overwritePrediction = discussionPredictionMapFor(fakeMatch, overwriteDiscussions).get("case-overwrite") || {};
+  if (overwritePrediction.result !== "draw" || overwritePrediction.score !== "1-1") {
+    errors.push({
+      type: "parser_smoke_test_failed",
+      case: "overwrite-negated-score",
+      text: overwriteDiscussions[0].messages.map((message) => message.text).join(" / "),
+      expected: { result: "draw", score: "1-1" },
+      actual: { result: overwritePrediction.result || "", score: overwritePrediction.score || "" },
+    });
+  }
+  return errors;
 }
 
 function main() {

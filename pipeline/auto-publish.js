@@ -71,6 +71,7 @@ function main() {
   ensurePublishRemote();
   run(command, args);
   run(process.execPath, ["pipeline/validate-predictions.js"]);
+  run(process.execPath, ["pipeline/audit-prediction-provenance.js"]);
 
   const changed = changedDataFiles();
   if (!changed.length) {

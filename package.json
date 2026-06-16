@@ -12,6 +12,7 @@
     "sync:real": "node pipeline/sync-real-data.js",
     "score": "node pipeline/score.js",
     "validate:predictions": "node pipeline/validate-predictions.js",
+    "audit:predictions": "node pipeline/audit-prediction-provenance.js",
     "recap": "node pipeline/recap.js",
     "settle": "node pipeline/settle.js",
     "settle:watch": "node pipeline/settle-watch.js",
