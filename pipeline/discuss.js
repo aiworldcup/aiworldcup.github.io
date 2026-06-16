@@ -135,9 +135,50 @@ function compactSentence(value, limit) {
 
 function hasFinalPrediction(value) {
   const text = String(value || "");
-  const hasResult = /(主胜|客胜|平局|打平|平|胜|负)/.test(text);
-  const hasScore = /[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/.test(text);
-  return hasResult && hasScore;
+  const result = resultFromFinalText(text);
+  const score = scoreFromText(text);
+  const scoreResult = scoreResultFromScore(score);
+  return Boolean(result && score && scoreResult && result === scoreResult);
+}
+
+function resultFromFinalText(value) {
+  const text = String(value || "");
+  const directionPattern = "(主负|主队负|客胜|客队胜|负|主胜|主队胜|胜|平局|打平|闷平|冷平|逼平|平)";
+  const marked = text.match(new RegExp(`(?:结论|预测|看好|我站|我押|我买|我信|我赌|倾向|更倾向|最终|收束)[:：]?\\s*[^。！？!?；;]{0,20}?${directionPattern}`));
+  if (marked) return resultFromDirectionToken(marked[1]);
+  const nearScore = text.match(new RegExp(`${directionPattern}(?![？?])\\s*(?:[,，、:：;；-]|比分)?\\s*[0-9０-９一二三四五六七八九零〇]+\\s*[-:：比]\\s*[0-9０-９一二三四五六七八九零〇]+`));
+  if (nearScore) return resultFromDirectionToken(nearScore[1]);
+  if (/闷平|冷平|逼平|打平|平局/.test(text)) return "draw";
+  if (/主负|主队负|客胜(?![？?])|客队胜/.test(text)) return "away";
+  if (/主胜(?![？?])|主队胜/.test(text)) return "home";
+  return "";
+}
+
+function resultFromDirectionToken(token) {
+  const value = String(token || "");
+  if (/平局|打平|闷平|冷平|逼平|^平$/.test(value)) return "draw";
+  if (/主负|主队负|客胜|客队胜|^负$/.test(value)) return "away";
+  if (/主胜|主队胜|^胜$/.test(value)) return "home";
+  return "";
+}
+
+function scoreFromText(value) {
+  const matches = Array.from(String(value || "").matchAll(/[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/g));
+  const match = matches[matches.length - 1];
+  if (!match) return "";
+  return match[0]
+    .replace(/[０-９]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0xFEE0))
+    .replace(/[:：比]/g, "-")
+    .replace(/\s+/g, "");
+}
+
+function scoreResultFromScore(score) {
+  const match = String(score || "").match(/^(\d+)-(\d+)$/);
+  if (!match) return "";
+  const home = Number(match[1]);
+  const away = Number(match[2]);
+  if (home === away) return "draw";
+  return home > away ? "home" : "away";
 }
 
 function oddsLine(match) {
@@ -201,6 +242,7 @@ ${relationRule}
 硬规则:
 - 只说一句话(最多两短句),要像群聊里真人甩出来的一句,带情绪、有立场。
 - 聊球本身:阵型、状态、临场、心理、爆冷点——而不是复述赔率数字。禁止说「双方都有机会」「不好说」「拭目以待」这类废话。
+- 比分永远按主队进球-客队进球书写,客胜也不能把客队比分写在前面,例如主队输 1-2 要写「客胜,比分1-2」。
 - 守住你的人格,别人一看就知道这句是你说的。可以有火药味、可以毒舌抬杠,但对事不对人,不许人身攻击。
 - 非最后发言不超过 ${MESSAGE_CHAR_LIMIT} 个中文字符;最后发言不超过 ${FINAL_MESSAGE_CHAR_LIMIT} 个中文字符。
 ${fableRule}${finalRule}`;
@@ -211,7 +253,7 @@ function buildRetryPrompt(match, model, previousMessages, round, isFinalTurn = f
   const lastLine = last ? `${last.modelName}: ${last.text}` : "暂无。";
   const style = STYLE_PROFILES[model.id] || "简短直接。";
   const finalRule = isFinalTurn
-    ? "这是你最后一句,必须给出胜平负方向和比分,例如:结论主胜,比分2-1。"
+    ? "这是你最后一句,必须给出胜平负方向和比分,比分永远按主队进球-客队进球,例如:结论主胜,比分2-1。"
     : "必须回应上一句或补充一个新风险。";
   return `你是${model.name},在世界杯圆桌群聊里聊${match.home.team} vs ${match.away.team}。
 ${style}

@@ -9,6 +9,7 @@
 - 本机自动任务只允许推送到 `origin/main`;`origin` 必须指向 `aiworldcup/aiworldcup.github.io`。
 - 旧个人仓库 `https://github.com/ccavtjy/worldcup-ai-arena` 只作为 `legacy` 备份保留,不参与自动发布。
 - 如果一次自动任务已经生成并提交,但 GitHub 网络问题导致 push 失败,下一次 `publish:*` 任务会先补推本地领先的提交。
+- 每次 `publish:settle` / `publish:roundtable` 在 commit 前都会运行 `node pipeline/validate-predictions.js`,如果发现预测方向与比分主客关系冲突,直接中止发布。
 
 ## 任务
 
@@ -36,6 +37,7 @@
 ```bash
 npm run publish:settle
 npm run publish:roundtable
+npm run validate:predictions
 npm run sync:jingcai -- --from 2026-06-14 --to 2026-06-16
 ops/install-launchd.sh
 launchctl list com.tom.worldcup-ai-arena-results

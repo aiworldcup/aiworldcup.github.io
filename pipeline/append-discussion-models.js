@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { loadProjectEnv } = require("./lib/env");
 const { callModelText } = require("./predict");
-const { buildDiscussionPrompt, turnBudget } = require("./discuss");
+const { buildDiscussionPrompt, hasFinalPrediction, turnBudget } = require("./discuss");
 
 const MODELS_PATH = path.join(__dirname, "..", "public", "data", "models.json");
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
@@ -41,16 +41,10 @@ function cleanText(value) {
     .trim();
 }
 
-function hasFinalPrediction(value) {
-  const text = String(value || "");
-  const hasResult = /(主胜|客胜|平局|打平|平|胜|负)/.test(text);
-  const hasScore = /[0-9０-９一二三四五六七八九零〇]+\s*[-:：比]\s*[0-9０-９一二三四五六七八九零〇]+/.test(text);
-  return hasResult && hasScore;
-}
-
 function buildFinalRetryPrompt(match, model) {
   return `你是${model.name},正在聊${match.home.team} vs ${match.away.team}。
 只输出一句中文,必须包含胜平负方向和具体比分。
+比分永远按主队进球-客队进球,客胜也不能把客队比分写在前面。
 格式类似:结论主胜,比分2-1。`;
 }
 

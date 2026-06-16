@@ -102,6 +102,12 @@
   - 新增 `pipeline/sync-jingcai-single.js` 与 `npm run sync:jingcai`,用于按中国竞彩网单固口径同步 `public/data/jingcai-single.json`。
   - `pipeline/auto-roundtable.js` 在生成圆桌前会 best-effort 同步竞彩单关,失败只报警,不阻塞圆桌生成和发布。
   - 自动同步只新增或更新核对到的单关记录,不会因为官网空返回或解析异常批量删除已有记录。
+- 修正圆桌预测方向与比分主客顺序:
+  - 未完赛的法国 vs 塞内加尔、伊拉克 vs 挪威中 3 条方向/比分冲突最终发言已改成明确 `结论:方向,比分主队-客队` 格式。
+  - `public/app.js`、`pipeline/score.js`、`pipeline/recap.js` 统一解析 `主负`、`闷平`,并避免把带问号的反驳词误判为最终立场。
+  - `pipeline/discuss.js` 与 `append-discussion-models.js` 增加最终发言校验:方向必须和比分胜负关系一致,比分始终按主队在前书写。
+  - 已按作者确认将比利时 vs 埃及 Grok 4.3 的客胜比分从 `1-0` 修正为 `0-1`;其余已完赛存证消息不改写。
+  - 新增 `pipeline/validate-predictions.js` / `npm run validate:predictions`,自动扫描结构化预测和圆桌最终预测;`publish:settle`、`publish:roundtable` 会在 commit 前执行该校验,有冲突则中止发布。
 
 ## 本地预览
 

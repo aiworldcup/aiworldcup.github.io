@@ -70,6 +70,7 @@ function main() {
   const [command, ...args] = task.command;
   ensurePublishRemote();
   run(command, args);
+  run(process.execPath, ["pipeline/validate-predictions.js"]);
 
   const changed = changedDataFiles();
   if (!changed.length) {

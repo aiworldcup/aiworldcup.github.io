@@ -999,13 +999,32 @@ function renderBracket() {
 
 function resultFromDiscussionText(text) {
   const value = String(text || '');
-  if (/结论[:：]?\s*(平局|打平|平)/.test(value) || /冷平|逼平/.test(value)) return 'draw';
-  if (/结论[:：]?\s*(客胜|客队胜|负)/.test(value)) return 'away';
-  if (/结论[:：]?\s*(主胜|主队胜|胜)/.test(value)) return 'home';
-  if (/平局|打平/.test(value)) return 'draw';
-  if (/客胜|客队/.test(value)) return 'away';
-  if (/主胜|主场|主队/.test(value)) return 'home';
+  const directionPattern = '(主负|主队负|客胜|客队胜|负|主胜|主队胜|胜|平局|打平|闷平|冷平|逼平|平)';
+  const marked = value.match(new RegExp(`(?:结论|预测|看好|我站|我押|我买|我信|我赌|倾向|更倾向|最终|收束)[:：]?\\s*[^。！？!?；;]{0,20}?${directionPattern}`));
+  if (marked) return resultFromDirectionToken(marked[1]);
+  const nearScore = value.match(new RegExp(`${directionPattern}(?![？?])\\s*(?:[,，、:：;；-]|比分)?\\s*[0-9０-９一二三四五六七八九零〇]+\\s*[-:：比]\\s*[0-9０-９一二三四五六七八九零〇]+`));
+  if (nearScore) return resultFromDirectionToken(nearScore[1]);
+  if (/闷平|冷平|逼平|打平|平局/.test(value)) return 'draw';
+  if (/主负|主队负|客胜(?![？?])|客队胜/.test(value)) return 'away';
+  if (/主胜(?![？?])|主队胜/.test(value)) return 'home';
+  return scoreResultFromScore(scoreFromDiscussionText(value));
+}
+
+function resultFromDirectionToken(token) {
+  const value = String(token || '');
+  if (/平局|打平|闷平|冷平|逼平|^平$/.test(value)) return 'draw';
+  if (/主负|主队负|客胜|客队胜|^负$/.test(value)) return 'away';
+  if (/主胜|主队胜|^胜$/.test(value)) return 'home';
   return '';
+}
+
+function scoreResultFromScore(score) {
+  const match = String(score || '').match(/^(\d+)-(\d+)$/);
+  if (!match) return '';
+  const home = Number(match[1]);
+  const away = Number(match[2]);
+  if (home === away) return 'draw';
+  return home > away ? 'home' : 'away';
 }
 
 function scoreFromDiscussionText(text) {
@@ -1014,7 +1033,7 @@ function scoreFromDiscussionText(text) {
   if (!match) return '';
   return match[0]
     .replace(/[０-９]/g, char => String.fromCharCode(char.charCodeAt(0) - 0xFEE0))
-    .replace(/[：比]/g, '-')
+    .replace(/[:：比]/g, '-')
     .replace(/\s+/g, '');
 }
 
