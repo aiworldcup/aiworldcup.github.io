@@ -1257,13 +1257,16 @@ function openModelHistory(modelId) {
       ? `${hitBadge('赛果', resultHit)}${hitBadge('比分', scoreHit)}`
       : '<span class="history-badge is-pending">待结算</span>';
     const roundtableMessages = modelRoundtableMessages(match.id, modelId);
-    const roundtableHtml = roundtableMessages.length ? `<div class="history-roundtable" data-loaded="false">
-        <button type="button" class="history-roundtable-toggle" data-match="${escapeHTML(match.id)}" data-model="${escapeHTML(modelId)}" aria-expanded="false">
+    const roundtableId = `history-rt-${match.id}-${modelId}`.replace(/[^a-zA-Z0-9_-]/g, '-');
+    const roundtableButtonHtml = roundtableMessages.length ? `<div class="history-roundtable" data-loaded="false">
+        <button type="button" class="history-roundtable-toggle" data-match="${escapeHTML(match.id)}" data-model="${escapeHTML(modelId)}" data-target="${escapeHTML(roundtableId)}" aria-expanded="false" aria-controls="${escapeHTML(roundtableId)}">
           查看圆桌发言（${roundtableMessages.length}）
           <span>展开</span>
         </button>
-        <div class="history-roundtable-lines" hidden></div>
       </div>` : '';
+    const roundtableLinesHtml = roundtableMessages.length
+      ? `<div id="${escapeHTML(roundtableId)}" class="history-roundtable-lines" hidden></div>`
+      : '';
     return `<article class="history-item">
       <div class="history-match">
         <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
@@ -1284,8 +1287,11 @@ function openModelHistory(modelId) {
           <strong>${escapeHTML(actualText)}</strong>
         </div>
       </div>
-      <div class="history-badges">${badges}</div>
-      ${roundtableHtml}
+      <div class="history-status-row">
+        <div class="history-badges">${badges}</div>
+        ${roundtableButtonHtml}
+      </div>
+      ${roundtableLinesHtml}
     </article>`;
   }).join('') : `<div class="empty-state">
     <strong>暂无历史猜测</strong>
@@ -2153,7 +2159,7 @@ function wireModelHistoryStage() {
     const button = e.target.closest('.history-roundtable-toggle');
     if (!button) return;
     const wrap = button.closest('.history-roundtable');
-    const lines = wrap?.querySelector('.history-roundtable-lines');
+    const lines = document.getElementById(button.dataset.target || '');
     if (!wrap || !lines) return;
     const expanded = button.getAttribute('aria-expanded') === 'true';
     button.setAttribute('aria-expanded', expanded ? 'false' : 'true');

@@ -3076,11 +3076,20 @@ footer p + p { margin-top: 5px; }
   overflow-wrap: anywhere;
 }
 
+.history-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .history-badges {
   display: flex;
+  flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 7px;
-  margin-top: 10px;
+  min-width: 0;
 }
 
 .history-badge {
@@ -3106,7 +3115,8 @@ footer p + p { margin-top: 5px; }
 }
 
 .history-roundtable {
-  margin-top: 10px;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .history-roundtable-toggle {
@@ -3156,6 +3166,15 @@ footer p + p { margin-top: 5px; }
 @media (max-width: 380px) {
   .model-history-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .history-status-row {
+    align-items: flex-start;
+  }
+
+  .history-roundtable {
+    flex: 1 0 100%;
+    margin-left: 0;
   }
 
   .history-picks {
