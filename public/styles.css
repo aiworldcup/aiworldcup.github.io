@@ -3105,6 +3105,35 @@ footer p + p { margin-top: 5px; }
   background: var(--gold);
 }
 
+.history-roundtable {
+  margin-top: 10px;
+  border: 1px solid rgba(245, 197, 66, 0.28);
+  border-radius: 8px;
+  padding: 9px;
+  background: rgba(245, 197, 66, 0.06);
+}
+
+.history-roundtable-title {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.history-roundtable p {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.history-roundtable p + p {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
 @media (max-width: 380px) {
   .model-history-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));

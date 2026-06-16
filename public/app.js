@@ -1204,6 +1204,18 @@ function modelHistory(modelId) {
     .sort((a, b) => b.kickoffTime - a.kickoffTime);
 }
 
+function modelRoundtableMessages(matchId, modelId) {
+  const thread = DISCUSSIONS.find(item => item.matchId === matchId);
+  if (!thread || !Array.isArray(thread.messages)) return [];
+  return thread.messages
+    .filter(message => message.modelId === modelId && message.text)
+    .sort((a, b) => {
+      const turnDelta = Number(a.turn || 0) - Number(b.turn || 0);
+      if (turnDelta) return turnDelta;
+      return new Date(a.timestamp || 0) - new Date(b.timestamp || 0);
+    });
+}
+
 function hitBadge(label, hit) {
   return `<span class="history-badge ${hit ? 'is-hit' : 'is-miss'}">${hit ? '✓' : '✗'} ${label}</span>`;
 }
@@ -1244,6 +1256,11 @@ function openModelHistory(modelId) {
     const badges = settled
       ? `${hitBadge('赛果', resultHit)}${hitBadge('比分', scoreHit)}`
       : '<span class="history-badge is-pending">待结算</span>';
+    const roundtableMessages = modelRoundtableMessages(match.id, modelId);
+    const roundtableHtml = roundtableMessages.length ? `<div class="history-roundtable">
+        <div class="history-roundtable-title">圆桌发言</div>
+        ${roundtableMessages.map(message => `<p>${escapeHTML(message.text)}</p>`).join('')}
+      </div>` : '';
     return `<article class="history-item">
       <div class="history-match">
         <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
@@ -1265,6 +1282,7 @@ function openModelHistory(modelId) {
         </div>
       </div>
       <div class="history-badges">${badges}</div>
+      ${roundtableHtml}
     </article>`;
   }).join('') : `<div class="empty-state">
     <strong>暂无历史猜测</strong>
