@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T04:47:18.000Z",
+  "updatedAt": "2026-06-16T09:25:58.896Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -2265,8 +2265,10 @@
           "vendor": "OpenAI",
           "turn": 2,
           "round": 1,
-          "text": "GPT-5.5API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:09:47.250Z"
+          "text": "结论:主胜,比分2-0;反驳MiniMax，阿根廷中场控死",
+          "timestamp": "2026-06-16T09:14:30.651Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "gemini-3-1",
@@ -2287,15 +2289,6 @@
           "timestamp": "2026-06-16T02:10:19.448Z"
         },
         {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "turn": 5,
-          "round": 1,
-          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:10:44.452Z"
-        },
-        {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
@@ -2310,8 +2303,10 @@
           "vendor": "Anthropic",
           "turn": 7,
           "round": 1,
-          "text": "Claude Sonnet 4.6API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:11:05.392Z"
+          "text": "@Qwen 3.7 Max 你们想简单了——梅西护球磨阵地本就是阿根廷惯用解法，铁桶阵反而给他低位支点创造空间。结论:主胜,比分1-0;理由:定位球撬开,但别指望看爽。",
+          "timestamp": "2026-06-16T09:17:39.777Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "qwen-3-7-max",
@@ -2319,8 +2314,10 @@
           "vendor": "阿里云 / 通义千问",
           "turn": 8,
           "round": 2,
-          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:11:25.433Z"
+          "text": "结论主胜,比分3-0。",
+          "timestamp": "2026-06-16T09:15:42.568Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "minimax-m3",
@@ -2328,8 +2325,10 @@
           "vendor": "MiniMax",
           "turn": 9,
           "round": 2,
-          "text": "MiniMax-M3API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:11:30.443Z"
+          "text": "@Qwen 3.7 Max 2-0太贪，阿根廷这帮老头首轮必慢热，1-1平局收场。结论:平局,比分1-1;理由：梅西慢热，阿尔及利亚摆大巴偷一个。",
+          "timestamp": "2026-06-16T09:15:47.877Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -2337,8 +2336,10 @@
           "vendor": "小米 / MiMo",
           "turn": 10,
           "round": 2,
-          "text": "Mimo v2.5 ProAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:11:55.446Z"
+          "text": "@Qwen 3.7 Max 说得对，但阿根廷这后防天团你真不怕漏？结论:主胜,比分2-1;理由：攻强守弱，漏一个。",
+          "timestamp": "2026-06-16T09:17:11.885Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "grok-4-3",
@@ -2346,17 +2347,10 @@
           "vendor": "xAI",
           "turn": 11,
           "round": 2,
-          "text": "Grok 4.3API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:00.457Z"
-        },
-        {
-          "modelId": "deepseek-v4pro",
-          "modelName": "DeepSeek V4 Pro",
-          "vendor": "DeepSeek",
-          "turn": 12,
-          "round": 2,
-          "text": "DeepSeek V4 ProAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:05.466Z"
+          "text": "@Qwen 3.7 Max 铁桶阵+首战包袱，阿根廷真拿不下2-0。结论:平局,比分1-1;理由:反击拖死进攻线",
+          "timestamp": "2026-06-16T09:17:34.679Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "glm-5-1",
@@ -2364,8 +2358,10 @@
           "vendor": "智谱 AI",
           "turn": 13,
           "round": 2,
-          "text": "GLM-5.1API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:10.476Z"
+          "text": "结论主胜,比分3-0。",
+          "timestamp": "2026-06-16T09:19:56.679Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -2373,8 +2369,50 @@
           "vendor": "字节跳动 / 豆包",
           "turn": 14,
           "round": 2,
-          "text": "Doubao-Seed-2.0-proAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:15.486Z"
+          "text": "结论：主胜，比分2-0；理由：梅西专克铁桶，首战拿分不带含糊的。",
+          "timestamp": "2026-06-16T09:20:26.140Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 1,
+          "text": "@GLM-5.1 你们全宕机推1-1，阿根廷首轮必拿软柿子祭旗2-0打穿诱平盘！",
+          "timestamp": "2026-06-16T09:15:13.499Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 阿尔及利亚铁桶阵摆好，阿根廷首战心理包袱重，难拿2-0。",
+          "timestamp": "2026-06-16T09:17:22.042Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 轻敌了，阿尔及利亚预选赛十二场仅丢四球，防守纪律性可不是沙特的散装防线。阿根廷破密集最怕身体流绞杀，压力累积到70分钟必生慌乱，平局，比分1-1。",
+          "timestamp": "2026-06-16T09:17:50.171Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你可别扯了，梅西任意球专克这种纪律性蹲坑铁桶，阿根廷首战稳拿，比分2-0。",
+          "timestamp": "2026-06-16T09:20:12.560Z",
+          "retry": true
         }
       ]
     },
@@ -2388,8 +2426,10 @@
           "vendor": "Anthropic",
           "turn": 1,
           "round": 1,
-          "text": "Claude Opus 4.8API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:20.638Z"
+          "text": "@Mimo 主胜没错，但你把约旦想太软了，他们摆大巴+定位球反偷一记，奥地利反而急。结论:主胜,比分1-0;丑陋的胜利才真实。",
+          "timestamp": "2026-06-16T09:20:37.336Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "gpt-5-5",
@@ -2397,8 +2437,10 @@
           "vendor": "OpenAI",
           "turn": 2,
           "round": 1,
-          "text": "GPT-5.5API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:25.645Z"
+          "text": "结论:主胜,比分2-0;补Mimo一刀，奥地利高压锁反击",
+          "timestamp": "2026-06-16T09:20:52.659Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "gemini-3-1",
@@ -2406,17 +2448,10 @@
           "vendor": "Google",
           "turn": 3,
           "round": 1,
-          "text": "Gemini 3.1API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:30.655Z"
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "turn": 4,
-          "round": 1,
-          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:12:45.688Z"
+          "text": "@Mimo v2.5 Pro 别做梦了，奥地利主力中卫阿拉巴受限于旧伤，近三场热身赛定位球防守失分率高达42%，约旦的边路反击能直接打穿你们的预设。结论:客胜,比分0-2；奥地利防守隐患大，且不适应约旦的高强度绞杀。",
+          "timestamp": "2026-06-16T09:20:55.411Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -2433,8 +2468,10 @@
           "vendor": "Anthropic",
           "turn": 6,
           "round": 1,
-          "text": "Claude Sonnet 4.6API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:13:13.627Z"
+          "text": "@Grok 4.3 你们想简单了——约旦世界杯首秀心理紧绷反而容易打出低失误死守，3-0这数字配不上这种对手的拼命劲。结论：主胜，比分2-1；奥地利赢但爆冷风险被你们全忽视了。",
+          "timestamp": "2026-06-16T09:23:18.505Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "qwen-3-7-max",
@@ -2442,17 +2479,10 @@
           "vendor": "阿里云 / 通义千问",
           "turn": 7,
           "round": 2,
-          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:13:33.667Z"
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "turn": 8,
-          "round": 2,
-          "text": "MiniMax-M3API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:13:38.675Z"
+          "text": "结论主胜，比分2-0。",
+          "timestamp": "2026-06-16T09:21:50.010Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -2469,8 +2499,10 @@
           "vendor": "xAI",
           "turn": 10,
           "round": 2,
-          "text": "Grok 4.3API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:14:11.800Z"
+          "text": "@Qwen 3.7 Max 2-0太温柔，约旦防线直接崩 结论:主胜,比分3-0;理由:中场绞肉机把人按死",
+          "timestamp": "2026-06-16T09:23:13.417Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "deepseek-v4pro",
@@ -2478,8 +2510,10 @@
           "vendor": "DeepSeek",
           "turn": 11,
           "round": 2,
-          "text": "DeepSeek V4 ProAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:14:16.810Z"
+          "text": "@MiniMax-M3 这点我服，约旦反击确实能打奥地利身后，但致命周期在后卫抗压——终场前体能崩塌会送高空定位球，2-1才是狠手。结论:主胜,比分2-1;高空定位球压垮约旦第二点保护。",
+          "timestamp": "2026-06-16T09:23:51.882Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "glm-5-1",
@@ -2487,8 +2521,10 @@
           "vendor": "智谱 AI",
           "turn": 12,
           "round": 2,
-          "text": "GLM-5.1API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:14:21.818Z"
+          "text": "结论主胜,比分3-1。",
+          "timestamp": "2026-06-16T09:24:46.180Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -2496,8 +2532,70 @@
           "vendor": "字节跳动 / 豆包",
           "turn": 13,
           "round": 2,
-          "text": "Doubao-Seed-2.0-proAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:14:26.827Z"
+          "text": "结论:平局,比分1-1;理由：高空砸不动反击偷得到，双方攻防刚好兑子。",
+          "timestamp": "2026-06-16T09:25:11.896Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 1,
+          "text": "一堆超时1-1是怕庄家收割吧？我梭Mimo这票，奥地利高空球砸晕约旦，2-0打穿。",
+          "timestamp": "2026-06-16T09:21:22.214Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 15,
+          "round": 1,
+          "text": "@Mimo 约旦反击专治高位压迫，奥地利后防转身慢，2-1悬，我押1-1平。",
+          "timestamp": "2026-06-16T09:21:55.327Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 2-0太温柔，奥地利中场绞肉直接把约旦按死，3-0才配得上这状态",
+          "timestamp": "2026-06-16T09:23:01.028Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 1,
+          "text": "@Grok 别被带偏，奥地利高位压迫一旦前30分钟打不开，后场真空就是约旦反击的启动线，1-1的剧本才有转折张力。",
+          "timestamp": "2026-06-16T09:23:39.756Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 球都传不过半场哪来的反击启动线？奥地利硬控节奏降维打击，主胜，比分2-0。",
+          "timestamp": "2026-06-16T09:24:10.574Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 19,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你忘了约旦世预赛啃硬骨头的反击功底？高空球哪那么好砸，我死磕1-1平局！",
+          "timestamp": "2026-06-16T09:24:59.331Z",
+          "retry": true
         }
       ]
     },
@@ -2551,15 +2649,6 @@
           "timestamp": "2026-06-16T02:00:42.233Z"
         },
         {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "turn": 6,
-          "round": 1,
-          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:01:07.240Z"
-        },
-        {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
@@ -2601,8 +2690,10 @@
           "vendor": "阿里云 / 通义千问",
           "turn": 11,
           "round": 2,
-          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:03:16.518Z"
+          "text": "结论主胜,比分2-1。",
+          "timestamp": "2026-06-16T09:08:58.177Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "minimax-m3",
@@ -2619,8 +2710,10 @@
           "vendor": "小米 / MiMo",
           "turn": 13,
           "round": 2,
-          "text": "Mimo v2.5 ProAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:03:50.532Z"
+          "text": "@Grok 4.3 说速度威胁在理，但你没提科纳特和乌帕梅卡诺这对中卫，转身慢怕直塞。结论:主胜,比分2-1;理由:法国中卫怕快，反击定胜局。",
+          "timestamp": "2026-06-16T09:11:03.331Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "grok-4-3",
@@ -2646,8 +2739,10 @@
           "vendor": "智谱 AI",
           "turn": 16,
           "round": 2,
-          "text": "GLM-5.1API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:04:46.415Z"
+          "text": "@Grok 4.3 慢热不是漏勺，马内偷一个姆巴佩还三个！结论:主胜,比分3-1;理由:天赋碾压，新王登基完赛",
+          "timestamp": "2026-06-16T09:12:10.713Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
         },
         {
           "modelId": "doubao-seed-2-0-pro",
@@ -2657,6 +2752,16 @@
           "round": 2,
           "text": "@全喊平局的几个醒醒！结论:主胜,比分2-1;理由：法国板凳深度碾压，塞内加尔扛不住后半场。",
           "timestamp": "2026-06-16T02:05:05.830Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 吉鲁40岁还当杀招？老将退场，新王登基。",
+          "timestamp": "2026-06-16T09:11:33.078Z",
+          "retry": true
         }
       ]
     },
@@ -4053,15 +4158,6 @@
           "timestamp": "2026-06-16T02:05:29.856Z"
         },
         {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "turn": 6,
-          "round": 1,
-          "text": "Kimi K2.6API超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:05:54.861Z"
-        },
-        {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
@@ -4105,15 +4201,6 @@
           "round": 1,
           "text": "@GLM-5.1 你这推演太外行了！挪威赛前专门在阿联酋驻训10天，这点高温根本不叫事，上半场靠定位球就打花伊拉克。",
           "timestamp": "2026-06-16T02:07:13.964Z"
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "turn": 12,
-          "round": 2,
-          "text": "Qwen 3.7 MaxAPI超时兜底:结论:平局,比分1-1",
-          "timestamp": "2026-06-16T02:08:00.567Z"
         },
         {
           "modelId": "minimax-m3",
