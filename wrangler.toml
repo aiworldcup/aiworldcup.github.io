@@ -1,4 +1,4 @@
-name = "worldcup-ai-arena-analytics"
+name = "worldcup-ai-arena-events"
 main = "worker/analytics-worker.mjs"
 compatibility_date = "2026-06-14"
 workers_dev = true

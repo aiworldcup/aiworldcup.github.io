@@ -79,12 +79,12 @@
       <div id="recent"></div>
     </section>
   </main>
-  <script src="analytics-config.js?v=20260614-analytics"></script>
+  <script src="site-config.js?v=20260617-events"></script>
   <script>
     var endpointInput = document.getElementById('endpoint');
     var tokenInput = document.getElementById('token');
     var statusEl = document.getElementById('status');
-    var configuredEndpoint = window.WCA_ANALYTICS_ENDPOINT || '';
+    var configuredEndpoint = window.WCA_EVENTS_ENDPOINT || window.WCA_ANALYTICS_ENDPOINT || '';
     endpointInput.value = configuredEndpoint || localStorage.getItem('wca_admin_endpoint') || '';
     tokenInput.value = localStorage.getItem('wca_admin_token') || '';
 
