@@ -17,6 +17,7 @@ let roastBeerSource = 'majority';
 let roastBeerScope = 'all';
 const ACTIVE_TRACK = 'open';
 const COMPACT_MATCHES_STORAGE_KEY = 'worldcup-ai-arena-compact-matches';
+const PUBLIC_SITE_URL = 'https://aiworldcup.github.io/';
 
 // 阵营划分:国产军团 vs 海外军团(用于核心传播钩子)
 const DOMESTIC_VENDORS = ['阿里', '通义', '月之暗面', 'Moonshot', '小米', 'MiMo', 'DeepSeek', '智谱', 'MiniMax', '百度', '字节', '腾讯'];
@@ -1376,7 +1377,7 @@ function renderHeroRoundtable() {
     const state = matchLifecycle(match);
     return `<article class="hero-rt-card" data-match="${escapeHTML(match.id)}" role="button" tabindex="0">
       <div class="hero-rt-kicker">
-        <span>今日最劲爆圆桌</span>
+        <span>最毒一句</span>
         <strong class="match-status status-${state.tone}">${escapeHTML(state.label)}</strong>
       </div>
       <div class="hero-rt-fixture">
@@ -1389,7 +1390,7 @@ function renderHeroRoundtable() {
           <i style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</i>
           <span>${escapeHTML(meta.name)} · ${camp === 'domestic' ? '🇨🇳 国产军团' : '🌍 海外军团'}</span>
         </div>` : ''}
-      <button type="button" class="hero-rt-play">▶ 看激辩</button>
+      <button type="button" class="hero-rt-play">看回放</button>
     </article>`;
   });
 
@@ -1404,7 +1405,7 @@ function renderHeroRoundtable() {
     <div class="hero-rt-head">
       <div>
         <strong>AI 圆桌热评</strong>
-        <span>进站先看模型互怼</span>
+        <span>短头条,点开看完整回放</span>
       </div>
       <div class="hero-rt-nav" aria-label="切换圆桌热评">
         <button type="button" class="hero-rt-arrow" data-dir="-1" aria-label="上一条">‹</button>
@@ -1851,6 +1852,75 @@ function renderRoundtableFeed() {
 
 // ====== 全屏沉浸式辩论回放 ======
 let debateTimer = null;
+let currentDebateShare = null;
+
+function debateShareUrl(matchId) {
+  const url = new URL(PUBLIC_SITE_URL);
+  url.hash = `debate=${matchId}`;
+  return url.toString();
+}
+
+function debateSharePayload(match, messages) {
+  const hot = heroHottestLine(messages) || hottestLine(messages) || messages[messages.length - 1] || null;
+  const meta = hot ? modelMeta(hot.modelId) : null;
+  const fixture = `${flagIcon(match.home.flag)} ${match.home.team} VS ${match.away.team} ${flagIcon(match.away.flag)}`;
+  const link = debateShareUrl(match.id);
+  const quote = hot ? `${meta.name}: ${hot.text}` : `${fixture} 的圆桌回放`;
+  return {
+    link,
+    quote,
+    text: `【世界杯AI圆桌热评】\n${fixture}\n${quote}\n看完整激辩: ${link}`,
+  };
+}
+
+async function copyPlainText(text) {
+  if (!text) return false;
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (_) {
+    const temp = document.createElement('textarea');
+    temp.value = text;
+    temp.setAttribute('readonly', '');
+    temp.style.position = 'fixed';
+    temp.style.left = '-9999px';
+    temp.style.top = '0';
+    document.body.appendChild(temp);
+    temp.focus();
+    temp.select();
+    temp.setSelectionRange(0, temp.value.length);
+    let ok = false;
+    try {
+      ok = !!document.execCommand?.('copy');
+    } catch (e) {
+      ok = false;
+    }
+    temp.remove();
+    return ok;
+  }
+}
+
+function flashDebateButton(button, label) {
+  if (!button) return;
+  const original = button.textContent;
+  button.textContent = label;
+  button.disabled = true;
+  window.setTimeout(() => {
+    button.textContent = original;
+    button.disabled = false;
+  }, 1200);
+}
+
+async function copyDebateLine(button) {
+  const ok = await copyPlainText(currentDebateShare?.text || '');
+  flashDebateButton(button, ok ? '已复制' : '复制失败');
+}
+
+async function copyDebateLink(button) {
+  const ok = await copyPlainText(currentDebateShare?.link || '');
+  flashDebateButton(button, ok ? '已复制' : '复制失败');
+}
 
 function debateBubbleHTML(message, prevModelId) {
   const meta = modelMeta(message.modelId);
@@ -1879,6 +1949,7 @@ function openDebateStage(matchId) {
   // 写入 hash,辩论可直接分享深链
   if (history.replaceState) history.replaceState(null, '', `#debate=${matchId}`);
   const messages = (thread.messages || []).slice().sort((a, b) => a.turn - b.turn);
+  currentDebateShare = debateSharePayload(match, messages);
   const stage = document.getElementById('debate-stage');
   const scroll = document.getElementById('debate-scroll');
   const titleEl = document.getElementById('debate-title');
@@ -1913,6 +1984,8 @@ function openDebateStage(matchId) {
   };
   document.getElementById('debate-replay').onclick = replay;
   document.getElementById('debate-skip').onclick = skip;
+  document.getElementById('debate-copy-line').onclick = e => copyDebateLine(e.currentTarget);
+  document.getElementById('debate-copy-link').onclick = e => copyDebateLink(e.currentTarget);
 }
 
 function playDebate(messages, scroll) {
@@ -1947,6 +2020,7 @@ function closeDebateStage() {
   stage.classList.remove('is-open');
   stage.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  currentDebateShare = null;
   if (history.replaceState && location.hash.startsWith('#debate=')) {
     history.replaceState(null, '', location.pathname);
   }

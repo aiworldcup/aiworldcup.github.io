@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>世界杯 AI 擂台 · 谁是最会预测世界杯的大模型</title>
   <meta name="description" content="10+ 顶级大模型同场竞猜世界杯每场比赛。赛前封盘存证、赛后实时打榜,国产军团对决海外军团,看哪个 AI 最会算球。" />
-  <link rel="stylesheet" href="styles.css?v=20260617-history-roundtable-row" />
+  <link rel="stylesheet" href="styles.css?v=20260617-roundtable-share" />
 </head>
 <body>
   <header class="hero">
@@ -121,7 +121,9 @@
       <div class="debate-stance" id="debate-stance"></div>
       <div class="debate-scroll" id="debate-scroll"></div>
       <div class="debate-controls">
-        <button type="button" class="debate-btn" id="debate-replay">↻ 重新回放</button>
+        <button type="button" class="debate-btn share" id="debate-copy-line">复制金句</button>
+        <button type="button" class="debate-btn ghost" id="debate-copy-link">复制链接</button>
+        <button type="button" class="debate-btn ghost" id="debate-replay">↻ 重新回放</button>
         <button type="button" class="debate-btn ghost" id="debate-skip">显示全部</button>
         <button type="button" class="debate-btn close" id="debate-close-bottom">关闭</button>
       </div>
@@ -183,8 +185,8 @@
     </div>
   </div>
 
-  <script src="analytics-config.js?v=20260614-analytics"></script>
-  <script src="app.js?v=20260617-history-roundtable-row"></script>
-  <script src="telemetry.js?v=20260617-telemetry" defer></script>
+  <script src="site-config.js?v=20260617-events"></script>
+  <script src="app.js?v=20260617-load-smooth"></script>
+  <script src="visit.js?v=20260617-events" defer></script>
 </body>
 </html>

@@ -128,6 +128,17 @@
   - `pipeline/sync-jingcai-single.js` 新增中国竞彩网竞彩足球赛前列表接口,按胜平负 `HAD` 玩法的 `cbtSingle=1` 识别单固场次;原赛果开奖接口继续用于已完赛核对。
   - 已同步 `public/data/jingcai-single.json`:6/17 官方胜平负单固 2 场,分别为法国-塞内加尔、奥地利-约旦。
   - 已验证 `npm run sync:jingcai -- --date 2026-06-17 --dry-run --strict` 可返回 `officialRows=2 mapped=2`,且 `npm run validate:predictions` 通过。
+- 强化「AI 圆桌热评」传播单元:
+  - 首屏圆桌热评保持短头条形态,文案收紧为“最毒一句 / 看回放”,避免继续抬高首屏影响下方交互。
+  - 全屏圆桌回放底部新增“复制金句”和“复制链接”,复用已有 `#debate=matchId` 深链,并固定生成 `https://aiworldcup.github.io/` 公开链接,不恢复分享图下载逻辑。
+  - 底部按钮在移动端改为两列排布,关闭按钮独占一行;桌面端五列排布,避免按钮挤压。
+  - 已备份 `public/index.html`、`public/app.js`、`public/styles.css` 到 `backups/20260617-roundtable-share/`。
+  - 已验证 `node --check public/app.js` 与 `npm run validate:predictions` 通过。
+- 优化首页打开流畅度:
+  - 前端 JSON 加载由串行改为并发,并将 `fetch` 缓存策略从 `no-store` 改为 `no-cache`,保留更新校验同时减少重复下载。
+  - 初始化时先渲染当前 tab 和首屏圆桌/榜单,赛程、比赛、冠军等隐藏 tab 改为空闲时间预热,定时刷新也只重绘当前 tab。
+  - 为比赛、圆桌、预测、队旗、排行榜和模型历史建立内存索引/缓存,减少首屏和 tab 切换时的全量 `find/filter`。
+  - `public/index.html` 的 `app.js` 版本号更新为 `20260617-load-smooth`,避免线上用户继续拿旧脚本缓存。
 
 ## 本地预览
 
