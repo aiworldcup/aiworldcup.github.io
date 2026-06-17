@@ -104,7 +104,7 @@ function resultFromDiscussionText(text) {
   const directionPattern = "(主负|主队负|客胜|客队胜|负|主胜|主队胜|胜|平局|打平|闷平|冷平|逼平|平)";
   const marked = value.match(new RegExp(`(?:结论|预测|看好|我站|我押|我买|我信|我赌|倾向|更倾向|最终|收束)[:：]?\\s*[^。！？!?；;]{0,20}?${directionPattern}`));
   if (marked) return resultFromDirectionToken(marked[1]);
-  const nearScore = value.match(new RegExp(`${directionPattern}(?![？?])\\s*(?:[,，、:：;；-]|比分)?\\s*[0-9０-９一二三四五六七八九零〇]+\\s*[-:：比]\\s*[0-9０-９一二三四五六七八九零〇]+`));
+  const nearScore = value.match(new RegExp(`${directionPattern}(?![？?])\\s*(?:[,，、:：;；-]\\s*)?(?:比分)?\\s*[0-9０-９一二三四五六七八九零〇]+\\s*[-:：比]\\s*[0-9０-９一二三四五六七八九零〇]+`));
   if (nearScore) return resultFromDirectionToken(nearScore[1]);
   if (/闷平|冷平|逼平|打平|平局/.test(value)) return "draw";
   if (/主负|主队负|客胜(?![？?])|客队胜/.test(value)) return "away";

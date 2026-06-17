@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T13:08:41.748Z",
+  "updatedAt": "2026-06-17T06:38:52.245Z",
   "status": "verified",
   "sources": [
     {
@@ -78,7 +78,8 @@
       "league": "世界杯",
       "homeTeam": "法国",
       "awayTeam": "塞内加尔",
-      "kickoff": "2026-06-16T19:00:00+00:00"
+      "kickoff": "2026-06-16T19:00:00+00:00",
+      "officialScore": "3:1"
     },
     {
       "matchId": "fixture-1489382",
@@ -88,7 +89,28 @@
       "league": "世界杯",
       "homeTeam": "奥地利",
       "awayTeam": "约旦",
-      "kickoff": "2026-06-17T04:00:00+00:00"
+      "kickoff": "2026-06-17T04:00:00+00:00",
+      "officialScore": "3:1"
+    },
+    {
+      "matchId": "fixture-1489384",
+      "jingcaiMatchId": "2040183",
+      "matchNum": "周三022",
+      "matchDate": "2026-06-18",
+      "league": "世界杯",
+      "homeTeam": "英格兰",
+      "awayTeam": "克罗地亚",
+      "kickoff": "2026-06-17T20:00:00+00:00"
+    },
+    {
+      "matchId": "fixture-1489385",
+      "jingcaiMatchId": "2040184",
+      "matchNum": "周三023",
+      "matchDate": "2026-06-18",
+      "league": "世界杯",
+      "homeTeam": "加纳",
+      "awayTeam": "巴拿马",
+      "kickoff": "2026-06-17T23:00:00+00:00"
     }
   ]
 }

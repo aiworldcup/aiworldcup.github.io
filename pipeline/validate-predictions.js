@@ -92,6 +92,10 @@ function runParserSmokeTests() {
       expected: { result: "draw", score: "1-1" },
     },
     {
+      text: "克罗地亚老球皮上半场控节奏直接磨死三狮，平，比分1-1。",
+      expected: { result: "draw", score: "1-1" },
+    },
+    {
       text: "@MiniMax-M3 客胜？热浪里挪威老将膝盖先软，结论:主胜,比分2-1。",
       expected: { result: "home", score: "2-1" },
     },

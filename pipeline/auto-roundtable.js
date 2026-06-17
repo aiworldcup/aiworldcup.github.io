@@ -43,7 +43,11 @@ async function main() {
   const date = argValue("date") || addDays(beijingDateKey(), 1);
   const limit = Number(argValue("limit") || process.env.AUTO_ROUNDTABLE_LIMIT || 8);
 
-  await syncRealData();
+  try {
+    await syncRealData();
+  } catch (err) {
+    console.warn(`[auto-roundtable] syncRealData failed; continue with existing matches: ${err.message}`);
+  }
   await syncJingcaiSingle({
     from: addDays(date, -3),
     to: date,
