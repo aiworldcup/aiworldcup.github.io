@@ -8,6 +8,15 @@ let CHAMPIONS = [];
 let DISCUSSIONS = [];
 let GROUPS = {};
 let JINGCAI_SINGLE = { matches: [], sources: [] };
+let MATCH_BY_ID = new Map();
+let DISCUSSION_BY_MATCH = new Map();
+let PREDICTIONS_BY_MATCH = new Map();
+let TEAM_FLAG_BY_NAME = new Map();
+let LEADERBOARD_ROWS_CACHE = null;
+let ROUNDTABLE_THREADS_CACHE = null;
+let MODEL_HISTORY_CACHE = new Map();
+let hydratedTabs = new Set();
+let lazyHydrationToken = 0;
 let selectedDateKey = '';
 let activeLbTrack = 'result';
 let heroRoundtableTimer = null;
@@ -39,19 +48,73 @@ window.addEventListener('error', event => {
   </div>`;
 });
 
-async function loadJSON(path, fallback) {
+async function loadJSON(path, fallback, options = {}) {
+  const cache = options.cache || 'no-cache';
   try {
-    const res = await fetch(path, { cache: 'no-store' });
+    const res = await fetch(path, { cache });
     if (!res.ok) throw new Error(res.status);
     return await res.json();
   } catch (e) {
     if (fallback) {
       console.warn(`加载 ${path} 失败,回退到 ${fallback}`);
-      try { return await (await fetch(fallback, { cache: 'no-store' })).json(); }
+      try { return await (await fetch(fallback, { cache })).json(); }
       catch (_) { return null; }
     }
     return null;
   }
+}
+
+function scheduleIdleWork(callback) {
+  if (window.requestIdleCallback) {
+    window.requestIdleCallback(callback, { timeout: 900 });
+    return;
+  }
+  window.setTimeout(callback, 80);
+}
+
+function resetDerivedCaches() {
+  LEADERBOARD_ROWS_CACHE = null;
+  ROUNDTABLE_THREADS_CACHE = null;
+  MODEL_HISTORY_CACHE = new Map();
+}
+
+function discussionPredictionsFromThread(thread) {
+  const messages = finalMessagesByModel(thread?.messages || []);
+  return messages
+    .map(message => ({
+      modelId: message.modelId,
+      result: resultFromDiscussionText(message.text),
+      score: scoreFromDiscussionText(message.text),
+      source: 'discussion'
+    }))
+    .filter(prediction => prediction.result && prediction.score);
+}
+
+function rebuildDataIndexes() {
+  MATCH_BY_ID = new Map();
+  DISCUSSION_BY_MATCH = new Map();
+  PREDICTIONS_BY_MATCH = new Map();
+  TEAM_FLAG_BY_NAME = new Map();
+
+  MATCHES.forEach(match => {
+    MATCH_BY_ID.set(match.id, match);
+    if (match.home?.team) TEAM_FLAG_BY_NAME.set(match.home.team, flagIcon(match.home.flag || (match.placeholder ? '🏆' : '')));
+    if (match.away?.team) TEAM_FLAG_BY_NAME.set(match.away.team, flagIcon(match.away.flag || (match.placeholder ? '🏆' : '')));
+  });
+
+  DISCUSSIONS.forEach(thread => {
+    if (thread?.matchId) DISCUSSION_BY_MATCH.set(thread.matchId, thread);
+  });
+
+  MATCHES.forEach(match => {
+    const trackPredictions = (match.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
+    const predictions = trackPredictions.length
+      ? trackPredictions
+      : discussionPredictionsFromThread(DISCUSSION_BY_MATCH.get(match.id));
+    PREDICTIONS_BY_MATCH.set(match.id, predictions);
+  });
+
+  resetDerivedCaches();
 }
 
 function modelMeta(id) {
@@ -836,9 +899,7 @@ async function copyRoastBeerText() {
 }
 
 function teamFlag(team) {
-  const match = MATCHES.find(item => item.home.team === team || item.away.team === team);
-  if (!match) return '';
-  return flagIcon(match.home.team === team ? match.home.flag : match.away.flag);
+  return TEAM_FLAG_BY_NAME.get(team) || '';
 }
 
 function isGroupMatch(match) {
@@ -955,7 +1016,7 @@ function winnerName(match) {
 }
 
 function focusMatch(matchId) {
-  const match = MATCHES.find(item => item.id === matchId);
+  const match = MATCH_BY_ID.get(matchId);
   if (!match) return;
   selectedDateKey = matchDateKey(match);
   renderDateQuick();
@@ -1048,19 +1109,13 @@ function hasDiscussionPrediction(message) {
 }
 
 function discussionPredictionsForMatch(matchId) {
-  const thread = discussionForMatch(matchId);
-  const messages = finalMessagesByModel(thread?.messages || []);
-  return messages
-    .map(message => ({
-      modelId: message.modelId,
-      result: resultFromDiscussionText(message.text),
-      score: scoreFromDiscussionText(message.text),
-      source: 'discussion'
-    }))
-    .filter(prediction => prediction.result && prediction.score);
+  return discussionPredictionsFromThread(discussionForMatch(matchId));
 }
 
 function predictionsForMatch(match) {
+  if (match?.id && PREDICTIONS_BY_MATCH.has(match.id)) {
+    return PREDICTIONS_BY_MATCH.get(match.id);
+  }
   const trackPredictions = (match.predictions || []).filter(p => !p.track || p.track === ACTIVE_TRACK);
   return trackPredictions.length ? trackPredictions : discussionPredictionsForMatch(match.id);
 }
@@ -1106,6 +1161,7 @@ function matchLifecycle(match, now = new Date()) {
 }
 
 function buildLeaderboardRows() {
+  if (LEADERBOARD_ROWS_CACHE) return LEADERBOARD_ROWS_CACHE;
   const rowsByModel = {};
   const ensure = modelId => {
     const meta = modelMeta(modelId);
@@ -1169,7 +1225,7 @@ function buildLeaderboardRows() {
       scoreHitRate: row.predictions ? row.scoreHits / row.predictions : null
     }));
 
-  return {
+  LEADERBOARD_ROWS_CACHE = {
     resultRows: rows.slice().sort((a, b) =>
       (b.resultHitRate || 0) - (a.resultHitRate || 0) ||
       b.resultHits - a.resultHits ||
@@ -1185,10 +1241,12 @@ function buildLeaderboardRows() {
       a.name.localeCompare(b.name, 'zh-CN')
     )
   };
+  return LEADERBOARD_ROWS_CACHE;
 }
 
 function modelHistory(modelId) {
-  return MATCHES
+  if (MODEL_HISTORY_CACHE.has(modelId)) return MODEL_HISTORY_CACHE.get(modelId);
+  const rows = MATCHES
     .map(match => {
       const prediction = predictionsForMatch(match).find(item => item.modelId === modelId);
       if (!prediction) return null;
@@ -1207,10 +1265,12 @@ function modelHistory(modelId) {
     })
     .filter(Boolean)
     .sort((a, b) => b.kickoffTime - a.kickoffTime);
+  MODEL_HISTORY_CACHE.set(modelId, rows);
+  return rows;
 }
 
 function modelRoundtableMessages(matchId, modelId) {
-  const thread = DISCUSSIONS.find(item => item.matchId === matchId);
+  const thread = discussionForMatch(matchId);
   if (!thread || !Array.isArray(thread.messages)) return [];
   return thread.messages
     .filter(message => message.modelId === modelId && message.text)
@@ -1342,8 +1402,9 @@ function renderHeroTicker() {
 }
 
 function roundtableThreads() {
-  return DISCUSSIONS
-    .map(thread => ({ thread, match: MATCHES.find(m => m.id === thread.matchId) }))
+  if (ROUNDTABLE_THREADS_CACHE) return ROUNDTABLE_THREADS_CACHE;
+  ROUNDTABLE_THREADS_CACHE = DISCUSSIONS
+    .map(thread => ({ thread, match: MATCH_BY_ID.get(thread.matchId) }))
     .filter(item => item.match && (item.thread.messages || []).length)
     .sort((a, b) => {
       const aState = matchLifecycle(a.match).key;
@@ -1357,6 +1418,7 @@ function roundtableThreads() {
       if (delta) return delta;
       return new Date(a.match.kickoff) - new Date(b.match.kickoff);
     });
+  return ROUNDTABLE_THREADS_CACHE;
 }
 
 function renderHeroRoundtable() {
@@ -1622,7 +1684,7 @@ function renderChampionPredictions() {
 }
 
 function discussionForMatch(matchId) {
-  return DISCUSSIONS.find(item => item.matchId === matchId);
+  return DISCUSSION_BY_MATCH.get(matchId);
 }
 
 function discussionIssuesForMatch(matchId) {
@@ -1944,7 +2006,7 @@ function debateBubbleHTML(message, prevModelId) {
 
 function openDebateStage(matchId) {
   const thread = discussionForMatch(matchId);
-  const match = MATCHES.find(m => m.id === matchId);
+  const match = MATCH_BY_ID.get(matchId);
   if (!thread || !match) return;
   // 写入 hash,辩论可直接分享深链
   if (history.replaceState) history.replaceState(null, '', `#debate=${matchId}`);
@@ -2092,19 +2154,122 @@ function renderDiscussions() {
   el.innerHTML = blocks;
 }
 
+function applyModels(models) {
+  MODELS = {};
+  if (models?.models) models.models.forEach(model => { MODELS[model.id] = model; });
+  resetDerivedCaches();
+}
+
+function fetchDataBundle() {
+  return Promise.all([
+    loadJSON('data/matches.json', 'data/sample-matches.json'),
+    loadJSON('data/leaderboard.json'),
+    loadJSON('data/champion-predictions.json'),
+    loadJSON('data/discussions.json'),
+    loadJSON('data/groups.json'),
+    loadJSON('data/jingcai-single.json')
+  ]).then(([matches, leaderboard, champions, discussions, groups, jingcai]) => ({
+    matches,
+    leaderboard,
+    champions,
+    discussions,
+    groups,
+    jingcai
+  }));
+}
+
+function renderLoadingShell() {
+  const loadingHTML = '<div class="empty-state"><strong>数据加载中</strong><span>正在同步最新赛程、圆桌和排行榜。</span></div>';
+  ['leaderboard', 'roundtable-feed', 'standings', 'matches', 'champion-predictions'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = loadingHTML;
+  });
+}
+
+function activeTabId() {
+  return document.querySelector('.tabbar .tab.is-active')?.dataset.tab || 'board';
+}
+
+function renderSectionForTab(tabId, { force = false } = {}) {
+  const id = tabId || 'board';
+  if (!force && hydratedTabs.has(id)) return;
+
+  if (id === 'roundtable') {
+    renderRoundtableFeed();
+  } else if (id === 'board') {
+    renderLeaderboard();
+  } else if (id === 'standings-section') {
+    renderStandings();
+    renderBracket();
+  } else if (id === 'matches-section') {
+    renderDateQuick();
+    renderMatches();
+    renderDiscussions();
+  } else if (id === 'champion-section') {
+    renderChampionPredictions();
+  }
+
+  hydratedTabs.add(id);
+  initRevealMotion(document.getElementById(id) || document);
+}
+
+function scheduleLazyHydration() {
+  const token = ++lazyHydrationToken;
+  const order = ['roundtable', 'matches-section', 'standings-section', 'champion-section', 'board'];
+  const step = () => {
+    if (token !== lazyHydrationToken) return;
+    const next = order.find(id => !hydratedTabs.has(id));
+    if (!next) return;
+    renderSectionForTab(next, { force: true });
+    scheduleIdleWork(step);
+  };
+  scheduleIdleWork(step);
+}
+
+function renderDataViews({ warmLazy = false } = {}) {
+  renderHeroTicker();
+  renderHeroRoundtable();
+  renderSectionForTab(activeTabId(), { force: true });
+  if (warmLazy) scheduleLazyHydration();
+}
+
+function applyDataBundle(bundle, { resetDate = false, warmLazy = false } = {}) {
+  MATCHES = bundle.matches?.matches || [];
+  if (bundle.leaderboard) LEADERBOARD = bundle.leaderboard;
+  CHAMPIONS = bundle.champions?.predictions || [];
+  DISCUSSIONS = bundle.discussions?.discussions || [];
+  GROUPS = bundle.groups?.groups || {};
+  JINGCAI_SINGLE = bundle.jingcai || { matches: [], sources: [] };
+
+  rebuildDataIndexes();
+  if (resetDate || !selectedDateKey) selectedDateKey = pickInitialDate();
+
+  const updated = document.getElementById('lb-updated');
+  if (updated) {
+    updated.textContent = LEADERBOARD.updatedAt
+      ? '更新于 ' + new Date(LEADERBOARD.updatedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI })
+      : '';
+  }
+
+  hydratedTabs.clear();
+  lazyHydrationToken += 1;
+  renderDataViews({ warmLazy });
+}
+
 async function init() {
   restoreMatchViewPreference();
-  const models = await loadJSON('data/models.json');
-  if (models?.models) models.models.forEach(m => { MODELS[m.id] = m; });
-
-  await refreshData({ resetDate: true });
-
+  renderLoadingShell();
   wireLeaderboardTabs();
   wireTabs();
   wireDebateStage();
   wireModelHistoryStage();
   wireMatchViewControls();
   wireRoastBeerStage();
+
+  const modelsPromise = loadJSON('data/models.json');
+  const dataPromise = fetchDataBundle();
+  applyModels(await modelsPromise);
+  applyDataBundle(await dataPromise, { resetDate: true, warmLazy: true });
   startDataRefresh();
 
   // 深链直达某场辩论回放
@@ -2146,40 +2311,8 @@ function wireRoastBeerStage() {
 }
 
 async function refreshData({ resetDate = false } = {}) {
-  const matches = await loadJSON('data/matches.json', 'data/sample-matches.json');
-  MATCHES = matches?.matches || [];
-  if (resetDate || !selectedDateKey) selectedDateKey = pickInitialDate();
-
-  const lb = await loadJSON('data/leaderboard.json');
-  if (lb) {
-    LEADERBOARD = lb;
-      const u = document.getElementById('lb-updated');
-    if (lb.updatedAt) u.textContent = '更新于 ' + new Date(lb.updatedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI });
-  }
-
-  const champions = await loadJSON('data/champion-predictions.json');
-  CHAMPIONS = champions?.predictions || [];
-
-  const discussions = await loadJSON('data/discussions.json');
-  DISCUSSIONS = discussions?.discussions || [];
-
-  const groups = await loadJSON('data/groups.json');
-  GROUPS = groups?.groups || {};
-
-  const jingcai = await loadJSON('data/jingcai-single.json');
-  JINGCAI_SINGLE = jingcai || { matches: [], sources: [] };
-
-  renderHeroTicker();
-  renderHeroRoundtable();
-  renderDateQuick();
-  renderLeaderboard();
-  renderRoundtableFeed();
-  renderStandings();
-  renderBracket();
-  renderMatches();
-  renderChampionPredictions();
-  renderDiscussions();
-  initRevealMotion();
+  const bundle = await fetchDataBundle();
+  applyDataBundle(bundle, { resetDate });
 }
 
 function startDataRefresh() {
@@ -2285,9 +2418,9 @@ function wireLeaderboardTabs() {
   });
 }
 
-function initRevealMotion() {
+function initRevealMotion(root = document) {
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
-  const nodes = document.querySelectorAll('.match, .rt-card, .standing-card, .bracket-round, .lb-row');
+  const nodes = root.querySelectorAll('.match, .rt-card, .standing-card, .bracket-round, .lb-row');
   if (!nodes.length) return;
   nodes.forEach(node => {
     node.classList.add('reveal-card');
@@ -2321,7 +2454,7 @@ function wireTabs() {
       if (section.id === id) {
         section.style.display = 'block';
         window.requestAnimationFrame(() => {
-          initRevealMotion();
+          initRevealMotion(section);
         });
       } else {
         section.style.display = 'none';
@@ -2340,14 +2473,14 @@ function wireTabs() {
       const previousScrollY = window.scrollY;
       const targetId = tab.dataset.tab;
       preserveTabScrollHeight(previousScrollY);
+      let forceRender = false;
       if (targetId === 'matches-section') {
         selectedDateKey = pickInitialDate();
         compactExpandedMatchId = '';
-        renderDateQuick();
-        renderMatches();
-        renderDiscussions();
+        forceRender = true;
       }
       activateTab(targetId);
+      renderSectionForTab(targetId, { force: forceRender });
       history.replaceState?.(null, '', `#${targetId}`);
       restoreTabScrollPosition(previousScrollY);
     });
