@@ -87,7 +87,6 @@
     var configuredEndpoint = window.WCA_ANALYTICS_ENDPOINT || '';
     endpointInput.value = configuredEndpoint || localStorage.getItem('wca_admin_endpoint') || '';
     tokenInput.value = localStorage.getItem('wca_admin_token') || '';
-    var adminViewCollected = false;
 
     function fmt(n) { return Number(n || 0).toLocaleString('zh-CN'); }
     function esc(v) {
@@ -103,41 +102,6 @@
         var pct = Math.max(3, Math.round((Number(row.views) || 0) / max * 100));
         return '<div class="bar-row"><div><strong>' + esc(label) + '</strong><div class="bar-track"><span class="bar-fill" style="width:' + pct + '%"></span></div></div><b>' + fmt(row.views) + '</b></div>';
       }).join('');
-    }
-    function trackingId(key) {
-      try {
-        var existing = localStorage.getItem(key);
-        if (existing) return existing;
-        var bytes = new Uint8Array(16);
-        crypto.getRandomValues(bytes);
-        var value = Array.prototype.map.call(bytes, function (byte) {
-          return byte.toString(16).padStart(2, '0');
-        }).join('');
-        localStorage.setItem(key, value);
-        return value;
-      } catch (_) {
-        return String(Date.now()) + Math.random().toString(16).slice(2);
-      }
-    }
-    async function collectAdminView(endpoint) {
-      if (adminViewCollected) return;
-      adminViewCollected = true;
-      await fetch(endpoint + '/api/collect', {
-        method: 'POST',
-        mode: 'cors',
-        keepalive: true,
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          visitorId: trackingId('wca_visitor_id'),
-          sessionId: trackingId('wca_session_id_' + new Date().toISOString().slice(0, 10)),
-          path: location.pathname + location.search + location.hash,
-          title: document.title,
-          referrer: document.referrer,
-          screenWidth: window.innerWidth || screen.width,
-          language: navigator.language || '',
-          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || ''
-        })
-      }).catch(function () {});
     }
     function render(data) {
       document.getElementById('cards').innerHTML = [
@@ -174,7 +138,6 @@
       localStorage.setItem('wca_admin_endpoint', endpoint);
       localStorage.setItem('wca_admin_token', token);
       statusEl.textContent = '正在拉取后台数据...';
-      await collectAdminView(endpoint);
       var res = await fetch(endpoint + '/api/stats?days=30', {
         headers: token ? { 'x-admin-token': token } : {}
       });

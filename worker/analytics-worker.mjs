@@ -42,6 +42,10 @@ function normalizePath(value) {
   }
 }
 
+function isPublicTrafficPath(path) {
+  return !/^\/admin(?:[./-]|$)/.test(String(path || ''));
+}
+
 function referrerHost(value) {
   if (!value) return 'direct';
   try {
@@ -102,6 +106,7 @@ async function collect(request, env) {
   const visitorHash = await sha256(`${visitorSeed}:${env.VISITOR_SALT || 'worldcup-ai-arena'}`);
   const sessionHash = await sha256(`${sessionSeed}:${env.VISITOR_SALT || 'worldcup-ai-arena'}`);
   const path = normalizePath(body.path);
+  if (!isPublicTrafficPath(path)) return json({ ok: true, ignored: true });
   const country = String(cf.country || body.country || 'unknown').slice(0, 40);
   const device = deviceType(ua, body.screenWidth);
   const referrer = referrerHost(body.referrer);
