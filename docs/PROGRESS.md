@@ -138,7 +138,7 @@
   - 前端 JSON 加载由串行改为并发,并将 `fetch` 缓存策略从 `no-store` 改为 `no-cache`,保留更新校验同时减少重复下载。
   - 初始化时先渲染当前 tab 和首屏圆桌/榜单,赛程、比赛、冠军等隐藏 tab 改为空闲时间预热,定时刷新也只重绘当前 tab。
   - 为比赛、圆桌、预测、队旗、排行榜和模型历史建立内存索引/缓存,减少首屏和 tab 切换时的全量 `find/filter`。
-  - `public/index.html` 的 `app.js` 版本号更新为 `20260617-load-smooth`,避免线上用户继续拿旧脚本缓存。
+  - `public/index.html` 改为引用 `app-load-smooth.js?v=20260617-load-smooth`,避免线上用户继续拿旧 `app.js` 路径缓存。
 
 ## 本地预览
 
