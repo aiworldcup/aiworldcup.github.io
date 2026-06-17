@@ -2288,7 +2288,7 @@ function wireMatchViewControls() {
       localStorage.setItem(COMPACT_MATCHES_STORAGE_KEY, compactMatchesMode ? '1' : '0');
     } catch (_) {}
     renderMatches();
-    window.requestAnimationFrame(initRevealMotion);
+    window.requestAnimationFrame(() => initRevealMotion(document.getElementById('matches') || document));
   });
 }
 
@@ -2420,6 +2420,7 @@ function wireLeaderboardTabs() {
 
 function initRevealMotion(root = document) {
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+  if (!root || typeof root.querySelectorAll !== 'function') root = document;
   const nodes = root.querySelectorAll('.match, .rt-card, .standing-card, .bracket-round, .lb-row');
   if (!nodes.length) return;
   nodes.forEach(node => {
