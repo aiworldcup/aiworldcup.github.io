@@ -106,8 +106,8 @@
       document.getElementById('cards').innerHTML = [
         ['总访问量', data.total.views],
         ['总独立访客', data.total.visitors],
-        ['今日访问量', data.todayStats.views],
-        ['今日独立访客', data.todayStats.visitors]
+        ['近7日访问量', (data.last7Stats || {}).views],
+        ['今日访问量', data.todayStats.views]
       ].map(function (item) {
         return '<div class="admin-card"><span>' + item[0] + '</span><strong>' + fmt(item[1]) + '</strong></div>';
       }).join('');

@@ -26,6 +26,12 @@ function beijingDay(date = new Date()) {
   return `${map.year}-${map.month}-${map.day}`;
 }
 
+function addDays(day, offset) {
+  const date = new Date(`${day}T00:00:00+08:00`);
+  date.setUTCDate(date.getUTCDate() + offset);
+  return beijingDay(date);
+}
+
 function normalizePath(value) {
   try {
     const raw = String(value || '/');
@@ -141,7 +147,22 @@ async function stats(request, env) {
   const total = await first(env.DB, `SELECT COUNT(*) AS views, COUNT(DISTINCT visitor_hash) AS visitors FROM events`);
   const todayRow = await first(env.DB, `SELECT COUNT(*) AS views, COUNT(DISTINCT visitor_hash) AS visitors FROM events WHERE day = ?`, today);
   const dayRows = await all(env.DB, `SELECT day, COUNT(*) AS views, COUNT(DISTINCT visitor_hash) AS visitors
-    FROM events GROUP BY day ORDER BY day DESC LIMIT ?`, days);
+    FROM events WHERE day >= ? GROUP BY day ORDER BY day ASC`, addDays(today, -(days - 1)));
+  const dayMap = new Map(dayRows.map(row => [row.day, row]));
+  const daily = Array.from({ length: days }, (_, index) => {
+    const day = addDays(today, index - (days - 1));
+    const row = dayMap.get(day) || {};
+    return {
+      day,
+      views: row.views || 0,
+      visitors: row.visitors || 0
+    };
+  });
+  const last7 = daily.slice(-7).reduce((acc, row) => {
+    acc.views += Number(row.views) || 0;
+    acc.visitors += Number(row.visitors) || 0;
+    return acc;
+  }, { views: 0, visitors: 0 });
   const topPaths = await all(env.DB, `SELECT path, COUNT(*) AS views, COUNT(DISTINCT visitor_hash) AS visitors
     FROM events GROUP BY path ORDER BY views DESC LIMIT 12`);
   const referrers = await all(env.DB, `SELECT referrer, COUNT(*) AS views, COUNT(DISTINCT visitor_hash) AS visitors
@@ -166,7 +187,8 @@ async function stats(request, env) {
       views: todayRow?.views || 0,
       visitors: todayRow?.visitors || 0
     },
-    daily: dayRows.reverse(),
+    last7Stats: last7,
+    daily,
     topPaths,
     referrers,
     devices,
