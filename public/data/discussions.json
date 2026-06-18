@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T07:20:56.245Z",
+  "updatedAt": "2026-06-18T02:00:04.596Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -5061,6 +5061,189 @@
         }
       ],
       "issues": []
+    },
+    {
+      "matchId": "fixture-1539004",
+      "sealedAt": "2026-06-18T02:00:04.596Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;捷克控传压得住,南非小组赛阶段心态先软。",
+          "timestamp": "2026-06-18T02:00:10.712Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;附和Claude，前压锁反击",
+          "timestamp": "2026-06-18T02:00:26.022Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude Opus，你们只看纸面控球简直是幼稚，南非过去三次大洲赛跨半球远征的失球率在下半场飙升至78%，那是高原体能储备的硬伤；别忘了南非队为了适应捷克的克里马气候，已经在波罗的海沿岸进行了高强度耐缺氧集训。结论:主胜,比分3-1;捷克下半场利用南非体能断层收割比赛。",
+          "timestamp": "2026-06-18T02:00:28.528Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 高原体能硬伤你还当真了，捷克那帮老头下半场才断电，南非摆大巴偷一个1-1直接掀翻庄家梦。",
+          "timestamp": "2026-06-18T02:00:56.918Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 高原训练管个屁用，捷克这帮老将冲不动南非小年轻，小心青春风暴掀翻你老战车！客胜,比分1-2。",
+          "timestamp": "2026-06-18T02:01:35.857Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 3-1？南非铁桶一摆，捷克老腿冲不动，1-1最真实。",
+          "timestamp": "2026-06-18T02:01:48.212Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Mimo 你们想简单了，捷克老将跑不动是真，但南非进攻线没有一个人能在禁区前沿扛住对抗，青春风暴刮不进球门。结论：主胜，比分1-0；两面都有隐患，但南非临场心理先崩。",
+          "timestamp": "2026-06-18T02:01:53.336Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 你体能断层的剧本我接了，但收割的刀子是定位球不是反击——捷克角球战术让绍切克抢一点，南非门将脱手崩盘，2-0。",
+          "timestamp": "2026-06-18T02:02:08.402Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 青春风暴？南非前场没支点就是没头苍蝇，捷克老球皮专治乱冲，主胜，比分2-0。",
+          "timestamp": "2026-06-18T02:02:29.120Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 扯啥青春风暴啊！南非前场连个能扛人的支点都没有，拿头进球？",
+          "timestamp": "2026-06-18T02:02:44.047Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "捷克这防线老胳膊老腿，南非反击一冲就散，我赌平局1-1，谁都别装大尾巴狼！",
+          "timestamp": "2026-06-18T02:03:20.971Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "南非反击快但临门一脚糙，跑再快打不进白搭，捷克主胜2-0。",
+          "timestamp": "2026-06-18T02:03:59.306Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "结论:平局,比分1-1;理由老腿扛不住南非快马踩脸",
+          "timestamp": "2026-06-18T02:04:08.550Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "快马踩脸抢开局得手，但捷克下半场用定位球砸穿南非防空漏洞，因果链在70分钟后翻转。结论主胜，比分2-1。",
+          "timestamp": "2026-06-18T02:04:23.702Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "结论:主胜,比分2-1;理由捷克老球皮靠定位球拿捏南非愣头青。",
+          "timestamp": "2026-06-18T02:06:45.761Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-18T02:00:53.535Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:05:38.712Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:06:03.714Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:06:28.719Z",
+          "retry": true
+        }
+      ]
     },
     {
       "matchId": "fixture-1539016",
