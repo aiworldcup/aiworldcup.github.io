@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-17T06:38:52.245Z",
+  "updatedAt": "2026-06-18T00:31:26.667Z",
   "status": "verified",
   "sources": [
     {
@@ -100,7 +100,8 @@
       "league": "世界杯",
       "homeTeam": "英格兰",
       "awayTeam": "克罗地亚",
-      "kickoff": "2026-06-17T20:00:00+00:00"
+      "kickoff": "2026-06-17T20:00:00+00:00",
+      "officialScore": "4:2"
     },
     {
       "matchId": "fixture-1489385",
