@@ -1,18 +1,26 @@
 {
-  "updatedAt": "2026-06-18T16:06:14.359Z",
+  "updatedAt": "2026-06-18T18:36:51.822Z",
   "settlement": {
     "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-06-18T16:06:14.354Z",
+    "generatedAt": "2026-06-18T18:36:51.818Z",
     "graceMinutes": 150,
     "scoring": "赛果榜按胜平负命中率排序;比分榜按具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
       "settled": 24,
-      "in_progress": 1,
+      "pending_result": 1,
       "pre_match": 47,
       "placeholder": 32
     },
-    "pendingResult": [],
-    "nextAction": "暂无待赛果结算队列"
+    "pendingResult": [
+      {
+        "matchId": "fixture-1539004",
+        "kickoff": "2026-06-18T16:00:00+00:00",
+        "home": "捷克",
+        "away": "南非",
+        "reason": "开赛已超过结算缓冲,但 match.actual 为空"
+      }
+    ],
+    "nextAction": "同步或录入真实赛果后运行 npm run score"
   },
   "resultRankings": [
     {
