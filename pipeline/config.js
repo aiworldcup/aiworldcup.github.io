@@ -1,4 +1,5 @@
 const DEFAULT_API_BASE = "https://v3.football.api-sports.io";
+const DEFAULT_BACKUP_ODDS_API_BASE = "https://api.the-odds-api.com/v4";
 const DEFAULT_TIMEOUT_MS = 12000;
 const DEFAULT_FOOTBALL_CONFIG_PATH = "/Users/tom/.openclaw/workspace/football/config.json";
 
@@ -13,6 +14,12 @@ function getConfig(env = process.env) {
     oddsApiBase: String(env.ODDS_API_BASE || env.APISPORTS_API_BASE || footballConfig.apiBase || DEFAULT_API_BASE).replace(/\/+$/, ""),
     oddsApiKey: String(env.ODDS_API_KEY || env.APISPORTS_API_KEY || footballConfig.apiKey || "").trim(),
     oddsBookmakerId: String(env.ODDS_BOOKMAKER_ID || "").trim(),
+    backupOddsApiBase: String(env.BACKUP_ODDS_API_BASE || env.THE_ODDS_API_BASE || DEFAULT_BACKUP_ODDS_API_BASE).replace(/\/+$/, ""),
+    backupOddsApiKey: String(env.BACKUP_ODDS_API_KEY || env.THE_ODDS_API_KEY || "").trim(),
+    backupOddsSportKey: String(env.BACKUP_ODDS_SPORT_KEY || env.THE_ODDS_SPORT_KEY || "soccer_fifa_world_cup").trim(),
+    backupOddsRegions: String(env.BACKUP_ODDS_REGIONS || env.THE_ODDS_REGIONS || "uk,eu,us,au").trim(),
+    backupOddsBookmakers: String(env.BACKUP_ODDS_BOOKMAKERS || env.THE_ODDS_BOOKMAKERS || "").trim(),
+    backupOddsFallbackPath: String(env.ODDS_FALLBACK_PATH || "").trim(),
     requestTimeoutMs: toNumber(env.REQUEST_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
     footballConfigPath: env.FOOTBALL_CONFIG_PATH || DEFAULT_FOOTBALL_CONFIG_PATH,
   };
@@ -30,6 +37,7 @@ function readFootballConfig(filePath) {
 
 module.exports = {
   DEFAULT_API_BASE,
+  DEFAULT_BACKUP_ODDS_API_BASE,
   DEFAULT_TIMEOUT_MS,
   DEFAULT_FOOTBALL_CONFIG_PATH,
   getConfig,

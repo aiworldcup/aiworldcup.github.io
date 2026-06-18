@@ -82,6 +82,8 @@ function normalizeTeamName(value) {
   return cleanTeamName(value)
     .replace(/土尔其/g, "土耳其")
     .replace(/荷蘭/g, "荷兰")
+    .replace(/刚果金|刚果民主共和国|民主刚果共和国/g, "民主刚果")
+    .replace(/^乌兹别克$/g, "乌兹别克斯坦")
     .replace(/摩洛哥队/g, "摩洛哥")
     .replace(/日本队/g, "日本")
     .replace(/瑞典队/g, "瑞典")
@@ -201,12 +203,12 @@ function extractOfficialRows(payload) {
     });
 }
 
-async function fetchOfficialPage(from, to, pageNo = 1, pageSize = 100) {
+async function fetchOfficialPage(from, to, pageNo = 1, pageSize = 100, options = {}) {
   const url = new URL(SPORTTERY_API);
   url.searchParams.set("matchBeginDate", from);
   url.searchParams.set("matchEndDate", to);
   url.searchParams.set("leagueId", "");
-  url.searchParams.set("isFix", "1");
+  if (options.isFix !== null) url.searchParams.set("isFix", String(options.isFix ?? "1"));
   url.searchParams.set("pageNo", String(pageNo));
   url.searchParams.set("pageSize", String(pageSize));
   url.searchParams.set("matchPage", "1");
@@ -273,11 +275,11 @@ async function fetchUpcomingSingleRows(from, to) {
     .filter(isUsefulOfficialRow);
 }
 
-async function fetchResultRows(from, to) {
+async function fetchResultRowsForScope(from, to, options = {}) {
   const rows = [];
   const seen = new Set();
   for (let pageNo = 1; pageNo <= 20; pageNo += 1) {
-    const payload = await fetchOfficialPage(from, to, pageNo);
+    const payload = await fetchOfficialPage(from, to, pageNo, 100, options);
     const pageRows = extractOfficialRows(payload);
     let added = 0;
     pageRows.forEach((row) => {
@@ -294,6 +296,35 @@ async function fetchResultRows(from, to) {
       added += 1;
     });
     if (!added || pageRows.length < 100) break;
+  }
+  return rows;
+}
+
+async function fetchResultRows(from, to) {
+  const scopes = [
+    { isFix: "1", sourceScope: "single-fixed" },
+    { isFix: "0", sourceScope: "all-results" },
+  ];
+  const rows = [];
+  const seen = new Set();
+  for (const scope of scopes) {
+    try {
+      const scopeRows = await fetchResultRowsForScope(from, to, scope);
+      scopeRows.forEach((row) => {
+        const key = [
+          row.jingcaiMatchId,
+          row.matchNum,
+          row.matchDate,
+          row.homeTeam,
+          row.awayTeam,
+        ].join("|");
+        if (seen.has(key)) return;
+        seen.add(key);
+        rows.push({ ...row, sourceScope: scope.sourceScope });
+      });
+    } catch (err) {
+      console.warn(`[jingcai-single] result ${scope.sourceScope} sync skipped: ${err.message}`);
+    }
   }
   return rows;
 }
@@ -343,6 +374,18 @@ function sameTeamPair(match, row) {
 function findLocalMatch(row, matches) {
   const exact = matches.find((match) => match.id === row.matchId);
   if (exact) return exact;
+  const byJingcaiId = matches.find((match) => {
+    const odds = match.odds || {};
+    return row.jingcaiMatchId && String(odds.sourceMatchId || "") === String(row.jingcaiMatchId);
+  });
+  if (byJingcaiId) return byJingcaiId;
+  const byMatchNum = matches.find((match) => {
+    const odds = match.odds || {};
+    return row.matchNum
+      && String(odds.sourceMatchNum || "") === String(row.matchNum)
+      && matchDateKey(match) === row.matchDate;
+  });
+  if (byMatchNum) return byMatchNum;
   const sameDate = matches.filter((match) => matchDateKey(match) === row.matchDate);
   return sameDate.find((match) => sameTeamPair(match, row))
     || matches.find((match) => sameTeamPair(match, row));
@@ -363,15 +406,27 @@ function mapOfficialRows(rows, matches) {
         awayTeam: match.away.team,
         kickoff: match.kickoff || null,
         officialScore: row.officialScore || undefined,
+        sourceScope: row.sourceScope || undefined,
       };
     })
     .filter(Boolean)
     .sort((a, b) => String(a.kickoff || a.matchDate).localeCompare(String(b.kickoff || b.matchDate)));
 }
 
+function mergeEntry(existing, fresh) {
+  if (!existing) return fresh;
+  const hasFreshScore = !!fresh.officialScore;
+  return {
+    ...existing,
+    ...fresh,
+    officialScore: fresh.officialScore || existing.officialScore,
+    sourceScope: hasFreshScore ? fresh.sourceScope : existing.sourceScope || fresh.sourceScope,
+  };
+}
+
 function mergeEntries(existing, fresh) {
   const byMatchId = new Map((existing.matches || []).map((entry) => [entry.matchId, entry]));
-  fresh.forEach((entry) => byMatchId.set(entry.matchId, entry));
+  fresh.forEach((entry) => byMatchId.set(entry.matchId, mergeEntry(byMatchId.get(entry.matchId), entry)));
   return Array.from(byMatchId.values()).sort((a, b) => {
     const ka = `${a.matchDate || ""}|${a.kickoff || ""}|${a.matchId || ""}`;
     const kb = `${b.matchDate || ""}|${b.kickoff || ""}|${b.matchId || ""}`;
@@ -412,7 +467,7 @@ async function syncJingcaiSingle(options = {}) {
       {
         label: "中国竞彩网足球赛果开奖",
         href: SPORTTERY_URL,
-        note: "赛果核对保留官方“仅显示胜平负单固场次”口径;开奖接口使用 isFix=1 查询单固场次。",
+        note: "赛果核对优先使用官方“仅显示胜平负单固场次”口径;若缺场,自动追加 isFix=0 全量赛果作为备用。",
       },
     ],
     matches: merged,

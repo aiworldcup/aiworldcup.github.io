@@ -3,8 +3,9 @@ const RESULT_VALUES = ["home", "draw", "away"];
 function formatOdds(match) {
   const result = match.odds && match.odds.result ? match.odds.result : {};
   const scores = match.odds && match.odds.scores ? match.odds.scores : {};
+  const provider = match.odds && match.odds.provider ? ` (${match.odds.provider})` : "";
   return [
-    `胜平负赔率: home=${result.home}, draw=${result.draw}, away=${result.away}`,
+    `胜平负赔率${provider}: home=${result.home}, draw=${result.draw}, away=${result.away}`,
     `比分赔率: ${Object.entries(scores)
       .map(([score, odd]) => `${score}=${odd}`)
       .join(", ")}`,

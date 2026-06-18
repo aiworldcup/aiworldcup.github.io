@@ -282,8 +282,7 @@ body::before {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
-    "kicker kicker"
-    "fixture play"
+    "kicker play"
     "quote play"
     "speaker play";
   align-items: center;
@@ -335,6 +334,22 @@ body::before {
   white-space: nowrap;
 }
 
+.hero-rt-mini-fixture {
+  min-width: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 950;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-rt-mini-fixture b {
+  color: var(--gold);
+  font-size: 10px;
+  padding: 0 2px;
+}
+
 .hero-rt-fixture {
   grid-area: fixture;
   min-width: 0;
@@ -365,7 +380,7 @@ body::before {
   font-weight: 950;
   text-shadow: 0 0 18px rgba(255, 138, 61, 0.25);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -410,6 +425,32 @@ body::before {
   font-size: 12px;
   font-weight: 950;
   cursor: pointer;
+}
+
+.hero-buzz-card.is-god {
+  border-color: rgba(54, 209, 124, 0.36);
+  background:
+    linear-gradient(110deg, rgba(54, 209, 124, 0.15), transparent 56%),
+    rgba(8, 10, 15, 0.72);
+}
+
+.hero-buzz-card.is-face {
+  border-color: rgba(255, 92, 122, 0.36);
+  background:
+    linear-gradient(110deg, rgba(255, 92, 122, 0.17), transparent 56%),
+    rgba(8, 10, 15, 0.72);
+}
+
+.hero-buzz-card.is-god .hero-rt-kicker span {
+  border-color: rgba(54, 209, 124, 0.4);
+  color: var(--green);
+  background: rgba(54, 209, 124, 0.12);
+}
+
+.hero-buzz-card.is-face .hero-rt-kicker span {
+  border-color: rgba(255, 92, 122, 0.42);
+  color: var(--red);
+  background: rgba(255, 92, 122, 0.12);
 }
 
 /* 吸顶导航 */

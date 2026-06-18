@@ -183,7 +183,8 @@ function scoreResultFromScore(score) {
 
 function oddsLine(match) {
   const odds = match.odds && match.odds.result ? match.odds.result : {};
-  return `胜 ${odds.home ?? "未知"} / 平 ${odds.draw ?? "未知"} / 负 ${odds.away ?? "未知"}`;
+  const provider = match.odds && match.odds.provider ? ` · ${match.odds.provider}` : "";
+  return `胜 ${odds.home ?? "未知"} / 平 ${odds.draw ?? "未知"} / 负 ${odds.away ?? "未知"}${provider}`;
 }
 
 function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTurn = false) {
@@ -195,7 +196,7 @@ function buildDiscussionPrompt(match, model, previousMessages, round, isFinalTur
       ? "只输出一行,格式必须是:结论:主胜/平局/客胜,比分X-X;理由:简短具体。"
       : "只输出一句短评,必须从一个阵型细节点给出倾向。";
     return `比赛:${match.home.team} vs ${match.away.team}
-赔率:胜${match.odds?.result?.home ?? "未知"} 平${match.odds?.result?.draw ?? "未知"} 负${match.odds?.result?.away ?? "未知"}
+赔率:${oddsLine(match)}
 你是Kimi K2.6。${style}
 上一句:${lastLine}
 ${finalRule}

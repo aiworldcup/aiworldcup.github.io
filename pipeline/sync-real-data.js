@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { getConfig } = require("./config");
 const { loadProjectEnv } = require("./lib/env");
-const { fetchApi, hydrateOddsForMatch, normalizeFixture } = require("./odds");
+const { fetchApi, hydrateOddsForMatch, isDisallowedOddsProvider, normalizeFixture } = require("./odds");
 
 const MATCHES_OUT = path.join(__dirname, "..", "public", "data", "matches.json");
 const CHAMPIONS_OUT = path.join(__dirname, "..", "public", "data", "champion-predictions.json");
@@ -241,6 +241,10 @@ function createKnockoutPlaceholders(existingCount) {
 
 function mergeExistingMatch(fresh, existing) {
   if (!existing) return fresh;
+  const existingOdds = isDisallowedOddsProvider(existing.odds && existing.odds.provider)
+    ? { result: {}, scores: {} }
+    : (existing.odds || {});
+  const freshOdds = fresh.odds || {};
   const mergeNonNull = (existingValues = {}, freshValues = {}) => {
     const merged = { ...existingValues };
     Object.entries(freshValues).forEach(([key, value]) => {
@@ -254,13 +258,21 @@ function mergeExistingMatch(fresh, existing) {
     predictions: Array.isArray(existing.predictions) ? existing.predictions : fresh.predictions || [],
     odds: {
       result: mergeNonNull(
-        existing.odds && existing.odds.result ? existing.odds.result : {},
-        fresh.odds && fresh.odds.result ? fresh.odds.result : {},
+        existingOdds.result || {},
+        freshOdds.result || {},
       ),
       scores: mergeNonNull(
-        existing.odds && existing.odds.scores ? existing.odds.scores : {},
-        fresh.odds && fresh.odds.scores ? fresh.odds.scores : {},
+        existingOdds.scores || {},
+        freshOdds.scores || {},
       ),
+      provider: freshOdds.provider || existingOdds.provider || null,
+      source: freshOdds.source || existingOdds.source || null,
+      sourceEventId: freshOdds.sourceEventId || existingOdds.sourceEventId || null,
+      sourceMatchId: freshOdds.sourceMatchId || existingOdds.sourceMatchId || null,
+      sourceMatchNum: freshOdds.sourceMatchNum || existingOdds.sourceMatchNum || null,
+      sourceHref: freshOdds.sourceHref || existingOdds.sourceHref || null,
+      sourceLabel: freshOdds.sourceLabel || existingOdds.sourceLabel || null,
+      syncedAt: freshOdds.syncedAt || existingOdds.syncedAt || null,
     },
     actual: fresh.actual || existing.actual || null,
     preservedAt: existing.preservedAt || fresh.syncedAt || new Date().toISOString(),

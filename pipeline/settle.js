@@ -9,6 +9,7 @@ const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json"
 const LEADERBOARD_PATH = path.join(__dirname, "..", "public", "data", "leaderboard.json");
 const DISCUSSIONS_PATH = path.join(__dirname, "..", "public", "data", "discussions.json");
 const JINGCAI_PATH = path.join(__dirname, "..", "public", "data", "jingcai-single.json");
+const RESULT_FALLBACK_PATH = path.join(__dirname, "..", "public", "data", "result-fallback.json");
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -56,28 +57,53 @@ function normalizedScore(value) {
   return `${Number(match[1])}-${Number(match[2])}`;
 }
 
-function applyJingcaiActuals(data) {
-  const jingcai = fs.existsSync(JINGCAI_PATH) ? readJson(JINGCAI_PATH) : { matches: [] };
-  const byId = new Map((jingcai.matches || [])
-    .filter((entry) => entry.matchId && entry.officialScore)
+function scoreForEntry(entry) {
+  return normalizedScore(entry.officialScore || entry.score || entry.actualScore);
+}
+
+function resultForEntry(entry, score) {
+  const explicit = String(entry.result || entry.actualResult || "").trim();
+  if (["home", "draw", "away"].includes(explicit)) return explicit;
+  return resultFromScore(score);
+}
+
+function applyActualEntries(data, entries, sourceName) {
+  const byId = new Map((entries || [])
+    .filter((entry) => entry.matchId && scoreForEntry(entry))
     .map((entry) => [entry.matchId, entry]));
   let changed = 0;
   (data.matches || []).forEach((match) => {
     const entry = byId.get(match.id);
     if (!entry) return;
-    const score = normalizedScore(entry.officialScore);
-    const result = resultFromScore(score);
+    const score = scoreForEntry(entry);
+    const result = resultForEntry(entry, score);
     if (!score || !result) return;
     if (match.actual) {
       if (match.actual.score !== score || match.actual.result !== result) {
-        console.warn(`[settle] keep existing actual for ${match.id}; jingcai=${score} existing=${match.actual.score}`);
+        console.warn(`[settle] keep existing actual for ${match.id}; ${sourceName}=${score} existing=${match.actual.score}`);
       }
       return;
     }
     match.actual = { result, score };
+    match.actualSource = {
+      provider: sourceName,
+      sourceLabel: entry.sourceLabel || entry.source || null,
+      sourceHref: entry.sourceHref || entry.href || null,
+      syncedAt: new Date().toISOString(),
+    };
     changed += 1;
   });
   return changed;
+}
+
+function applyJingcaiActuals(data) {
+  const jingcai = fs.existsSync(JINGCAI_PATH) ? readJson(JINGCAI_PATH) : { matches: [] };
+  return applyActualEntries(data, jingcai.matches || [], "jingcai");
+}
+
+function applyFallbackActuals(data) {
+  const fallback = fs.existsSync(RESULT_FALLBACK_PATH) ? readJson(RESULT_FALLBACK_PATH) : { matches: [] };
+  return applyActualEntries(data, fallback.matches || [], "local-result-fallback");
 }
 
 async function settle() {
@@ -89,7 +115,9 @@ async function settle() {
   }
   await syncJingcaiSingle({ soft: true });
   const data = readJson(MATCHES_PATH);
-  const actualsChanged = applyJingcaiActuals(data);
+  const jingcaiActualsChanged = applyJingcaiActuals(data);
+  const fallbackActualsChanged = applyFallbackActuals(data);
+  const actualsChanged = jingcaiActualsChanged + fallbackActualsChanged;
   const matchesChanged = writeJsonIfChanged(MATCHES_PATH, data);
   const discussionsData = fs.existsSync(DISCUSSIONS_PATH) ? readJson(DISCUSSIONS_PATH) : { discussions: [] };
   const settlementGraceMinutes = Number(process.env.SETTLEMENT_GRACE_MINUTES || 150);
@@ -101,7 +129,7 @@ async function settle() {
   const pending = leaderboard.settlement && leaderboard.settlement.pendingResult
     ? leaderboard.settlement.pendingResult.length
     : 0;
-  console.log(`[settle] ${matchesChanged ? "wrote" : "unchanged"} ${MATCHES_PATH}; applied_jingcai_actuals=${actualsChanged}`);
+  console.log(`[settle] ${matchesChanged ? "wrote" : "unchanged"} ${MATCHES_PATH}; applied_jingcai_actuals=${jingcaiActualsChanged}; applied_fallback_actuals=${fallbackActualsChanged}`);
   console.log(`[settle] ${changed ? "wrote" : "unchanged"} ${LEADERBOARD_PATH}`);
   console.log(`[settle] pending_result=${pending}`);
 }
@@ -113,4 +141,9 @@ if (require.main === module) {
   });
 }
 
-module.exports = { settle };
+module.exports = {
+  applyActualEntries,
+  applyFallbackActuals,
+  applyJingcaiActuals,
+  settle,
+};

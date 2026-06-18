@@ -134,11 +134,30 @@
   - 底部按钮在移动端改为两列排布,关闭按钮独占一行;桌面端五列排布,避免按钮挤压。
   - 已备份 `public/index.html`、`public/app.js`、`public/styles.css` 到 `backups/20260617-roundtable-share/`。
   - 已验证 `node --check public/app.js` 与 `npm run validate:predictions` 通过。
+- 将「昨日封神 / 昨日翻车」并入首屏圆桌热评轮播:
+  - 将赛后爽点做成和“最毒一句”同轨轮动的圆桌卡,并排在普通热评卡前面;从 `discussions.json` 的 recap 和最终发言自动派生精确比分命中、方向猜错与嘴硬打脸内容,不改写存证消息。
+  - 模块优先使用昨天已结算圆桌;若无昨天数据,自动回落到最近一个有结算圆桌的比赛日。
+  - “最毒一句 / 昨日封神 / 昨日翻车”三类轮播卡统一为左标签、右对阵的顶部格式,正文展示 3 行。
+  - 爆点卡点击可直接打开完整圆桌回放,配合已有“复制金句 / 复制链接”完成传播闭环。
+  - `public/index.html` 的 CSS/JS 版本号更新为 `20260617-unified-card-header`,避免线上用户继续拿旧资源缓存。
+- 澄清赛程出线小组进度文案:
+  - 小组积分卡头部从“已赛 X/6 场”改为“本组 6 场已完赛 X 场”,避免误解成单支球队已赛场次;表格里的“赛”仍表示球队维度的已踢场次。
+- 优化缺失赔率展示:
+  - 未同步到胜平负赔率的比赛卡不再展示“胜 - · 平 - · 负 -”,统一显示“赔率待同步”;随后已用主备同步链路补齐所有未完赛小组赛的胜平负赔率。
+- 增加赔率主备同步链路:
+  - `pipeline/odds.js` 的 `hydrateOddsForMatch` 改为 API-SPORTS 主源 -> 中国竞彩网官方 HAD 胜平负赔率 -> The Odds API 备源 -> 带来源标注的本地 `odds-fallback.json`;不再生成或接受模型估算赔率。
+  - `npm run sync:odds` 默认只补缺失或非法来源赔率,避免外部 API 限流时覆盖已有真实盘口;如需刷新已有盘口可加 `--refresh`。
+  - 页面展示竞彩/备源/本地权威赔率时会在数字后标注“竞彩”“备源”或“权威源”,预测和圆桌 prompt 也会携带 odds provider。
+  - 已清除 `computed-strength-fallback` 旧数据;当前 11 场未完赛比赛已由中国竞彩网官方 HAD 赔率补齐,竞彩/API/The Odds API/本地权威源均未覆盖的远期比赛保持“赔率待同步”。
+- 增加赛果主备结算链路:
+  - `pipeline/sync-jingcai-single.js` 的赛果同步改为中国竞彩网单固赛果 `isFix=1` -> 中国竞彩网全量赛果 `isFix=0`;同时按竞彩 `sourceMatchId/sourceMatchNum` 匹配本地比赛,补齐“刚果金/民主刚果”“乌兹别克/乌兹别克斯坦”等别名。
+  - `pipeline/settle.js` 在竞彩之后追加读取 `public/data/result-fallback.json`,作为 API-Sports 与竞彩均缺失时的人工核验备用赛果源;备用源只填空 `actual`,遇到已存在赛果冲突只告警、不覆盖。
+  - 已验证 `npm run settle`:API-Sports 免费计划不可用时仍继续走竞彩全量/本地 fallback,葡萄牙 1-1 民主刚果不再进入 `pending_result`。
 - 优化首页打开流畅度:
   - 前端 JSON 加载由串行改为并发,并将 `fetch` 缓存策略从 `no-store` 改为 `no-cache`,保留更新校验同时减少重复下载。
   - 初始化时先渲染当前 tab 和首屏圆桌/榜单,赛程、比赛、冠军等隐藏 tab 改为空闲时间预热,定时刷新也只重绘当前 tab。
   - 为比赛、圆桌、预测、队旗、排行榜和模型历史建立内存索引/缓存,减少首屏和 tab 切换时的全量 `find/filter`。
-  - `public/index.html` 改为引用 `app-load-smooth.js?v=20260617-load-smooth`,避免线上用户继续拿旧 `app.js` 路径缓存。
+  - `public/index.html` 改为引用 `app-load-smooth.js`,避免线上用户继续拿旧 `app.js` 路径缓存。
 
 ## 本地预览
 

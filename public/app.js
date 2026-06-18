@@ -132,6 +132,16 @@ function escapeHTML(value) {
 
 const RESULT_LABEL = { home: '主胜', draw: '平', away: '客胜' };
 const RESULT_SHORT = { home: '主', draw: '平', away: '客' };
+const ODDS_PROVIDER_LABEL = {
+  'sporttery': '竞彩',
+  'the-odds-api': '备源',
+  'local-authoritative': '权威源'
+};
+
+function oddsProviderSuffix(odds) {
+  const label = ODDS_PROVIDER_LABEL[odds?.provider];
+  return label ? ` · ${label}` : '';
+}
 
 function formatNumber(value, digits = 0) {
   const num = Number(value);
@@ -968,7 +978,7 @@ function renderStandings() {
     return `<article class="standing-card">
       <div class="standing-head">
         <strong>${group} 组</strong>
-        <span>已赛 ${played}/6 场</span>
+        <span title="本组共 6 场小组赛,这里统计已产生赛果的场次">本组 6 场已完赛 ${played} 场</span>
       </div>
       <div class="standing-table">
         <div class="standing-row standing-row-head">
@@ -1431,7 +1441,7 @@ function renderHeroRoundtable() {
     const key = matchLifecycle(match).key;
     return key === 'upcoming' || key === 'sealed' || key === 'live' || key === 'needs-result';
   });
-  const cards = (featured.length ? featured : threads).slice(0, 6).map(({ thread, match }, index) => {
+  const hotCards = (featured.length ? featured : threads).slice(0, 6).map(({ thread, match }, index) => {
     const messages = thread.messages || [];
     const hot = heroHottestLine(messages, index);
     const meta = hot ? modelMeta(hot.modelId) : null;
@@ -1440,12 +1450,7 @@ function renderHeroRoundtable() {
     return `<article class="hero-rt-card" data-match="${escapeHTML(match.id)}" role="button" tabindex="0">
       <div class="hero-rt-kicker">
         <span>最毒一句</span>
-        <strong class="match-status status-${state.tone}">${escapeHTML(state.label)}</strong>
-      </div>
-      <div class="hero-rt-fixture">
-        <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
-        <b>VS</b>
-        <span>${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</span>
+        <strong class="hero-rt-mini-fixture">${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)} <b>VS</b> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</strong>
       </div>
       ${hot ? `<blockquote>${escapeHTML(hot.text)}</blockquote>
         <div class="hero-rt-speaker">
@@ -1455,6 +1460,7 @@ function renderHeroRoundtable() {
       <button type="button" class="hero-rt-play">看回放</button>
     </article>`;
   });
+  const cards = postBuzzHeroCards().concat(hotCards);
 
   if (!cards.length) {
     el.hidden = true;
@@ -1513,8 +1519,160 @@ function renderHeroRoundtable() {
   heroRoundtableTimer = setInterval(autoScrollToCard, 4600);
 }
 
+function postBuzzPeriod(dateKey) {
+  const today = beijingDateKey();
+  if (dateKey === addDays(today, -1)) return '昨日';
+  if (dateKey === today) return '今日';
+  return '赛后';
+}
+
+function postBuzzQuoteScore(text) {
+  const value = String(text || '');
+  const signals = value.match(/(@|反对|别|绝对|必|稳|打穿|爆冷|翻车|死刑|逆天|不信邪|撑不过|终结|噩梦|我早说|我赌|我仍守|我反手)/g);
+  return (signals?.length || 0) * 8 + Math.min(value.length, 140) / 20;
+}
+
+function postBuzzMissSeverity(predicted, actual) {
+  if (!predicted || !actual || predicted === actual) return 0;
+  if ((actual === 'home' && predicted === 'away') || (actual === 'away' && predicted === 'home')) return 4;
+  if (actual === 'draw' && predicted !== 'draw') return 3;
+  if (predicted === 'draw') return 2;
+  return 1;
+}
+
+function postBuzzFinals(thread) {
+  return finalMessagesByModel(thread?.messages || [])
+    .map(message => ({
+      modelId: message.modelId,
+      modelName: modelMeta(message.modelId).name,
+      predictedResult: resultFromDiscussionText(message.text),
+      predictedScore: scoreFromDiscussionText(message.text),
+      text: message.text || ''
+    }))
+    .filter(item => item.modelId && item.predictedResult);
+}
+
+function postBuzzEntry(row, item, type, source = 'final') {
+  const meta = modelMeta(item.modelId);
+  const predictedResult = item.predictedResult || '';
+  const predictedScore = item.predictedScore || '';
+  const quoteScore = postBuzzQuoteScore(item.text);
+  const missSeverity = type === 'face' ? postBuzzMissSeverity(predictedResult, row.match.actual.result) : 0;
+  return {
+    type,
+    source,
+    match: row.match,
+    thread: row.thread,
+    dateKey: row.dateKey,
+    modelId: item.modelId,
+    modelName: item.modelName || meta.name || item.modelId,
+    color: meta.color,
+    predictedResult,
+    predictedScore,
+    text: item.text || '',
+    score: (source === 'recap' ? 100 : 0) + missSeverity * 12 + quoteScore
+  };
+}
+
+function postBuzzRows() {
+  return DISCUSSIONS
+    .map(thread => {
+      const match = MATCH_BY_ID.get(thread.matchId);
+      if (!match?.actual || !(thread.messages || []).length) return null;
+      return { thread, match, dateKey: matchDateKey(match) };
+    })
+    .filter(Boolean)
+    .sort((a, b) => new Date(a.match.kickoff || 0) - new Date(b.match.kickoff || 0));
+}
+
+function buildPostMatchBuzz() {
+  const rows = postBuzzRows();
+  if (!rows.length) return null;
+
+  const byDate = rows.reduce((map, row) => {
+    if (!map.has(row.dateKey)) map.set(row.dateKey, []);
+    map.get(row.dateKey).push(row);
+    return map;
+  }, new Map());
+  const today = beijingDateKey();
+  const yesterday = addDays(today, -1);
+  const keys = Array.from(byDate.keys()).sort();
+  const targetDate = byDate.has(yesterday)
+    ? yesterday
+    : keys.filter(key => key <= today).pop() || keys[keys.length - 1];
+  const targetRows = byDate.get(targetDate) || rows;
+
+  const collect = (sourceRows, type) => {
+    const candidates = [];
+    sourceRows.forEach(row => {
+      const recap = row.thread.recap || {};
+      const recapItems = type === 'god' ? (recap.godModels || []) : (recap.faceSlapModels || []);
+      recapItems.forEach(item => candidates.push(postBuzzEntry(row, item, type, 'recap')));
+      postBuzzFinals(row.thread).forEach(item => {
+        const exactHit = item.predictedResult === row.match.actual.result && item.predictedScore === row.match.actual.score;
+        const resultMiss = item.predictedResult && item.predictedResult !== row.match.actual.result;
+        if (type === 'god' && exactHit) candidates.push(postBuzzEntry(row, item, type));
+        if (type === 'face' && resultMiss) candidates.push(postBuzzEntry(row, item, type));
+      });
+    });
+    const deduped = Array.from(candidates.reduce((map, item) => {
+      const key = `${item.match.id}:${item.modelId}`;
+      const current = map.get(key);
+      if (!current || item.score > current.score) map.set(key, item);
+      return map;
+    }, new Map()).values());
+    return deduped.sort((a, b) => b.score - a.score);
+  };
+
+  const god = collect(targetRows, 'god')[0] || collect(rows, 'god')[0];
+  const face = collect(targetRows, 'face')[0] || collect(rows, 'face')[0];
+  if (!god && !face) return null;
+  return { targetDate, period: postBuzzPeriod(targetDate), matchCount: targetRows.length, god, face };
+}
+
+function postBuzzCardHTML(entry, fallbackType, period) {
+  if (!entry) return '';
+  const type = entry.type || fallbackType;
+  const match = entry.match;
+  const meta = modelMeta(entry.modelId);
+  const actual = `${RESULT_LABEL[match.actual.result] || match.actual.result} · ${match.actual.score}`;
+  const prediction = entry.predictedResult
+    ? `${RESULT_LABEL[entry.predictedResult] || entry.predictedResult}${entry.predictedScore ? ` · ${entry.predictedScore}` : ''}`
+    : '赛前发言';
+  const entryPeriod = entry.dateKey === matchDateKey(match) ? postBuzzPeriod(entry.dateKey) : period;
+  const title = type === 'god' ? `${entryPeriod}封神` : `${entryPeriod}翻车`;
+  const lead = type === 'god'
+    ? `精确命中 ${match.actual.score}`
+    : `预测${prediction},实际${actual}`;
+  return `<article class="hero-rt-card hero-buzz-card is-${type}" data-match="${escapeHTML(match.id)}" role="button" tabindex="0">
+    <div class="hero-rt-kicker">
+      <span>${escapeHTML(title)}</span>
+      <strong class="hero-rt-mini-fixture">${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)} <b>${escapeHTML(match.actual.score)}</b> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</strong>
+    </div>
+    <blockquote>${escapeHTML(entry.text || lead)}</blockquote>
+    <div class="hero-rt-speaker">
+      <i style="background:${meta.color}">${escapeHTML((entry.modelName || '?').slice(0, 1))}</i>
+      <span>${escapeHTML(entry.modelName)} · ${escapeHTML(type === 'god' ? prediction : lead)}</span>
+    </div>
+    <button type="button" class="hero-rt-play">看回放</button>
+  </article>`;
+}
+
+function postBuzzHeroCards() {
+  const buzz = buildPostMatchBuzz();
+  if (!buzz) return [];
+  return [
+    postBuzzCardHTML(buzz.god, 'god', buzz.period),
+    postBuzzCardHTML(buzz.face, 'face', buzz.period)
+  ].filter(Boolean);
+}
+
 function renderMatchCard(m) {
   const o = m.odds?.result || {};
+  const hasResultOdds = ['home', 'draw', 'away'].every(key => o[key] !== null && o[key] !== undefined && o[key] !== '');
+  const resultOddsText = hasResultOdds
+    ? `${RESULT_SHORT.home} ${o.home} · ${RESULT_SHORT.draw} ${o.draw} · ${RESULT_SHORT.away} ${o.away}${oddsProviderSuffix(m.odds)}`
+    : '赔率待同步';
   const finished = !!m.actual;
   const displayPredictions = predictionsForMatch(m);
   const discussionIssues = discussionIssuesForMatch(m.id);
@@ -1614,7 +1772,7 @@ function renderMatchCard(m) {
         </div>
         <div class="info-box">
           <span class="info-label">胜平负赔率</span>
-          <strong>${RESULT_SHORT.home} ${o.home ?? '-'} · ${RESULT_SHORT.draw} ${o.draw ?? '-'} · ${RESULT_SHORT.away} ${o.away ?? '-'}</strong>
+          <strong>${resultOddsText}</strong>
         </div>
         <div class="info-box">
           <span class="info-label">热门比分</span>
