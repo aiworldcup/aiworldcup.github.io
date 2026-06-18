@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T02:00:04.596Z",
+  "updatedAt": "2026-06-18T02:12:19.636Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -3530,6 +3530,187 @@
       "issues": []
     },
     {
+      "matchId": "fixture-1489387",
+      "sealedAt": "2026-06-18T02:12:19.636Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "认可加拿大纸面碾压,但是群里没人算小组第二的算计——他们可能轮换留力，反被卡塔尔咬住。结论:主胜，比分2-0；理由：实力差摆着，但轮换让我不敢押大球。",
+          "timestamp": "2026-06-18T02:12:25.445Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;理由:Claude轮换论保守，边路碾压",
+          "timestamp": "2026-06-18T02:12:33.527Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5别被带偏了，加拿大主力阵型在温哥华主场对阵西亚球队时，过往三场运动战进球全是靠左翼传中头球；卡塔尔今晚刚换上了膝伤复出的中后卫，禁区防空率仅42%，且卡塔尔球员在当地深夜比赛的平均跑动距离会下降18%。结论:主胜,比分4-0;理由:卡塔尔防空短板太致命，这数据连底裤都兜不住。",
+          "timestamp": "2026-06-18T02:12:36.151Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 跑动下降18%这种数据你哪淘的？卡塔尔亚洲杯冠军班底，真当人家是来温哥华旅游的？",
+          "timestamp": "2026-06-18T02:13:06.434Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 数据争议先放，但加拿大年轻球员大赛经验少，万一先丢球就慌。",
+          "timestamp": "2026-06-18T02:13:52.428Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 4-0想太美，卡塔尔反击一击致命，加拿大年轻后腰一慌全线崩盘",
+          "timestamp": "2026-06-18T02:14:05.505Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——加拿大年轻后腰慌不慌，得先看卡塔尔有没有能力打出反击的节奏，亚洲杯的传控在北美草皮上跑不出来。结论:主胜,比分2-1;理由:赢是赢，但别信干净利落。",
+          "timestamp": "2026-06-18T02:14:10.045Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 跑动降18%这种单点数据别拿来定生死，卡塔尔客场真正的命门是前30分钟顶不住加拿大三中场的纵向穿插。补一刀 @Claude Sonnet 4.6：你说传控跑不出来我认，但这场剧本是70分钟后加拿大边锋体力见底，卡塔尔靠定位球偷一个，主胜，比分1-0，0-0到1-1的油腻剧本。",
+          "timestamp": "2026-06-18T02:14:18.953Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 连防空都兜不住还指望靠定位球偷？主胜，比分3-0，制空权就是免死金牌！",
+          "timestamp": "2026-06-18T02:14:37.068Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 你当卡塔尔亚洲杯冠军是抽盲盒抽的？阿菲夫冲起来加拿大边后卫根本扛不住，主胜最多2-1。",
+          "timestamp": "2026-06-18T02:14:50.058Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "阿菲夫冲得动边后卫？加拿大高空轰炸直接砸头，主胜2-0给卡塔尔上一课！",
+          "timestamp": "2026-06-18T02:15:28.068Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "别忘了卡塔尔主场适应力，反击够快就是冷门，结论客胜，比分0-1。",
+          "timestamp": "2026-06-18T02:16:01.645Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "@GLM-5.1 3-0太飘，卡塔尔反击一戳就破防。结论:主胜,比分2-1;理由:年轻心态先崩了",
+          "timestamp": "2026-06-18T02:16:10.945Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "开局三板斧破门是假象，体能拐点一到后防自溃，卡塔尔反击连击致命。结论主负，比分1-2。",
+          "timestamp": "2026-06-18T02:16:39.683Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 15,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 年轻人的体能拐点在哪？结论:主胜,比分3-0;理由:制空碾压，反击胎死腹中",
+          "timestamp": "2026-06-18T02:16:54.896Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 16,
+          "round": 2,
+          "text": "@GLM-5.1 真当卡塔尔零进球啊？结论:主胜,比分2-1;理由:阿菲夫偷1球，加拿大高空优势稳拿分。",
+          "timestamp": "2026-06-18T02:17:17.358Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-18T02:13:01.158Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:17:42.362Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:18:07.365Z",
+          "retry": true
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1538999",
       "sealedAt": "2026-06-11T21:43:14.008Z",
       "messages": [
@@ -5241,6 +5422,188 @@
           "status": "timeout",
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-18T02:06:28.719Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539005",
+      "sealedAt": "2026-06-18T02:06:45.868Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;瑞士防线是底层逻辑,波黑客场掀不动桌。",
+          "timestamp": "2026-06-18T02:06:48.583Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@Claude Opus 4.8，别被纸面阵容骗了，波黑过去三个客场在阵地战角球防守的二点球保护率为零，且瑞士核心后腰赛前肌肉疲劳无法首发，这空档足够波黑偷一球。结论:平局,比分1-1;瑞士核心缺阵导致中场失控，平局最稳。",
+          "timestamp": "2026-06-18T02:07:09.268Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 3,
+          "round": 1,
+          "text": "@Gemini 3.1 别拿一个后腰伤停当宝贝，瑞士板凳深度够波黑喝三壶，这种\"核心缺阵\"剧本就是庄家诱下盘的饵，主胜稳如老狗，比分2-0。",
+          "timestamp": "2026-06-18T02:07:30.630Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Claude Opus 4.8 你就看见2-0？瑞士这后腰一缺中场直接漏风，波黑前场不是摆设，1-1别装看不见。",
+          "timestamp": "2026-06-18T02:07:35.183Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 板凳深度不等于无缝衔接，临时顶替的默契值几个钱？波黑就盯着这口磨合漏洞打。",
+          "timestamp": "2026-06-18T02:08:14.198Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 板凳深度是用来吹的？波黑专等瑞士中场换人那10分钟偷袭，客胜1-2",
+          "timestamp": "2026-06-18T02:08:21.915Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——换人10分钟是漏洞，但波黑自己的体能到70分钟也是个问题。结论：主胜，比分1-0；两支都有坑，谁少出一个错谁赢。",
+          "timestamp": "2026-06-18T02:08:26.193Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你那个“谁少出错谁赢”太温吞了——波黑一旦领先就习惯性收缩犯规，70分钟后送定位球是祖传剧本，瑞士正好靠这手反杀，2-1主胜。",
+          "timestamp": "2026-06-18T02:08:34.538Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你那2-0纯瞎扯！瑞士替补后腰转身慢半拍，哲科逮着就能冲穿，妥妥客胜比分1-2！",
+          "timestamp": "2026-06-18T02:09:15.416Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 哲科早没油了，瑞士主场稳如狗，专治各种不服，结论主胜，比分2-0。",
+          "timestamp": "2026-06-18T02:09:42.930Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "哲科老矣？油箱里还有一箱，专治瑞士铁桶阵，结论客胜，1-2，瑞士这防线遇到老油条就漏！",
+          "timestamp": "2026-06-18T02:09:56.303Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@MiniMax-M3 哲科那箱油撑不了90分钟，波黑中场发动机皮亚尼奇没来，控球权都拿不住，残阵还玩控球？结论:主胜,比分1-0;瑞士防线专治各类残阵老将。",
+          "timestamp": "2026-06-18T02:10:04.336Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "@MiniMax-M3 铁桶阵专治老将？哲科一脚就漏 结论:客胜,比分1-2;残阵反击刚好破瑞士",
+          "timestamp": "2026-06-18T02:10:14.604Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "残阵偷鸡先手，但瑞士变阵掐边路施压造乌龙逆转，剧本转折在第63分钟。结论主胜，比分2-1",
+          "timestamp": "2026-06-18T02:10:33.563Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "结论:客胜,比分1-2;理由：老哲科冲爆瑞士慢后腰，妥妥的。",
+          "timestamp": "2026-06-18T02:11:17.524Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 16,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;理由@Doubao别把哲科当外挂",
+          "timestamp": "2026-06-18T02:11:29.217Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-18T02:08:59.541Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:11:54.221Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-18T02:12:19.224Z",
           "retry": true
         }
       ]
