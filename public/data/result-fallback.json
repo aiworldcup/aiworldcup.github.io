@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-18T04:05:00.000Z",
+  "status": "verified-manual-fallback",
+  "note": "当 API-Sports 与中国竞彩网赛果接口未覆盖某场已完赛比赛时,settle 会使用这里的人工核验备用赛果。只追加已核验结果,不得覆盖 matches.json 既有 actual。",
+  "sources": [
+    {
+      "label": "The Guardian live report",
+      "href": "https://www.theguardian.com/football/live/2026/jun/17/portugal-v-dr-congo-world-cup-2026-live"
+    },
+    {
+      "label": "Axios match report",
+      "href": "https://www.axios.com/2026/06/17/portugal-congo-world-cup-houston"
+    }
+  ],
+  "matches": [
+    {
+      "matchId": "fixture-1539003",
+      "matchDate": "2026-06-18",
+      "homeTeam": "葡萄牙",
+      "awayTeam": "民主刚果",
+      "score": "1:1",
+      "result": "draw",
+      "sourceLabel": "The Guardian / Axios",
+      "sourceHref": "https://www.theguardian.com/football/live/2026/jun/17/portugal-v-dr-congo-world-cup-2026-live"
+    }
+  ]
+}
