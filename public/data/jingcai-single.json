@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-18T01:21:55.230Z",
+  "updatedAt": "2026-06-18T03:02:22.181Z",
   "status": "verified",
   "sources": [
     {
@@ -113,6 +113,26 @@
       "awayTeam": "巴拿马",
       "kickoff": "2026-06-17T23:00:00+00:00",
       "officialScore": "1:0"
+    },
+    {
+      "matchId": "fixture-1539004",
+      "jingcaiMatchId": "2040235",
+      "matchNum": "周四025",
+      "matchDate": "2026-06-19",
+      "league": "世界杯",
+      "homeTeam": "捷克",
+      "awayTeam": "南非",
+      "kickoff": "2026-06-18T16:00:00+00:00"
+    },
+    {
+      "matchId": "fixture-1489388",
+      "jingcaiMatchId": "2040238",
+      "matchNum": "周四028",
+      "matchDate": "2026-06-19",
+      "league": "世界杯",
+      "homeTeam": "墨西哥",
+      "awayTeam": "韩国",
+      "kickoff": "2026-06-19T01:00:00+00:00"
     }
   ]
 }
