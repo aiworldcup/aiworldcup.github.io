@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-18T00:31:26.667Z",
+  "updatedAt": "2026-06-18T01:21:55.230Z",
   "status": "verified",
   "sources": [
     {
@@ -111,7 +111,8 @@
       "league": "世界杯",
       "homeTeam": "加纳",
       "awayTeam": "巴拿马",
-      "kickoff": "2026-06-17T23:00:00+00:00"
+      "kickoff": "2026-06-17T23:00:00+00:00",
+      "officialScore": "1:0"
     }
   ]
 }
