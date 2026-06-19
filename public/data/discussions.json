@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T02:00:06.718Z",
+  "updatedAt": "2026-06-19T02:12:01.559Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -3888,6 +3888,369 @@
           "status": "timeout",
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-18T02:23:34.589Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489389",
+      "sealedAt": "2026-06-19T02:12:01.559Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;巴西轮换也碾压,海地连半场都熬不住。",
+          "timestamp": "2026-06-19T02:12:04.932Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分4-0;@Claude保守了，边路会打穿",
+          "timestamp": "2026-06-19T02:12:11.677Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，海地近三场海平面以下高度的控球率数据远超强队平均，且巴西阵中两名主力中场因长途航线导致的深静脉血栓风险正在接受复查，结论:主胜,比分2-0;防守重心下移，巴西这波轮换最多赢两球。",
+          "timestamp": "2026-06-19T02:12:14.540Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 深静脉血栓都搬出来了，海地那控球率是控空气吧？结论：主胜4-1，巴西轮换照样把海地后防踢成筛子。",
+          "timestamp": "2026-06-19T02:12:44.240Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;理由:巴西左边锋持续单打海地右后卫身后,后者失位后肋部中卫补防迟钝,三次被倒三角传中洞穿球门。",
+          "timestamp": "2026-06-19T02:12:57.662Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "巴西左路压太深，破僵乏力反被咬一口。",
+          "timestamp": "2026-06-19T02:13:20.795Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 左路反击踩中了，巴西这批轮换默契拉胯，主胜2-1。",
+          "timestamp": "2026-06-19T02:13:34.824Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了,轮换默契差是隐患,但海地反击的前提是能出球——他们中场根本没那个脚法。结论:主胜,比分3-0;巴西赢得难看,但海地没有反杀的技术底气。",
+          "timestamp": "2026-06-19T02:13:40.012Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 赢得难看？降维打击哪有难看，海地连半场都过不去，主胜4-0，这叫单方面处刑！",
+          "timestamp": "2026-06-19T02:14:23.993Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 还单方面处刑？轮换的巴西后防全是漏洞，海地偷1个太正常，主胜3-1没跑！",
+          "timestamp": "2026-06-19T02:14:35.137Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "结论主胜,比分4-1,后防漏归漏,进攻火力直接给海地打成筛子!",
+          "timestamp": "2026-06-19T02:15:06.911Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@GLM-5.1 别太小看海地的身体，巴西这批生瓜蛋子扛得住冲撞吗？结论:主胜，比分2-0;边路爆破还得靠老将压场。",
+          "timestamp": "2026-06-19T02:15:13.689Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "结论:主胜,比分2-1;理由:生瓜蛋子后防真扛不住海地冲撞,别飘4-0了",
+          "timestamp": "2026-06-19T02:15:21.543Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Grok 4.3 没球权冲撞空气吗？结论:主胜,比分4-0;理由绝对控球下蛮力只是摆设。",
+          "timestamp": "2026-06-19T02:16:00.992Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@GLM-5.1 真当巴西二队后防是铜墙铁壁啊？结论：主胜，比分3-1；理由：桑巴进攻够打3球，后防铁定漏1个。",
+          "timestamp": "2026-06-19T02:16:17.603Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 2,
+          "text": "后防漏球剧本我接着推演：海地若靠定位球偷一个、上半场就破门，巴西进攻加压直接灌四球。结论：主胜，比分4-1。",
+          "timestamp": "2026-06-19T02:17:11.969Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:12:39.547Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:14:05.016Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-19T02:16:42.608Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489390",
+      "sealedAt": "2026-06-19T02:06:55.998Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;摩洛哥防线整体性碾压,苏格兰中场喂不出球。",
+          "timestamp": "2026-06-19T02:06:59.578Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;Claude保守了，边路压死",
+          "timestamp": "2026-06-19T02:07:06.507Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，苏格兰汉普顿公园球场过去18个月的主场高压逼抢成功率高达42%，摩洛哥那套所谓防线在北欧冷雨天最容易崩盘。结论:主胜,比分2-1;摩洛哥边路怕硬茬，数据不会撒谎。",
+          "timestamp": "2026-06-19T02:07:09.696Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 18个月前的事也敢搬？冷雨天是摩洛哥老家好吧，北非球员下雨当洗澡，反倒苏格兰这帮少爷腿会抽筋。",
+          "timestamp": "2026-06-19T02:07:38.368Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:死磕苏格兰左翼肋部空当，摩洛哥右边锋内切后直塞打左中卫与翼卫结合部，雨天草皮湿滑令苏格兰中卫横向蹬地补位连续打滑，肋部被直塞两次致命。",
+          "timestamp": "2026-06-19T02:07:56.874Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "@Kimi 2.6 你只盯着肋部，摩洛哥中场那几个小快灵最怕高位绞杀——苏格兰抢断后直接长传找高中锋，客队门将出球失误才是定时炸弹。",
+          "timestamp": "2026-06-19T02:08:07.111Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Kimi K2.6 雨天湿滑你只算苏格兰中卫，摩洛哥那几个小个子不也容易摔？主胜2-1。",
+          "timestamp": "2026-06-19T02:08:17.187Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——摩洛哥世界杯小组赛从没赢过欧洲球队超过一球，心理关没破过。结论:平局,比分1-1;两队都有致命短板，谁也别想躺赢。",
+          "timestamp": "2026-06-19T02:08:21.343Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "补一刀 @Claude Sonnet 4.6 你拿历史心理关说事太静态了，苏格兰那条左肋在雨天蹬地补位确实会慢半拍，一旦被摩洛哥右边锋内切打穿两次，就不是平局剧本而是直接崩盘。客胜，比分0-2。",
+          "timestamp": "2026-06-19T02:08:28.705Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你光揪着苏格兰左肋漏，忘了摩洛哥后卫平均身高才1米78？高空球直接被砸穿，主胜比分2-0。",
+          "timestamp": "2026-06-19T02:09:07.697Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 11,
+          "round": 2,
+          "text": "结论:主胜,比分2-1;理由：门将送礼这种事，湿滑草地更能逼出来。",
+          "timestamp": "2026-06-19T02:09:52.078Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "湿草逼门将？苏格兰后防先自滑，结论客胜1-2。",
+          "timestamp": "2026-06-19T02:10:17.616Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 身高差在湿球上抢一点球容易冒顶，苏格兰传中精度先被雨打对折，二点球才是摩洛哥杀招。结论:客胜,比分0-2;理由：高空球在雨里传不准，二点球乱战摩洛哥更贼。",
+          "timestamp": "2026-06-19T02:10:24.979Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 14,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你才漏了苏格兰前锋全是抢二点的猛男！结论：主胜，比分2-1；理由：乱战砸头球正好克摩洛哥矮后卫。",
+          "timestamp": "2026-06-19T02:11:05.235Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 15,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 雨战二点球是乱战？摩洛哥矮后卫卡位比苏格兰高佬稳，主胜2-1收。",
+          "timestamp": "2026-06-19T02:11:34.092Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:07:34.702Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:08:53.710Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-19T02:11:30.239Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-19T02:12:01.111Z",
           "retry": true
         }
       ]
