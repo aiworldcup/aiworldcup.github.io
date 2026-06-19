@@ -1243,11 +1243,20 @@
         "syncedAt": "2026-06-17T16:09:41.338Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "draw",
+        "score": "1-1"
+      },
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "syncedAt": "2026-06-19T00:49:10.028Z"
+      }
     },
     {
       "id": "fixture-1539005",
@@ -1281,11 +1290,20 @@
         "syncedAt": "2026-06-17T16:09:41.804Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "home",
+        "score": "4-1"
+      },
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "syncedAt": "2026-06-19T00:49:10.028Z"
+      }
     },
     {
       "id": "fixture-1489387",
@@ -1319,11 +1337,20 @@
         "syncedAt": "2026-06-17T16:09:42.688Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "home",
+        "score": "6-0"
+      },
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "syncedAt": "2026-06-19T00:49:10.028Z"
+      }
     },
     {
       "id": "fixture-1489388",

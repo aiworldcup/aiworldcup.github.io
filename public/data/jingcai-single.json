@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T00:08:24.079Z",
+  "updatedAt": "2026-06-19T00:49:10.026Z",
   "status": "verified",
   "sources": [
     {
@@ -214,7 +214,8 @@
       "homeTeam": "捷克",
       "awayTeam": "南非",
       "kickoff": "2026-06-18T16:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "1:1"
     },
     {
       "matchId": "fixture-1539005",
@@ -225,7 +226,8 @@
       "homeTeam": "瑞士",
       "awayTeam": "波黑",
       "kickoff": "2026-06-18T19:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "4:1"
     },
     {
       "matchId": "fixture-1489387",
@@ -236,7 +238,8 @@
       "homeTeam": "加拿大",
       "awayTeam": "卡塔尔",
       "kickoff": "2026-06-18T22:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "6:0"
     },
     {
       "matchId": "fixture-1489388",
