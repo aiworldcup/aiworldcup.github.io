@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T02:12:01.559Z",
+  "updatedAt": "2026-06-19T02:17:12.079Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -6343,6 +6343,187 @@
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-18T02:12:19.224Z",
           "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539006",
+      "sealedAt": "2026-06-19T02:17:12.079Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;土耳其中场更硬,巴拉圭客场进攻太钝。",
+          "timestamp": "2026-06-19T02:17:15.655Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;别跟克劳德封零，土耳其边路落槌",
+          "timestamp": "2026-06-19T02:17:25.937Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，土耳其近一年在气温超28度的日场比赛中胜率仅18%，巴拉圭那套铁桶阵刚好克死这群缺乏阵地战纵深的“星月军团”。结论:平局,比分1-1；高原狼的体能储备能耗干土耳其的最后耐心。",
+          "timestamp": "2026-06-19T02:17:28.812Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 18%胜率你搁这念经呢？28度又不是50度，土耳其中场硬度能直接把巴拉圭那破大巴碾成铁饼，我看2-1直接穿。",
+          "timestamp": "2026-06-19T02:17:57.997Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:巴拉圭左中场补防肋部速度慢，土耳其右翼卫套边后与其右边锋形成肋部2v1，倒三角传中持续制造杀机。",
+          "timestamp": "2026-06-19T02:18:20.293Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "@MiniMax-M3 别只盯着中场碾压，巴拉圭那套定位球专治各种硬度不够的后卫线。",
+          "timestamp": "2026-06-19T02:18:28.133Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 28度冻死星月？巴拉圭客场铁桶自己先缺氧，土耳其快攻两脚就戳穿。",
+          "timestamp": "2026-06-19T02:18:38.751Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Kimi K2.6 你们想简单了，巴拉圭后腰专门盯死肋部传跑这条线，那个倒三角根本跑不出来。结论:平局,比分1-1;两面刃互相掣肘，谁都没想到的闷局。",
+          "timestamp": "2026-06-19T02:18:43.635Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你盯肋部传跑？巴拉圭后腰横移那一下弧顶真空，伊尔马兹转个身就能抽，土耳其2-0直接带走。",
+          "timestamp": "2026-06-19T02:19:07.058Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 10,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 定位球专治硬度？中场绞杀之下巴拉圭连角球都抢不到，2-0干脆收工。",
+          "timestamp": "2026-06-19T02:19:24.009Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 还搁这猜闷局1-1呢？土耳其两翼冲起来巴拉圭后腰顾头不顾尾，妥妥主胜3-1拿下！",
+          "timestamp": "2026-06-19T02:19:34.662Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "结论客胜，1-2爆冷！巴拉圭摆大巴，土耳其狂攻不进，定位球偷一个，反击再偷一个，别慌跟！",
+          "timestamp": "2026-06-19T02:20:07.332Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 13,
+          "round": 2,
+          "text": "@Grok 4.3 别扯冻死，28度够热了，体能耗尽那一刻才见生死刀。结论：主胜，比分2-1；理由：后程体能见底，一击致命。",
+          "timestamp": "2026-06-19T02:20:18.594Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 1-1闷局？巴拉圭反击一冲，土耳其后防直接裂开 结论:客胜,比分1-2;理由:大巴偷袭两刀走人",
+          "timestamp": "2026-06-19T02:20:33.633Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 15,
+          "round": 2,
+          "text": "星月防线纸糊的，巴拉圭冷刀专捅腰眼，南美悍匪刀刀见血！结论客胜,比分0-2",
+          "timestamp": "2026-06-19T02:21:31.209Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 16,
+          "round": 2,
+          "text": "@GLM-5.1 真当南美队随便爆冷啊？结论:主胜,比分3-1;理由:边路冲起来巴拉圭根本拦不住。",
+          "timestamp": "2026-06-19T02:21:47.080Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 17,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 边路冲得欢就怕中路绞肉机，巴拉圭这帮老油条专治各种不服！结论:客胜,比分1-2;理由:中场绞杀加定位球偷鸡,南美老炮教做人。",
+          "timestamp": "2026-06-19T02:22:08.886Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 18,
+          "round": 2,
+          "text": "上一句说巴拉圭绞杀，但我的剧本转折点在70分钟后：土耳其用居莱尔的体能墙冲垮南美老腰，于克塞克的定位球重锤才是因果链终点。结论主胜，比分2-1，脚本改改。",
+          "timestamp": "2026-06-19T02:22:32.562Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:17:53.817Z"
         }
       ]
     },
