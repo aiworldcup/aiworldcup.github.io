@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T03:09:58.650Z",
+  "updatedAt": "2026-06-19T03:20:03.756Z",
   "status": "verified",
   "sources": [
     {
@@ -250,7 +250,8 @@
       "homeTeam": "墨西哥",
       "awayTeam": "韩国",
       "kickoff": "2026-06-19T01:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "1:0"
     },
     {
       "matchId": "fixture-1489391",
