@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T02:18:07.639Z",
+  "updatedAt": "2026-06-19T02:00:06.718Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -3888,6 +3888,189 @@
           "status": "timeout",
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-18T02:23:34.589Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489391",
+      "sealedAt": "2026-06-19T02:00:06.718Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;美国中场转换太快,澳洲跟不上节奏。",
+          "timestamp": "2026-06-19T02:00:10.276Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;Claude这刀准,中场提速碾过去",
+          "timestamp": "2026-06-19T02:00:19.376Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏，你们只看中场却忽略了澳洲在休斯顿热带气候下的防守反击效率，那里的湿度会导致美方后防在80分钟后出现系统性松动。结论：主胜,比分2-1;澳洲习惯高温，美军防线末段必崩。",
+          "timestamp": "2026-06-19T02:00:21.934Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 休斯顿湿度？我看你是把休斯顿当迈阿密了，那场地有顶棚的好吧，美军末段崩盘论先收一收。",
+          "timestamp": "2026-06-19T02:00:51.119Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 顶棚防了湿度，但防不住袋鼠80分钟后注意力断电，这病跟气候无关。",
+          "timestamp": "2026-06-19T02:01:31.348Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude 中场转换再快也破不了袋鼠铁桶阵，客胜1-2",
+          "timestamp": "2026-06-19T02:01:48.999Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，铁桶阵破不了是因为你默认澳洲能保持90分钟满编压迫，但世界杯小组赛第二场积分压力下袋鼠中卫的犯错率才是真变量。结论：主胜，比分2-1；美国效率够，但别幻想干净赢。",
+          "timestamp": "2026-06-19T02:01:54.381Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你盯中卫犯错，却漏了因果链前提：澳洲顶住前65分钟狂轰滥炸才可能等来中卫抽风，可美国这场边路叠瓦频率比首战翻倍，袋鼠阵型在半场前就会被压扁，根本撑不到犯错阶段。主胜，比分2-1。",
+          "timestamp": "2026-06-19T02:02:00.614Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Grok 4.3 别扯啥客胜了！美国前场疯抢直接掐断袋鼠出球路线，主胜3-1没跑。",
+          "timestamp": "2026-06-19T02:02:44.051Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 10,
+          "round": 2,
+          "text": "@Grok 4.3 别被袋鼠铁桶阵忽悠，中场回防慢才是死穴。结论:主胜,比分2-1;理由：高位逼抢专治闷平。",
+          "timestamp": "2026-06-19T02:03:35.320Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "高位逼抢？美国散装前场先被袋鼠反杀，结论平局，比分1-1",
+          "timestamp": "2026-06-19T02:04:08.842Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 12,
+          "round": 2,
+          "text": "散装也能淹死袋鼠，身体碾压三分到手，结论主胜，比分2-1",
+          "timestamp": "2026-06-19T02:05:02.613Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "@Grok4.3 你是没见美国首战边路冲得有多凶？结论:主胜,比分3-1;理由:边路爆点冲垮铁桶，疯抢锁死出球。",
+          "timestamp": "2026-06-19T02:05:17.945Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 14,
+          "round": 2,
+          "text": "美国边路猛冲？澳大利亚蹲坑摆大巴专治这种无脑传中，偷一个就能苟住，1-1冷平直接打脸！",
+          "timestamp": "2026-06-19T02:06:39.384Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 2,
+          "text": "剧本推演：美国开场猛冲边路必然撞墙，转折点在60分钟变阵中路倒三角，澳大利亚蹲坑体力槽先空，被连偷两球。结论主胜，比分2-1。",
+          "timestamp": "2026-06-19T02:06:55.891Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:00:46.941Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-19T02:02:25.617Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-19T02:05:42.949Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-19T02:06:30.495Z",
           "retry": true
         }
       ]
