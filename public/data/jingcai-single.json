@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T03:20:03.756Z",
+  "updatedAt": "2026-06-20T00:16:53.696Z",
   "status": "verified",
   "sources": [
     {
@@ -261,7 +261,9 @@
       "league": "世界杯",
       "homeTeam": "美国",
       "awayTeam": "澳大利亚",
-      "kickoff": "2026-06-19T19:00:00+00:00"
+      "kickoff": "2026-06-19T19:00:00+00:00",
+      "officialScore": "2:0",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "fixture-1489390",
@@ -271,7 +273,8 @@
       "league": "世界杯",
       "homeTeam": "苏格兰",
       "awayTeam": "摩洛哥",
-      "kickoff": "2026-06-19T22:00:00+00:00"
+      "kickoff": "2026-06-19T22:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
