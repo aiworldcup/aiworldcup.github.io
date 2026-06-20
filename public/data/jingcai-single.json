@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T03:07:48.656Z",
+  "updatedAt": "2026-06-20T05:38:31.211Z",
   "status": "verified",
   "sources": [
     {
@@ -298,7 +298,8 @@
       "homeTeam": "土耳其",
       "awayTeam": "巴拉圭",
       "kickoff": "2026-06-20T03:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "0:1"
     },
     {
       "matchId": "fixture-1539007",
