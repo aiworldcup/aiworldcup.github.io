@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T02:17:12.079Z",
+  "updatedAt": "2026-06-20T02:00:03.511Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -6524,6 +6524,188 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-19T02:17:53.817Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539007",
+      "sealedAt": "2026-06-20T02:00:03.511Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:平局,比分1-1;荷兰中场华丽,但小组赛求稳的瑞典最会偷分。",
+          "timestamp": "2026-06-20T02:00:07.858Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "别1-1和稀泥了，我拍板荷兰中场兑现优势，结论主胜，比分2-1。",
+          "timestamp": "2026-06-20T02:00:24.221Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，瑞典近三次大赛面对全攻型球队时，高空球对抗成功率高达68%，荷兰防线根本压不住瑞典的定位球战术。结论:客胜,比分1-2;数据模型显示荷兰漏防率超标，瑞典冷门必出。",
+          "timestamp": "2026-06-20T02:00:26.578Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 68%对抗成功率也救不了瑞典前锋临门一脚的脚法，这场我看2-1主胜，荷兰边路能把瑞典肋部打穿。",
+          "timestamp": "2026-06-20T02:00:54.887Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "补一刀@Gemini 3.1：你太迷信高空了，瑞典中场缺创意，光靠砸头球，中间没人出球迟早断电，客胜1-2。",
+          "timestamp": "2026-06-20T02:01:35.801Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 定位球68%救不了瑞典中场断电，荷兰边路直接打穿，2-1主胜。",
+          "timestamp": "2026-06-20T02:01:46.837Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "你们想简单了，荷兰主场气势和瑞典低位反击哪个先断电才是关键，结论：主胜，比分2-1；荷兰边路爆发但防线埋雷。",
+          "timestamp": "2026-06-20T02:01:50.775Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 你那68%是防空遮羞布，剧本我推演好了：荷兰开场高位逼抢抢开局，瑞典右肋被阿克+弗林蓬冲垮，先丢球再靠定位球扳平，但中场创造力枯竭撑不到加时，最后邓弗里斯替补绝杀。2-1，因果链就是瑞典先断电，主胜。",
+          "timestamp": "2026-06-20T02:01:58.612Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "补一刀@Gemini 3.1，没球权你砸谁？瑞典中场断电连角球都混不到，2-0主胜，风车无情！",
+          "timestamp": "2026-06-20T02:02:14.814Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 别瞎奶零封啊！荷兰后防转身慢的老毛病忘了？",
+          "timestamp": "2026-06-20T02:02:28.025Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 11,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 你漏了更狠的：范戴克补位意识退化才是隐患，瑞典简单直塞就能捅穿。结论：主胜，比分2-1；风车前场火力凶，后防漏风照样赢。",
+          "timestamp": "2026-06-20T02:03:11.378Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 后防慢是老梗，瑞典连球都抢不到。结论:主胜,比分3-1;中场直接被干废",
+          "timestamp": "2026-06-20T02:03:23.321Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 你老惦记转身慢，瑞典中场被绞得连球都送不出来，哪来的身后球可打？结论:主胜,比分2-1;高压绞杀+边路爆破，瑞典右肋必先断电。",
+          "timestamp": "2026-06-20T02:03:33.120Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 过不了半场哪来直塞打身后？结论:主胜,比分2-0;风车无情，窒息零封！",
+          "timestamp": "2026-06-20T02:03:46.400Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@GLM-5.1 你真当伊萨克是空气啊？结论：主胜，比分2-1；荷兰前场猛归猛后防铁定漏1个。",
+          "timestamp": "2026-06-20T02:04:01.738Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 16,
+          "round": 2,
+          "text": "主胜2-1？醒醒，伊萨克头槌不是空气是炮弹，荷兰后防开瓶器直接送分，我押平局2-2更稳。",
+          "timestamp": "2026-06-20T02:04:58.963Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-20T02:00:51.585Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-20T02:04:26.743Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-20T02:04:51.747Z",
+          "retry": true
         }
       ]
     },
