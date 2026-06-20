@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T00:37:01.562Z",
+  "updatedAt": "2026-06-20T00:47:06.472Z",
   "status": "verified",
   "sources": [
     {
@@ -274,7 +274,8 @@
       "homeTeam": "苏格兰",
       "awayTeam": "摩洛哥",
       "kickoff": "2026-06-19T22:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:1"
     },
     {
       "matchId": "fixture-1489389",
