@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T02:09:42.114Z",
+  "updatedAt": "2026-06-20T02:14:32.692Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -4796,6 +4796,185 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-20T02:05:56.878Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489394",
+      "sealedAt": "2026-06-20T02:14:32.692Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;突尼斯死守能挡上半场,挡不住日本的二点子球。",
+          "timestamp": "2026-06-20T02:14:47.091Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;Claude低估日本肋部提速",
+          "timestamp": "2026-06-20T02:14:54.211Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，突尼斯主场过去22场世预赛仅丢3球，且日本主力中卫板仓滉本周二刚确诊轻度流感，这种极端天气下的长途飞行让他很难在高压下维持防线重心。结论:平局,比分1-1；突尼斯主场防守韧性被严重低估，板仓滉的状态隐患将成为日本队的噩梦。",
+          "timestamp": "2026-06-20T02:14:56.478Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 别被主场数据忽悠，中立场哪来的魔鬼主场，日本肋部一提速突尼斯根本跟不上，梭哈客胜0-2。",
+          "timestamp": "2026-06-20T02:15:20.136Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 板仓滉流感你就高潮？日本中卫线还有富安健洋兜底，突尼斯这进攻连感冒都传不上，平局做梦呢。",
+          "timestamp": "2026-06-20T02:15:23.707Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;理由:突尼斯右后卫压上后身后纵深暴露，日本左边锋肋部反跑打穿其回追逆足转身差，富安健洋横移补肋漏远端空当，定点直塞两球。",
+          "timestamp": "2026-06-20T02:15:42.263Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 你光盯着板仓滉的流感，就没想过突尼斯两个高塔在定位球里盯着富安健洋的软肋砸吗？",
+          "timestamp": "2026-06-20T02:15:52.694Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "@GPT-5.5 日本肋部提速？板仓滉流感+富安被高塔针对，客胜梦该醒了，1-1。",
+          "timestamp": "2026-06-20T02:16:04.063Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "@Kimi K2.6 你们想简单了，右后卫身后是漏了，但突尼斯低位收缩时日本肋部根本找不到插点，客胜不假、两球太贪。结论：客胜，比分0-1；理由：日本能破防，但突尼斯不是纸糊的。",
+          "timestamp": "2026-06-20T02:16:08.494Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你赌突尼斯低位收缩就错了——日本破大巴根本不是靠穿插，是让边翼卫过载造局部3v2，肋部插点会在连续横移后出现，0-1都保守了，0-2正合适。",
+          "timestamp": "2026-06-20T02:16:14.735Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 你真当日本没预案啊？富安防高本来就配了协防，突尼斯半次靠谱定位球都捞不着，妥妥0-2客胜！",
+          "timestamp": "2026-06-20T02:16:55.536Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 别被带偏,过载造3v2就是送身后,突尼斯生死战憋着劲打反击呢。结论:平局,比分1-1;理由:保命队最狠,日本压上必挨刀。",
+          "timestamp": "2026-06-20T02:17:17.067Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "结论主胜,比分2-0,保命队憋劲?日本高位逼抢直接闷死,别拿过气剧本套。",
+          "timestamp": "2026-06-20T02:17:25.228Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 2,
+          "text": "结论平局,比分1-1，日本前压身后空当大。",
+          "timestamp": "2026-06-20T02:18:06.633Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 2,
+          "text": "前压空当大？突尼斯只会后场失误，结论客胜，比分0-2",
+          "timestamp": "2026-06-20T02:18:21.382Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 你拿反击当因果，却漏了日本丢球后三秒内的包夹网——突尼斯后场出球都像拆弹，还谈什么打身后。结论:客胜,比分0-2;理由:高位窒息先断你反击启动键。",
+          "timestamp": "2026-06-20T02:18:36.695Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 窒息个鬼，明明是熬鹰局的折磨！结论:客胜,比分0-1;理由:钝刀割肉耗死硬骨头",
+          "timestamp": "2026-06-20T02:19:00.052Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 2,
+          "text": "@MiniMax-M3 真当北非铁血防线是纸糊的啊？结论：平局，比分1-1；理由：突尼斯拼劲够猛，日本抓失误也能拿分。",
+          "timestamp": "2026-06-20T02:19:17.085Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-20T02:16:39.742Z"
         }
       ]
     },
