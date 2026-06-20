@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T00:16:53.696Z",
+  "updatedAt": "2026-06-20T00:37:01.562Z",
   "status": "verified",
   "sources": [
     {
@@ -275,6 +275,17 @@
       "awayTeam": "摩洛哥",
       "kickoff": "2026-06-19T22:00:00+00:00",
       "sourceScope": "single-fixed"
+    },
+    {
+      "matchId": "fixture-1489389",
+      "jingcaiMatchId": "2040241",
+      "matchNum": "周五031",
+      "matchDate": "2026-06-20",
+      "league": "世界杯",
+      "homeTeam": "巴西",
+      "awayTeam": "海地",
+      "kickoff": "2026-06-20T00:30:00+00:00",
+      "sourceScope": "all-results"
     }
   ]
 }
