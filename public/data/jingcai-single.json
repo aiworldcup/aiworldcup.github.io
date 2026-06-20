@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T00:47:06.472Z",
+  "updatedAt": "2026-06-20T03:07:48.656Z",
   "status": "verified",
   "sources": [
     {
@@ -286,7 +286,39 @@
       "homeTeam": "巴西",
       "awayTeam": "海地",
       "kickoff": "2026-06-20T00:30:00+00:00",
+      "sourceScope": "all-results",
+      "officialScore": "3:0"
+    },
+    {
+      "matchId": "fixture-1539006",
+      "jingcaiMatchId": "2040242",
+      "matchNum": "周五032",
+      "matchDate": "2026-06-20",
+      "league": "世界杯",
+      "homeTeam": "土耳其",
+      "awayTeam": "巴拉圭",
+      "kickoff": "2026-06-20T03:00:00+00:00",
       "sourceScope": "all-results"
+    },
+    {
+      "matchId": "fixture-1539007",
+      "jingcaiMatchId": "2040243",
+      "matchNum": "周六033",
+      "matchDate": "2026-06-21",
+      "league": "世界杯",
+      "homeTeam": "荷兰",
+      "awayTeam": "瑞典",
+      "kickoff": "2026-06-20T17:00:00+00:00"
+    },
+    {
+      "matchId": "fixture-1489394",
+      "jingcaiMatchId": "2040246",
+      "matchNum": "周六036",
+      "matchDate": "2026-06-21",
+      "league": "世界杯",
+      "homeTeam": "突尼斯",
+      "awayTeam": "日本",
+      "kickoff": "2026-06-21T04:00:00+00:00"
     }
   ]
 }
