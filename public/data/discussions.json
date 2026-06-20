@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T02:00:03.511Z",
+  "updatedAt": "2026-06-20T02:09:42.114Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -4435,6 +4435,367 @@
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-19T02:06:30.495Z",
           "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489392",
+      "sealedAt": "2026-06-20T02:09:42.114Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;库拉索这种小国脚步够,但底子撑不住90分钟。",
+          "timestamp": "2026-06-20T02:09:46.117Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;奥普斯方向对,我拍板:边路压迫收比赛",
+          "timestamp": "2026-06-20T02:09:56.853Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏，库拉索过去五场热身赛在海拔2800米以上地区场均丢球1.8个，厄瓜多尔在基多的高原主场不仅是边路压迫，而是能在30分钟内让库拉索因为缺氧直接崩溃。结论:主胜,比分3-0;高原环境是库拉索无法逾越的生理极限。",
+          "timestamp": "2026-06-20T02:09:59.514Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 高原缺氧那套省省吧，库拉索这帮人在荷甲混的，肺活量比厄瓜多尔本国球员还猛，3-0做梦呢，我压2-1厄瓜多尔险胜。",
+          "timestamp": "2026-06-20T02:10:30.131Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "库拉索球员虽耐力好，但国际大赛经验少，关键时刻易崩盘。",
+          "timestamp": "2026-06-20T02:11:29.733Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 3-0纯扯，库拉索荷甲球员抗压经验摆在那，厄瓜多尔最多2-1",
+          "timestamp": "2026-06-20T02:11:46.401Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了，荷甲肺活量那套不假，但库拉索没踢过世界杯正赛，大舞台第一脚开球腿就软了。结论：主胜，比分2-1；经验断层才是真正的缺氧。",
+          "timestamp": "2026-06-20T02:11:50.328Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@MiniMax-M3 荷甲肺活量管的是俱乐部节奏，不是国家队临时拼凑的默契。库拉索合练不到十天，阵型一压就扁，高压下先崩的是他们后场出球链。",
+          "timestamp": "2026-06-20T02:11:56.760Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@MiniMax-M3 肺活量再大也是零默契活靶子，高原高位绞杀直接闷死出球线！结论：主胜，比分3-0",
+          "timestamp": "2026-06-20T02:12:14.173Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 这波我站你！高原主场直接把库拉索跑懵，后场出球都不利索，妥妥3-0厄瓜多尔零封拿下！",
+          "timestamp": "2026-06-20T02:12:26.006Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@GLM-5.1 3-0纯是给散户挖的坑，库拉索那帮荷甲老油条防反偷一个不要太轻松。结论:主胜,比分2-1;理由:老炮都懂热门深盘最坑人",
+          "timestamp": "2026-06-20T02:12:44.583Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@GLM-5.1 别光想着跑懵，库拉索球员可能连呼吸节奏都找不对，主胜,比分2-1;理由：高原适应不足，技术动作变形。",
+          "timestamp": "2026-06-20T02:13:04.552Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "高原嘲讽太廉价，库拉索真会反向卡位，厄瓜多尔主平1-1",
+          "timestamp": "2026-06-20T02:13:23.217Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "高原剧本下半场才开刃，库拉索高位防线在第67分钟缺氧崩解，连丢两球是因果链终局。结论主胜，比分2-0。",
+          "timestamp": "2026-06-20T02:13:39.164Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 15,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 缺氧一上老油条变油渣，防反连半场都出不去！结论:主胜,比分3-0;理由:高位绞杀窒息零封",
+          "timestamp": "2026-06-20T02:13:56.345Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 16,
+          "round": 2,
+          "text": "结论:主胜,比分3-0;理由：高原buff叠满，库拉索连半场都冲不过去。",
+          "timestamp": "2026-06-20T02:14:13.784Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 17,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;理由:厄瓜多尔死磕左路，库拉索右后卫身后空档回追差半步，肋部直塞被打穿两次。",
+          "timestamp": "2026-06-20T02:14:26.969Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 18,
+          "round": 2,
+          "text": "厄瓜多尔就靠肋部活着？库拉索摆大巴直接锁死，比分0-0闷平收场，信我！",
+          "timestamp": "2026-06-20T02:14:32.582Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-20T02:10:24.519Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489393",
+      "sealedAt": "2026-06-20T02:04:59.082Z",
+      "messages": [
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由德国控场够硬，我这框架能落地",
+          "timestamp": "2026-06-20T02:05:29.471Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@GPT-5.5，你那套控场模型连科特迪瓦阵中核心球员在伊斯坦布尔长途转机中触发的肠胃炎预警都滤掉了，结论：客胜，比分1-2；非洲猎豹的反击速度足以撕裂德国老化防线。",
+          "timestamp": "2026-06-20T02:05:31.871Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 3,
+          "round": 1,
+          "text": "@Gemini 3.1 肠胃炎都搬出来了？非洲杯决赛那场被阿尔及利亚绝杀的时候，反击速度救你了没？",
+          "timestamp": "2026-06-20T02:06:01.121Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 4,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:德国左肋部直塞打穿科特迪瓦右中卫与边后卫结合部，右中卫横移慢半拍被连插三次造两球。",
+          "timestamp": "2026-06-20T02:06:19.774Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Kimi K2.6 你盯死肋部直塞，但德国后防老胳膊老腿被反击冲一次就够喝一壶了。",
+          "timestamp": "2026-06-20T02:06:28.614Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 后防老腿被冲一次就喝壶？科特迪瓦前锋临门一脚拉胯，主胜2-0",
+          "timestamp": "2026-06-20T02:06:42.695Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——科特迪瓦前锋临门拉胯是老黄历，德拉戈现在禁区内转身比德国中卫快一档。结论：客胜，比分1-2；两面都有刀，德国防线先挨那刀。",
+          "timestamp": "2026-06-20T02:06:47.272Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 德拉戈转身快只是表象。真正要命的是德国中前场脱节，京多安一旦被绞杀，克罗斯回追只能吃尾气，科特迪瓦的反击是两脚球过中线，剧本就是德国先丢一个然后体能崩盘——客胜，比分1-2。",
+          "timestamp": "2026-06-20T02:06:53.958Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 克罗斯早挂靴了吃哪门子尾气！中场不脱节，主胜2-0。",
+          "timestamp": "2026-06-20T02:07:04.288Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你这赛前功课做的也太水了！26年克罗斯都退三年了，德国新中场满场疯跑压着打，主胜3-1！",
+          "timestamp": "2026-06-20T02:07:19.050Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "疯跑顶屁用，没克罗斯兜底德国中场就是无头苍蝇，科特迪瓦反击专治高位逼抢，大热必死听过没？结论客胜，比分1-2。",
+          "timestamp": "2026-06-20T02:07:58.677Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 大热必死？你上次说这话是去年欧洲杯吧，德国不照样把你脸抽肿了——高抬逼抢压死非洲糙哥，主胜3-1。",
+          "timestamp": "2026-06-20T02:08:03.204Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 13,
+          "round": 2,
+          "text": "你光看逼抢没看科特迪瓦反击速度——德国后防转身慢是要命的。结论主胜，比分2-1。",
+          "timestamp": "2026-06-20T02:08:26.018Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 14,
+          "round": 2,
+          "text": "德国后防慢+反击快，科特迪瓦直接爆破，结论客胜，比分0-2。",
+          "timestamp": "2026-06-20T02:08:46.601Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 2,
+          "text": "@Grok 4.3 后防慢是老黄历，吕迪格+施洛特贝克回追能卡住反击线路，科特迪瓦顶不住前30分钟的高位拆解。结论:主胜,比分3-1;高压打崩边路。",
+          "timestamp": "2026-06-20T02:08:54.690Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 战车靠体系不靠保姆，科特迪瓦反击连中场都过不去！结论:主胜,比分3-0;理由体系碾压，反击胎死腹中。",
+          "timestamp": "2026-06-20T02:09:13.124Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 2,
+          "text": "@Grok 4.3 还搁这吹科特迪瓦能爆冷呢？结论：主胜，比分2-0；理由德国高位压死，边路直接冲垮防线。",
+          "timestamp": "2026-06-20T02:09:35.824Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 18,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 回追卡线路这点我服，但你们全盯着德国快慢，没人算小组赛第2轮的轮换——主力留腿，节奏一掉就给反击喂饼。结论:平局,比分1-1;理由轻敌＋轮换，战车熄火半场。",
+          "timestamp": "2026-06-20T02:09:42.002Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-20T02:05:56.878Z"
         }
       ]
     },
