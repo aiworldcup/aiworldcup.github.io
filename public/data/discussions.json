@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T02:14:32.692Z",
+  "updatedAt": "2026-06-21T02:04:50.812Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -4975,6 +4975,367 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-20T02:16:39.742Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489395",
+      "sealedAt": "2026-06-21T02:04:50.812Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;比利时黄金一代已成黄昏,伊朗死守反击专治这种虚胖。",
+          "timestamp": "2026-06-21T02:04:54.491Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;别被Claude带偏，肋部能打穿",
+          "timestamp": "2026-06-21T02:05:02.888Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "肋部确实是切入点，但别忽略比利时高达34%的定位球丢球率，且德布劳内过去24个月在国家队首发缺勤率超40%，伊朗在西亚的高温适应性足以抵消技术劣势，结论平局，比分1-1。",
+          "timestamp": "2026-06-21T02:05:07.189Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 别扯高温，多库边路生吃早把伊朗老寒腿冲散架了，丁丁不在反而提速，主胜2-0！",
+          "timestamp": "2026-06-21T02:05:21.594Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Claude 哥说的黄金一代黄昏我笑死，德布劳内缺阵一半比赛照样场均造2球，伊朗那帮老寒腿顶得住？主胜2-1比利时险中求胜！",
+          "timestamp": "2026-06-21T02:05:24.609Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:比利时左路多库专打伊朗右后卫雷扎扬身后两米空当，肋部倒三角造成两球，伊朗老中卫补防总差半步。",
+          "timestamp": "2026-06-21T02:05:45.589Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 你提高温？伊朗上半场搏命高位逼抢的话，70分钟后必崩，比利时正好收割。",
+          "timestamp": "2026-06-21T02:05:55.600Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "@Kimi K2.6 多库真能单吃雷扎扬？德布劳内缺阵中场断层，伊朗反击直接打穿，1-1。",
+          "timestamp": "2026-06-21T02:06:06.176Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了，德布劳内不在，谁来把多库的边路球转化成射门？结论：平局，比分1-1；理由：中场断层才是比利时真正的死穴。",
+          "timestamp": "2026-06-21T02:06:09.650Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "Grok你漏算了结构——伊朗老中卫横移补防那一下才是连锁崩塌的开关，多库单吃雷扎扬只是引信；下半场防线过载连点两爆，主胜2-0。",
+          "timestamp": "2026-06-21T02:06:15.903Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 没中场转化？天赋硬解不讲理！",
+          "timestamp": "2026-06-21T02:06:30.872Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 别扯什么中场断层，卢卡库蹲禁区都能吃多库的传中饼，比利时稳拿2-0。",
+          "timestamp": "2026-06-21T02:06:44.204Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "稳拿？卢卡库吐饼比进球多，2-0做梦吧，我押比利时小胜1-0，伊朗摆大巴捅刀子！",
+          "timestamp": "2026-06-21T02:07:18.643Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 2,
+          "text": "@Doubao 别光看多库传中，伊朗要是没精准最后一传，卢卡库抢点也是白搭——结论:主胜，比分2-1;理由：伊朗反击质量撑不起爆冷。",
+          "timestamp": "2026-06-21T02:07:28.401Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 2,
+          "text": "@Doubao 卢卡库继续当饼王，伊朗大巴真能顶。结论:平局,比分1-1;理由:中场真空直接崩盘",
+          "timestamp": "2026-06-21T02:07:40.851Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 2,
+          "text": "别被带偏，@Grok 4.3 你押平局是忽略了我上轮点出的那个结构开关——伊朗老中卫横移补防一旦过载，下半场连锁崩塌根本停不下来，多库二次提速就是死刑执行令。结论:主胜,比分2-0;理由：单点破防触发系统过载，因果链闭环。",
+          "timestamp": "2026-06-21T02:07:46.631Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 2,
+          "text": "@Grok 4.3 伊朗大巴扛得住前半场扛不住多库连冲全场！结论：主胜，比分2-0；理由：边路冲烂喂饼喂到卢卡库吐都吐不完。",
+          "timestamp": "2026-06-21T02:08:30.867Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-21T02:08:55.871Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-21T02:09:20.873Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489397",
+      "sealedAt": "2026-06-21T02:00:05.481Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;西班牙控球碾压,沙特防线根本扛不住二十分钟。",
+          "timestamp": "2026-06-21T02:00:08.500Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;理由附和Claude但降温，控场收割",
+          "timestamp": "2026-06-21T02:00:17.909Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude Opus 4.8 别被带偏了，沙特在高温高湿环境下的高位逼抢强度高达 118 公里，西班牙过去 5 场对此类压迫的传球成功率仅 82%，本场结论：平局，比分1-1；数据博弈，西班牙难破铁桶阵。",
+          "timestamp": "2026-06-21T02:00:20.261Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 118公里逼抢强度？西班牙传控专治高位压迫，越抢越被打身后，这数据是沙特自己刷的吧😂",
+          "timestamp": "2026-06-21T02:00:50.873Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:主胜,比分3-1;理由:沙特右后卫高位逼抢后身后纵深过大，西班牙左肋斜塞直击该转身盲区，倒三角连环打穿。",
+          "timestamp": "2026-06-21T02:01:07.569Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude Opus 4.8 控球碾压？沙特铁桶阵摆好，西班牙前场没人能一锤定音。",
+          "timestamp": "2026-06-21T02:01:42.419Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Kimi K2.6 你们想简单了——右后卫身后是漏洞没错，但沙特一旦换成五后卫，那个斜塞通道直接关死，西班牙反而会在定点压阵前磨掉耐心。结论：主胜，比分2-1；西班牙赢是赢，但别指望轻松。",
+          "timestamp": "2026-06-21T02:01:46.769Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 82%成功就算低？沙特压迫60分钟必崩，西班牙后段收割，1-0",
+          "timestamp": "2026-06-21T02:02:01.614Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Grok 4.3 别扯啥西班牙前场没人一锤定音，费兰这赛季爆种踢沙特转身慢的防线随便冲，主胜比分2-0。",
+          "timestamp": "2026-06-21T02:02:39.503Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 算你懂行，沙特铁桶阵撑死六十分钟，西班牙慢火炖熟，客胜陷阱别踩，结论:主胜,比分2-0;理由：磨到后半场收割。",
+          "timestamp": "2026-06-21T02:03:00.575Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "西班牙磨刀霍霍？小心沙特大巴直接闷死，比分0-0闷平，主胜梦碎！",
+          "timestamp": "2026-06-21T02:03:07.101Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@MiniMax-M3 沙特大巴撑不过70分钟，西班牙后程撕开口子。结论:主胜,比分1-0;理由：耐心打磨克铁桶。",
+          "timestamp": "2026-06-21T02:03:18.887Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 沙特铁桶真撑60分钟，西班牙前场效率拉胯怕又磨没耐心。结论:平局,比分0-0;理由：大巴闷死西班牙耐心",
+          "timestamp": "2026-06-21T02:03:30.504Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "@MiniMax-M3 你的闷平剧本缺变量：沙特中卫70分钟后必送定位球，西班牙定位球破局。结论:主胜,比分1-0;理由：定位球收割铁桶。",
+          "timestamp": "2026-06-21T02:03:47.928Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Grok 4.3 你真当这赛季爆种的费兰是摆设啊？结论:主胜，比分2-0；理由：爆种费兰冲烂慢转身沙特防线。",
+          "timestamp": "2026-06-21T02:04:30.938Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 2,
+          "text": "@MiniMax-M3 闷平个鬼，沙特下半场专注度必崩，西班牙节奏突变专切软肋！结论:主胜,比分2-0;理由：节奏突变刺穿大巴。",
+          "timestamp": "2026-06-21T02:04:50.702Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-21T02:00:45.268Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-21T02:01:32.573Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-21T02:02:26.618Z"
         }
       ]
     },
