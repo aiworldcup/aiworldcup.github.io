@@ -1720,11 +1720,20 @@
         "scores": {}
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "away",
+        "score": "0-4"
+      },
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "syncedAt": "2026-06-21T06:35:22.449Z"
+      }
     },
     {
       "id": "fixture-1489397",
