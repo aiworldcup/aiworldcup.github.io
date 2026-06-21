@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T00:43:34.571Z",
+  "updatedAt": "2026-06-21T02:24:03.641Z",
   "status": "verified",
   "sources": [
     {
@@ -334,7 +334,8 @@
       "homeTeam": "厄瓜多尔",
       "awayTeam": "库拉索",
       "kickoff": "2026-06-21T00:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "0:0"
     },
     {
       "matchId": "fixture-1489394",
