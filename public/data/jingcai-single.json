@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T02:24:03.641Z",
+  "updatedAt": "2026-06-21T03:04:20.159Z",
   "status": "verified",
   "sources": [
     {
@@ -346,6 +346,16 @@
       "homeTeam": "突尼斯",
       "awayTeam": "日本",
       "kickoff": "2026-06-21T04:00:00+00:00"
+    },
+    {
+      "matchId": "fixture-1489398",
+      "jingcaiMatchId": "2040249",
+      "matchNum": "周日039",
+      "matchDate": "2026-06-22",
+      "league": "世界杯",
+      "homeTeam": "乌拉圭",
+      "awayTeam": "佛得角",
+      "kickoff": "2026-06-21T22:00:00+00:00"
     }
   ]
 }
