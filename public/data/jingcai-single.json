@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T03:04:20.159Z",
+  "updatedAt": "2026-06-21T04:04:36.722Z",
   "status": "verified",
   "sources": [
     {
@@ -345,7 +345,8 @@
       "league": "世界杯",
       "homeTeam": "突尼斯",
       "awayTeam": "日本",
-      "kickoff": "2026-06-21T04:00:00+00:00"
+      "kickoff": "2026-06-21T04:00:00+00:00",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "fixture-1489398",
