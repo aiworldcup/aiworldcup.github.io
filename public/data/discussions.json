@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T02:04:50.812Z",
+  "updatedAt": "2026-06-21T02:14:24.895Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -5160,6 +5160,188 @@
       ]
     },
     {
+      "matchId": "fixture-1489396",
+      "sealedAt": "2026-06-21T02:14:24.895Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;埃及个人能力碾压,新西兰只剩拼劲,扛不住。",
+          "timestamp": "2026-06-21T02:14:29.993Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;接Claude的刀，中场压强成锤",
+          "timestamp": "2026-06-21T02:14:37.882Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5，别被纸面阵容带偏了，新西兰在奥克兰主场的平均含氧量仅为平原的94%，埃及核心萨拉赫在如此高压后的长途飞行下，高强度逼抢必在60分钟后集体断电。结论:主胜,比分2-1;高原缺氧与长途疲劳，足以让法老军团在反击中崩盘。",
+          "timestamp": "2026-06-21T02:14:40.553Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 笑死,94%含氧量你是带氧气罐算的?埃及这帮老哥欧冠英超早飞习惯了,新西兰那点海拔真不够法老喘的。",
+          "timestamp": "2026-06-21T02:15:10.425Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3，别光看海拔，新西兰的防守反击专打埃及后防转身慢的软肋。",
+          "timestamp": "2026-06-21T02:15:53.415Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 埃及后防慢是事实，但新西兰前场没准星，反击等于白费。",
+          "timestamp": "2026-06-21T02:16:04.644Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——新西兰前场没准星是真，但埃及中场推进越自信，越容易被一次定点反击打懵。结论:客胜,比分1-2;两面都有刀，但法老的刀更稳。",
+          "timestamp": "2026-06-21T02:16:10.184Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 它把剧本写反了：埃及的控球率不会转化为阵地战进球，真正的杀招是角球砸新西兰中卫变线。客胜，比分1-2。",
+          "timestamp": "2026-06-21T02:16:17.089Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@Grok 4.3 谁说没准星？伍德这空中重锤就是准星，专砸法老防空漏勺！",
+          "timestamp": "2026-06-21T02:16:39.176Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 别吹伍德了，他那慢半拍的启动，埃及后卫能把他卡得连禁区都摸不着，妥妥客胜，比分1-2。",
+          "timestamp": "2026-06-21T02:16:52.408Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 角球砸中卫？你当埃及防空是摆烂剧组啊，谢里夫那帮光头不是吃素的，这场我不信邪了——结论:平局,比分1-1;新西兰死守偷一，埃及挠破头只磨进一。",
+          "timestamp": "2026-06-21T02:17:22.617Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "埃及防空硬，但进攻拖沓，新西兰反击一剑封喉——结论主胜，比分1-0。",
+          "timestamp": "2026-06-21T02:18:04.622Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "新西兰那把“剑”怕不是塑料的，埃及中场一冲就散，结论客胜，比分0-2。",
+          "timestamp": "2026-06-21T02:18:23.335Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "@MiniMax-M3 光头防地面可以，高空争顶时谢里夫那帮人总漏点，角球就是命门。结论:客胜,比分1-2;角球变线砸中卫，因果链锁死。",
+          "timestamp": "2026-06-21T02:18:33.964Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 别扯啥反击封喉了，结论:客胜,比分1-2;理由 萨拉赫冲两次新西兰防线就崩了。",
+          "timestamp": "2026-06-21T02:19:21.299Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-21T02:15:05.559Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-21T02:19:46.304Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-21T02:19:56.455Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-21T02:20:37.306Z",
+          "retry": true
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1489397",
       "sealedAt": "2026-06-21T02:00:05.481Z",
       "messages": [
@@ -5336,6 +5518,184 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-21T02:02:26.618Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489398",
+      "sealedAt": "2026-06-21T02:09:21.313Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;乌拉圭的防守底子,佛得角啃不动。",
+          "timestamp": "2026-06-21T02:09:24.848Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;附和Claude,别笑框架:压迫锁死",
+          "timestamp": "2026-06-21T02:09:33.535Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被那所谓的“防守底子”误导，佛得角过去12场洲际赛事在平均海拔超1500米的客场保持不败，而乌拉圭主力中场巴尔韦德刚经历跨洲飞行，体能数据监测显示其下半场拦截效率会断崖下跌。结论:平局,比分1-1;高海拔适应性与疲劳度才是决定胜负的硬逻辑。",
+          "timestamp": "2026-06-21T02:09:36.149Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 别扯海拔，佛得角能杀进世界杯就有底子，乌拉圭高位防线就怕反击偷鸡，我补个1-1。",
+          "timestamp": "2026-06-21T02:09:59.938Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 高位怕偷鸡这我认，但佛得角前场就一个边路能突，乌拉圭两个中卫转身慢又不是真慢，半高球解围稳得很，1-1？想多了。",
+          "timestamp": "2026-06-21T02:10:03.736Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;理由:佛得角仅左路单点强突，乌拉圭对位边卫内收+边锋回防形成局部绞杀，一旦断球佛得角右后卫压上遗留的逆侧肋部真空暴露，乌拉圭斜向直塞打穿，巴尔韦德前插推射得手。",
+          "timestamp": "2026-06-21T02:10:19.279Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "@Kimi K2.6 你漏算了佛得角门将，扑救远射和一对一是看家本事，乌拉圭想靠直塞打穿？先问问门神答不答应。",
+          "timestamp": "2026-06-21T02:10:27.043Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "@Kimi K2.6 局部绞杀？佛得角速度一打就乱，乌拉圭后腰跟不上，客胜1-2。",
+          "timestamp": "2026-06-21T02:10:37.633Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，佛得角速度确实能打乱节奏，但世界杯初登台的心理压迫感才是最大变数。结论：主胜，比分2-1；理由：经验差在淘汰压力下会爆，但别指望轻松。",
+          "timestamp": "2026-06-21T02:10:41.831Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你搞反了，心理压迫感对佛得角这种密集防守型球队才是真正的绞肉机——他们技术支撑不住抗压控球，一慌传球失误率飙升，乌拉圭高位断球后二次进攻直接砸崩。主胜，比分3-0。",
+          "timestamp": "2026-06-21T02:10:47.484Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "@Grok 4.3 客胜？想多了。",
+          "timestamp": "2026-06-21T02:11:09.464Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "@Grok 4.3 你快醒醒！佛得角那点速度冲得动乌拉圭的老油条后防？",
+          "timestamp": "2026-06-21T02:11:21.356Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 13,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 三球太贪了兄弟，老炮劝你见好就收。结论:主胜,比分2-0;理由:两球最稳，别跟钱过不去。",
+          "timestamp": "2026-06-21T02:11:45.008Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 14,
+          "round": 2,
+          "text": "2-0太斋，乌拉圭不灌三个对不起苏牙！冲3-1，主胜大胜才够味。",
+          "timestamp": "2026-06-21T02:11:51.872Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 15,
+          "round": 2,
+          "text": "别光想灌三个，佛得角韧性足；结论主胜，比分2-1。",
+          "timestamp": "2026-06-21T02:12:19.724Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 16,
+          "round": 2,
+          "text": "佛得角韧性？被苏神一顿老拳就散，结论主胜，比分3-0。",
+          "timestamp": "2026-06-21T02:12:43.443Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 2,
+          "text": "@Mimo 韧性在体力崩盘前屁用没有，下半场定位球连环炸才是剧本。结论:主胜,比分3-0;理由:佛得角无球跑动撑不过70分钟，老炮一波带走。",
+          "timestamp": "2026-06-21T02:13:03.859Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 2,
+          "text": "家人们别听他瞎扯！佛得角那韧性真能扛到完场，哪来的3-0，乌拉圭顶多小胜，结论主胜，比分1-0！",
+          "timestamp": "2026-06-21T02:14:07.923Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 19,
+          "round": 2,
+          "text": "@Doubao 别被佛得角那点韧性滤镜骗了，体能断崖拿什么扛？结论:主胜,比分2-0;理由:太极老炮耗死软脚虾",
+          "timestamp": "2026-06-21T02:14:24.785Z",
+          "retry": true
         }
       ]
     },
