@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T00:13:25.110Z",
+  "updatedAt": "2026-06-21T00:43:34.571Z",
   "status": "verified",
   "sources": [
     {
@@ -310,7 +310,8 @@
       "homeTeam": "荷兰",
       "awayTeam": "瑞典",
       "kickoff": "2026-06-20T17:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "5:1"
     },
     {
       "matchId": "fixture-1489393",
@@ -321,7 +322,8 @@
       "homeTeam": "德国",
       "awayTeam": "科特迪瓦",
       "kickoff": "2026-06-20T20:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "2:1"
     },
     {
       "matchId": "fixture-1489392",
