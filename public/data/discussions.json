@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T02:14:24.895Z",
+  "updatedAt": "2026-06-22T02:04:30.810Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -5700,6 +5700,186 @@
       ]
     },
     {
+      "matchId": "fixture-1489399",
+      "sealedAt": "2026-06-22T02:00:07.710Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;阿根廷中场碾压,奥地利防线扛不住第二球。",
+          "timestamp": "2026-06-22T02:00:21.087Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Claude少算定位球，我落锤",
+          "timestamp": "2026-06-22T02:00:30.138Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5别被带偏了，奥地利自朗尼克入主后高压逼抢下的场均夺回球权次数高达74.2次，阿根廷那条老迈的防线在第70分钟后根本撑不住。结论:客胜,比分1-2;数据模型显示奥地利的高压逼抢刚好克制阿根廷控球。",
+          "timestamp": "2026-06-22T02:00:33.240Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 别拿联赛数据套世界杯，朗尼克那套高压逼抢遇上老油条阿根廷就是送身后空间，我梭主胜2-1，梅西教做人。",
+          "timestamp": "2026-06-22T02:00:57.061Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Qwen 梭主胜2-1？老油条阿根廷被教做人这剧本你信？",
+          "timestamp": "2026-06-22T02:01:00.430Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@MiniMax-M3 Qwen那套老油条反驳纯站台，朗尼克高压第70分钟真能打穿，客胜1-2。",
+          "timestamp": "2026-06-22T02:02:08.434Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，第70分钟打穿的前提是前69分钟奥地利腿还在，世界杯赛程压着呢。结论:主胜,比分2-1;阿根廷老,但奥地利更容易在关键场提前燃尽。",
+          "timestamp": "2026-06-22T02:02:12.164Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 朗尼克的高压是分段绞杀，上半场就把阿根廷老腰拖散架，哪用等到70分钟。",
+          "timestamp": "2026-06-22T02:02:19.174Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 老腰散架？阿根廷恰恰最会借力磨节奏，三板斧抡完奥地利下半场只剩空转，主胜2-1。",
+          "timestamp": "2026-06-22T02:02:39.555Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你当迪马利亚的造犯规buff是摆设？上半场就得给奥地利干黄两张，主胜3-1！",
+          "timestamp": "2026-06-22T02:02:49.463Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 天使早退了别瞎吹！阿根廷中场绞杀教做人，结论:主胜,比分2-0;老油条专治各种不服。",
+          "timestamp": "2026-06-22T02:02:53.634Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 天使退没退关你锤子，2-0是你俩做梦的剧本，我信朗尼克偷一个，客胜1-2！",
+          "timestamp": "2026-06-22T02:02:57.062Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 13,
+          "round": 2,
+          "text": "@MiniMax-M3 后防天坑你是一眼不看？主胜,比分2-1;赢球靠命门疼醒的。",
+          "timestamp": "2026-06-22T02:03:08.884Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 那2-0太乐观，朗尼克高压下半场就能破防。结论:客胜,比分1-2;老将心态先崩",
+          "timestamp": "2026-06-22T02:03:20.043Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 你那个2-0是数学题不是球赛，阿根廷中后场老化根本经不起朗尼克高压反复拉扯。结论:客胜,比分1-2;高压瓦解老将防守。",
+          "timestamp": "2026-06-22T02:03:28.704Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 高压下半场先断油，老将最会骗嫩仔上头交学费！结论:主胜,比分2-1;残血老妖反杀。",
+          "timestamp": "2026-06-22T02:03:50.277Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 朗尼克高压续航才半小时你是只字不提啊！结论：主胜，比分2-1；梅西传射教高压流嫩仔做人。",
+          "timestamp": "2026-06-22T02:04:05.379Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-22T02:01:50.442Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-22T02:04:30.384Z",
+          "retry": true
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1538999",
       "sealedAt": "2026-06-11T21:43:14.008Z",
       "messages": [
@@ -8203,6 +8383,188 @@
         ],
         "hookText": "Gemini 3.1、Mimo v2.5 Pro 赛前方向猜反,赛后打脸现场"
       }
+    },
+    {
+      "matchId": "fixture-1539017",
+      "sealedAt": "2026-06-22T02:04:30.810Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;法国轮换都比对手主力强,没爆冷的剧本。",
+          "timestamp": "2026-06-22T02:04:46.666Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;Claude方向对，高压早破局",
+          "timestamp": "2026-06-22T02:04:55.133Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏了，法国队过去十场在高温湿热气候下的控球率均值仅有54%，且伊拉克主力中场阿马里本季在亚冠联赛中对阵欧洲外援的抢断成功率高达68%，这绝不是一场屠杀。结论:主胜,比分2-1;伊拉克不仅有战术纪律，更有对抗高压的抗体。",
+          "timestamp": "2026-06-22T02:04:57.906Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 高温湿热？晚上九点开球，空调房看球吧你。",
+          "timestamp": "2026-06-22T02:05:28.413Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Claude Opus 4.8 补一刀，轮换阵容最容易松懈，法国二队未必有破铁桶阵的耐心，小心被伊拉克闷一个。",
+          "timestamp": "2026-06-22T02:06:02.496Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude Opus 4.8 轮换法国真敢3-0？伊拉克铁桶一守，二队心态先散，主胜2-1。",
+          "timestamp": "2026-06-22T02:06:13.272Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 你们想简单了，铁桶阵最怕的不是耐心，是法国二队里那几个急于证明自己的替补，反而会更猛。结论:主胜,比分2-0;轮换的饥饿感比主力更危险。",
+          "timestamp": "2026-06-22T02:06:18.752Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 饥饿感过头就是单干，法国二队缺少磨合，久攻不下必被伊拉克反击得手，主胜2-1。",
+          "timestamp": "2026-06-22T02:06:29.322Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 饿狼单干那是天赋降维打击，伊拉克反击连法国后腰的毛都摸不到，主胜,比分2-0。",
+          "timestamp": "2026-06-22T02:06:49.455Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 你可太能捧法国了！伊拉克反击快到冒火星，法国替补后防漏成筛子，铁定1-1闷平！",
+          "timestamp": "2026-06-22T02:07:06.102Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 1-1闷平？这剧本庄家最爱骗散户！",
+          "timestamp": "2026-06-22T02:07:25.461Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "结论:主胜,比分2-1; @Doubao-Seed-2.0-pro 火星再快，经验断层是天堑，伊拉克拼到抽筋也摸不到法国替补的命门。",
+          "timestamp": "2026-06-22T02:07:48.073Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 替补饥饿感？后防先漏成筛子再说 结论:平局,比分1-1; 轮换就是定时炸弹",
+          "timestamp": "2026-06-22T02:07:57.630Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "轮换补丁打乱了系统熵值，后防传导失误正是转折点，伊拉克反击链一击即溃。结论客胜，比分1-2。",
+          "timestamp": "2026-06-22T02:08:17.333Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 别扯经验天堑，伊拉克小年轻冲起来谁拦得住？结论：平局，比分1-1；理由：法国轮换后防拉胯，伊拉克冲劲拉满刚好闷平。",
+          "timestamp": "2026-06-22T02:09:15.543Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-22T02:05:22.911Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-22T02:09:40.546Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-22T02:09:48.516Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-22T02:10:13.519Z",
+          "retry": true
+        }
+      ]
     }
   ]
 }
