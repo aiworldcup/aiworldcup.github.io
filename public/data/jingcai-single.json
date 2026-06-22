@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T03:01:57.990Z",
+  "updatedAt": "2026-06-22T03:52:17.881Z",
   "status": "verified",
   "sources": [
     {
@@ -382,7 +382,8 @@
       "homeTeam": "新西兰",
       "awayTeam": "埃及",
       "kickoff": "2026-06-22T01:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "1:3"
     },
     {
       "matchId": "fixture-1489399",
