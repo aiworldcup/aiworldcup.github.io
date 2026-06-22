@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T06:35:22.447Z",
+  "updatedAt": "2026-06-22T00:20:57.127Z",
   "status": "verified",
   "sources": [
     {
@@ -350,6 +350,17 @@
       "officialScore": "0:4"
     },
     {
+      "matchId": "fixture-1489395",
+      "jingcaiMatchId": "2040248",
+      "matchNum": "周日038",
+      "matchDate": "2026-06-22",
+      "league": "世界杯",
+      "homeTeam": "比利时",
+      "awayTeam": "伊朗",
+      "kickoff": "2026-06-21T19:00:00+00:00",
+      "sourceScope": "all-results"
+    },
+    {
       "matchId": "fixture-1489398",
       "jingcaiMatchId": "2040249",
       "matchNum": "周日039",
@@ -357,7 +368,8 @@
       "league": "世界杯",
       "homeTeam": "乌拉圭",
       "awayTeam": "佛得角",
-      "kickoff": "2026-06-21T22:00:00+00:00"
+      "kickoff": "2026-06-21T22:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
