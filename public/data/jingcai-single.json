@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T00:31:02.333Z",
+  "updatedAt": "2026-06-22T01:11:18.989Z",
   "status": "verified",
   "sources": [
     {
@@ -372,6 +372,17 @@
       "kickoff": "2026-06-21T22:00:00+00:00",
       "sourceScope": "single-fixed",
       "officialScore": "2:2"
+    },
+    {
+      "matchId": "fixture-1489396",
+      "jingcaiMatchId": "2040250",
+      "matchNum": "周日040",
+      "matchDate": "2026-06-22",
+      "league": "世界杯",
+      "homeTeam": "新西兰",
+      "awayTeam": "埃及",
+      "kickoff": "2026-06-22T01:00:00+00:00",
+      "sourceScope": "all-results"
     }
   ]
 }
