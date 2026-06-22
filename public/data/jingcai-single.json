@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T01:11:18.989Z",
+  "updatedAt": "2026-06-22T03:01:57.990Z",
   "status": "verified",
   "sources": [
     {
@@ -383,6 +383,26 @@
       "awayTeam": "埃及",
       "kickoff": "2026-06-22T01:00:00+00:00",
       "sourceScope": "all-results"
+    },
+    {
+      "matchId": "fixture-1489399",
+      "jingcaiMatchId": "2040251",
+      "matchNum": "周一041",
+      "matchDate": "2026-06-23",
+      "league": "世界杯",
+      "homeTeam": "阿根廷",
+      "awayTeam": "奥地利",
+      "kickoff": "2026-06-22T17:00:00+00:00"
+    },
+    {
+      "matchId": "fixture-1489401",
+      "jingcaiMatchId": "2040253",
+      "matchNum": "周一043",
+      "matchDate": "2026-06-23",
+      "league": "世界杯",
+      "homeTeam": "挪威",
+      "awayTeam": "塞内加尔",
+      "kickoff": "2026-06-23T00:00:00+00:00"
     }
   ]
 }
