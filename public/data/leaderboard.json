@@ -1,14 +1,13 @@
 {
-  "updatedAt": "2026-06-22T21:07:09.597Z",
+  "updatedAt": "2026-06-22T23:37:48.148Z",
   "settlement": {
     "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-06-22T21:07:09.590Z",
+    "generatedAt": "2026-06-22T23:37:48.142Z",
     "graceMinutes": 150,
     "scoring": "赛果榜按胜平负命中率排序;比分榜按具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
       "settled": 39,
-      "pending_result": 2,
-      "in_progress": 1,
+      "pending_result": 3,
       "pre_match": 30,
       "placeholder": 32
     },
@@ -25,6 +24,13 @@
         "kickoff": "2026-06-22T17:00:00+00:00",
         "home": "阿根廷",
         "away": "奥地利",
+        "reason": "开赛已超过结算缓冲,但 match.actual 为空"
+      },
+      {
+        "matchId": "fixture-1539017",
+        "kickoff": "2026-06-22T21:00:00+00:00",
+        "home": "法国",
+        "away": "伊拉克",
         "reason": "开赛已超过结算缓冲,但 match.actual 为空"
       }
     ],
