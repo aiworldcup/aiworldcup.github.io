@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T00:20:57.127Z",
+  "updatedAt": "2026-06-22T00:31:02.333Z",
   "status": "verified",
   "sources": [
     {
@@ -358,7 +358,8 @@
       "homeTeam": "比利时",
       "awayTeam": "伊朗",
       "kickoff": "2026-06-21T19:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "0:0"
     },
     {
       "matchId": "fixture-1489398",
@@ -369,7 +370,8 @@
       "homeTeam": "乌拉圭",
       "awayTeam": "佛得角",
       "kickoff": "2026-06-21T22:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:2"
     }
   ]
 }
