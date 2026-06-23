@@ -7,7 +7,7 @@
     "totalMatches": 104,
     "placeholders": 32,
     "syncedAt": "2026-06-16T10:22:59.587Z",
-    "oddsSyncedAt": "2026-06-17T16:10:07.954Z"
+    "oddsSyncedAt": "2026-06-23T11:21:30.290Z"
   },
   "matches": [
     {
@@ -2124,11 +2124,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 6.9,
+          "draw": 4.3,
+          "away": 1.33
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040257,
+        "sourceMatchNum": "周二047",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:15.354Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2154,11 +2162,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.35,
+          "draw": 3.9,
+          "away": 7.6
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040258,
+        "sourceMatchNum": "周二048",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:15.917Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2184,11 +2200,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 2.3,
+          "draw": 2.62,
+          "away": 3.2
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040285,
+        "sourceMatchNum": "周三049",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:16.492Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2214,11 +2238,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.38,
+          "draw": 4.45,
+          "away": 5.55
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040286,
+        "sourceMatchNum": "周三050",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:17.046Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2274,11 +2306,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 7.85,
+          "draw": 4.8,
+          "away": 1.26
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040287,
+        "sourceMatchNum": "周三051",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:18.186Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2304,11 +2344,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 3.4,
+          "draw": 3.3,
+          "away": 1.88
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040290,
+        "sourceMatchNum": "周三054",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:18.890Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2334,11 +2382,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 4.85,
+          "draw": 3.35,
+          "away": 1.6
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040289,
+        "sourceMatchNum": "周三053",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:19.450Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2364,11 +2420,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 3.62,
+          "draw": 3.6,
+          "away": 1.74
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040291,
+        "sourceMatchNum": "周四055",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:20.037Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2424,11 +2488,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.86,
+          "draw": 3.25,
+          "away": 3.52
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040294,
+        "sourceMatchNum": "周四058",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:21.176Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2484,11 +2556,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 3.2,
+          "draw": 3.45,
+          "away": 1.9
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040296,
+        "sourceMatchNum": "周四060",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:22.699Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -2514,11 +2594,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 2.54,
+          "draw": 2.05,
+          "away": 4.05
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040295,
+        "sourceMatchNum": "周四059",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-23T11:21:23.258Z"
       },
       "sealedAt": null,
       "actual": null,

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T11:12:15.623Z",
+  "updatedAt": "2026-06-23T11:22:34.589Z",
   "source": {
     "matchesPath": "public/data/matches.json",
     "discussionsPath": "public/data/discussions.json",
@@ -10,10 +10,10 @@
     "targetMatches": 104,
     "totalMatches": 104,
     "counts": {
-      "strong-value": 22,
-      "watch": 5,
+      "strong-value": 23,
+      "watch": 15,
       "light-value": 4,
-      "missing-odds": 73
+      "missing-odds": 62
     },
     "valueDirections": [
       {
@@ -171,13 +171,19 @@
         "valueSide": "客胜被低估",
         "ev": 0.1433,
         "probabilityDiff": 0.0752
+      },
+      {
+        "matchId": "fixture-1489403",
+        "valueSide": "平局被低估",
+        "ev": 0.1148,
+        "probabilityDiff": 0.0533
       }
     ]
   },
   "matches": [
     {
       "matchId": "fixture-1489369",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -262,7 +268,7 @@
     },
     {
       "matchId": "fixture-1538999",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -347,7 +353,7 @@
     },
     {
       "matchId": "fixture-1539000",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -432,7 +438,7 @@
     },
     {
       "matchId": "fixture-1489370",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -517,7 +523,7 @@
     },
     {
       "matchId": "fixture-1489373",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -602,7 +608,7 @@
     },
     {
       "matchId": "fixture-1489371",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -687,7 +693,7 @@
     },
     {
       "matchId": "fixture-1489372",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -772,7 +778,7 @@
     },
     {
       "matchId": "fixture-1539001",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -857,7 +863,7 @@
     },
     {
       "matchId": "fixture-1489374",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -942,7 +948,7 @@
     },
     {
       "matchId": "fixture-1489376",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1027,7 +1033,7 @@
     },
     {
       "matchId": "fixture-1489375",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1112,7 +1118,7 @@
     },
     {
       "matchId": "fixture-1539002",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1197,7 +1203,7 @@
     },
     {
       "matchId": "fixture-1489380",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1282,7 +1288,7 @@
     },
     {
       "matchId": "fixture-1489377",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1367,7 +1373,7 @@
     },
     {
       "matchId": "fixture-1489379",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1452,7 +1458,7 @@
     },
     {
       "matchId": "fixture-1489378",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1537,7 +1543,7 @@
     },
     {
       "matchId": "fixture-1489383",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1622,7 +1628,7 @@
     },
     {
       "matchId": "fixture-1539016",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1707,7 +1713,7 @@
     },
     {
       "matchId": "fixture-1489381",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1792,7 +1798,7 @@
     },
     {
       "matchId": "fixture-1489382",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1877,7 +1883,7 @@
     },
     {
       "matchId": "fixture-1539003",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1962,7 +1968,7 @@
     },
     {
       "matchId": "fixture-1489384",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2047,7 +2053,7 @@
     },
     {
       "matchId": "fixture-1489385",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2132,7 +2138,7 @@
     },
     {
       "matchId": "fixture-1489386",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2217,7 +2223,7 @@
     },
     {
       "matchId": "fixture-1539004",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2302,7 +2308,7 @@
     },
     {
       "matchId": "fixture-1539005",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2387,7 +2393,7 @@
     },
     {
       "matchId": "fixture-1489387",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2472,7 +2478,7 @@
     },
     {
       "matchId": "fixture-1489388",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2557,7 +2563,7 @@
     },
     {
       "matchId": "fixture-1489391",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2642,7 +2648,7 @@
     },
     {
       "matchId": "fixture-1489390",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2727,7 +2733,7 @@
     },
     {
       "matchId": "fixture-1489389",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2738,18 +2744,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1539006",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2834,7 +2840,7 @@
     },
     {
       "matchId": "fixture-1539007",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2845,18 +2851,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489393",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2867,18 +2873,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489392",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2889,18 +2895,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489394",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2911,18 +2917,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489397",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2933,18 +2939,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489395",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2955,18 +2961,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489398",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2977,18 +2983,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489396",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -2999,18 +3005,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489399",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3021,18 +3027,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1539017",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3043,18 +3049,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489401",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3065,18 +3071,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489400",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3087,18 +3093,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "历史盘口缺失",
+        "shortLabel": "历史盘口缺失",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "该场缺少可校验的赛前胜平负赔率，赛后不补造历史盘口，因此不计算盘口博弈方向。",
+        "sourceLabel": "赛前盘口未留存",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489404",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3109,18 +3115,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489402",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3131,106 +3137,358 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489403",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:15.354Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
-        "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
-        "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "status": "strong-value",
+        "direction": "平局",
+        "valueSide": "平局被低估",
+        "shortLabel": "平局被低估",
+        "confidence": "B",
+        "riskLevel": "中高",
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "模型认为平局相对市场有价差；若临场阵容或赔率快速变化，需要重新评估。",
+        "sourceLabel": "模型共识 12 票",
+        "modelSource": "models",
+        "sampleSize": 12,
+        "modelProbabilities": {
+          "home": 0.037,
+          "draw": 0.2593,
+          "away": 0.7037
+        },
+        "marketProbabilities": {
+          "home": 0.1283,
+          "draw": 0.2059,
+          "away": 0.6658
+        },
+        "overround": 0.1294,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.2593,
+          "marketProbability": 0.2059,
+          "probabilityDiff": 0.0533,
+          "diff": 0.0533,
+          "marketOdds": 4.3,
+          "fairOdds": 3.8571,
+          "ev": 0.1148
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.037,
+            "marketProbability": 0.1283,
+            "probabilityDiff": -0.0913,
+            "diff": -0.0913,
+            "marketOdds": 6.9,
+            "fairOdds": 27,
+            "ev": -0.7444
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2593,
+            "marketProbability": 0.2059,
+            "probabilityDiff": 0.0533,
+            "diff": 0.0533,
+            "marketOdds": 4.3,
+            "fairOdds": 3.8571,
+            "ev": 0.1148
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.7037,
+            "marketProbability": 0.6658,
+            "probabilityDiff": 0.0379,
+            "diff": 0.0379,
+            "marketOdds": 1.33,
+            "fairOdds": 1.4211,
+            "ev": -0.0641
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539008",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:15.917Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
-        "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
+        "riskLevel": "中高",
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "模型概率与市场定价差距不够大，当前更适合观望。",
+        "sourceLabel": "模型共识 12 票",
+        "modelSource": "models",
+        "sampleSize": 12,
+        "modelProbabilities": {
+          "home": 0.7037,
+          "draw": 0.1852,
+          "away": 0.1111
+        },
+        "marketProbabilities": {
+          "home": 0.6563,
+          "draw": 0.2272,
+          "away": 0.1166
+        },
+        "overround": 0.1287,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.7037,
+          "marketProbability": 0.6563,
+          "probabilityDiff": 0.0474,
+          "diff": 0.0474,
+          "marketOdds": 1.35,
+          "fairOdds": 1.4211,
+          "ev": -0.05
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.7037,
+            "marketProbability": 0.6563,
+            "probabilityDiff": 0.0474,
+            "diff": 0.0474,
+            "marketOdds": 1.35,
+            "fairOdds": 1.4211,
+            "ev": -0.05
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1852,
+            "marketProbability": 0.2272,
+            "probabilityDiff": -0.042,
+            "diff": -0.042,
+            "marketOdds": 3.9,
+            "fairOdds": 5.4,
+            "ev": -0.2778
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.1111,
+            "marketProbability": 0.1166,
+            "probabilityDiff": -0.0055,
+            "diff": -0.0055,
+            "marketOdds": 7.6,
+            "fairOdds": 9,
+            "ev": -0.1556
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489408",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:16.492Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.3851,
+          "draw": 0.3381,
+          "away": 0.2768
+        },
+        "marketProbabilities": {
+          "home": 0.3851,
+          "draw": 0.3381,
+          "away": 0.2768
+        },
+        "overround": 0.129,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.3851,
+          "marketProbability": 0.3851,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.3,
+          "fairOdds": 2.5966,
+          "ev": -0.1142
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.3851,
+            "marketProbability": 0.3851,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.3,
+            "fairOdds": 2.5966,
+            "ev": -0.1142
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.3381,
+            "marketProbability": 0.3381,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.62,
+            "fairOdds": 2.9579,
+            "ev": -0.1142
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.2768,
+            "marketProbability": 0.2768,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.2,
+            "fairOdds": 3.6127,
+            "ev": -0.1142
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539009",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:17.046Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.6415,
+          "draw": 0.1989,
+          "away": 0.1595
+        },
+        "marketProbabilities": {
+          "home": 0.6415,
+          "draw": 0.1989,
+          "away": 0.1595
+        },
+        "overround": 0.1295,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.6415,
+          "marketProbability": 0.6415,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 1.38,
+          "fairOdds": 1.5588,
+          "ev": -0.1147
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.6415,
+            "marketProbability": 0.6415,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.38,
+            "fairOdds": 1.5588,
+            "ev": -0.1147
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1989,
+            "marketProbability": 0.1989,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 4.45,
+            "fairOdds": 5.0264,
+            "ev": -0.1147
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.1595,
+            "marketProbability": 0.1595,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 5.55,
+            "fairOdds": 6.2689,
+            "ev": -0.1147
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489405",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3241,106 +3499,358 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489406",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:18.186Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.1128,
+          "draw": 0.1845,
+          "away": 0.7027
+        },
+        "marketProbabilities": {
+          "home": 0.1128,
+          "draw": 0.1845,
+          "away": 0.7027
+        },
+        "overround": 0.1294,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.1845,
+          "marketProbability": 0.1845,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 4.8,
+          "fairOdds": 5.421,
+          "ev": -0.1146
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.1128,
+            "marketProbability": 0.1128,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 7.85,
+            "fairOdds": 8.8656,
+            "ev": -0.1146
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1845,
+            "marketProbability": 0.1845,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 4.8,
+            "fairOdds": 5.421,
+            "ev": -0.1146
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.7027,
+            "marketProbability": 0.7027,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.26,
+            "fairOdds": 1.423,
+            "ev": -0.1146
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539010",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:18.890Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.2605,
+          "draw": 0.2684,
+          "away": 0.4711
+        },
+        "marketProbabilities": {
+          "home": 0.2605,
+          "draw": 0.2684,
+          "away": 0.4711
+        },
+        "overround": 0.1291,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.2605,
+          "marketProbability": 0.2605,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 3.4,
+          "fairOdds": 3.8388,
+          "ev": -0.1143
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.2605,
+            "marketProbability": 0.2605,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.4,
+            "fairOdds": 3.8388,
+            "ev": -0.1143
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2684,
+            "marketProbability": 0.2684,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.3,
+            "fairOdds": 3.7259,
+            "ev": -0.1143
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.4711,
+            "marketProbability": 0.4711,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.88,
+            "fairOdds": 2.1226,
+            "ev": -0.1143
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489407",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:19.450Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.1825,
+          "draw": 0.2642,
+          "away": 0.5532
+        },
+        "marketProbabilities": {
+          "home": 0.1825,
+          "draw": 0.2642,
+          "away": 0.5532
+        },
+        "overround": 0.1297,
+        "primary": {
+          "key": "away",
+          "label": "客胜",
+          "shortLabel": "客",
+          "modelProbability": 0.5532,
+          "marketProbability": 0.5532,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 1.6,
+          "fairOdds": 1.8075,
+          "ev": -0.1148
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.1825,
+            "marketProbability": 0.1825,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 4.85,
+            "fairOdds": 5.479,
+            "ev": -0.1148
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2642,
+            "marketProbability": 0.2642,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.35,
+            "fairOdds": 3.7845,
+            "ev": -0.1148
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.5532,
+            "marketProbability": 0.5532,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.6,
+            "fairOdds": 1.8075,
+            "ev": -0.1148
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489410",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:20.037Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.2447,
+          "draw": 0.2461,
+          "away": 0.5092
+        },
+        "marketProbabilities": {
+          "home": 0.2447,
+          "draw": 0.2461,
+          "away": 0.5092
+        },
+        "overround": 0.1287,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.2447,
+          "marketProbability": 0.2447,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 3.62,
+          "fairOdds": 4.086,
+          "ev": -0.1141
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.2447,
+            "marketProbability": 0.2447,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.62,
+            "fairOdds": 4.086,
+            "ev": -0.1141
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2461,
+            "marketProbability": 0.2461,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.6,
+            "fairOdds": 4.0634,
+            "ev": -0.1141
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.5092,
+            "marketProbability": 0.5092,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.74,
+            "fairOdds": 1.964,
+            "ev": -0.1141
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489409",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3351,40 +3861,103 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1539011",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:21.176Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.476,
+          "draw": 0.2724,
+          "away": 0.2515
+        },
+        "marketProbabilities": {
+          "home": 0.476,
+          "draw": 0.2724,
+          "away": 0.2515
+        },
+        "overround": 0.1294,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.2724,
+          "marketProbability": 0.2724,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 3.25,
+          "fairOdds": 3.6706,
+          "ev": -0.1146
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.476,
+            "marketProbability": 0.476,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.86,
+            "fairOdds": 2.1007,
+            "ev": -0.1146
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2724,
+            "marketProbability": 0.2724,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.25,
+            "fairOdds": 3.6706,
+            "ev": -0.1146
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.2515,
+            "marketProbability": 0.2515,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.52,
+            "fairOdds": 3.9756,
+            "ev": -0.1146
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489412",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3395,62 +3968,188 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1539012",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:22.699Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.2769,
+          "draw": 0.2568,
+          "away": 0.4663
+        },
+        "marketProbabilities": {
+          "home": 0.2769,
+          "draw": 0.2568,
+          "away": 0.4663
+        },
+        "overround": 0.1287,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.2769,
+          "marketProbability": 0.2769,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 3.2,
+          "fairOdds": 3.6117,
+          "ev": -0.114
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.2769,
+            "marketProbability": 0.2769,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.2,
+            "fairOdds": 3.6117,
+            "ev": -0.114
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2568,
+            "marketProbability": 0.2568,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.45,
+            "fairOdds": 3.8939,
+            "ev": -0.114
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.4663,
+            "marketProbability": 0.4663,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.9,
+            "fairOdds": 2.1445,
+            "ev": -0.114
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489411",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "sporttery",
+        "oddsSyncedAt": "2026-06-23T11:21:23.258Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
-        "rows": []
+        "marketDirection": "市场更看好平局",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.3489,
+          "draw": 0.4323,
+          "away": 0.2188
+        },
+        "marketProbabilities": {
+          "home": 0.3489,
+          "draw": 0.4323,
+          "away": 0.2188
+        },
+        "overround": 0.1284,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.4323,
+          "marketProbability": 0.4323,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.05,
+          "fairOdds": 2.3133,
+          "ev": -0.1138
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.3489,
+            "marketProbability": 0.3489,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.54,
+            "fairOdds": 2.8662,
+            "ev": -0.1138
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.4323,
+            "marketProbability": 0.4323,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.05,
+            "fairOdds": 2.3133,
+            "ev": -0.1138
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.2188,
+            "marketProbability": 0.2188,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 4.05,
+            "fairOdds": 4.5701,
+            "ev": -0.1138
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539074",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3461,18 +4160,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489416",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3483,18 +4182,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489417",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3505,18 +4204,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489413",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3527,18 +4226,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489414",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3549,18 +4248,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489415",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3571,18 +4270,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489420",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3593,18 +4292,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489422",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3615,18 +4314,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489419",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3637,18 +4336,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1539013",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3659,18 +4358,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489418",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3681,18 +4380,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "fixture-1489421",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3703,18 +4402,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "暂无真实盘口",
+        "shortLabel": "暂无真实盘口",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
+        "sourceLabel": "主备赔率源未覆盖",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-01",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3725,18 +4424,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-02",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3747,18 +4446,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-03",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3769,18 +4468,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-04",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3791,18 +4490,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-05",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3813,18 +4512,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-06",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3835,18 +4534,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-07",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3857,18 +4556,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-08",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3879,18 +4578,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-09",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3901,18 +4600,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-10",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3923,18 +4622,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-11",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3945,18 +4644,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-12",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3967,18 +4666,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-13",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3989,18 +4688,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-14",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4011,18 +4710,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-15",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4033,18 +4732,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-16",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4055,18 +4754,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-17",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4077,18 +4776,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-18",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4099,18 +4798,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-19",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4121,18 +4820,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-20",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4143,18 +4842,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-21",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4165,18 +4864,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-22",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4187,18 +4886,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-23",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4209,18 +4908,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-24",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4231,18 +4930,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-25",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4253,18 +4952,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-26",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4275,18 +4974,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-27",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4297,18 +4996,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-28",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4319,18 +5018,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-29",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4341,18 +5040,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-30",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4363,18 +5062,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-31",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4385,18 +5084,18 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     },
     {
       "matchId": "wc2026-ko-32",
-      "generatedAt": "2026-06-23T11:12:15.623Z",
+      "generatedAt": "2026-06-23T11:22:34.589Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4407,12 +5106,12 @@
       "marketEdge": {
         "status": "missing-odds",
         "direction": "观望",
-        "valueSide": "赔率待同步",
-        "shortLabel": "赔率待同步",
+        "valueSide": "盘口未开",
+        "shortLabel": "盘口未开",
         "confidence": "-",
         "riskLevel": "高",
-        "suggestion": "同步真实胜平负赔率后，才能计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "等待真实赔率",
+        "suggestion": "淘汰赛或待定对阵尚未产生真实胜平负盘口，暂不计算盘口博弈方向。",
+        "sourceLabel": "等待官方对阵",
         "rows": []
       }
     }
