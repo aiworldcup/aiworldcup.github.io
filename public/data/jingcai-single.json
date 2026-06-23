@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T01:18:18.729Z",
+  "updatedAt": "2026-06-23T02:28:41.311Z",
   "status": "verified",
   "sources": [
     {
@@ -418,7 +418,8 @@
       "homeTeam": "挪威",
       "awayTeam": "塞内加尔",
       "kickoff": "2026-06-23T00:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "3:2"
     }
   ]
 }
