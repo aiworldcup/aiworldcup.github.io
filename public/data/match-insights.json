@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T11:32:48.351Z",
+  "updatedAt": "2026-06-23T11:43:02.435Z",
   "source": {
     "matchesPath": "public/data/matches.json",
     "discussionsPath": "public/data/discussions.json",
@@ -10,10 +10,10 @@
     "targetMatches": 104,
     "totalMatches": 104,
     "counts": {
-      "strong-value": 23,
-      "watch": 15,
+      "strong-value": 25,
+      "watch": 30,
       "light-value": 4,
-      "missing-odds": 62
+      "missing-odds": 45
     },
     "valueDirections": [
       {
@@ -173,6 +173,18 @@
         "probabilityDiff": 0.0752
       },
       {
+        "matchId": "fixture-1489404",
+        "valueSide": "客胜被低估",
+        "ev": 1.1111,
+        "probabilityDiff": 0.0609
+      },
+      {
+        "matchId": "fixture-1489402",
+        "valueSide": "客胜被低估",
+        "ev": 0.7778,
+        "probabilityDiff": 0.0513
+      },
+      {
         "matchId": "fixture-1489403",
         "valueSide": "平局被低估",
         "ev": 0.1148,
@@ -183,7 +195,7 @@
   "matches": [
     {
       "matchId": "fixture-1489369",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -268,7 +280,7 @@
     },
     {
       "matchId": "fixture-1538999",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -353,7 +365,7 @@
     },
     {
       "matchId": "fixture-1539000",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -438,7 +450,7 @@
     },
     {
       "matchId": "fixture-1489370",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -523,7 +535,7 @@
     },
     {
       "matchId": "fixture-1489373",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -608,7 +620,7 @@
     },
     {
       "matchId": "fixture-1489371",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -693,7 +705,7 @@
     },
     {
       "matchId": "fixture-1489372",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -778,7 +790,7 @@
     },
     {
       "matchId": "fixture-1539001",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -863,7 +875,7 @@
     },
     {
       "matchId": "fixture-1489374",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -948,7 +960,7 @@
     },
     {
       "matchId": "fixture-1489376",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1033,7 +1045,7 @@
     },
     {
       "matchId": "fixture-1489375",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1118,7 +1130,7 @@
     },
     {
       "matchId": "fixture-1539002",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1203,7 +1215,7 @@
     },
     {
       "matchId": "fixture-1489380",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1288,7 +1300,7 @@
     },
     {
       "matchId": "fixture-1489377",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1373,7 +1385,7 @@
     },
     {
       "matchId": "fixture-1489379",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1458,7 +1470,7 @@
     },
     {
       "matchId": "fixture-1489378",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1543,7 +1555,7 @@
     },
     {
       "matchId": "fixture-1489383",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1628,7 +1640,7 @@
     },
     {
       "matchId": "fixture-1539016",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1713,7 +1725,7 @@
     },
     {
       "matchId": "fixture-1489381",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1798,7 +1810,7 @@
     },
     {
       "matchId": "fixture-1489382",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1883,7 +1895,7 @@
     },
     {
       "matchId": "fixture-1539003",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1968,7 +1980,7 @@
     },
     {
       "matchId": "fixture-1489384",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2053,7 +2065,7 @@
     },
     {
       "matchId": "fixture-1489385",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2138,7 +2150,7 @@
     },
     {
       "matchId": "fixture-1489386",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2223,7 +2235,7 @@
     },
     {
       "matchId": "fixture-1539004",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2308,7 +2320,7 @@
     },
     {
       "matchId": "fixture-1539005",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2393,7 +2405,7 @@
     },
     {
       "matchId": "fixture-1489387",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2478,7 +2490,7 @@
     },
     {
       "matchId": "fixture-1489388",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2563,7 +2575,7 @@
     },
     {
       "matchId": "fixture-1489391",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2648,7 +2660,7 @@
     },
     {
       "matchId": "fixture-1489390",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2733,7 +2745,7 @@
     },
     {
       "matchId": "fixture-1489389",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2755,7 +2767,7 @@
     },
     {
       "matchId": "fixture-1539006",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2840,7 +2852,7 @@
     },
     {
       "matchId": "fixture-1539007",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2862,7 +2874,7 @@
     },
     {
       "matchId": "fixture-1489393",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2884,7 +2896,7 @@
     },
     {
       "matchId": "fixture-1489392",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2906,7 +2918,7 @@
     },
     {
       "matchId": "fixture-1489394",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2928,7 +2940,7 @@
     },
     {
       "matchId": "fixture-1489397",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2950,7 +2962,7 @@
     },
     {
       "matchId": "fixture-1489395",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2972,7 +2984,7 @@
     },
     {
       "matchId": "fixture-1489398",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2994,7 +3006,7 @@
     },
     {
       "matchId": "fixture-1489396",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -3016,7 +3028,7 @@
     },
     {
       "matchId": "fixture-1489399",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3038,7 +3050,7 @@
     },
     {
       "matchId": "fixture-1539017",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3060,7 +3072,7 @@
     },
     {
       "matchId": "fixture-1489401",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3082,7 +3094,7 @@
     },
     {
       "matchId": "fixture-1489400",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3104,51 +3116,177 @@
     },
     {
       "matchId": "fixture-1489404",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:12.746Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
-        "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
-        "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "status": "strong-value",
+        "direction": "客胜",
+        "valueSide": "客胜被低估",
+        "shortLabel": "客胜被低估",
+        "confidence": "B",
+        "riskLevel": "中",
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "模型认为客胜相对市场有价差；若临场阵容或赔率快速变化，需要重新评估。",
+        "sourceLabel": "模型共识 12 票",
+        "modelSource": "models",
+        "sampleSize": 12,
+        "modelProbabilities": {
+          "home": 0.7778,
+          "draw": 0.1111,
+          "away": 0.1111
+        },
+        "marketProbabilities": {
+          "home": 0.8374,
+          "draw": 0.1123,
+          "away": 0.0502
+        },
+        "overround": 0.0475,
+        "primary": {
+          "key": "away",
+          "label": "客胜",
+          "shortLabel": "客",
+          "modelProbability": 0.1111,
+          "marketProbability": 0.0502,
+          "probabilityDiff": 0.0609,
+          "diff": 0.0609,
+          "marketOdds": 19,
+          "fairOdds": 9,
+          "ev": 1.1111
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.7778,
+            "marketProbability": 0.8374,
+            "probabilityDiff": -0.0597,
+            "diff": -0.0597,
+            "marketOdds": 1.14,
+            "fairOdds": 1.2857,
+            "ev": -0.1133
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1111,
+            "marketProbability": 0.1123,
+            "probabilityDiff": -0.0012,
+            "diff": -0.0012,
+            "marketOdds": 8.5,
+            "fairOdds": 9,
+            "ev": -0.0556
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.1111,
+            "marketProbability": 0.0502,
+            "probabilityDiff": 0.0609,
+            "diff": 0.0609,
+            "marketOdds": 19,
+            "fairOdds": 9,
+            "ev": 1.1111
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489402",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:14.785Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
-        "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
-        "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "status": "strong-value",
+        "direction": "客胜",
+        "valueSide": "客胜被低估",
+        "shortLabel": "客胜被低估",
+        "confidence": "B",
+        "riskLevel": "中",
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "模型认为客胜相对市场有价差；若临场阵容或赔率快速变化，需要重新评估。",
+        "sourceLabel": "模型共识 12 票",
+        "modelSource": "models",
+        "sampleSize": 12,
+        "modelProbabilities": {
+          "home": 0.7037,
+          "draw": 0.1852,
+          "away": 0.1111
+        },
+        "marketProbabilities": {
+          "home": 0.8036,
+          "draw": 0.1366,
+          "away": 0.0598
+        },
+        "overround": 0.0457,
+        "primary": {
+          "key": "away",
+          "label": "客胜",
+          "shortLabel": "客",
+          "modelProbability": 0.1111,
+          "marketProbability": 0.0598,
+          "probabilityDiff": 0.0513,
+          "diff": 0.0513,
+          "marketOdds": 16,
+          "fairOdds": 9,
+          "ev": 0.7778
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.7037,
+            "marketProbability": 0.8036,
+            "probabilityDiff": -0.0999,
+            "diff": -0.0999,
+            "marketOdds": 1.19,
+            "fairOdds": 1.4211,
+            "ev": -0.1626
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1852,
+            "marketProbability": 0.1366,
+            "probabilityDiff": 0.0486,
+            "diff": 0.0486,
+            "marketOdds": 7,
+            "fairOdds": 5.4,
+            "ev": 0.2963
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.1111,
+            "marketProbability": 0.0598,
+            "probabilityDiff": 0.0513,
+            "diff": 0.0513,
+            "marketOdds": 16,
+            "fairOdds": 9,
+            "ev": 0.7778
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489403",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3233,7 +3371,7 @@
     },
     {
       "matchId": "fixture-1539008",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3318,7 +3456,7 @@
     },
     {
       "matchId": "fixture-1489408",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3403,7 +3541,7 @@
     },
     {
       "matchId": "fixture-1539009",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3488,29 +3626,92 @@
     },
     {
       "matchId": "fixture-1489405",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:17.188Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.8164,
+          "draw": 0.1274,
+          "away": 0.0562
+        },
+        "marketProbabilities": {
+          "home": 0.8164,
+          "draw": 0.1274,
+          "away": 0.0562
+        },
+        "overround": 0.0469,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.8164,
+          "marketProbability": 0.8164,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 1.17,
+          "fairOdds": 1.2248,
+          "ev": -0.0448
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.8164,
+            "marketProbability": 0.8164,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.17,
+            "fairOdds": 1.2248,
+            "ev": -0.0448
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1274,
+            "marketProbability": 0.1274,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 7.5,
+            "fairOdds": 7.8514,
+            "ev": -0.0448
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.0562,
+            "marketProbability": 0.0562,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 17,
+            "fairOdds": 17.7966,
+            "ev": -0.0448
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489406",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3595,7 +3796,7 @@
     },
     {
       "matchId": "fixture-1539010",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3680,7 +3881,7 @@
     },
     {
       "matchId": "fixture-1489407",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3765,7 +3966,7 @@
     },
     {
       "matchId": "fixture-1489410",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3850,29 +4051,92 @@
     },
     {
       "matchId": "fixture-1489409",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:19.164Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.0533,
+          "draw": 0.1128,
+          "away": 0.8339
+        },
+        "marketProbabilities": {
+          "home": 0.0533,
+          "draw": 0.1128,
+          "away": 0.8339
+        },
+        "overround": 0.0428,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.1128,
+          "marketProbability": 0.1128,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 8.5,
+          "fairOdds": 8.8635,
+          "ev": -0.041
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.0533,
+            "marketProbability": 0.0533,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 18,
+            "fairOdds": 18.7698,
+            "ev": -0.041
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1128,
+            "marketProbability": 0.1128,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 8.5,
+            "fairOdds": 8.8635,
+            "ev": -0.041
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.8339,
+            "marketProbability": 0.8339,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.15,
+            "fairOdds": 1.1992,
+            "ev": -0.041
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539011",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -3957,29 +4221,92 @@
     },
     {
       "matchId": "fixture-1489412",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:21.137Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.0478,
+          "draw": 0.1062,
+          "away": 0.846
+        },
+        "marketProbabilities": {
+          "home": 0.0478,
+          "draw": 0.1062,
+          "away": 0.846
+        },
+        "overround": 0.0461,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.0478,
+          "marketProbability": 0.0478,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 20,
+          "fairOdds": 20.9213,
+          "ev": -0.044
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.0478,
+            "marketProbability": 0.0478,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 20,
+            "fairOdds": 20.9213,
+            "ev": -0.044
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1062,
+            "marketProbability": 0.1062,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 9,
+            "fairOdds": 9.4146,
+            "ev": -0.044
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.846,
+            "marketProbability": 0.846,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.13,
+            "fairOdds": 1.1821,
+            "ev": -0.044
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539012",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4064,7 +4391,7 @@
     },
     {
       "matchId": "fixture-1489411",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4149,271 +4476,1027 @@
     },
     {
       "matchId": "fixture-1539074",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:23.181Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.7727,
+          "draw": 0.1474,
+          "away": 0.0798
+        },
+        "marketProbabilities": {
+          "home": 0.7727,
+          "draw": 0.1474,
+          "away": 0.0798
+        },
+        "overround": 0.0436,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.7727,
+          "marketProbability": 0.7727,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 1.24,
+          "fairOdds": 1.2941,
+          "ev": -0.0418
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.7727,
+            "marketProbability": 0.7727,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.24,
+            "fairOdds": 1.2941,
+            "ev": -0.0418
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1474,
+            "marketProbability": 0.1474,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 6.5,
+            "fairOdds": 6.7836,
+            "ev": -0.0418
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.0798,
+            "marketProbability": 0.0798,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 12,
+            "fairOdds": 12.5236,
+            "ev": -0.0418
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489416",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:25.361Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.1912,
+          "draw": 0.2223,
+          "away": 0.5865
+        },
+        "marketProbabilities": {
+          "home": 0.1912,
+          "draw": 0.2223,
+          "away": 0.5865
+        },
+        "overround": 0.0461,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.1912,
+          "marketProbability": 0.1912,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 5,
+          "fairOdds": 5.2303,
+          "ev": -0.044
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.1912,
+            "marketProbability": 0.1912,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 5,
+            "fairOdds": 5.2303,
+            "ev": -0.044
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2223,
+            "marketProbability": 0.2223,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 4.3,
+            "fairOdds": 4.498,
+            "ev": -0.044
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.5865,
+            "marketProbability": 0.5865,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.63,
+            "fairOdds": 1.7051,
+            "ev": -0.044
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489417",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:27.022Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.1286,
+          "draw": 0.2243,
+          "away": 0.6472
+        },
+        "marketProbabilities": {
+          "home": 0.1286,
+          "draw": 0.2243,
+          "away": 0.6472
+        },
+        "overround": 0.037,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.1286,
+          "marketProbability": 0.1286,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 7.5,
+          "fairOdds": 7.7777,
+          "ev": -0.0357
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.1286,
+            "marketProbability": 0.1286,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 7.5,
+            "fairOdds": 7.7777,
+            "ev": -0.0357
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2243,
+            "marketProbability": 0.2243,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 4.3,
+            "fairOdds": 4.4592,
+            "ev": -0.0357
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.6472,
+            "marketProbability": 0.6472,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.49,
+            "fairOdds": 1.5452,
+            "ev": -0.0357
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489413",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:28.347Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.4023,
+          "draw": 0.2759,
+          "away": 0.3218
+        },
+        "marketProbabilities": {
+          "home": 0.4023,
+          "draw": 0.2759,
+          "away": 0.3218
+        },
+        "overround": 0.0357,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.4023,
+          "marketProbability": 0.4023,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.4,
+          "fairOdds": 2.4857,
+          "ev": -0.0345
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.4023,
+            "marketProbability": 0.4023,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.4,
+            "fairOdds": 2.4857,
+            "ev": -0.0345
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2759,
+            "marketProbability": 0.2759,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.5,
+            "fairOdds": 3.625,
+            "ev": -0.0345
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.3218,
+            "marketProbability": 0.3218,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3,
+            "fairOdds": 3.1071,
+            "ev": -0.0345
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489414",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:29.640Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.393,
+          "draw": 0.3502,
+          "away": 0.2568
+        },
+        "marketProbabilities": {
+          "home": 0.393,
+          "draw": 0.3502,
+          "away": 0.2568
+        },
+        "overround": 0.0385,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.3502,
+          "marketProbability": 0.3502,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.75,
+          "fairOdds": 2.8558,
+          "ev": -0.037
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.393,
+            "marketProbability": 0.393,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.45,
+            "fairOdds": 2.5442,
+            "ev": -0.037
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.3502,
+            "marketProbability": 0.3502,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.75,
+            "fairOdds": 2.8558,
+            "ev": -0.037
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.2568,
+            "marketProbability": 0.2568,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.75,
+            "fairOdds": 3.8942,
+            "ev": -0.037
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489415",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:30.887Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.0682,
+          "draw": 0.1364,
+          "away": 0.7955
+        },
+        "marketProbabilities": {
+          "home": 0.0682,
+          "draw": 0.1364,
+          "away": 0.7955
+        },
+        "overround": 0.0476,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.0682,
+          "marketProbability": 0.0682,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 14,
+          "fairOdds": 14.6667,
+          "ev": -0.0455
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.0682,
+            "marketProbability": 0.0682,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 14,
+            "fairOdds": 14.6667,
+            "ev": -0.0455
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1364,
+            "marketProbability": 0.1364,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 7,
+            "fairOdds": 7.3333,
+            "ev": -0.0455
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.7955,
+            "marketProbability": 0.7955,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.2,
+            "fairOdds": 1.2571,
+            "ev": -0.0455
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489420",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:32.918Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.5761,
+          "draw": 0.2566,
+          "away": 0.1673
+        },
+        "marketProbabilities": {
+          "home": 0.5761,
+          "draw": 0.2566,
+          "away": 0.1673
+        },
+        "overround": 0.0394,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.5761,
+          "marketProbability": 0.5761,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 1.67,
+          "fairOdds": 1.7358,
+          "ev": -0.0379
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.5761,
+            "marketProbability": 0.5761,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.67,
+            "fairOdds": 1.7358,
+            "ev": -0.0379
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2566,
+            "marketProbability": 0.2566,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.75,
+            "fairOdds": 3.8977,
+            "ev": -0.0379
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.1673,
+            "marketProbability": 0.1673,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 5.75,
+            "fairOdds": 5.9764,
+            "ev": -0.0379
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489422",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:34.896Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.0742,
+          "draw": 0.1286,
+          "away": 0.7972
+        },
+        "marketProbabilities": {
+          "home": 0.0742,
+          "draw": 0.1286,
+          "away": 0.7972
+        },
+        "overround": 0.0367,
+        "primary": {
+          "key": "away",
+          "label": "客胜",
+          "shortLabel": "客",
+          "modelProbability": 0.7972,
+          "marketProbability": 0.7972,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 1.21,
+          "fairOdds": 1.2544,
+          "ev": -0.0354
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.0742,
+            "marketProbability": 0.0742,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 13,
+            "fairOdds": 13.4771,
+            "ev": -0.0354
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1286,
+            "marketProbability": 0.1286,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 7.5,
+            "fairOdds": 7.7753,
+            "ev": -0.0354
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.7972,
+            "marketProbability": 0.7972,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.21,
+            "fairOdds": 1.2544,
+            "ev": -0.0354
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489419",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:36.987Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.2626,
+          "draw": 0.27,
+          "away": 0.4675
+        },
+        "marketProbabilities": {
+          "home": 0.2626,
+          "draw": 0.27,
+          "away": 0.4675
+        },
+        "overround": 0.0435,
+        "primary": {
+          "key": "away",
+          "label": "客胜",
+          "shortLabel": "客",
+          "modelProbability": 0.4675,
+          "marketProbability": 0.4675,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.05,
+          "fairOdds": 2.1391,
+          "ev": -0.0417
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.2626,
+            "marketProbability": 0.2626,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.65,
+            "fairOdds": 3.8087,
+            "ev": -0.0417
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.27,
+            "marketProbability": 0.27,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.55,
+            "fairOdds": 3.7043,
+            "ev": -0.0417
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.4675,
+            "marketProbability": 0.4675,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.05,
+            "fairOdds": 2.1391,
+            "ev": -0.0417
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1539013",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:38.976Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好主胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.4557,
+          "draw": 0.2586,
+          "away": 0.2857
+        },
+        "marketProbabilities": {
+          "home": 0.4557,
+          "draw": 0.2586,
+          "away": 0.2857
+        },
+        "overround": 0.045,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.4557,
+          "marketProbability": 0.4557,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.1,
+          "fairOdds": 2.1944,
+          "ev": -0.043
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.4557,
+            "marketProbability": 0.4557,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.1,
+            "fairOdds": 2.1944,
+            "ev": -0.043
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.2586,
+            "marketProbability": 0.2586,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.7,
+            "fairOdds": 3.8664,
+            "ev": -0.043
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.2857,
+            "marketProbability": 0.2857,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.35,
+            "fairOdds": 3.5006,
+            "ev": -0.043
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489418",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:40.226Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好平局",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.2557,
+          "draw": 0.408,
+          "away": 0.3364
+        },
+        "marketProbabilities": {
+          "home": 0.2557,
+          "draw": 0.408,
+          "away": 0.3364
+        },
+        "overround": 0.0431,
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.408,
+          "marketProbability": 0.408,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 2.35,
+          "fairOdds": 2.4512,
+          "ev": -0.0413
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.2557,
+            "marketProbability": 0.2557,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 3.75,
+            "fairOdds": 3.9115,
+            "ev": -0.0413
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.408,
+            "marketProbability": 0.408,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.35,
+            "fairOdds": 2.4512,
+            "ev": -0.0413
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.3364,
+            "marketProbability": 0.3364,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 2.85,
+            "fairOdds": 2.9728,
+            "ev": -0.0413
+          }
+        ]
       }
     },
     {
       "matchId": "fixture-1489421",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
-        "oddsProvider": null,
-        "oddsSyncedAt": null,
+        "oddsProvider": "espn-draftkings",
+        "oddsSyncedAt": "2026-06-23T11:37:41.470Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "missing-odds",
+        "status": "watch",
         "direction": "观望",
-        "valueSide": "暂无真实盘口",
-        "shortLabel": "暂无真实盘口",
-        "confidence": "-",
+        "valueSide": "市场定价接近",
+        "shortLabel": "观望",
+        "confidence": "C",
         "riskLevel": "高",
-        "suggestion": "当前主备赔率源暂未提供完整胜平负盘口；拿到真实赔率后再计算市场隐含概率和盘口博弈方向。",
-        "sourceLabel": "主备赔率源未覆盖",
-        "rows": []
+        "marketDirection": "市场更看好客胜",
+        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
+        "sourceLabel": "市场归一基准",
+        "modelSource": "market",
+        "sampleSize": 0,
+        "modelProbabilities": {
+          "home": 0.0735,
+          "draw": 0.1365,
+          "away": 0.7899
+        },
+        "marketProbabilities": {
+          "home": 0.0735,
+          "draw": 0.1365,
+          "away": 0.7899
+        },
+        "overround": 0.0462,
+        "primary": {
+          "key": "home",
+          "label": "主胜",
+          "shortLabel": "主",
+          "modelProbability": 0.0735,
+          "marketProbability": 0.0735,
+          "probabilityDiff": 0,
+          "diff": 0,
+          "marketOdds": 13,
+          "fairOdds": 13.6009,
+          "ev": -0.0442
+        },
+        "rows": [
+          {
+            "key": "home",
+            "label": "主胜",
+            "shortLabel": "主",
+            "modelProbability": 0.0735,
+            "marketProbability": 0.0735,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 13,
+            "fairOdds": 13.6009,
+            "ev": -0.0442
+          },
+          {
+            "key": "draw",
+            "label": "平局",
+            "shortLabel": "平",
+            "modelProbability": 0.1365,
+            "marketProbability": 0.1365,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 7,
+            "fairOdds": 7.3236,
+            "ev": -0.0442
+          },
+          {
+            "key": "away",
+            "label": "客胜",
+            "shortLabel": "客",
+            "modelProbability": 0.7899,
+            "marketProbability": 0.7899,
+            "probabilityDiff": 0,
+            "diff": 0,
+            "marketOdds": 1.21,
+            "fairOdds": 1.2659,
+            "ev": -0.0442
+          }
+        ]
       }
     },
     {
       "matchId": "wc2026-ko-01",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4435,7 +5518,7 @@
     },
     {
       "matchId": "wc2026-ko-02",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4457,7 +5540,7 @@
     },
     {
       "matchId": "wc2026-ko-03",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4479,7 +5562,7 @@
     },
     {
       "matchId": "wc2026-ko-04",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4501,7 +5584,7 @@
     },
     {
       "matchId": "wc2026-ko-05",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4523,7 +5606,7 @@
     },
     {
       "matchId": "wc2026-ko-06",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4545,7 +5628,7 @@
     },
     {
       "matchId": "wc2026-ko-07",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4567,7 +5650,7 @@
     },
     {
       "matchId": "wc2026-ko-08",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4589,7 +5672,7 @@
     },
     {
       "matchId": "wc2026-ko-09",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4611,7 +5694,7 @@
     },
     {
       "matchId": "wc2026-ko-10",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4633,7 +5716,7 @@
     },
     {
       "matchId": "wc2026-ko-11",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4655,7 +5738,7 @@
     },
     {
       "matchId": "wc2026-ko-12",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4677,7 +5760,7 @@
     },
     {
       "matchId": "wc2026-ko-13",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4699,7 +5782,7 @@
     },
     {
       "matchId": "wc2026-ko-14",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4721,7 +5804,7 @@
     },
     {
       "matchId": "wc2026-ko-15",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4743,7 +5826,7 @@
     },
     {
       "matchId": "wc2026-ko-16",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4765,7 +5848,7 @@
     },
     {
       "matchId": "wc2026-ko-17",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4787,7 +5870,7 @@
     },
     {
       "matchId": "wc2026-ko-18",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4809,7 +5892,7 @@
     },
     {
       "matchId": "wc2026-ko-19",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4831,7 +5914,7 @@
     },
     {
       "matchId": "wc2026-ko-20",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4853,7 +5936,7 @@
     },
     {
       "matchId": "wc2026-ko-21",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4875,7 +5958,7 @@
     },
     {
       "matchId": "wc2026-ko-22",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4897,7 +5980,7 @@
     },
     {
       "matchId": "wc2026-ko-23",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4919,7 +6002,7 @@
     },
     {
       "matchId": "wc2026-ko-24",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4941,7 +6024,7 @@
     },
     {
       "matchId": "wc2026-ko-25",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4963,7 +6046,7 @@
     },
     {
       "matchId": "wc2026-ko-26",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4985,7 +6068,7 @@
     },
     {
       "matchId": "wc2026-ko-27",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5007,7 +6090,7 @@
     },
     {
       "matchId": "wc2026-ko-28",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5029,7 +6112,7 @@
     },
     {
       "matchId": "wc2026-ko-29",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5051,7 +6134,7 @@
     },
     {
       "matchId": "wc2026-ko-30",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5073,7 +6156,7 @@
     },
     {
       "matchId": "wc2026-ko-31",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5095,7 +6178,7 @@
     },
     {
       "matchId": "wc2026-ko-32",
-      "generatedAt": "2026-06-23T11:32:48.351Z",
+      "generatedAt": "2026-06-23T11:43:02.435Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,

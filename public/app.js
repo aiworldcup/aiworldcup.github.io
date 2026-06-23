@@ -24,8 +24,6 @@ let compactMatchesMode = false;
 let compactExpandedMatchId = '';
 let roastBeerSource = 'majority';
 let roastBeerScope = 'all';
-let roundtableDateFilter = '';
-let roundtableTeamQuery = '';
 const ACTIVE_TRACK = 'open';
 const COMPACT_MATCHES_STORAGE_KEY = 'worldcup-ai-arena-compact-matches';
 const PUBLIC_SITE_URL = 'https://aiworldcup.github.io/';
@@ -1985,77 +1983,10 @@ function stanceCompareHTML(counts, total) {
   </div>`;
 }
 
-function roundtableDateKeys(threads) {
-  return Array.from(new Set(threads.map(item => matchDateKey(item.match)).filter(Boolean)))
-    .sort((a, b) => b.localeCompare(a));
-}
-
-function hasPendingRoundtableMatch(dateKey, threads) {
-  return threads.some(({ match }) => {
-    if (matchDateKey(match) !== dateKey) return false;
-    const state = matchLifecycle(match).key;
-    return state === 'upcoming' || state === 'sealed';
-  });
-}
-
-function pickInitialRoundtableDate(threads) {
-  const keys = roundtableDateKeys(threads);
-  if (!keys.length) return 'all';
-  const today = beijingDateKey();
-  if (keys.includes(today) && hasPendingRoundtableMatch(today, threads)) return today;
-  const futurePending = keys.slice()
-    .sort()
-    .find(key => key > today && hasPendingRoundtableMatch(key, threads));
-  return futurePending || keys[0];
-}
-
-function renderRoundtableFilters(threads) {
-  const dateEl = document.getElementById('roundtable-date-filter');
-  const searchEl = document.getElementById('roundtable-team-search');
-  const keys = roundtableDateKeys(threads);
-  if (!roundtableDateFilter || (roundtableDateFilter !== 'all' && !keys.includes(roundtableDateFilter))) {
-    roundtableDateFilter = pickInitialRoundtableDate(threads);
-  }
-
-  if (dateEl) {
-    dateEl.innerHTML = keys.map(key => {
-      const selected = key === roundtableDateFilter ? ' selected' : '';
-      const label = `${dateLabel(key)} ${dateSubLabel(key)}`.trim();
-      return `<option value="${escapeHTML(key)}"${selected}>${escapeHTML(label)}</option>`;
-    }).join('') + `<option value="all"${roundtableDateFilter === 'all' ? ' selected' : ''}>全部比赛日</option>`;
-    dateEl.onchange = () => {
-      roundtableDateFilter = dateEl.value || pickInitialRoundtableDate(threads);
-      renderRoundtableFeed();
-    };
-  }
-
-  if (searchEl) {
-    if (document.activeElement !== searchEl && searchEl.value !== roundtableTeamQuery) {
-      searchEl.value = roundtableTeamQuery;
-    }
-    searchEl.oninput = () => {
-      roundtableTeamQuery = searchEl.value.trim();
-      renderRoundtableFeed();
-    };
-  }
-}
-
-function filterRoundtableThreads(threads) {
-  const query = roundtableTeamQuery.trim().toLowerCase();
-  return threads.filter(({ match }) => {
-    const dateOk = roundtableDateFilter === 'all' || matchDateKey(match) === roundtableDateFilter;
-    if (!dateOk) return false;
-    if (!query) return true;
-    return [match.home.team, match.away.team]
-      .some(name => String(name || '').toLowerCase().includes(query));
-  });
-}
-
 function renderRoundtableFeed() {
   const el = document.getElementById('roundtable-feed');
   if (!el) return;
   const threads = roundtableThreads();
-  renderRoundtableFilters(threads);
 
   if (!threads.length) {
     el.innerHTML = `<div class="empty-state">
@@ -2065,16 +1996,7 @@ function renderRoundtableFeed() {
     return;
   }
 
-  const filteredThreads = filterRoundtableThreads(threads);
-  if (!filteredThreads.length) {
-    el.innerHTML = `<div class="empty-state">
-      <strong>没有匹配的圆桌</strong>
-      <span>换个比赛日或队名试试。</span>
-    </div>`;
-    return;
-  }
-
-  const grouped = filteredThreads.reduce((acc, item) => {
+  const grouped = threads.reduce((acc, item) => {
     const key = matchDateKey(item.match);
     if (!acc.has(key)) acc.set(key, []);
     acc.get(key).push(item);
@@ -2135,10 +2057,7 @@ function renderRoundtableFeed() {
     </article>`;
   };
 
-  const groupedEntries = Array.from(grouped.entries())
-    .sort(([dateA], [dateB]) => dateB.localeCompare(dateA));
-
-  el.innerHTML = groupedEntries.map(([dateKey, items]) => `
+  el.innerHTML = Array.from(grouped.entries()).map(([dateKey, items]) => `
     <section class="rt-day-group">
       <div class="rt-day-head">
         <strong>${escapeHTML(dateLabel(dateKey))}</strong>
