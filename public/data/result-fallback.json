@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-18T04:05:00.000Z",
+  "updatedAt": "2026-06-23T04:22:42Z",
   "status": "verified-manual-fallback",
   "note": "当 API-Sports 与中国竞彩网赛果接口未覆盖某场已完赛比赛时,settle 会使用这里的人工核验备用赛果。只追加已核验结果,不得覆盖 matches.json 既有 actual。",
   "sources": [
@@ -11,6 +11,14 @@
     {
       "label": "Axios match report",
       "href": "https://www.axios.com/2026/06/17/portugal-congo-world-cup-houston"
+    },
+    {
+      "label": "The Guardian live report",
+      "href": "https://www.theguardian.com/football/live/2026/jun/21/spain-v-saudi-arabia-world-cup-2026-live"
+    },
+    {
+      "label": "Barca Blaugranes match recap",
+      "href": "https://www.barcablaugranes.com/world-cup-2026/124245/lamine-yamal-scores-first-world-cup-goal-for-spain-mohamed-salah-inspires-egypt-and-kevin-pina-scores-stunner-as-cape-verde-do-it-again"
     }
   ],
   "matches": [
@@ -23,6 +31,16 @@
       "result": "draw",
       "sourceLabel": "The Guardian / Axios",
       "sourceHref": "https://www.theguardian.com/football/live/2026/jun/17/portugal-v-dr-congo-world-cup-2026-live"
+    },
+    {
+      "matchId": "fixture-1489397",
+      "matchDate": "2026-06-22",
+      "homeTeam": "西班牙",
+      "awayTeam": "沙特阿拉伯",
+      "score": "4:0",
+      "result": "home",
+      "sourceLabel": "The Guardian / Barca Blaugranes",
+      "sourceHref": "https://www.theguardian.com/football/live/2026/jun/21/spain-v-saudi-arabia-world-cup-2026-live"
     }
   ]
 }

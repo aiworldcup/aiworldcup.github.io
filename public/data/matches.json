@@ -1759,11 +1759,20 @@
         "scores": {}
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "home",
+        "score": "4-0"
+      },
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "local-result-fallback",
+        "sourceLabel": "The Guardian / Barca Blaugranes",
+        "sourceHref": "https://www.theguardian.com/football/live/2026/jun/21/spain-v-saudi-arabia-world-cup-2026-live",
+        "syncedAt": "2026-06-23T04:22:42Z"
+      }
     },
     {
       "id": "fixture-1489395",
