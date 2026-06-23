@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T02:28:41.311Z",
+  "updatedAt": "2026-06-23T03:08:52.547Z",
   "status": "verified",
   "sources": [
     {
@@ -420,6 +420,16 @@
       "kickoff": "2026-06-23T00:00:00+00:00",
       "sourceScope": "single-fixed",
       "officialScore": "3:2"
+    },
+    {
+      "matchId": "fixture-1489403",
+      "jingcaiMatchId": "2040257",
+      "matchNum": "周二047",
+      "matchDate": "2026-06-24",
+      "league": "世界杯",
+      "homeTeam": "巴拿马",
+      "awayTeam": "克罗地亚",
+      "kickoff": "2026-06-23T23:00:00+00:00"
     }
   ]
 }
