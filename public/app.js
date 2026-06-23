@@ -1934,26 +1934,6 @@ function clashSnippets(messages) {
   });
 }
 
-function campStanceScore(messages) {
-  const camps = {
-    domestic: { home: 0, draw: 0, away: 0 },
-    overseas: { home: 0, draw: 0, away: 0 }
-  };
-  finalMessagesByModel(messages).forEach(message => {
-    const result = resultFromDiscussionText(message.text);
-    if (!result) return;
-    const camp = campOf(modelMeta(message.modelId));
-    camps[camp][result] += 1;
-  });
-  const main = counts => {
-    const key = ['home', 'draw', 'away'].sort((a, b) => counts[b] - counts[a])[0];
-    return { key, label: RESULT_LABEL[key], count: counts[key] || 0 };
-  };
-  const domestic = main(camps.domestic);
-  const overseas = main(camps.overseas);
-  return { domestic, overseas };
-}
-
 function stanceBarHTML(counts, total) {
   if (!total) return '';
   const seg = (n, cls, label) => n
@@ -1963,6 +1943,43 @@ function stanceBarHTML(counts, total) {
     ${seg(counts.home, 'stance-home', '主胜')}
     ${seg(counts.draw, 'stance-draw', '平局')}
     ${seg(counts.away, 'stance-away', '客胜')}
+  </div>`;
+}
+
+function stanceCompareHTML(counts, total) {
+  if (!total) return '';
+  const pct = n => Math.round((n / total) * 100);
+  const edgeText = counts.home === counts.away
+    ? '主客拉平'
+    : counts.home > counts.away
+      ? `主胜 +${counts.home - counts.away}`
+      : `客胜 +${counts.away - counts.home}`;
+  const homeLead = counts.home > counts.away ? ' is-leading' : '';
+  const awayLead = counts.away > counts.home ? ' is-leading' : '';
+  const seg = (n, cls, label) => n
+    ? `<span class="rt-compare-fill ${cls}" style="flex:${n}" title="${label} ${n}"></span>`
+    : '';
+
+  return `<div class="rt-stance-compare" aria-label="主胜客胜立场对比">
+    <div class="rt-side rt-side-home${homeLead}">
+      <span>看好主胜</span>
+      <strong>${counts.home}</strong>
+      <small>${pct(counts.home)}%</small>
+    </div>
+    <div class="rt-compare-mid">
+      <span>${escapeHTML(edgeText)}</span>
+      <b>平局 ${counts.draw}</b>
+    </div>
+    <div class="rt-side rt-side-away${awayLead}">
+      <span>看好客胜</span>
+      <strong>${counts.away}</strong>
+      <small>${pct(counts.away)}%</small>
+    </div>
+    <div class="rt-compare-bar">
+      ${seg(counts.home, 'stance-home', '主胜')}
+      ${seg(counts.draw, 'stance-draw', '平局')}
+      ${seg(counts.away, 'stance-away', '客胜')}
+    </div>
   </div>`;
 }
 
@@ -1994,7 +2011,6 @@ function renderRoundtableFeed() {
     const hotMeta = hot ? modelMeta(hot.modelId) : null;
     const hotCamp = hotMeta ? campOf(hotMeta) : '';
     const snippets = clashSnippets(messages);
-    const campScore = campStanceScore(messages);
     const homeFlag = flagIcon(match.home.flag);
     const awayFlag = flagIcon(match.away.flag);
     const state = matchLifecycle(match);
@@ -2022,12 +2038,7 @@ function renderRoundtableFeed() {
         </div>
         <span class="rt-tag">${split}</span>
       </div>
-      ${stanceBarHTML(counts, total)}
-      <div class="rt-stance-legend">
-        <span><i class="dot-home"></i>主胜 ${counts.home}</span>
-        <span><i class="dot-draw"></i>平 ${counts.draw}</span>
-        <span><i class="dot-away"></i>客胜 ${counts.away}</span>
-      </div>
+      ${stanceCompareHTML(counts, total)}
       ${hot ? `<div class="rt-quote rt-quote-hot">
         <div class="rt-quote-label">最毒一句</div>
         <span class="rt-quote-dot" style="background:${hotMeta.color}"></span>
@@ -2038,11 +2049,6 @@ function renderRoundtableFeed() {
           <span class="rt-clash-avatar" style="background:${meta.color}">${escapeHTML((meta.name || '?').slice(0, 1))}</span>
           <p><b>${escapeHTML(meta.name)} ${camp === 'domestic' ? '🇨🇳' : '🌍'}</b>${escapeHTML(message.text)}</p>
         </div>`).join('')}
-      </div>
-      <div class="rt-camp-score">
-        <span>🇨🇳 看好${escapeHTML(campScore.domestic.label)} <b>${campScore.domestic.count}</b></span>
-        <strong>:</strong>
-        <span><b>${campScore.overseas.count}</b> 看好${escapeHTML(campScore.overseas.label)} 🌍</span>
       </div>
       <div class="rt-card-foot">
         <span>${finalCount} 个模型 · ${messages.length} 回合</span>

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T04:22:42Z",
+  "updatedAt": "2026-06-23T10:57:02Z",
   "status": "verified-manual-fallback",
   "note": "当 API-Sports 与中国竞彩网赛果接口未覆盖某场已完赛比赛时,settle 会使用这里的人工核验备用赛果。只追加已核验结果,不得覆盖 matches.json 既有 actual。",
   "sources": [
@@ -19,6 +19,14 @@
     {
       "label": "Barca Blaugranes match recap",
       "href": "https://www.barcablaugranes.com/world-cup-2026/124245/lamine-yamal-scores-first-world-cup-goal-for-spain-mohamed-salah-inspires-egypt-and-kevin-pina-scores-stunner-as-cape-verde-do-it-again"
+    },
+    {
+      "label": "The Guardian live report",
+      "href": "https://www.theguardian.com/football/live/2026/jun/23/fifa-world-cup-2026-live-jordan-v-algeria-updates-jor-v-alg-group-j-match-score-latest"
+    },
+    {
+      "label": "San Francisco Chronicle match report",
+      "href": "https://www.sfchronicle.com/sports/article/world-cup-vibes-take-full-levi-s-stadium-22316148.php"
     }
   ],
   "matches": [
@@ -41,6 +49,16 @@
       "result": "home",
       "sourceLabel": "The Guardian / Barca Blaugranes",
       "sourceHref": "https://www.theguardian.com/football/live/2026/jun/21/spain-v-saudi-arabia-world-cup-2026-live"
+    },
+    {
+      "matchId": "fixture-1489400",
+      "matchDate": "2026-06-23",
+      "homeTeam": "约旦",
+      "awayTeam": "阿尔及利亚",
+      "score": "1:2",
+      "result": "away",
+      "sourceLabel": "The Guardian / San Francisco Chronicle",
+      "sourceHref": "https://www.theguardian.com/football/live/2026/jun/23/fifa-world-cup-2026-live-jordan-v-algeria-updates-jor-v-alg-group-j-match-score-latest"
     }
   ]
 }

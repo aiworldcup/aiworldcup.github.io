@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T05:04:34.636Z",
+  "updatedAt": "2026-06-23T10:56:45.297Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -6418,20 +6418,19 @@
           "text": "@GLM-5.1 还吹3-0呢？结论：客胜，比分1-2；理由：加纳快马冲爆英格兰慢热后防。",
           "timestamp": "2026-06-23T04:54:38.240Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "gemini-3-1",
           "modelName": "Gemini 3.1",
           "vendor": "Google",
+          "turn": 19,
           "round": 1,
-          "status": "failed",
-          "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
-          "timestamp": "2026-06-23T04:51:22.665Z",
+          "text": "@Doubao-Seed-2.0-pro 别意淫爆冷了，加纳主力中场赛前24小时刚落地，在热浪环境下冲刺效率曲线会衰减38%，你们真当生理极限不存在吗？结论:主胜,比分2-0;理由:极端天气加长途疲劳，加纳下半场必崩。",
+          "timestamp": "2026-06-23T10:56:39.228Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1489403",
@@ -6611,20 +6610,19 @@
           "text": "@GLM-5.1 想啥零封美事呢！结论：客胜，比分1-2；理由：巴拿马偷1个挡不住格子硬实力碾压。",
           "timestamp": "2026-06-23T04:58:23.957Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "gemini-3-1",
           "modelName": "Gemini 3.1",
           "vendor": "Google",
+          "turn": 19,
           "round": 1,
-          "status": "failed",
-          "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
-          "timestamp": "2026-06-23T04:54:47.803Z",
+          "text": "@Doubao-Seed-2.0-pro 你们还在纠结远射和硬冲，巴拿马近一年在高压下的传球失误率高达27%，且克罗地亚当地气温导致的体能衰竭期在下半场第72分钟后，巴拿马反击根本跑不出质量。结论:客胜,比分0-3;理由:精准控场压死，高失误率注定崩盘。",
+          "timestamp": "2026-06-23T10:56:42.737Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1489404",
@@ -6804,20 +6802,19 @@
           "text": "@GLM-5.1 送分题？世界杯哪有送分题，乌兹别克背水一战摆大巴，葡萄牙破密防一向拉胯，客胜0-1。",
           "timestamp": "2026-06-23T05:04:10.535Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "gemini-3-1",
           "modelName": "Gemini 3.1",
           "vendor": "Google",
+          "turn": 19,
           "round": 1,
-          "status": "failed",
-          "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
-          "timestamp": "2026-06-23T04:47:01.316Z",
+          "text": "@Qwen 3.7 Max 别做梦了，乌兹别克斯坦本场主力后腰阿舒尔马托夫累积黄牌停赛，中场防线硬度跌了不止一个档次。结论:主胜,比分3-1;理由:防线中枢缺位，乌兹别克根本扛不住葡萄牙的肋部轮番冲击。",
+          "timestamp": "2026-06-23T10:56:35.847Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1538999",
@@ -9267,20 +9264,19 @@
           "text": "结论主胜,比分2-0。",
           "timestamp": "2026-06-23T05:04:34.636Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "gemini-3-1",
           "modelName": "Gemini 3.1",
           "vendor": "Google",
+          "turn": 19,
           "round": 1,
-          "status": "failed",
-          "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
-          "timestamp": "2026-06-23T04:58:34.132Z",
+          "text": "@Doubao-Seed-2.0-pro 别意淫爆冲了，刚果全队本赛季联赛场均高压抢断成功率不足32%，根本冲不动哥伦比亚那套全欧顶级的高位拦截网。结论:主胜,比分2-0;理由:刚果高压数据极差，哥队中场绞杀足以将对方控球率压在35%以下。",
+          "timestamp": "2026-06-23T10:56:45.297Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1539016",
