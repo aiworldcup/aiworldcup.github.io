@@ -3,12 +3,14 @@ const path = require("path");
 const { loadProjectEnv } = require("./lib/env");
 const { syncRealData } = require("./sync-real-data");
 const { syncJingcaiSingle } = require("./sync-jingcai-single");
+const { syncEspnResults } = require("./sync-espn-results");
 const { makeLeaderboard } = require("./score");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const LEADERBOARD_PATH = path.join(__dirname, "..", "public", "data", "leaderboard.json");
 const DISCUSSIONS_PATH = path.join(__dirname, "..", "public", "data", "discussions.json");
 const JINGCAI_PATH = path.join(__dirname, "..", "public", "data", "jingcai-single.json");
+const ESPN_RESULTS_PATH = path.join(__dirname, "..", "public", "data", "espn-results.json");
 const RESULT_FALLBACK_PATH = path.join(__dirname, "..", "public", "data", "result-fallback.json");
 
 function readJson(filePath) {
@@ -67,7 +69,8 @@ function resultForEntry(entry, score) {
   return resultFromScore(score);
 }
 
-function applyActualEntries(data, entries, sourceName) {
+function applyActualEntries(data, entries, sourceName, options = {}) {
+  const conflicts = Array.isArray(options.conflicts) ? options.conflicts : null;
   const byId = new Map((entries || [])
     .filter((entry) => entry.matchId && scoreForEntry(entry))
     .map((entry) => [entry.matchId, entry]));
@@ -81,6 +84,20 @@ function applyActualEntries(data, entries, sourceName) {
     if (match.actual) {
       if (match.actual.score !== score || match.actual.result !== result) {
         console.warn(`[settle] keep existing actual for ${match.id}; ${sourceName}=${score} existing=${match.actual.score}`);
+        if (conflicts) {
+          conflicts.push({
+            matchId: match.id,
+            home: match.home && match.home.team,
+            away: match.away && match.away.team,
+            sourceName,
+            sourceScore: score,
+            sourceResult: result,
+            existingScore: match.actual.score,
+            existingResult: match.actual.result,
+            sourceLabel: entry.sourceLabel || entry.source || null,
+            sourceHref: entry.sourceHref || entry.href || null,
+          });
+        }
       }
       return;
     }
@@ -96,14 +113,23 @@ function applyActualEntries(data, entries, sourceName) {
   return changed;
 }
 
-function applyJingcaiActuals(data) {
+function applyJingcaiActuals(data, options = {}) {
   const jingcai = fs.existsSync(JINGCAI_PATH) ? readJson(JINGCAI_PATH) : { matches: [] };
-  return applyActualEntries(data, jingcai.matches || [], "jingcai");
+  return applyActualEntries(data, jingcai.matches || [], "jingcai", options);
 }
 
-function applyFallbackActuals(data) {
+function applyEspnActuals(data, options = {}) {
+  const espn = fs.existsSync(ESPN_RESULTS_PATH) ? readJson(ESPN_RESULTS_PATH) : { matches: [] };
+  return applyActualEntries(data, espn.matches || [], "espn", options);
+}
+
+function applyFallbackActuals(data, options = {}) {
   const fallback = fs.existsSync(RESULT_FALLBACK_PATH) ? readJson(RESULT_FALLBACK_PATH) : { matches: [] };
-  return applyActualEntries(data, fallback.matches || [], "local-result-fallback");
+  return applyActualEntries(data, fallback.matches || [], "local-result-fallback", options);
+}
+
+function hasFlag(name) {
+  return process.argv.includes(`--${name}`);
 }
 
 async function settle() {
@@ -114,10 +140,18 @@ async function settle() {
     console.warn(`[settle] syncRealData failed; continue with existing matches: ${err.message}`);
   }
   await syncJingcaiSingle({ soft: true });
+  try {
+    await syncEspnResults({ soft: true });
+  } catch (err) {
+    console.warn(`[settle] syncEspnResults failed; continue with existing result caches: ${err.message}`);
+  }
   const data = readJson(MATCHES_PATH);
-  const jingcaiActualsChanged = applyJingcaiActuals(data);
-  const fallbackActualsChanged = applyFallbackActuals(data);
-  const actualsChanged = jingcaiActualsChanged + fallbackActualsChanged;
+  const resultConflicts = [];
+  const conflictOptions = { conflicts: resultConflicts };
+  const jingcaiActualsChanged = applyJingcaiActuals(data, conflictOptions);
+  const espnActualsChanged = applyEspnActuals(data, conflictOptions);
+  const fallbackActualsChanged = applyFallbackActuals(data, conflictOptions);
+  const actualsChanged = jingcaiActualsChanged + espnActualsChanged + fallbackActualsChanged;
   const matchesChanged = writeJsonIfChanged(MATCHES_PATH, data);
   const discussionsData = fs.existsSync(DISCUSSIONS_PATH) ? readJson(DISCUSSIONS_PATH) : { discussions: [] };
   const settlementGraceMinutes = Number(process.env.SETTLEMENT_GRACE_MINUTES || 150);
@@ -129,9 +163,22 @@ async function settle() {
   const pending = leaderboard.settlement && leaderboard.settlement.pendingResult
     ? leaderboard.settlement.pendingResult.length
     : 0;
-  console.log(`[settle] ${matchesChanged ? "wrote" : "unchanged"} ${MATCHES_PATH}; applied_jingcai_actuals=${jingcaiActualsChanged}; applied_fallback_actuals=${fallbackActualsChanged}`);
+  console.log(`[settle] ${matchesChanged ? "wrote" : "unchanged"} ${MATCHES_PATH}; applied_jingcai_actuals=${jingcaiActualsChanged}; applied_espn_actuals=${espnActualsChanged}; applied_fallback_actuals=${fallbackActualsChanged}; applied_total_actuals=${actualsChanged}`);
   console.log(`[settle] ${changed ? "wrote" : "unchanged"} ${LEADERBOARD_PATH}`);
   console.log(`[settle] pending_result=${pending}`);
+  if (resultConflicts.length) {
+    const conflictText = resultConflicts
+      .map((item) => `${item.matchId}:${item.home}-${item.away} existing=${item.existingScore}/${item.existingResult} ${item.sourceName}=${item.sourceScore}/${item.sourceResult}`)
+      .join("; ");
+    console.warn(`[settle] result_conflicts=${resultConflicts.length}; ${conflictText}`);
+    if (hasFlag("fail-on-conflict") || process.env.SETTLE_FAIL_ON_CONFLICT === "1") {
+      throw new Error(`[settle] result_conflicts=${resultConflicts.length}; refusing strict settlement publish: ${conflictText}`);
+    }
+  }
+  if (pending && (hasFlag("fail-on-pending") || process.env.SETTLE_FAIL_ON_PENDING === "1")) {
+    const ids = (leaderboard.settlement.pendingResult || []).map((item) => `${item.matchId}:${item.home}-${item.away}`).join(", ");
+    throw new Error(`[settle] pending_result=${pending}; refusing strict settlement publish: ${ids}`);
+  }
 }
 
 if (require.main === module) {
@@ -143,6 +190,7 @@ if (require.main === module) {
 
 module.exports = {
   applyActualEntries,
+  applyEspnActuals,
   applyFallbackActuals,
   applyJingcaiActuals,
   settle,

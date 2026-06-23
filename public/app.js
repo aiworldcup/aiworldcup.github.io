@@ -8,6 +8,7 @@ let CHAMPIONS = [];
 let DISCUSSIONS = [];
 let GROUPS = {};
 let JINGCAI_SINGLE = { matches: [], sources: [] };
+let MATCH_INSIGHTS = new Map();
 let MATCH_BY_ID = new Map();
 let DISCUSSION_BY_MATCH = new Map();
 let PREDICTIONS_BY_MATCH = new Map();
@@ -24,6 +25,8 @@ let compactMatchesMode = false;
 let compactExpandedMatchId = '';
 let roastBeerSource = 'majority';
 let roastBeerScope = 'all';
+let roundtableDateFilter = '';
+let roundtableTeamQuery = '';
 const ACTIVE_TRACK = 'open';
 const COMPACT_MATCHES_STORAGE_KEY = 'worldcup-ai-arena-compact-matches';
 const PUBLIC_SITE_URL = 'https://aiworldcup.github.io/';
@@ -134,6 +137,8 @@ const RESULT_LABEL = { home: '主胜', draw: '平', away: '客胜' };
 const RESULT_SHORT = { home: '主', draw: '平', away: '客' };
 const ODDS_PROVIDER_LABEL = {
   'sporttery': '竞彩',
+  'espn-draftkings': 'ESPN欧赔',
+  'euro-odds-api': '欧赔',
   'the-odds-api': '备源',
   'local-authoritative': '权威源'
 };
@@ -521,6 +526,84 @@ function matchPredictionSummary(match) {
   };
 }
 
+function matchContentFor(match, predictions = predictionsForMatch(match)) {
+  const stored = match?.id ? MATCH_INSIGHTS.get(match.id) : null;
+  if (stored?.marketEdge) {
+    return {
+      marketEdge: stored.marketEdge || null,
+      source: 'sidecar'
+    };
+  }
+  const api = window.WorldCupInsights;
+  if (!api || typeof api.buildMatchContent !== 'function') return null;
+  try {
+    return { ...api.buildMatchContent(match, predictions), source: 'derived' };
+  } catch (err) {
+    console.warn(`[insights] ${match?.id || 'unknown'} failed: ${err.message}`);
+    return null;
+  }
+}
+
+function insightFormatProbability(value) {
+  return window.WorldCupInsights?.formatProbability
+    ? window.WorldCupInsights.formatProbability(value)
+    : '-';
+}
+
+function insightFormatOdds(value) {
+  return window.WorldCupInsights?.formatOdds
+    ? window.WorldCupInsights.formatOdds(value)
+    : '-';
+}
+
+function insightFormatSignedPercent(value) {
+  return window.WorldCupInsights?.formatSignedPercent
+    ? window.WorldCupInsights.formatSignedPercent(value)
+    : '-';
+}
+
+function renderEdgeTriplet(edge, label, type) {
+  const rowsByKey = new Map((edge?.rows || []).map(row => [row.key, row]));
+  const values = ['home', 'draw', 'away'].map(key => {
+    const row = rowsByKey.get(key) || {};
+    const value = type === 'model'
+      ? insightFormatProbability(row.modelProbability)
+      : type === 'fair'
+        ? insightFormatOdds(row.fairOdds)
+        : insightFormatOdds(row.marketOdds);
+    return `<b>${RESULT_SHORT[key]} ${escapeHTML(value)}</b>`;
+  }).join('<span class="edge-dot">·</span>');
+  return `<div class="edge-triplet"><span>${escapeHTML(label)}</span><strong>${values}</strong></div>`;
+}
+
+function renderMatchInsights(match, content) {
+  if (!content) return '';
+  const edge = content.marketEdge;
+  const primary = edge?.primary;
+  const edgeHTML = edge ? `<section class="insight-card market-edge-card status-${escapeHTML(edge.status || 'watch')}">
+    <div class="insight-card-head">
+      <span>盘口博弈指数</span>
+      <strong>${escapeHTML(edge.shortLabel || edge.valueSide || '观望')}</strong>
+    </div>
+    <div class="edge-badges">
+      <span>EV ${primary ? insightFormatSignedPercent(primary.ev) : '-'}</span>
+      <span>概率差 ${primary ? insightFormatSignedPercent(primary.diff) : '-'}</span>
+      <span>风险 ${escapeHTML(edge.riskLevel || '-')}</span>
+      <span>评级 ${escapeHTML(edge.confidence || '-')}</span>
+    </div>
+    <div class="edge-triplets">
+      ${renderEdgeTriplet(edge, '模型概率', 'model')}
+      ${renderEdgeTriplet(edge, '公平赔率', 'fair')}
+      ${renderEdgeTriplet(edge, '市场赔率', 'market')}
+    </div>
+    <p>${escapeHTML(edge.suggestion || '')}</p>
+    <small>${escapeHTML(edge.sourceLabel || '')}${edge.marketDirection ? ` · ${escapeHTML(edge.marketDirection)}` : ''} · 非投注建议</small>
+  </section>` : '';
+  return `<div class="match-insights" data-source="${escapeHTML(content.source || 'derived')}" aria-label="${escapeHTML(match.home.team)} 对 ${escapeHTML(match.away.team)} 盘口博弈指数">
+    ${edgeHTML}
+  </div>`;
+}
+
 function renderCompactMatchList(matches) {
   return `<div class="compact-match-list">
     ${matches.map(renderCompactMatchRow).join('')}
@@ -529,6 +612,7 @@ function renderCompactMatchList(matches) {
 
 function renderCompactMatchRow(match) {
   const summary = matchPredictionSummary(match);
+  const content = matchContentFor(match, summary.displayPredictions);
   const lifecycle = matchLifecycle(match);
   const finished = !!match.actual;
   const score = finished ? String(match.actual.score || '').replace('-', ':') : 'VS';
@@ -558,6 +642,7 @@ function renderCompactMatchRow(match) {
       </div>
       <div class="compact-match-foot">
         <span class="compact-match-time">${escapeHTML(kickoff)}</span>
+        ${content?.marketEdge ? `<span>盘口 <strong>${escapeHTML(content.marketEdge.shortLabel || '观望')}</strong></span>` : ''}
         <span>热门比分 <strong>${escapeHTML(summary.hotScoreText)}</strong></span>
         <span>${summary.issues.length ? `<b class="compact-issue">API超时 ${summary.issues.length}</b> · ` : ''}${summary.predictionCountText} · ${expanded ? '收起详情' : '查看详情'}</span>
       </div>
@@ -1672,9 +1757,10 @@ function renderMatchCard(m) {
   const hasResultOdds = ['home', 'draw', 'away'].every(key => o[key] !== null && o[key] !== undefined && o[key] !== '');
   const resultOddsText = hasResultOdds
     ? `${RESULT_SHORT.home} ${o.home} · ${RESULT_SHORT.draw} ${o.draw} · ${RESULT_SHORT.away} ${o.away}${oddsProviderSuffix(m.odds)}`
-    : '赔率待同步';
+    : (m.placeholder ? '盘口未开' : m.actual ? '历史盘口缺失' : '暂无真实盘口');
   const finished = !!m.actual;
   const displayPredictions = predictionsForMatch(m);
+  const content = matchContentFor(m, displayPredictions);
   const discussionIssues = discussionIssuesForMatch(m.id);
   const hasPredictions = displayPredictions.length > 0;
   const lifecycle = matchLifecycle(m);
@@ -1698,6 +1784,9 @@ function renderMatchCard(m) {
   const predictionCountText = displayPredictions.length
     ? `${displayPredictions.length} 位模型${discussionIssues.length ? ` · ${discussionIssues.length} 个异常` : ''}`
     : (discussionIssues.length ? `${discussionIssues.length} 个异常` : '待定');
+  const edgeText = content?.marketEdge
+    ? `${content.marketEdge.shortLabel || '观望'}${content.marketEdge.primary ? ` · EV ${insightFormatSignedPercent(content.marketEdge.primary.ev)}` : ''}`
+    : '待评估';
   const kickoff = formatKickoff(m.kickoff);
   const homeFlag = flagIcon(m.home.flag || (m.placeholder ? '🏆' : ''));
   const awayFlag = flagIcon(m.away.flag || (m.placeholder ? '🏆' : ''));
@@ -1779,6 +1868,10 @@ function renderMatchCard(m) {
           <strong>${hotScoreText}</strong>
         </div>
         <div class="info-box">
+          <span class="info-label">盘口博弈</span>
+          <strong>${escapeHTML(edgeText)}</strong>
+        </div>
+        <div class="info-box">
           <span class="info-label">预测模型</span>
           <strong>${predictionCountText}</strong>
         </div>
@@ -1788,6 +1881,7 @@ function renderMatchCard(m) {
         <span style="width:${counts.draw / total * 100}%"></span>
         <span style="width:${counts.away / total * 100}%"></span>
       </div>
+      ${renderMatchInsights(m, content)}
     </div>
     <div class="pred-title">模型预测</div>
     <div class="preds">${preds}</div>
@@ -1983,10 +2077,77 @@ function stanceCompareHTML(counts, total) {
   </div>`;
 }
 
+function roundtableDateKeys(threads) {
+  return Array.from(new Set(threads.map(item => matchDateKey(item.match)).filter(Boolean)))
+    .sort((a, b) => b.localeCompare(a));
+}
+
+function hasPendingRoundtableMatch(dateKey, threads) {
+  return threads.some(({ match }) => {
+    if (matchDateKey(match) !== dateKey) return false;
+    const state = matchLifecycle(match).key;
+    return state === 'upcoming' || state === 'sealed';
+  });
+}
+
+function pickInitialRoundtableDate(threads) {
+  const keys = roundtableDateKeys(threads);
+  if (!keys.length) return 'all';
+  const today = beijingDateKey();
+  if (keys.includes(today) && hasPendingRoundtableMatch(today, threads)) return today;
+  const futurePending = keys.slice()
+    .sort()
+    .find(key => key > today && hasPendingRoundtableMatch(key, threads));
+  return futurePending || keys[0];
+}
+
+function renderRoundtableFilters(threads) {
+  const dateEl = document.getElementById('roundtable-date-filter');
+  const searchEl = document.getElementById('roundtable-team-search');
+  const keys = roundtableDateKeys(threads);
+  if (!roundtableDateFilter || (roundtableDateFilter !== 'all' && !keys.includes(roundtableDateFilter))) {
+    roundtableDateFilter = pickInitialRoundtableDate(threads);
+  }
+
+  if (dateEl) {
+    dateEl.innerHTML = keys.map(key => {
+      const selected = key === roundtableDateFilter ? ' selected' : '';
+      const label = `${dateLabel(key)} ${dateSubLabel(key)}`.trim();
+      return `<option value="${escapeHTML(key)}"${selected}>${escapeHTML(label)}</option>`;
+    }).join('') + `<option value="all"${roundtableDateFilter === 'all' ? ' selected' : ''}>全部比赛日</option>`;
+    dateEl.onchange = () => {
+      roundtableDateFilter = dateEl.value || pickInitialRoundtableDate(threads);
+      renderRoundtableFeed();
+    };
+  }
+
+  if (searchEl) {
+    if (document.activeElement !== searchEl && searchEl.value !== roundtableTeamQuery) {
+      searchEl.value = roundtableTeamQuery;
+    }
+    searchEl.oninput = () => {
+      roundtableTeamQuery = searchEl.value.trim();
+      renderRoundtableFeed();
+    };
+  }
+}
+
+function filterRoundtableThreads(threads) {
+  const query = roundtableTeamQuery.trim().toLowerCase();
+  return threads.filter(({ match }) => {
+    const dateOk = roundtableDateFilter === 'all' || matchDateKey(match) === roundtableDateFilter;
+    if (!dateOk) return false;
+    if (!query) return true;
+    return [match.home.team, match.away.team]
+      .some(name => String(name || '').toLowerCase().includes(query));
+  });
+}
+
 function renderRoundtableFeed() {
   const el = document.getElementById('roundtable-feed');
   if (!el) return;
   const threads = roundtableThreads();
+  renderRoundtableFilters(threads);
 
   if (!threads.length) {
     el.innerHTML = `<div class="empty-state">
@@ -1996,7 +2157,16 @@ function renderRoundtableFeed() {
     return;
   }
 
-  const grouped = threads.reduce((acc, item) => {
+  const filteredThreads = filterRoundtableThreads(threads);
+  if (!filteredThreads.length) {
+    el.innerHTML = `<div class="empty-state">
+      <strong>没有匹配的圆桌</strong>
+      <span>换个比赛日或队名试试。</span>
+    </div>`;
+    return;
+  }
+
+  const grouped = filteredThreads.reduce((acc, item) => {
     const key = matchDateKey(item.match);
     if (!acc.has(key)) acc.set(key, []);
     acc.get(key).push(item);
@@ -2057,7 +2227,10 @@ function renderRoundtableFeed() {
     </article>`;
   };
 
-  el.innerHTML = Array.from(grouped.entries()).map(([dateKey, items]) => `
+  const groupedEntries = Array.from(grouped.entries())
+    .sort(([dateA], [dateB]) => dateB.localeCompare(dateA));
+
+  el.innerHTML = groupedEntries.map(([dateKey, items]) => `
     <section class="rt-day-group">
       <div class="rt-day-head">
         <strong>${escapeHTML(dateLabel(dateKey))}</strong>
@@ -2331,14 +2504,16 @@ function fetchDataBundle() {
     loadJSON('data/champion-predictions.json'),
     loadJSON('data/discussions.json'),
     loadJSON('data/groups.json'),
-    loadJSON('data/jingcai-single.json')
-  ]).then(([matches, leaderboard, champions, discussions, groups, jingcai]) => ({
+    loadJSON('data/jingcai-single.json'),
+    loadJSON('data/match-insights.json')
+  ]).then(([matches, leaderboard, champions, discussions, groups, jingcai, insights]) => ({
     matches,
     leaderboard,
     champions,
     discussions,
     groups,
-    jingcai
+    jingcai,
+    insights
   }));
 }
 
@@ -2404,6 +2579,7 @@ function applyDataBundle(bundle, { resetDate = false, warmLazy = false } = {}) {
   DISCUSSIONS = bundle.discussions?.discussions || [];
   GROUPS = bundle.groups?.groups || {};
   JINGCAI_SINGLE = bundle.jingcai || { matches: [], sources: [] };
+  MATCH_INSIGHTS = new Map((bundle.insights?.matches || []).map(item => [item.matchId, item]));
 
   rebuildDataIndexes();
   if (resetDate || !selectedDateKey) selectedDateKey = pickInitialDate();

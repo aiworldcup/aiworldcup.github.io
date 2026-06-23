@@ -7,7 +7,7 @@ const EXPECTED_PUBLISH_REPO = process.env.PUBLISH_REPO || DEFAULT_PUBLISH_REPO;
 
 const TASKS = {
   settle: {
-    command: ["npm", "run", "settle"],
+    command: ["npm", "run", "settle:strict"],
     message: "Auto update match results",
   },
   roundtable: {
@@ -70,7 +70,10 @@ function main() {
   const [command, ...args] = task.command;
   ensurePublishRemote();
   run(command, args);
+  run("npm", ["run", "insights"]);
+  run(process.execPath, ["pipeline/validate-results.js"]);
   run(process.execPath, ["pipeline/validate-predictions.js"]);
+  run(process.execPath, ["pipeline/validate-match-insights.js"]);
   run(process.execPath, ["pipeline/audit-prediction-provenance.js"]);
 
   const changed = changedDataFiles();

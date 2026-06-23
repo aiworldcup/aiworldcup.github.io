@@ -1292,6 +1292,143 @@ h2 {
 .lean-bars span:nth-child(2) { background: var(--gold); }
 .lean-bars span:nth-child(3) { background: var(--red); }
 
+.match-insights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.insight-card {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 9px;
+  padding: 10px;
+  background:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    rgba(8, 10, 15, 0.22);
+}
+
+.market-edge-card {
+  border-color: rgba(54, 201, 244, 0.18);
+  background:
+    linear-gradient(115deg, rgba(54, 201, 244, 0.1), rgba(54, 209, 124, 0.045) 52%, rgba(255, 255, 255, 0.018)),
+    rgba(8, 10, 15, 0.22);
+}
+
+.market-edge-card.status-strong-value {
+  border-color: rgba(54, 209, 124, 0.34);
+}
+
+.market-edge-card.status-missing-odds {
+  border-color: rgba(255, 92, 122, 0.2);
+}
+
+.insight-card-head,
+.edge-badges,
+.edge-triplet,
+.edge-triplet strong {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.insight-card-head {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.insight-card-head span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.insight-card-head strong {
+  min-width: 0;
+  color: var(--gold);
+  font-size: 13px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.edge-badges span {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 3px 7px;
+  color: #cdd6e3;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.insight-card p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.edge-badges {
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.edge-triplets {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.edge-triplet {
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.edge-triplet:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.edge-triplet > span {
+  flex: none;
+}
+
+.edge-triplet strong {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 4px;
+  color: var(--text);
+  font-size: 11px;
+  text-align: right;
+}
+
+.edge-triplet b {
+  color: var(--text);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.edge-dot {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.insight-card small {
+  display: block;
+  margin-top: 7px;
+  color: rgba(153, 164, 181, 0.78);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
 .pred-title {
   color: var(--muted);
   font-size: 12px;
@@ -2097,6 +2234,60 @@ footer {
 footer p + p { margin-top: 5px; }
 
 /* ====== 圆桌激辩:首页特色区卡片 ====== */
+.roundtable-filters {
+  display: grid;
+  grid-template-columns: minmax(118px, 0.44fr) minmax(0, 1fr);
+  gap: 7px;
+  margin: 6px 0 8px;
+}
+
+.rt-date-select,
+.rt-team-search {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 9px;
+  padding: 6px 9px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.rt-date-select span,
+.rt-team-search span {
+  display: none;
+}
+
+.rt-date-select select,
+.rt-team-search input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 20px;
+}
+
+.rt-date-select select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: calc(100% - 11px) 50%, calc(100% - 6px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+}
+
+.rt-date-select option {
+  color: #071016;
+  background: #f7f9fc;
+}
+
+.rt-team-search input::placeholder {
+  color: rgba(153, 164, 181, 0.72);
+}
+
 .roundtable-feed {
   display: flex;
   flex-direction: column;
@@ -2459,6 +2650,7 @@ footer p + p { margin-top: 5px; }
   color: var(--gold);
   font-size: 11px;
 }
+
 .rt-card-foot {
   display: flex;
   justify-content: space-between;
@@ -3333,6 +3525,10 @@ footer p + p { margin-top: 5px; }
 
 @media (min-width: 600px) {
   .tabbar { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .roundtable-filters {
+    grid-template-columns: 190px 240px;
+    align-items: center;
+  }
   .rt-day-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .debate-stage { align-items: center; }
   .debate-panel { height: 86vh; border-radius: 16px; border-bottom: 1px solid var(--line-strong); }
@@ -3356,6 +3552,7 @@ footer p + p { margin-top: 5px; }
   .match-info-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .info-box { display: block; min-height: 68px; }
   .info-box strong { display: block; text-align: left; margin-top: 6px; }
+  .edge-triplets { gap: 7px; }
   .camp-side strong { font-size: 40px; }
   .lb-row { grid-template-columns: 34px minmax(0, 1fr) repeat(4, 74px); }
   .lb-row .lb-stat:nth-last-child(-n + 2) { display: block; }

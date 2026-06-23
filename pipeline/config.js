@@ -1,5 +1,6 @@
 const DEFAULT_API_BASE = "https://v3.football.api-sports.io";
 const DEFAULT_BACKUP_ODDS_API_BASE = "https://api.the-odds-api.com/v4";
+const DEFAULT_EU_ODDS_REGIONS = "eu";
 const DEFAULT_TIMEOUT_MS = 12000;
 const DEFAULT_FOOTBALL_CONFIG_PATH = "/Users/tom/.openclaw/workspace/football/config.json";
 
@@ -14,6 +15,11 @@ function getConfig(env = process.env) {
     oddsApiBase: String(env.ODDS_API_BASE || env.APISPORTS_API_BASE || footballConfig.apiBase || DEFAULT_API_BASE).replace(/\/+$/, ""),
     oddsApiKey: String(env.ODDS_API_KEY || env.APISPORTS_API_KEY || footballConfig.apiKey || "").trim(),
     oddsBookmakerId: String(env.ODDS_BOOKMAKER_ID || "").trim(),
+    euroOddsApiBase: String(env.EURO_ODDS_API_BASE || env.THE_ODDS_API_BASE || DEFAULT_BACKUP_ODDS_API_BASE).replace(/\/+$/, ""),
+    euroOddsApiKey: String(env.EURO_ODDS_API_KEY || env.THE_ODDS_API_KEY || env.BACKUP_ODDS_API_KEY || "").trim(),
+    euroOddsSportKey: String(env.EURO_ODDS_SPORT_KEY || env.THE_ODDS_SPORT_KEY || env.BACKUP_ODDS_SPORT_KEY || "soccer_fifa_world_cup").trim(),
+    euroOddsRegions: String(env.EURO_ODDS_REGIONS || env.THE_ODDS_REGIONS || DEFAULT_EU_ODDS_REGIONS).trim(),
+    euroOddsBookmakers: String(env.EURO_ODDS_BOOKMAKERS || env.THE_ODDS_BOOKMAKERS || "").trim(),
     backupOddsApiBase: String(env.BACKUP_ODDS_API_BASE || env.THE_ODDS_API_BASE || DEFAULT_BACKUP_ODDS_API_BASE).replace(/\/+$/, ""),
     backupOddsApiKey: String(env.BACKUP_ODDS_API_KEY || env.THE_ODDS_API_KEY || "").trim(),
     backupOddsSportKey: String(env.BACKUP_ODDS_SPORT_KEY || env.THE_ODDS_SPORT_KEY || "soccer_fifa_world_cup").trim(),
@@ -38,6 +44,7 @@ function readFootballConfig(filePath) {
 module.exports = {
   DEFAULT_API_BASE,
   DEFAULT_BACKUP_ODDS_API_BASE,
+  DEFAULT_EU_ODDS_REGIONS,
   DEFAULT_TIMEOUT_MS,
   DEFAULT_FOOTBALL_CONFIG_PATH,
   getConfig,

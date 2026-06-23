@@ -10,6 +10,8 @@
 - 旧个人仓库 `https://github.com/ccavtjy/worldcup-ai-arena` 只作为 `legacy` 备份保留,不参与自动发布。
 - 如果一次自动任务已经生成并提交,但 GitHub 网络问题导致 push 失败,下一次 `publish:*` 任务会先补推本地领先的提交。
 - 每次 `publish:settle` / `publish:roundtable` 在 commit 前都会运行 `node pipeline/validate-predictions.js`,如果发现预测方向与比分主客关系冲突,直接中止发布。
+- `publish:settle` 使用严格结算入口 `npm run settle:strict`:同步后只要仍存在 `pending_result`,就拒绝 commit/push,避免线上继续发布“待赛果结算”。
+- 每次自动发布还会运行 `npm run validate:results`,校验 `matches.json` 里的既有 `actual` 是否与竞彩、ESPN、人工 fallback 冲突;一旦冲突直接中止发布。
 
 ## 任务
 
@@ -17,6 +19,7 @@
   - 频率:每 10 分钟
   - 命令:`npm run publish:settle`
   - 行为:同步真实赛程/赛果,重算排行榜;只有 `public/data` 发生语义变化时才 commit + push。
+  - 赛果来源顺序:API-Sports 主赛程/赛果 -> 中国竞彩网单固/全量赛果 -> ESPN 公共 scoreboard -> `public/data/result-fallback.json` 人工核验备用。所有来源只填空 `actual`,遇到已有赛果冲突只告警、不自动覆盖。
 
 - `com.tom.worldcup-ai-arena-roundtable`
   - 频率:每天北京时间 10:00
@@ -37,7 +40,9 @@
 ```bash
 npm run publish:settle
 npm run publish:roundtable
+npm run validate:results
 npm run validate:predictions
+npm run sync:espn-results -- --date 2026-06-23
 npm run sync:jingcai -- --from 2026-06-14 --to 2026-06-16
 ops/install-launchd.sh
 launchctl list com.tom.worldcup-ai-arena-results

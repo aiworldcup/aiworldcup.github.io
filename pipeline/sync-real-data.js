@@ -252,7 +252,7 @@ function mergeExistingMatch(fresh, existing) {
     });
     return merged;
   };
-  return {
+  const merged = {
     ...fresh,
     sealedAt: existing.sealedAt || fresh.sealedAt || null,
     predictions: Array.isArray(existing.predictions) ? existing.predictions : fresh.predictions || [],
@@ -274,9 +274,13 @@ function mergeExistingMatch(fresh, existing) {
       sourceLabel: freshOdds.sourceLabel || existingOdds.sourceLabel || null,
       syncedAt: freshOdds.syncedAt || existingOdds.syncedAt || null,
     },
-    actual: fresh.actual || existing.actual || null,
+    actual: existing.actual || fresh.actual || null,
     preservedAt: existing.preservedAt || fresh.syncedAt || new Date().toISOString(),
   };
+  if (existing.actualSource || fresh.actualSource) {
+    merged.actualSource = existing.actualSource || fresh.actualSource;
+  }
+  return merged;
 }
 
 async function fetchWorldCupFixtures(config) {
@@ -319,6 +323,7 @@ async function syncRealData() {
     const match = needOdds ? await hydrateOddsSafely(fixture, config) : fixture;
     const fresh = {
       ...match,
+      actual: null,
       predictions: [],
       dataSource: "api-sports",
       syncedAt: new Date().toISOString(),

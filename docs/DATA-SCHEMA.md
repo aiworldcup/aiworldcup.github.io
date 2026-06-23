@@ -49,6 +49,13 @@
           "hash": "sha256:..."
         }
       ],
+      "marketEdge": {
+        "modelProbabilities": { "home": 0.45, "draw": 0.27, "away": 0.28 },
+        "valueSide": "主胜被低估",
+        "confidence": "B",
+        "riskLevel": "中",
+        "suggestion": "主胜方向有模型价值,但需等待首发确认。"
+      },
       "actual": { "result": "home", "score": "2-1" }
     }
   ]
@@ -60,6 +67,117 @@
 - `result`: `"home"` / `"draw"` / `"away"`。
 - `score`: 形如 `"2-1"`(主-客)。
 - `actual`: 赛后填,未开赛为 `null`。
+- `marketEdge`: 可选。盘口博弈指数的结构化补充。核心口径是“模型公平概率/公平赔率 vs 市场归一概率/真实赔率”。如果缺失,前端会用封盘预测或圆桌最终预测聚合模型概率,再和 `odds.result` 计算 EV、概率差、风险和观望/价值方向。
+
+### market edge — 盘口博弈指数
+
+盘口博弈指数只用于比赛卡内容展示,不参与排行榜结算,也不恢复下注、积分或赔率结算旧规则。
+
+- 盘口博弈先计算模型概率,再转换公平赔率: `fairOdds = 1 / modelProbability`。
+- 市场概率必须先从真实赔率转隐含概率,再归一化扣除水钱:`marketProbability = (1 / marketOdds) / sum(1 / allMarketOdds)`。
+- 价值判断参考:EV > 8% 且概率差 > 5% 为明显价值方向;EV 3%-8% 为轻微价值方向;差距不足时展示“观望”。页面文案必须保持风险表达,不要写成确定性投注建议。
+
+## match-insights.json — 盘口博弈指数
+
+`public/data/match-insights.json` 是盘口博弈指数的正式落地数据。它是 sidecar 文件,不改写 `matches.json` 的已完赛 `actual` 和 `discussions.json` 的封盘 `messages`。
+
+生成命令:
+
+```bash
+npm run insights
+```
+
+发布前校验:
+
+```bash
+npm run validate:insights
+```
+
+结构:
+
+```json
+{
+  "version": 1,
+  "updatedAt": "2026-06-23T10:55:22.754Z",
+  "source": {
+    "matchesPath": "public/data/matches.json",
+    "discussionsPath": "public/data/discussions.json",
+    "rule": "盘口博弈指数仅用于展示:模型概率 vs 市场归一概率,不参与排行榜结算。"
+  },
+  "summary": {
+    "targetMatches": 104,
+    "totalMatches": 104,
+    "counts": {
+      "strong-value": 25,
+      "light-value": 4,
+      "watch": 30,
+      "missing-odds": 45
+    },
+    "valueDirections": [
+      {
+        "matchId": "fixture-1489369",
+        "valueSide": "平局被低估",
+        "ev": 1.2524,
+        "probabilityDiff": 0.3043
+      }
+    ]
+  },
+  "matches": [
+    {
+      "matchId": "fixture-1489369",
+      "generatedAt": "2026-06-23T10:55:22.754Z",
+      "source": {
+        "predictionSource": "discussion",
+        "predictionCount": 9,
+        "oddsProvider": null,
+        "oddsSyncedAt": null,
+        "actualStatus": "settled"
+      },
+      "marketEdge": {
+        "status": "strong-value",
+        "direction": "平局",
+        "valueSide": "平局被低估",
+        "shortLabel": "平局被低估",
+        "confidence": "A-",
+        "riskLevel": "中高",
+        "marketDirection": "市场更看好主胜",
+        "sourceLabel": "模型共识 9 票",
+        "modelProbabilities": { "home": 0.3333, "draw": 0.5238, "away": 0.1429 },
+        "marketProbabilities": { "home": 0.6744, "draw": 0.2196, "away": 0.1061 },
+        "primary": {
+          "key": "draw",
+          "label": "平局",
+          "marketOdds": 4.3,
+          "fairOdds": 1.9091,
+          "ev": 1.2524,
+          "diff": 0.3043
+        },
+        "rows": [
+          {
+            "key": "draw",
+            "label": "平局",
+            "modelProbability": 0.5238,
+            "marketProbability": 0.2196,
+            "marketOdds": 4.3,
+            "fairOdds": 1.9091,
+            "ev": 1.2524,
+            "diff": 0.3043
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+字段说明:
+- `marketEdge.status`: `strong-value` / `light-value` / `watch` / `missing-odds`。
+- `missing-odds` 不代表没有同步策略,而是当前没有可校验的完整真实胜平负盘口。页面按场景显示为“暂无真实盘口”“历史盘口缺失”或“盘口未开”,并保持观望。
+- `odds.provider`: `sporttery` 为中国竞彩网 HAD,`espn-draftkings` 为 ESPN public scoreboard 中 DraftKings moneyline 转 decimal 后的无 key 欧赔格式源。
+- `marketEdge.primary`: 当前最有价差的一侧;`watch` 时也保留最高 EV 一侧,但页面只展示观望。
+- `marketEdge.rows`: 主胜、平局、客胜三行完整明细,包含模型概率、市场归一概率、公平赔率、市场赔率、EV 和概率差。
+- 前端优先读取 `match-insights.json`;若该文件缺失或某场缺记录,才用浏览器端同一套公式即时派生。
+- `pipeline/auto-publish.js` 会在 `publish:settle` / `publish:roundtable` 中自动运行 `npm run insights` 和 `npm run validate:insights`。
 
 ## leaderboard.json — 排行榜(由 score.js 生成)
 

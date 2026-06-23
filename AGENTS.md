@@ -17,6 +17,15 @@
 6. **通用模型历史弹框**:排行榜模型行和比赛卡「模型预测」里的模型名都应复用同一个模型历史预测弹框,这是通用弹框能力。
 7. **P3 分组数据**:`public/data/groups.json` 是小组积分表来源。若更新赛程或队名,必须校验 12 组、每组 4 队、队名与 `matches.json` 精确匹配、每组有 6 场小组赛。
 8. **前端交互偏好**:移动端优先;tabbar 点击要即时定位和立即高亮,避免长页面 smooth scroll 的拖沓感。首屏圆桌热评要保持短头条高度,支持左右切换,切换时发言者也要变化。
+9. **线上发布目标**:当前公共网页是 `https://aiworldcup.github.io/`,发布仓库是 `aiworldcup/aiworldcup.github.io`。旧仓库 `ccavtjy/worldcup-ai-arena` 只作为 `legacy` 备份,不参与自动发布。
+10. **比分统一口径**:所有比分永远按「主队进球-客队进球」展示和结算。即使是客胜,也不能把客队比分写在前面。
+11. **圆桌解析规则**:`主负` 等同于 `客胜/away`;`闷平`、`冷平`、`逼平` 等同于 `平局/draw`。不要把「主场/主队」这种理由词误判成主胜,也不要把「客胜?」「平局?」这种反问句误判成最终立场。
+12. **发布前校验红线**:`npm run validate:predictions` 是预测一致性硬校验。`publish:settle` 和 `publish:roundtable` 发布前必须跑,发现方向和比分冲突就中止发布。
+13. **圆桌超时处理**:模型 API 超时、空返回或最终预测格式无效时,不能再写入 `1-1 平局`、赔率最低项或任何合成兜底发言。应记录 `issues` 状态并在比赛列表/比赛卡展示「API 超时 / 格式无效 / 未配置 key」等状态;补跑成功后再移除对应 issue。
+14. **补跑策略**:补跑只调用缺失/异常的模型,不要让其他已正常发言的模型重新参与。`pipeline/append-discussion-models.js --date YYYY-MM-DD --retry-fallbacks --missing-only` 用于按日期补缺口;`--clear-fallbacks` 只清理旧合成兜底,不应触发模型调用。
+15. **Kimi K2.6 特例 prompt**:Kimi 后续圆桌必须走降载 prompt:不带 6 条历史,最多只带上一句;最终发言用短格式 `结论:主胜/平局/客胜,比分X-X;理由:简短具体`;仍必须主队比分在前。不要恢复完整群聊长 prompt 给 Kimi。
+16. **超时链路结论**:Kimi、Qwen、Mimo、DeepSeek、GLM、MiniMax 的短 prompt 链路均可用;老超时主要来自长圆桌 prompt 和过短 timeout。Qwen/GLM 提高到 60 秒可救回,Kimi 长 prompt 下 60 秒仍可能超时,降载后可用但仍可能偶发,必要时单场重试。
+17. **赔率同步注意**:`sync-real-data.js` 默认赔率同步窗口至少要覆盖未来近期比赛(当前 32 场),且合并赔率时不能用 fresh `null` 覆盖 existing 数字赔率。若比赛卡胜平负赔率缺失,优先跑 `npm run sync:odds -- --date YYYY-MM-DD` 单独补赔率。
 
 ---
 

@@ -54,6 +54,10 @@ function firstEnv(keys) {
   return "";
 }
 
+function uniqueItems(items) {
+  return Array.from(new Set(items.filter(Boolean)));
+}
+
 function providerApiKey(provider) {
   return firstEnv([provider.env, ...(provider.envFallbacks || [])]);
 }
@@ -64,6 +68,19 @@ function providerModel(provider) {
 
 function providerBase(provider) {
   return firstEnv([provider.baseEnv, ...(provider.baseEnvFallbacks || [])]) || provider.base || "";
+}
+
+function isZenmuxVertexBase(base) {
+  return /zenmux\.ai\/api\/vertex-ai/.test(String(base || ""));
+}
+
+function geminiApiKeys(provider, base) {
+  const keys = isZenmuxVertexBase(base)
+    ? ["ZENMUX_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"]
+    : ["GEMINI_API_KEY", "GOOGLE_API_KEY"];
+  return uniqueItems(keys)
+    .map((key) => ({ key, value: String(process.env[key] || "").trim() }))
+    .filter((item) => item.value);
 }
 
 function splitArgs(value) {
@@ -265,10 +282,16 @@ async function callClaudeCli(provider, prompt, apiKey) {
   });
 }
 
-async function callGemini(provider, prompt, apiKey, options = {}) {
+function shouldTryNextGeminiKey(err) {
+  const text = String(err && err.message || "");
+  return [401, 403, 404].includes(err && err.status)
+    || /model_not_available|not included|permission|unauthorized|forbidden|api key/i.test(text);
+}
+
+async function callGeminiWithKey(provider, prompt, apiKey, options = {}) {
   const model = providerModel(provider);
   const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
-  const isZenmuxVertex = /zenmux\.ai\/api\/vertex-ai/.test(base);
+  const isZenmuxVertex = isZenmuxVertexBase(base);
   const [publisher, ...modelParts] = model.includes("/") ? model.split("/") : ["google", model];
   const vertexModel = modelParts.join("/");
   const url = isZenmuxVertex
@@ -287,24 +310,51 @@ async function callGemini(provider, prompt, apiKey, options = {}) {
     },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error(`Gemini 请求失败: ${res.status} ${await res.text()}`);
+  if (!res.ok) {
+    const err = new Error(`Gemini 请求失败: ${res.status} ${await res.text()}`);
+    err.status = res.status;
+    throw err;
+  }
   const payload = await res.json();
   return (((payload.candidates || [])[0] || {}).content || {}).parts
     ? payload.candidates[0].content.parts.map((part) => part.text || "").join("\n")
     : "";
 }
 
+async function callGemini(provider, prompt, options = {}) {
+  const base = String(process.env[provider.baseEnv] || provider.base || "").replace(/\/+$/, "");
+  const apiKeys = geminiApiKeys(provider, base);
+  if (!apiKeys.length) return null;
+
+  let lastErr;
+  for (const item of apiKeys) {
+    try {
+      return await callGeminiWithKey(provider, prompt, item.value, options);
+    } catch (err) {
+      lastErr = err;
+      if (!shouldTryNextGeminiKey(err)) throw err;
+      console.warn(`[predict] Gemini ${item.key} 不可用,尝试下一个 key: ${String(err.message || err).slice(0, 180)}`);
+    }
+  }
+  throw lastErr;
+}
+
 async function callModel(modelId, track, match, config) {
   const provider = PROVIDERS[modelId];
   if (!provider) throw new Error(`未配置模型 provider: ${modelId}`);
+  const prompt = buildPrompt(track, match);
+  if (modelId.startsWith("gemini-")) {
+    const text = await callGemini(provider, prompt, { json: true });
+    if (text === null) return null;
+    return normalizePrediction(modelId, track, extractJson(text));
+  }
+
   const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
-  const prompt = buildPrompt(track, match);
   let text;
   if (provider.protocol === "claude-cli") text = await callClaudeCli(provider, prompt, apiKey);
   else if (provider.protocol === "responses") text = await callResponsesCompatible(provider, prompt, apiKey, { json: true });
-  else if (modelId.startsWith("gemini-")) text = await callGemini(provider, prompt, apiKey, { json: true });
   else if (provider.protocol === "anthropic" || modelId.startsWith("claude-")) text = await callAnthropic(provider, prompt, apiKey);
   else text = await callOpenAICompatible(provider, prompt, apiKey, { json: true });
   return normalizePrediction(modelId, track, extractJson(text));
@@ -313,12 +363,13 @@ async function callModel(modelId, track, match, config) {
 async function callModelText(modelId, prompt) {
   const provider = PROVIDERS[modelId];
   if (!provider) throw new Error(`未配置模型 provider: ${modelId}`);
+  if (modelId.startsWith("gemini-")) return callGemini(provider, prompt);
+
   const apiKey = providerApiKey(provider);
   if (!apiKey) return null;
 
   if (provider.protocol === "claude-cli") return callClaudeCli(provider, prompt, apiKey);
   if (provider.protocol === "responses") return callResponsesCompatible(provider, prompt, apiKey);
-  if (modelId.startsWith("gemini-")) return callGemini(provider, prompt, apiKey);
   if (provider.protocol === "anthropic" || modelId.startsWith("claude-")) {
     return callAnthropic(provider, prompt, apiKey, { maxTokens: provider.maxTokens || 900 });
   }

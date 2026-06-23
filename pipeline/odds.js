@@ -8,6 +8,8 @@ const DEFAULT_ODDS_FALLBACK_PATH = path.join(__dirname, "..", "public", "data", 
 const HOUR_MS = 60 * 60 * 1000;
 const SPORTTERY_MATCH_LIST_URL = "https://www.sporttery.cn/jc/zqspf/";
 const SPORTTERY_MATCH_LIST_API = "https://webapi.sporttery.cn/gateway/uniform/football/getMatchListV1.qry";
+const ESPN_SCOREBOARD_API = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+const ESPN_MATCH_URL = "https://www.espn.com/soccer/match/_/gameId/";
 const ASIA_SHANGHAI = "Asia/Shanghai";
 
 const TEAM_ALIASES = {
@@ -66,6 +68,17 @@ function teamCandidates(team) {
 function namesMatch(value, candidates) {
   const normalized = normalizeName(value);
   return candidates.some((candidate) => normalized === candidate);
+}
+
+function dateKeyUTC(value) {
+  const date = value instanceof Date ? value : new Date(value);
+  return date.toISOString().slice(0, 10).replace(/-/g, "");
+}
+
+function offsetDateKey(value, days) {
+  const date = value instanceof Date ? new Date(value.getTime()) : new Date(value);
+  date.setUTCDate(date.getUTCDate() + days);
+  return dateKeyUTC(date);
 }
 
 function withTimeout(ms) {
@@ -213,6 +226,136 @@ async function hydrateOddsFromApiSports(match, config = getConfig()) {
   return applyOddsPayload(match, payload, config);
 }
 
+function americanToDecimal(value) {
+  const text = String(value || "").trim().replace(/[^\d+-]/g, "");
+  if (!text) return null;
+  const number = Number(text);
+  if (!Number.isFinite(number) || number === 0) return null;
+  return roundOdd(number > 0 ? 1 + number / 100 : 1 + 100 / Math.abs(number));
+}
+
+async function fetchEspnScoreboard(dateKey, config = getConfig()) {
+  const url = new URL(ESPN_SCOREBOARD_API);
+  url.searchParams.set("dates", dateKey);
+  const timeout = withTimeout(config.requestTimeoutMs);
+  try {
+    const response = await fetch(url, {
+      headers: { Accept: "application/json" },
+      signal: timeout.controller.signal,
+    });
+    const text = await response.text();
+    if (!response.ok) throw new Error(`ESPN ${response.status}: ${text.slice(0, 120)}`);
+    return JSON.parse(text);
+  } finally {
+    timeout.done();
+  }
+}
+
+function espnHomeAwayCompetitors(event) {
+  const competitors = (((event && event.competitions || [])[0] || {}).competitors || []);
+  return {
+    home: competitors.find((item) => item.homeAway === "home") || null,
+    away: competitors.find((item) => item.homeAway === "away") || null,
+  };
+}
+
+function espnCompetitorName(competitor) {
+  return competitor && competitor.team && (competitor.team.displayName || competitor.team.name || competitor.team.shortDisplayName);
+}
+
+function espnEventMapping(event, match) {
+  const { home, away } = espnHomeAwayCompetitors(event);
+  if (!home || !away) return null;
+  const eventTime = new Date(event.date || 0).getTime();
+  const matchTime = new Date(match.kickoff || 0).getTime();
+  if (!Number.isFinite(eventTime) || !Number.isFinite(matchTime)) return null;
+  if (Math.abs(eventTime - matchTime) > 18 * HOUR_MS) return null;
+  const eventHome = espnCompetitorName(home);
+  const eventAway = espnCompetitorName(away);
+  const localHome = teamCandidates(match.home);
+  const localAway = teamCandidates(match.away);
+  if (namesMatch(eventHome, localHome) && namesMatch(eventAway, localAway)) return { event, flipped: false };
+  if (namesMatch(eventHome, localAway) && namesMatch(eventAway, localHome)) return { event, flipped: true };
+  return null;
+}
+
+function pickEspnEvent(events, match) {
+  return (Array.isArray(events) ? events : [])
+    .map((event) => espnEventMapping(event, match))
+    .filter(Boolean)
+    .sort((a, b) => {
+      const aDiff = Math.abs(new Date(a.event.date || 0).getTime() - new Date(match.kickoff || 0).getTime());
+      const bDiff = Math.abs(new Date(b.event.date || 0).getTime() - new Date(match.kickoff || 0).getTime());
+      return aDiff - bDiff;
+    })[0] || null;
+}
+
+function espnMoneylineOdds(event) {
+  return ((event && event.competitions || [])[0] || {}).odds || event.odds || [];
+}
+
+function closeOrOpenAmerican(side) {
+  return side && side.close && side.close.odds || side && side.open && side.open.odds || side && side.moneyLine || null;
+}
+
+function extractEspnResultOdds(mapping) {
+  const odds = espnMoneylineOdds(mapping.event)[0] || {};
+  const moneyline = odds.moneyline || {};
+  const result = {
+    home: americanToDecimal(closeOrOpenAmerican(moneyline.home)),
+    draw: americanToDecimal(closeOrOpenAmerican(moneyline.draw) || (odds.drawOdds && odds.drawOdds.moneyLine)),
+    away: americanToDecimal(closeOrOpenAmerican(moneyline.away)),
+  };
+  if (!mapping.flipped) return result;
+  return {
+    home: result.away,
+    draw: result.draw,
+    away: result.home,
+  };
+}
+
+async function hydrateOddsFromEspn(match, config = getConfig()) {
+  const dateKeys = [
+    offsetDateKey(match.kickoff || Date.now(), -1),
+    offsetDateKey(match.kickoff || Date.now(), 0),
+    offsetDateKey(match.kickoff || Date.now(), 1),
+  ];
+  const errors = [];
+  for (const dateKey of Array.from(new Set(dateKeys))) {
+    try {
+      const payload = await fetchEspnScoreboard(dateKey, config);
+      const mapping = pickEspnEvent(payload.events || [], match);
+      if (!mapping) {
+        errors.push(`${dateKey}: 未匹配到 ESPN 比赛`);
+        continue;
+      }
+      const result = extractEspnResultOdds(mapping);
+      const provider = (((espnMoneylineOdds(mapping.event)[0] || {}).provider || {}).displayName)
+        || (((espnMoneylineOdds(mapping.event)[0] || {}).provider || {}).name)
+        || "DraftKings";
+      const hydrated = {
+        ...match,
+        odds: {
+          ...(match.odds || {}),
+          result,
+          scores: (match.odds && match.odds.scores) || {},
+          provider: "espn-draftkings",
+          source: "espn-public-scoreboard",
+          sourceEventId: mapping.event.id || null,
+          sourceHref: mapping.event.id ? `${ESPN_MATCH_URL}${mapping.event.id}` : ESPN_SCOREBOARD_API,
+          sourceLabel: `ESPN ${provider} 欧赔格式`,
+          syncedAt: new Date().toISOString(),
+        },
+      };
+      if (!hasResultOdds(hydrated)) throw new Error("ESPN moneyline 赔率不完整");
+      return hydrated;
+    } catch (err) {
+      errors.push(`${dateKey}: ${err.message}`);
+    }
+  }
+  throw new Error(errors.join("; ") || "ESPN 未返回可用赔率");
+}
+
 function sportteryHeaders(referer = SPORTTERY_MATCH_LIST_URL) {
   return {
     Accept: "application/json, text/javascript, */*; q=0.01",
@@ -350,6 +493,30 @@ function extractBackupResultOdds(event, match) {
   };
 }
 
+async function hydrateOddsFromEuroApi(match, config = getConfig()) {
+  const euroConfig = {
+    ...config,
+    backupOddsApiBase: config.euroOddsApiBase,
+    backupOddsApiKey: config.euroOddsApiKey,
+    backupOddsSportKey: config.euroOddsSportKey,
+    backupOddsRegions: config.euroOddsRegions || "eu",
+    backupOddsBookmakers: config.euroOddsBookmakers,
+  };
+  const hydrated = await hydrateOddsFromBackupApi(match, euroConfig);
+  return {
+    ...hydrated,
+    odds: {
+      ...(hydrated.odds || {}),
+      provider: "euro-odds-api",
+      source: "european-bookmakers",
+      sourceLabel: config.euroOddsBookmakers
+        ? `欧赔 ${config.euroOddsBookmakers}`
+        : `欧赔 ${config.euroOddsRegions || "eu"}`,
+      syncedAt: new Date().toISOString(),
+    },
+  };
+}
+
 async function hydrateOddsFromBackupApi(match, config = getConfig()) {
   if (!config.backupOddsApiKey) throw new Error("缺少 BACKUP_ODDS_API_KEY 或 THE_ODDS_API_KEY");
   if (!config.backupOddsSportKey) throw new Error("缺少 BACKUP_ODDS_SPORT_KEY");
@@ -453,6 +620,22 @@ async function hydrateOddsForMatch(match, config = getConfig()) {
   }
 
   try {
+    const hydrated = await hydrateOddsFromEspn({ ...match }, config);
+    if (hasResultOdds(hydrated)) return hydrated;
+    attempts.push("espn-draftkings: no result odds");
+  } catch (err) {
+    attempts.push(`espn-draftkings: ${err.message}`);
+  }
+
+  try {
+    const hydrated = await hydrateOddsFromEuroApi({ ...match }, config);
+    if (hasResultOdds(hydrated)) return hydrated;
+    attempts.push("euro-odds: no result odds");
+  } catch (err) {
+    attempts.push(`euro-odds: ${err.message}`);
+  }
+
+  try {
     const hydrated = await hydrateOddsFromSporttery({ ...match }, config);
     if (hasResultOdds(hydrated)) return hydrated;
     attempts.push("sporttery: no result odds");
@@ -517,6 +700,8 @@ module.exports = {
   fetchFixturesByDate,
   hydrateOddsForMatch,
   hydrateOddsFromApiSports,
+  hydrateOddsFromEspn,
+  hydrateOddsFromEuroApi,
   hydrateOddsFromSporttery,
   hydrateOddsFromBackupApi,
   hydrateOddsFromLocalFallback,

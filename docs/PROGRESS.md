@@ -1,9 +1,31 @@
 # 进度记录
 
-更新时间: 2026-06-16
+更新时间: 2026-06-23
 
 ## 已完成
 
+- 2026-06-23 全局 AI 军团调用器:
+  - 新增 `pipeline/legion.js`,封装 `askLegion(prompt, options)` / `askModel(modelId, prompt)`,可从任意 Node 项目用绝对路径 require 调用本项目 12 个启用模型。
+  - 新增 `bin/ai-legion` 和 `npm run legion`,并在 `~/.local/bin/ai-legion` 创建全局命令链接;从任意目录可执行 `ai-legion "问题"`、`ai-legion --models gemini-3-1 --format json "问题"`。
+  - 全局调用器固定从 `/Users/tom/worldcup-ai-arena/.env` 和 `.env.claude-gateways` 加载 key/base/model 配置,不依赖调用方当前目录。
+  - 已从 `/private/tmp` 验证 `ai-legion --list-models` 与 `ai-legion --models gemini-3-1 --format json "只回复 ok"` 正常。
+- 2026-06-23 Gemini ZenMux Vertex 适配:
+  - `pipeline/predict.js` 的 Gemini 调用在 `GOOGLE_GEMINI_BASE_URL=https://zenmux.ai/api/vertex-ai` 时优先使用 `ZENMUX_API_KEY`,避免旧 `GEMINI_API_KEY` 抢先命中导致 `model_not_available`。
+  - 保留官方 Gemini base 下使用 `GEMINI_API_KEY` / `GOOGLE_API_KEY` 的能力,并在 ZenMux Vertex 认证或模型不可用时按 key 顺序尝试下一个可用 key。
+  - 已验证 `gemini-3-1` 最小调用返回正常,并补齐北京时间 2026-06-24 四场圆桌的 Gemini 缺口;四场均为 19 条发言、0 个 issue。
+- 2026-06-23 盘口博弈指数:
+  - 新增 `public/match-insights.js`,从胜平负赔率、模型/圆桌预测和真实赛果派生“模型公平概率 vs 市场归一概率”。
+  - 比赛卡新增“盘口博弈”摘要,展示模型概率、公平赔率、市场赔率、EV、概率差、风险等级和观望/价值方向。
+  - 简约比赛列表同步展示盘口短方向,移动端不需要进入完整卡片也能扫到市场分歧。
+  - 盘口口径只做概率定价和风险提示,不接入排行榜结算,不恢复下注/积分/赔率结算旧规则。
+  - 本次未改写 `public/data/matches.json` 的 `actual` 和 `public/data/discussions.json` 的 `messages`;新增模块可读取未来写入的 `marketEdge` 字段,缺失时自动派生展示值。
+  - 已按产品判断移除原星级打分模块,不再展示星级、看点标签或推荐分。
+- 2026-06-23 盘口博弈指数管线落地:
+  - 新增 `pipeline/update-match-insights.js` 与 `npm run insights`,将盘口博弈指数生成到 sidecar 文件 `public/data/match-insights.json`,避免批量重写 `matches.json`。
+  - 新增 `pipeline/validate-match-insights.js` 与 `npm run validate:insights`,校验 sidecar 覆盖全部比赛、模型/市场概率归一、EV/公平赔率/概率差公式正确,并确认数据未相对当前赛程和圆桌过期。
+  - 前端优先读取 `public/data/match-insights.json`;若该文件缺失或单场缺记录,继续使用同一套公式即时派生,保证本地打开和线上发布都能展示。
+  - `pipeline/auto-publish.js` 已在 `publish:settle` 和 `publish:roundtable` 发布前自动运行 `npm run insights` 与 `npm run validate:insights`,赛果或圆桌变化后会同步刷新盘口指数。
+  - 已生成当前 104 场 `match-insights.json`:其中 `strong-value` 25 场、`light-value` 4 场、`watch` 30 场、`missing-odds` 45 场;缺真实盘口场次按“历史盘口缺失 / 盘口未开”区分,不硬给方向。
 - 2026-06-16 圆桌超时状态展示与链路验证:
   - `public/data/discussions.json` 的圆桌 thread 新增 `issues` 记录,用于标记模型 API 超时、补跑失败、格式无效等状态;比赛卡「模型预测」列表会直接展示异常模型,不再静默留空。
   - 北京时间 2026-06-17 四场补跑后仅 Kimi K2.6 仍在真实圆桌长 prompt 下 60 秒超时;Qwen、Mimo、DeepSeek、GLM、MiniMax 等缺口已补回真实发言。
@@ -143,16 +165,36 @@
 - 澄清赛程出线小组进度文案:
   - 小组积分卡头部从“已赛 X/6 场”改为“本组 6 场已完赛 X 场”,避免误解成单支球队已赛场次;表格里的“赛”仍表示球队维度的已踢场次。
 - 优化缺失赔率展示:
-  - 未同步到胜平负赔率的比赛卡不再展示“胜 - · 平 - · 负 -”,统一显示“赔率待同步”;随后已用主备同步链路补齐所有未完赛小组赛的胜平负赔率。
+  - 未同步到胜平负赔率的比赛卡不再展示“胜 - · 平 - · 负 -”,改为按场景展示“暂无真实盘口 / 历史盘口缺失 / 盘口未开”。
 - 增加赔率主备同步链路:
-  - `pipeline/odds.js` 的 `hydrateOddsForMatch` 改为 API-SPORTS 主源 -> 中国竞彩网官方 HAD 胜平负赔率 -> The Odds API 备源 -> 带来源标注的本地 `odds-fallback.json`;不再生成或接受模型估算赔率。
+  - `pipeline/odds.js` 的 `hydrateOddsForMatch` 改为 API-SPORTS 主源 -> ESPN 无 key 欧赔格式源 -> The Odds API 欧赔源 -> 中国竞彩网官方 HAD 胜平负赔率 -> The Odds API 备源 -> 带来源标注的本地 `odds-fallback.json`;不再生成或接受模型估算赔率。
   - `npm run sync:odds` 默认只补缺失或非法来源赔率,避免外部 API 限流时覆盖已有真实盘口;如需刷新已有盘口可加 `--refresh`。
   - 页面展示竞彩/备源/本地权威赔率时会在数字后标注“竞彩”“备源”或“权威源”,预测和圆桌 prompt 也会携带 odds provider。
-  - 已清除 `computed-strength-fallback` 旧数据;当前 11 场未完赛比赛已由中国竞彩网官方 HAD 赔率补齐,竞彩/API/The Odds API/本地权威源均未覆盖的远期比赛保持“赔率待同步”。
+  - 已清除 `computed-strength-fallback` 旧数据;当前可匹配场次由中国竞彩网官方 HAD 赔率补齐,竞彩/API/The Odds API/本地权威源均未覆盖的比赛保持观望,不生成估算赔率。
+- 2026-06-23 盘口缺赔率文案修正:
+  - 执行 `npm run sync:odds -- --all-missing`,为 11 场近期小组赛补回中国竞彩网官方 HAD 胜平负赔率;剩余未补中原因包括 API-Sports 日限额、The Odds API key 未配置、竞彩 HAD 未开完整盘口、本地备用赔率未命中。
+  - `public/match-insights.js` 将缺赔率状态从“赔率待同步”细分为“暂无真实盘口”“历史盘口缺失”“盘口未开”,避免把数据源未覆盖误解为同步链路未做。
+- 2026-06-23 无 key 欧赔格式源接入:
+  - `pipeline/odds.js` 新增 `hydrateOddsFromEspn`,使用 ESPN public scoreboard 的 DraftKings moneyline,将美式赔率转换为 decimal 胜平负赔率,provider 标记为 `espn-draftkings`。
+  - `pipeline/odds.js` 同时保留可选 `hydrateOddsFromEuroApi`,若后续配置 The Odds API key,可继续使用欧洲 bookmakers 的 `h2h` decimal 胜平负赔率。
+  - 赔率补齐顺序调整为 API-Sports -> ESPN 无 key 欧赔格式源 -> The Odds API 欧赔源 -> 中国竞彩网 HAD -> The Odds API 备源 -> 本地权威备用赔率,优先用无 key 源补竞彩漏盘。
+  - 已执行 `npm run sync:odds -- --all-missing`,通过 ESPN 补齐 17 场未完赛小组赛胜平负赔率;当前未完赛且非占位比赛赔率缺口为 0,剩余缺口只包括 13 场历史盘口缺失和 32 场淘汰赛盘口未开。
+  - `.env.example` 说明 ESPN 无 key 源会自动尝试;另新增 `EURO_ODDS_API_KEY`、`EURO_ODDS_REGIONS=eu`、`EURO_ODDS_BOOKMAKERS` 等可选配置。
 - 增加赛果主备结算链路:
   - `pipeline/sync-jingcai-single.js` 的赛果同步改为中国竞彩网单固赛果 `isFix=1` -> 中国竞彩网全量赛果 `isFix=0`;同时按竞彩 `sourceMatchId/sourceMatchNum` 匹配本地比赛,补齐“刚果金/民主刚果”“乌兹别克/乌兹别克斯坦”等别名。
   - `pipeline/settle.js` 在竞彩之后追加读取 `public/data/result-fallback.json`,作为 API-Sports 与竞彩均缺失时的人工核验备用赛果源;备用源只填空 `actual`,遇到已存在赛果冲突只告警、不覆盖。
   - 已验证 `npm run settle`:API-Sports 免费计划不可用时仍继续走竞彩全量/本地 fallback,葡萄牙 1-1 民主刚果不再进入 `pending_result`。
+- 彻底收紧赛果漏更新问题:
+  - 新增 `pipeline/sync-espn-results.js` / `npm run sync:espn-results`,用 ESPN 无 key 公共 scoreboard 作为赛果二级兜底;脚本会按比赛 kickoff 的前一天/当天/后一天 ESPN 日期桶查询,解决北京时间与北美比赛日跨日导致的漏场。
+  - `pipeline/settle.js` 已接入 ESPN 赛果缓存,顺序为 API-Sports -> 竞彩网 -> ESPN -> 人工 fallback;仍只填空 `actual`,不会覆盖已有赛果。
+  - 新增 `npm run settle:strict`;`publish:settle` 改用严格结算,如果所有来源同步后仍有 `pending_result`,直接中止自动发布,避免线上继续展示“待赛果结算”。
+  - 已验证 `npm run sync:espn-results -- --from=2026-06-21 --to=2026-06-23 --dry-run` 可拉到 9 场近期已完赛结果;`npm run settle:strict` 生成 32 条 ESPN 赛果缓存且 `pending_result=0`。
+- 修复伊拉克 1-4 挪威历史错分并加硬防线:
+  - 反查发现错误来自 `1810f3bd` (`Settle Wednesday match results`):当时 `sync-real-data` 允许 API-Sports 的单源 `fresh.actual` 直接写入 `matches.json`,而提交中的 `jingcai-single.json` 尚无此场;后续竞彩/ESPN 返回 1-4 时,旧逻辑只 warning、不覆盖,导致 1-3 被保留下来。
+  - 已将 `fixture-1539016` 全局修正为 `actual.score = "1-4"`,并补 `actualSource` 为“中国竞彩网 / ESPN Scoreboard”;对应圆桌 recap actual、排行榜、盘口 sidecar 已刷新。
+  - `sync-real-data.js` 不再把 API-Sports 单源 `goals` 直接落成 `actual`;赛果只由竞彩网、ESPN 或人工 fallback 填空。
+  - `settle:strict` 新增 `--fail-on-conflict`;已有 `actual` 只要与竞彩网/ESPN/fallback 冲突即中止发布。
+  - 新增 `pipeline/validate-results.js` / `npm run validate:results`,并接入 `publish:settle` / `publish:roundtable`,防止手工改错或旧错分再次发布。
 - 优化首页打开流畅度:
   - 前端 JSON 加载由串行改为并发,并将 `fetch` 缓存策略从 `no-store` 改为 `no-cache`,保留更新校验同时减少重复下载。
   - 初始化时先渲染当前 tab 和首屏圆桌/榜单,赛程、比赛、冠军等隐藏 tab 改为空闲时间预热,定时刷新也只重绘当前 tab。
