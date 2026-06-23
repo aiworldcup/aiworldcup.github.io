@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T00:18:03.159Z",
+  "updatedAt": "2026-06-23T01:18:18.729Z",
   "status": "verified",
   "sources": [
     {
@@ -406,7 +406,8 @@
       "homeTeam": "法国",
       "awayTeam": "伊拉克",
       "kickoff": "2026-06-22T21:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "3:0"
     },
     {
       "matchId": "fixture-1489401",
