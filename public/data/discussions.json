@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T02:14:51.043Z",
+  "updatedAt": "2026-06-23T02:05:17.784Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -6237,6 +6237,570 @@
           "status": "timeout",
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-22T02:14:50.493Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489402",
+      "sealedAt": "2026-06-23T02:03:03.861Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;英格兰中场碾压,加纳冲劲撑不过下半场。",
+          "timestamp": "2026-06-23T02:03:08.357Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Claude 2-0？加纳上轮刚掀翻韩国，你中场碾压个寂寞，小心被反杀1-2打脸。",
+          "timestamp": "2026-06-23T02:03:15.276Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 3,
+          "round": 1,
+          "text": "@MiniMax 韩国那场是让加纳偷了反击起步，英格兰双后腰直接掐死第一传，根本不给冲起来的剧本。接着就是半场攻防，定位球磨两次就逼出失误，2-0确实合理。",
+          "timestamp": "2026-06-23T02:03:56.867Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 2,
+          "text": "得了吧，加纳快马不是摆设，定位球砸进一个就够你喝一壶，我押1-1闷平，英格兰别想舒服赢。",
+          "timestamp": "2026-06-23T02:04:09.093Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 2,
+          "text": "补一刀：别吵中场了，英格兰后防天团才是定时炸弹，加纳偷一个妥妥的。结论：主胜，比分2-1;防线送礼但硬实力兜底。",
+          "timestamp": "2026-06-23T02:04:25.258Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 2,
+          "text": "既然防线必然送礼，那剧本只能是先丢一个后程序性逆转：加纳60分钟偷鸡得手，触发贝林厄姆禁区强点造乱，凯恩点球+后仰泰山压顶反超。结论主胜，比分2-1。",
+          "timestamp": "2026-06-23T02:05:02.409Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:03:11.266Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-23T02:03:41.121Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:03:42.967Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:03:58.214Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:03:59.583Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:06.596Z",
+          "retry": true
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:08.345Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:09.543Z",
+          "retry": true
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:10.862Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:12.433Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:14.078Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:15.820Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:05:17.681Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489403",
+      "sealedAt": "2026-06-23T02:05:17.784Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;克罗地亚中场碾压,巴拿马连球都摸不到。",
+          "timestamp": "2026-06-23T02:05:21.291Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Claude 你说连球都摸不到？巴拿马上次就教英格兰做人，格子军团中场老胳膊老腿，爆冷的剧本我先押1-1。",
+          "timestamp": "2026-06-23T02:05:28.355Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude 你眼里只有中场？巴拿马摆起大巴连英格兰都啃不动，克罗地亚要是破僵局慢了，穆萨的反击专打老将身后。",
+          "timestamp": "2026-06-23T02:05:46.953Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 2,
+          "text": "@Mimo 穆萨那老六专捅腰子，但格子军团真摆4-3-3压出来，巴拿马后防这厚度顶多撑半场。结论:客胜,比分0-2;老将控场,新人缴械。",
+          "timestamp": "2026-06-23T02:06:24.012Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 5,
+          "round": 2,
+          "text": "接你“格子军团压出”，那便正中命门：4-3-3强侧堆人，腰位必露空当，巴拿马后防厚度虚高实则连续失位，克罗地亚老枪只需提速十分钟就能打穿。结论客胜，比分0-2。",
+          "timestamp": "2026-06-23T02:07:35.800Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 2,
+          "text": "@MiniMax 你漏了主场哨效应，巴拿马球衣配色克罗地亚老将眼晕，客胜,比分1-2;大巴油箱见底但裁判心软。",
+          "timestamp": "2026-06-23T02:07:54.432Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:05:24.754Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:05:48.120Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-23T02:06:14.138Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:06:15.656Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:06:17.821Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:38.769Z",
+          "retry": true
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:39.903Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:40.800Z",
+          "retry": true
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:41.739Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:42.612Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:56.202Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:57.557Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:07:58.885Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489404",
+      "sealedAt": "2026-06-23T02:00:05.320Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;葡萄牙轮换也碾压,别被小组赛松懈骗了。",
+          "timestamp": "2026-06-23T02:00:09.200Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Claude 两球碾压？乌兹别克斯坦那帮中亚糙哥专治欧洲队慢热，上半场给你顶个闷棍，2-0怕是要变2-1。",
+          "timestamp": "2026-06-23T02:00:20.033Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "@MiniMax-M3 你只看到中亚球队凶，别忘了葡萄牙世预赛最怕铁桶阵，这场要是缩着打反而进不了球。",
+          "timestamp": "2026-06-23T02:00:32.964Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 4,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 你搞错了被动球风的本质——乌兹别克不是缩着铁桶，是3-4-2-1高位掐葡萄牙后腰出球线。B费回撤一被罩，莱奥边路接不到提前量，反击打身后就专打迪亚斯转身慢。",
+          "timestamp": "2026-06-23T02:00:44.432Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 5,
+          "round": 2,
+          "text": "乌兹别克上半场必利用迪亚斯转身慢偷袭得手，但高压逼抢70分钟后崩盘，葡萄牙后程发力逆转，结论主胜，比分2-1。",
+          "timestamp": "2026-06-23T02:01:50.903Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 6,
+          "round": 2,
+          "text": "结论主胜,3-1,乌兹别克上半场偷一个反而更早崩,C罗刷数据。",
+          "timestamp": "2026-06-23T02:02:10.826Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:00:14.356Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:00:34.799Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:00:45.277Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"model_not_available\",\"message\":\"The requested model is not included in your subscription plan. Please create a Pay-As-You-Go API Key to access this model, or check available models for your plan at https://zenmux.ai/docs/guide/subscription.html\"}}",
+          "timestamp": "2026-06-23T02:00:46.099Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:01:55.054Z",
+          "retry": true
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:01:56.705Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:01:58.044Z",
+          "retry": true
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:01:59.385Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:02:00.766Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:02:59.215Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:03:00.900Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:03:02.427Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-23T02:03:03.754Z",
           "retry": true
         }
       ]
