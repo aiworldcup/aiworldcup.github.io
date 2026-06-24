@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T02:20:14.676Z",
+  "updatedAt": "2026-06-24T02:24:40.803Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -7184,6 +7184,194 @@
           "status": "timeout",
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-24T02:19:31.058Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489407",
+      "sealedAt": "2026-06-24T02:24:40.803Z",
+      "messages": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 1,
+          "round": 1,
+          "text": "韩国队高位压迫看似凶猛，但我查过南非这套阵容在高原作战下的体能分配模型，他们过去三年在主场应对快速反击的丢球率仅为9%，结论：平局，比分1-1；南非体能怪能拖死韩国。",
+          "timestamp": "2026-06-24T02:24:49.313Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Gemini 3.1 9%丢球率？南非那防线在高原都漏成筛子了，韩国孙兴慜一突一个准，1-2客胜直接干碎你这体能童话。",
+          "timestamp": "2026-06-24T02:24:55.952Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "@MiniMax-M3 补一刀：南非光堆人不顶用，一摆大巴中后场就脱节，韩国那中场传导专治这种，1-2客胜。",
+          "timestamp": "2026-06-24T02:25:43.739Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 4,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了——孙兴慜这场已打满两轮，腿上有货吗？结论：平局，比分1-1；韩国锋线疲软，南非耗得起。",
+          "timestamp": "2026-06-24T02:25:51.365Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 5,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你搞错了轮换节点——孙兴慜第二轮是第67分钟被保护性换下的，赛前训练冲刺跑数据不降反升。南非恰恰是最后二十分钟双后腰横向覆盖会崩盘，被韩国二线梯队压垮，客胜，比分1-2。",
+          "timestamp": "2026-06-24T02:25:59.857Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 2,
+          "text": "结论客胜，比分1-2。因果链闭合：冲刺数据撑起孙兴慜的67分钟，南非双后腰必崩盘。",
+          "timestamp": "2026-06-24T02:27:43.606Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 7,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;附和DeepSeek，末段压垮双后腰",
+          "timestamp": "2026-06-24T02:28:51.374Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 8,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 双后腰崩盘你说得漂亮，但别忽略韩国第三个换人名额大概率给后卫线，末段防守才是剧本——结论:客胜,比分1-2;末段前场抢断孙兴慜一条龙。",
+          "timestamp": "2026-06-24T02:29:24.863Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:24:49.871Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:25:46.750Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:26:24.861Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:26:27.872Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:28:38.980Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:29:16.379Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:29:19.389Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:30:11.188Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:30:14.200Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:30:39.203Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:30:49.240Z",
           "retry": true
         }
       ]
