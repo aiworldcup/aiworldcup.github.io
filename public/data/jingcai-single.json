@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T03:08:52.547Z",
+  "updatedAt": "2026-06-24T00:14:59.344Z",
   "status": "verified",
   "sources": [
     {
@@ -422,6 +422,28 @@
       "officialScore": "3:2"
     },
     {
+      "matchId": "fixture-1489404",
+      "jingcaiMatchId": "2040255",
+      "matchNum": "周二045",
+      "matchDate": "2026-06-24",
+      "league": "世界杯",
+      "homeTeam": "葡萄牙",
+      "awayTeam": "乌兹别克斯坦",
+      "kickoff": "2026-06-23T17:00:00+00:00",
+      "sourceScope": "single-fixed"
+    },
+    {
+      "matchId": "fixture-1489402",
+      "jingcaiMatchId": "2040256",
+      "matchNum": "周二046",
+      "matchDate": "2026-06-24",
+      "league": "世界杯",
+      "homeTeam": "英格兰",
+      "awayTeam": "加纳",
+      "kickoff": "2026-06-23T20:00:00+00:00",
+      "sourceScope": "all-results"
+    },
+    {
       "matchId": "fixture-1489403",
       "jingcaiMatchId": "2040257",
       "matchNum": "周二047",
@@ -429,7 +451,8 @@
       "league": "世界杯",
       "homeTeam": "巴拿马",
       "awayTeam": "克罗地亚",
-      "kickoff": "2026-06-23T23:00:00+00:00"
+      "kickoff": "2026-06-23T23:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
