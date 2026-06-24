@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T10:20:04.729Z",
+  "updatedAt": "2026-06-24T10:30:18.454Z",
   "source": {
     "matchesPath": "public/data/matches.json",
     "discussionsPath": "public/data/discussions.json",
@@ -231,7 +231,7 @@
   "matches": [
     {
       "matchId": "fixture-1489369",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -316,7 +316,7 @@
     },
     {
       "matchId": "fixture-1538999",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -401,7 +401,7 @@
     },
     {
       "matchId": "fixture-1539000",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -486,7 +486,7 @@
     },
     {
       "matchId": "fixture-1489370",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -571,7 +571,7 @@
     },
     {
       "matchId": "fixture-1489373",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -656,7 +656,7 @@
     },
     {
       "matchId": "fixture-1489371",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -741,7 +741,7 @@
     },
     {
       "matchId": "fixture-1489372",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -826,7 +826,7 @@
     },
     {
       "matchId": "fixture-1539001",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -911,7 +911,7 @@
     },
     {
       "matchId": "fixture-1489374",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -996,7 +996,7 @@
     },
     {
       "matchId": "fixture-1489376",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1081,7 +1081,7 @@
     },
     {
       "matchId": "fixture-1489375",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1166,7 +1166,7 @@
     },
     {
       "matchId": "fixture-1539002",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1251,7 +1251,7 @@
     },
     {
       "matchId": "fixture-1489380",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1336,7 +1336,7 @@
     },
     {
       "matchId": "fixture-1489377",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1421,7 +1421,7 @@
     },
     {
       "matchId": "fixture-1489379",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1506,7 +1506,7 @@
     },
     {
       "matchId": "fixture-1489378",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1591,7 +1591,7 @@
     },
     {
       "matchId": "fixture-1489383",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1676,7 +1676,7 @@
     },
     {
       "matchId": "fixture-1539016",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1761,7 +1761,7 @@
     },
     {
       "matchId": "fixture-1489381",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1846,7 +1846,7 @@
     },
     {
       "matchId": "fixture-1489382",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1931,7 +1931,7 @@
     },
     {
       "matchId": "fixture-1539003",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2016,7 +2016,7 @@
     },
     {
       "matchId": "fixture-1489384",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2101,7 +2101,7 @@
     },
     {
       "matchId": "fixture-1489385",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2186,7 +2186,7 @@
     },
     {
       "matchId": "fixture-1489386",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2271,7 +2271,7 @@
     },
     {
       "matchId": "fixture-1539004",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2356,7 +2356,7 @@
     },
     {
       "matchId": "fixture-1539005",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2441,7 +2441,7 @@
     },
     {
       "matchId": "fixture-1489387",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2526,7 +2526,7 @@
     },
     {
       "matchId": "fixture-1489388",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2611,7 +2611,7 @@
     },
     {
       "matchId": "fixture-1489391",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2696,7 +2696,7 @@
     },
     {
       "matchId": "fixture-1489390",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2781,7 +2781,7 @@
     },
     {
       "matchId": "fixture-1489389",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2803,7 +2803,7 @@
     },
     {
       "matchId": "fixture-1539006",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2888,7 +2888,7 @@
     },
     {
       "matchId": "fixture-1539007",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2910,7 +2910,7 @@
     },
     {
       "matchId": "fixture-1489393",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2932,7 +2932,7 @@
     },
     {
       "matchId": "fixture-1489392",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2954,7 +2954,7 @@
     },
     {
       "matchId": "fixture-1489394",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2976,7 +2976,7 @@
     },
     {
       "matchId": "fixture-1489397",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2998,7 +2998,7 @@
     },
     {
       "matchId": "fixture-1489395",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3020,7 +3020,7 @@
     },
     {
       "matchId": "fixture-1489398",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3042,7 +3042,7 @@
     },
     {
       "matchId": "fixture-1489396",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -3064,7 +3064,7 @@
     },
     {
       "matchId": "fixture-1489399",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3086,7 +3086,7 @@
     },
     {
       "matchId": "fixture-1539017",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3108,7 +3108,7 @@
     },
     {
       "matchId": "fixture-1489401",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3130,7 +3130,7 @@
     },
     {
       "matchId": "fixture-1489400",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3152,7 +3152,7 @@
     },
     {
       "matchId": "fixture-1489404",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3237,7 +3237,7 @@
     },
     {
       "matchId": "fixture-1489402",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3322,7 +3322,7 @@
     },
     {
       "matchId": "fixture-1489403",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3407,7 +3407,7 @@
     },
     {
       "matchId": "fixture-1539008",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3492,7 +3492,7 @@
     },
     {
       "matchId": "fixture-1489408",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -3577,7 +3577,7 @@
     },
     {
       "matchId": "fixture-1539009",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3662,7 +3662,7 @@
     },
     {
       "matchId": "fixture-1489405",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 7,
@@ -3747,7 +3747,7 @@
     },
     {
       "matchId": "fixture-1489406",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 7,
@@ -3832,7 +3832,7 @@
     },
     {
       "matchId": "fixture-1539010",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 7,
@@ -3917,7 +3917,7 @@
     },
     {
       "matchId": "fixture-1489407",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 6,
@@ -4002,7 +4002,7 @@
     },
     {
       "matchId": "fixture-1489410",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4087,7 +4087,7 @@
     },
     {
       "matchId": "fixture-1489409",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4172,7 +4172,7 @@
     },
     {
       "matchId": "fixture-1539011",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4257,7 +4257,7 @@
     },
     {
       "matchId": "fixture-1489412",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4342,7 +4342,7 @@
     },
     {
       "matchId": "fixture-1539012",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4427,7 +4427,7 @@
     },
     {
       "matchId": "fixture-1489411",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4512,7 +4512,7 @@
     },
     {
       "matchId": "fixture-1539074",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4597,7 +4597,7 @@
     },
     {
       "matchId": "fixture-1489416",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4682,7 +4682,7 @@
     },
     {
       "matchId": "fixture-1489417",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4767,7 +4767,7 @@
     },
     {
       "matchId": "fixture-1489413",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4852,7 +4852,7 @@
     },
     {
       "matchId": "fixture-1489414",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -4937,7 +4937,7 @@
     },
     {
       "matchId": "fixture-1489415",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5022,7 +5022,7 @@
     },
     {
       "matchId": "fixture-1489420",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5107,7 +5107,7 @@
     },
     {
       "matchId": "fixture-1489422",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5192,7 +5192,7 @@
     },
     {
       "matchId": "fixture-1489419",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5277,7 +5277,7 @@
     },
     {
       "matchId": "fixture-1539013",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5362,7 +5362,7 @@
     },
     {
       "matchId": "fixture-1489418",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5447,7 +5447,7 @@
     },
     {
       "matchId": "fixture-1489421",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5532,7 +5532,7 @@
     },
     {
       "matchId": "wc2026-ko-01",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5554,7 +5554,7 @@
     },
     {
       "matchId": "wc2026-ko-02",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5576,7 +5576,7 @@
     },
     {
       "matchId": "wc2026-ko-03",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5598,7 +5598,7 @@
     },
     {
       "matchId": "wc2026-ko-04",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5620,7 +5620,7 @@
     },
     {
       "matchId": "wc2026-ko-05",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5642,7 +5642,7 @@
     },
     {
       "matchId": "wc2026-ko-06",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5664,7 +5664,7 @@
     },
     {
       "matchId": "wc2026-ko-07",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5686,7 +5686,7 @@
     },
     {
       "matchId": "wc2026-ko-08",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5708,7 +5708,7 @@
     },
     {
       "matchId": "wc2026-ko-09",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5730,7 +5730,7 @@
     },
     {
       "matchId": "wc2026-ko-10",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5752,7 +5752,7 @@
     },
     {
       "matchId": "wc2026-ko-11",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5774,7 +5774,7 @@
     },
     {
       "matchId": "wc2026-ko-12",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5796,7 +5796,7 @@
     },
     {
       "matchId": "wc2026-ko-13",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5818,7 +5818,7 @@
     },
     {
       "matchId": "wc2026-ko-14",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5840,7 +5840,7 @@
     },
     {
       "matchId": "wc2026-ko-15",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5862,7 +5862,7 @@
     },
     {
       "matchId": "wc2026-ko-16",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5884,7 +5884,7 @@
     },
     {
       "matchId": "wc2026-ko-17",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5906,7 +5906,7 @@
     },
     {
       "matchId": "wc2026-ko-18",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5928,7 +5928,7 @@
     },
     {
       "matchId": "wc2026-ko-19",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5950,7 +5950,7 @@
     },
     {
       "matchId": "wc2026-ko-20",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5972,7 +5972,7 @@
     },
     {
       "matchId": "wc2026-ko-21",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5994,7 +5994,7 @@
     },
     {
       "matchId": "wc2026-ko-22",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6016,7 +6016,7 @@
     },
     {
       "matchId": "wc2026-ko-23",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6038,7 +6038,7 @@
     },
     {
       "matchId": "wc2026-ko-24",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6060,7 +6060,7 @@
     },
     {
       "matchId": "wc2026-ko-25",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6082,7 +6082,7 @@
     },
     {
       "matchId": "wc2026-ko-26",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6104,7 +6104,7 @@
     },
     {
       "matchId": "wc2026-ko-27",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6126,7 +6126,7 @@
     },
     {
       "matchId": "wc2026-ko-28",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6148,7 +6148,7 @@
     },
     {
       "matchId": "wc2026-ko-29",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6170,7 +6170,7 @@
     },
     {
       "matchId": "wc2026-ko-30",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6192,7 +6192,7 @@
     },
     {
       "matchId": "wc2026-ko-31",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6214,7 +6214,7 @@
     },
     {
       "matchId": "wc2026-ko-32",
-      "generatedAt": "2026-06-24T10:20:04.729Z",
+      "generatedAt": "2026-06-24T10:30:18.454Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
