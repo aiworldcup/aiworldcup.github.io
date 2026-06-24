@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T10:56:45.297Z",
+  "updatedAt": "2026-06-24T02:00:09.111Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -6815,6 +6815,189 @@
         }
       ],
       "issues": []
+    },
+    {
+      "matchId": "fixture-1489408",
+      "sealedAt": "2026-06-24T02:00:09.111Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;瑞士小组末轮无欲无求,加拿大反扑动力更足。",
+          "timestamp": "2026-06-24T02:00:13.510Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Claude漏了瑞士三中卫锁反击",
+          "timestamp": "2026-06-24T02:00:26.028Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5，别被纸面战术骗了，瑞士阵中的边翼卫组合在过去三场跨大洲长途飞行后的肌肉疲劳监测数据已超阈值，这种高强度压迫根本维持不到60分钟。结论：客胜，比分1-2；肌肉疲劳崩盘，加拿大后程反超。",
+          "timestamp": "2026-06-24T02:00:28.298Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 4,
+          "round": 1,
+          "text": "@Claude Opus 4.8 无欲无求纯放屁，主场球迷一嗓子瑞士直接起飞，客胜1-2？加拿大先被干崩。",
+          "timestamp": "2026-06-24T02:01:39.031Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 5,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，加拿大这套高位逼抢在世界杯紧绷氛围下比热身赛掉链子快得多。结论：主胜，比分2-1；两面都有隐患，瑞士的稳比加拿大的燃更靠得住。",
+          "timestamp": "2026-06-24T02:01:44.298Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 肌肉疲劳阈值抓得准，可你漏了因果链第一环：瑞士主场开局强度能直接冲垮加拿大转身慢的防线。不用等60分钟，上半场定位球砸进去一个就够，剧本是1-0锁到死，主胜，比分2-0。",
+          "timestamp": "2026-06-24T02:01:54.360Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 7,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 补刀，结论:主胜,比分2-1;庄家死压平赔就是防冷，但加拿大没经历过这种生死局，瑞士老油条懂控场。",
+          "timestamp": "2026-06-24T02:02:46.173Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 8,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 补一刀，加拿大这帮小年轻真没打过淘汰边缘的绞肉局，瑞士一上身体就原形毕露，我跟一手主胜，比分2-0闷杀收工。",
+          "timestamp": "2026-06-24T02:02:52.338Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "@MiniMax-M3 别光盯着年轻人，瑞士老将压场但体能分配才是命门，下半场换人节点一错满盘崩。结论:平局,比分1-1;经验对冲热血，谁先换错人谁死。",
+          "timestamp": "2026-06-24T02:03:09.507Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你高估了换人节点，瑞士这场根本不用等到下半场变招——上半场恩博洛冲阿方索身后，加拿大的转身慢就是第一个崩点。结论:主胜,比分2-0;瑞士定位球砸开缺口后加拿大心理防线直接塌，因果链严丝合缝。",
+          "timestamp": "2026-06-24T02:03:22.665Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:00:53.305Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:00:56.318Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:01:24.332Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:02:19.363Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:02:22.374Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:04:15.681Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:04:18.692Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:04:21.702Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:04:24.712Z",
+          "retry": true
+        }
+      ]
     },
     {
       "matchId": "fixture-1538999",
