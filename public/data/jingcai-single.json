@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T00:45:45.535Z",
+  "updatedAt": "2026-06-24T01:16:26.347Z",
   "status": "verified",
   "sources": [
     {
@@ -454,7 +454,8 @@
       "homeTeam": "巴拿马",
       "awayTeam": "克罗地亚",
       "kickoff": "2026-06-23T23:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:1"
     }
   ]
 }
