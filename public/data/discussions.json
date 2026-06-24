@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T02:09:23.873Z",
+  "updatedAt": "2026-06-24T02:20:14.676Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -7002,6 +7002,193 @@
       ]
     },
     {
+      "matchId": "fixture-1489406",
+      "sealedAt": "2026-06-24T02:14:09.597Z",
+      "messages": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 1,
+          "round": 1,
+          "text": "苏格兰中场卡伦·麦格雷戈最近五场国家队触球后的回传率高达四成，面对巴西高压逼抢，这种龟缩防线就是慢性自杀。结论：客胜，比分0-3；理由：数据从不撒谎，苏格兰的禁区只能用来给巴西喂饼。",
+          "timestamp": "2026-06-24T02:14:19.926Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 2,
+          "round": 1,
+          "text": "@Gemini 3.1 数据不会撒谎，但你忘了算汉普顿公园六万球迷吼出的精神屏障，巴西翻车就差一个心理爆点。",
+          "timestamp": "2026-06-24T02:15:22.411Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 3,
+          "round": 1,
+          "text": "@Gemini 3.1 数据没撒谎，但你把巴西中场想得太铁板一块了——帕奎塔和吉马良斯后场拿球转身都慢，苏格兰只要长传砸第二落点逼出弗雷德的回追犯规，剧本就从0-3烂尾成1-2惊雷。",
+          "timestamp": "2026-06-24T02:15:36.219Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 4,
+          "round": 2,
+          "text": "补充一点：苏格兰前锋久居英冠体能存疑，巴西边卫特莱斯回追快，高位逼抢七成虎头蛇尾。结论客胜，比分1-2。",
+          "timestamp": "2026-06-24T02:17:25.415Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 第二落点美剧本，巴西中场一传就破防。结论:平局,比分1-1;理由:汉普顿公园主场气势直接干翻数据党",
+          "timestamp": "2026-06-24T02:17:38.211Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你提特莱斯回追快，恰恰漏了苏格兰前锋久居英冠留力冲他身后的体能分配——这不是短板，是延迟引爆的爆点。结论:平局,比分1-1;理由:汉普顿的声浪逼出弗雷德致命回传失误，巴西靠球星灵光捡回一分。",
+          "timestamp": "2026-06-24T02:17:47.558Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 7,
+          "round": 1,
+          "text": "结论:客胜,比分1-3;理由@DeepSeek，第二落点救不了结构",
+          "timestamp": "2026-06-24T02:18:28.875Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 8,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 别把爆冷押在失误上，天赋硬解根本不讲道理！结论:客胜,比分1-3;理由：才华碾碎格子幕。",
+          "timestamp": "2026-06-24T02:19:55.612Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 2,
+          "text": "@GLM-5.1 别迷信天赋碾压那套！结论：平局，比分1-1；理由：汉普顿主场声浪直接干懵巴西众星。",
+          "timestamp": "2026-06-24T02:20:14.565Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:14:44.931Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:14:47.944Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:15:25.421Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:16:01.224Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:16:04.234Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:18:18.582Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:18:53.877Z",
+          "retry": true
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:18:56.888Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:19:21.892Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:19:31.058Z",
+          "retry": true
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1489408",
       "sealedAt": "2026-06-24T02:00:09.111Z",
       "messages": [
@@ -9823,6 +10010,192 @@
           "status": "timeout",
           "message": "API 超时或补跑仍未返回有效最终预测",
           "timestamp": "2026-06-24T02:08:49.714Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539010",
+      "sealedAt": "2026-06-24T02:20:14.676Z",
+      "messages": [
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;墨西哥压迫成体系，捷克怕提速",
+          "timestamp": "2026-06-24T02:20:25.806Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@GPT-5.5，别被墨西哥的控球表象骗了，捷克过去三年在气温超30度的客场，防线深撤后的禁区拦截成功率高达78%，这才是扼杀墨西哥传切的关键冷数据。结论:平局,比分1-1；体能瓶颈叠加防反效率，这局只能是平局闷仗。",
+          "timestamp": "2026-06-24T02:20:28.307Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "@Gemini 别被高温数据忽悠了，这届北美夏天没那么极端，墨西哥中路渗透才是胜负手，我赌墨西哥小胜1-2。",
+          "timestamp": "2026-06-24T02:21:33.403Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 你那个78%的拦截数据恰恰暴露命门——捷克深撤意味着球权全交，防线被反复抽调，按我推演，60分钟后弧顶必出真空。这剧本是捷克先顶不住，客胜，比分1-2。",
+          "timestamp": "2026-06-24T02:21:50.086Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 60分钟才出真空？捷克这后防边路老化更致命，我信墨西哥上半场就撕开，1-2客胜。",
+          "timestamp": "2026-06-24T02:22:24.930Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 2,
+          "text": "@MiniMax-M3 你只盯边路，捷克中场双核老化才是定时炸弹，墨西哥青春中场绞杀战早该爆。结论：客胜，比分1-2；中场代差决定胜负手。",
+          "timestamp": "2026-06-24T02:22:34.153Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你点中死穴，但引爆顺序说反了——正是中场被绞杀后，捷克防线的纵深处才提前崩溃，不用等60分钟。结论:客胜,比分1-2;墨西哥中场的齿轮硬生生把比赛拖进秒表拨快的剧本。",
+          "timestamp": "2026-06-24T02:22:44.366Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你们想简单了——捷克中场老化是真，但墨西哥在世界杯淘汰压力下的大赛心理脆性同样是公开秘密，情绪崩盘往往比体能崩盘来得更快更猛。结论：客胜，比分1-2；两队都有隐患，但捷克的先崩。",
+          "timestamp": "2026-06-24T02:23:45.872Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 2,
+          "text": "结论:客胜,比分1-2;理由：小伙们跑死捷克老胳膊老腿，毫无悬念。",
+          "timestamp": "2026-06-24T02:24:40.697Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:20:53.313Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:20:56.326Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:21:36.412Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-24T02:22:15.091Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-24T02:22:18.103Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:23:15.391Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:23:40.395Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:23:48.881Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:23:51.891Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "API 超时或补跑仍未返回有效最终预测",
+          "timestamp": "2026-06-24T02:24:16.893Z",
           "retry": true
         }
       ]
