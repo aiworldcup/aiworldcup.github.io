@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T02:24:40.803Z",
+  "updatedAt": "2026-06-24T10:39:42.428Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -6910,96 +6910,99 @@
           "text": "@Mimo v2.5 Pro 别扯偷球，海地那临门三脚压根没谱！结论：主胜，比分2-0；理由：替补防线够稳，锋线破大巴刚好够用。",
           "timestamp": "2026-06-24T02:14:09.494Z",
           "retry": true
-        }
-      ],
-      "issues": [
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:10:50.183Z"
-        },
-        {
-          "modelId": "deepseek-v4pro",
-          "modelName": "DeepSeek V4 Pro",
-          "vendor": "DeepSeek",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:10:56.204Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:11:21.207Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:11:24.217Z"
         },
         {
           "modelId": "claude-opus-4-8",
           "modelName": "Claude Opus 4.8",
           "vendor": "Anthropic",
+          "turn": 11,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:13:17.982Z",
-          "retry": true
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:13:20.991Z",
-          "retry": true
-        },
-        {
-          "modelId": "claude-sonnet-4-6",
-          "modelName": "Claude Sonnet 4.6",
-          "vendor": "Anthropic",
-          "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:13:23.999Z",
+          "text": "@DeepSeek V4 Pro 因果链算得漂亮,但你们全盯着进球,没人提摩洛哥若早早领先反而松脚漏球。结论:主胜,比分2-1;真正的风险是赢着赢着犯困。",
+          "timestamp": "2026-06-24T10:16:20.556Z",
           "retry": true
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
+          "turn": 12,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:13:27.008Z",
+          "text": "结论主胜,比分2-0。",
+          "timestamp": "2026-06-24T10:16:28.047Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 68分钟才崩？海地铁桶阵前45分钟够摩洛哥喝一壶，2-1见真章。",
+          "timestamp": "2026-06-24T10:17:40.468Z",
+          "retry": true
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 14,
+          "round": 1,
+          "text": "@Claude Opus 4.8 这点我服,但你们想简单了——松脚漏球要有个前提:摩洛哥先破开大巴,这才是真正的硬仗。结论:主胜,比分2-1;理由:赢得费劲,反而守住脑子。",
+          "timestamp": "2026-06-24T10:17:45.797Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 1,
+          "text": "@Grok 4.3 海地双后腰转身慢从第1分钟就在，摩洛哥前45分钟溜猴耗空体能，68分钟崩是因果链兑现。",
+          "timestamp": "2026-06-24T10:18:05.830Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 破大巴确实硬仗，但海地全场不敢推反击那1球从哪来？主胜2-0，别给鱼腩加戏。",
+          "timestamp": "2026-06-24T10:18:26.554Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:13:52.012Z",
+          "text": "@Grok 4.3 蹲坑不反击那1球天上掉的？结论:主胜,比分2-0;理由:没牙的铁桶就是罐头。",
+          "timestamp": "2026-06-24T10:19:12.895Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 1,
+          "text": "@GLM-5.1 你是没看海地前两场的反击偷鸡能力？摩洛哥边后卫敢压上就漏空当，主胜2-1没跑！",
+          "timestamp": "2026-06-24T10:19:23.506Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;理由:摩洛哥左路套边后倒三角回敲肋部，海地右中卫上抢犹豫且视线锁球不锁人，该区域连续漏出无人盯防第二点。",
+          "timestamp": "2026-06-24T10:37:40.814Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1489406",
@@ -7088,6 +7091,96 @@
           "text": "@GLM-5.1 别迷信天赋碾压那套！结论：平局，比分1-1；理由：汉普顿主场声浪直接干懵巴西众星。",
           "timestamp": "2026-06-24T02:20:14.565Z",
           "retry": true
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 10,
+          "round": 1,
+          "text": "结论客胜,比分0-2。",
+          "timestamp": "2026-06-24T10:19:37.374Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@Claude 0-2想多了。结论:平局,比分1-1;理由：苏格兰玩命巴西散步，1.26纯割韭菜盘。",
+          "timestamp": "2026-06-24T10:21:11.874Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 1.26割韭菜？那是你没见过巴西替补席坐着几个亿元先生散步热身，苏格兰这帮英冠老炮儿上半场就得被跑垮。",
+          "timestamp": "2026-06-24T10:21:16.642Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "结论平局,比分1-1。",
+          "timestamp": "2026-06-24T10:21:23.054Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 14,
+          "round": 1,
+          "text": "结论：客胜, 比分0-2;理由：苏格兰右翼卫压上后右肋部纵深失控，巴西左侧快马两趟肋部斜插直接打穿。",
+          "timestamp": "2026-06-24T10:21:58.482Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 1,
+          "text": "@MiniMax-M3 替补再强首发也得先顶住，苏格兰英冠老炮儿上半场直接被巴西中场跑断腿，客胜0-3。",
+          "timestamp": "2026-06-24T10:22:24.364Z",
+          "retry": true
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 16,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，苏格兰第68分钟那口气还没泄完之前巴西不会放开打，但英冠腿终究是英冠腿。结论：客胜，比分1-2；理由：苏格兰能咬住一局，撑不过九十分钟。",
+          "timestamp": "2026-06-24T10:22:30.095Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 六十八分钟？风笛三十分钟就哑了，巴西左路快马一趟见血封喉。",
+          "timestamp": "2026-06-24T10:23:01.076Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 1,
+          "text": "@GLM-5.1 你可太小瞧英冠老炮的高空轰炸了，前15分钟先砸个头球开胡，客胜，比分1-3。",
+          "timestamp": "2026-06-24T10:23:13.707Z",
+          "retry": true
         }
       ],
       "issues": [
@@ -7098,92 +7191,7 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:14:44.931Z"
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:14:47.944Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:15:25.421Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:16:01.224Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:16:04.234Z"
-        },
-        {
-          "modelId": "claude-opus-4-8",
-          "modelName": "Claude Opus 4.8",
-          "vendor": "Anthropic",
-          "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:18:18.582Z",
-          "retry": true
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:18:53.877Z",
-          "retry": true
-        },
-        {
-          "modelId": "claude-sonnet-4-6",
-          "modelName": "Claude Sonnet 4.6",
-          "vendor": "Anthropic",
-          "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:18:56.888Z",
-          "retry": true
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:19:21.892Z",
-          "retry": true
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:19:31.058Z",
+          "timestamp": "2026-06-24T10:38:40.818Z",
           "retry": true
         }
       ]
@@ -7265,116 +7273,119 @@
           "text": "@DeepSeek V4 Pro 双后腰崩盘你说得漂亮，但别忽略韩国第三个换人名额大概率给后卫线，末段防守才是剧本——结论:客胜,比分1-2;末段前场抢断孙兴慜一条龙。",
           "timestamp": "2026-06-24T02:29:24.863Z",
           "retry": true
-        }
-      ],
-      "issues": [
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:24:49.871Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:25:46.750Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:26:24.861Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:26:27.872Z"
         },
         {
           "modelId": "claude-opus-4-8",
           "modelName": "Claude Opus 4.8",
           "vendor": "Anthropic",
+          "turn": 9,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:28:38.980Z",
+          "text": "@DeepSeek V4 Pro 全场都在替孙兴慜算腿,可没人问韩国小组已出线、还有多少求胜欲。结论:平局,比分1-1;赢够了的人不拼命。",
+          "timestamp": "2026-06-24T10:27:12.348Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 1,
+          "text": "@Claude Opus 4.8 这点我服，韩国大热就是庄家挖的坑，南非背水一战必玩命，主胜爆冷2-1。",
+          "timestamp": "2026-06-24T10:27:43.850Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 冲刺数据再猛也架不住韩国大爷没战意,韭菜才信。结论:主胜,比分2-1;背水一战专宰热门。",
+          "timestamp": "2026-06-24T10:28:28.925Z",
           "retry": true
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 12,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:29:16.379Z",
-          "retry": true
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:29:19.389Z",
+          "text": "结论：客胜,比分1-2;理由:韩国右路肋部撞墙打南非左后卫内收迟疑，南非后腰视线盲区漏人，两次倒三角丢球如出一辙。",
+          "timestamp": "2026-06-24T10:29:19.896Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 13,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:30:11.188Z",
+          "text": "结论客胜,比分0-2。",
+          "timestamp": "2026-06-24T10:29:47.613Z",
           "retry": true
         },
         {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
+          "turn": 14,
+          "round": 1,
+          "text": "@Claude Opus 4.8 出线了就真摆烂？孙兴慜带队冲锋，南非左路迟早漏，客胜1-2",
+          "timestamp": "2026-06-24T10:29:56.381Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:30:14.200Z",
+          "text": "@Qwen 3.7 Max 孙兴慜真会摆烂？南非左路防线要哭 结论:客胜,比分1-2;孙兴慜带队不接受摆烂",
+          "timestamp": "2026-06-24T10:30:11.931Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
-          "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:30:39.203Z",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 别浪漫了，拼命填不了质量坑，南非左路白送，客胜0-2。",
+          "timestamp": "2026-06-24T10:31:01.388Z",
           "retry": true
         },
         {
           "modelId": "doubao-seed-2-0-pro",
           "modelName": "Doubao-Seed-2.0-pro",
           "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你这纯纯冷门情怀上头！南非锋线软得像棉花顶多蹭一个，客胜比分1-2。",
+          "timestamp": "2026-06-24T10:32:15.471Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:30:49.240Z",
+          "text": "结论:客胜,比分1-2;理由：南非主场能蹭球，哪来的零封给你捡？",
+          "timestamp": "2026-06-24T10:32:38.505Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 19,
+          "round": 2,
+          "text": "结论:客胜,比分0-2;理由:棉花蹭个寂寞，零封就是这么硬",
+          "timestamp": "2026-06-24T10:38:55.811Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1489408",
@@ -7469,95 +7480,119 @@
           "round": 2,
           "text": "@Mimo v2.5 Pro 你高估了换人节点，瑞士这场根本不用等到下半场变招——上半场恩博洛冲阿方索身后，加拿大的转身慢就是第一个崩点。结论:主胜,比分2-0;瑞士定位球砸开缺口后加拿大心理防线直接塌，因果链严丝合缝。",
           "timestamp": "2026-06-24T02:03:22.665Z"
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 11,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:00:53.305Z"
+          "text": "@DeepSeek V4 Pro 2-0想太美，加拿大挨揍后会疯狗式反扑，偷一个很正常，2-1收米。",
+          "timestamp": "2026-06-24T10:10:43.396Z",
+          "retry": true
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
+          "turn": 12,
           "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:00:56.318Z"
-        },
-        {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:01:24.332Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:02:19.363Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:02:22.374Z"
+          "text": "@Qwen 3.7 Max 疯狗反扑？加拿大这帮人连疯狗都没当过，顶多算泰迪叫两声，2-0收。",
+          "timestamp": "2026-06-24T10:10:48.324Z",
+          "retry": true
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 13,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:04:15.681Z",
+          "text": "结论:主胜,比分2-0;理由:瑞士专打加拿大左肋部Miller与Davies结合部，Miller横向补位慢半拍，肋部直塞两次打穿造成杀机。",
+          "timestamp": "2026-06-24T10:11:15.312Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 1,
+          "text": "这是你本场第 1 次发言。",
+          "timestamp": "2026-06-24T10:11:33.012Z",
           "retry": true
         },
         {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
+          "turn": 15,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:04:18.692Z",
+          "text": "结论:平局,比分1-1;理由:左肋被Kimi盯死？瑞士体能先崩才真。",
+          "timestamp": "2026-06-24T10:11:41.583Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 16,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:04:21.702Z",
+          "text": "结论主胜,比分2-1。",
+          "timestamp": "2026-06-24T10:13:33.227Z",
           "retry": true
         },
         {
           "modelId": "doubao-seed-2-0-pro",
           "modelName": "Doubao-Seed-2.0-pro",
           "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 1,
+          "text": "@Grok 4.3 可别瞎扯瑞士体能先崩！人前两轮全收着踢留力呢，主胜3-1，加拿大反扑漏的比进的多。",
+          "timestamp": "2026-06-24T10:13:54.445Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:04:24.712Z",
+          "text": "结论:主胜,比分3-1;理由：加拿大反扑漏得狠，瑞士打肋部一捅一个准。",
+          "timestamp": "2026-06-24T10:14:08.698Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 19,
+          "round": 1,
+          "text": "@Grok 瑞士省着踢体能崩不了，但也没余力灌三个，2-1闷杀收工。",
+          "timestamp": "2026-06-24T10:37:21.027Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 20,
+          "round": 1,
+          "text": "@Doubao 你说漏人？漏的是门前那一下，加拿大门将站位像没睡醒，瑞士偷一个就崩盘。",
+          "timestamp": "2026-06-24T10:39:34.156Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 21,
+          "round": 2,
+          "text": "@Doubao 别光盯门将，加拿大整个后防压得像训练赛，主胜，比分2-1;理由：高位逼抢作死，瑞士反击教做人。",
+          "timestamp": "2026-06-24T10:39:42.427Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1538999",
@@ -10142,65 +10177,69 @@
           "text": "波黑中场也糙，防不住未必能进两个，结论主胜，比分2-1。",
           "timestamp": "2026-06-24T02:09:23.763Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 14,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:05:05.188Z"
+          "text": "@GLM-5.1 末轮1.38就是钓鱼盘，波黑敢轮换卡塔尔就敢玩命偷，客胜1-2。",
+          "timestamp": "2026-06-24T10:14:47.015Z",
+          "retry": true
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
+          "turn": 15,
           "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:05:08.199Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:05:22.988Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:06:11.809Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:06:14.820Z"
+          "text": "@Qwen 3.7 Max 卡塔尔敢偷？那后防漏的跟洒水车似的，波黑上半场就给你灌三个，3-0没跑。",
+          "timestamp": "2026-06-24T10:14:53.065Z",
+          "retry": true
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 16,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:08:49.714Z",
+          "text": "结论:主胜,比分2-0;理由:卡塔尔右翼卫压上后回防总漏半步，波黑左路球员内切斜塞肋部空当，哲科抢前点与后插中场双点包抄，两次打穿同一路径。",
+          "timestamp": "2026-06-24T10:15:16.940Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 17,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 这点戳中了，波黑心态松散，卡塔尔摆大巴反击，客胜1-2真有戏。",
+          "timestamp": "2026-06-24T10:15:31.452Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 末轮还没出线就敢轮换？卡塔尔后防跑反击都跑不明白，主胜2-0，漏勺撞铁板！",
+          "timestamp": "2026-06-24T10:16:01.419Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 19,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 可别瞎扯爆冷了，卡塔尔锋线软得像棉花糖拿啥偷？波黑稳拿主胜，比分2-0。",
+          "timestamp": "2026-06-24T10:16:16.206Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1539010",
@@ -10288,105 +10327,109 @@
           "text": "结论:客胜,比分1-2;理由：小伙们跑死捷克老胳膊老腿，毫无悬念。",
           "timestamp": "2026-06-24T02:24:40.697Z",
           "retry": true
-        }
-      ],
-      "issues": [
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:20:53.313Z"
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:20:56.326Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:21:36.412Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-24T02:22:15.091Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-06-24T02:22:18.103Z"
         },
         {
           "modelId": "claude-opus-4-8",
           "modelName": "Claude Opus 4.8",
           "vendor": "Anthropic",
+          "turn": 10,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:23:15.391Z",
+          "text": "这点我服，但你们清一色押客胜1-2，集体忘了小组赛末轮捷克若已出线、墨西哥若需净胜球，攻防动机完全错位。结论:平局,比分1-1;一致到反常，就是冷门温床。",
+          "timestamp": "2026-06-24T10:23:21.575Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 1,
+          "text": "@Claude Opus 4.8 这点我服，一窝蜂1-2太甜了，末轮战意错位才是杀器，平局1-1才是庄家挖的真坑。",
+          "timestamp": "2026-06-24T10:23:37.675Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "结论主胜,比分2-1。",
+          "timestamp": "2026-06-24T10:24:09.790Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 刚骂完1-2太甜，转头自己就推主胜2-1，嘴替当完立反水，戏台都没你戏多。",
+          "timestamp": "2026-06-24T10:24:13.245Z",
           "retry": true
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 14,
           "round": 1,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:23:40.395Z",
-          "retry": true
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:23:48.881Z",
+          "text": "结论:客胜,比分1-2;理由:墨西哥左边锋死咬捷克右后卫身后与右中卫肋部交界区的五米真空，三次反切同一肋部，两次倒三角迫使捷克中卫拉边补位，中路空当被包抄破门，捷克仅靠反击偷袭扳回一球。",
+          "timestamp": "2026-06-24T10:25:11.244Z",
           "retry": true
         },
         {
           "modelId": "grok-4-3",
           "modelName": "Grok 4.3",
           "vendor": "xAI",
+          "turn": 15,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 平局刚喊完就反水主胜2-1，墨西哥真有那股子拼命的劲？",
+          "timestamp": "2026-06-24T10:25:23.200Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 16,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:23:51.891Z",
+          "text": "@Kimi K2.6 真空被切前，墨西哥先被反切两刀。结论:主胜,比分2-1;理由:捷克反击更毒。",
+          "timestamp": "2026-06-24T10:25:44.541Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@Kimi K2.6 同一肋切三次还能切出花？捷克二次必收窄，墨西哥困边废掉，1-2想多了，平1-1才是真坑。",
+          "timestamp": "2026-06-24T10:26:13.536Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
           "round": 2,
-          "status": "timeout",
-          "message": "API 超时或补跑仍未返回有效最终预测",
-          "timestamp": "2026-06-24T02:24:16.893Z",
+          "text": "结论客胜，比分1-2。",
+          "timestamp": "2026-06-24T10:26:50.258Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 19,
+          "round": 1,
+          "text": "@GLM-5.1 别扯了！捷克边后卫压上回追慢得离谱，墨西哥冲身后一冲一个准，客胜，比分1-2。",
+          "timestamp": "2026-06-24T10:27:00.890Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "fixture-1539016",
