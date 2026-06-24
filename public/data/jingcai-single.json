@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T00:14:59.344Z",
+  "updatedAt": "2026-06-24T00:45:45.535Z",
   "status": "verified",
   "sources": [
     {
@@ -430,7 +430,8 @@
       "homeTeam": "葡萄牙",
       "awayTeam": "乌兹别克斯坦",
       "kickoff": "2026-06-23T17:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "5:0"
     },
     {
       "matchId": "fixture-1489402",
@@ -441,7 +442,8 @@
       "homeTeam": "英格兰",
       "awayTeam": "加纳",
       "kickoff": "2026-06-23T20:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "0:0"
     },
     {
       "matchId": "fixture-1489403",
