@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T01:03:16.521Z",
+  "updatedAt": "2026-06-25T03:06:09.055Z",
   "status": "verified",
   "source": {
     "label": "ESPN public scoreboard",
@@ -131,7 +131,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760431",
-      "syncedAt": "2026-06-25T01:03:06.553Z"
+      "syncedAt": "2026-06-25T03:06:01.846Z"
     },
     {
       "matchId": "fixture-1539003",
@@ -145,7 +145,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760435",
-      "syncedAt": "2026-06-25T01:03:06.553Z"
+      "syncedAt": "2026-06-25T03:06:01.846Z"
     },
     {
       "matchId": "fixture-1489384",
@@ -159,7 +159,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760437",
-      "syncedAt": "2026-06-25T01:03:06.553Z"
+      "syncedAt": "2026-06-25T03:06:01.846Z"
     },
     {
       "matchId": "fixture-1489385",
@@ -173,7 +173,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760434",
-      "syncedAt": "2026-06-25T01:03:06.553Z"
+      "syncedAt": "2026-06-25T03:06:01.846Z"
     },
     {
       "matchId": "fixture-1489386",
@@ -187,7 +187,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760436",
-      "syncedAt": "2026-06-25T01:03:06.553Z"
+      "syncedAt": "2026-06-25T03:06:01.846Z"
     },
     {
       "matchId": "fixture-1539004",
@@ -201,7 +201,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760438",
-      "syncedAt": "2026-06-25T01:03:10.077Z"
+      "syncedAt": "2026-06-25T03:06:02.846Z"
     },
     {
       "matchId": "fixture-1539005",
@@ -215,7 +215,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760439",
-      "syncedAt": "2026-06-25T01:03:10.077Z"
+      "syncedAt": "2026-06-25T03:06:02.846Z"
     },
     {
       "matchId": "fixture-1489387",
@@ -229,7 +229,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760440",
-      "syncedAt": "2026-06-25T01:03:10.077Z"
+      "syncedAt": "2026-06-25T03:06:02.846Z"
     },
     {
       "matchId": "fixture-1489388",
@@ -243,7 +243,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760441",
-      "syncedAt": "2026-06-25T01:03:10.078Z"
+      "syncedAt": "2026-06-25T03:06:02.846Z"
     },
     {
       "matchId": "fixture-1489391",
@@ -257,7 +257,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760442",
-      "syncedAt": "2026-06-25T01:03:10.829Z"
+      "syncedAt": "2026-06-25T03:06:03.640Z"
     },
     {
       "matchId": "fixture-1489390",
@@ -271,7 +271,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760445",
-      "syncedAt": "2026-06-25T01:03:10.829Z"
+      "syncedAt": "2026-06-25T03:06:03.640Z"
     },
     {
       "matchId": "fixture-1489389",
@@ -285,7 +285,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760444",
-      "syncedAt": "2026-06-25T01:03:10.829Z"
+      "syncedAt": "2026-06-25T03:06:03.640Z"
     },
     {
       "matchId": "fixture-1539006",
@@ -299,7 +299,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760443",
-      "syncedAt": "2026-06-25T01:03:10.829Z"
+      "syncedAt": "2026-06-25T03:06:03.640Z"
     },
     {
       "matchId": "fixture-1539007",
@@ -313,7 +313,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760447",
-      "syncedAt": "2026-06-25T01:03:11.610Z"
+      "syncedAt": "2026-06-25T03:06:04.431Z"
     },
     {
       "matchId": "fixture-1489393",
@@ -327,7 +327,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760448",
-      "syncedAt": "2026-06-25T01:03:11.610Z"
+      "syncedAt": "2026-06-25T03:06:04.432Z"
     },
     {
       "matchId": "fixture-1489392",
@@ -341,7 +341,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760446",
-      "syncedAt": "2026-06-25T01:03:11.610Z"
+      "syncedAt": "2026-06-25T03:06:04.432Z"
     },
     {
       "matchId": "fixture-1489394",
@@ -355,7 +355,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760449",
-      "syncedAt": "2026-06-25T01:03:12.587Z"
+      "syncedAt": "2026-06-25T03:06:05.223Z"
     },
     {
       "matchId": "fixture-1489397",
@@ -369,7 +369,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760453",
-      "syncedAt": "2026-06-25T01:03:12.587Z"
+      "syncedAt": "2026-06-25T03:06:05.223Z"
     },
     {
       "matchId": "fixture-1489395",
@@ -383,7 +383,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760451",
-      "syncedAt": "2026-06-25T01:03:12.587Z"
+      "syncedAt": "2026-06-25T03:06:05.223Z"
     },
     {
       "matchId": "fixture-1489398",
@@ -397,7 +397,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760450",
-      "syncedAt": "2026-06-25T01:03:12.587Z"
+      "syncedAt": "2026-06-25T03:06:05.223Z"
     },
     {
       "matchId": "fixture-1489396",
@@ -411,7 +411,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760452",
-      "syncedAt": "2026-06-25T01:03:12.587Z"
+      "syncedAt": "2026-06-25T03:06:05.223Z"
     },
     {
       "matchId": "fixture-1489399",
@@ -425,7 +425,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760456",
-      "syncedAt": "2026-06-25T01:03:13.342Z"
+      "syncedAt": "2026-06-25T03:06:06.037Z"
     },
     {
       "matchId": "fixture-1539017",
@@ -439,7 +439,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760457",
-      "syncedAt": "2026-06-25T01:03:13.342Z"
+      "syncedAt": "2026-06-25T03:06:06.037Z"
     },
     {
       "matchId": "fixture-1489401",
@@ -453,7 +453,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760454",
-      "syncedAt": "2026-06-25T01:03:13.342Z"
+      "syncedAt": "2026-06-25T03:06:06.037Z"
     },
     {
       "matchId": "fixture-1489400",
@@ -467,7 +467,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760455",
-      "syncedAt": "2026-06-25T01:03:13.342Z"
+      "syncedAt": "2026-06-25T03:06:06.038Z"
     },
     {
       "matchId": "fixture-1489404",
@@ -481,7 +481,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760461",
-      "syncedAt": "2026-06-25T01:03:14.191Z"
+      "syncedAt": "2026-06-25T03:06:06.793Z"
     },
     {
       "matchId": "fixture-1489402",
@@ -495,7 +495,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760458",
-      "syncedAt": "2026-06-25T01:03:14.192Z"
+      "syncedAt": "2026-06-25T03:06:06.793Z"
     },
     {
       "matchId": "fixture-1489403",
@@ -509,7 +509,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760460",
-      "syncedAt": "2026-06-25T01:03:14.192Z"
+      "syncedAt": "2026-06-25T03:06:06.793Z"
     },
     {
       "matchId": "fixture-1539008",
@@ -523,7 +523,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760459",
-      "syncedAt": "2026-06-25T01:03:14.192Z"
+      "syncedAt": "2026-06-25T03:06:06.793Z"
     },
     {
       "matchId": "fixture-1489408",
@@ -537,7 +537,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760463",
-      "syncedAt": "2026-06-25T01:03:14.939Z"
+      "syncedAt": "2026-06-25T03:06:07.544Z"
     },
     {
       "matchId": "fixture-1539009",
@@ -551,7 +551,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760462",
-      "syncedAt": "2026-06-25T01:03:14.939Z"
+      "syncedAt": "2026-06-25T03:06:07.544Z"
     },
     {
       "matchId": "fixture-1489405",
@@ -565,7 +565,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760464",
-      "syncedAt": "2026-06-25T01:03:14.939Z"
+      "syncedAt": "2026-06-25T03:06:07.544Z"
     },
     {
       "matchId": "fixture-1489406",
@@ -579,7 +579,35 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760465",
-      "syncedAt": "2026-06-25T01:03:14.939Z"
+      "syncedAt": "2026-06-25T03:06:07.544Z"
+    },
+    {
+      "matchId": "fixture-1489407",
+      "espnEventId": "760466",
+      "matchDate": "2026-06-25",
+      "eventDate": "2026-06-25T01:00Z",
+      "league": "FIFA World Cup",
+      "homeTeam": "南非",
+      "awayTeam": "韩国",
+      "score": "1:0",
+      "result": "home",
+      "sourceLabel": "ESPN Scoreboard",
+      "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760466",
+      "syncedAt": "2026-06-25T03:06:07.544Z"
+    },
+    {
+      "matchId": "fixture-1539010",
+      "espnEventId": "760467",
+      "matchDate": "2026-06-25",
+      "eventDate": "2026-06-25T01:00Z",
+      "league": "FIFA World Cup",
+      "homeTeam": "捷克",
+      "awayTeam": "墨西哥",
+      "score": "0:3",
+      "result": "away",
+      "sourceLabel": "ESPN Scoreboard",
+      "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760467",
+      "syncedAt": "2026-06-25T03:06:07.544Z"
     }
   ]
 }

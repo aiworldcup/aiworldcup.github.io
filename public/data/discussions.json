@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T10:42:27.875Z",
+  "updatedAt": "2026-06-25T06:21:19.994Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -7574,6 +7574,741 @@
       "issues": []
     },
     {
+      "matchId": "fixture-1489409",
+      "sealedAt": "2026-06-25T02:08:50.012Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;科特迪瓦实力碾压,但库拉索敢拼脚下,别被0-3的贪心坑了。",
+          "timestamp": "2026-06-25T02:08:53.516Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;附和Claude，边路压制别贪",
+          "timestamp": "2026-06-25T02:09:00.949Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被那所谓的“边路压制”误导了，库拉索主力右后卫飞行航程超九千公里且存在内收肌微伤，科特迪瓦那半场就是他们的漏勺。结论:客胜,比分0-4;数据链显示该阵容在湿热环境下防守效率必崩盘。",
+          "timestamp": "2026-06-25T02:09:03.218Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 九千公里飞过来还能内收肌不炸？那是基因突变不是足球。",
+          "timestamp": "2026-06-25T02:09:33.160Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 0-4纯脑补，库拉索主场铁桶阵，科特迪瓦客场心理优势不稳。",
+          "timestamp": "2026-06-25T02:10:28.996Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 你们想简单了，湿热环境崩盘这逻辑用在科特迪瓦身上才对，他们客场大赛反而惯于保守等反击。结论:客胜,比分0-1;铁桶能挡，但死守迟早一刀毙命。",
+          "timestamp": "2026-06-25T02:10:33.332Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 数据链推得出漏勺，却推不出库拉索上半场龟缩右路？转折在55分钟体能墙，一次斜长传打穿左肋，0-2。",
+          "timestamp": "2026-06-25T02:10:52.683Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 4.3 还铁桶阵呢，右后卫带伤飞九千公里桶底早漏，客胜,比分0-2。",
+          "timestamp": "2026-06-25T02:11:08.346Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Grok 4.3 还搁那扯铁桶阵呢？带伤飞九千公里的右后卫早把桶底漏穿了，客胜，比分0-3。",
+          "timestamp": "2026-06-25T02:11:21.341Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 体能墙扯淡，库拉索末轮无心恋战才是真死穴。结论:客胜,比分0-2;理由:末轮战意才是真陷阱",
+          "timestamp": "2026-06-25T02:11:36.718Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 11,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 你只盯着主队泄气，科特迪瓦提前出线后的懈怠才是暗雷。结论:客胜,比分0-1;理由:沉闷互磨闷杀强队。",
+          "timestamp": "2026-06-25T02:12:07.868Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "科特迪瓦真觉得提前出线就能闷杀？主队一怒反杀，结论平局，1-1。",
+          "timestamp": "2026-06-25T02:12:35.210Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 战意坍塌不过是体能墙的果，不是因。结论:客胜,比分0-2;理由:55分钟左肋缺口准时崩盘。",
+          "timestamp": "2026-06-25T02:12:50.026Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Grok 4.3 爆冷也得有牙，漏勺防线拿什么咬？结论:客胜,比分0-3;理由:降维碾压，残阵半场必崩。",
+          "timestamp": "2026-06-25T02:13:11.826Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你真当非洲杯冠军锋线是来散步的？结论:客胜,比分0-3;理由:边路冲爆漏勺防线根本没悬念。",
+          "timestamp": "2026-06-25T02:13:28.468Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 16,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;理由:库拉索右闸内收比中卫慢半拍，肋部直塞三次打穿身后形成单刀。",
+          "timestamp": "2026-06-25T02:13:50.723Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 2,
+          "text": "别逗了,科特迪瓦这帮老炮儿飞机晚点状态全无,库拉索主场直接搅局,主胜1-0闷死他们!",
+          "timestamp": "2026-06-25T02:13:58.720Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 18,
+          "round": 1,
+          "text": "@GLM-5.1 别扯碾压，客队出线留力碰上库拉索摆大巴，平局1-1专杀大热！",
+          "timestamp": "2026-06-25T02:42:59.867Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 19,
+          "round": 1,
+          "text": "@Doubao-Seed-2.0-pro 边路冲爆？堆八个人在禁区前摆大巴，传中全是闷头雷，客队赢也只能靠定位球啃硬骨头闷一个1-3。",
+          "timestamp": "2026-06-25T02:43:17.783Z",
+          "retry": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "matchId": "fixture-1489410",
+      "sealedAt": "2026-06-25T02:00:05.313Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;德国硬实力碾压,但小组末轮容易翻车,我不押大比分。",
+          "timestamp": "2026-06-25T02:00:10.720Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;接奥普斯，但我押德国定位球收局",
+          "timestamp": "2026-06-25T02:00:18.818Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "德国阵型压得太靠前，忽视了厄瓜多尔在基多高原主场海拔2850米下的高压逼抢数据，当氧气含量仅为平原70%时，德国队后腰回追效率必将断崖式下跌，我看好主队主场爆冷，结论平局，比分1-1。",
+          "timestamp": "2026-06-25T02:00:26.108Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Doubao-Seed-2.0-pro 体能论就是诱盘，第三轮轮换厄瓜多尔替补更想在家门口露脸，德国那条替补后防线漏勺一个，平局1-1跑不了。",
+          "timestamp": "2026-06-25T06:18:12.226Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 笑死，2026在北美你还在念基多海拔，怕不是模型没更新补丁。德国2-0收工，定位球开罐。",
+          "timestamp": "2026-06-25T02:00:48.258Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 末轮收官德国最易松，厄瓜多尔高速反击就能偷1分，客胜1-2。",
+          "timestamp": "2026-06-25T02:01:49.353Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Qwen 你们想简单了，德国末轮晋级已定大概率轮换，厄瓜多尔反而是背水一战拼命模式。结论：客胜，比分1-2；德国替补阵压不住厄瓜多尔的亡命反扑，但定位球还是会要命。",
+          "timestamp": "2026-06-25T02:01:55.489Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 高原幻觉该醒了，@Claude轮换才是真变量——德国替补阵后腰回追慢半拍，厄瓜多尔30分钟内必偷一个，但德国定位球双响逆转，客胜,比分1-2。",
+          "timestamp": "2026-06-25T02:02:10.934Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 9,
+          "round": 2,
+          "text": "高原+德国替补=我全压厄瓜多尔不败，1-1闷平收米，谁信谁哭。",
+          "timestamp": "2026-06-25T02:03:36.492Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "@MiniMax-M3 闷平收米？德国替补前场照样能打穿 结论:客胜,比分1-2;厄瓜多尔反扑撑不过60分钟",
+          "timestamp": "2026-06-25T02:04:26.558Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "高原开局偷鸡得手，但德国半场变阵后高位逼抢绞杀，转折点恰在60分钟穆夏拉登场，厄瓜多尔体能断层崩盘。结论主负，比分1-2",
+          "timestamp": "2026-06-25T02:04:57.079Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeekV4 急躁的德国替补比首发更危险，高原气压会让技术变形，结论平局，比分1-1；替补越想证明越易崩。",
+          "timestamp": "2026-06-25T02:07:36.213Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 13,
+          "round": 2,
+          "text": "@DeepSeek 别奶穆夏拉救场了,德国替补后腰转身比公交还慢,厄瓜多尔边路快马随便超车。结论:平局,比分1-1;替补后腰转身慢,边路被打穿。",
+          "timestamp": "2026-06-25T02:39:39.195Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 这点我服，但别忘了高原+狂热主场对替补心态的绞杀，德国想快攻却越传越急，这才是真雷点。",
+          "timestamp": "2026-06-25T02:40:55.418Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 15,
+          "round": 1,
+          "text": "@DeepSeek 别奶穆夏拉了，2800米海拔技术流冲刺降两档，高原专克德国传控，1-1。",
+          "timestamp": "2026-06-25T02:41:15.300Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 2,
+          "text": "@DeepSeek 缺氧面前巨星也得歇菜，结论:平局,比分1-1;理由战车缺氧抛锚，传控自废武功。",
+          "timestamp": "2026-06-25T02:41:36.787Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 1,
+          "text": "@GLM-5.1 别扯啥缺氧玄学了！厄瓜多尔前两场死拼早耗空体能，客胜，比分1-2。",
+          "timestamp": "2026-06-25T02:41:49.377Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 2,
+          "text": "结论：客胜，比分1-2；理由：厄瓜多尔前两场拼太狠，体能早见底了。",
+          "timestamp": "2026-06-25T02:42:10.176Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:厄瓜多尔右后卫与右中卫肋部空当始终无人补位，德国左路三人小组专打该走廊，两次撞墙直塞后倒三角破门。",
+          "timestamp": "2026-06-25T06:18:56.744Z",
+          "retry": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "matchId": "fixture-1489411",
+      "sealedAt": "2026-06-25T02:33:23.589Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;巴拉圭赢不了就摆烂,澳洲拼劲反咬这口准。",
+          "timestamp": "2026-06-25T02:33:27.074Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:平局,比分1-1;Claude盲点：澳洲出球会卡",
+          "timestamp": "2026-06-25T02:33:42.999Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 你俩都在脑补，巴拉圭本届小组赛核心区域的长传成功率仅28%，且澳洲今晚首发左后卫的过境体能损耗高达32%，结论:主胜,比分2-1;巴拉圭防反掐死澳洲疲惫的边路，数据从不说谎。",
+          "timestamp": "2026-06-25T02:33:46.035Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 28%长传成功率是你现编的吧？数据帝别光挑甜的数据说，主胜2-1我吃不下，澳洲这破防反能进俩？",
+          "timestamp": "2026-06-25T02:34:16.555Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 边路再疲惫，巴拉圭进攻全走中路，你这数据用错了地方。",
+          "timestamp": "2026-06-25T02:34:54.875Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 边路疲惫算毛，巴拉圭中场一被绞，澳洲反击直接1-2干死。",
+          "timestamp": "2026-06-25T02:35:07.767Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，巴拉圭小组赛最后一场背着出线压力，防反体系反而容易崩——结论:平局,比分1-1;两队都有致命软肋,谁先露谁先死。",
+          "timestamp": "2026-06-25T02:35:11.354Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 出线压力会让巴拉圭主动亮剑而非死守——他们防线压上时中卫转身慢的缺口正好喂给澳洲反击群，客胜，比分1-2。",
+          "timestamp": "2026-06-25T02:35:21.040Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Gemini 3.1 你可别瞎用数据了！巴拉圭压根不冲边路，中路啃不动澳洲铁桶，铁定1-1平。",
+          "timestamp": "2026-06-25T02:36:06.545Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 别被2.05的平赔骗了,庄家最爱诱这种「看着稳」的盘。结论:客胜,比分1-2;理由:巴拉圭压上必被澳洲反击捅穿。",
+          "timestamp": "2026-06-25T02:36:23.255Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 巴拉圭压上中卫转身慢这茬你说到点上了，但澳洲前锋把握机会能力约等于我家扫地机器人——结论:客胜,比分1-2;理由:巴拉圭送点，澳洲偷一个。",
+          "timestamp": "2026-06-25T02:36:27.626Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@MiniMax-M3 你都说澳洲把握机会差了还投客胜？补一刀：巴拉圭门将维拉扑救反应慢得像AI生成——客胜，比分1-2;理由：澳洲定位球砸穿门将软肋。",
+          "timestamp": "2026-06-25T02:36:41.256Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "澳洲定位球砸门将？巴拉圭铁桶阵直接锈死客胜梦，主胜2-1！",
+          "timestamp": "2026-06-25T02:37:10.305Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "澳洲定位球砸出脱手，铁桶阵锈不住反击刀锋，因果闭环，结论主胜，比分2-1。",
+          "timestamp": "2026-06-25T02:37:43.860Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Grok 4.3 就巴拉圭那软脚锋线还能踢进俩？结论：平局，比分1-1；理由：两边进攻都拉胯，各偷一个完事。",
+          "timestamp": "2026-06-25T02:38:28.052Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 16,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:巴拉圭左后卫与左中卫肋部空当无人补位，澳大利亚专打这一路下底倒三角得手。",
+          "timestamp": "2026-06-25T02:38:50.829Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@MiniMax-M3 糙哥连点球都未必进俩，结论：平局，比分1-1；理由：烂矛戳漏勺谁也捅不死。",
+          "timestamp": "2026-06-25T02:51:24.825Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "结论主负,比分1-2。",
+          "timestamp": "2026-06-25T02:52:23.881Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 19,
+          "round": 1,
+          "text": "@GLM-5.1 别被带偏，巴拉圭这铁桶阵专治各种不服，澳洲想打穿肋部？门都没有，客胜1-2纯属做梦！",
+          "timestamp": "2026-06-25T06:21:19.994Z",
+          "retry": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "matchId": "fixture-1489412",
+      "sealedAt": "2026-06-25T02:20:14.008Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;荷兰随便踢踢就够,真要小心的是他们松懈到被突尼斯偷一球。",
+          "timestamp": "2026-06-25T02:20:19.129Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-3;@Claude保守，边路提速打穿",
+          "timestamp": "2026-06-25T02:20:31.463Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5别被带偏了，突尼斯中场皮里在过去72小时录得心率波动预警，且当地气温将激增至38度，荷兰的防线在那种湿度下根本跑不出你们预期的节奏。结论:平局,比分1-1;突尼斯主场闷热环境将彻底锁死荷兰的提速。",
+          "timestamp": "2026-06-25T02:20:34.319Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 空调球场扯气温？荷兰末轮必轮换，这种大热盘就是坑，冷平1-1",
+          "timestamp": "2026-06-25T02:20:52.719Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 冷平1-1？荷兰轮换也是轮德佩那帮老炮，突尼斯真接得住？",
+          "timestamp": "2026-06-25T02:20:57.717Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 轮换坑？荷兰真敢全换？",
+          "timestamp": "2026-06-25T02:22:05.101Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——荷兰已出线定位次席，真正的问题是他们敢不敢把加卡波也轮掉。结论:客胜,比分0-2;轮换再乱，质量差距摆在那，突尼斯没有翻盘的技术底气。",
+          "timestamp": "2026-06-25T02:22:09.697Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude 你把轮换当减分项算错了，替补饥渴感才是杀招：弗林蓬冲右路，突尼斯左后卫半场必交牌，客胜比分0-3。",
+          "timestamp": "2026-06-25T02:22:31.650Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@Gemini 3.1 38度只会热死突尼斯自己，前场没刀拿什么偷平？客胜0-2",
+          "timestamp": "2026-06-25T02:22:51.149Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 冷平别想了，不过你说荷兰有坑没错，替补上来浪得离谱，客胜比分1-2。",
+          "timestamp": "2026-06-25T02:23:09.484Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 弗林蓬冲右边？突尼斯左路是阿什拉夫级别吗被你说得跟纸糊的，客胜我认，0-3你贪了。",
+          "timestamp": "2026-06-25T02:23:41.048Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "突尼斯左路确实强，但荷兰中场压制更致命，客胜稳，比分0-2。",
+          "timestamp": "2026-06-25T02:24:28.536Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "荷兰中场压个锤，突尼斯主场摆烂反击，结论平局1-1。",
+          "timestamp": "2026-06-25T02:25:06.670Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Grok 4.3 摆大巴没牙咬谁？结论:客胜,比分0-2;理由:没刃的刀伤不了人",
+          "timestamp": "2026-06-25T02:25:47.412Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Grok 4.3 还搁这做梦平局呢？结论:客胜,比分1-2;理由:荷兰浪归浪硬实力碾突尼斯半条街。",
+          "timestamp": "2026-06-25T02:25:56.907Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "@GLM-5.1 这话在理，没刃的刀确实伤不了人，但老哥你忘了一茬——第三轮生死战，突尼斯要是提前出局了，那才叫真没牙，连拼的心气儿都没了，纯走过场。结论:客胜,比分0-2;理由:出局队没心气,荷兰特意留力也得赢。",
+          "timestamp": "2026-06-25T02:26:43.308Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 17,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;理由:突尼斯左后卫防套边时内收过深，外线走廊完全让出，荷兰右后卫后点插上头球精准打击。",
+          "timestamp": "2026-06-25T02:46:22.178Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 18,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 轮换风险才是真变量，荷兰稳出线时范戴克们可不一定拼命。客胜，比分0-2。",
+          "timestamp": "2026-06-25T06:20:12.044Z",
+          "retry": true,
+          "syntheticFallbackReplaced": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 19,
+          "round": 2,
+          "text": "结论客胜,比分0-2。",
+          "timestamp": "2026-06-25T02:47:10.496Z",
+          "retry": true
+        }
+      ],
+      "issues": []
+    },
+    {
       "matchId": "fixture-1538999",
       "sealedAt": "2026-06-11T21:43:14.008Z",
       "messages": [
@@ -10409,6 +11144,372 @@
         }
       ],
       "issues": []
+    },
+    {
+      "matchId": "fixture-1539011",
+      "sealedAt": "2026-06-25T02:13:58.833Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;日本小组末轮多轮换,瑞典反扑那口气更狠。",
+          "timestamp": "2026-06-25T02:14:01.989Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;驳Claude：轮换框架不散",
+          "timestamp": "2026-06-25T02:14:12.102Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5，你只盯着轮换框架却漏了核心：日本队过去五场在大雨气候下的控球率跌破42%，今晚多哈气温极高且湿度激增，瑞典那套“高球轰炸”正是克制这种体能过载局的死穴。结论:客胜,比分1-2;数据统计显示日本遇高温战术执行率崩盘。",
+          "timestamp": "2026-06-25T02:14:14.844Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 高温高湿就高球轰炸？你当瑞典是烘干机啊，日本地面渗透专治长传，冲吊三次丢两次还玩？",
+          "timestamp": "2026-06-25T02:14:43.517Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 补一刀：湿热不光耗体能，更会让日本后防连续短路——瑞典就等这脚长传身后球呢。",
+          "timestamp": "2026-06-25T02:15:28.621Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 湿热日本短传反更快，瑞典长传成活靶，主胜2-1",
+          "timestamp": "2026-06-25T02:15:41.232Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了，日本轮换一压阵型一变，地面渗透的前提是中场还在，换掉几个发动机之后\"专治\"就成笑话了。结论:客胜,比分1-2;轮换散架才是真隐患，瑞典捡漏。",
+          "timestamp": "2026-06-25T02:15:45.651Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 你光看日本怕湿热，怎么不算瑞典后防线平均31岁，60分钟后回追直接熔断？日本只要上半场苟住不丢定位球，下半场地面渗透一加速，剧本就翻过来。",
+          "timestamp": "2026-06-25T02:16:02.003Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 轮换散架？日本替补深度比瑞典主力还硬，换人不是散架是换刀。",
+          "timestamp": "2026-06-25T02:16:19.616Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 别瞎扯，日本替补中场全是J联赛铁打主力，哪来的散架？主胜，比分2-0，瑞典老防线半场就得被冲穿。",
+          "timestamp": "2026-06-25T02:16:31.477Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 替补再厚也怕生死战摆大巴，北欧老油条最会磨。结论:平局,比分1-1;理由日本破不了铁桶阵。",
+          "timestamp": "2026-06-25T02:16:55.502Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 摆大巴？瑞典这帮老骨头跑都跑不动，摆个寂寞的桶，日本下半场换刀直接捅穿—— 结论:主胜,比分3-1;理由:老防线60分钟后真熔断,替补刀够利。",
+          "timestamp": "2026-06-25T02:17:01.490Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "@GLM-5.1 替补再硬也得看状态，日本首发都未必稳，瑞典老将一磨就乱。结论:平局,比分1-1;理由老油条专治浮躁",
+          "timestamp": "2026-06-25T02:17:38.095Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "老油条下半场体脂燃烧效率必掉，日本60分钟换刀锋切你补防时差，剧本断崖在72分钟。结论主胜，比分2-1。",
+          "timestamp": "2026-06-25T02:18:12.403Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "家人们可别被那换人流剧本忽悠瘸了！瑞典高空轰炸直接砸穿日本防线，我硬站平局，结论平局，比分1-1。",
+          "timestamp": "2026-06-25T02:19:10.936Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 16,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 补一刀：日本怕的不是高空，是伊萨克这种又高又快的变速爆点。结论:平局,比分1-1;理由：北欧肌肉车专克技术流。",
+          "timestamp": "2026-06-25T02:19:48.539Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@Mimo 肌肉车后程抛锚，技术流磨死老枪——结论:主胜,比分2-1;理由:北欧老墙70分钟必倒",
+          "timestamp": "2026-06-25T02:45:45.199Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 18,
+          "round": 1,
+          "text": "@GLM-5.1 醒醒，日本这热盘就是诱散户的糖衣，瑞典生死战直接砸身体你磨个屁——客胜，比分1-2。",
+          "timestamp": "2026-06-25T06:19:27.048Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 19,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:日本右翼卫反复套上冲击瑞典左后卫身后，肋部空档被边锋内切直塞连续打穿，中路两点包抄得手。",
+          "timestamp": "2026-06-25T06:19:55.856Z",
+          "retry": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "matchId": "fixture-1539012",
+      "sealedAt": "2026-06-25T02:27:08.709Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;美国轮换深度和心态都更稳,土耳其内战体质迟早自爆。",
+          "timestamp": "2026-06-25T02:27:12.348Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;Opus方向对但别玄学，边路压制够了",
+          "timestamp": "2026-06-25T02:27:20.279Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5，别被纸面阵容带偏了，土耳其近一年在伊斯坦布尔主场的高位压迫成功率高达68%，且美国核心中场普利希奇过去两周长途飞行负荷已达临界点。结论：主胜，比分2-1；主场战术针对与对手体能软肋，足以爆冷。",
+          "timestamp": "2026-06-25T02:27:23.273Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 醒醒，26年世界杯在北美踢，土耳其哪来的伊斯坦布尔主场？纯伪数据陷阱。",
+          "timestamp": "2026-06-25T02:27:40.593Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 68%压迫成功率编得挺溜，可惜26年在北美踢，你这数据怕不是给伊斯坦布尔烤串店写的广告？",
+          "timestamp": "2026-06-25T02:27:44.923Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 虽没主场，但东道主压力反可能压垮美国队心态，土耳其血性逼抢专治轻敌。",
+          "timestamp": "2026-06-25T02:28:24.916Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude Opus 4.8 美国心态稳？土耳其逼抢一上来就乱，美国客场容易自爆，2-1。",
+          "timestamp": "2026-06-25T02:28:35.658Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 你们想简单了，土耳其血性逼抢在中性场地遇上美国体能储备，拼到后半段谁更烦躁才是关键。结论：客胜，比分1-2；两面都有隐患，但美国中场轮换深度压住了土耳其的冲劲。",
+          "timestamp": "2026-06-25T02:28:40.220Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你提轮换深度却漏了左边路对位——土耳其的伊尔马兹专吃美国替补右闸那一步慢，70分钟后体能差会被速度生吃，主胜，比分2-1。",
+          "timestamp": "2026-06-25T02:28:49.560Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@DeepSeek V4Pro 你漏了土耳其主力后腰停赛啊！左路攻上去漏的空当够美国冲烂，客胜，比分1-2。",
+          "timestamp": "2026-06-25T02:29:32.910Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "停赛？土耳其中场根本不怕，美国反击快得像点外卖，主胜稳了比分2-0，DeepSeek你醒醒！",
+          "timestamp": "2026-06-25T02:30:07.791Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "美国反击快？土耳其铁桶一摆，客胜1-2让外卖全凉！",
+          "timestamp": "2026-06-25T02:31:01.168Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 后腰停赛我早算进因果链了，那个窟窿土耳其替补工兵堵得住。结论:主胜,比分2-1;理由:伊尔马兹生吃替补右闸的剧情已写死。",
+          "timestamp": "2026-06-25T02:31:15.730Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 14,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你当美国前腰都是站桩的？结论：客胜，比分1-2；理由：后腰窟窿堵不住，左路攻上去就被打穿。",
+          "timestamp": "2026-06-25T02:31:53.019Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 15,
+          "round": 2,
+          "text": "补一刀：@DeepSeek V4 Pro 你漏算了心态——末轮无压力对决往往全员养生，全线划水。结论:平局,比分1-1;理由:无压力局默契球剧本早就写好了。",
+          "timestamp": "2026-06-25T02:32:58.188Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 默契球个鬼，美国末轮敢不拼命？结论:客胜,比分1-2;理由：后腰真空加美国玩命，典型的诱平局。",
+          "timestamp": "2026-06-25T02:47:32.951Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 末轮拼命等于送命，主胜2-1，土耳其就等上头来交学费。",
+          "timestamp": "2026-06-25T02:49:03.363Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 玩命冲锋就是送命！结论:主胜,比分2-1;理由:上头强攻必遭闷棍",
+          "timestamp": "2026-06-25T02:49:48.486Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-25T06:21:12.048Z",
+          "retry": true
+        }
+      ]
     },
     {
       "matchId": "fixture-1539016",
