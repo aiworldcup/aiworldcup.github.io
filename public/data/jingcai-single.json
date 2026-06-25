@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T00:32:23.926Z",
+  "updatedAt": "2026-06-25T00:42:37.844Z",
   "status": "verified",
   "sources": [
     {
@@ -514,7 +514,8 @@
       "homeTeam": "苏格兰",
       "awayTeam": "巴西",
       "kickoff": "2026-06-24T22:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:3"
     },
     {
       "matchId": "fixture-1489407",
