@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T00:22:10.748Z",
+  "updatedAt": "2026-06-25T00:32:23.926Z",
   "status": "verified",
   "sources": [
     {
@@ -502,7 +502,8 @@
       "homeTeam": "摩洛哥",
       "awayTeam": "海地",
       "kickoff": "2026-06-24T22:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "4:2"
     },
     {
       "matchId": "fixture-1489406",
