@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T00:09:45.129Z",
+  "updatedAt": "2026-06-26T00:30:12.332Z",
   "status": "verified",
   "sources": [
     {
@@ -550,7 +550,8 @@
       "homeTeam": "库拉索",
       "awayTeam": "科特迪瓦",
       "kickoff": "2026-06-25T20:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:2"
     },
     {
       "matchId": "fixture-1489410",
@@ -561,7 +562,8 @@
       "homeTeam": "厄瓜多尔",
       "awayTeam": "德国",
       "kickoff": "2026-06-25T20:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:1"
     },
     {
       "matchId": "fixture-1489412",
