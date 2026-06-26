@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T03:05:00.720Z",
+  "updatedAt": "2026-06-26T04:27:17.286Z",
   "status": "verified",
   "sources": [
     {
@@ -598,7 +598,8 @@
       "homeTeam": "巴拉圭",
       "awayTeam": "澳大利亚",
       "kickoff": "2026-06-26T02:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "0:0"
     },
     {
       "matchId": "fixture-1539012",
@@ -609,7 +610,8 @@
       "homeTeam": "土耳其",
       "awayTeam": "美国",
       "kickoff": "2026-06-26T02:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "3:2"
     },
     {
       "matchId": "fixture-1489416",
