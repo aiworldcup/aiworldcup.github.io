@@ -2837,11 +2837,20 @@
         "syncedAt": "2026-06-23T11:37:23.181Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "home",
+        "score": "5-0"
+      },
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760474",
+        "syncedAt": "2026-06-26T21:14:29.394Z"
+      }
     },
     {
       "id": "fixture-1489416",
