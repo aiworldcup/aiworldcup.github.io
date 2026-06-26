@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T00:30:12.332Z",
+  "updatedAt": "2026-06-26T01:21:42.202Z",
   "status": "verified",
   "sources": [
     {
@@ -574,7 +574,8 @@
       "homeTeam": "突尼斯",
       "awayTeam": "荷兰",
       "kickoff": "2026-06-25T23:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "1:3"
     },
     {
       "matchId": "fixture-1539011",
@@ -585,7 +586,8 @@
       "homeTeam": "日本",
       "awayTeam": "瑞典",
       "kickoff": "2026-06-25T23:00:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "1:1"
     },
     {
       "matchId": "fixture-1539012",
