@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T04:27:17.286Z",
+  "updatedAt": "2026-06-27T00:26:54.091Z",
   "status": "verified",
   "sources": [
     {
@@ -621,7 +621,19 @@
       "league": "世界杯",
       "homeTeam": "挪威",
       "awayTeam": "法国",
-      "kickoff": "2026-06-26T19:00:00+00:00"
+      "kickoff": "2026-06-26T19:00:00+00:00",
+      "sourceScope": "single-fixed"
+    },
+    {
+      "matchId": "fixture-1539074",
+      "jingcaiMatchId": "2040298",
+      "matchNum": "周五062",
+      "matchDate": "2026-06-27",
+      "league": "世界杯",
+      "homeTeam": "塞内加尔",
+      "awayTeam": "伊拉克",
+      "kickoff": "2026-06-26T19:00:00+00:00",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "fixture-1489413",
@@ -641,7 +653,8 @@
       "league": "世界杯",
       "homeTeam": "乌拉圭",
       "awayTeam": "西班牙",
-      "kickoff": "2026-06-27T00:00:00+00:00"
+      "kickoff": "2026-06-27T00:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
