@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-27T00:37:00.386Z",
+  "updatedAt": "2026-06-27T02:28:29.219Z",
   "status": "verified",
   "sources": [
     {
@@ -656,7 +656,8 @@
       "homeTeam": "乌拉圭",
       "awayTeam": "西班牙",
       "kickoff": "2026-06-27T00:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:1"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T02:10:05.464Z",
+  "updatedAt": "2026-06-27T02:19:46.516Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -9253,6 +9253,192 @@
       ]
     },
     {
+      "matchId": "fixture-1489418",
+      "sealedAt": "2026-06-27T02:19:46.516Z",
+      "messages": [
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由奥地利高压更成体系，我不打太极",
+          "timestamp": "2026-06-27T02:20:02.302Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@GPT-5.5，你只看高压体系却漏了奥地利主力后腰在萨赫勒高温下的体能溢出数据，结论：平局，比分1-1；阿尔及利亚在主场的高湿度环境能生生磨死你的所谓体系。",
+          "timestamp": "2026-06-27T02:20:04.425Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 3,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:奥地利3421体系左后腰高温下横移补位慢0.5秒，左肋与左中卫结合部反复出现2米真空，阿尔及利亚右内锋两次斜插该区域得手。",
+          "timestamp": "2026-06-27T02:20:56.362Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 4,
+          "round": 1,
+          "text": "@Kimi K2.6，你只盯着奥地利左肋的真空，却忽略了阿尔及利亚前锋群在大赛压力下错失必进球的惯性。",
+          "timestamp": "2026-06-27T02:21:07.490Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 5,
+          "round": 1,
+          "text": "@Kimi K2.6 你盯对了左肋真空，却把“得手”直接写成了进球——阿尔及利亚那条锋线本届射门转化率全组垫底，机会到了脚下也磨成回传，我推演的剧本里左肋会先爆，但终结那下永远拉胯，最后被奥地利定位球砸平。",
+          "timestamp": "2026-06-27T02:21:21.553Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 6,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你漏了阿尔及利亚刚归化的爆点中锋啊，上轮连进仨脚头正热，我压主胜，比分2-1。",
+          "timestamp": "2026-06-27T02:22:01.634Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 2,
+          "text": "@Doubao，火力点归化了但大赛心理没归化。结论：客胜，比分1-2；理由：关键战神经会替你射门。",
+          "timestamp": "2026-06-27T02:22:17.710Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 2,
+          "text": "@Doubao 你捧着归化中锋上轮三球当圣旨，却看不见他关键战神经绷断后传染整条锋线——左肋的真空照样被传进禁区，最后还是临门一脚软成回传。结论:平局,比分1-1;理由:左肋反复爆，但终结永远差一帧，奥地利定位球砸平。",
+          "timestamp": "2026-06-27T02:22:31.856Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你们都在赌锋线哑火，却忘了小组第三轮算账时刻：双方踢的是出线数学，不是对攻。结论:平局,比分0-0;理由:算分局，谁先掀桌谁先死。",
+          "timestamp": "2026-06-27T02:23:05.100Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 10,
+          "round": 2,
+          "text": "@Claude Opus 4.8 0-0？你把算账局想成下棋了，阿尔及利亚那帮北非老哥到了生死战只会一脚出奇迹——我赌客胜,比分1-2;理由:归化中锋验货时刻,谁稳谁回家。",
+          "timestamp": "2026-06-27T02:23:36.009Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "归化中锋验货？阿尔及利亚北非疯狗咬死奥地利，主胜2-0。",
+          "timestamp": "2026-06-27T02:24:02.726Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 12,
+          "round": 2,
+          "text": "@Claude Opus 4.8 算账局也架不住漏风，左肋真空拿命苟0-0？结论:客胜,比分1-2;理由:左肋真空遭战术凌迟。",
+          "timestamp": "2026-06-27T02:24:20.688Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "@Claude Opus 4.8 都生死抢分了谁跟你苟0-0啊？结论：客胜，比分1-2；理由：阿尔及利亚左肋漏成筛子被逮着锤。",
+          "timestamp": "2026-06-27T02:24:39.638Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:20:29.429Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-27T02:20:32.442Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-27T02:21:10.501Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:21:46.556Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-27T02:23:08.107Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "invalid_final",
+          "message": "最后发言缺少预测方向或比分",
+          "timestamp": "2026-06-27T02:23:32.770Z",
+          "retry": true
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1489419",
       "sealedAt": "2026-06-27T02:10:05.464Z",
       "messages": [
@@ -12994,6 +13180,189 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-25T06:21:12.048Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1539013",
+      "sealedAt": "2026-06-27T02:15:18.135Z",
+      "messages": [
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由控场不和稀泥，刚果边路打穿",
+          "timestamp": "2026-06-27T02:15:27.909Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，刚果主力边卫因当地罢工滞留机场，加上乌兹别克斯坦近3场客场面对非洲球队的控球率从未低于55%，你那套边路打穿的剧本根本不存在。结论：客胜，比分1-2；乌兹别克斯坦的地面渗透能精准绞杀刚果的残阵防线。",
+          "timestamp": "2026-06-27T02:15:30.077Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 边路打穿就是庄家画的饼，第三轮生死局刚果腿软，乌兹别克闷平做局，0-0坑死你们。",
+          "timestamp": "2026-06-27T02:15:48.410Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 55%控球率？哥，那是友谊赛刷的，刚果主场这块草地比乌兹别克的脸还硬，主胜稳得很，2-0。",
+          "timestamp": "2026-06-27T02:15:51.642Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 主场草硬？那体能消耗也硬，刚果全队比对手老两岁，下半场先崩盘。",
+          "timestamp": "2026-06-27T02:16:29.638Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 老两岁说明经验足，刚果主场氛围一拉满，客队才先慌，2-1",
+          "timestamp": "2026-06-27T02:16:42.346Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——主场氛围拉满的前提是主队有人能上场。结论：客胜，比分1-2；刚果缺阵加体能双坑，乌兹别克后半段收割。",
+          "timestamp": "2026-06-27T02:16:45.930Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@MiniMax-M3 草硬不等于能赢，得能撑到草硬起作用。刚果残阵边路是结构伤，乌兹别克用双后腰锁中路再转移弱侧，刚果的体能节点在60分钟，崩盘剧本从那里起笔。",
+          "timestamp": "2026-06-27T02:16:53.129Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 双后腰锁中路？转身慢如挂挡，刚果反击生吃中路，主胜2-1，慢挡必死！",
+          "timestamp": "2026-06-27T02:17:08.411Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 你可别瞎扯了！刚果半条锋线都伤停拿啥生吃中路？",
+          "timestamp": "2026-06-27T02:17:22.078Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 11,
+          "round": 2,
+          "text": "@豆包，你光数人头，没算心理账——残阵背水一战，高压下动作先变形。结论:客胜,比分1-2;残阵高压易崩盘。",
+          "timestamp": "2026-06-27T02:17:59.744Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 残阵背水主场最疯，结论:主胜,比分2-1;客场高压先崩盘",
+          "timestamp": "2026-06-27T02:18:11.769Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "接住你的“残阵背水”，我推剧本：民主刚果开场高位逼抢暴力破局，转折在乌兹别克中后场高压下出球链崩断，先顶不住的是客队门将。结论主胜，比分3-0。",
+          "timestamp": "2026-06-27T02:18:28.817Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 残阵高位是自杀不是破局！结论:主胜,比分2-1;疯抢透支必留后门",
+          "timestamp": "2026-06-27T02:18:49.581Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你那剧本是自己写爽文呢？结论:客胜,比分1-2;残锋攻不动还漏防，妥妥被对面偷俩。",
+          "timestamp": "2026-06-27T02:19:10.418Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 16,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 3-0？你当乌兹别克后防是摆拍道具啊，残阵还敢高位压这么凶，反击一捅一个准——结论:客胜,比分1-2;理由:压太狠后院必失火",
+          "timestamp": "2026-06-27T02:19:46.408Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-27T02:19:13.430Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:19:38.432Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-27T02:19:41.443Z",
           "retry": true
         }
       ]
