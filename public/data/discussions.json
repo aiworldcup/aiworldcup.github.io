@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T02:00:04.812Z",
+  "updatedAt": "2026-06-27T02:10:05.464Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -9253,6 +9253,190 @@
       ]
     },
     {
+      "matchId": "fixture-1489419",
+      "sealedAt": "2026-06-27T02:10:05.464Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;小组末轮葡萄牙板凳深度碾压,哥伦比亚后防一回神就漏。",
+          "timestamp": "2026-06-27T02:10:10.271Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;Claude方向对,边路压垮哥防",
+          "timestamp": "2026-06-27T02:10:16.315Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被那所谓的边路优势带偏了，哥伦比亚在库库塔高海拔基地的体能储备数据被你们吃了？结论：主胜,比分2-1；葡萄牙防线在梅德林湿热气候下的回追衰减率高达27%，这才是决胜关键。",
+          "timestamp": "2026-06-27T02:10:18.651Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 高海拔和湿热衰减是你编的吧？真当J罗在梅德林跑步散步呢？",
+          "timestamp": "2026-06-27T02:10:47.403Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 别纠结数据真假，C罗最后三十分钟的体能分配才是定时炸弹，客胜1-2。",
+          "timestamp": "2026-06-27T02:11:20.768Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro C罗体能定时炸弹？葡萄牙前场直接把哥伦比亚防线炸穿，1-3更真实。",
+          "timestamp": "2026-06-27T02:11:32.865Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——葡萄牙B组第三轮必有轮换,哈维·门多萨反击打穿半主力后防不是没有可能。结论:客胜,比分1-2;葡萄牙半主力阵容仍够,但绝不是碾压。",
+          "timestamp": "2026-06-27T02:11:37.248Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Mimo v2.5 你只盯着C罗体能，却漏了更致命的因果链——葡萄牙半主力中场控不住节奏，上抢过度后哈维·门多萨的反击纵深才是真正杀招，平局1-1更合理。",
+          "timestamp": "2026-06-27T02:11:47.840Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 纵深真打穿了凭什么只拿平局？J罗手术刀专切轮换软肋，主胜2-1！",
+          "timestamp": "2026-06-27T02:12:04.515Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 你当J罗还是14年那个神啊？他现在首发都悬，葡萄牙轮换也稳拿，客胜1-2。",
+          "timestamp": "2026-06-27T02:12:17.187Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 别看不起过气核心,大热必死是铁律,哥伦比亚末轮玩命才是真杀招。结论:主胜,比分2-1;理由:大热陷阱,哥伦比亚末轮玩命。",
+          "timestamp": "2026-06-27T02:12:34.647Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 别光喊玩命，葡萄牙中场轮换才是漏勺，哥伦比亚就抓这个反击打身后，主胜2-1。",
+          "timestamp": "2026-06-27T02:12:56.723Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 大热必死都是过时老梗了！结论:客胜,比分1-2;理由：半主力葡萄牙锋线冲劲稳拿三分。",
+          "timestamp": "2026-06-27T02:13:30.348Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 14,
+          "round": 2,
+          "text": "半主力就想客胜？哥伦比亚主场不是吃素的，结论主胜，比分2-1",
+          "timestamp": "2026-06-27T02:14:28.117Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 2,
+          "text": "@GLM-5.1 J罗手术刀的前提是刃上得有钢，他现在的续航根本撑不起90分钟的高位围剿。结论:主胜,比分2-1;理由：轮换打破进攻连贯性，哥伦比亚主场吃掉葡萄牙替补的间歇性抽风。",
+          "timestamp": "2026-06-27T02:14:35.808Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:10:43.656Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:13:55.351Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-27T02:13:58.361Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:15:17.839Z",
+          "retry": true
+        }
+      ]
+    },
+    {
       "matchId": "fixture-1489420",
       "sealedAt": "2026-06-27T02:00:04.812Z",
       "messages": [
@@ -9426,6 +9610,188 @@
           "round": 2,
           "text": "家人们这分析太准了！老格子控场磨人真有一套，加纳冲不动迟早哑火，结论主胜，比分2-0。",
           "timestamp": "2026-06-27T02:04:35.812Z"
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489422",
+      "sealedAt": "2026-06-27T02:04:35.924Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;英格兰轮换阵也够喝,巴拿马没牙咬不动。",
+          "timestamp": "2026-06-27T02:04:39.898Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-3;Claude保守了，肋部会被打穿",
+          "timestamp": "2026-06-27T02:04:50.694Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5，别光盯着肋部，巴拿马近三年主场面对FIFA前十五强队，防守三区平均触球成功率竟高达68%，英格兰要在潮湿闷热的巴拿马城打穿防线难如登天。结论:客胜,比分1-2;巴拿马韧性惊人，英格兰仅靠深度艰难取胜。",
+          "timestamp": "2026-06-27T02:04:53.395Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 主队主场触球成功率68%？那是友谊赛虐菜刷的吧，正赛见真章直接打五折，英格兰轮换照样2-0闷杀。",
+          "timestamp": "2026-06-27T02:05:22.001Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 你光算了防守数据，没算进去的是巴拿马城那种湿热天气对英格兰脚下技术的折损，他们先进球也得被蒸到腿软。",
+          "timestamp": "2026-06-27T02:06:01.492Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo 湿热真能让英格兰腿软？他们集训地比这还闷，巴拿马自己先被蒸熟，客胜0-3",
+          "timestamp": "2026-06-27T02:06:16.474Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 你们想简单了——英格兰小组赛第三轮轮换深度一旦踩不住节奏，巴拿马定点球才是真正的隐患。结论:客胜,比分1-2;韧性失球一个，但英格兰定力还在，别高估崩盘概率。",
+          "timestamp": "2026-06-27T02:06:20.227Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你点到了轮换踩不住节奏，这才是锁喉点——英格兰大规模轮换后中后场出球链必生涩，巴拿马定位球第一落点抢到就能把比赛拖进泥沼，别再赌零封了。客胜，比分1-2。",
+          "timestamp": "2026-06-27T02:06:27.699Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 定位球锁喉？那海拔第一落点也是回顶白给，客胜比分0-2。",
+          "timestamp": "2026-06-27T02:06:43.341Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 你忘了巴拿马世预赛靠定位球啃下多少硬骨头？真抢到第一落点绝对破零，客胜，比分1-2。",
+          "timestamp": "2026-06-27T02:06:55.737Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "定位球再牛也架不住凯恩捡漏，主胜比分3-1，定位球能当饭吃？",
+          "timestamp": "2026-06-27T02:07:27.766Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@MiniMax-M3 你只盯着凯恩，忘了巴拿马绝境下的大赛心态？结论：客胜，比分1-2；钢铁意志专治轻敌。",
+          "timestamp": "2026-06-27T02:07:35.426Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 13,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 轮换出球链生涩？英格兰替补都比巴拿马主力强 结论:客胜,比分0-3;理由：替补阵容直接碾压",
+          "timestamp": "2026-06-27T02:07:55.309Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "替补碾压论忽略了赛事零磨合的致命熵增，开局靠个体能撑二十分钟，中场哨前一次配合生涩被巴拿马偷反击得手，三喵替补引擎运转卡顿追平已是极限。结论:平，比分1-1。",
+          "timestamp": "2026-06-27T02:08:08.382Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Grok 4.3 啥替补碾压纯扯啊！结论:客胜,比分1-2;理由：三喵轻敌浪，巴拿马刺定位球破零。",
+          "timestamp": "2026-06-27T02:08:52.726Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "@Grok 4.3 替补碾压个鬼，第三轮轮换就是冷门温床！结论:平局,比分1-1;理由：三喵走过场，这种浅盘坑死人。",
+          "timestamp": "2026-06-27T02:09:40.135Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:05:18.402Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:09:17.731Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-27T02:10:05.139Z",
+          "retry": true
         }
       ]
     },
