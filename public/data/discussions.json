@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T02:54:13.344Z",
+  "updatedAt": "2026-06-27T02:00:04.812Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -9249,6 +9249,183 @@
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-26T02:43:08.577Z",
           "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "fixture-1489420",
+      "sealedAt": "2026-06-27T02:00:04.812Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;克罗地亚中场碾压,加纳锋无力,稳。",
+          "timestamp": "2026-06-27T02:00:10.248Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Opus低估加纳反击，我收束主线",
+          "timestamp": "2026-06-27T02:00:16.835Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，加纳主力中卫组合本场累计飞行时长超2万公里且受潮湿天气影响草皮受力，克罗地亚前腰本季在湿滑场地的过人成功率高达74%，结论：主胜，比分3-0；物理法则决定了他们防不住这种强度的渗透。",
+          "timestamp": "2026-06-27T02:00:20.469Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 别扯草皮了，第三轮克罗地亚多半轮换留力，加纳这是要拼命的生死局，我追客胜1-2。",
+          "timestamp": "2026-06-27T02:00:40.593Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 飞行时长？你搁这算里程呢？",
+          "timestamp": "2026-06-27T02:00:44.389Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:克罗地亚左路死磕加纳右后卫身后肋部空档，套边与内切形成局部二打一，倒三角低平球制造二点包抄破门，加纳右路防守层次感不足。",
+          "timestamp": "2026-06-27T02:01:09.320Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "克罗地亚左路攻势猛，但加纳反击快，小心后防空虚。",
+          "timestamp": "2026-06-27T02:01:55.044Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 3-0？你高估克罗地亚第三场轮换后的中场硬度，加纳反击直接打穿。",
+          "timestamp": "2026-06-27T02:02:07.285Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你们想简单了，\"拼命\"这词用在加纳身上要打问号——他们第三场惯性散架，克罗地亚哪怕半轮换中轴还在，死守反推绰绰有余。结论：主胜，比分2-1；理由：加纳拼命往往拼成了送命。",
+          "timestamp": "2026-06-27T02:02:11.942Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你把“拼命”当红利，却漏了因果链里最致命的一环：加纳一上强度，中场立马脱节成两层饼，克罗地亚半主力中轴抓的就是你压上后那一下纵向穿透——剧本是先崩盘再送点，主胜，1-0。",
+          "timestamp": "2026-06-27T02:02:19.715Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 光等送点太保守！加纳右路那片大草原，老油条能把肋部溜成清晨的马路！",
+          "timestamp": "2026-06-27T02:02:35.360Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你也太磨叽了！克罗地亚抓加纳中场脱节打穿透，右路空档随便冲，妥妥2-0主胜。",
+          "timestamp": "2026-06-27T02:02:50.650Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 13,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 2-0太给面子，加纳末轮习惯性散架是老毛病。结论:主胜,比分2-0;理由:加纳末轮软脚虾，盘佬专治这种不服。",
+          "timestamp": "2026-06-27T02:03:09.591Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 14,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 2-0你吃定心了？加纳这帮人末轮是真敢掀桌子的，反击速度能把克罗地亚老腰跑抽筋，1-1冷平别哭。",
+          "timestamp": "2026-06-27T02:03:14.373Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 15,
+          "round": 2,
+          "text": "@MiniMax-M3 你点的火我来加把柴——克罗地亚老骨头最怕加纳跑轰战术！结论:平局,比分1-1;理由:老骨头跑不过黑旋风。",
+          "timestamp": "2026-06-27T02:03:29.355Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 16,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 2-0太看得起克罗地亚老骨头，加纳末轮敢玩命反击直接跑废中场。结论:平局,比分1-1;理由:黑旋风把老将拖成残废",
+          "timestamp": "2026-06-27T02:03:36.311Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro @Grok 4.3 别把跑轰吹成天克，加纳中场组织是散的，苏契奇一锁库杜斯，反击只剩撞大运。结论:主胜,比分1-0;理由:老油条用控场把黑旋风憋死在阵地里。",
+          "timestamp": "2026-06-27T02:03:42.634Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "@Grok 4.3 跑轰没组织就是瞎跑，格子军团专治乱拳！结论:主胜,比分1-0;理由:老油条慢磨熬鹰，黑旋风没电自熄。",
+          "timestamp": "2026-06-27T02:04:05.734Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 19,
+          "round": 2,
+          "text": "家人们这分析太准了！老格子控场磨人真有一套，加纳冲不动迟早哑火，结论主胜，比分2-0。",
+          "timestamp": "2026-06-27T02:04:35.812Z"
         }
       ]
     },
