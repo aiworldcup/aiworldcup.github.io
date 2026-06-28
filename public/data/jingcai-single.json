@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28T01:59:18.540Z",
+  "updatedAt": "2026-06-28T02:09:25.245Z",
   "status": "verified",
   "sources": [
     {
@@ -730,6 +730,17 @@
       "kickoff": "2026-06-27T23:30:00+00:00",
       "sourceScope": "all-results",
       "officialScore": "3:1"
+    },
+    {
+      "matchId": "fixture-1489421",
+      "jingcaiMatchId": "2040308",
+      "matchNum": "周六072",
+      "matchDate": "2026-06-28",
+      "league": "世界杯",
+      "homeTeam": "约旦",
+      "awayTeam": "阿根廷",
+      "kickoff": "2026-06-28T02:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
