@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28T00:38:22.076Z",
+  "updatedAt": "2026-06-28T01:59:18.540Z",
   "status": "verified",
   "sources": [
     {
@@ -716,7 +716,8 @@
       "homeTeam": "哥伦比亚",
       "awayTeam": "葡萄牙",
       "kickoff": "2026-06-27T23:30:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:0"
     },
     {
       "matchId": "fixture-1539013",
@@ -727,7 +728,8 @@
       "homeTeam": "民主刚果",
       "awayTeam": "乌兹别克斯坦",
       "kickoff": "2026-06-27T23:30:00+00:00",
-      "sourceScope": "all-results"
+      "sourceScope": "all-results",
+      "officialScore": "3:1"
     }
   ]
 }
