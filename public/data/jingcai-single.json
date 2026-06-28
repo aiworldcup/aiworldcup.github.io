@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28T00:18:05.043Z",
+  "updatedAt": "2026-06-28T00:38:22.076Z",
   "status": "verified",
   "sources": [
     {
@@ -692,7 +692,8 @@
       "homeTeam": "克罗地亚",
       "awayTeam": "加纳",
       "kickoff": "2026-06-27T21:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:1"
     },
     {
       "matchId": "fixture-1489422",
@@ -703,7 +704,8 @@
       "homeTeam": "巴拿马",
       "awayTeam": "英格兰",
       "kickoff": "2026-06-27T21:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:2"
     },
     {
       "matchId": "fixture-1489419",
