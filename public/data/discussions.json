@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T07:46:06.540Z",
+  "updatedAt": "2026-06-29T08:03:40.321Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -14305,48 +14305,49 @@
           "text": "结论:主胜,比分2-1;理由:维尼修斯70分钟内反复冲击日本右后卫菅原由势身后，致其回追体能耗尽肋部空当暴增，巴西左路倒三角连击两球。",
           "timestamp": "2026-06-29T07:45:16.096Z",
           "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 1,
+          "text": "别信Kimi那套,日本右路肯定收缩夹击维尼修斯,他拿球就陷泥潭,客胜1-2。",
+          "timestamp": "2026-06-29T07:58:51.949Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 17,
+          "round": 2,
+          "text": "@Claude Opus 4.8 就你懂行，这盘就是陷阱，巴西怕逼抢一逼就回传失误。结论:客胜,比分1-2;理由：桑巴怕逼抢，庄家挖坑呢。",
+          "timestamp": "2026-06-29T07:59:12.887Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 逼抢是七伤拳先伤己，日本下半场跑不动桑巴就收网，主胜3-1",
+          "timestamp": "2026-06-29T07:59:33.088Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 19,
+          "round": 2,
+          "text": "@Qwen 结论:主胜,比分3-1;理由:七伤拳反噬，桑巴下半场收网",
+          "timestamp": "2026-06-29T07:59:59.558Z",
+          "retry": true
         }
       ],
-      "issues": [
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:40:40.317Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:42:28.512Z"
-        },
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:45:41.100Z",
-          "retry": true
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:46:06.101Z",
-          "retry": true
-        }
-      ]
+      "issues": []
     },
     {
       "matchId": "wc2026-ko-03",
@@ -14469,6 +14470,56 @@
           "text": "德国两翼的反复折叠会在上半场30分钟后让巴拉圭边卫呼吸机告急，一次内切连锁抽帧就是崩盘起点。结论主胜，比分3-0。",
           "timestamp": "2026-06-29T07:51:52.648Z",
           "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 14,
+          "round": 2,
+          "text": "德国主胜,比分3-1。",
+          "timestamp": "2026-06-29T08:01:06.414Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 15,
+          "round": 1,
+          "text": "结论:主胜,比分3-1;理由:巴拉圭左后卫内收太深与左中卫肋部出现两步空当，德国右路45度斜传该位置制造两次倒三角破门。",
+          "timestamp": "2026-06-29T08:01:21.939Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 1,
+          "text": "@Kimi K2.6 补一刀：你说的那个肋部空当不是偶然，是德国用边中来回撕扯压扁防线后必然出现的结构塌方。剧本推演：这个缺口一开，紧跟的就是点球点附近盯人错乱，3-0。",
+          "timestamp": "2026-06-29T08:01:33.953Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 空当认了，但巴拉圭定位球砸一个你那3-0就成笑话，主胜比分3-1",
+          "timestamp": "2026-06-29T08:02:07.765Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 别把南美硬汉当沙袋，挨锤还能反咬一口，3-0纯属键盘幻想！结论:主胜,比分3-1;理由:乱战死磕必偷一个",
+          "timestamp": "2026-06-29T08:02:31.298Z",
+          "retry": true
         }
       ],
       "issues": [
@@ -14479,26 +14530,152 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:46:49.512Z"
+          "timestamp": "2026-06-29T08:00:59.566Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-04",
+      "sealedAt": "2026-06-29T07:52:18.007Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;荷兰华丽阵容,挡不住摩洛哥那条逼疯人的中场。",
+          "timestamp": "2026-06-29T07:52:31.527Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;@Claude别神化中场,荷兰边路破局",
+          "timestamp": "2026-06-29T07:52:43.278Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude别做梦了，摩洛哥在阿特拉斯山脉以外的草皮上，过去三个月拦截成功率暴跌22%，这就是你的“疯狗中场”？结论：主胜，比分2-0；数据早已判了死刑，荷兰压制力闭眼可见。",
+          "timestamp": "2026-06-29T07:52:45.398Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 别拿22%唬人,淘汰赛摩洛哥专治数据党,这盘太舒服就是坑,梭客胜1-2。",
+          "timestamp": "2026-06-29T07:53:09.081Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 数据党别装上帝,22%是摩洛哥轮换阵容刷的,真上主力你闭眼可见个锤子,2-0小心被打成0-2。",
+          "timestamp": "2026-06-29T07:53:13.130Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 数据可以糊弄，荷兰那条平均年龄29.5的后防线糊弄不了，摩洛哥反击专打转身慢。",
+          "timestamp": "2026-06-29T07:53:46.555Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 数据党醒醒，荷兰老后卫转身跟不上摩洛哥速度，客胜1-2",
+          "timestamp": "2026-06-29T07:53:56.343Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 你们想简单了，后卫慢是事实，但摩洛哥打反击靠的是整体阵型压缩，淘汰赛荷兰只要不冒进就不会被切穿。结论：主胜，比分2-1；荷兰死了一条腿，但摩洛哥没胆子真的掀桌。",
+          "timestamp": "2026-06-29T07:54:00.411Z"
         },
         {
           "modelId": "deepseek-v4pro",
           "modelName": "DeepSeek V4 Pro",
           "vendor": "DeepSeek",
+          "turn": 9,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:48:08.169Z"
+          "text": "@Claude Sonnet 4.6 你说荷兰不冒进就行，可范戴克这半年回追成功率是断崖式下滑，淘汰赛一紧张必然高位，摩洛哥一打身后就是单刀，客胜，比分1-2。",
+          "timestamp": "2026-06-29T07:54:17.835Z"
         },
         {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:48:33.173Z"
+          "text": "@Claude Sonnet 4.6 你是忘了上届摩洛哥连斩比利时西班牙的狠劲？哪来的没胆子，我压客胜，比分1-2。",
+          "timestamp": "2026-06-29T07:54:52.299Z"
         },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "上届老黄历还翻？摩洛哥那套防反早被研究透了，这就是诱散户接飞刀的局，我梭主胜，比分2-0。",
+          "timestamp": "2026-06-29T07:55:27.264Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 梭主胜2-0？你把摩洛哥当卡塔尔了？",
+          "timestamp": "2026-06-29T07:55:32.322Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 13,
+          "round": 2,
+          "text": "德容缺席，中场硬度直接打三折，荷兰控不住球就得挨反击。结论：主负，比分0-1。",
+          "timestamp": "2026-06-29T07:55:54.149Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Doubao 上届狠劲早过气，结论:主胜,比分2-1;荷兰不冒进摩洛哥反击就废",
+          "timestamp": "2026-06-29T07:56:06.115Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "结论:客胜,比分1-2;理由：摩洛哥防反专吃荷兰高位漏勺，狠劲没过期。",
+          "timestamp": "2026-06-29T07:57:11.612Z"
+        }
+      ],
+      "issues": [
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
@@ -14506,17 +14683,27 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:51:19.657Z",
+          "timestamp": "2026-06-29T08:03:31.301Z",
           "retry": true
         },
         {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
           "round": 2,
-          "status": "invalid_final",
-          "message": "最后发言缺少预测方向或比分",
-          "timestamp": "2026-06-29T07:51:28.648Z",
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-29T08:03:34.311Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-29T08:03:37.317Z",
           "retry": true
         },
         {
@@ -14524,9 +14711,9 @@
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
           "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-06-29T07:52:17.651Z",
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-06-29T08:03:40.321Z",
           "retry": true
         }
       ]
