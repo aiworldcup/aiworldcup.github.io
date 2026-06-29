@@ -4,6 +4,7 @@
 let MODELS = {};
 let MATCHES = [];
 let LEADERBOARD = { rankings: [], open: [] };
+let CHAMPION_DATA = { teams: [], predictions: [] };
 let CHAMPIONS = [];
 let DISCUSSIONS = [];
 let GROUPS = {};
@@ -41,6 +42,7 @@ const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
 const DATA_REFRESH_MS = 60 * 1000;
+const DATA_VERSION = '20260629-champion-radar-3';
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -53,14 +55,17 @@ window.addEventListener('error', event => {
 
 async function loadJSON(path, fallback, options = {}) {
   const cache = options.cache || 'no-cache';
+  const version = options.version || DATA_VERSION;
+  const url = version ? `${path}${path.includes('?') ? '&' : '?'}v=${encodeURIComponent(version)}` : path;
   try {
-    const res = await fetch(path, { cache });
+    const res = await fetch(url, { cache });
     if (!res.ok) throw new Error(res.status);
     return await res.json();
   } catch (e) {
     if (fallback) {
       console.warn(`加载 ${path} 失败,回退到 ${fallback}`);
-      try { return await (await fetch(fallback, { cache })).json(); }
+      const fallbackUrl = version ? `${fallback}${fallback.includes('?') ? '&' : '?'}v=${encodeURIComponent(version)}` : fallback;
+      try { return await (await fetch(fallbackUrl, { cache })).json(); }
       catch (_) { return null; }
     }
     return null;
@@ -1889,50 +1894,184 @@ function renderMatchCard(m) {
   </article>`;
 }
 
-function renderChampionPredictions() {
-  const el = document.getElementById('champion-predictions');
-  if (!el) return;
-  if (!CHAMPIONS.length) {
-    el.innerHTML = `<div class="empty-state">
-      <strong>冠军预测待封盘</strong>
-      <span>真实模型预测生成后,这里会展示冠军共识和逐模型选择。</span>
-    </div>`;
-    return;
+function championScoreValue(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return 0;
+  return Math.max(0, Math.min(100, number));
+}
+
+function championUpdatedLabel(value) {
+  if (!value) return '';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  return date.toLocaleString('zh-CN', {
+    timeZone: ASIA_SHANGHAI,
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+}
+
+function championMetric(label, value, tone = '') {
+  const score = championScoreValue(value);
+  return `<div class="champion-metric ${tone}">
+    <div><span>${escapeHTML(label)}</span><strong>${formatNumber(score, score % 1 ? 1 : 0)}</strong></div>
+    <i style="width:${score}%"></i>
+  </div>`;
+}
+
+function championNextText(item) {
+  const next = item?.nextMatch || {};
+  if (next.status === 'scheduled') {
+    const date = next.dateKey ? `${dateLabel(next.dateKey)} ` : '';
+    return `${date}${next.stageShort || '淘汰赛'} vs ${next.opponent}`;
   }
-  const consensus = CHAMPIONS.reduce((acc, item) => {
+  return next.label || '等待下轮落位';
+}
+
+function championHighlightCard(item, className = '') {
+  if (!item?.team) return '';
+  return `<article class="champion-spotlight ${className}">
+    <div class="champion-spotlight-label">${escapeHTML(item.label || '')}</div>
+    <div class="champion-spotlight-main">
+      <span>${flagIcon(item.flag)}</span>
+      <strong>${escapeHTML(item.team)}</strong>
+      <b>${formatNumber(item.score, item.score % 1 ? 1 : 0)}</b>
+    </div>
+    <p>${escapeHTML(item.hook || '')}</p>
+  </article>`;
+}
+
+function championTeamCard(item) {
+  const scores = item.scores || {};
+  const badges = (item.badges || item.tags || []).slice(0, 3);
+  const next = item.nextMatch || {};
+  const hasWinChance = next.winChance !== null && next.winChance !== undefined;
+  const nextMeta = hasWinChance ? `晋级倾向 ${formatNumber(next.winChance, 1)}%` : (next.status === 'scheduled' ? '暂无赔率倾向' : '路径待刷新');
+  return `<article class="champion-team-card">
+    <div class="champion-team-top">
+      <div class="champion-rank-pill">#${item.rank}</div>
+      <div class="champion-team-name">
+        <span>${flagIcon(item.flag)}</span>
+        <div>
+          <strong>${escapeHTML(item.team)}</strong>
+          <small>${escapeHTML(item.qualification || '')} · ${escapeHTML(item.group?.name || '')}组 ${item.group?.points ?? '-'}分</small>
+        </div>
+      </div>
+      <div class="champion-total">
+        <strong>${formatNumber(scores.total || 0, 1)}</strong>
+        <span>冠军雷达</span>
+      </div>
+    </div>
+    <div class="champion-badges">${badges.map(tag => `<span>${escapeHTML(tag)}</span>`).join('')}</div>
+    <div class="champion-metrics">
+      ${championMetric('出线姿态', scores.form, 'form')}
+      ${championMetric('己身实力', scores.strength, 'strength')}
+      ${championMetric('路径签运', scores.path, 'path')}
+      ${championMetric('节目效果', scores.fun, 'fun')}
+    </div>
+    <div class="champion-next">
+      <span>${escapeHTML(championNextText(item))}</span>
+      <small>${escapeHTML(nextMeta)}</small>
+    </div>
+    <p class="champion-reason">${escapeHTML(item.reason || '')}</p>
+    <p class="champion-script">${escapeHTML(item.script || '')}</p>
+  </article>`;
+}
+
+function renderChampionModelPanel(modelPicks) {
+  if (!modelPicks.length) {
+    return `<section class="champion-model-panel">
+      <div class="champion-title">模型冠军封盘</div>
+      <div class="champion-model-empty">暂未生成逐模型冠军选择;当前榜单先按真实赛果和路径雷达派生。</div>
+    </section>`;
+  }
+  const consensus = modelPicks.reduce((acc, item) => {
     const key = item.team;
     acc[key] = acc[key] || { team: item.team, flag: item.flag, count: 0, confidence: 0 };
     acc[key].count += 1;
     acc[key].confidence += Number(item.confidence) || 0;
     return acc;
   }, {});
-  const leaders = Object.values(consensus)
+  const leaderRows = Object.values(consensus)
     .sort((a, b) => b.count - a.count || b.confidence - a.confidence)
-    .slice(0, 3);
-  const leaderRows = leaders.map((item, index) => `<div class="champion-leader">
-    <span class="champion-rank">${index + 1}</span>
-    <span class="champion-flag">${flagIcon(item.flag)}</span>
-    <span>${item.team}</span>
-    <strong>${item.count} 票</strong>
-  </div>`).join('');
-
-  const modelRows = CHAMPIONS.map(item => {
+    .slice(0, 3)
+    .map((item, index) => `<div class="champion-leader">
+      <span class="champion-rank">${index + 1}</span>
+      <span class="champion-flag">${flagIcon(item.flag)}</span>
+      <span>${escapeHTML(item.team)}</span>
+      <strong>${item.count} 票</strong>
+    </div>`).join('');
+  const modelRows = modelPicks.map(item => {
     const meta = modelMeta(item.modelId);
     return `<div class="champion-pick">
-      <div class="champion-model"><span class="lb-dot" style="background:${meta.color}"></span>${meta.name}</div>
-      <div class="champion-team"><span>${flagIcon(item.flag)}</span><strong>${item.team}</strong></div>
-      <div class="champion-reason">${item.reasoning || ''}</div>
+      <div class="champion-model"><span class="lb-dot" style="background:${meta.color}"></span>${escapeHTML(meta.name)}</div>
+      <div class="champion-team"><span>${flagIcon(item.flag)}</span><strong>${escapeHTML(item.team)}</strong></div>
+      <div class="champion-reason">${escapeHTML(item.reasoning || '')}</div>
     </div>`;
   }).join('');
-
-  el.innerHTML = `<div class="champion-card champion-consensus">
-    <div class="champion-title">模型共识</div>
-    ${leaderRows}
-  </div>
-  <div class="champion-card">
-    <div class="champion-title">逐模型选择</div>
+  return `<section class="champion-model-panel">
+    <div class="champion-title">模型冠军封盘</div>
+    <div class="champion-model-consensus">${leaderRows}</div>
     <div class="champion-list">${modelRows}</div>
-  </div>`;
+  </section>`;
+}
+
+function renderChampionPredictions() {
+  const el = document.getElementById('champion-predictions');
+  if (!el) return;
+  const data = CHAMPION_DATA || {};
+  const teams = data.teams || [];
+  const modelPicks = data.predictions || CHAMPIONS || [];
+  if (!teams.length && !modelPicks.length) {
+    el.innerHTML = `<div class="empty-state">
+      <strong>冠军预测待封盘</strong>
+      <span>生成冠军雷达后,这里会展示出线形态、己身实力、路径签运和逐模型选择。</span>
+    </div>`;
+    return;
+  }
+
+  if (!teams.length) {
+    el.innerHTML = renderChampionModelPanel(modelPicks);
+    return;
+  }
+
+  const highlights = data.highlights || {};
+  const topTeams = teams.slice(0, 12);
+  const updated = championUpdatedLabel(data.updatedAt);
+  const source = data.source || {};
+  el.innerHTML = `
+    <section class="champion-radar-panel">
+      <div>
+        <div class="champion-kicker">Champion Radar</div>
+        <h3>数据认真,梗也不空口来</h3>
+        <p>${escapeHTML(data.note || '基于真实赛果、出线路径和球队强度派生冠军候选。')}</p>
+      </div>
+      <div class="champion-radar-stats">
+        <div><strong>${source.aliveTeams || teams.length}</strong><span>仍在牌桌</span></div>
+        <div><strong>${source.settledKnockout || 0}</strong><span>淘汰赛已结</span></div>
+        <div><strong>${updated || '-'}</strong><span>雷达更新</span></div>
+      </div>
+    </section>
+    <div class="champion-spotlights">
+      ${championHighlightCard(highlights.favorite, 'favorite')}
+      ${championHighlightCard(highlights.darkHorse, 'darkhorse')}
+      ${championHighlightCard(highlights.jinxRisk, 'jinx')}
+    </div>
+    <section class="champion-board-panel">
+      <div class="champion-board-head">
+        <div>
+          <div class="champion-title">冠军候选榜</div>
+          <p>综合出线姿态、己身实力、路径签运和节目效果;分数是派生雷达,不是赛果承诺。</p>
+        </div>
+        <span>Top ${topTeams.length}</span>
+      </div>
+      <div class="champion-team-list">${topTeams.map(championTeamCard).join('')}</div>
+    </section>
+    ${renderChampionModelPanel(modelPicks)}
+  `;
 }
 
 function discussionForMatch(matchId) {
@@ -2575,7 +2714,8 @@ function renderDataViews({ warmLazy = false } = {}) {
 function applyDataBundle(bundle, { resetDate = false, warmLazy = false } = {}) {
   MATCHES = bundle.matches?.matches || [];
   if (bundle.leaderboard) LEADERBOARD = bundle.leaderboard;
-  CHAMPIONS = bundle.champions?.predictions || [];
+  CHAMPION_DATA = bundle.champions || { teams: [], predictions: [] };
+  CHAMPIONS = CHAMPION_DATA.predictions || [];
   DISCUSSIONS = bundle.discussions?.discussions || [];
   GROUPS = bundle.groups?.groups || {};
   JINGCAI_SINGLE = bundle.jingcai || { matches: [], sources: [] };

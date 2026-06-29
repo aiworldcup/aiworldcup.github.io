@@ -3,9 +3,12 @@ const path = require("path");
 const { getConfig } = require("./config");
 const { loadProjectEnv } = require("./lib/env");
 const { fetchApi, hydrateOddsForMatch, isDisallowedOddsProvider, normalizeFixture } = require("./odds");
+const { resolveKnockoutData } = require("./knockout");
+const { buildChampionData } = require("./champion");
 
 const MATCHES_OUT = path.join(__dirname, "..", "public", "data", "matches.json");
 const CHAMPIONS_OUT = path.join(__dirname, "..", "public", "data", "champion-predictions.json");
+const GROUPS_PATH = path.join(__dirname, "..", "public", "data", "groups.json");
 const WORLD_CUP_LEAGUE_ID = "1";
 const WORLD_CUP_SEASON = "2026";
 const TARGET_MATCH_COUNT = 104;
@@ -183,6 +186,27 @@ function readExistingMatches() {
   }
 }
 
+function readExistingChampionPredictions() {
+  try {
+    if (!fs.existsSync(CHAMPIONS_OUT)) return [];
+    const data = JSON.parse(fs.readFileSync(CHAMPIONS_OUT, "utf8"));
+    return data.predictions || [];
+  } catch (err) {
+    console.warn(`[sync] existing champion predictions ignored: ${err.message}`);
+    return [];
+  }
+}
+
+function readGroups() {
+  try {
+    if (!fs.existsSync(GROUPS_PATH)) return {};
+    return JSON.parse(fs.readFileSync(GROUPS_PATH, "utf8")).groups || {};
+  } catch (err) {
+    console.warn(`[sync] groups ignored: ${err.message}`);
+    return {};
+  }
+}
+
 function flagFor(teamName) {
   return TEAM_FLAGS[teamName] || "";
 }
@@ -306,6 +330,7 @@ async function hydrateOddsSafely(match, config) {
 async function syncRealData() {
   loadProjectEnv();
   const config = getConfig();
+  const syncedAt = new Date().toISOString();
   if (!config.oddsApiKey) {
     throw new Error("缺少 API-SPORTS key。请配置 ODDS_API_KEY/APISPORTS_API_KEY 或保留 football config。");
   }
@@ -326,38 +351,40 @@ async function syncRealData() {
       actual: null,
       predictions: [],
       dataSource: "api-sports",
-      syncedAt: new Date().toISOString(),
+      syncedAt,
     };
     matches.push(mergeExistingMatch(fresh, existingById.get(fresh.id)));
   }
 
-  const allMatches = matches.length >= TARGET_MATCH_COUNT
+  const rawMatches = matches.length >= TARGET_MATCH_COUNT
     ? matches
     : [
       ...matches,
       ...createKnockoutPlaceholders(matches.length).map((match) => mergeExistingMatch(match, existingById.get(match.id))),
     ];
-
-  const matchesChanged = writeJsonIfChanged(MATCHES_OUT, {
+  const outputData = resolveKnockoutData({
     source: {
       provider: "API-SPORTS",
       league: WORLD_CUP_LEAGUE_ID,
       season: WORLD_CUP_SEASON,
       apiFixtures: matches.length,
-      totalMatches: allMatches.length,
-      placeholders: allMatches.filter((match) => match.placeholder).length,
-      syncedAt: new Date().toISOString(),
+      totalMatches: rawMatches.length,
+      placeholders: rawMatches.filter((match) => match.placeholder).length,
+      syncedAt,
     },
-    matches: allMatches,
-  });
+    matches: rawMatches,
+  }, readGroups(), { generatedAt: syncedAt });
 
-  const championsChanged = writeJsonIfChanged(CHAMPIONS_OUT, {
-    updatedAt: new Date().toISOString(),
-    predictions: [],
-    note: "等待真实模型冠军预测封盘后更新。",
-  });
+  const matchesChanged = writeJsonIfChanged(MATCHES_OUT, outputData);
 
-  console.log(`[sync] ${matchesChanged ? "wrote" : "unchanged"} ${allMatches.length} fixtures at ${MATCHES_OUT} (${matches.length} API + ${allMatches.length - matches.length} placeholders)`);
+  const championsChanged = writeJsonIfChanged(CHAMPIONS_OUT, buildChampionData({
+    matches: outputData.matches,
+    groups: readGroups(),
+    generatedAt: syncedAt,
+    predictions: readExistingChampionPredictions(),
+  }));
+
+  console.log(`[sync] ${matchesChanged ? "wrote" : "unchanged"} ${outputData.matches.length} fixtures at ${MATCHES_OUT} (${matches.length} API + ${outputData.source.placeholders} placeholders)`);
   console.log(`[sync] ${championsChanged ? "wrote" : "unchanged"} champion predictions at ${CHAMPIONS_OUT}`);
 }
 

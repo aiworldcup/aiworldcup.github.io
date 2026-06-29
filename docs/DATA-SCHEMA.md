@@ -236,6 +236,35 @@ npm run validate:insights
 ```json
 {
   "updatedAt": "2026-06-11T18:00:00Z",
+  "mode": "derived",
+  "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生。",
+  "source": {
+    "matches": 104,
+    "qualifiedTeams": 32,
+    "aliveTeams": 31,
+    "settledKnockout": 1
+  },
+  "highlights": {
+    "favorite": { "label": "最大热门", "team": "阿根廷", "flag": "AR", "score": 91.4, "hook": "一句话钩子" },
+    "darkHorse": { "label": "黑马剧本", "team": "挪威", "flag": "NO", "score": 69.9, "hook": "一句话钩子" },
+    "jinxRisk": { "label": "毒奶高危", "team": "法国", "flag": "FR", "score": 90.1, "hook": "一句话钩子" }
+  },
+  "teams": [
+    {
+      "team": "阿根廷",
+      "flag": "AR",
+      "rank": 1,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": { "name": "J", "rank": 1, "points": 9, "record": "3-0-0", "gf": 8, "ga": 1, "gd": 7 },
+      "scores": { "total": 91.4, "form": 99, "strength": 97, "path": 80, "fun": 76 },
+      "tags": ["小组赛满血", "不败金身", "火力怪"],
+      "badges": ["小组赛满血", "不败金身", "火力怪"],
+      "reason": "小组第一9分,净胜+7,硬实力97,路径80,下一场对佛得角",
+      "script": "一路稳得像提前看了剧本,问题是别被热度奶晕。",
+      "nextMatch": { "status": "scheduled", "matchId": "wc2026-ko-15", "stageShort": "32 强", "dateKey": "2026-07-04", "opponent": "佛得角", "winChance": null }
+    }
+  ],
   "predictions": [
     {
       "modelId": "gpt-5",
@@ -247,6 +276,9 @@ npm run validate:insights
   ]
 }
 ```
+
+- `teams`:由 `pipeline/champion.js` 生成的冠军雷达候选。`scores.form` 是出线姿态,`scores.strength` 是项目内球队强度基准叠加当前状态,`scores.path` 优先使用下一场赔率,缺赔率时用对手强度估算,`scores.fun` 是传播/剧情标签分。
+- `predictions`:保留给真实模型冠军封盘选择;当前可为空数组,前端仍展示 `teams` 雷达。
 
 ## discussions.json — AI 圆桌群聊
 

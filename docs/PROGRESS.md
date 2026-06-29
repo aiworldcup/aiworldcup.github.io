@@ -1,9 +1,39 @@
 # 进度记录
 
-更新时间: 2026-06-23
+更新时间: 2026-06-29
 
 ## 已完成
 
+- 2026-06-29 冠军预测雷达:
+  - 新增 `pipeline/champion.js` 与 `pipeline/champion.test.js`,从 `matches.json` + `groups.json` 计算 32 强存活队伍,剔除已在淘汰赛出局球队,生成冠军雷达候选榜。
+  - 冠军雷达分为「出线姿态 / 己身实力 / 路径签运 / 节目效果」四项;路径优先使用下一场胜平负赔率,缺赔率时用对手强度估算;文案保持“数据认真但有梗”。
+  - `npm run champion` 会写入 `public/data/champion-predictions.json`;`sync:real` 也改为生成冠军雷达,不会再把冠军文件重置成空数组。
+  - 前端冠军区改为顶部三条高光、候选队卡片和模型冠军封盘兼容区;当前生成 31 支存活球队,前三为阿根廷、法国、巴西。
+  - 修复本地浏览器仍显示空冠军页的问题:入口 JS/CSS 和 JSON 数据 fetch 均加 `20260629-champion-radar-3` 版本号,避免继续命中旧空 `champion-predictions.json` 缓存。
+  - 优化冠军候选文案与 badge 去重:高分球队不再统一显示“热度奶晕”剧本,阿根廷/法国/巴西/德国按低失球、火力、盘口顺风、签运等画像生成差异化标签。
+  - 已通过 `node pipeline/champion.test.js`、`node pipeline/knockout.test.js`、`npm run validate:predictions`、`npm run validate:results`、`npm run validate:insights` 和前端 JS 语法检查。本次尝试连接 in-app browser 的 `http://localhost:8081` 被浏览器安全策略拒绝,未做截图验收。
+- 2026-06-29 淘汰赛首日比赛卡补数据:
+  - 查明 `#matches-section` 本身已正常渲染,空的是 2026-06-30 三场 32 强尚无赔率和圆桌预测,因此比赛卡显示“暂无预测 / 暂无真实盘口”。
+  - 执行 `npm run sync:odds -- --date 2026-06-30`,补齐巴西-日本、德国-巴拉圭、荷兰-摩洛哥胜平负赔率。
+  - 执行 `npm run roundtable:auto -- --date 2026-06-30`,生成三场圆桌预测；当前巴西-日本 19 条发言 0 issue,德国-巴拉圭 18 条发言 1 issue,荷兰-摩洛哥 15 条发言 4 issue,异常均为真实 API timeout/fetch failed,未写合成兜底。
+  - 已刷新 `public/data/match-insights.json`,并通过 `validate:predictions`、`validate:results`、`validate:insights`。本地浏览器已 reload 验证比赛页显示模型倾向、赔率、热门比分、盘口博弈和模型预测。
+- 2026-06-29 淘汰赛数据恢复:
+  - 查明 72 场小组赛已全部结算,但 `wc2026-ko-01` 起 32 场淘汰赛仍是 `placeholder:true` 的“待定 vs 待定”,导致比赛卡和自动圆桌都没有可用 32 强真实对阵。
+  - 新增 `pipeline/knockout.js` 和 `pipeline/knockout.test.js`:从 `groups.json` + 小组赛 `actual` 计算小组排名、8 个最佳第三,再按 2026 赛制映射填充 16 场 32 强对阵、北京时间 `dateKey`、`kickoff` 与首场南非 0-1 加拿大赛果。
+  - `pipeline/sync-real-data.js` 写入 `matches.json` 前会自动调用淘汰赛解析,避免后续同步又把已确定的 32 强退回占位。
+  - 已刷新 `public/data/matches.json`、`leaderboard.json`、`match-insights.json`;当前结算统计为 `settled=73`、`pre_match=15`、`placeholder=16`。北京时间 2026-06-30 自动圆桌目标为巴西-日本、德国-巴拉圭、荷兰-摩洛哥。
+  - 已通过 `node pipeline/knockout.test.js`、`npm run validate:predictions`、`npm run validate:results`、`npm run validate:insights`,并校验 12 组/48 队/72 场小组赛匹配完整。
+- 2026-06-25 次日圆桌发布失败修复:
+  - 查明北京时间 10:00 的 `publish:roundtable` 已运行并生成 2026-06-26 六场圆桌,但发布前被 `validate-predictions` 中止;阻断原因是 `突尼斯 vs 荷兰` 的 Mimo 发言出现「客胜 + 比分2-1」,方向与主队-客队比分口径冲突。
+  - `pipeline/append-discussion-models.js` 的 `--retry-invalid` 现在会识别方向/比分冲突,补跑结果也必须通过同一一致性检查,避免再次写入不可结算发言。
+  - 已补跑 2026-06-26 圆桌缺口;六场均有 thread,其中五场为 19 条发言、0 issue,`土耳其 vs 美国` 保留 Kimi K2.6 首轮 timeout issue,不写合成兜底。
+  - 已刷新 `public/data/match-insights.json`,并通过 `validate:predictions`、`validate:results`、`validate:insights` 和 `audit:predictions`。
+- 2026-06-24 次日圆桌补缺与自动修复:
+  - 已补齐北京时间 2026-06-25 六场圆桌缺口,每场均为 19 条发言、0 个 issue;补跑只针对缺失/异常项,未改动非目标历史圆桌 messages。
+  - 修复 `pipeline/auto-roundtable.js`:当天已有 thread 但仍有 issue、缺失回合或无效提示词片段时,后续自动任务不会再因 `matchId` 已存在而跳过,会自动调用补缺脚本。
+  - `pipeline/append-discussion-models.js` 新增 `--retry-invalid`,会识别并重试提示词回声等无效发言;同时修复该参数未进入 repair 分支导致单模型全量追加重复回合的问题。
+  - `pipeline/discuss.js` 的最终补跑失败 issue 保留真实错误类型,不再把 `fetch failed` / 格式无效统一写成 timeout。
+  - 新增轻量 Node 断言测试覆盖补缺规划、无效文本重试和最终错误归因;已刷新 `public/data/match-insights.json` 并通过 validate/audit。
 - 2026-06-23 全局 AI 军团调用器:
   - 新增 `pipeline/legion.js`,封装 `askLegion(prompt, options)` / `askModel(modelId, prompt)`,可从任意 Node 项目用绝对路径 require 调用本项目 12 个启用模型。
   - 新增 `bin/ai-legion` 和 `npm run legion`,并在 `~/.local/bin/ai-legion` 创建全局命令链接;从任意目录可执行 `ai-legion "问题"`、`ai-legion --models gemini-3-1 --format json "问题"`。

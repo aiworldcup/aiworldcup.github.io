@@ -12,6 +12,7 @@
     "sync:espn-results": "node pipeline/sync-espn-results.js",
     "sync:odds": "node pipeline/sync-odds.js",
     "sync:real": "node pipeline/sync-real-data.js",
+    "champion": "node pipeline/champion.js",
     "score": "node pipeline/score.js",
     "insights": "node pipeline/update-match-insights.js",
     "validate:predictions": "node pipeline/validate-predictions.js",
