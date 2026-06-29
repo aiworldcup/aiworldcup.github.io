@@ -30,6 +30,8 @@ let roundtableDateFilter = '';
 let roundtableTeamQuery = '';
 const ACTIVE_TRACK = 'open';
 const COMPACT_MATCHES_STORAGE_KEY = 'worldcup-ai-arena-compact-matches';
+const COMPENSATION_STORAGE_KEY = 'worldcup-ai-arena-compensation-seen';
+const COMPENSATION_CODE = '菜鸡ai我原谅你了';
 const PUBLIC_SITE_URL = 'https://aiworldcup.github.io/';
 
 // 阵营划分:国产军团 vs 海外军团(用于核心传播钩子)
@@ -2516,32 +2518,99 @@ function debateSharePayload(match, messages) {
   };
 }
 
+function copyPlainTextViaSelection(text) {
+  if (!text) return false;
+  const temp = document.createElement('textarea');
+  temp.value = text;
+  temp.setAttribute('readonly', '');
+  temp.style.position = 'fixed';
+  temp.style.left = '-9999px';
+  temp.style.top = '0';
+  document.body.appendChild(temp);
+  temp.focus();
+  temp.select();
+  temp.setSelectionRange(0, temp.value.length);
+  let ok = false;
+  try {
+    ok = !!document.execCommand?.('copy');
+  } catch (e) {
+    ok = false;
+  }
+  temp.remove();
+  return ok;
+}
+
 async function copyPlainText(text) {
   if (!text) return false;
+  if (copyPlainTextViaSelection(text)) return true;
   try {
     if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
     await navigator.clipboard.writeText(text);
     return true;
   } catch (_) {
-    const temp = document.createElement('textarea');
-    temp.value = text;
-    temp.setAttribute('readonly', '');
-    temp.style.position = 'fixed';
-    temp.style.left = '-9999px';
-    temp.style.top = '0';
-    document.body.appendChild(temp);
-    temp.focus();
-    temp.select();
-    temp.setSelectionRange(0, temp.value.length);
-    let ok = false;
-    try {
-      ok = !!document.execCommand?.('copy');
-    } catch (e) {
-      ok = false;
-    }
-    temp.remove();
-    return ok;
+    return false;
   }
+}
+
+function setCompensationSeen() {
+  try {
+    sessionStorage.setItem(COMPENSATION_STORAGE_KEY, '1');
+  } catch (_) {}
+}
+
+function closeCompensationModal() {
+  const stage = document.getElementById('compensation-stage');
+  if (!stage) return;
+  stage.classList.remove('is-open');
+  stage.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  setCompensationSeen();
+}
+
+function revealCompensationCode() {
+  const panel = document.getElementById('compensation-code-panel');
+  const reveal = document.getElementById('compensation-reveal');
+  const status = document.getElementById('compensation-status');
+  if (!panel) return;
+  panel.hidden = false;
+  if (reveal) {
+    reveal.setAttribute('aria-expanded', 'true');
+    reveal.textContent = '口令在这';
+  }
+  if (status) status.textContent = '';
+  document.getElementById('compensation-copy')?.focus();
+}
+
+async function copyCompensationCode() {
+  const status = document.getElementById('compensation-status');
+  const ok = await copyPlainText(COMPENSATION_CODE);
+  if (!ok) {
+    const code = document.getElementById('compensation-code');
+    code?.focus();
+    code?.select?.();
+  }
+  if (status) status.textContent = ok ? '已复制' : '复制失败,请长按口令手动复制';
+}
+
+function initCompensationModal() {
+  const stage = document.getElementById('compensation-stage');
+  if (!stage) return;
+  try {
+    if (sessionStorage.getItem(COMPENSATION_STORAGE_KEY) === '1') return;
+  } catch (_) {}
+  const code = document.getElementById('compensation-code');
+  if (code) code.value = COMPENSATION_CODE;
+  document.getElementById('compensation-dismiss')?.addEventListener('click', closeCompensationModal);
+  document.getElementById('compensation-reveal')?.addEventListener('click', revealCompensationCode);
+  document.getElementById('compensation-copy')?.addEventListener('click', copyCompensationCode);
+  stage.addEventListener('click', e => {
+    if (e.target === stage) closeCompensationModal();
+  });
+  window.setTimeout(() => {
+    stage.classList.add('is-open');
+    stage.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }, 360);
 }
 
 function flashDebateButton(button, label) {
@@ -2859,7 +2928,11 @@ async function init() {
 
   // 深链直达某场辩论回放
   const m = location.hash.match(/#debate=([\w-]+)/);
-  if (m) openDebateStage(m[1]);
+  if (m) {
+    openDebateStage(m[1]);
+  } else {
+    initCompensationModal();
+  }
 }
 
 function wireMatchViewControls() {

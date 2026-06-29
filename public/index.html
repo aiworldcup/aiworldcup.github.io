@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>世界杯大模型擂台 · 谁是最会预测世界杯的大模型</title>
   <meta name="description" content="10+ 顶级大模型同场竞猜世界杯每场比赛。赛前封盘存证、赛后实时打榜,国产军团对决海外军团,看哪个大模型最会算球。" />
-  <link rel="stylesheet" href="styles.css?v=20260629-champion-cn-2" />
+  <link rel="stylesheet" href="styles.css?v=20260629-compensation" />
 </head>
 <body>
   <header class="hero">
@@ -121,6 +121,35 @@
     <p class="muted">大模型预测能力长期评测基准 · 世界杯只是第一个舞台</p>
   </footer>
 
+  <!-- AI 补偿红包口令层 -->
+  <div id="compensation-stage" class="compensation-stage" aria-hidden="true">
+    <div class="compensation-panel" role="dialog" aria-modal="true" aria-labelledby="compensation-title">
+      <img
+        id="compensation-image"
+        class="compensation-image"
+        src="assets/ai-compensation-red-packet.png"
+        width="960"
+        height="640"
+        alt="AI 负荆请罪道歉"
+      />
+      <div class="compensation-body">
+        <p class="compensation-kicker">AI 出了点状况</p>
+        <h2 id="compensation-title">菜鸡 AI 递上补偿红包</h2>
+        <p class="compensation-copy">给它一个台阶,也给自己一个红包。支付宝口令已备好,想领再展开。</p>
+        <div id="compensation-code-panel" class="compensation-code-panel" hidden>
+          <span>支付宝红包口令</span>
+          <input id="compensation-code" class="compensation-code-input" value="菜鸡ai我原谅你了" readonly aria-label="支付宝红包口令" />
+          <button type="button" id="compensation-copy" class="compensation-copy-button">复制口令</button>
+          <div id="compensation-status" class="compensation-status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="compensation-actions">
+        <button type="button" id="compensation-dismiss" class="compensation-dismiss">不屑一顾</button>
+        <button type="button" id="compensation-reveal" class="compensation-reveal" aria-expanded="false">笑纳了</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 全屏沉浸式辩论回放层 -->
   <div id="debate-stage" class="debate-stage" aria-hidden="true">
     <div class="debate-panel" role="dialog" aria-modal="true" aria-label="圆桌辩论回放">
@@ -197,7 +226,7 @@
 
   <script src="site-config.js?v=20260617-events"></script>
   <script src="match-insights.js?v=20260623-espn-odds"></script>
-  <script src="app-load-smooth.js?v=20260629-champion-cn-2"></script>
+  <script src="app-load-smooth.js?v=20260629-compensation"></script>
   <script src="visit.js?v=20260617-events" defer></script>
 </body>
 </html>
