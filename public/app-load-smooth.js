@@ -42,7 +42,7 @@ const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
 const DATA_REFRESH_MS = 60 * 1000;
-const DATA_VERSION = '20260629-champion-gauntlet-1';
+const DATA_VERSION = '20260629-champion-cn-2';
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -396,8 +396,8 @@ function renderCampBattle(resultRows) {
   const settled = camps.domestic.preds + camps.overseas.preds;
 
   if (!settled) {
-    el.innerHTML = `<div class="camp-head">🇨🇳 国产军团 <span>VS</span> 🌍 海外军团</div>
-      <div class="camp-waiting">开赛结算后,这里实时比拼两大阵营的赛果命中率 —— 看国产 AI 能不能赢。</div>
+    el.innerHTML = `<div class="camp-head">🇨🇳 国产军团 <span>对</span> 🌍 海外军团</div>
+      <div class="camp-waiting">开赛结算后,这里实时比拼两大阵营的赛果命中率 —— 看国产大模型能不能赢。</div>
       <div class="camp-roster">
         <span>国产 ${camps.domestic.n} 个模型</span>
         <span>海外 ${camps.overseas.n} 个模型</span>
@@ -411,7 +411,7 @@ function renderCampBattle(resultRows) {
   const dWidth = Math.round((dRate / total) * 100);
   const leader = dRate === oRate ? '平分秋色' : dRate > oRate ? '国产军团领先 🔥' : '海外军团领先';
 
-  el.innerHTML = `<div class="camp-head">🇨🇳 国产军团 <span>VS</span> 🌍 海外军团</div>
+  el.innerHTML = `<div class="camp-head">🇨🇳 国产军团 <span>对</span> 🌍 海外军团</div>
     <div class="camp-scoreline">
       <div class="camp-side camp-domestic">
         <strong>${dPct}%</strong>
@@ -620,7 +620,7 @@ function renderCompactMatchRow(match) {
   const content = matchContentFor(match, summary.displayPredictions);
   const lifecycle = matchLifecycle(match);
   const finished = !!match.actual;
-  const score = finished ? String(match.actual.score || '').replace('-', ':') : 'VS';
+  const score = finished ? String(match.actual.score || '').replace('-', ':') : '对';
   const expanded = compactExpandedMatchId === match.id;
   const kickoff = formatKickoff(match.kickoff);
   const pct = key => summary.total ? Math.round((summary.counts[key] / summary.total) * 100) : 0;
@@ -649,7 +649,7 @@ function renderCompactMatchRow(match) {
         <span class="compact-match-time">${escapeHTML(kickoff)}</span>
         ${content?.marketEdge ? `<span>盘口 <strong>${escapeHTML(content.marketEdge.shortLabel || '观望')}</strong></span>` : ''}
         <span>热门比分 <strong>${escapeHTML(summary.hotScoreText)}</strong></span>
-        <span>${summary.issues.length ? `<b class="compact-issue">API超时 ${summary.issues.length}</b> · ` : ''}${summary.predictionCountText} · ${expanded ? '收起详情' : '查看详情'}</span>
+        <span>${summary.issues.length ? `<b class="compact-issue">接口超时 ${summary.issues.length}</b> · ` : ''}${summary.predictionCountText} · ${expanded ? '收起详情' : '查看详情'}</span>
       </div>
     </button>
     ${expanded ? `<div class="compact-match-detail">${renderMatchCard(match)}</div>` : ''}
@@ -671,7 +671,7 @@ function wireCompactMatchList(root) {
 }
 
 function roastBeerFixtureLabel(match) {
-  return `${flagIcon(match.home.flag)} ${match.home.team} VS ${match.away.team} ${flagIcon(match.away.flag)}`;
+  return `${flagIcon(match.home.flag)} ${match.home.team} 对 ${match.away.team} ${flagIcon(match.away.flag)}`;
 }
 
 function jingcaiSingleEntries() {
@@ -764,20 +764,20 @@ function roastBeerModelFlavor(modelId, meta) {
 
 function buildRoastBeerText(payload) {
   const disclaimer = '只负责烤啤,不负责上头;赛后回来挖坟。';
-  const siteLink = '围观AI世界杯擂台: https://aiworldcup.github.io/';
+  const siteLink = '围观世界杯大模型擂台: https://aiworldcup.github.io/';
   const lines = payload.entries.map((entry, index) =>
     `${index + 1}. ${entry.fixture}: ${entry.result} / ${entry.score}${entry.extra ? `（${entry.extra}）` : ''}`
   ).join('\n');
   if (payload.source === 'majority') {
-    return `【世界杯AI烤啤｜${payload.scopeLabel}】
+    return `【世界杯大模型烤啤｜${payload.scopeLabel}】
 ${payload.scopeMeta}
-AI 模型共识先拍桌:
+大模型共识先拍桌:
 ${lines}
 人多不一定是真理,但吵架时声音确实最大。
 ${disclaimer}
 ${siteLink}`;
   }
-  return `【世界杯AI烤啤｜${payload.scopeLabel}】
+  return `【世界杯大模型烤啤｜${payload.scopeLabel}】
 ${payload.scopeMeta}
 我这张跟 ${payload.modelName}:
 ${lines}
@@ -1435,7 +1435,7 @@ function openModelHistory(modelId) {
     return `<article class="history-item">
       <div class="history-match">
         <span>${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}</span>
-        <strong>VS</strong>
+        <strong>对</strong>
         <span>${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</span>
       </div>
       <div class="history-meta">
@@ -1495,7 +1495,7 @@ function renderHeroTicker() {
     scoreLeader ? `${scoreLeader.name} 精确比分命中 ${scoreLeader.scoreHits} 次` : '',
     settled ? `已结算 ${settled} 场,榜单实时刷新` : '',
     hot ? `热评: ${hot.text}` : '',
-    '国产军团 vs 海外军团,每场封盘后见真章'
+    '国产军团对海外军团,每场封盘后见真章'
   ].filter(Boolean);
   const content = items.concat(items).map(item => `<span>${escapeHTML(item)}</span>`).join('');
   el.innerHTML = `<div class="hero-ticker-track">${content}</div>`;
@@ -1540,7 +1540,7 @@ function renderHeroRoundtable() {
     return `<article class="hero-rt-card" data-match="${escapeHTML(match.id)}" role="button" tabindex="0">
       <div class="hero-rt-kicker">
         <span>最毒一句</span>
-        <strong class="hero-rt-mini-fixture">${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)} <b>VS</b> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</strong>
+        <strong class="hero-rt-mini-fixture">${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)} <b>对</b> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}</strong>
       </div>
       ${hot ? `<blockquote>${escapeHTML(hot.text)}</blockquote>
         <div class="hero-rt-speaker">
@@ -1562,7 +1562,7 @@ function renderHeroRoundtable() {
   el.innerHTML = `<div class="hero-rt-inner">
     <div class="hero-rt-head">
       <div>
-        <strong>AI 圆桌热评</strong>
+        <strong>大模型圆桌热评</strong>
         <span>短头条,点开看完整回放</span>
       </div>
       <div class="hero-rt-nav" aria-label="切换圆桌热评">
@@ -1849,7 +1849,7 @@ function renderMatchCard(m) {
           <span class="team-label">主队</span>
         </div>
         <div class="vs">
-          <span>${finished ? escapeHTML(actualScore) : 'VS'}</span>
+          <span>${finished ? escapeHTML(actualScore) : '对'}</span>
           ${status}
           <small>${lifecycle.detail}</small>
         </div>
@@ -1926,7 +1926,7 @@ function championNextText(item) {
   const next = item?.nextMatch || {};
   if (next.status === 'scheduled') {
     const date = next.dateKey ? `${dateLabel(next.dateKey)} ` : '';
-    return `${date}${next.stageShort || '淘汰赛'} vs ${next.opponent}`;
+    return `${date}${next.stageShort || '淘汰赛'}对${next.opponent}`;
   }
   return next.label || '等待下轮落位';
 }
@@ -1998,7 +1998,7 @@ function championGauntletPickChips(picks, className = '') {
   if (!picks?.length) return '<span class="gauntlet-empty-chip">无</span>';
   return picks.map(pick => `<span class="${className}">
     ${flagIcon(pick.flag)}<b>${escapeHTML(pick.team)}</b>
-    ${pick.opponent ? `<small>vs ${escapeHTML(pick.opponent)}</small>` : ''}
+    ${pick.opponent ? `<small>对 ${escapeHTML(pick.opponent)}</small>` : ''}
   </span>`).join('');
 }
 
@@ -2008,9 +2008,9 @@ function renderChampionGauntlet(gauntlet) {
     return `<section class="champion-gauntlet-panel">
       <div class="champion-gauntlet-hero">
         <div>
-          <div class="champion-kicker">AI Champion Gauntlet</div>
+          <div class="champion-kicker">大模型冠军毒圈</div>
           <h3>冠军毒圈圆桌待开局</h3>
-          <p>首轮每个 AI 选 3 个冠军活口,整轮结束结算;全灭后永久出局,但还能在场边嘴硬。</p>
+          <p>首轮每个大模型选 3 个冠军活口,整轮结束结算;全灭后永久出局,但还能在场边嘴硬。</p>
         </div>
         <span class="gauntlet-status">待开局</span>
       </div>
@@ -2055,7 +2055,7 @@ function renderChampionGauntlet(gauntlet) {
   return `<section class="champion-gauntlet-panel">
     <div class="champion-gauntlet-hero">
       <div>
-        <div class="champion-kicker">AI Champion Gauntlet</div>
+        <div class="champion-kicker">大模型冠军毒圈</div>
         <h3>${escapeHTML(round.label || '冠军毒圈圆桌')}</h3>
         <p>${escapeHTML(gauntlet.note || '0 活口永久出局,出局后只能场边发言。')}</p>
       </div>
@@ -2077,7 +2077,7 @@ function renderChampionGauntlet(gauntlet) {
         ${teamRows}
       </section>
       <section class="gauntlet-ai-list">
-        <div class="champion-title">AI 投票席</div>
+        <div class="champion-title">大模型投票席</div>
         ${entryRows}
       </section>
     </div>
@@ -2150,7 +2150,7 @@ function renderChampionPredictions() {
     ${gauntletHtml}
     <section class="champion-radar-panel">
       <div>
-        <div class="champion-kicker">Champion Radar</div>
+        <div class="champion-kicker">冠军雷达</div>
         <h3>数据认真,梗也不空口来</h3>
         <p>${escapeHTML(data.note || '基于真实赛果、出线路径和球队强度派生冠军候选。')}</p>
       </div>
@@ -2171,7 +2171,7 @@ function renderChampionPredictions() {
           <div class="champion-title">冠军候选榜</div>
           <p>综合出线姿态、己身实力、路径签运和节目效果;分数是派生雷达,不是赛果承诺。</p>
         </div>
-        <span>Top ${topTeams.length}</span>
+        <span>前 ${topTeams.length}</span>
       </div>
       <div class="champion-team-list">${topTeams.map(championTeamCard).join('')}</div>
     </section>
@@ -2190,7 +2190,7 @@ function discussionIssuesForMatch(matchId) {
 
 function discussionIssueLabel(issue) {
   const status = String(issue.status || '');
-  if (status === 'timeout') return 'API 超时';
+  if (status === 'timeout') return '接口超时';
   if (status === 'invalid_final') return '格式无效';
   if (status === 'missing_key') return '未配置 key';
   if (status === 'empty') return '空返回';
@@ -2252,7 +2252,7 @@ function hottestLine(messages) {
 
 function heroHottestLine(messages, offset = 0) {
   const CLASH = /(@|反对|太乐观|想多了|低估|高估|打脸|别|不敢|悬|翻车|爆冷|撕碎|笑|错|未必|过于|未免|然而|但是|反而|补一刀|别被带偏)/;
-  const usable = messages.filter(m => !/API超时兜底|兜底/.test(String(m.text)));
+  const usable = messages.filter(m => !/接口超时兜底|兜底/.test(String(m.text)));
   const clashing = usable.filter(m => CLASH.test(String(m.text)));
   const pool = (clashing.length ? clashing : usable.length ? usable : messages)
     .reduce((acc, message) => {
@@ -2446,7 +2446,7 @@ function renderRoundtableFeed() {
         <div class="rt-fixture">
           <span class="rt-flag">${homeFlag}</span>
           <span class="rt-team">${escapeHTML(match.home.team)}</span>
-          <span class="rt-vs">VS</span>
+          <span class="rt-vs">对</span>
           <span class="rt-team">${escapeHTML(match.away.team)}</span>
           <span class="rt-flag">${awayFlag}</span>
         </div>
@@ -2506,13 +2506,13 @@ function debateShareUrl(matchId) {
 function debateSharePayload(match, messages) {
   const hot = heroHottestLine(messages) || hottestLine(messages) || messages[messages.length - 1] || null;
   const meta = hot ? modelMeta(hot.modelId) : null;
-  const fixture = `${flagIcon(match.home.flag)} ${match.home.team} VS ${match.away.team} ${flagIcon(match.away.flag)}`;
+  const fixture = `${flagIcon(match.home.flag)} ${match.home.team} 对 ${match.away.team} ${flagIcon(match.away.flag)}`;
   const link = debateShareUrl(match.id);
   const quote = hot ? `${meta.name}: ${hot.text}` : `${fixture} 的圆桌回放`;
   return {
     link,
     quote,
-    text: `【世界杯AI圆桌热评】\n${fixture}\n${quote}\n看完整激辩: ${link}`,
+    text: `【世界杯大模型圆桌热评】\n${fixture}\n${quote}\n看完整激辩: ${link}`,
   };
 }
 
@@ -2599,7 +2599,7 @@ function openDebateStage(matchId) {
   const stanceEl = document.getElementById('debate-stance');
 
   titleEl.innerHTML = `${flagIcon(match.home.flag)} ${escapeHTML(match.home.team)}
-    <span>VS</span> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}`;
+    <span>对</span> ${escapeHTML(match.away.team)} ${flagIcon(match.away.flag)}`;
   const { counts, total } = stanceBreakdown(messages);
   stanceEl.innerHTML = `${stanceBarHTML(counts, total)}
     <div class="rt-stance-legend">
@@ -2677,7 +2677,7 @@ function renderMatchDiscussion(match) {
       <div class="match-discussion-title">圆桌激辩</div>
       <div class="chat-empty">
         <strong>这场还没开聊</strong>
-        <span>模型输出生成后,会出现在「🔥 AI 圆桌激辩」专区。</span>
+        <span>模型输出生成后,会出现在「🔥 大模型圆桌激辩」专区。</span>
       </div>
     </div>`;
   }
@@ -2711,7 +2711,7 @@ function renderDiscussions() {
   const blocks = selectedMatches.map(match => {
     const thread = discussionForMatch(match.id);
     const messages = thread?.messages || [];
-    const title = `${match.home.team} vs ${match.away.team}`;
+    const title = `${match.home.team} 对 ${match.away.team}`;
     const status = thread?.sealedAt
       ? `已封盘 · ${new Date(thread.sealedAt).toLocaleString('zh-CN', { timeZone: ASIA_SHANGHAI })}`
       : '讨论待生成';

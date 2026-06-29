@@ -208,7 +208,7 @@ function formatCandidateLine(match, factMap) {
     const next = fact?.nextMatch?.opponent ? `下个对手:${fact.nextMatch.opponent}` : "";
     return `${team.team}(${team.flag || ""},#${fact?.rank || "-"},${score}${tags ? `,${tags}` : ""}${next ? `,${next}` : ""})`;
   });
-  return `- ${match.id}: ${sides[0]} vs ${sides[1]}`;
+  return `- ${match.id}: ${sides[0]} 对 ${sides[1]}`;
 }
 
 function buildCompactAlivePrompt({ model, roundId, allowedPicks, candidateMatches, championData, previousAlivePicks = [] }) {
@@ -216,14 +216,14 @@ function buildCompactAlivePrompt({ model, roundId, allowedPicks, candidateMatche
   const radar = (championData?.teams || []).slice(0, 8)
     .map((item) => `${item.team}#${item.rank}/雷达${item.scores?.total ?? "-"}${item.badges?.length ? `/${item.badges.slice(0, 2).join("+")}` : ""}`)
     .join("; ");
-  const candidates = (candidateMatches || []).map((match) => `${match.id}:${match.home.team} vs ${match.away.team}`).join("; ");
+  const candidates = (candidateMatches || []).map((match) => `${match.id}:${match.home.team} 对 ${match.away.team}`).join("; ");
   const aliveText = previousAlivePicks.length ? `上轮活口:${previousAlivePicks.map((item) => item.team).join("、")}` : "首轮";
   return [
     `${model.name || model.id} 参加世界杯冠军毒圈。${roundLabel(roundId)} ${aliveText}。`,
     `必须精确选 ${allowedPicks} 队;只能从候选池选;禁止同场对冲;整轮结束结算,0活口永久出局。`,
     `冠军雷达参考:${radar}`,
     `候选池:${candidates}`,
-    "只返回一行 JSON,不要解释,不要 Markdown:",
+    "只返回一行结构化内容,不要解释,不要 Markdown:",
     "{\"picks\":[\"阿根廷\",\"法国\",\"德国\"],\"line\":\"一句中文理由,认真但有梗。\"}",
   ].join("\n");
 }
@@ -231,9 +231,9 @@ function buildCompactAlivePrompt({ model, roundId, allowedPicks, candidateMatche
 function buildModelPrompt({ model, status, roundId, allowedPicks, candidateMatches, championData, previousAlivePicks = [] }) {
   if (status === "eliminated") {
     return [
-      `你是 ${model.name || model.id}, 世界杯 AI 冠军毒圈圆桌里你已经没有活口。`,
+      `你是 ${model.name || model.id}, 世界杯大模型冠军毒圈圆桌里你已经没有活口。`,
       "本轮你不能再选冠军,只能留一句中文场边台词。可以加油、自嘲、嘴硬或阴阳怪气,但不要点名新选择。",
-      "只能返回 JSON,不要代码块,格式:",
+      "只能返回结构化内容,不要代码块,格式:",
       "{\"line\":\"一句短台词\",\"picks\":[]}",
     ].join("\n");
   }
@@ -249,14 +249,14 @@ function buildModelPrompt({ model, status, roundId, allowedPicks, candidateMatch
   const candidates = (candidateMatches || []).map((match) => formatCandidateLine(match, factMap)).join("\n");
 
   return [
-    `你是 ${model.name || model.id}, 正在参加世界杯 AI 冠军毒圈圆桌。`,
+    `你是 ${model.name || model.id}, 正在参加世界杯大模型冠军毒圈圆桌。`,
     `本轮: ${roundLabel(roundId)}。${previousText}`,
     `规则: 你必须从下面候选队里精确选择 ${allowedPicks} 支冠军存活目标。禁止同场对冲,也就是同一场比赛的两队不能同时选。`,
     "按整轮结束结算: 你选的队晋级就是活口,全灭则永久出局;出局后只能场边发言。",
     "判断要认真: 考虑出线形式、己身实力、路径、赔率/热度风险,但台词要有梗。",
     "候选池:",
     candidates,
-    "只能返回 JSON,不要代码块,不要解释,格式:",
+    "只能返回结构化内容,不要代码块,不要解释,格式:",
     "{\"picks\":[\"巴西\",\"德国\",\"法国\"],\"line\":\"一句短中文理由,认真但有梗。\"}",
   ].join("\n");
 }
@@ -368,7 +368,7 @@ async function buildEntry({ model, state, roundId, candidateMatches, candidateTe
     return {
       ...base,
       status: "issue",
-      issues: [{ type: "empty", message: "模型空返回,未提供可校验 JSON。" }],
+      issues: [{ type: "empty", message: "模型空返回,未提供可校验结构化内容。" }],
     };
   }
 
@@ -454,7 +454,7 @@ async function generateRoundData({ roundId, matches, models, championData, askMo
     lockedAt: entries.some((entry) => entry.status === "issue") ? null : generatedAt,
     settledAt: null,
     pickCountRule: roundId === "round32"
-      ? { type: "fixed", count: 3, description: "首轮剩余 15 场 30 队,每个 AI 固定 3 票。" }
+      ? { type: "fixed", count: 3, description: "首轮剩余 15 场 30 队,每个大模型固定 3 票。" }
       : { type: "survivor_count", description: "本轮可选数量等于上一整轮活口数;0 活口永久出局。" },
     candidateTeams,
     excludedMatches: excludedMatchesForRound(matches, roundId),
@@ -504,7 +504,7 @@ function mergeGauntletRound(championData, round, updatedAt = new Date().toISOStr
   const gauntlet = {
     updatedAt,
     mode: "real-model",
-    note: "AI 冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
+    note: "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     ...(championData.gauntlet || {}),
   };
   const rounds = (gauntlet.rounds || []).filter((item) => item.roundId !== round.roundId);

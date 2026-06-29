@@ -178,7 +178,7 @@ function testSummaryAndPromptExposeVotesAndRules() {
     candidateMatches: context.candidateMatches.slice(0, 2),
     championData: { teams: [{ team: "巴西", rank: 3, scores: { total: 88 }, tags: ["强队牌面"], nextMatch: { opponent: "日本" } }] },
   });
-  assert.match(prompt, /只能返回 JSON/);
+  assert.match(prompt, /只能返回结构化内容/);
   assert.match(prompt, /禁止同场对冲/);
   assert.match(prompt, /巴西/);
 }

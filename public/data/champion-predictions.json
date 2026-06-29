@@ -1487,7 +1487,7 @@
   "gauntlet": {
     "updatedAt": "2026-06-29T10:27:51.724Z",
     "mode": "real-model",
-    "note": "AI 冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
+    "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
       {
         "roundId": "round32",
@@ -1499,7 +1499,7 @@
         "pickCountRule": {
           "type": "fixed",
           "count": 3,
-          "description": "首轮剩余 15 场 30 队,每个 AI 固定 3 票。"
+          "description": "首轮剩余 15 场 30 队,每个大模型固定 3 票。"
         },
         "candidateTeams": [
           {
@@ -1953,7 +1953,7 @@
             "issues": [
               {
                 "type": "empty",
-                "message": "模型空返回,未提供可校验 JSON。"
+                "message": "模型空返回,未提供可校验结构化内容。"
               }
             ]
           },
