@@ -212,18 +212,15 @@ function formatCandidateLine(match, factMap) {
 }
 
 function buildCompactAlivePrompt({ model, roundId, allowedPicks, candidateMatches, championData, previousAlivePicks = [] }) {
-  const factMap = championFactMap(championData);
-  const radar = (championData?.teams || []).slice(0, 8)
-    .map((item) => `${item.team}#${item.rank}/雷达${item.scores?.total ?? "-"}${item.badges?.length ? `/${item.badges.slice(0, 2).join("+")}` : ""}`)
-    .join("; ");
-  const candidates = (candidateMatches || []).map((match) => `${match.id}:${match.home.team} 对 ${match.away.team}`).join("; ");
-  const aliveText = previousAlivePicks.length ? `上轮活口:${previousAlivePicks.map((item) => item.team).join("、")}` : "首轮";
+  const candidateTeams = (candidateMatches || [])
+    .flatMap((match) => [match.home.team, match.away.team])
+    .filter(Boolean)
+    .join("、");
+  const previousText = previousAlivePicks.length ? `上一轮活口:${previousAlivePicks.map((item) => item.team).join("、")}。` : "";
   return [
-    `${model.name || model.id} 参加世界杯冠军毒圈。${roundLabel(roundId)} ${aliveText}。`,
-    `必须精确选 ${allowedPicks} 队;只能从候选池选;禁止同场对冲;整轮结束结算,0活口永久出局。`,
-    `冠军雷达参考:${radar}`,
-    `候选池:${candidates}`,
-    "只返回一行结构化内容,不要解释,不要 Markdown:",
+    `从这些世界杯球队中选 ${allowedPicks} 个最可能夺冠的队。${previousText}`,
+    `候选队:${candidateTeams}。`,
+    "只能输出一行结构化内容:",
     "{\"picks\":[\"阿根廷\",\"法国\",\"德国\"],\"line\":\"一句中文理由,认真但有梗。\"}",
   ].join("\n");
 }

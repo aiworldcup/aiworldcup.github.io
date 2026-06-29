@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T10:27:51.724Z",
+  "updatedAt": "2026-06-29T11:18:24.013Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -1485,16 +1485,16 @@
   ],
   "predictions": [],
   "gauntlet": {
-    "updatedAt": "2026-06-29T10:27:51.724Z",
+    "updatedAt": "2026-06-29T11:18:24.013Z",
     "mode": "real-model",
     "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
       {
         "roundId": "round32",
         "label": "32 强毒圈",
-        "status": "open",
+        "status": "locked",
         "startedAt": "2026-06-29T10:21:16.776Z",
-        "lockedAt": null,
+        "lockedAt": "2026-06-29T11:18:24.013Z",
         "settledAt": null,
         "pickCountRule": {
           "type": "fixed",
@@ -1942,20 +1942,37 @@
             "modelId": "mimo-v2-5-pro",
             "modelName": "Mimo v2.5 Pro",
             "vendor": "小米 / MiMo",
-            "status": "issue",
+            "status": "alive",
             "allowedPicks": 3,
-            "picks": [],
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              }
+            ],
             "alivePicks": [],
             "eliminatedPicks": [],
-            "line": "",
-            "calledAt": "2026-06-29T10:27:51.724Z",
-            "durationMs": 16975,
-            "issues": [
-              {
-                "type": "empty",
-                "message": "模型空返回,未提供可校验结构化内容。"
-              }
-            ]
+            "line": "梅西可能跑不动了但冠军血脉还在，法国人才多到教练得选择困难，巴西人踢着踢着就把奖杯跳回家了。",
+            "calledAt": "2026-06-29T11:18:24.013Z",
+            "durationMs": 10905,
+            "issues": []
           },
           {
             "modelId": "grok-4-3",
@@ -2139,15 +2156,15 @@
           }
         ],
         "summary": {
-          "aliveModels": 11,
+          "aliveModels": 12,
           "eliminatedModels": 0,
-          "issueModels": 1,
-          "totalPicks": 33,
+          "issueModels": 0,
+          "totalPicks": 36,
           "topTeams": [
             {
               "team": "阿根廷",
               "flag": "AR",
-              "votes": 11,
+              "votes": 12,
               "modelIds": [
                 "claude-opus-4-8",
                 "gpt-5-5",
@@ -2155,6 +2172,7 @@
                 "qwen-3-7-max",
                 "minimax-m3",
                 "kimi-k2-6",
+                "mimo-v2-5-pro",
                 "grok-4-3",
                 "claude-sonnet-4-6",
                 "deepseek-v4pro",
@@ -2165,7 +2183,7 @@
             {
               "team": "法国",
               "flag": "FR",
-              "votes": 11,
+              "votes": 12,
               "modelIds": [
                 "claude-opus-4-8",
                 "gpt-5-5",
@@ -2173,10 +2191,24 @@
                 "qwen-3-7-max",
                 "minimax-m3",
                 "kimi-k2-6",
+                "mimo-v2-5-pro",
                 "grok-4-3",
                 "claude-sonnet-4-6",
                 "deepseek-v4pro",
                 "glm-5-1",
+                "doubao-seed-2-0-pro"
+              ]
+            },
+            {
+              "team": "巴西",
+              "flag": "BR",
+              "votes": 6,
+              "modelIds": [
+                "claude-opus-4-8",
+                "minimax-m3",
+                "mimo-v2-5-pro",
+                "grok-4-3",
+                "claude-sonnet-4-6",
                 "doubao-seed-2-0-pro"
               ]
             },
@@ -2191,18 +2223,6 @@
                 "kimi-k2-6",
                 "deepseek-v4pro",
                 "glm-5-1"
-              ]
-            },
-            {
-              "team": "巴西",
-              "flag": "BR",
-              "votes": 5,
-              "modelIds": [
-                "claude-opus-4-8",
-                "minimax-m3",
-                "grok-4-3",
-                "claude-sonnet-4-6",
-                "doubao-seed-2-0-pro"
               ]
             }
           ]
