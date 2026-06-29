@@ -2554,8 +2554,24 @@ async function copyPlainText(text) {
 
 function setCompensationSeen() {
   try {
+    localStorage.setItem(COMPENSATION_STORAGE_KEY, '1');
+  } catch (_) {}
+  try {
     sessionStorage.setItem(COMPENSATION_STORAGE_KEY, '1');
   } catch (_) {}
+}
+
+function hasCompensationBeenSeen() {
+  try {
+    if (localStorage.getItem(COMPENSATION_STORAGE_KEY) === '1') return true;
+  } catch (_) {}
+  try {
+    if (sessionStorage.getItem(COMPENSATION_STORAGE_KEY) === '1') {
+      setCompensationSeen();
+      return true;
+    }
+  } catch (_) {}
+  return false;
 }
 
 function closeCompensationModal() {
@@ -2595,9 +2611,7 @@ async function copyCompensationCode() {
 function initCompensationModal() {
   const stage = document.getElementById('compensation-stage');
   if (!stage) return;
-  try {
-    if (sessionStorage.getItem(COMPENSATION_STORAGE_KEY) === '1') return;
-  } catch (_) {}
+  if (hasCompensationBeenSeen()) return;
   const code = document.getElementById('compensation-code');
   if (code) code.value = COMPENSATION_CODE;
   document.getElementById('compensation-dismiss')?.addEventListener('click', closeCompensationModal);
@@ -2606,6 +2620,7 @@ function initCompensationModal() {
   stage.addEventListener('click', e => {
     if (e.target === stage) closeCompensationModal();
   });
+  setCompensationSeen();
   window.setTimeout(() => {
     stage.classList.add('is-open');
     stage.setAttribute('aria-hidden', 'false');

@@ -26,13 +26,29 @@ assert(html.includes('id="compensation-dismiss"'), 'dismiss button is missing');
 assert(html.includes('id="compensation-reveal"'), 'reveal button is missing');
 assert(html.includes('id="compensation-copy"'), 'copy button is missing');
 assert(html.includes('id="compensation-code-panel"'), 'red packet code panel is missing');
+assert(html.includes('styles.css?v=20260629-compensation-once'), 'stylesheet cache key must change for once-only fix');
+assert(html.includes('app-load-smooth.js?v=20260629-compensation-once'), 'script cache key must change for once-only fix');
 
 assert(js.includes("const COMPENSATION_CODE = '菜鸡ai我原谅你了';"), 'red packet code constant is missing');
 assert(js.includes('function initCompensationModal()'), 'compensation modal initializer is missing');
+assert(js.includes('function hasCompensationBeenSeen()'), 'persistent seen check helper is missing');
+assert(js.includes("localStorage.getItem(COMPENSATION_STORAGE_KEY)"), 'seen state must be checked in localStorage');
+assert(js.includes("localStorage.setItem(COMPENSATION_STORAGE_KEY, '1')"), 'seen state must be persisted in localStorage');
+assert(js.includes("sessionStorage.setItem(COMPENSATION_STORAGE_KEY, '1')"), 'seen state must keep a sessionStorage fallback');
 assert(js.includes('copyPlainText(COMPENSATION_CODE)'), 'copy action must reuse plain text clipboard helper');
 assert(js.includes("status.textContent = ok ? '已复制' : '复制失败,请长按口令手动复制';"), 'copy status feedback is missing');
 assert(js.includes("document.getElementById('compensation-reveal')"), 'reveal button listener is missing');
 assert(js.includes("document.getElementById('compensation-dismiss')"), 'dismiss button listener is missing');
+
+const initStart = js.indexOf('function initCompensationModal()');
+const initEnd = js.indexOf('function flashDebateButton', initStart);
+const initBody = js.slice(initStart, initEnd);
+assert(initBody.includes('if (hasCompensationBeenSeen()) return;'), 'initializer must skip users who already saw the modal');
+assert(initBody.indexOf('setCompensationSeen();') > -1, 'initializer must mark the modal seen when it is scheduled');
+assert(
+  initBody.indexOf('setCompensationSeen();') < initBody.indexOf('stage.classList.add'),
+  'modal must be marked seen before opening so reveal/copy/reload cannot show it again'
+);
 
 assert(css.includes('.compensation-image'), 'compensation image CSS is missing');
 assert(css.includes('max-width: min(100%, 360px);'), 'compensation image rendered width must be capped');
