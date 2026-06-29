@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T11:34:29.638Z",
+  "updatedAt": "2026-06-29T11:48:17.466Z",
   "status": "partial",
   "source": {
     "label": "ESPN public scoreboard",
@@ -25,9 +25,7 @@
     "20260624: fetch failed",
     "20260625: fetch failed",
     "20260626: fetch failed",
-    "20260627: fetch failed",
-    "20260628: fetch failed",
-    "20260629: fetch failed"
+    "20260627: fetch failed"
   ],
   "matches": [
     {
@@ -882,7 +880,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760486",
-      "syncedAt": "2026-06-29T10:29:50.462Z"
+      "syncedAt": "2026-06-29T11:48:17.092Z"
     }
   ]
 }
