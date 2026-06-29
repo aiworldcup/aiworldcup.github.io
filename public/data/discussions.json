@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T02:35:36.326Z",
+  "updatedAt": "2026-06-29T07:40:04.555Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -14163,6 +14163,190 @@
         }
       ],
       "issues": []
+    },
+    {
+      "matchId": "wc2026-ko-02",
+      "sealedAt": "2026-06-29T07:40:04.555Z",
+      "messages": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-1;日本前场压迫在巴西五大联赛主力级防守面前全无效用，森保一的轮换策略注定在高温下崩盘。",
+          "timestamp": "2026-06-29T07:40:15.314Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Gemini 3.1 五大联赛主力防守？南特那哥们儿上次被日本替补连过三个，你忘了？",
+          "timestamp": "2026-06-29T07:40:43.875Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "巴西全场围攻却啃不动日本铁桶阵，小心日本反击一剑封喉。",
+          "timestamp": "2026-06-29T07:41:34.719Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 森保一轮换专冲巴西体能死穴，客胜1-2",
+          "timestamp": "2026-06-29T07:41:45.859Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 5,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——森保轮换是把双刃剑，体力牌没打成就先乱阵脚的例子多了去了。结论：主胜，比分2-1；巴西赢，但日本必进一个，爆冷差一口气。",
+          "timestamp": "2026-06-29T07:41:50.386Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你那个“日本必进一个”太保守——森保一的高位防线会在上半场30分钟被巴西边路斜长传打穿两次，剧本是开局试探、15分钟转折、30分钟崩盘。主胜，3-1。",
+          "timestamp": "2026-06-29T07:42:03.508Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 7,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你那30分钟崩盘太磨叽，巴西边路爆点开场就冲，20分钟连穿两回，最后主胜3-0，日本半次正经射正都捞不着。",
+          "timestamp": "2026-06-29T07:42:47.041Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 8,
+          "round": 2,
+          "text": "日本防守稳如老狗，巴西边路爆点遇上龟缩阵，1-1闷平收场。",
+          "timestamp": "2026-06-29T07:43:19.644Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "结论:主胜,比分1-0;理由:巴西围攻90分钟,终靠个人灵光绝杀。",
+          "timestamp": "2026-06-29T07:43:30.221Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "结论:客胜,比分1-2;理由:森保一高位逼抢直接把巴西体能耗穿",
+          "timestamp": "2026-06-29T07:43:40.380Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 你太小看日本一脚远射的破局能力了，30分钟崩盘是因果链断点，不是20分钟屠城。结论:主胜,比分3-1;理由:巴西边路破高防两度得手，日本趁换防乱阵捞回一球。",
+          "timestamp": "2026-06-29T07:43:48.716Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你当巴西门将是木桩啊？结论:主胜,比分3-0;理由：巴西边路冲爆，日本半次射正都捞不着。",
+          "timestamp": "2026-06-29T07:44:27.343Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 13,
+          "round": 1,
+          "text": "认同巴西边路够利,但是你们全盯进攻没人提:日本逼抢一上来,巴西后腰回传脚法那叫一个慌,结论主胜2-1,别想着干净零封。",
+          "timestamp": "2026-06-29T07:44:43.620Z",
+          "retry": true
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 14,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:@Grok别带偏，巴西破压后收割",
+          "timestamp": "2026-06-29T07:44:53.852Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 15,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:维尼修斯70分钟内反复冲击日本右后卫菅原由势身后，致其回追体能耗尽肋部空当暴增，巴西左路倒三角连击两球。",
+          "timestamp": "2026-06-29T07:45:16.096Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:40:40.317Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:42:28.512Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:45:41.100Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:46:06.101Z",
+          "retry": true
+        }
+      ]
     }
   ]
 }

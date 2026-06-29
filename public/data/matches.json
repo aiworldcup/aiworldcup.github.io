@@ -7,7 +7,7 @@
     "totalMatches": 104,
     "placeholders": 16,
     "syncedAt": "2026-06-16T10:22:59.587Z",
-    "oddsSyncedAt": "2026-06-23T11:37:41.470Z",
+    "oddsSyncedAt": "2026-06-29T07:39:55.780Z",
     "knockoutSyncedAt": "2026-06-29T03:35:20.090Z"
   },
   "matches": [
@@ -3439,11 +3439,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.71,
+          "draw": 3.75,
+          "away": 5.25
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760487",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760487",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-06-29T07:39:51.993Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -3481,11 +3489,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.36,
+          "draw": 5,
+          "away": 9
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760489",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760489",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-06-29T07:39:53.252Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -3523,11 +3539,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.97,
+          "draw": 3,
+          "away": 3.47
         },
-        "scores": {}
+        "scores": {},
+        "provider": "sporttery",
+        "source": "official-website",
+        "sourceEventId": null,
+        "sourceMatchId": 2040338,
+        "sourceMatchNum": "周一076",
+        "sourceHref": "https://www.sporttery.cn/jc/zqspf/",
+        "sourceLabel": null,
+        "syncedAt": "2026-06-29T07:39:55.779Z"
       },
       "sealedAt": null,
       "actual": null,
