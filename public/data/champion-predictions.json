@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T08:28:14.643Z",
+  "updatedAt": "2026-06-29T08:28:42.105Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -20,14 +20,14 @@
       "label": "黑马剧本",
       "team": "挪威",
       "flag": "NO",
-      "score": 74.8,
+      "score": 69.9,
       "hook": "不是最大牌,但路径和状态给了它偷剧本的空间。"
     },
     "jinxRisk": {
       "label": "毒奶高危",
-      "team": "巴西",
-      "flag": "BR",
-      "score": 91.3,
+      "team": "法国",
+      "flag": "FR",
+      "score": 90.1,
       "hook": "越像冠军相,越要小心淘汰赛第一脚打滑。"
     }
   },
@@ -83,109 +83,10 @@
       }
     },
     {
-      "team": "巴西",
-      "flag": "BR",
-      "teamEn": "Brazil",
-      "rank": 2,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "C",
-        "rank": 1,
-        "points": 7,
-        "record": "2-1-0",
-        "gf": 7,
-        "ga": 1,
-        "gd": 6
-      },
-      "scores": {
-        "total": 91.3,
-        "form": 99,
-        "strength": 98,
-        "path": 83,
-        "fun": 64
-      },
-      "tags": [
-        "不败金身",
-        "铁桶阵",
-        "强队牌面",
-        "签运舒适",
-        "毒奶预警"
-      ],
-      "badges": [
-        "不败金身",
-        "铁桶阵",
-        "强队牌面"
-      ],
-      "reason": "小组第一7分,净胜+6,硬实力98,路径83,下一场对日本",
-      "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-02",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-06-30",
-        "kickoff": "2026-06-29T17:00:00+00:00",
-        "opponent": "日本",
-        "opponentFlag": "JP",
-        "side": "home",
-        "winChance": 68.9
-      }
-    },
-    {
-      "team": "德国",
-      "flag": "DE",
-      "teamEn": "Germany",
-      "rank": 3,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "E",
-        "rank": 1,
-        "points": 6,
-        "record": "2-0-1",
-        "gf": 10,
-        "ga": 4,
-        "gd": 6
-      },
-      "scores": {
-        "total": 91.3,
-        "form": 99,
-        "strength": 92,
-        "path": 91,
-        "fun": 66
-      },
-      "tags": [
-        "火力怪",
-        "强队牌面",
-        "签运舒适",
-        "毒奶预警"
-      ],
-      "badges": [
-        "火力怪",
-        "强队牌面",
-        "签运舒适"
-      ],
-      "reason": "小组第一6分,净胜+6,硬实力92,路径91,下一场对巴拉圭",
-      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-03",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-06-30",
-        "kickoff": "2026-06-29T20:30:00+00:00",
-        "opponent": "巴拉圭",
-        "opponentFlag": "PY",
-        "side": "home",
-        "winChance": 79.8
-      }
-    },
-    {
       "team": "法国",
       "flag": "FR",
       "teamEn": "France",
-      "rank": 4,
+      "rank": 2,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -232,6 +133,105 @@
       }
     },
     {
+      "team": "巴西",
+      "flag": "BR",
+      "teamEn": "Brazil",
+      "rank": 3,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "C",
+        "rank": 1,
+        "points": 7,
+        "record": "2-1-0",
+        "gf": 7,
+        "ga": 1,
+        "gd": 6
+      },
+      "scores": {
+        "total": 90,
+        "form": 96,
+        "strength": 97,
+        "path": 83,
+        "fun": 64
+      },
+      "tags": [
+        "不败金身",
+        "铁桶阵",
+        "强队牌面",
+        "签运舒适",
+        "毒奶预警"
+      ],
+      "badges": [
+        "不败金身",
+        "铁桶阵",
+        "强队牌面"
+      ],
+      "reason": "小组第一7分,净胜+6,硬实力97,路径83,下一场对日本",
+      "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-02",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-06-30",
+        "kickoff": "2026-06-29T17:00:00+00:00",
+        "opponent": "日本",
+        "opponentFlag": "JP",
+        "side": "home",
+        "winChance": 68.9
+      }
+    },
+    {
+      "team": "德国",
+      "flag": "DE",
+      "teamEn": "Germany",
+      "rank": 4,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "E",
+        "rank": 1,
+        "points": 6,
+        "record": "2-0-1",
+        "gf": 10,
+        "ga": 4,
+        "gd": 6
+      },
+      "scores": {
+        "total": 87.6,
+        "form": 88,
+        "strength": 91,
+        "path": 91,
+        "fun": 66
+      },
+      "tags": [
+        "火力怪",
+        "强队牌面",
+        "签运舒适",
+        "毒奶预警"
+      ],
+      "badges": [
+        "火力怪",
+        "强队牌面",
+        "签运舒适"
+      ],
+      "reason": "小组第一6分,净胜+6,硬实力91,路径91,下一场对巴拉圭",
+      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-03",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-06-30",
+        "kickoff": "2026-06-29T20:30:00+00:00",
+        "opponent": "巴拉圭",
+        "opponentFlag": "PY",
+        "side": "home",
+        "winChance": 79.8
+      }
+    },
+    {
       "team": "西班牙",
       "flag": "ES",
       "teamEn": "Spain",
@@ -248,9 +248,9 @@
         "gd": 5
       },
       "scores": {
-        "total": 88.3,
-        "form": 99,
-        "strength": 95,
+        "total": 86.4,
+        "form": 94,
+        "strength": 94,
         "path": 75,
         "fun": 64
       },
@@ -265,7 +265,7 @@
         "铁桶阵",
         "强队牌面"
       ],
-      "reason": "小组第一7分,净胜+5,硬实力95,路径75,下一场对奥地利",
+      "reason": "小组第一7分,净胜+5,硬实力94,路径75,下一场对奥地利",
       "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
       "nextMatch": {
         "status": "scheduled",
@@ -297,9 +297,9 @@
         "gd": 6
       },
       "scores": {
-        "total": 87.5,
-        "form": 99,
-        "strength": 91,
+        "total": 86,
+        "form": 95,
+        "strength": 90,
         "path": 77,
         "fun": 66
       },
@@ -313,7 +313,7 @@
         "火力怪",
         "毒奶预警"
       ],
-      "reason": "小组第一7分,净胜+6,硬实力91,路径77,下一场对摩洛哥",
+      "reason": "小组第一7分,净胜+6,硬实力90,路径77,下一场对摩洛哥",
       "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
       "nextMatch": {
         "status": "scheduled",
@@ -345,9 +345,9 @@
         "gd": 4
       },
       "scores": {
-        "total": 87.1,
-        "form": 99,
-        "strength": 93,
+        "total": 84,
+        "form": 90,
+        "strength": 92,
         "path": 77,
         "fun": 54
       },
@@ -361,7 +361,7 @@
         "强队牌面",
         "毒奶预警"
       ],
-      "reason": "小组第一7分,净胜+4,硬实力93,路径77,下一场对民主刚果",
+      "reason": "小组第一7分,净胜+4,硬实力92,路径77,下一场对民主刚果",
       "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
       "nextMatch": {
         "status": "scheduled",
@@ -377,102 +377,10 @@
       }
     },
     {
-      "team": "哥伦比亚",
-      "flag": "CO",
-      "teamEn": "Colombia",
-      "rank": 8,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "K",
-        "rank": 1,
-        "points": 7,
-        "record": "2-1-0",
-        "gf": 4,
-        "ga": 1,
-        "gd": 3
-      },
-      "scores": {
-        "total": 84.8,
-        "form": 99,
-        "strength": 86,
-        "path": 74,
-        "fun": 64
-      },
-      "tags": [
-        "不败金身",
-        "铁桶阵",
-        "毒奶预警"
-      ],
-      "badges": [
-        "不败金身",
-        "铁桶阵",
-        "毒奶预警"
-      ],
-      "reason": "小组第一7分,净胜+3,硬实力86,路径74,下一场对加纳",
-      "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-16",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-07-04",
-        "kickoff": "2026-07-04T01:30:00+00:00",
-        "opponent": "加纳",
-        "opponentFlag": "GH",
-        "side": "home",
-        "winChance": null
-      }
-    },
-    {
-      "team": "美国",
-      "flag": "US",
-      "teamEn": "USA",
-      "rank": 9,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "D",
-        "rank": 1,
-        "points": 6,
-        "record": "2-0-1",
-        "gf": 8,
-        "ga": 4,
-        "gd": 4
-      },
-      "scores": {
-        "total": 83.3,
-        "form": 99,
-        "strength": 82,
-        "path": 73,
-        "fun": 66
-      },
-      "tags": [
-        "火力怪"
-      ],
-      "badges": [
-        "火力怪"
-      ],
-      "reason": "小组第一6分,净胜+4,硬实力82,路径73,下一场对波黑",
-      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-10",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-07-02",
-        "kickoff": "2026-07-02T00:00:00+00:00",
-        "opponent": "波黑",
-        "opponentFlag": "BA",
-        "side": "home",
-        "winChance": null
-      }
-    },
-    {
       "team": "墨西哥",
       "flag": "MX",
       "teamEn": "Mexico",
-      "rank": 10,
+      "rank": 8,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -517,10 +425,56 @@
       }
     },
     {
+      "team": "哥伦比亚",
+      "flag": "CO",
+      "teamEn": "Colombia",
+      "rank": 9,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "K",
+        "rank": 1,
+        "points": 7,
+        "record": "2-1-0",
+        "gf": 4,
+        "ga": 1,
+        "gd": 3
+      },
+      "scores": {
+        "total": 80.9,
+        "form": 87,
+        "strength": 85,
+        "path": 74,
+        "fun": 64
+      },
+      "tags": [
+        "不败金身",
+        "铁桶阵"
+      ],
+      "badges": [
+        "不败金身",
+        "铁桶阵"
+      ],
+      "reason": "小组第一7分,净胜+3,硬实力85,路径74,下一场对加纳",
+      "script": "没有大热包袱,反而适合偷偷往前拱。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-16",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-07-04",
+        "kickoff": "2026-07-04T01:30:00+00:00",
+        "opponent": "加纳",
+        "opponentFlag": "GH",
+        "side": "home",
+        "winChance": null
+      }
+    },
+    {
       "team": "瑞士",
       "flag": "CH",
       "teamEn": "Switzerland",
-      "rank": 11,
+      "rank": 10,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -533,9 +487,9 @@
         "gd": 4
       },
       "scores": {
-        "total": 82.5,
-        "form": 99,
-        "strength": 83,
+        "total": 79.4,
+        "form": 90,
+        "strength": 82,
         "path": 73,
         "fun": 54
       },
@@ -545,7 +499,7 @@
       "badges": [
         "不败金身"
       ],
-      "reason": "小组第一7分,净胜+4,硬实力83,路径73,下一场对阿尔及利亚",
+      "reason": "小组第一7分,净胜+4,硬实力82,路径73,下一场对阿尔及利亚",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -556,6 +510,50 @@
         "kickoff": "2026-07-03T03:00:00+00:00",
         "opponent": "阿尔及利亚",
         "opponentFlag": "DZ",
+        "side": "home",
+        "winChance": null
+      }
+    },
+    {
+      "team": "美国",
+      "flag": "US",
+      "teamEn": "USA",
+      "rank": 11,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "D",
+        "rank": 1,
+        "points": 6,
+        "record": "2-0-1",
+        "gf": 8,
+        "ga": 4,
+        "gd": 4
+      },
+      "scores": {
+        "total": 77.5,
+        "form": 82,
+        "strength": 80,
+        "path": 73,
+        "fun": 66
+      },
+      "tags": [
+        "火力怪"
+      ],
+      "badges": [
+        "火力怪"
+      ],
+      "reason": "小组第一6分,净胜+4,硬实力80,路径73,下一场对波黑",
+      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-10",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-07-02",
+        "kickoff": "2026-07-02T00:00:00+00:00",
+        "opponent": "波黑",
+        "opponentFlag": "BA",
         "side": "home",
         "winChance": null
       }
@@ -577,10 +575,10 @@
         "gd": 5
       },
       "scores": {
-        "total": 81.4,
-        "form": 89,
-        "strength": 88,
-        "path": 66,
+        "total": 75.1,
+        "form": 71,
+        "strength": 86,
+        "path": 65,
         "fun": 72
       },
       "tags": [
@@ -593,7 +591,7 @@
         "铁桶阵",
         "强队牌面"
       ],
-      "reason": "小组第二5分,净胜+5,硬实力88,路径66,下一场对克罗地亚",
+      "reason": "小组第二5分,净胜+5,硬实力86,路径65,下一场对克罗地亚",
       "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
       "nextMatch": {
         "status": "scheduled",
@@ -609,54 +607,10 @@
       }
     },
     {
-      "team": "比利时",
-      "flag": "BE",
-      "teamEn": "Belgium",
-      "rank": 13,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "G",
-        "rank": 1,
-        "points": 5,
-        "record": "1-2-0",
-        "gf": 6,
-        "ga": 2,
-        "gd": 4
-      },
-      "scores": {
-        "total": 81,
-        "form": 90,
-        "strength": 87,
-        "path": 72,
-        "fun": 54
-      },
-      "tags": [
-        "不败金身"
-      ],
-      "badges": [
-        "不败金身"
-      ],
-      "reason": "小组第一5分,净胜+4,硬实力87,路径72,下一场对塞内加尔",
-      "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-09",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-07-02",
-        "kickoff": "2026-07-01T20:00:00+00:00",
-        "opponent": "塞内加尔",
-        "opponentFlag": "SN",
-        "side": "home",
-        "winChance": null
-      }
-    },
-    {
       "team": "摩洛哥",
       "flag": "MA",
       "teamEn": "Morocco",
-      "rank": 14,
+      "rank": 13,
       "status": "alive",
       "qualification": "小组第二",
       "group": {
@@ -669,9 +623,9 @@
         "gd": 3
       },
       "scores": {
-        "total": 80,
-        "form": 96,
-        "strength": 83,
+        "total": 75.1,
+        "form": 82,
+        "strength": 81,
         "path": 63,
         "fun": 62
       },
@@ -683,7 +637,7 @@
         "不败金身",
         "硬仗开门"
       ],
-      "reason": "小组第二7分,净胜+3,硬实力83,路径63,下一场对荷兰",
+      "reason": "小组第二7分,净胜+3,硬实力81,路径63,下一场对荷兰",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -699,48 +653,46 @@
       }
     },
     {
-      "team": "挪威",
-      "flag": "NO",
-      "teamEn": "Norway",
-      "rank": 15,
+      "team": "比利时",
+      "flag": "BE",
+      "teamEn": "Belgium",
+      "rank": 14,
       "status": "alive",
-      "qualification": "小组第二",
+      "qualification": "小组第一",
       "group": {
-        "name": "I",
-        "rank": 2,
-        "points": 6,
-        "record": "2-0-1",
-        "gf": 8,
-        "ga": 7,
-        "gd": 1
+        "name": "G",
+        "rank": 1,
+        "points": 5,
+        "record": "1-2-0",
+        "gf": 6,
+        "ga": 2,
+        "gd": 4
       },
       "scores": {
         "total": 74.8,
-        "form": 81,
-        "strength": 73,
-        "path": 65,
-        "fun": 86
+        "form": 73,
+        "strength": 84,
+        "path": 72,
+        "fun": 54
       },
       "tags": [
-        "火力怪",
-        "黑马剧本"
+        "不败金身"
       ],
       "badges": [
-        "火力怪",
-        "黑马剧本"
+        "不败金身"
       ],
-      "reason": "小组第二6分,净胜+1,硬实力73,路径65,下一场对科特迪瓦",
-      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
+      "reason": "小组第一5分,净胜+4,硬实力84,路径72,下一场对塞内加尔",
+      "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
-        "matchId": "wc2026-ko-05",
+        "matchId": "wc2026-ko-09",
         "stage": "World Cup · Round of 32",
         "stageShort": "32 强",
-        "dateKey": "2026-07-01",
-        "kickoff": "2026-06-30T17:00:00+00:00",
-        "opponent": "科特迪瓦",
-        "opponentFlag": "CI",
-        "side": "away",
+        "dateKey": "2026-07-02",
+        "kickoff": "2026-07-01T20:00:00+00:00",
+        "opponent": "塞内加尔",
+        "opponentFlag": "SN",
+        "side": "home",
         "winChance": null
       }
     },
@@ -748,7 +700,7 @@
       "team": "科特迪瓦",
       "flag": "CI",
       "teamEn": "Ivory Coast",
-      "rank": 16,
+      "rank": 15,
       "status": "alive",
       "qualification": "小组第二",
       "group": {
@@ -761,9 +713,9 @@
         "gd": 2
       },
       "scores": {
-        "total": 74.5,
-        "form": 85,
-        "strength": 73,
+        "total": 69.9,
+        "form": 72,
+        "strength": 71,
         "path": 64,
         "fun": 74
       },
@@ -773,7 +725,7 @@
       "badges": [
         "黑马剧本"
       ],
-      "reason": "小组第二6分,净胜+2,硬实力73,路径64,下一场对挪威",
+      "reason": "小组第二6分,净胜+2,硬实力71,路径64,下一场对挪威",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -785,6 +737,52 @@
         "opponent": "挪威",
         "opponentFlag": "NO",
         "side": "home",
+        "winChance": null
+      }
+    },
+    {
+      "team": "挪威",
+      "flag": "NO",
+      "teamEn": "Norway",
+      "rank": 16,
+      "status": "alive",
+      "qualification": "小组第二",
+      "group": {
+        "name": "I",
+        "rank": 2,
+        "points": 6,
+        "record": "2-0-1",
+        "gf": 8,
+        "ga": 7,
+        "gd": 1
+      },
+      "scores": {
+        "total": 69.9,
+        "form": 68,
+        "strength": 71,
+        "path": 64,
+        "fun": 86
+      },
+      "tags": [
+        "火力怪",
+        "黑马剧本"
+      ],
+      "badges": [
+        "火力怪",
+        "黑马剧本"
+      ],
+      "reason": "小组第二6分,净胜+1,硬实力71,路径64,下一场对科特迪瓦",
+      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-05",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-07-01",
+        "kickoff": "2026-06-30T17:00:00+00:00",
+        "opponent": "科特迪瓦",
+        "opponentFlag": "CI",
+        "side": "away",
         "winChance": null
       }
     },
@@ -805,9 +803,9 @@
         "gd": 0
       },
       "scores": {
-        "total": 72.2,
-        "form": 76,
-        "strength": 81,
+        "total": 68.9,
+        "form": 66,
+        "strength": 80,
         "path": 62,
         "fun": 54
       },
@@ -817,7 +815,7 @@
       "badges": [
         "硬仗开门"
       ],
-      "reason": "小组第二6分,净胜0,硬实力81,路径62,下一场对葡萄牙",
+      "reason": "小组第二6分,净胜0,硬实力80,路径62,下一场对葡萄牙",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -833,56 +831,10 @@
       }
     },
     {
-      "team": "日本",
-      "flag": "JP",
-      "teamEn": "Japan",
-      "rank": 18,
-      "status": "alive",
-      "qualification": "小组第二",
-      "group": {
-        "name": "F",
-        "rank": 2,
-        "points": 5,
-        "record": "1-2-0",
-        "gf": 7,
-        "ga": 3,
-        "gd": 4
-      },
-      "scores": {
-        "total": 72,
-        "form": 84,
-        "strength": 77,
-        "path": 57,
-        "fun": 54
-      },
-      "tags": [
-        "不败金身",
-        "硬仗开门"
-      ],
-      "badges": [
-        "不败金身",
-        "硬仗开门"
-      ],
-      "reason": "小组第二5分,净胜+4,硬实力77,路径57,下一场对巴西",
-      "script": "没有大热包袱,反而适合偷偷往前拱。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-02",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-06-30",
-        "kickoff": "2026-06-29T17:00:00+00:00",
-        "opponent": "巴西",
-        "opponentFlag": "BR",
-        "side": "away",
-        "winChance": 31.1
-      }
-    },
-    {
       "team": "埃及",
       "flag": "EG",
       "teamEn": "Egypt",
-      "rank": 19,
+      "rank": 18,
       "status": "alive",
       "qualification": "小组第二",
       "group": {
@@ -895,9 +847,9 @@
         "gd": 2
       },
       "scores": {
-        "total": 71.5,
-        "form": 75,
-        "strength": 73,
+        "total": 66.9,
+        "form": 62,
+        "strength": 71,
         "path": 64,
         "fun": 74
       },
@@ -909,7 +861,7 @@
         "不败金身",
         "黑马剧本"
       ],
-      "reason": "小组第二5分,净胜+2,硬实力73,路径64,下一场对澳大利亚",
+      "reason": "小组第二5分,净胜+2,硬实力71,路径64,下一场对澳大利亚",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -922,6 +874,52 @@
         "opponentFlag": "AU",
         "side": "away",
         "winChance": null
+      }
+    },
+    {
+      "team": "日本",
+      "flag": "JP",
+      "teamEn": "Japan",
+      "rank": 19,
+      "status": "alive",
+      "qualification": "小组第二",
+      "group": {
+        "name": "F",
+        "rank": 2,
+        "points": 5,
+        "record": "1-2-0",
+        "gf": 7,
+        "ga": 3,
+        "gd": 4
+      },
+      "scores": {
+        "total": 66.5,
+        "form": 68,
+        "strength": 75,
+        "path": 57,
+        "fun": 54
+      },
+      "tags": [
+        "不败金身",
+        "硬仗开门"
+      ],
+      "badges": [
+        "不败金身",
+        "硬仗开门"
+      ],
+      "reason": "小组第二5分,净胜+4,硬实力75,路径57,下一场对巴西",
+      "script": "没有大热包袱,反而适合偷偷往前拱。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-02",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-06-30",
+        "kickoff": "2026-06-29T17:00:00+00:00",
+        "opponent": "巴西",
+        "opponentFlag": "BR",
+        "side": "away",
+        "winChance": 31.1
       }
     },
     {
@@ -941,9 +939,9 @@
         "gd": 5
       },
       "scores": {
-        "total": 68.9,
-        "form": 83,
-        "strength": 72,
+        "total": 62.2,
+        "form": 64,
+        "strength": 69,
         "path": 48,
         "fun": 66
       },
@@ -955,7 +953,7 @@
         "火力怪",
         "黑马剧本"
       ],
-      "reason": "小组第二4分,净胜+5,硬实力72,路径48,等待下轮对阵落位",
+      "reason": "小组第二4分,净胜+5,硬实力69,路径48,等待下轮对阵落位",
       "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
       "nextMatch": {
         "status": "waiting",
@@ -979,9 +977,9 @@
         "gd": 0
       },
       "scores": {
-        "total": 65.7,
-        "form": 60,
-        "strength": 70,
+        "total": 62.1,
+        "form": 49,
+        "strength": 69,
         "path": 63,
         "fun": 74
       },
@@ -991,7 +989,7 @@
       "badges": [
         "黑马剧本"
       ],
-      "reason": "小组第二4分,净胜0,硬实力70,路径63,下一场对埃及",
+      "reason": "小组第二4分,净胜0,硬实力69,路径63,下一场对埃及",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -1007,58 +1005,10 @@
       }
     },
     {
-      "team": "塞内加尔",
-      "flag": "SN",
-      "teamEn": "Senegal",
-      "rank": 22,
-      "status": "alive",
-      "qualification": "成绩较好小组第三",
-      "group": {
-        "name": "I",
-        "rank": 3,
-        "points": 3,
-        "record": "1-0-2",
-        "gf": 8,
-        "ga": 6,
-        "gd": 2
-      },
-      "scores": {
-        "total": 64.5,
-        "form": 57,
-        "strength": 72,
-        "path": 57,
-        "fun": 78
-      },
-      "tags": [
-        "火力怪",
-        "逆袭门票",
-        "硬仗开门"
-      ],
-      "badges": [
-        "火力怪",
-        "逆袭门票",
-        "硬仗开门"
-      ],
-      "reason": "成绩较好小组第三3分,净胜+2,硬实力72,路径57,下一场对比利时",
-      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-09",
-        "stage": "World Cup · Round of 32",
-        "stageShort": "32 强",
-        "dateKey": "2026-07-02",
-        "kickoff": "2026-07-01T20:00:00+00:00",
-        "opponent": "比利时",
-        "opponentFlag": "BE",
-        "side": "away",
-        "winChance": null
-      }
-    },
-    {
       "team": "奥地利",
       "flag": "AT",
       "teamEn": "Austria",
-      "rank": 23,
+      "rank": 22,
       "status": "alive",
       "qualification": "小组第二",
       "group": {
@@ -1071,9 +1021,9 @@
         "gd": 0
       },
       "scores": {
-        "total": 64.4,
-        "form": 60,
-        "strength": 72,
+        "total": 60.1,
+        "form": 48,
+        "strength": 70,
         "path": 58,
         "fun": 66
       },
@@ -1083,7 +1033,7 @@
       "badges": [
         "硬仗开门"
       ],
-      "reason": "小组第二4分,净胜0,硬实力72,路径58,下一场对西班牙",
+      "reason": "小组第二4分,净胜0,硬实力70,路径58,下一场对西班牙",
       "script": "没有大热包袱,反而适合偷偷往前拱。",
       "nextMatch": {
         "status": "scheduled",
@@ -1094,6 +1044,54 @@
         "kickoff": "2026-07-02T19:00:00+00:00",
         "opponent": "西班牙",
         "opponentFlag": "ES",
+        "side": "away",
+        "winChance": null
+      }
+    },
+    {
+      "team": "塞内加尔",
+      "flag": "SN",
+      "teamEn": "Senegal",
+      "rank": 23,
+      "status": "alive",
+      "qualification": "成绩较好小组第三",
+      "group": {
+        "name": "I",
+        "rank": 3,
+        "points": 3,
+        "record": "1-0-2",
+        "gf": 8,
+        "ga": 6,
+        "gd": 2
+      },
+      "scores": {
+        "total": 58.7,
+        "form": 41,
+        "strength": 70,
+        "path": 56,
+        "fun": 78
+      },
+      "tags": [
+        "火力怪",
+        "逆袭门票",
+        "硬仗开门"
+      ],
+      "badges": [
+        "火力怪",
+        "逆袭门票",
+        "硬仗开门"
+      ],
+      "reason": "成绩较好小组第三3分,净胜+2,硬实力70,路径56,下一场对比利时",
+      "script": "进攻端火力很响,只要后防别开盲盒就有戏。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-09",
+        "stage": "World Cup · Round of 32",
+        "stageShort": "32 强",
+        "dateKey": "2026-07-02",
+        "kickoff": "2026-07-01T20:00:00+00:00",
+        "opponent": "比利时",
+        "opponentFlag": "BE",
         "side": "away",
         "winChance": null
       }
@@ -1115,9 +1113,9 @@
         "gd": 0
       },
       "scores": {
-        "total": 60.2,
-        "form": 54,
-        "strength": 66,
+        "total": 56.6,
+        "form": 43,
+        "strength": 65,
         "path": 57,
         "fun": 66
       },
@@ -1127,7 +1125,7 @@
       "badges": [
         "逆袭门票"
       ],
-      "reason": "成绩较好小组第三4分,净胜0,硬实力66,路径57,下一场对墨西哥",
+      "reason": "成绩较好小组第三4分,净胜0,硬实力65,路径57,下一场对墨西哥",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1159,10 +1157,10 @@
         "gd": 0
       },
       "scores": {
-        "total": 60,
-        "form": 54,
-        "strength": 66,
-        "path": 56,
+        "total": 56.1,
+        "form": 43,
+        "strength": 65,
+        "path": 55,
         "fun": 66
       },
       "tags": [
@@ -1171,7 +1169,7 @@
       "badges": [
         "逆袭门票"
       ],
-      "reason": "成绩较好小组第三4分,净胜0,硬实力66,路径56,下一场对哥伦比亚",
+      "reason": "成绩较好小组第三4分,净胜0,硬实力65,路径55,下一场对哥伦比亚",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1203,9 +1201,9 @@
         "gd": 0
       },
       "scores": {
-        "total": 59.8,
-        "form": 54,
-        "strength": 68,
+        "total": 55.4,
+        "form": 42,
+        "strength": 66,
         "path": 52,
         "fun": 66
       },
@@ -1217,7 +1215,7 @@
         "逆袭门票",
         "硬仗开门"
       ],
-      "reason": "成绩较好小组第三4分,净胜0,硬实力68,路径52,下一场对法国",
+      "reason": "成绩较好小组第三4分,净胜0,硬实力66,路径52,下一场对法国",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1249,9 +1247,9 @@
         "gd": 1
       },
       "scores": {
-        "total": 59.5,
-        "form": 59,
-        "strength": 63,
+        "total": 54.8,
+        "form": 46,
+        "strength": 61,
         "path": 52,
         "fun": 66
       },
@@ -1263,7 +1261,7 @@
         "逆袭门票",
         "硬仗开门"
       ],
-      "reason": "成绩较好小组第三4分,净胜+1,硬实力63,路径52,下一场对英格兰",
+      "reason": "成绩较好小组第三4分,净胜+1,硬实力61,路径52,下一场对英格兰",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1295,10 +1293,10 @@
         "gd": -1
       },
       "scores": {
-        "total": 58.7,
-        "form": 50,
-        "strength": 65,
-        "path": 57,
+        "total": 54.4,
+        "form": 39,
+        "strength": 63,
+        "path": 56,
         "fun": 66
       },
       "tags": [
@@ -1307,7 +1305,7 @@
       "badges": [
         "逆袭门票"
       ],
-      "reason": "成绩较好小组第三4分,净胜-1,硬实力65,路径57,下一场对美国",
+      "reason": "成绩较好小组第三4分,净胜-1,硬实力63,路径56,下一场对美国",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1339,9 +1337,9 @@
         "gd": -2
       },
       "scores": {
-        "total": 56.6,
-        "form": 45,
-        "strength": 64,
+        "total": 53.5,
+        "form": 36,
+        "strength": 63,
         "path": 56,
         "fun": 66
       },
@@ -1351,7 +1349,7 @@
       "badges": [
         "逆袭门票"
       ],
-      "reason": "成绩较好小组第三4分,净胜-2,硬实力64,路径56,下一场对瑞士",
+      "reason": "成绩较好小组第三4分,净胜-2,硬实力63,路径56,下一场对瑞士",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1383,9 +1381,9 @@
         "gd": -2
       },
       "scores": {
-        "total": 55.6,
-        "form": 45,
-        "strength": 66,
+        "total": 52.9,
+        "form": 37,
+        "strength": 65,
         "path": 49,
         "fun": 66
       },
@@ -1397,7 +1395,7 @@
         "逆袭门票",
         "硬仗开门"
       ],
-      "reason": "成绩较好小组第三4分,净胜-2,硬实力66,路径49,下一场对德国",
+      "reason": "成绩较好小组第三4分,净胜-2,硬实力65,路径49,下一场对德国",
       "script": "从边门挤进来,节目效果已经拉满,再赢一场就变连续剧。",
       "nextMatch": {
         "status": "scheduled",
@@ -1429,10 +1427,10 @@
         "gd": 0
       },
       "scores": {
-        "total": 54.2,
-        "form": 50,
-        "strength": 58,
-        "path": 54,
+        "total": 50,
+        "form": 39,
+        "strength": 56,
+        "path": 53,
         "fun": 54
       },
       "tags": [
@@ -1443,7 +1441,7 @@
         "不败金身",
         "硬仗开门"
       ],
-      "reason": "小组第二3分,净胜0,硬实力58,路径54,下一场对阿根廷",
+      "reason": "小组第二3分,净胜0,硬实力56,路径53,下一场对阿根廷",
       "script": "签运不太讲理,想走远得先把第一块硬骨头啃碎。",
       "nextMatch": {
         "status": "scheduled",
