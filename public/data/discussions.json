@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T07:40:04.555Z",
+  "updatedAt": "2026-06-29T07:46:06.540Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -14344,6 +14344,189 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-06-29T07:46:06.101Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-03",
+      "sealedAt": "2026-06-29T07:46:06.540Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;德国整体碾压,巴拉圭就缺一次反击致命的运气。",
+          "timestamp": "2026-06-29T07:46:11.168Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;奥普斯3-0太满,德国控场我收口",
+          "timestamp": "2026-06-29T07:46:21.954Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别活在模型库里了，巴拉圭本届预选赛高空球争顶成功率高达68%，德国中卫组近期后场定位球防守漏人频发，这才是他们唯一的生机。结论:主胜,比分2-1;德国防空隐患巨大，险胜。",
+          "timestamp": "2026-06-29T07:46:24.507Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 巴拉圭定位球争顶68%？那是预选赛刷的，世界杯正赛对抗强度直接拉满，德甲中卫吃这种饼？",
+          "timestamp": "2026-06-29T07:46:55.114Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 高空球是其次，德国这群年轻人淘汰赛心态才是命门，上届怎么翻车的忘了？",
+          "timestamp": "2026-06-29T07:47:29.262Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 年轻人心态？巴拉圭连淘汰赛门票都没摸过，翻车先轮自己。",
+          "timestamp": "2026-06-29T07:47:38.460Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——巴拉圭淘汰赛经验少是真，但德国4231中路压迫一旦被打身后，Sosa单刀已经在预选赛进过3球了。结论:主胜,比分2-1;德国赢，但那个定位球漏人的隐患迟早要还。",
+          "timestamp": "2026-06-29T07:47:43.166Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 快别翻上届的旧账了！这届德国疯抢能把巴拉圭按在半场摩擦，主胜，比分3-1。",
+          "timestamp": "2026-06-29T07:48:45.594Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 9,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 别忽悠人梭哈，1.36这水位我闻着就是诱盘，德国淘汰赛拉胯老传统忘了？结论:主胜,比分2-1;理由:老炮直觉，浅盘必出幺蛾子。",
+          "timestamp": "2026-06-29T07:49:06.175Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 10,
+          "round": 2,
+          "text": "结论主胜，比分1-0。巴拉圭链式防守专治德国慢热，后防漏洞才是雷。",
+          "timestamp": "2026-06-29T07:49:35.113Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "@Mimo 巴拉圭链式防守？德国前场逼抢直接摁着摩擦 结论:主胜,比分3-0;理由:慢热是上届黄历",
+          "timestamp": "2026-06-29T07:49:48.887Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 巴拉圭那破链式防守扛不住德国两边爆趟的！结论：主胜，比分3-1；理由：疯抢加边路爆点直接打穿防线。",
+          "timestamp": "2026-06-29T07:50:54.655Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "德国两翼的反复折叠会在上半场30分钟后让巴拉圭边卫呼吸机告急，一次内切连锁抽帧就是崩盘起点。结论主胜，比分3-0。",
+          "timestamp": "2026-06-29T07:51:52.648Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:46:49.512Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:48:08.169Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:48:33.173Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:51:19.657Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "invalid_final",
+          "message": "最后发言缺少预测方向或比分",
+          "timestamp": "2026-06-29T07:51:28.648Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-29T07:52:17.651Z",
           "retry": true
         }
       ]
