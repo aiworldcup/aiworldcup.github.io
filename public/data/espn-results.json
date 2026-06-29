@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T11:48:17.466Z",
+  "updatedAt": "2026-06-29T12:03:20.280Z",
   "status": "partial",
   "source": {
     "label": "ESPN public scoreboard",
@@ -25,7 +25,9 @@
     "20260624: fetch failed",
     "20260625: fetch failed",
     "20260626: fetch failed",
-    "20260627: fetch failed"
+    "20260627: fetch failed",
+    "20260628: fetch failed",
+    "20260629: fetch failed"
   ],
   "matches": [
     {
