@@ -2591,10 +2591,19 @@ function revealCompensationCode() {
   panel.hidden = false;
   if (reveal) {
     reveal.setAttribute('aria-expanded', 'true');
-    reveal.textContent = '口令在这';
+    reveal.textContent = '关闭';
   }
   if (status) status.textContent = '';
   document.getElementById('compensation-copy')?.focus();
+}
+
+function handleCompensationRevealAction() {
+  const panel = document.getElementById('compensation-code-panel');
+  if (panel && !panel.hidden) {
+    closeCompensationModal();
+    return;
+  }
+  revealCompensationCode();
 }
 
 async function copyCompensationCode() {
@@ -2615,7 +2624,7 @@ function initCompensationModal() {
   const code = document.getElementById('compensation-code');
   if (code) code.value = COMPENSATION_CODE;
   document.getElementById('compensation-dismiss')?.addEventListener('click', closeCompensationModal);
-  document.getElementById('compensation-reveal')?.addEventListener('click', revealCompensationCode);
+  document.getElementById('compensation-reveal')?.addEventListener('click', handleCompensationRevealAction);
   document.getElementById('compensation-copy')?.addEventListener('click', copyCompensationCode);
   stage.addEventListener('click', e => {
     if (e.target === stage) closeCompensationModal();

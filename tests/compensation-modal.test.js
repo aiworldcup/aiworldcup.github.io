@@ -26,8 +26,8 @@ assert(html.includes('id="compensation-dismiss"'), 'dismiss button is missing');
 assert(html.includes('id="compensation-reveal"'), 'reveal button is missing');
 assert(html.includes('id="compensation-copy"'), 'copy button is missing');
 assert(html.includes('id="compensation-code-panel"'), 'red packet code panel is missing');
-assert(html.includes('styles.css?v=20260629-compensation-once'), 'stylesheet cache key must change for once-only fix');
-assert(html.includes('app-load-smooth.js?v=20260629-compensation-once'), 'script cache key must change for once-only fix');
+assert(html.includes('styles.css?v=20260630-compensation-close'), 'stylesheet cache key must change for close-state fix');
+assert(html.includes('app-load-smooth.js?v=20260630-compensation-close'), 'script cache key must change for close-state fix');
 
 assert(js.includes("const COMPENSATION_CODE = '菜鸡ai我原谅你了';"), 'red packet code constant is missing');
 assert(js.includes('function initCompensationModal()'), 'compensation modal initializer is missing');
@@ -39,6 +39,13 @@ assert(js.includes('copyPlainText(COMPENSATION_CODE)'), 'copy action must reuse 
 assert(js.includes("status.textContent = ok ? '已复制' : '复制失败,请长按口令手动复制';"), 'copy status feedback is missing');
 assert(js.includes("document.getElementById('compensation-reveal')"), 'reveal button listener is missing');
 assert(js.includes("document.getElementById('compensation-dismiss')"), 'dismiss button listener is missing');
+assert(js.includes('function handleCompensationRevealAction()'), 'reveal button must use a stateful click handler');
+assert(js.includes("reveal.textContent = '关闭';"), 'revealed state must relabel the right action as close');
+const handlerStart = js.indexOf('function handleCompensationRevealAction()');
+const handlerEnd = js.indexOf('async function copyCompensationCode', handlerStart);
+const handlerBody = js.slice(handlerStart, handlerEnd);
+assert(handlerBody.includes('!panel.hidden'), 'reveal action must detect already revealed panel state');
+assert(handlerBody.includes('closeCompensationModal();'), 'revealed right action must close the modal');
 
 const initStart = js.indexOf('function initCompensationModal()');
 const initEnd = js.indexOf('function flashDebateButton', initStart);
@@ -48,6 +55,10 @@ assert(initBody.indexOf('setCompensationSeen();') > -1, 'initializer must mark t
 assert(
   initBody.indexOf('setCompensationSeen();') < initBody.indexOf('stage.classList.add'),
   'modal must be marked seen before opening so reveal/copy/reload cannot show it again'
+);
+assert(
+  initBody.includes("document.getElementById('compensation-reveal')?.addEventListener('click', handleCompensationRevealAction);"),
+  'reveal button listener must use the stateful reveal/close handler'
 );
 
 assert(css.includes('.compensation-image'), 'compensation image CSS is missing');
