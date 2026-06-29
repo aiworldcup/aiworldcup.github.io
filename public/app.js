@@ -42,7 +42,7 @@ const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
 const DATA_REFRESH_MS = 60 * 1000;
-const DATA_VERSION = '20260629-champion-radar-3';
+const DATA_VERSION = '20260629-champion-gauntlet-1';
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -1981,6 +1981,109 @@ function championTeamCard(item) {
   </article>`;
 }
 
+function championGauntletStatusText(status) {
+  if (status === 'settled') return '已结算';
+  if (status === 'locked') return '已封盘';
+  if (status === 'open') return '补票中';
+  return '待开局';
+}
+
+function championGauntletCurrentRound(gauntlet) {
+  const rounds = gauntlet?.rounds || [];
+  if (!rounds.length) return null;
+  return rounds[rounds.length - 1];
+}
+
+function championGauntletPickChips(picks, className = '') {
+  if (!picks?.length) return '<span class="gauntlet-empty-chip">无</span>';
+  return picks.map(pick => `<span class="${className}">
+    ${flagIcon(pick.flag)}<b>${escapeHTML(pick.team)}</b>
+    ${pick.opponent ? `<small>vs ${escapeHTML(pick.opponent)}</small>` : ''}
+  </span>`).join('');
+}
+
+function renderChampionGauntlet(gauntlet) {
+  const round = championGauntletCurrentRound(gauntlet);
+  if (!round) {
+    return `<section class="champion-gauntlet-panel">
+      <div class="champion-gauntlet-hero">
+        <div>
+          <div class="champion-kicker">AI Champion Gauntlet</div>
+          <h3>冠军毒圈圆桌待开局</h3>
+          <p>首轮每个 AI 选 3 个冠军活口,整轮结束结算;全灭后永久出局,但还能在场边嘴硬。</p>
+        </div>
+        <span class="gauntlet-status">待开局</span>
+      </div>
+    </section>`;
+  }
+
+  const summary = round.summary || {};
+  const entries = round.entries || [];
+  const topTeams = summary.topTeams || [];
+  const updated = championUpdatedLabel(gauntlet.updatedAt);
+  const statusText = championGauntletStatusText(round.status);
+  const teamRows = topTeams.length ? topTeams.slice(0, 10).map(team => {
+    const voters = (team.modelIds || []).map(id => modelMeta(id).name).join('、');
+    return `<div class="gauntlet-team-vote">
+      <div class="gauntlet-team-main">${flagIcon(team.flag)}<strong>${escapeHTML(team.team)}</strong><span>${team.votes} 票</span></div>
+      <small>${escapeHTML(voters || '暂无投票模型')}</small>
+    </div>`;
+  }).join('') : '<div class="champion-model-empty">本轮还没有有效选票。</div>';
+
+  const entryRows = entries.map(entry => {
+    const meta = modelMeta(entry.modelId);
+    const issues = entry.issues || [];
+    const issueText = issues.map(issue => issue.message || issue.type).join('; ');
+    const statusClass = entry.status === 'issue' ? 'issue' : (entry.status === 'eliminated' ? 'out' : 'alive');
+    const aliveLine = round.status === 'settled' && entry.status !== 'issue'
+      ? `<div class="gauntlet-survival">
+          <span>活口 ${entry.alivePicks?.length || 0}</span>
+          <span>阵亡 ${entry.eliminatedPicks?.length || 0}</span>
+        </div>`
+      : '';
+    return `<article class="gauntlet-ai-card ${statusClass}">
+      <div class="gauntlet-ai-head">
+        <div class="champion-model"><span class="lb-dot" style="background:${meta.color}"></span>${escapeHTML(meta.name)}</div>
+        <span>${entry.status === 'issue' ? '待补跑' : (entry.status === 'eliminated' ? '场边席' : `${entry.allowedPicks || 0} 选`)}</span>
+      </div>
+      <div class="gauntlet-picks">${championGauntletPickChips(entry.picks || [])}</div>
+      ${aliveLine}
+      <p>${escapeHTML(entry.line || (issueText ? `调用异常: ${issueText}` : '等它开口。'))}</p>
+    </article>`;
+  }).join('');
+
+  return `<section class="champion-gauntlet-panel">
+    <div class="champion-gauntlet-hero">
+      <div>
+        <div class="champion-kicker">AI Champion Gauntlet</div>
+        <h3>${escapeHTML(round.label || '冠军毒圈圆桌')}</h3>
+        <p>${escapeHTML(gauntlet.note || '0 活口永久出局,出局后只能场边发言。')}</p>
+      </div>
+      <span class="gauntlet-status ${round.status}">${statusText}</span>
+    </div>
+    <div class="gauntlet-stats">
+      <div><strong>${summary.aliveModels ?? 0}</strong><span>仍可竞猜</span></div>
+      <div><strong>${summary.eliminatedModels ?? 0}</strong><span>已进场边</span></div>
+      <div><strong>${summary.issueModels ?? 0}</strong><span>待补调用</span></div>
+      <div><strong>${updated || '-'}</strong><span>毒圈更新</span></div>
+    </div>
+    <div class="gauntlet-rule-strip">
+      <span>${escapeHTML(round.pickCountRule?.description || '整轮结束结算,活口数决定下轮可选数。')}</span>
+      <b>${(round.candidateTeams || []).length} 队候选</b>
+    </div>
+    <div class="gauntlet-layout">
+      <section class="gauntlet-votes">
+        <div class="champion-title">球队票仓</div>
+        ${teamRows}
+      </section>
+      <section class="gauntlet-ai-list">
+        <div class="champion-title">AI 投票席</div>
+        ${entryRows}
+      </section>
+    </div>
+  </section>`;
+}
+
 function renderChampionModelPanel(modelPicks) {
   if (!modelPicks.length) {
     return `<section class="champion-model-panel">
@@ -2025,7 +2128,8 @@ function renderChampionPredictions() {
   const data = CHAMPION_DATA || {};
   const teams = data.teams || [];
   const modelPicks = data.predictions || CHAMPIONS || [];
-  if (!teams.length && !modelPicks.length) {
+  const gauntletHtml = renderChampionGauntlet(data.gauntlet);
+  if (!teams.length && !modelPicks.length && !data.gauntlet?.rounds?.length) {
     el.innerHTML = `<div class="empty-state">
       <strong>冠军预测待封盘</strong>
       <span>生成冠军雷达后,这里会展示出线形态、己身实力、路径签运和逐模型选择。</span>
@@ -2034,7 +2138,7 @@ function renderChampionPredictions() {
   }
 
   if (!teams.length) {
-    el.innerHTML = renderChampionModelPanel(modelPicks);
+    el.innerHTML = `${gauntletHtml}${renderChampionModelPanel(modelPicks)}`;
     return;
   }
 
@@ -2043,6 +2147,7 @@ function renderChampionPredictions() {
   const updated = championUpdatedLabel(data.updatedAt);
   const source = data.source || {};
   el.innerHTML = `
+    ${gauntletHtml}
     <section class="champion-radar-panel">
       <div>
         <div class="champion-kicker">Champion Radar</div>

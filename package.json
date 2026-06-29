@@ -24,6 +24,8 @@
     "settle:strict": "node pipeline/settle.js --fail-on-pending --fail-on-conflict",
     "settle:watch": "node pipeline/settle-watch.js",
     "roundtable:auto": "node pipeline/auto-roundtable.js",
+    "champion:gauntlet": "node pipeline/champion-gauntlet.js",
+    "champion:gauntlet:settle": "node pipeline/champion-gauntlet.js --settle",
     "publish:settle": "node pipeline/auto-publish.js settle",
     "publish:roundtable": "node pipeline/auto-publish.js roundtable",
     "analytics:deploy": "npx wrangler deploy",

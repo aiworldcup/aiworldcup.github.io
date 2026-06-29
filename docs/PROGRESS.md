@@ -4,6 +4,13 @@
 
 ## 已完成
 
+- 2026-06-29 冠军毒圈圆桌:
+  - 新增 `pipeline/champion-gauntlet.js` 与 `pipeline/champion-gauntlet.test.js`,实现冠军毒圈候选池、真实模型调用、JSON 校验、同场对冲拦截、缺口补跑和整轮结算。
+  - 规则为首轮 `round32` 跳过已完赛 `wc2026-ko-01` 南非 vs 加拿大,剩余 15 场 30 队中每个 AI 固定 3 选;后续轮次可选数量等于上一整轮活口数,0 活口永久出局。
+  - 前端冠军页新增「AI Champion Gauntlet」板块,展示毒圈状态、活口/出局/待补调用统计、球队票仓和每个 AI 的投票与台词。
+  - 已真实调用首轮 AI 军团:11 个模型给出有效选择,MiMo v2.5 Pro 多次返回空字符串,按红线记录为 `issue`/`empty`,未写合成兜底票。
+  - `pipeline/champion.js` 刷新冠军雷达时会保留现有 `gauntlet`,避免后续自动同步洗掉毒圈圆桌。
+  - 缓存版本号更新为 `20260629-champion-gauntlet-1`;新增 `npm run champion:gauntlet`、`npm run champion:gauntlet:settle` 和 `--missing-only` 补跑入口。
 - 2026-06-29 冠军预测雷达:
   - 新增 `pipeline/champion.js` 与 `pipeline/champion.test.js`,从 `matches.json` + `groups.json` 计算 32 强存活队伍,剔除已在淘汰赛出局球队,生成冠军雷达候选榜。
   - 冠军雷达分为「出线姿态 / 己身实力 / 路径签运 / 节目效果」四项;路径优先使用下一场胜平负赔率,缺赔率时用对手强度估算;文案保持“数据认真但有梗”。

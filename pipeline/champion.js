@@ -438,6 +438,7 @@ function main() {
     generatedAt: new Date().toISOString(),
     predictions: existing.predictions || [],
   });
+  if (existing.gauntlet) data.gauntlet = existing.gauntlet;
   if (dryRun) {
     console.log(JSON.stringify({ ok: true, teams: data.teams.length, top: data.teams.slice(0, 5).map((item) => item.team) }, null, 2));
     return data;

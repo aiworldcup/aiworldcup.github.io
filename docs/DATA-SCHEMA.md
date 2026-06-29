@@ -273,12 +273,42 @@ npm run validate:insights
       "confidence": 18,
       "reasoning": "一句话理由"
     }
-  ]
+  ],
+  "gauntlet": {
+    "updatedAt": "2026-06-29T10:25:38.455Z",
+    "mode": "real-model",
+    "note": "AI 冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
+    "rounds": [
+      {
+        "roundId": "round32",
+        "label": "32 强毒圈",
+        "status": "open",
+        "candidateTeams": [
+          { "team": "巴西", "flag": "BR", "matchId": "wc2026-ko-02", "opponent": "日本" }
+        ],
+        "summary": { "aliveModels": 11, "eliminatedModels": 0, "issueModels": 1, "totalPicks": 33, "topTeams": [] },
+        "entries": [
+          {
+            "modelId": "gpt-5-5",
+            "status": "alive",
+            "allowedPicks": 3,
+            "picks": [{ "team": "阿根廷", "flag": "AR", "matchId": "wc2026-ko-15" }],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "一句中文理由",
+            "issues": []
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
 - `teams`:由 `pipeline/champion.js` 生成的冠军雷达候选。`scores.form` 是出线姿态,`scores.strength` 是项目内球队强度基准叠加当前状态,`scores.path` 优先使用下一场赔率,缺赔率时用对手强度估算,`scores.fun` 是传播/剧情标签分。
 - `predictions`:保留给真实模型冠军封盘选择;当前可为空数组,前端仍展示 `teams` 雷达。
+- `gauntlet`:冠军毒圈圆桌。`round32` 首轮跳过已完赛 `wc2026-ko-01`,每个仍有资格的模型固定 3 选;后续轮次的 `allowedPicks` 等于上一整轮 `alivePicks.length`。`status=issue` 表示真实调用失败、空返回或格式无效,不得用合成票替代。
+- `gauntlet.rounds[].entries[].picks`:封盘后不可改写的该轮真实模型选择。整轮赛果齐全后,结算脚本只填充 `alivePicks`、`eliminatedPicks`、`status` 和结算时间。
 
 ## discussions.json — AI 圆桌群聊
 
