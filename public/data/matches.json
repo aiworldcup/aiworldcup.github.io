@@ -5,9 +5,10 @@
     "season": "2026",
     "apiFixtures": 72,
     "totalMatches": 104,
-    "placeholders": 32,
+    "placeholders": 16,
     "syncedAt": "2026-06-16T10:22:59.587Z",
-    "oddsSyncedAt": "2026-06-23T11:37:41.470Z"
+    "oddsSyncedAt": "2026-06-23T11:37:41.470Z",
+    "knockoutSyncedAt": "2026-06-29T03:35:20.090Z"
   },
   "matches": [
     {
@@ -3373,15 +3374,17 @@
       "id": "wc2026-ko-01",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-28",
-      "kickoff": null,
+      "dateKey": "2026-06-29",
+      "kickoff": "2026-06-28T19:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "南非",
+        "flag": "ZA",
+        "teamEn": "South Africa"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "加拿大",
+        "flag": "CA",
+        "teamEn": "Canada"
       },
       "odds": {
         "result": {
@@ -3392,26 +3395,47 @@
         "scores": {}
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "away",
+        "score": "0-1"
+      },
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 73,
+      "bracketSlot": {
+        "home": "2A",
+        "away": "2B"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      },
+      "actualSource": {
+        "provider": "manual-verified",
+        "sourceLabel": "Round of 32 scoreboard",
+        "sourceHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "syncedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-02",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-28",
-      "kickoff": null,
+      "dateKey": "2026-06-30",
+      "kickoff": "2026-06-29T17:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "巴西",
+        "flag": "BR",
+        "teamEn": "Brazil"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "日本",
+        "flag": "JP",
+        "teamEn": "Japan"
       },
       "odds": {
         "result": {
@@ -3424,24 +3448,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 76,
+      "bracketSlot": {
+        "home": "1C",
+        "away": "2F"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-03",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-28",
-      "kickoff": null,
+      "dateKey": "2026-06-30",
+      "kickoff": "2026-06-29T20:30:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "德国",
+        "flag": "DE",
+        "teamEn": "Germany"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "巴拉圭",
+        "flag": "PY",
+        "teamEn": "Paraguay"
       },
       "odds": {
         "result": {
@@ -3454,24 +3490,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 74,
+      "bracketSlot": {
+        "home": "1E",
+        "away": "3D"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-04",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-29",
-      "kickoff": null,
+      "dateKey": "2026-06-30",
+      "kickoff": "2026-06-30T01:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "荷兰",
+        "flag": "NL",
+        "teamEn": "Netherlands"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "摩洛哥",
+        "flag": "MA",
+        "teamEn": "Morocco"
       },
       "odds": {
         "result": {
@@ -3484,24 +3532,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 75,
+      "bracketSlot": {
+        "home": "1F",
+        "away": "2C"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-05",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-29",
-      "kickoff": null,
+      "dateKey": "2026-07-01",
+      "kickoff": "2026-06-30T17:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "科特迪瓦",
+        "flag": "CI",
+        "teamEn": "Ivory Coast"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "挪威",
+        "flag": "NO",
+        "teamEn": "Norway"
       },
       "odds": {
         "result": {
@@ -3514,24 +3574,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 78,
+      "bracketSlot": {
+        "home": "2E",
+        "away": "2I"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-06",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-29",
-      "kickoff": null,
+      "dateKey": "2026-07-01",
+      "kickoff": "2026-06-30T21:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "法国",
+        "flag": "FR",
+        "teamEn": "France"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "瑞典",
+        "flag": "SE",
+        "teamEn": "Sweden"
       },
       "odds": {
         "result": {
@@ -3544,24 +3616,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 77,
+      "bracketSlot": {
+        "home": "1I",
+        "away": "3F"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-07",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-30",
-      "kickoff": null,
+      "dateKey": "2026-07-01",
+      "kickoff": "2026-07-01T01:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "墨西哥",
+        "flag": "MX",
+        "teamEn": "Mexico"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "厄瓜多尔",
+        "flag": "EC",
+        "teamEn": "Ecuador"
       },
       "odds": {
         "result": {
@@ -3574,24 +3658,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 79,
+      "bracketSlot": {
+        "home": "1A",
+        "away": "3E"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-08",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-30",
-      "kickoff": null,
+      "dateKey": "2026-07-02",
+      "kickoff": "2026-07-01T16:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "英格兰",
+        "flag": "GB",
+        "teamEn": "England"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "民主刚果",
+        "flag": "CD",
+        "teamEn": "Congo DR"
       },
       "odds": {
         "result": {
@@ -3604,24 +3700,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 80,
+      "bracketSlot": {
+        "home": "1L",
+        "away": "3K"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-09",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-06-30",
-      "kickoff": null,
+      "dateKey": "2026-07-02",
+      "kickoff": "2026-07-01T20:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "比利时",
+        "flag": "BE",
+        "teamEn": "Belgium"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "塞内加尔",
+        "flag": "SN",
+        "teamEn": "Senegal"
       },
       "odds": {
         "result": {
@@ -3634,24 +3742,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 82,
+      "bracketSlot": {
+        "home": "1G",
+        "away": "3I"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-10",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-01",
-      "kickoff": null,
+      "dateKey": "2026-07-02",
+      "kickoff": "2026-07-02T00:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "美国",
+        "flag": "US",
+        "teamEn": "USA"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "波黑",
+        "flag": "BA",
+        "teamEn": "Bosnia & Herzegovina"
       },
       "odds": {
         "result": {
@@ -3664,24 +3784,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 81,
+      "bracketSlot": {
+        "home": "1D",
+        "away": "3B"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-11",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-01",
-      "kickoff": null,
+      "dateKey": "2026-07-03",
+      "kickoff": "2026-07-02T19:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "西班牙",
+        "flag": "ES",
+        "teamEn": "Spain"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "奥地利",
+        "flag": "AT",
+        "teamEn": "Austria"
       },
       "odds": {
         "result": {
@@ -3694,24 +3826,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 84,
+      "bracketSlot": {
+        "home": "1H",
+        "away": "2J"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-12",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-01",
-      "kickoff": null,
+      "dateKey": "2026-07-03",
+      "kickoff": "2026-07-02T23:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "葡萄牙",
+        "flag": "PT",
+        "teamEn": "Portugal"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "克罗地亚",
+        "flag": "HR",
+        "teamEn": "Croatia"
       },
       "odds": {
         "result": {
@@ -3724,24 +3868,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 83,
+      "bracketSlot": {
+        "home": "2K",
+        "away": "2L"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-13",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-02",
-      "kickoff": null,
+      "dateKey": "2026-07-03",
+      "kickoff": "2026-07-03T03:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "瑞士",
+        "flag": "CH",
+        "teamEn": "Switzerland"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "阿尔及利亚",
+        "flag": "DZ",
+        "teamEn": "Algeria"
       },
       "odds": {
         "result": {
@@ -3754,24 +3910,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 85,
+      "bracketSlot": {
+        "home": "1B",
+        "away": "3J"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-14",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-02",
-      "kickoff": null,
+      "dateKey": "2026-07-04",
+      "kickoff": "2026-07-03T18:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "澳大利亚",
+        "flag": "AU",
+        "teamEn": "Australia"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "埃及",
+        "flag": "EG",
+        "teamEn": "Egypt"
       },
       "odds": {
         "result": {
@@ -3784,24 +3952,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 88,
+      "bracketSlot": {
+        "home": "2D",
+        "away": "2G"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-15",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-03",
-      "kickoff": null,
+      "dateKey": "2026-07-04",
+      "kickoff": "2026-07-03T22:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "阿根廷",
+        "flag": "AR",
+        "teamEn": "Argentina"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "佛得角",
+        "flag": "CV",
+        "teamEn": "Cape Verde Islands"
       },
       "odds": {
         "result": {
@@ -3814,24 +3994,36 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 86,
+      "bracketSlot": {
+        "home": "1J",
+        "away": "2H"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-16",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 32",
-      "dateKey": "2026-07-03",
-      "kickoff": null,
+      "dateKey": "2026-07-04",
+      "kickoff": "2026-07-04T01:30:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "哥伦比亚",
+        "flag": "CO",
+        "teamEn": "Colombia"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "加纳",
+        "flag": "GH",
+        "teamEn": "Ghana"
       },
       "odds": {
         "result": {
@@ -3844,10 +4036,20 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-knockout-derived",
+      "syncedAt": "2026-06-29T03:35:20.090Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 87,
+      "bracketSlot": {
+        "home": "1K",
+        "away": "3L"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
+        "generatedAt": "2026-06-29T03:35:20.090Z"
+      }
     },
     {
       "id": "wc2026-ko-17",
