@@ -1,13 +1,14 @@
 {
-  "updatedAt": "2026-06-30T04:09:06.786Z",
+  "updatedAt": "2026-06-30T17:06:55.612Z",
   "settlement": {
     "rule": "match.actual 存在即结算;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-06-30T04:09:06.770Z",
+    "generatedAt": "2026-06-30T17:06:55.593Z",
     "graceMinutes": 150,
     "scoring": "赛果榜按胜平负命中率排序;比分榜按具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
       "settled": 76,
-      "pre_match": 12,
+      "in_progress": 1,
+      "pre_match": 11,
       "placeholder": 16
     },
     "pendingResult": [],
