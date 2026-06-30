@@ -26,9 +26,12 @@ assert(html.includes('id="compensation-dismiss"'), 'dismiss button is missing');
 assert(html.includes('id="compensation-reveal"'), 'reveal button is missing');
 assert(html.includes('id="compensation-copy"'), 'copy button is missing');
 assert(html.includes('id="compensation-code-panel"'), 'red packet code panel is missing');
-assert(html.includes('styles.css?v=20260630-compensation-close'), 'stylesheet cache key must change for close-state fix');
-assert(html.includes('app-load-smooth.js?v=20260630-compensation-close'), 'script cache key must change for close-state fix');
+assert(html.includes('styles.css?v=20260630-compensation-disabled'), 'stylesheet cache key must change for disabled popup fix');
+assert(html.includes('app-load-smooth.js?v=20260630-compensation-disabled'), 'script cache key must change for disabled popup fix');
 
+assert(js.includes('const COMPENSATION_MODAL_ENABLED = false;'), 'compensation modal must be disabled without deleting its code');
+assert(js.includes("const COMPENSATION_CAMPAIGN_ID = '20260630-red-packet-claimed';"), 'compensation modal needs a campaign id for future reuse');
+assert(js.includes('`worldcup-ai-arena-compensation-seen:${COMPENSATION_CAMPAIGN_ID}`'), 'seen key must be campaign-scoped for future reuse');
 assert(js.includes("const COMPENSATION_CODE = '菜鸡ai我原谅你了';"), 'red packet code constant is missing');
 assert(js.includes('function initCompensationModal()'), 'compensation modal initializer is missing');
 assert(js.includes('function hasCompensationBeenSeen()'), 'persistent seen check helper is missing');
@@ -50,6 +53,11 @@ assert(handlerBody.includes('closeCompensationModal();'), 'revealed right action
 const initStart = js.indexOf('function initCompensationModal()');
 const initEnd = js.indexOf('function flashDebateButton', initStart);
 const initBody = js.slice(initStart, initEnd);
+assert(initBody.includes('if (!COMPENSATION_MODAL_ENABLED) return;'), 'initializer must honor the disabled modal switch');
+assert(
+  initBody.indexOf('if (!COMPENSATION_MODAL_ENABLED) return;') < initBody.indexOf('if (hasCompensationBeenSeen()) return;'),
+  'disabled modal switch must run before storage checks or event wiring'
+);
 assert(initBody.includes('if (hasCompensationBeenSeen()) return;'), 'initializer must skip users who already saw the modal');
 assert(initBody.indexOf('setCompensationSeen();') > -1, 'initializer must mark the modal seen when it is scheduled');
 assert(

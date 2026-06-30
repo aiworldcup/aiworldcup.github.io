@@ -30,7 +30,9 @@ let roundtableDateFilter = '';
 let roundtableTeamQuery = '';
 const ACTIVE_TRACK = 'open';
 const COMPACT_MATCHES_STORAGE_KEY = 'worldcup-ai-arena-compact-matches';
-const COMPENSATION_STORAGE_KEY = 'worldcup-ai-arena-compensation-seen';
+const COMPENSATION_MODAL_ENABLED = false;
+const COMPENSATION_CAMPAIGN_ID = '20260630-red-packet-claimed';
+const COMPENSATION_STORAGE_KEY = `worldcup-ai-arena-compensation-seen:${COMPENSATION_CAMPAIGN_ID}`;
 const COMPENSATION_CODE = '菜鸡ai我原谅你了';
 const PUBLIC_SITE_URL = 'https://aiworldcup.github.io/';
 
@@ -2620,6 +2622,7 @@ async function copyCompensationCode() {
 function initCompensationModal() {
   const stage = document.getElementById('compensation-stage');
   if (!stage) return;
+  if (!COMPENSATION_MODAL_ENABLED) return;
   if (hasCompensationBeenSeen()) return;
   const code = document.getElementById('compensation-code');
   if (code) code.value = COMPENSATION_CODE;
