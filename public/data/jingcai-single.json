@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T00:23:44.189Z",
+  "updatedAt": "2026-06-30T00:44:06.370Z",
   "status": "verified",
   "sources": [
     {
@@ -764,7 +764,8 @@
       "homeTeam": "巴西",
       "awayTeam": "日本",
       "kickoff": "2026-06-29T17:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:1"
     },
     {
       "matchId": "wc2026-ko-03",
@@ -775,7 +776,8 @@
       "homeTeam": "德国",
       "awayTeam": "巴拉圭",
       "kickoff": "2026-06-29T20:30:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "1:1"
     },
     {
       "matchId": "wc2026-ko-04",
