@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T08:03:40.321Z",
+  "updatedAt": "2026-06-30T02:00:08.771Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -14714,6 +14714,188 @@
           "status": "failed",
           "message": "fetch failed",
           "timestamp": "2026-06-29T08:03:40.321Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-05",
+      "sealedAt": "2026-06-30T02:00:08.771Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;挪威的身体和定位球,科特迪瓦的散装防线扛不住。",
+          "timestamp": "2026-06-30T02:00:13.061Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:平局,比分1-1;Claude漏算边路反击，我给硬框架",
+          "timestamp": "2026-06-30T02:00:24.655Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5别被带偏了，挪威核心中场近四场长传成功率仅31%，这种进攻单一性遇上科特迪瓦这支坐拥主场湿热气候且近期截断数据全欧第一的球队，只能是惨败。结论:主胜,比分2-1；防线压制加主场气候，挪威的阵地进攻就是送死。",
+          "timestamp": "2026-06-30T02:00:27.070Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 湿热气候当buff？这借口我十年前就听过啦！",
+          "timestamp": "2026-06-30T02:00:56.114Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "这借口我十年前就听过啦！",
+          "timestamp": "2026-06-30T02:01:39.327Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 湿热当buff？挪威英超铁腰直接把科特迪瓦中场跑废，客胜1-2。",
+          "timestamp": "2026-06-30T02:01:52.519Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 你们想简单了，湿热克长传这逻辑成立，但科特迪瓦换帅后高位逼抢体能本就是隐患，主场气候是把双刃剑。结论：客胜，比分1-2；挪威定位球才是真变量，别光盯气候。",
+          "timestamp": "2026-06-30T02:01:58.050Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 补一刀：你的定位球变量在本届比赛用球下弧线发飘，直接废了三成威力。更致命的盲点是：挪威那条英超铁腰的转身速度，会被科特迪瓦下半场换上的边路快马用折返跑活活拉爆。",
+          "timestamp": "2026-06-30T02:02:06.688Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 拉爆算轻的，北欧装甲在湿热泥潭里就是废铁，主胜3-1，快马生撕铁腰！",
+          "timestamp": "2026-06-30T02:02:28.246Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 你可太敢吹了！科特迪瓦后防漏人是祖传老毛病，最多2-1小胜，哪来的3-1啊？",
+          "timestamp": "2026-06-30T02:02:43.973Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 11,
+          "round": 2,
+          "text": "但挪威定位球是隐形杀手，科特迪瓦后防扛不住，结论客胜，比分0-1。",
+          "timestamp": "2026-06-30T02:03:47.841Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "@GLM-5.1 3-1吹过头，铁腰下半场直接废。结论:客胜,比分1-2;湿热泥潭收割北欧装甲",
+          "timestamp": "2026-06-30T02:04:02.316Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "@Grok 4.3 别被带偏，铁腰下半场是被折返跑生撕两肋，不是只废。结论:主胜,比分2-1;理由:快马拉爆转身，定位球发飘废三成。",
+          "timestamp": "2026-06-30T02:04:11.224Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 祖传漏人认了，结论:主胜,比分2-1;理由:漏一个但快马照样拉爆铁腰",
+          "timestamp": "2026-06-30T02:04:26.977Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你可太抬举挪威那定位球了！结论：主胜，比分2-1；理由：非洲快马冲爆慢半拍的北欧防线。",
+          "timestamp": "2026-06-30T02:04:42.293Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 16,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 快马拉爆铁腰是半场的事，下半场湿热一卡直接成充电宝！结论:客胜,比分1-2;理由:北欧装甲闷声发大财，定位球一砸一个准。",
+          "timestamp": "2026-06-30T02:05:38.630Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-30T02:00:52.075Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-30T02:05:07.295Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-06-30T02:05:32.298Z",
           "retry": true
         }
       ]
