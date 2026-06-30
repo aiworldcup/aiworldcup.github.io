@@ -3572,7 +3572,10 @@
         "syncedAt": "2026-06-29T07:39:55.779Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "draw",
+        "score": "1-1"
+      },
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
@@ -3587,6 +3590,12 @@
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
         "generatedAt": "2026-06-29T03:35:20.090Z"
+      },
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "syncedAt": "2026-06-30T04:09:06.754Z"
       }
     },
     {

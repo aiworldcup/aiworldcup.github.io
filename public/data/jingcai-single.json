@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T03:02:38.608Z",
+  "updatedAt": "2026-06-30T04:06:25.622Z",
   "status": "verified",
   "sources": [
     {
@@ -788,7 +788,8 @@
       "homeTeam": "荷兰",
       "awayTeam": "摩洛哥",
       "kickoff": "2026-06-30T01:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "1:1"
     },
     {
       "matchId": "wc2026-ko-05",
