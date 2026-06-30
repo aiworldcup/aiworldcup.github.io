@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T19:04:48.116Z",
-  "status": "verified",
+  "updatedAt": "2026-06-30T20:59:32.894Z",
+  "status": "partial",
   "source": {
     "label": "ESPN public scoreboard",
     "href": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
@@ -19,7 +19,14 @@
     "20260630",
     "20260701"
   ],
-  "errors": [],
+  "errors": [
+    "20260622: fetch failed",
+    "20260623: fetch failed",
+    "20260624: fetch failed",
+    "20260625: fetch failed",
+    "20260626: fetch failed",
+    "20260627: fetch failed"
+  ],
   "matches": [
     {
       "matchId": "fixture-1489380",
@@ -873,7 +880,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760486",
-      "syncedAt": "2026-06-30T19:04:46.353Z"
+      "syncedAt": "2026-06-30T20:59:29.335Z"
     },
     {
       "matchId": "wc2026-ko-02",
@@ -887,7 +894,7 @@
       "result": "home",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760487",
-      "syncedAt": "2026-06-30T19:04:46.947Z"
+      "syncedAt": "2026-06-30T20:59:29.902Z"
     },
     {
       "matchId": "wc2026-ko-03",
@@ -901,7 +908,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760489",
-      "syncedAt": "2026-06-30T19:04:46.948Z"
+      "syncedAt": "2026-06-30T20:59:29.903Z"
     },
     {
       "matchId": "wc2026-ko-04",
@@ -915,7 +922,7 @@
       "result": "draw",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760488",
-      "syncedAt": "2026-06-30T19:04:46.948Z"
+      "syncedAt": "2026-06-30T20:59:29.903Z"
     },
     {
       "matchId": "wc2026-ko-05",
@@ -929,7 +936,7 @@
       "result": "away",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760490",
-      "syncedAt": "2026-06-30T19:04:47.537Z"
+      "syncedAt": "2026-06-30T20:59:30.472Z"
     }
   ]
 }
