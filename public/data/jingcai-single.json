@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T00:44:06.370Z",
+  "updatedAt": "2026-06-30T01:14:05.681Z",
   "status": "verified",
   "sources": [
     {
@@ -787,7 +787,8 @@
       "league": "世界杯",
       "homeTeam": "荷兰",
       "awayTeam": "摩洛哥",
-      "kickoff": "2026-06-30T01:00:00+00:00"
+      "kickoff": "2026-06-30T01:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
