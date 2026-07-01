@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-01T03:05:52.139Z",
+  "updatedAt": "2026-07-01T04:27:51.989Z",
   "status": "verified",
   "sources": [
     {
@@ -824,7 +824,8 @@
       "homeTeam": "墨西哥",
       "awayTeam": "厄瓜多尔",
       "kickoff": "2026-07-01T01:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:0"
     },
     {
       "matchId": "wc2026-ko-09",
