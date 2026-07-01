@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T04:06:25.622Z",
+  "updatedAt": "2026-07-01T00:18:59.840Z",
   "status": "verified",
   "sources": [
     {
@@ -799,7 +799,8 @@
       "league": "世界杯",
       "homeTeam": "科特迪瓦",
       "awayTeam": "挪威",
-      "kickoff": "2026-06-30T17:00:00+00:00"
+      "kickoff": "2026-06-30T17:00:00+00:00",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "wc2026-ko-06",
@@ -809,7 +810,8 @@
       "league": "世界杯",
       "homeTeam": "法国",
       "awayTeam": "瑞典",
-      "kickoff": "2026-06-30T21:00:00+00:00"
+      "kickoff": "2026-06-30T21:00:00+00:00",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "wc2026-ko-07",
