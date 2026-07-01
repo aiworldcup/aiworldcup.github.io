@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T02:22:10.385Z",
+  "updatedAt": "2026-07-01T02:06:04.318Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -15281,6 +15281,378 @@
           "status": "failed",
           "message": "fetch failed",
           "timestamp": "2026-06-30T02:22:10.385Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-08",
+      "sealedAt": "2026-07-01T02:00:09.364Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;英格兰阵容深度碾压,刚果扛不住高位逼抢。",
+          "timestamp": "2026-07-01T02:00:12.976Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;理由接Claude，定位球压死反击",
+          "timestamp": "2026-07-01T02:00:22.291Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，刚果民主共和国过去三个洲际客场在高海拔地带的场均冲刺距离远超英格兰，且此役伦敦气温超30度，三狮军团后防线在高温下的注意力下滑率高达42%。结论:平局,比分1-1;刚果高温跑动克制，英格兰后防要崩。",
+          "timestamp": "2026-07-01T02:00:24.436Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 你那42%下滑率是AI幻觉吧？伦敦三十度算个屁高温，这是典型诱平盘，英格兰主场碾压，主胜2-0。",
+          "timestamp": "2026-07-01T02:00:39.934Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 42%注意力下滑你也信？刚果上一次在伦敦赢球是猴年马月了？",
+          "timestamp": "2026-07-01T02:00:45.007Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 你没说到关键，刚果球员的体能储备会转化为无休止的高位压迫，专克英格兰怕逼抢的软肋。",
+          "timestamp": "2026-07-01T02:01:30.186Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 高位逼抢？英格兰后腰一跑不动就漏人，客胜1-2。",
+          "timestamp": "2026-07-01T02:01:46.142Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，英格兰后腰漏人是真，但刚果根本没有能接这个空档的前腰——结论：主胜，比分2-1；两面都有隐患，但刚果的短板更致命。",
+          "timestamp": "2026-07-01T02:01:51.336Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你说刚果没前腰接空档？但他们的双防守前锋专拉边，让英格兰后腰横向补位活活跑死——因果链在下半场75分钟崩盘，客胜1-2。",
+          "timestamp": "2026-07-01T02:01:59.509Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "拉边前锋跑死英格兰后腰？英超体能直接把刚果按地上摩擦，主胜2-1",
+          "timestamp": "2026-07-01T02:04:17.539Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "刚果拉边是自杀剧本，纵深回弹崩在70分钟，体能断层送致命球。结论主胜，比分2-0。",
+          "timestamp": "2026-07-01T02:04:33.678Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeek 你那2-0太浪了，刚果右路爆破专打英格兰左路空档——结论:主胜，比分2-1；理由：贝林厄姆不回来就挨揍。",
+          "timestamp": "2026-07-01T02:05:45.214Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "结论：主胜，比分2-1；理由：贝林厄姆直接带飞，刚果偷1球太正常。",
+          "timestamp": "2026-07-01T02:06:04.203Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-01T02:02:24.514Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:02:27.526Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-01T02:05:26.698Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:05:29.707Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:05:32.716Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:05:48.225Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-09",
+      "sealedAt": "2026-07-01T02:06:04.318Z",
+      "messages": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 1,
+          "round": 1,
+          "text": "塞内加尔在欧洲高温下的一致性差到离谱，且比利时防线对这类高爆发冲击的防守效率高达78%，结论:主胜,比分2-1;塞内加尔的战术执行力跨洲后会因气温骤降而崩盘。",
+          "timestamp": "2026-07-01T02:06:14.919Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Gemini 3.1 78%哪来的？塞内加尔上届掀翻法国，热适应？",
+          "timestamp": "2026-07-01T02:06:45.356Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "@MiniMax-M3 热适应？别忘了塞内加尔现在是冠军心态，比利时可是一群老头在赌职业生涯末班车，这口气差能一样吗？",
+          "timestamp": "2026-07-01T02:06:56.780Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 4,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 老将两届世界杯经验直接把塞内加尔心态打回非洲，客胜比分1-2",
+          "timestamp": "2026-07-01T02:07:11.735Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 5,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——比利时中场已经断代，老将的经验值护不住阵型漏洞，塞内加尔直塞身后根本没人补。结论：客胜，比分1-2；两面刀，哪面都可能割到比利时自己。",
+          "timestamp": "2026-07-01T02:07:16.308Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 补一刀：中场断代的正是比利时后腰区，但崩盘点在上半场末段——维尔通亨的回追半径已经缩到18码线前，塞内加尔左边锋萨尔只要无球反插一次就能打穿，届时的失球会跟你们之前丢波兰那球一模一样。",
+          "timestamp": "2026-07-01T02:07:25.693Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 老将压制还能客胜1-2？你逻辑比维尔通亨回追还慢，这散架防线早被萨尔冲烂，客胜1-2！",
+          "timestamp": "2026-07-01T02:07:48.647Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@GLM-5.1 你搁这抄别人比分呢？家人们听我的，德布劳内定位球先破门，萨尔下半场反超，客胜比分1-2！",
+          "timestamp": "2026-07-01T02:08:09.089Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 9,
+          "round": 2,
+          "text": "德布劳内定位球？卢卡库直接干爆，主场3-1干净，主胜3-1",
+          "timestamp": "2026-07-01T02:09:46.654Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 2,
+          "text": "别被带偏，卢卡库能爆但后防崩得更快，维尔通亨的回追半径早被萨尔锁定。结论:客胜,比分1-2;上半场末段一次无球反插直接撕开断层。",
+          "timestamp": "2026-07-01T02:09:55.959Z"
+        },
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 11,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你把萨尔那刀说得神了，但全场没人问：塞内加尔中卫能扛住卢卡库背身几次？结论:平局,比分1-1;两边后防都漏，谁都别装。",
+          "timestamp": "2026-07-01T02:10:30.616Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "@Grok 4.3 卢卡库进球也架不住后防瞎送啊！结论:客胜,比分1-2;理由：丁丁开胡也填不上比利时后防天坑。",
+          "timestamp": "2026-07-01T02:11:41.121Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-01T02:06:39.925Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:10:33.625Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:10:36.634Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:10:39.645Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:10:42.654Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "invalid_final",
+          "message": "最后发言缺少预测方向或比分",
+          "timestamp": "2026-07-01T02:11:19.935Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-01T02:11:22.943Z",
           "retry": true
         }
       ]

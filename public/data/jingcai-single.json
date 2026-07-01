@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-01T00:29:11.532Z",
+  "updatedAt": "2026-07-01T02:11:34.206Z",
   "status": "verified",
   "sources": [
     {
@@ -823,7 +823,8 @@
       "league": "世界杯",
       "homeTeam": "墨西哥",
       "awayTeam": "厄瓜多尔",
-      "kickoff": "2026-07-01T01:00:00+00:00"
+      "kickoff": "2026-07-01T01:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
