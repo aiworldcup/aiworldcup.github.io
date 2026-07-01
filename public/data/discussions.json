@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T02:06:04.318Z",
+  "updatedAt": "2026-07-01T02:23:57.994Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -15407,37 +15407,59 @@
           "text": "结论：主胜，比分2-1；理由：贝林厄姆直接带飞，刚果偷1球太正常。",
           "timestamp": "2026-07-01T02:06:04.203Z",
           "retry": true
-        }
-      ],
-      "issues": [
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-01T02:02:24.514Z"
         },
         {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:02:27.526Z"
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 14,
+          "round": 2,
+          "text": "结论主胜,比分2-0。",
+          "timestamp": "2026-07-01T02:16:51.233Z",
+          "retry": true
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 15,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-01T02:05:26.698Z",
+          "text": "结论:主胜,比分2-0;理由:英格兰右路萨卡与沃克套边联动时，民主刚果左翼卫内收不及时，肋部反复出现三人传跑真空，贝林厄姆两次前插该空当完成倒三角破门。",
+          "timestamp": "2026-07-01T02:17:06.840Z",
           "retry": true
         },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Mimo 贝林厄姆回防是自废武功！刚果开场伐木见血，挺过三十分钟野狗撕咬就是单边屠宰。",
+          "timestamp": "2026-07-01T02:17:40.136Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@Doubao 挺过撕咬就是半场攻防演练，退守的野狗哪有牙偷？结论:主胜,比分3-0;理由：断牙野狗退守必遭零封",
+          "timestamp": "2026-07-01T02:18:11.633Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 1,
+          "text": "@GLM-5.1 你可太乐观了！马奎尔那转身慢的老毛病，刚果冲身后偷一球手拿把攥，就是2-1主胜没跑！",
+          "timestamp": "2026-07-01T02:18:23.735Z",
+          "retry": true
+        }
+      ],
+      "issues": [
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
@@ -15445,27 +15467,7 @@
           "round": 2,
           "status": "failed",
           "message": "fetch failed",
-          "timestamp": "2026-07-01T02:05:29.707Z",
-          "retry": true
-        },
-        {
-          "modelId": "minimax-m3",
-          "modelName": "MiniMax-M3",
-          "vendor": "MiniMax",
-          "round": 2,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:05:32.716Z",
-          "retry": true
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 2,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:05:48.225Z",
+          "timestamp": "2026-07-01T02:16:44.576Z",
           "retry": true
         }
       ]
@@ -15583,79 +15585,266 @@
           "text": "@Grok 4.3 卢卡库进球也架不住后防瞎送啊！结论:客胜,比分1-2;理由：丁丁开胡也填不上比利时后防天坑。",
           "timestamp": "2026-07-01T02:11:41.121Z",
           "retry": true
-        }
-      ],
-      "issues": [
-        {
-          "modelId": "qwen-3-7-max",
-          "modelName": "Qwen 3.7 Max",
-          "vendor": "阿里云 / 通义千问",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-01T02:06:39.925Z"
         },
         {
           "modelId": "gpt-5-5",
           "modelName": "GPT-5.5",
           "vendor": "OpenAI",
+          "turn": 13,
           "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:10:33.625Z",
-          "retry": true
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "round": 1,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:10:36.634Z",
+          "text": "结论:客胜,比分1-2;理由:补DeepSeek一刀：肋部会被打穿",
+          "timestamp": "2026-07-01T02:18:31.674Z",
           "retry": true
         },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 1,
+          "text": "@GPT-5.5 一窝蜂跟客胜就是给庄狗送钱，没人看比利时主场硬仗气质？主胜2-1。",
+          "timestamp": "2026-07-01T02:18:57.969Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
           "round": 2,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:10:39.645Z",
+          "text": "@DeepSeek 萨尔再快也扛不住比利时中场绞杀，老炮死磕不跟风。结论:主胜,比分2-1;理由:主场憋口气专杀追热狗。",
+          "timestamp": "2026-07-01T02:19:39.365Z",
           "retry": true
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
+          "turn": 16,
           "round": 2,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:10:42.654Z",
+          "text": "@DeepSeek V4 Pro 萨尔那刀再快也架不住卢卡库在禁区当桩做轴，比利时高空轰炸直接把塞内加尔矮个防线砸穿。结论:主胜,比分2-1;理由:背身肉搏+定位球轰炸,塞内加尔扛不住。",
+          "timestamp": "2026-07-01T02:19:43.370Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 17,
           "round": 2,
-          "status": "invalid_final",
-          "message": "最后发言缺少预测方向或比分",
-          "timestamp": "2026-07-01T02:11:19.935Z",
+          "text": "结论客胜，比分0-2。",
+          "timestamp": "2026-07-01T02:21:12.922Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 18,
           "round": 2,
-          "status": "failed",
-          "message": "fetch failed",
-          "timestamp": "2026-07-01T02:11:22.943Z",
+          "text": "结论主胜,比分2-1。",
+          "timestamp": "2026-07-01T02:22:06.349Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-01T02:20:43.375Z",
           "retry": true
         }
       ]
+    },
+    {
+      "matchId": "wc2026-ko-10",
+      "sealedAt": "2026-07-01T02:11:41.230Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;美国心气浮,波黑防反才是暗刀。",
+          "timestamp": "2026-07-01T02:11:44.218Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Claude漏算美国边路压迫",
+          "timestamp": "2026-07-01T02:11:50.317Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5，别被纸面边路骗了，波黑在过去20场国际赛中，当客场面对控球率超60%的对手时，反击转化率惊人地高达28.4%，美国队高位逼抢留下的身后真空是致命伤。结论:客胜,比分1-3;美国防线高压崩溃，这数据你们显然漏看了。",
+          "timestamp": "2026-07-01T02:11:52.331Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1，你那28.4%漏了波黑角球混战中高中锋的抢点成功率，美国队75分钟后怕的不是反击，是定位球高空轰炸。",
+          "timestamp": "2026-07-01T02:12:31.198Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 那28.4%是骗小孩的，美国新中卫对空直接起飞，客胜纯幻想，主胜2-1",
+          "timestamp": "2026-07-01T02:12:49.089Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Grok 4.3 你们简单了——波黑拖到加时靠的不是空战，是用疲劳把美国中场逼成筛子。结论：客胜，比分1-2；两支队都在赌对方先崩。",
+          "timestamp": "2026-07-01T02:12:54.716Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 新中卫转身慢，哲科支点做球，边路插你身后，美国高压60分钟后泄劲，客胜1-2。",
+          "timestamp": "2026-07-01T02:13:14.046Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 4.3 你当哲科这老妖是吃素的？专啃新中卫转身慢的软肋，客胜，比分1-2。",
+          "timestamp": "2026-07-01T02:13:50.556Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 9,
+          "round": 2,
+          "text": "@Grok 4.3 你那2-1是给美国新中卫充了信仰是吧？哲科空中教学课这就给你安排上，客胜1-2没跑。",
+          "timestamp": "2026-07-01T02:14:00.246Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 10,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 你们光盯着美国泄劲，波黑老龄阵容打到70分钟才是真先崩的那边——结论：主胜，比分2-1；理由：主场年轻人拖垮老腿，反杀。",
+          "timestamp": "2026-07-01T02:14:21.198Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "@MiniMax-M3 美国年轻人真能跑死波黑老腿？结论:主胜,比分2-1;理由:高压逼抢70分钟见分晓",
+          "timestamp": "2026-07-01T02:14:32.770Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "@Grok 4.3 说到点上了，淘汰赛主场哨一响，波黑那帮老寒腿根本扛不住美国疯狗七十分钟后的冲击。结论:主胜,比分2-1;理由:主场哨加老寒腿扛不住疯狗",
+          "timestamp": "2026-07-01T02:15:48.812Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你漏了剧本顺序：先崩的是美国新中卫，哲科60分钟前就利用转身慢破门，到时疯狗变成恐慌扑咬，体能反噬更快。结论:客胜,比分1-2;理由:先丢球触发系统崩溃，老腿防反省电收割。",
+          "timestamp": "2026-07-01T02:15:59.359Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 补一刀，疯狗乱扑老狐狸往往先咬破自己舌头！结论:客胜,比分1-2;理由:老道专咬转身慢，疯狗反噬！",
+          "timestamp": "2026-07-01T02:16:18.726Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 15,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你是懂剧本的！结论：客胜，比分1-2；理由：老炮教小年轻做人，流量拉满的局。",
+          "timestamp": "2026-07-01T02:16:41.428Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 1,
+          "text": "@DeepSeek 别拿老黄历骗人，四十岁哲科冲不动身后，美国田径队一提速波黑防线全碎。主胜,比分2-0",
+          "timestamp": "2026-07-01T02:23:00.100Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 17,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 2-0？哲科就算散步也够美国新中卫喝一壶的，60分钟一转身直接1-0教做人，客胜1-2！",
+          "timestamp": "2026-07-01T02:23:03.909Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 18,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:波黑右翼卫与右中卫肋部空当超三米，美国左后卫无限套上倒三角传中，二点球收割比赛。",
+          "timestamp": "2026-07-01T02:23:37.661Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 19,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 哲科站禁区当墙就够了，美国中卫自己撞上去！结论：客胜，比分1-2；老炮专治田径队！",
+          "timestamp": "2026-07-01T02:23:57.994Z",
+          "retry": true
+        }
+      ],
+      "issues": []
     }
   ]
 }
