@@ -60,7 +60,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:49.564Z",
-      "preservedAt": "2026-06-14T09:54:22.168Z"
+      "preservedAt": "2026-06-14T09:54:22.168Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1538999",
@@ -110,7 +114,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:50.184Z",
-      "preservedAt": "2026-06-14T09:54:22.840Z"
+      "preservedAt": "2026-06-14T09:54:22.840Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1539000",
@@ -161,7 +169,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:50.569Z",
-      "preservedAt": "2026-06-14T09:54:23.276Z"
+      "preservedAt": "2026-06-14T09:54:23.276Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1489370",
@@ -212,7 +224,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:50.944Z",
-      "preservedAt": "2026-06-14T09:54:23.989Z"
+      "preservedAt": "2026-06-14T09:54:23.989Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1489373",
@@ -265,7 +281,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:51.327Z",
-      "preservedAt": "2026-06-14T09:54:24.861Z"
+      "preservedAt": "2026-06-14T09:54:24.861Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1489371",
@@ -376,7 +396,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:52.973Z",
-      "preservedAt": "2026-06-14T09:54:26.607Z"
+      "preservedAt": "2026-06-14T09:54:26.607Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1539001",
@@ -835,7 +859,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:58.767Z",
-      "preservedAt": "2026-06-14T09:54:32.507Z"
+      "preservedAt": "2026-06-14T09:54:32.507Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1489378",
@@ -1063,7 +1091,11 @@
       "predictions": [],
       "dataSource": "api-sports",
       "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.163Z"
+      "preservedAt": "2026-06-14T09:54:33.163Z",
+      "actualSource": {
+        "provider": "legacy-actual",
+        "scoreScope": "regularTime"
+      }
     },
     {
       "id": "fixture-1489382",
