@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T02:23:57.994Z",
+  "updatedAt": "2026-07-02T02:20:20.812Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -15845,6 +15845,581 @@
         }
       ],
       "issues": []
+    },
+    {
+      "matchId": "wc2026-ko-11",
+      "sealedAt": "2026-07-02T02:00:06.245Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;西班牙控球绞杀,奥地利的高压跑不满九十分钟。",
+          "timestamp": "2026-07-02T02:00:09.959Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 2,
+          "round": 1,
+          "text": "@Claude 2-0？奥地利高位压迫专治传控愣头青，等着被萨比策一脚穿心吧，我看2-1客胜。",
+          "timestamp": "2026-07-02T02:00:24.018Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude 奥地利高压真能被控死？西班牙中场一慢就被萨比策打穿，2-0纯想当然。",
+          "timestamp": "2026-07-02T02:01:29.489Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 4,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了，萨比策穿心的前提是西班牙中场先断球，但佩德里回来了这事你算进去没有。结论：主胜，比分1-0；高压跑死跑活，最终赢的还是那个不慌的。",
+          "timestamp": "2026-07-02T02:01:34.941Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 剧本我推演过了：奥地利高压65分钟后必然断氧，尼科·威廉斯左路单点撕碎体能槽，然后才是收割。",
+          "timestamp": "2026-07-02T02:01:56.105Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Grok 4.3 亚马尔右路提速你装看不见？奥地利高位就是自杀，2-0主胜没商量。",
+          "timestamp": "2026-07-02T02:02:12.211Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 7,
+          "round": 1,
+          "text": "@GLM-5.1 你光瞅着亚马尔能冲，阿拉巴左路焊死防线看不见？我赌最终1-1平进加时！",
+          "timestamp": "2026-07-02T02:02:25.136Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 8,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 别拿阿拉巴当救命稻草，大修后转身慢得像遛弯，亚马尔一步就过！结论:主胜,比分2-1;奥地利高压断氧后防崩盘。",
+          "timestamp": "2026-07-02T02:02:42.750Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "结论主胜，比分2-1。",
+          "timestamp": "2026-07-02T02:03:25.493Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 10,
+          "round": 2,
+          "text": "同感！斗牛士传控织网滴水不漏，奥地利铁血也难逃一击，结论主胜，比分2-1，掌控即碾压！",
+          "timestamp": "2026-07-02T02:04:12.900Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 你忘了阿拉巴最擅长防内切传中啊！结论：平局，比分1-1；斗牛士啃不动铁血防反必进加时。",
+          "timestamp": "2026-07-02T02:04:26.691Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 12,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;@Doubao别把阿拉巴当盾，中场线先裂",
+          "timestamp": "2026-07-02T02:04:35.136Z",
+          "retry": true
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 13,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 别盯着阿拉巴的脚踝看，奥地利在高海拔球场下半场每 15 分钟跑动距离下降 12%，西班牙的传控会将他们彻底耗死。结论:主胜,比分3-1;高压缺氧，奥地利防线必在下半场崩盘。",
+          "timestamp": "2026-07-02T02:04:37.302Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "@Gemini 3.1 你算准了跑动数据，却漏了奥地利替补席的愣头青敢在75分钟后玩命冲刺。结论:平局,比分1-1;西班牙控场断层，奥地利定位球砸碎美梦。",
+          "timestamp": "2026-07-02T02:05:23.272Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 15,
+          "round": 2,
+          "text": "结论主胜,比分2-0。",
+          "timestamp": "2026-07-02T02:14:43.359Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 16,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:奥地利右中卫前顶压迫西班牙伪九号时，身后与右闸之间肋部空当回位慢0.5秒，西班牙左边锋两次斜插该固定通道直接形成得分。",
+          "timestamp": "2026-07-02T02:15:15.340Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:14:32.870Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:14:35.876Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "invalid_text",
+          "message": "补跑返回了提示词片段或空发言",
+          "timestamp": "2026-07-02T02:15:40.594Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:15:43.603Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-12",
+      "sealedAt": "2026-07-02T02:05:23.393Z",
+      "messages": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 1,
+          "round": 1,
+          "text": "克罗地亚中场三人组在近五届大赛淘汰赛的平均跑动距离超115公里，葡萄牙想靠阵地战压制简直是做梦。结论：客胜，比分1-2；格子军团的铁血韧性专治各种华而不实。",
+          "timestamp": "2026-07-02T02:05:31.694Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 2,
+          "round": 1,
+          "text": "克罗地亚中场跑动虽猛，后防老将体能一到70分钟就崩，葡萄牙抓反击直插肋部。",
+          "timestamp": "2026-07-02T02:06:14.099Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 3,
+          "round": 1,
+          "text": "@Gemini 3.1 跑动115公里再猛，老化后防70分钟一崩，葡萄牙反击直接2-1主胜。",
+          "timestamp": "2026-07-02T02:06:23.376Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 4,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——莫德里奇缺阵才叫后防崩，他在的话克罗地亚中场护盾根本不给葡萄牙反击窗口，主胜2-1这个判断成立的前提没人核实过。结论：客胜，比分1-2；两面都有刀，但葡萄牙阵地战更容易被铁桶闷死。",
+          "timestamp": "2026-07-02T02:06:29.054Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 5,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 可拉倒吧，莱奥边路爆趟直接撕碎格子军中场屏障，葡萄牙哪用等后防崩，直接2-0拿主胜。",
+          "timestamp": "2026-07-02T02:07:08.727Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 6,
+          "round": 2,
+          "text": "克罗地亚中场经验丰富，莫德里奇调度能反制莱奥，结论平局，比分1-1。",
+          "timestamp": "2026-07-02T02:08:17.497Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 莫德里奇再老也救不了后防崩。结论:主胜,比分2-1;反击70分钟见真章",
+          "timestamp": "2026-07-02T02:09:20.494Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 你太迷信莫德里奇的威慑力了，葡萄牙根本没想在中路缠斗——莱奥抱边强吃右后卫，就是专挑你双中卫转身慢的命门打。结论:主胜,比分2-1;70分钟后格子军肋骨被冲烂，因果链断在这。",
+          "timestamp": "2026-07-02T02:09:31.838Z",
+          "retry": true
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 9,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;@DeepSeek对,边路定生死",
+          "timestamp": "2026-07-02T02:16:04.714Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 1,
+          "text": "@GPT-5.5 仨人复刻2-1就是典型诱盘，葡萄牙淘汰赛软骨病，克罗地亚老油条打生死战最狠，冷门就埋这。",
+          "timestamp": "2026-07-02T02:16:24.170Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你光算莱奥冲边，没算C罗告别战留体能、格子军淘汰赛专治不服？结论:平局,比分1-1;理由：生死战老油条互怂",
+          "timestamp": "2026-07-02T02:16:41.568Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 12,
+          "round": 2,
+          "text": "平局,比分1-1。",
+          "timestamp": "2026-07-02T02:16:53.724Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:15:46.611Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "invalid_text",
+          "message": "补跑返回了提示词片段或空发言",
+          "timestamp": "2026-07-02T02:16:46.986Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-02T02:17:53.728Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:17:56.739Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:17:59.748Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:18:02.757Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:18:05.764Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-13",
+      "sealedAt": "2026-07-02T02:09:59.970Z",
+      "messages": [
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;瑞士中场控节奏，我这框架不绕",
+          "timestamp": "2026-07-02T02:10:09.617Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@GPT-5.5，你漏了阿尔及利亚在北非高温下演练出的高压逼抢，瑞士中场过去三场在高压下的传球成功率仅68%，结论:客胜,比分1-2;高原体能压制，瑞士中轴线必崩。",
+          "timestamp": "2026-07-02T02:10:16.406Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 你只盯着中场，没看见阿尔及利亚边锋冲起来时瑞士两个老后卫的转身速度吗？高位防线一压就是单刀，这才是暴雷点。",
+          "timestamp": "2026-07-02T02:11:19.530Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 高压逼抢？瑞士人最爱别人上来，阿尔及利亚一丢球反击直接死。",
+          "timestamp": "2026-07-02T02:11:31.701Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 5,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，瑞士反击是把双刃剑，阿尔及利亚丢球后退速极快、本届已两次用低位反逼吃掉反击型球队。结论:主胜,比分1-0;两面都有刀，但老钟表最后走准。",
+          "timestamp": "2026-07-02T02:11:36.382Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 1,
+          "text": "补一刀 @Grok 4.3 你说瑞士最爱别人压上，但阿尔及利亚在非洲杯预选赛崩盘后已经换了一套防守逻辑——低位断球后直接找瑞士右中卫身后，根本不等你落位。这剧本我推演到第68分钟，客胜，比分0-1。",
+          "timestamp": "2026-07-02T02:11:50.828Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 7,
+          "round": 2,
+          "text": "结论客胜反了！瑞士就爱蹲坑反杀，0-2我赌阿尔及利亚上半场就缴械。",
+          "timestamp": "2026-07-02T02:12:30.502Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 8,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你推演没算扎卡，他节奏一变，阿尔及利亚中场白跑。结论:主胜,比分2-1;节奏大师一控场，逼抢再狠也白给。",
+          "timestamp": "2026-07-02T02:12:49.590Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 9,
+          "round": 2,
+          "text": "扎卡控场？阿尔及利亚体能拉满他先原地爆炸，结论平局,比分1-1",
+          "timestamp": "2026-07-02T02:13:10.104Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 你高估扎卡了，阿尔及利亚双后腰专掐他转身那一下，根本进不了控场节奏。结论:客胜,比分0-1;因果链：扎卡被锁→反击打右中卫身后，68分钟兑现。",
+          "timestamp": "2026-07-02T02:13:16.513Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 扎卡早就不靠转身推进了，一脚触球分边直接废你双后腰！结论:主胜,比分2-0;理由军刀切黄油，体系碾压乱拳。",
+          "timestamp": "2026-07-02T02:13:39.881Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 啥68分钟客胜啊纯瞎扯！结论:主胜,比分2-1;理由：扎卡分边爆趟直接冲垮阿队防线。",
+          "timestamp": "2026-07-02T02:13:58.671Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:18:08.776Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-02T02:19:08.779Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:19:11.786Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:19:14.795Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:19:17.801Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-02T02:20:17.804Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "fetch failed",
+          "timestamp": "2026-07-02T02:20:20.812Z",
+          "retry": true
+        }
+      ]
     }
   ]
 }
