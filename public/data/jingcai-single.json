@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-01T04:27:51.989Z",
+  "updatedAt": "2026-07-02T00:11:18.706Z",
   "status": "verified",
   "sources": [
     {
@@ -828,6 +828,17 @@
       "officialScore": "2:0"
     },
     {
+      "matchId": "wc2026-ko-08",
+      "jingcaiMatchId": "2040352",
+      "matchNum": "周三080",
+      "matchDate": "2026-07-02",
+      "league": "世界杯",
+      "homeTeam": "英格兰",
+      "awayTeam": "民主刚果",
+      "kickoff": "2026-07-01T16:00:00+00:00",
+      "sourceScope": "single-fixed"
+    },
+    {
       "matchId": "wc2026-ko-09",
       "jingcaiMatchId": "2040353",
       "matchNum": "周三081",
@@ -835,7 +846,8 @@
       "league": "世界杯",
       "homeTeam": "比利时",
       "awayTeam": "塞内加尔",
-      "kickoff": "2026-07-01T20:00:00+00:00"
+      "kickoff": "2026-07-01T20:00:00+00:00",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "wc2026-ko-10",
@@ -845,7 +857,8 @@
       "league": "世界杯",
       "homeTeam": "美国",
       "awayTeam": "波黑",
-      "kickoff": "2026-07-02T00:00:00+00:00"
+      "kickoff": "2026-07-02T00:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
