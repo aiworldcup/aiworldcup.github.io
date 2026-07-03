@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T00:19:38.244Z",
+  "updatedAt": "2026-07-03T00:29:51.108Z",
   "status": "verified",
   "sources": [
     {
@@ -881,7 +881,9 @@
       "homeTeam": "西班牙",
       "awayTeam": "奥地利",
       "kickoff": "2026-07-02T19:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "3:0",
+      "scoreScope": "regularTime"
     },
     {
       "matchId": "wc2026-ko-12",
