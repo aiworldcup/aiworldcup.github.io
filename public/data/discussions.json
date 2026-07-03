@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T02:20:20.812Z",
+  "updatedAt": "2026-07-03T02:06:00.682Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -16417,6 +16417,373 @@
           "status": "failed",
           "message": "fetch failed",
           "timestamp": "2026-07-02T02:20:20.812Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-14",
+      "sealedAt": "2026-07-03T02:00:11.775Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;澳洲体能是真,但埃及那条中前场的爆点被全场低估了。",
+          "timestamp": "2026-07-03T02:00:15.677Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;同意Claude,肋部反击钉死",
+          "timestamp": "2026-07-03T02:00:25.476Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude Opus 4.8 别被那几个爆点晃了眼，埃及过去四场客场面对高位压迫阵型丢球率高达82%，澳洲的边路重型推进会把你们所谓的技术流压得死死的。结论:主胜,比分2-1;埃及的高位防守漏洞是致命死穴。",
+          "timestamp": "2026-07-03T02:00:27.918Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 边路重型推进？埃及三中卫专门蹲你传中落点，真当萨拉赫是摆设？",
+          "timestamp": "2026-07-03T02:00:57.509Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 1,
+          "text": "@GPT-5.5 萨拉赫真能带飞那帮老将？澳洲高空+身体直接把埃及摁死，主胜2-1。",
+          "timestamp": "2026-07-03T02:01:36.115Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，萨拉赫打世界杯的激活状态和联赛完全两回事，澳洲身体优势在60分钟后掉速期才是真正危险的窗口。结论:客胜,比分1-2;体能断崖让埃及反扑窗口比你们算得宽。",
+          "timestamp": "2026-07-03T02:01:41.953Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 体能断崖？澳洲换人如换刀，埃及老骨头才先撑不住。",
+          "timestamp": "2026-07-03T02:02:23.935Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@GLM-5.1 别扯了！埃及有萨拉赫压阵抓反击效率，澳洲那漏勺后防根本顶不住，客胜，比分1-2。",
+          "timestamp": "2026-07-03T02:02:33.099Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 9,
+          "round": 2,
+          "text": "就凭萨拉赫想带埃及赢？澳洲中场一堵反击就哑火，结论平局，比分1-1",
+          "timestamp": "2026-07-03T02:03:34.556Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 10,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 漏勺也轮不到埃及老骨头捏，中场被冲烂萨拉赫只能折返跑！结论:主胜,比分2-1;理由:袋鼠空霸榨干法老残血",
+          "timestamp": "2026-07-03T02:04:24.359Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 2,
+          "text": "@GLM-5.1 真当埃及锋线只有萨拉赫单扛啊？结论：客胜，比分1-2；理由：法老喂饼特雷泽盖偷俩稳得很。",
+          "timestamp": "2026-07-03T02:04:37.378Z"
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:00:52.924Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:01:22.661Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:02:06.957Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:05:02.382Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:05:27.385Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "round": 2,
+          "status": "invalid_final",
+          "message": "最后发言缺少预测方向或比分",
+          "timestamp": "2026-07-03T02:05:35.117Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:05:35.255Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:06:00.258Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-15",
+      "sealedAt": "2026-07-03T02:06:00.682Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分3-0;阿根廷中场碾压,佛得角连半场都过不了。",
+          "timestamp": "2026-07-03T02:06:04.640Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;Claude的3-0太满，中场压制但收着踢",
+          "timestamp": "2026-07-03T02:06:18.484Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude Opus 4.8 别被带偏了，佛得角这批球员核心有74%效力于高纬度联赛，在布宜诺斯艾利斯今晚14度湿冷气温下体能极耐造。结论:主胜,比分2-1;防守端疏漏叠加强力边路突击，阿根廷只赢在底蕴。",
+          "timestamp": "2026-07-03T02:06:20.584Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 74%效力高纬度联赛就耐造？那北欧海盗来南美也得软，佛得角这身体遇上阿根廷小快灵，边路突击个寂寞吧，2-0阿根廷闷杀。",
+          "timestamp": "2026-07-03T02:06:50.178Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 小快灵遇上死守反击直接卡壳，阿根廷状态不稳，2-1最真实。",
+          "timestamp": "2026-07-03T02:07:26.987Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——阿根廷状态不稳正是因为他们不需要全力，死守反击的前提是佛得角能把球推过半场。结论:主胜,比分2-1;高估爆冷,但低估第一球丢得多难看。",
+          "timestamp": "2026-07-03T02:07:31.853Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 湿冷让球速变快，恰恰放大阿根廷的地面直塞穿透力，你那套耐造论在皮球滚动加速面前只会让佛得角中后场转身慢的缺陷更致命，2-0，剧本在下半场体能断崖点连续穿膛。",
+          "timestamp": "2026-07-03T02:07:50.696Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 8,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 球速快失误更快，湿滑草皮上直塞就是掷骰子——2-1，冷门没成但冷汗不缺",
+          "timestamp": "2026-07-03T02:08:08.206Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 9,
+          "round": 2,
+          "text": "@GLM-5.1 少扯湿滑玄学，潘帕斯老油条摔两跤就醒，佛得角摆大巴也扛不住90分钟围猎。结论:主胜,比分2-0;老江湖从不阴沟翻船",
+          "timestamp": "2026-07-03T02:08:33.295Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 10,
+          "round": 2,
+          "text": "@Grok 4.3 你刚才说2-1最真实，现在又卡壳？结论:主胜,比分2-0;佛得角连越位线都难跨",
+          "timestamp": "2026-07-03T02:08:37.186Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "@MiniMax-M3 2-0太仁慈，佛得角连越位都跨不了还想反击？结论:主胜,比分3-0;90分钟围杀",
+          "timestamp": "2026-07-03T02:08:51.101Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "@Grok 4.3 别太狂，佛得角边路爆点真能偷到球！结论：主胜，比分2-1；阿根廷划水惯了总得浪丢一个。",
+          "timestamp": "2026-07-03T02:09:59.657Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "上半场梅西散步式回防，佛得角边路爆点必偷一个；下半场迪马利亚登场斜传冲垮缺口，连扳三球。结论主胜，比分3-1。",
+          "timestamp": "2026-07-03T02:10:48.466Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:06:45.591Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:07:15.292Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "round": 1,
+          "status": "failed",
+          "message": "Responses 请求失败: 502 {\"error\":{\"code\":\"502\",\"type\":\"provider_internal_server_error\",\"message\":\"Unknown error statusCode:502, ray_id:a1525737ae32e021\"}}",
+          "timestamp": "2026-07-03T02:08:12.097Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:10:24.664Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:10:24.798Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-03T02:11:13.470Z",
           "retry": true
         }
       ]
