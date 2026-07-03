@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T00:29:51.108Z",
+  "updatedAt": "2026-07-03T01:41:24.062Z",
   "status": "verified",
   "sources": [
     {
@@ -894,7 +894,9 @@
       "homeTeam": "葡萄牙",
       "awayTeam": "克罗地亚",
       "kickoff": "2026-07-02T23:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:1",
+      "scoreScope": "regularTime"
     },
     {
       "matchId": "wc2026-ko-13",
