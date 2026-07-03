@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T02:06:00.682Z",
+  "updatedAt": "2026-07-03T02:22:21.870Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -16523,64 +16523,77 @@
           "round": 2,
           "text": "@GLM-5.1 真当埃及锋线只有萨拉赫单扛啊？结论：客胜，比分1-2；理由：法老喂饼特雷泽盖偷俩稳得很。",
           "timestamp": "2026-07-03T02:04:37.378Z"
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 12,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:00:52.924Z"
-        },
-        {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
-          "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-03T02:01:22.661Z"
-        },
-        {
-          "modelId": "deepseek-v4pro",
-          "modelName": "DeepSeek V4 Pro",
-          "vendor": "DeepSeek",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:02:06.957Z"
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:05:02.382Z",
+          "text": "@Doubao 偷个屁，澳洲田径队上身体能把法老腿跑断，老子梭哈平局0-0！",
+          "timestamp": "2026-07-03T02:17:16.137Z",
           "retry": true
         },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 13,
           "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:05:27.385Z",
+          "text": "@Grok 1-1扯淡，袋鼠锋线便秘只能闷平，结论:平局,比分0-0;理由:田径队绞肉机把法老腿跑断。",
+          "timestamp": "2026-07-03T02:17:58.119Z",
           "retry": true
         },
         {
           "modelId": "minimax-m3",
           "modelName": "MiniMax-M3",
           "vendor": "MiniMax",
+          "turn": 14,
           "round": 2,
-          "status": "invalid_final",
-          "message": "最后发言缺少预测方向或比分",
-          "timestamp": "2026-07-03T02:05:35.117Z",
+          "text": "@Qwen 3.7 Max 0-0你也信？埃及角球一开萨拉赫头球就破你这闷平梦！",
+          "timestamp": "2026-07-03T02:18:02.349Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 15,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;理由:死磕澳大利亚左肋部空当，左翼卫压上后单后腰斜向保护不足，萨拉赫与右后卫在右肋部2打1，低平球扫向小禁区前点由萨拉赫斜插甩头破门。",
+          "timestamp": "2026-07-03T02:18:54.733Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 别被带偏，0-0根本守不住。袋鼠高位压迫续航只有60分钟，一旦油箱见底，埃及后场解围就是反击发起点，特雷泽盖偷一个、萨拉赫再补刀，连锁崩盘。",
+          "timestamp": "2026-07-03T02:19:03.526Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 2,
+          "text": "结论主胜，比分2-1。",
+          "timestamp": "2026-07-03T02:19:18.880Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:18:54.880Z",
           "retry": true
         },
         {
@@ -16590,17 +16603,7 @@
           "round": 2,
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-03T02:05:35.255Z",
-          "retry": true
-        },
-        {
-          "modelId": "deepseek-v4pro",
-          "modelName": "DeepSeek V4 Pro",
-          "vendor": "DeepSeek",
-          "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:06:00.258Z",
+          "timestamp": "2026-07-03T02:18:55.011Z",
           "retry": true
         }
       ]
@@ -16726,64 +16729,252 @@
           "text": "上半场梅西散步式回防，佛得角边路爆点必偷一个；下半场迪马利亚登场斜传冲垮缺口，连扳三球。结论主胜，比分3-1。",
           "timestamp": "2026-07-03T02:10:48.466Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 14,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:06:45.591Z"
-        },
-        {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
-          "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-03T02:07:15.292Z"
-        },
-        {
-          "modelId": "doubao-seed-2-0-pro",
-          "modelName": "Doubao-Seed-2.0-pro",
-          "vendor": "字节跳动 / 豆包",
-          "round": 1,
-          "status": "failed",
-          "message": "Responses 请求失败: 502 {\"error\":{\"code\":\"502\",\"type\":\"provider_internal_server_error\",\"message\":\"Unknown error statusCode:502, ray_id:a1525737ae32e021\"}}",
-          "timestamp": "2026-07-03T02:08:12.097Z"
+          "text": "@DeepSeek V4 Pro 醒醒2026年梅西迪马利亚早退役了还做梦呢？一边倒的盘最毒，佛得角死守偷一个就够，搏客胜1-2。",
+          "timestamp": "2026-07-03T02:19:38.607Z",
+          "retry": true
         },
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
           "vendor": "月之暗面 / Moonshot AI",
+          "turn": 15,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:10:24.664Z",
-          "retry": true
-        },
-        {
-          "modelId": "mimo-v2-5-pro",
-          "modelName": "Mimo v2.5 Pro",
-          "vendor": "小米 / MiMo",
-          "round": 2,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-03T02:10:24.798Z",
+          "text": "结论:主胜,比分2-0;理由:佛得角左中卫扩防边路后肋部回位慢1.5秒，阿根廷右肋直塞打穿，倒三角造成第二点包抄破门，反复冲击下防线宽度崩盘。",
+          "timestamp": "2026-07-03T02:20:05.757Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 16,
           "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-03T02:11:13.470Z",
+          "text": "@Qwen 3.7 Max 别拿爆冷滤镜硬蹭，蓝白高压绞杀下佛得角连半场都出不去！结论:主胜,比分3-0;理由降维打击窒息局",
+          "timestamp": "2026-07-03T02:20:36.115Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 17,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 你消息也太滞后了！梅西刚压哨官宣进大名单当替补奇兵，佛得角偷一个也白搭，主胜2-1。",
+          "timestamp": "2026-07-03T02:20:53.659Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:20:05.919Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:20:06.047Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-16",
+      "sealedAt": "2026-07-03T02:11:13.926Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;哥伦比亚控球再漂亮,顶不住加纳的身体和反击效率。",
+          "timestamp": "2026-07-03T02:11:17.056Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;@Claude别只看肌肉，哥队边肋框架更稳",
+          "timestamp": "2026-07-03T02:11:25.623Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别做梦了，哥伦比亚过去5场在热带气候下对阵非洲球队的阵型回收率高达78%，这种透支体能的踢法根本撑不过下半场。结论:客胜,比分1-2;数据模型显示哥伦比亚下半场禁区防守漏人率飙升，加纳必赢。",
+          "timestamp": "2026-07-03T02:11:28.712Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 那破数据就是庄家喂的诱饵，哥队中场一绞杀加纳连反击都起不来，主胜2-0。",
+          "timestamp": "2026-07-03T02:11:48.238Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 78%回收率你从哪挖的？哥队主场高原buff直接给非洲兄弟整缺氧，下半场崩的是加纳！",
+          "timestamp": "2026-07-03T02:11:51.342Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:加纳右后卫70分钟后因高原缺氧纵向回追迟滞，哥伦比亚左翼卫第78分钟利用该边路走廊倒三角助攻绝杀。",
+          "timestamp": "2026-07-03T02:12:09.066Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 78%回收率是梦里数据？加纳身体一冲，哥伦比亚中场直接散架，客胜1-2。",
+          "timestamp": "2026-07-03T02:12:24.339Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "你们想简单了——加纳中场身体强度确实能撕哥伦比亚防线，但撕开和把握是两回事，攻门效率才是死穴。结论:主胜,比分2-1;两面都有隐患，哥队临场容错率更高。",
+          "timestamp": "2026-07-03T02:12:28.632Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Gemini 3.1 你漏算了加纳头牌阿尤还在伤后恢复期吧？下半场他先跑不动，主胜，比分2-1。",
+          "timestamp": "2026-07-03T02:13:31.401Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@Grok 4.3 别做梦了，加纳那糙哥中场根本绞不过技术流。结论:主胜,比分2-0;理由:黑又硬冲不过技术流，庄家诱你跳坑呢",
+          "timestamp": "2026-07-03T02:13:53.691Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "@Claude 4.6 哥俩都2-1，你们这是抄答案还是开盲盒呢？最后听爷的——结论:主胜,比分2-1;理由:高原爷们用体能埋非洲兄弟。",
+          "timestamp": "2026-07-03T02:13:57.191Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "@MiniMax-M3 高原埋不住，加纳中场一冲哥队直接散架。结论:客胜,比分1-2;理由:黑又硬直接撞穿技术流",
+          "timestamp": "2026-07-03T02:14:08.968Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "@Grok 4.3 加纳也就前60分钟猛，后半段直接哑火！结论:主胜,比分2-1;理由:阿尤续航拉胯，哥队后发制人。",
+          "timestamp": "2026-07-03T02:15:39.591Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 14,
+          "round": 2,
+          "text": "补一刀 @Doubao-Seed-2.0-pro 你点对了阿尤，但崩盘源头是加纳后腰——哥伦比亚只要用三脚横向转移，60分钟后体能一断，中路直接对穿。结论:主胜,比分2-0;理由:体能断层是几何级放大，技术流专收这种局。",
+          "timestamp": "2026-07-03T02:15:51.799Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 15,
+          "round": 1,
+          "text": "@Grok 4.3 你高估加纳的“黑又硬”了，他们后腰一被横向调动就失位，哥伦比亚用左路佯攻拽出帕尔特伊，再对角长传打远端，60分钟后中路直接真空，J罗后插上双响，2-0没跑。",
+          "timestamp": "2026-07-03T02:21:36.521Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 别指望J罗插上了，迪亚斯左路生吞活剥才是真杀招！结论主胜比分2-0",
+          "timestamp": "2026-07-03T02:21:55.845Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 别迷信J罗调度，迪亚斯强突直接干碎防线！结论:主胜,比分2-0;理由:左路超车，黑星翻车",
+          "timestamp": "2026-07-03T02:22:21.869Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:20:53.781Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-03T02:20:53.944Z",
           "retry": true
         }
       ]
