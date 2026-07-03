@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T01:41:24.062Z",
+  "updatedAt": "2026-07-03T03:03:14.847Z",
   "status": "verified",
   "sources": [
     {
@@ -907,6 +907,26 @@
       "homeTeam": "瑞士",
       "awayTeam": "阿尔及利亚",
       "kickoff": "2026-07-03T03:00:00+00:00"
+    },
+    {
+      "matchId": "wc2026-ko-14",
+      "jingcaiMatchId": "2040347",
+      "matchNum": "周五086",
+      "matchDate": "2026-07-04",
+      "league": "世界杯",
+      "homeTeam": "澳大利亚",
+      "awayTeam": "埃及",
+      "kickoff": "2026-07-03T18:00:00+00:00"
+    },
+    {
+      "matchId": "wc2026-ko-16",
+      "jingcaiMatchId": "2040357",
+      "matchNum": "周五088",
+      "matchDate": "2026-07-04",
+      "league": "世界杯",
+      "homeTeam": "哥伦比亚",
+      "awayTeam": "加纳",
+      "kickoff": "2026-07-04T01:30:00+00:00"
     }
   ]
 }
