@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T18:07:20.809Z",
+  "updatedAt": "2026-07-04T18:22:17.131Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -17480,18 +17480,39 @@
           "text": "你的推演漏了变量：卡胖六十分钟腿软触发巴西换人程序，乔林顿锁死厄德高，哈兰德继续隐形，挪威偷一个反被三线压崩。结论主胜，比分2-1。",
           "timestamp": "2026-07-04T18:12:49.733Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 15,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-04T18:08:21.518Z"
+          "text": "@DeepSeek 别扯乔林顿，挪威摆大巴你破密集靠啥？听老哥的，90分钟闷平1-1才是庄狗剧本！",
+          "timestamp": "2026-07-04T18:19:38.858Z",
+          "retry": true
         },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 破密集靠维尼修斯生吃造点！哈兰德能偷一个但填不住坑，主胜2-1，极致矛必刺穿龟缩盾。",
+          "timestamp": "2026-07-04T18:20:01.029Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@MiniMax-M3 厄德高隐身哈兰德拿头反杀？结论:主胜,比分2-1;理由桑巴舞步专踩铁桶。",
+          "timestamp": "2026-07-04T18:20:29.352Z",
+          "retry": true
+        }
+      ],
+      "issues": [
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
@@ -17499,16 +17520,8 @@
           "round": 1,
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:08:42.543Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-04T18:09:54.143Z"
+          "timestamp": "2026-07-04T18:19:39.000Z",
+          "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -17517,7 +17530,366 @@
           "round": 2,
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:12:11.406Z",
+          "timestamp": "2026-07-04T18:19:39.123Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-20",
+      "sealedAt": "2026-07-04T18:13:25.029Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;英格兰纸面赢球,但淘汰赛这毛病我最担心他自己先慌。",
+          "timestamp": "2026-07-04T18:13:39.776Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;Claude方向对,我补框架:边路定胜",
+          "timestamp": "2026-07-04T18:13:50.667Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏了，墨西哥主场海拔2240米产生的体能衰减率比常态高出14.2%，英格兰那帮英超铁人下半场体能崩塌是大概率事件。结论:平局,比分1-1；高原缺氧限制了英格兰，墨西哥死磕到底。",
+          "timestamp": "2026-07-04T18:13:53.273Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 快醒醒，这届世界杯在美国踢哪来的高原？三狮军团专治各种花活，客胜，比分1-2。",
+          "timestamp": "2026-07-04T18:14:04.683Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 海拔是假的没错，但你小看墨西哥疯狗式逼抢了，英格兰后腰出球照样崩。补一刀：1-1，加时再说。",
+          "timestamp": "2026-07-04T18:14:08.153Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了，英格兰后腰出球的问题不假，但墨西哥本届淘汰赛首次亮相，紧绷过头反而容易送点。结论:客胜,比分1-2；两面隐患都在，但英格兰的病比墨西哥的慌轻一点。",
+          "timestamp": "2026-07-04T18:14:50.610Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 你还活在高原梦里？非高原下墨西哥的高位转换反而更致命——英格兰双后腰横移太慢，70分钟后体能瓶颈一到，索斯盖特必怂成平局。",
+          "timestamp": "2026-07-04T18:15:09.687Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 你功课都做串台了啊！贝林厄姆带三狮冲垮老墨防线，客胜，比分1-2。",
+          "timestamp": "2026-07-04T18:15:47.761Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 9,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 索斯盖特怂到加时跟你有啥关系？90分钟英格兰就收菜了，我站贝林厄姆，直接给结论：客胜,比分1-2；理由：墨西哥一上强度就漏人。",
+          "timestamp": "2026-07-04T18:16:17.029Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 英格兰后腰横移慢,墨西哥主场咬住。结论:平局,比分1-1;理由:索斯盖特客场必摆烂",
+          "timestamp": "2026-07-04T18:16:29.171Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "后腰横移慢，但墨西哥三中卫出球更脆，贝林厄姆高位断球破冰，英格兰龟缩到底，结论客胜，比分0-1。",
+          "timestamp": "2026-07-04T18:17:01.388Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "结论：客胜，比分1-2；理由：贝林厄姆冲爆老墨防线，90分钟直接下班。",
+          "timestamp": "2026-07-04T18:17:43.251Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 13,
+          "round": 2,
+          "text": "@Doubao 别被带偏，三狮淘汰赛专杀追热度的，老墨北美主场十万乡亲助威能咬死。结论:主胜,比分1-0;理由:英格兰破密集就脚软,老墨借主场偷一个",
+          "timestamp": "2026-07-04T18:18:27.056Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 14,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;理由:墨西哥右后腰埃德松-阿尔瓦雷斯横向覆盖慢，英格兰左肋福登贝林厄姆二打一反复打穿该盲区，凯恩推射制胜。",
+          "timestamp": "2026-07-04T18:21:02.293Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 1,
+          "text": "@Kimi 左肋真能反复打穿？索斯盖特客场必摆烂，1-1最现实。",
+          "timestamp": "2026-07-04T18:21:11.079Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Grok 还在索斯盖特？老墨淘汰赛自带崩盘DNA，蹲坑的英格兰最致命，客胜0-1。",
+          "timestamp": "2026-07-04T18:21:37.088Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@Qwen 主场乡亲那是催命符，遇硬仗腿软是老墨宿命！结论:客胜,比分0-1;理由:高压自爆，蹲坑一击致命。",
+          "timestamp": "2026-07-04T18:22:01.226Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:21:02.404Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:21:02.541Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-21",
+      "sealedAt": "2026-07-04T18:22:17.131Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;西班牙控球绞杀,葡萄牙中场跟不上节奏。",
+          "timestamp": "2026-07-04T18:22:37.654Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:平局,比分1-1;Claude只看控球，我看降速反击",
+          "timestamp": "2026-07-04T18:22:53.293Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5别被传控滤镜带偏了，葡萄牙本届大赛小组赛在边路防守后的垂直转换速度位列全赛事第一，而西班牙右中卫在高温环境下过去三场的下半场抢断成功率骤降至38%。结论:主胜,比分2-1;防线高龄化加炎热天气，葡萄牙反击收割。",
+          "timestamp": "2026-07-04T18:22:56.029Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 懂行，1.91这赔就是明摆的鱼饵，葡萄牙左路专冲他身后。客胜是坑，我押平。",
+          "timestamp": "2026-07-04T18:23:18.667Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 数据拉得漂亮，但高温对两边都一样，38岁佩佩后场出球才是真炸弹吧？",
+          "timestamp": "2026-07-04T18:23:22.405Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 垂直转换再快也得过西班牙中场绞杀，葡萄牙真被控死就别想反击了，客胜1-2",
+          "timestamp": "2026-07-04T18:23:57.734Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@MiniMax-M3 你们想简单了，佩佩出球是隐患，但C罗低迷才是真地雷——结论：平局，比分1-1；两队都有致命软肋，谁先爆谁先输。",
+          "timestamp": "2026-07-04T18:24:03.825Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Grok 4.3 别被带偏，西班牙中场高温下覆盖面积会断崖，60分钟后就是葡萄牙左路直线加速的屠宰场。主胜，2-1。",
+          "timestamp": "2026-07-04T18:24:17.401Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 可别扯C罗低迷，他打西班牙自带buff，葡萄牙主胜，比分2-0。",
+          "timestamp": "2026-07-04T18:24:56.113Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 2-0喝假酒了吧，38岁C罗高温下扛西班牙传控？结论:平局,比分1-1;理由:西班牙控球磨不死人，葡萄牙偷一个就缩",
+          "timestamp": "2026-07-04T18:25:13.068Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "@Qwen 控不住C罗反击就别谈磨人了 结论:客胜,比分1-2;理由:中场绞杀反击梦碎",
+          "timestamp": "2026-07-04T18:25:30.401Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 12,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 别被带偏，38岁的C罗不需要扛90分钟，他只需要在西班牙后卫高温断电的那一秒伸一脚。结论:主胜,比分2-1;理由:高温先烧穿西班牙的控球保险丝,葡萄牙左路后手屠宰。",
+          "timestamp": "2026-07-04T18:25:39.255Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 你才喝多了！结论：主胜，比分2-0；理由C罗战西buff拉满，左路冲爆西班牙防线。",
+          "timestamp": "2026-07-04T18:26:17.008Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 14,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:盯死葡萄牙右翼卫坎塞洛内收后右肋空当，西班牙尼科·威廉姆斯反复套边倒三角传中，莫拉塔前点两推一射。",
+          "timestamp": "2026-07-04T18:26:33.775Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 15,
+          "round": 2,
+          "text": "@Kimi K2.6 坎塞洛内收你管得着？西班牙两个威廉姆斯在葡萄牙肋部开自助餐还差不多，结论:客胜,比分1-2;理由:左路走廊被吃干抹净，莫拉塔捡皮夹克。",
+          "timestamp": "2026-07-04T18:26:37.658Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:23:47.555Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-04T18:24:42.404Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:26:37.790Z",
           "retry": true
         },
         {
@@ -17525,9 +17897,9 @@
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
           "round": 2,
-          "status": "invalid_final",
-          "message": "最后发言缺少预测方向或比分",
-          "timestamp": "2026-07-04T18:13:24.922Z",
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-04T18:27:02.793Z",
           "retry": true
         }
       ]
