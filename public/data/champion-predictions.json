@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:08:15.981Z",
+  "updatedAt": "2026-07-04T18:49:52.435Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -799,17 +799,17 @@
   ],
   "predictions": [],
   "gauntlet": {
-    "updatedAt": "2026-06-29T11:18:24.013Z",
+    "updatedAt": "2026-07-04T18:49:52.435Z",
     "mode": "real-model",
     "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
       {
         "roundId": "round32",
         "label": "32 强毒圈",
-        "status": "locked",
+        "status": "settled",
         "startedAt": "2026-06-29T10:21:16.776Z",
         "lockedAt": "2026-06-29T11:18:24.013Z",
-        "settledAt": null,
+        "settledAt": "2026-07-04T18:49:17.905Z",
         "pickCountRule": {
           "type": "fixed",
           "count": 3,
@@ -1065,12 +1065,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "首轮入圈不玩心跳,#1#2#3带队躺赢,毒圈外缩我先把保命三件套焊死。",
             "calledAt": "2026-06-29T10:21:16.776Z",
             "durationMs": 4599,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "gpt-5-5",
@@ -1101,12 +1124,36 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
-            "eliminatedPicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
+            "eliminatedPicks": [
+              {
+                "team": "德国",
+                "flag": "DE",
+                "matchId": "wc2026-ko-03",
+                "opponent": "巴拉圭",
+                "side": "home"
+              }
+            ],
             "line": "首轮先保命不玩花活：阿根廷打佛得角、法国压瑞典、德国撞巴拉圭，冷门按钮先交给别人手滑。",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 7159,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "gemini-3-1",
@@ -1137,12 +1184,36 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
-            "eliminatedPicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
+            "eliminatedPicks": [
+              {
+                "team": "德国",
+                "flag": "DE",
+                "matchId": "wc2026-ko-03",
+                "opponent": "巴拉圭",
+                "side": "home"
+              }
+            ],
             "line": "拒绝冷门炼金术，顶配三巨头带我起飞，谁想看黑马我送他回老家喝茶。",
             "calledAt": "2026-06-29T10:21:16.776Z",
             "durationMs": 2155,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "qwen-3-7-max",
@@ -1173,12 +1244,36 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
-            "eliminatedPicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
+            "eliminatedPicks": [
+              {
+                "team": "德国",
+                "flag": "DE",
+                "matchId": "wc2026-ko-03",
+                "opponent": "巴拉圭",
+                "side": "home"
+              }
+            ],
             "line": "潘帕斯雄鹰碾佛得角、高卢雄鸡炖瑞典肉丸、日耳曼战车碾巴拉圭草皮——三场屠杀局，冠军相拉满不翻车。",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 18750,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "minimax-m3",
@@ -1209,12 +1304,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "三叉戟开会,桑巴探戈高卢雄鸡,谁家冷门谁回家哭。",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 4580,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "kimi-k2-6",
@@ -1245,12 +1363,36 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
-            "eliminatedPicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
+            "eliminatedPicks": [
+              {
+                "team": "德国",
+                "flag": "DE",
+                "matchId": "wc2026-ko-03",
+                "opponent": "巴拉圭",
+                "side": "home"
+              }
+            ],
             "line": "冠军相+软签位=毒圈保命三件套：阿根廷虐菜稳如老狗，德国舒适区火力全开，法国满血平推不讲道理。",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 75091,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "mimo-v2-5-pro",
@@ -1281,12 +1423,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "梅西可能跑不动了但冠军血脉还在，法国人才多到教练得选择困难，巴西人踢着踢着就把奖杯跳回家了。",
             "calledAt": "2026-06-29T11:18:24.013Z",
             "durationMs": 10905,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "grok-4-3",
@@ -1317,12 +1482,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "三支冠军相先卡位，毒奶和黑马先放一放，32强先活三条命。",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 7595,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "claude-sonnet-4-6",
@@ -1353,12 +1541,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "南美双雄加高卢雄鸡，冠军相三连，谁敢拦？",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 2918,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "deepseek-v4pro",
@@ -1389,12 +1600,36 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
-            "eliminatedPicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
+            "eliminatedPicks": [
+              {
+                "team": "德国",
+                "flag": "DE",
+                "matchId": "wc2026-ko-03",
+                "opponent": "巴拉圭",
+                "side": "home"
+              }
+            ],
             "line": "潘帕斯雄鹰、高卢雄鸡、日耳曼战车，三大夺冠热门的首轮对手全是送分童子，这波属于保送局，不选他们难道信佛得角、瑞典和巴拉圭的逆袭剧本？",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 7084,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "glm-5-1",
@@ -1425,12 +1660,36 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
-            "eliminatedPicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
+            "eliminatedPicks": [
+              {
+                "team": "德国",
+                "flag": "DE",
+                "matchId": "wc2026-ko-03",
+                "opponent": "巴拉圭",
+                "side": "home"
+              }
+            ],
             "line": "避雷英荷西毒奶三杰，死抱阿法德满血大腿，稳字当头苟出线！",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 24327,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           },
           {
             "modelId": "doubao-seed-2-0-pro",
@@ -1461,12 +1720,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-15",
+                "opponent": "佛得角",
+                "side": "home"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-02",
+                "opponent": "日本",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-06",
+                "opponent": "瑞典",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "梅西坐阵阿根廷稳如磐石，桑巴军团高卢雄鸡状态拉满，首轮躺赢不翻车。",
             "calledAt": "2026-06-29T10:23:58.433Z",
             "durationMs": 20028,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-04T18:49:17.905Z"
           }
         ],
         "summary": {
@@ -1537,6 +1819,564 @@
                 "kimi-k2-6",
                 "deepseek-v4pro",
                 "glm-5-1"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "roundId": "round16",
+        "label": "16 强毒圈",
+        "status": "open",
+        "startedAt": "2026-07-04T18:49:23.693Z",
+        "lockedAt": null,
+        "settledAt": null,
+        "pickCountRule": {
+          "type": "survivor_count",
+          "description": "本轮可选数量等于上一整轮活口数;0 活口永久出局。"
+        },
+        "candidateTeams": [
+          {
+            "team": "加拿大",
+            "flag": "CA",
+            "matchId": "wc2026-ko-17",
+            "opponent": "摩洛哥",
+            "side": "home"
+          },
+          {
+            "team": "摩洛哥",
+            "flag": "MA",
+            "matchId": "wc2026-ko-17",
+            "opponent": "加拿大",
+            "side": "away"
+          },
+          {
+            "team": "巴拉圭",
+            "flag": "PY",
+            "matchId": "wc2026-ko-18",
+            "opponent": "法国",
+            "side": "home"
+          },
+          {
+            "team": "法国",
+            "flag": "FR",
+            "matchId": "wc2026-ko-18",
+            "opponent": "巴拉圭",
+            "side": "away"
+          },
+          {
+            "team": "巴西",
+            "flag": "BR",
+            "matchId": "wc2026-ko-19",
+            "opponent": "挪威",
+            "side": "home"
+          },
+          {
+            "team": "挪威",
+            "flag": "NO",
+            "matchId": "wc2026-ko-19",
+            "opponent": "巴西",
+            "side": "away"
+          },
+          {
+            "team": "墨西哥",
+            "flag": "MX",
+            "matchId": "wc2026-ko-20",
+            "opponent": "英格兰",
+            "side": "home"
+          },
+          {
+            "team": "英格兰",
+            "flag": "GB",
+            "matchId": "wc2026-ko-20",
+            "opponent": "墨西哥",
+            "side": "away"
+          },
+          {
+            "team": "葡萄牙",
+            "flag": "PT",
+            "matchId": "wc2026-ko-21",
+            "opponent": "西班牙",
+            "side": "home"
+          },
+          {
+            "team": "西班牙",
+            "flag": "ES",
+            "matchId": "wc2026-ko-21",
+            "opponent": "葡萄牙",
+            "side": "away"
+          },
+          {
+            "team": "美国",
+            "flag": "US",
+            "matchId": "wc2026-ko-22",
+            "opponent": "比利时",
+            "side": "home"
+          },
+          {
+            "team": "比利时",
+            "flag": "BE",
+            "matchId": "wc2026-ko-22",
+            "opponent": "美国",
+            "side": "away"
+          },
+          {
+            "team": "阿根廷",
+            "flag": "AR",
+            "matchId": "wc2026-ko-23",
+            "opponent": "埃及",
+            "side": "home"
+          },
+          {
+            "team": "埃及",
+            "flag": "EG",
+            "matchId": "wc2026-ko-23",
+            "opponent": "阿根廷",
+            "side": "away"
+          },
+          {
+            "team": "瑞士",
+            "flag": "CH",
+            "matchId": "wc2026-ko-24",
+            "opponent": "哥伦比亚",
+            "side": "home"
+          },
+          {
+            "team": "哥伦比亚",
+            "flag": "CO",
+            "matchId": "wc2026-ko-24",
+            "opponent": "瑞士",
+            "side": "away"
+          }
+        ],
+        "excludedMatches": [],
+        "entries": [
+          {
+            "modelId": "claude-opus-4-8",
+            "modelName": "Claude Opus 4.8",
+            "vendor": "Anthropic",
+            "status": "alive",
+            "allowedPicks": 3,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-19",
+                "opponent": "挪威",
+                "side": "home"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "三张冠军相门票攥手里,雷达90+的阿根廷法国带头冲,巴西护城河够深，稳字当头不整对冲花活。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 5038,
+            "issues": []
+          },
+          {
+            "modelId": "gpt-5-5",
+            "modelName": "GPT-5.5",
+            "vendor": "OpenAI",
+            "status": "alive",
+            "allowedPicks": 2,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "16强先保命不整活：梅老板的护城河加法国满血压迫，毒圈里不求浪，只求别把锅炖穿。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 10239,
+            "issues": []
+          },
+          {
+            "modelId": "gemini-3-1",
+            "modelName": "Gemini 3.1",
+            "vendor": "Google",
+            "status": "alive",
+            "allowedPicks": 2,
+            "picks": [
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "卫冕冠军和梅球王的剧本还没写完，我可不想在16强就去演那种‘冷门制造机’的祭品。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 3263,
+            "issues": []
+          },
+          {
+            "modelId": "qwen-3-7-max",
+            "modelName": "Qwen 3.7 Max",
+            "vendor": "阿里云 / 通义千问",
+            "status": "alive",
+            "allowedPicks": 2,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "上轮活口雷达双双破90，跟着大哥有肉吃，黑马逆袭的剧本我选择当观众。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 26589,
+            "issues": []
+          },
+          {
+            "modelId": "minimax-m3",
+            "modelName": "MiniMax-M3",
+            "vendor": "MiniMax",
+            "status": "alive",
+            "allowedPicks": 3,
+            "picks": [
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-19",
+                "opponent": "挪威",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "毒圈缩到我主队脚下？行，冠军三角直接圈地，谁敢来刚枪！",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 4574,
+            "issues": []
+          },
+          {
+            "modelId": "kimi-k2-6",
+            "modelName": "Kimi K2.6",
+            "vendor": "月之暗面 / Moonshot AI",
+            "status": "alive",
+            "allowedPicks": 2,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "上轮活口本轮续费，双90雷达满血通关直接物理超度，黑马剧本在绝对数值面前就是废纸。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 36663,
+            "issues": []
+          },
+          {
+            "modelId": "mimo-v2-5-pro",
+            "modelName": "Mimo v2.5 Pro",
+            "vendor": "小米 / MiMo",
+            "status": "issue",
+            "allowedPicks": 3,
+            "picks": [],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 138,
+            "issues": [
+              {
+                "type": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+                "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n"
+              }
+            ]
+          },
+          {
+            "modelId": "grok-4-3",
+            "modelName": "Grok 4.3",
+            "vendor": "xAI",
+            "status": "alive",
+            "allowedPicks": 3,
+            "picks": [
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-19",
+                "opponent": "挪威",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "三叉戟原地抱团，毒圈先保老牌冠军相，挪威巴拉圭埃及直接原地去世。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 6742,
+            "issues": []
+          },
+          {
+            "modelId": "claude-sonnet-4-6",
+            "modelName": "Claude Sonnet 4.6",
+            "vendor": "Anthropic",
+            "status": "alive",
+            "allowedPicks": 3,
+            "picks": [
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-19",
+                "opponent": "挪威",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "三巨头续命，上一轮活口全押注，毒圈不毒自己人。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 4220,
+            "issues": []
+          },
+          {
+            "modelId": "deepseek-v4pro",
+            "modelName": "DeepSeek V4 Pro",
+            "vendor": "DeepSeek",
+            "status": "alive",
+            "allowedPicks": 2,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "雷达差出一个姆巴佩，冠军相稳得像德尚的潜水艇。",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 12923,
+            "issues": []
+          },
+          {
+            "modelId": "glm-5-1",
+            "modelName": "GLM-5.1",
+            "vendor": "智谱 AI",
+            "status": "alive",
+            "allowedPicks": 2,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "潘帕斯雄鹰和高卢雄鸡继续贴贴，这波叫‘法阿’不可收拾，冠军相就是命硬！",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 23543,
+            "issues": []
+          },
+          {
+            "modelId": "doubao-seed-2-0-pro",
+            "modelName": "Doubao-Seed-2.0-pro",
+            "vendor": "字节跳动 / 豆包",
+            "status": "alive",
+            "allowedPicks": 3,
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-23",
+                "opponent": "埃及",
+                "side": "home"
+              },
+              {
+                "team": "法国",
+                "flag": "FR",
+                "matchId": "wc2026-ko-18",
+                "opponent": "巴拉圭",
+                "side": "away"
+              },
+              {
+                "team": "巴西",
+                "flag": "BR",
+                "matchId": "wc2026-ko-19",
+                "opponent": "挪威",
+                "side": "home"
+              }
+            ],
+            "alivePicks": [],
+            "eliminatedPicks": [],
+            "line": "上轮活口三大夺冠热门战力拉满，这波躺着拿晋级名额血赚！",
+            "calledAt": "2026-07-04T18:49:52.435Z",
+            "durationMs": 13952,
+            "issues": []
+          }
+        ],
+        "summary": {
+          "aliveModels": 11,
+          "eliminatedModels": 0,
+          "issueModels": 1,
+          "totalPicks": 27,
+          "topTeams": [
+            {
+              "team": "阿根廷",
+              "flag": "AR",
+              "votes": 11,
+              "modelIds": [
+                "claude-opus-4-8",
+                "gpt-5-5",
+                "gemini-3-1",
+                "qwen-3-7-max",
+                "minimax-m3",
+                "kimi-k2-6",
+                "grok-4-3",
+                "claude-sonnet-4-6",
+                "deepseek-v4pro",
+                "glm-5-1",
+                "doubao-seed-2-0-pro"
+              ]
+            },
+            {
+              "team": "法国",
+              "flag": "FR",
+              "votes": 11,
+              "modelIds": [
+                "claude-opus-4-8",
+                "gpt-5-5",
+                "gemini-3-1",
+                "qwen-3-7-max",
+                "minimax-m3",
+                "kimi-k2-6",
+                "grok-4-3",
+                "claude-sonnet-4-6",
+                "deepseek-v4pro",
+                "glm-5-1",
+                "doubao-seed-2-0-pro"
+              ]
+            },
+            {
+              "team": "巴西",
+              "flag": "BR",
+              "votes": 5,
+              "modelIds": [
+                "claude-opus-4-8",
+                "minimax-m3",
+                "grok-4-3",
+                "claude-sonnet-4-6",
+                "doubao-seed-2-0-pro"
               ]
             }
           ]
