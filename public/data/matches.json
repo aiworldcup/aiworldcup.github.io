@@ -4308,7 +4308,10 @@
         "scores": {}
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "draw",
+        "score": "1-1"
+      },
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
@@ -4323,6 +4326,24 @@
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
         "generatedAt": "2026-06-29T03:35:20.090Z"
+      },
+      "finalActual": {
+        "result": "draw",
+        "score": "1-1"
+      },
+      "finalActualSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760499",
+        "scoreScope": "finalIncludingExtraTime",
+        "syncedAt": "2026-07-03T21:03:37.470Z"
+      },
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "scoreScope": "regularTime",
+        "syncedAt": "2026-07-04T00:47:51.203Z"
       }
     },
     {
@@ -4350,7 +4371,10 @@
         "scores": {}
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "draw",
+        "score": "1-1"
+      },
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
@@ -4365,6 +4389,24 @@
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
         "generatedAt": "2026-06-29T03:35:20.090Z"
+      },
+      "finalActual": {
+        "result": "home",
+        "score": "3-2"
+      },
+      "finalActualSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760500",
+        "scoreScope": "finalIncludingExtraTime",
+        "syncedAt": "2026-07-04T00:47:51.204Z"
+      },
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "scoreScope": "regularTime",
+        "syncedAt": "2026-07-04T01:18:34.069Z"
       }
     },
     {

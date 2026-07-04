@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T03:03:14.847Z",
+  "updatedAt": "2026-07-04T01:18:19.097Z",
   "status": "verified",
   "sources": [
     {
@@ -916,7 +916,23 @@
       "league": "世界杯",
       "homeTeam": "澳大利亚",
       "awayTeam": "埃及",
-      "kickoff": "2026-07-03T18:00:00+00:00"
+      "kickoff": "2026-07-03T18:00:00+00:00",
+      "sourceScope": "single-fixed",
+      "officialScore": "1:1",
+      "scoreScope": "regularTime"
+    },
+    {
+      "matchId": "wc2026-ko-15",
+      "jingcaiMatchId": "2040348",
+      "matchNum": "周五087",
+      "matchDate": "2026-07-04",
+      "league": "世界杯",
+      "homeTeam": "阿根廷",
+      "awayTeam": "佛得角",
+      "kickoff": "2026-07-03T22:00:00+00:00",
+      "sourceScope": "single-fixed",
+      "officialScore": "1:1",
+      "scoreScope": "regularTime"
     },
     {
       "matchId": "wc2026-ko-16",
