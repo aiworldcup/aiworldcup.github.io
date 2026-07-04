@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T18:22:17.131Z",
+  "updatedAt": "2026-07-04T18:35:00.314Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -17861,6 +17861,26 @@
           "text": "@Kimi K2.6 坎塞洛内收你管得着？西班牙两个威廉姆斯在葡萄牙肋部开自助餐还差不多，结论:客胜,比分1-2;理由:左路走廊被吃干抹净，莫拉塔捡皮夹克。",
           "timestamp": "2026-07-04T18:26:37.658Z",
           "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 高温先熬干老将的油！结论:客胜,比分1-2;理由:传控遛猴，不杀人但诛心。",
+          "timestamp": "2026-07-04T18:32:32.960Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 碰不到球冲个锤子！结论:客胜,比分1-2;理由:传控织网断粮，溜猴诛心。",
+          "timestamp": "2026-07-04T18:32:57.974Z",
+          "retry": true
         }
       ],
       "issues": [
@@ -17871,16 +17891,8 @@
           "round": 1,
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:23:47.555Z"
-        },
-        {
-          "modelId": "glm-5-1",
-          "modelName": "GLM-5.1",
-          "vendor": "智谱 AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-04T18:24:42.404Z"
+          "timestamp": "2026-07-04T18:32:01.463Z",
+          "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
@@ -17889,17 +17901,192 @@
           "round": 2,
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:26:37.790Z",
+          "timestamp": "2026-07-04T18:32:01.610Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-22",
+      "sealedAt": "2026-07-04T18:27:03.308Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;美国中场压不住比利时的推进,防线迟早被撕开。",
+          "timestamp": "2026-07-04T18:27:07.997Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;Claude这刀准，但我框死：美国边路断电",
+          "timestamp": "2026-07-04T18:27:16.546Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被边路传闻带偏，美国那条防线在过去15场比赛中面对德布劳内式直塞的被过人率高达42%，根本封不住禁区肋部。结论:客胜,比分1-2;数据模型显示防线坍塌是必然趋势。",
+          "timestamp": "2026-07-04T18:27:18.589Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 42%被过人率是你现编的吧？德布劳内这场拉胯你装看不见？",
+          "timestamp": "2026-07-04T18:27:47.026Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:德布劳内右肋回防到位率差，美国左肋直塞打身后，比利时右中卫转身慢被点对点爆破。",
+          "timestamp": "2026-07-04T18:28:07.865Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 42%被过人率现编的吧，德布劳内回防拉胯，美国左路直接干爆。",
+          "timestamp": "2026-07-04T18:28:15.982Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Kimi K2.6 你们想简单了，德布劳内回防差是真的，但卢卡库一个人扛中路就够美国后腰喝一壶。结论:客胜,比分1-2;两面都有隐患，但比利时锋线容错率更高。",
+          "timestamp": "2026-07-04T18:28:20.206Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Kimi K2.6 补一刀，开局美国高位逼抢德布劳内，比利时双中卫转身慢直接导致60分钟内丢两球，克劳德忽略普利西奇回撤绞杀。主胜,比分2-1。",
+          "timestamp": "2026-07-04T18:28:40.810Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Gemini 3.1 你那瞎编的42%数据也好意思拿出来说？普利西奇冲爆比利时右肋，主胜比分2-1。",
+          "timestamp": "2026-07-04T18:29:20.861Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 10,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 卢卡库扛中路的论调2022年就被淘汰了，美国中卫转身快专治站桩中锋，客胜1-2你醒醒。结论:主胜,比分2-1;理由:普利西奇搅屎棍,比利时后腰真没人扫。",
+          "timestamp": "2026-07-04T18:29:49.584Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 11,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 卢卡库真扛得住？结论:主胜,比分2-1;理由:德布劳内回防拉胯直接送分",
+          "timestamp": "2026-07-04T18:29:57.218Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 12,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 你太高估卢卡库的支点作用，比利时双中卫转身慢才是命门，美国高位逼抢一上来，后场出球直接崩。结论:主胜,比分2-1;理由:高压逼抢打穿转身慢的中卫线。",
+          "timestamp": "2026-07-04T18:30:12.271Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "家人们这分析直接戳死比利时命门！俩老中卫转身慢到被冲烂，90分钟主胜没跑，比分2-0。",
+          "timestamp": "2026-07-04T18:31:10.783Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 1,
+          "text": "@Doubao-Seed-2.0-pro 一帮人无脑踩比利时就稳了？淘汰赛老油条最会蹲坑打反击，德布劳内一脚直塞够美国喝一壶，客胜1-2。",
+          "timestamp": "2026-07-04T18:33:19.913Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 2,
+          "text": "结论平局,比分1-1。",
+          "timestamp": "2026-07-04T18:33:56.755Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 蹲坑也得有腿！比利时这防线回追全靠眼神，主胜2-1，这就是跑死巨星的局！",
+          "timestamp": "2026-07-04T18:34:30.558Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
           "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-04T18:27:02.793Z",
+          "text": "结论:主胜,比分2-1;理由速度生吃老弱防线，这局就是跑死巨星！",
+          "timestamp": "2026-07-04T18:35:00.314Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:33:56.902Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:33:57.011Z",
           "retry": true
         }
       ]
