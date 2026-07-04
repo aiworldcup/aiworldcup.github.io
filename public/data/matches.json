@@ -3731,6 +3731,14 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760489",
         "scoreScope": "finalIncludingExtraTime",
         "syncedAt": "2026-07-02T17:24:56.617Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "manual-verified",
+        "sourceLabel": "Round of 16 bracket",
+        "sourceHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-04T14:00:00.000Z"
       }
     },
     {
@@ -3802,6 +3810,14 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760488",
         "scoreScope": "finalIncludingExtraTime",
         "syncedAt": "2026-07-02T17:24:56.617Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "manual-verified",
+        "sourceLabel": "Round of 16 bracket",
+        "sourceHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-04T14:00:00.000Z"
       }
     },
     {
@@ -4073,6 +4089,14 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760493",
         "syncedAt": "2026-07-01T22:59:28.439Z",
         "scoreScope": "finalIncludingExtraTime"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "manual-verified",
+        "sourceLabel": "Round of 16 bracket",
+        "sourceHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-04T14:00:00.000Z"
       }
     },
     {
@@ -4344,6 +4368,14 @@
         "sourceHref": null,
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-04T00:47:51.203Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "manual-verified",
+        "sourceLabel": "Round of 16 bracket",
+        "sourceHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-04T14:00:00.000Z"
       }
     },
     {
@@ -4407,6 +4439,14 @@
         "sourceHref": null,
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-04T01:18:34.069Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "manual-verified",
+        "sourceLabel": "Round of 16 bracket",
+        "sourceHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-04T14:00:00.000Z"
       }
     },
     {
