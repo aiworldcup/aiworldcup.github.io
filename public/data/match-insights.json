@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T18:37:55.972Z",
+  "updatedAt": "2026-07-04T18:48:08.072Z",
   "source": {
     "matchesPath": "public/data/matches.json",
     "discussionsPath": "public/data/discussions.json",
@@ -10,8 +10,8 @@
     "targetMatches": 104,
     "totalMatches": 104,
     "counts": {
-      "strong-value": 51,
-      "watch": 11,
+      "strong-value": 53,
+      "watch": 9,
       "light-value": 8,
       "missing-odds": 34
     },
@@ -369,13 +369,25 @@
         "valueSide": "主胜被低估",
         "ev": 0.326,
         "probabilityDiff": 0.1489
+      },
+      {
+        "matchId": "wc2026-ko-23",
+        "valueSide": "平局被低估",
+        "ev": 0.344,
+        "probabilityDiff": 0.0824
+      },
+      {
+        "matchId": "wc2026-ko-24",
+        "valueSide": "客胜被低估",
+        "ev": 0.32,
+        "probabilityDiff": 0.1699
       }
     ]
   },
   "matches": [
     {
       "matchId": "fixture-1489369",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -460,7 +472,7 @@
     },
     {
       "matchId": "fixture-1538999",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -545,7 +557,7 @@
     },
     {
       "matchId": "fixture-1539000",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -630,7 +642,7 @@
     },
     {
       "matchId": "fixture-1489370",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -715,7 +727,7 @@
     },
     {
       "matchId": "fixture-1489373",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -800,7 +812,7 @@
     },
     {
       "matchId": "fixture-1489371",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -885,7 +897,7 @@
     },
     {
       "matchId": "fixture-1489372",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -970,7 +982,7 @@
     },
     {
       "matchId": "fixture-1539001",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1055,7 +1067,7 @@
     },
     {
       "matchId": "fixture-1489374",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1140,7 +1152,7 @@
     },
     {
       "matchId": "fixture-1489376",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1225,7 +1237,7 @@
     },
     {
       "matchId": "fixture-1489375",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -1310,7 +1322,7 @@
     },
     {
       "matchId": "fixture-1539002",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1395,7 +1407,7 @@
     },
     {
       "matchId": "fixture-1489380",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1480,7 +1492,7 @@
     },
     {
       "matchId": "fixture-1489377",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1565,7 +1577,7 @@
     },
     {
       "matchId": "fixture-1489379",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1650,7 +1662,7 @@
     },
     {
       "matchId": "fixture-1489378",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1735,7 +1747,7 @@
     },
     {
       "matchId": "fixture-1489383",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1820,7 +1832,7 @@
     },
     {
       "matchId": "fixture-1539016",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1905,7 +1917,7 @@
     },
     {
       "matchId": "fixture-1489381",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -1990,7 +2002,7 @@
     },
     {
       "matchId": "fixture-1489382",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2075,7 +2087,7 @@
     },
     {
       "matchId": "fixture-1539003",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2160,7 +2172,7 @@
     },
     {
       "matchId": "fixture-1489384",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2245,7 +2257,7 @@
     },
     {
       "matchId": "fixture-1489385",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2330,7 +2342,7 @@
     },
     {
       "matchId": "fixture-1489386",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -2415,7 +2427,7 @@
     },
     {
       "matchId": "fixture-1539004",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2500,7 +2512,7 @@
     },
     {
       "matchId": "fixture-1539005",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2585,7 +2597,7 @@
     },
     {
       "matchId": "fixture-1489387",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2670,7 +2682,7 @@
     },
     {
       "matchId": "fixture-1489388",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2755,7 +2767,7 @@
     },
     {
       "matchId": "fixture-1489391",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2840,7 +2852,7 @@
     },
     {
       "matchId": "fixture-1489390",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -2925,7 +2937,7 @@
     },
     {
       "matchId": "fixture-1489389",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -2947,7 +2959,7 @@
     },
     {
       "matchId": "fixture-1539006",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3032,7 +3044,7 @@
     },
     {
       "matchId": "fixture-1539007",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3054,7 +3066,7 @@
     },
     {
       "matchId": "fixture-1489393",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3076,7 +3088,7 @@
     },
     {
       "matchId": "fixture-1489392",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3098,7 +3110,7 @@
     },
     {
       "matchId": "fixture-1489394",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3120,7 +3132,7 @@
     },
     {
       "matchId": "fixture-1489397",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3142,7 +3154,7 @@
     },
     {
       "matchId": "fixture-1489395",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3164,7 +3176,7 @@
     },
     {
       "matchId": "fixture-1489398",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3186,7 +3198,7 @@
     },
     {
       "matchId": "fixture-1489396",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -3208,7 +3220,7 @@
     },
     {
       "matchId": "fixture-1489399",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3230,7 +3242,7 @@
     },
     {
       "matchId": "fixture-1539017",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3252,7 +3264,7 @@
     },
     {
       "matchId": "fixture-1489401",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -3274,7 +3286,7 @@
     },
     {
       "matchId": "fixture-1489400",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -3296,7 +3308,7 @@
     },
     {
       "matchId": "fixture-1489404",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3381,7 +3393,7 @@
     },
     {
       "matchId": "fixture-1489402",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3466,7 +3478,7 @@
     },
     {
       "matchId": "fixture-1489403",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3551,7 +3563,7 @@
     },
     {
       "matchId": "fixture-1539008",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3636,7 +3648,7 @@
     },
     {
       "matchId": "fixture-1489408",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3721,7 +3733,7 @@
     },
     {
       "matchId": "fixture-1539009",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3806,7 +3818,7 @@
     },
     {
       "matchId": "fixture-1489405",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3891,7 +3903,7 @@
     },
     {
       "matchId": "fixture-1489406",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -3976,7 +3988,7 @@
     },
     {
       "matchId": "fixture-1539010",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4061,7 +4073,7 @@
     },
     {
       "matchId": "fixture-1489407",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4146,7 +4158,7 @@
     },
     {
       "matchId": "fixture-1489410",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4231,7 +4243,7 @@
     },
     {
       "matchId": "fixture-1489409",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4316,7 +4328,7 @@
     },
     {
       "matchId": "fixture-1539011",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4401,7 +4413,7 @@
     },
     {
       "matchId": "fixture-1489412",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4486,7 +4498,7 @@
     },
     {
       "matchId": "fixture-1539012",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -4571,7 +4583,7 @@
     },
     {
       "matchId": "fixture-1489411",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4656,7 +4668,7 @@
     },
     {
       "matchId": "fixture-1539074",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4741,7 +4753,7 @@
     },
     {
       "matchId": "fixture-1489416",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -4826,7 +4838,7 @@
     },
     {
       "matchId": "fixture-1489417",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -4911,7 +4923,7 @@
     },
     {
       "matchId": "fixture-1489413",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -4996,7 +5008,7 @@
     },
     {
       "matchId": "fixture-1489414",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5081,7 +5093,7 @@
     },
     {
       "matchId": "fixture-1489415",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -5166,7 +5178,7 @@
     },
     {
       "matchId": "fixture-1489420",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5251,7 +5263,7 @@
     },
     {
       "matchId": "fixture-1489422",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -5336,7 +5348,7 @@
     },
     {
       "matchId": "fixture-1489419",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5421,7 +5433,7 @@
     },
     {
       "matchId": "fixture-1539013",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5506,7 +5518,7 @@
     },
     {
       "matchId": "fixture-1489418",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5591,7 +5603,7 @@
     },
     {
       "matchId": "fixture-1489421",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -5676,7 +5688,7 @@
     },
     {
       "matchId": "wc2026-ko-01",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -5698,7 +5710,7 @@
     },
     {
       "matchId": "wc2026-ko-02",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5783,7 +5795,7 @@
     },
     {
       "matchId": "wc2026-ko-03",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -5868,7 +5880,7 @@
     },
     {
       "matchId": "wc2026-ko-04",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -5953,7 +5965,7 @@
     },
     {
       "matchId": "wc2026-ko-05",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -5975,7 +5987,7 @@
     },
     {
       "matchId": "wc2026-ko-06",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 10,
@@ -5997,7 +6009,7 @@
     },
     {
       "matchId": "wc2026-ko-07",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 8,
@@ -6019,7 +6031,7 @@
     },
     {
       "matchId": "wc2026-ko-08",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -6041,7 +6053,7 @@
     },
     {
       "matchId": "wc2026-ko-09",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6063,7 +6075,7 @@
     },
     {
       "matchId": "wc2026-ko-10",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 12,
@@ -6085,7 +6097,7 @@
     },
     {
       "matchId": "wc2026-ko-11",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6107,7 +6119,7 @@
     },
     {
       "matchId": "wc2026-ko-12",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -6129,7 +6141,7 @@
     },
     {
       "matchId": "wc2026-ko-13",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 9,
@@ -6151,7 +6163,7 @@
     },
     {
       "matchId": "wc2026-ko-14",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6173,7 +6185,7 @@
     },
     {
       "matchId": "wc2026-ko-15",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6195,7 +6207,7 @@
     },
     {
       "matchId": "wc2026-ko-16",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6217,7 +6229,7 @@
     },
     {
       "matchId": "wc2026-ko-17",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6302,7 +6314,7 @@
     },
     {
       "matchId": "wc2026-ko-18",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6387,7 +6399,7 @@
     },
     {
       "matchId": "wc2026-ko-19",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6472,7 +6484,7 @@
     },
     {
       "matchId": "wc2026-ko-20",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6557,7 +6569,7 @@
     },
     {
       "matchId": "wc2026-ko-21",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6642,7 +6654,7 @@
     },
     {
       "matchId": "wc2026-ko-22",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "discussion",
         "predictionCount": 11,
@@ -6727,30 +6739,30 @@
     },
     {
       "matchId": "wc2026-ko-23",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
-        "predictionSource": "sealed",
-        "predictionCount": 0,
+        "predictionSource": "discussion",
+        "predictionCount": 11,
         "oddsProvider": "espn-draftkings",
         "oddsSyncedAt": "2026-07-04T17:53:40.482Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "watch",
-        "direction": "观望",
-        "valueSide": "市场定价接近",
-        "shortLabel": "观望",
-        "confidence": "C",
-        "riskLevel": "高",
+        "status": "strong-value",
+        "direction": "平局",
+        "valueSide": "平局被低估",
+        "shortLabel": "平局被低估",
+        "confidence": "A-",
+        "riskLevel": "中高",
         "marketDirection": "市场更看好主胜",
-        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
-        "sourceLabel": "市场归一基准",
-        "modelSource": "market",
-        "sampleSize": 0,
+        "suggestion": "模型认为平局相对市场有价差；若临场阵容或赔率快速变化，需要重新评估。",
+        "sourceLabel": "模型共识 11 票",
+        "modelSource": "models",
+        "sampleSize": 11,
         "modelProbabilities": {
-          "home": 0.7026,
-          "draw": 0.1976,
-          "away": 0.0998
+          "home": 0.68,
+          "draw": 0.28,
+          "away": 0.04
         },
         "marketProbabilities": {
           "home": 0.7026,
@@ -6759,83 +6771,83 @@
         },
         "overround": 0.0543,
         "primary": {
-          "key": "home",
-          "label": "主胜",
-          "shortLabel": "主",
-          "modelProbability": 0.7026,
-          "marketProbability": 0.7026,
-          "probabilityDiff": 0,
-          "diff": 0,
-          "marketOdds": 1.35,
-          "fairOdds": 1.4234,
-          "ev": -0.0515
+          "key": "draw",
+          "label": "平局",
+          "shortLabel": "平",
+          "modelProbability": 0.28,
+          "marketProbability": 0.1976,
+          "probabilityDiff": 0.0824,
+          "diff": 0.0824,
+          "marketOdds": 4.8,
+          "fairOdds": 3.5714,
+          "ev": 0.344
         },
         "rows": [
           {
             "key": "home",
             "label": "主胜",
             "shortLabel": "主",
-            "modelProbability": 0.7026,
+            "modelProbability": 0.68,
             "marketProbability": 0.7026,
-            "probabilityDiff": 0,
-            "diff": 0,
+            "probabilityDiff": -0.0226,
+            "diff": -0.0226,
             "marketOdds": 1.35,
-            "fairOdds": 1.4234,
-            "ev": -0.0515
+            "fairOdds": 1.4706,
+            "ev": -0.082
           },
           {
             "key": "draw",
             "label": "平局",
             "shortLabel": "平",
-            "modelProbability": 0.1976,
+            "modelProbability": 0.28,
             "marketProbability": 0.1976,
-            "probabilityDiff": 0,
-            "diff": 0,
+            "probabilityDiff": 0.0824,
+            "diff": 0.0824,
             "marketOdds": 4.8,
-            "fairOdds": 5.0608,
-            "ev": -0.0515
+            "fairOdds": 3.5714,
+            "ev": 0.344
           },
           {
             "key": "away",
             "label": "客胜",
             "shortLabel": "客",
-            "modelProbability": 0.0998,
+            "modelProbability": 0.04,
             "marketProbability": 0.0998,
-            "probabilityDiff": 0,
-            "diff": 0,
+            "probabilityDiff": -0.0598,
+            "diff": -0.0598,
             "marketOdds": 9.5,
-            "fairOdds": 10.0162,
-            "ev": -0.0515
+            "fairOdds": 25,
+            "ev": -0.62
           }
         ]
       }
     },
     {
       "matchId": "wc2026-ko-24",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
-        "predictionSource": "sealed",
-        "predictionCount": 0,
+        "predictionSource": "discussion",
+        "predictionCount": 11,
         "oddsProvider": "espn-draftkings",
         "oddsSyncedAt": "2026-07-04T17:53:41.725Z",
         "actualStatus": "pre_match"
       },
       "marketEdge": {
-        "status": "watch",
-        "direction": "观望",
-        "valueSide": "市场定价接近",
-        "shortLabel": "观望",
-        "confidence": "C",
-        "riskLevel": "高",
+        "status": "strong-value",
+        "direction": "客胜",
+        "valueSide": "客胜被低估",
+        "shortLabel": "客胜被低估",
+        "confidence": "A-",
+        "riskLevel": "中",
         "marketDirection": "市场更看好客胜",
-        "suggestion": "暂无模型概率时只展示市场归一基准，不给盘口方向。",
-        "sourceLabel": "市场归一基准",
-        "modelSource": "market",
-        "sampleSize": 0,
+        "suggestion": "模型认为客胜相对市场有价差；若临场阵容或赔率快速变化，需要重新评估。",
+        "sourceLabel": "模型共识 11 票",
+        "modelSource": "models",
+        "sampleSize": 11,
         "modelProbabilities": {
-          "home": 0.2743,
-          "draw": 0.2957,
-          "away": 0.4301
+          "home": 0.2,
+          "draw": 0.2,
+          "away": 0.6
         },
         "marketProbabilities": {
           "home": 0.2743,
@@ -6844,60 +6856,60 @@
         },
         "overround": 0.0569,
         "primary": {
-          "key": "home",
-          "label": "主胜",
-          "shortLabel": "主",
-          "modelProbability": 0.2743,
-          "marketProbability": 0.2743,
-          "probabilityDiff": 0,
-          "diff": 0,
-          "marketOdds": 3.45,
-          "fairOdds": 3.6463,
-          "ev": -0.0538
+          "key": "away",
+          "label": "客胜",
+          "shortLabel": "客",
+          "modelProbability": 0.6,
+          "marketProbability": 0.4301,
+          "probabilityDiff": 0.1699,
+          "diff": 0.1699,
+          "marketOdds": 2.2,
+          "fairOdds": 1.6667,
+          "ev": 0.32
         },
         "rows": [
           {
             "key": "home",
             "label": "主胜",
             "shortLabel": "主",
-            "modelProbability": 0.2743,
+            "modelProbability": 0.2,
             "marketProbability": 0.2743,
-            "probabilityDiff": 0,
-            "diff": 0,
+            "probabilityDiff": -0.0743,
+            "diff": -0.0743,
             "marketOdds": 3.45,
-            "fairOdds": 3.6463,
-            "ev": -0.0538
+            "fairOdds": 5,
+            "ev": -0.31
           },
           {
             "key": "draw",
             "label": "平局",
             "shortLabel": "平",
-            "modelProbability": 0.2957,
+            "modelProbability": 0.2,
             "marketProbability": 0.2957,
-            "probabilityDiff": 0,
-            "diff": 0,
+            "probabilityDiff": -0.0957,
+            "diff": -0.0957,
             "marketOdds": 3.2,
-            "fairOdds": 3.3821,
-            "ev": -0.0538
+            "fairOdds": 5,
+            "ev": -0.36
           },
           {
             "key": "away",
             "label": "客胜",
             "shortLabel": "客",
-            "modelProbability": 0.4301,
+            "modelProbability": 0.6,
             "marketProbability": 0.4301,
-            "probabilityDiff": 0,
-            "diff": 0,
+            "probabilityDiff": 0.1699,
+            "diff": 0.1699,
             "marketOdds": 2.2,
-            "fairOdds": 2.3252,
-            "ev": -0.0538
+            "fairOdds": 1.6667,
+            "ev": 0.32
           }
         ]
       }
     },
     {
       "matchId": "wc2026-ko-25",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6919,7 +6931,7 @@
     },
     {
       "matchId": "wc2026-ko-26",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6941,7 +6953,7 @@
     },
     {
       "matchId": "wc2026-ko-27",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6963,7 +6975,7 @@
     },
     {
       "matchId": "wc2026-ko-28",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -6985,7 +6997,7 @@
     },
     {
       "matchId": "wc2026-ko-29",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -7007,7 +7019,7 @@
     },
     {
       "matchId": "wc2026-ko-30",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -7029,7 +7041,7 @@
     },
     {
       "matchId": "wc2026-ko-31",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,
@@ -7051,7 +7063,7 @@
     },
     {
       "matchId": "wc2026-ko-32",
-      "generatedAt": "2026-07-04T18:37:55.972Z",
+      "generatedAt": "2026-07-04T18:48:08.072Z",
       "source": {
         "predictionSource": "sealed",
         "predictionCount": 0,

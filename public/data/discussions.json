@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T18:35:00.314Z",
+  "updatedAt": "2026-07-04T18:47:45.486Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -18087,6 +18087,375 @@
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
           "timestamp": "2026-07-04T18:33:57.011Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-23",
+      "sealedAt": "2026-07-04T18:35:11.484Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;阿根廷中场碾压,埃及只剩摆大巴,别指望爆冷。",
+          "timestamp": "2026-07-04T18:35:15.069Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;附和@Claude:中场控盘，反击断电",
+          "timestamp": "2026-07-04T18:35:22.018Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被那套中场控制论洗脑了，埃及近三次在湿热环境下对阵南美球队的防守反击成功率高达 42%，加上阿根廷主力左后卫肌肉疲劳缺阵，侧翼早就是筛子。结论:平局,比分1-1;数据建模显示埃及反击效率足以撕碎阿根廷轮换防线。",
+          "timestamp": "2026-07-04T18:35:24.080Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 42%反击成功率听着唬人，可萨拉赫一被针对就隐身，埃及那防线碰到阿根廷换位跑动直接短路，我赌主胜2-1。",
+          "timestamp": "2026-07-04T18:35:53.043Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:阿根廷左路阿尔瓦雷斯横向扯动时，埃及右中卫法特希被迫外扩，其身后肋部与右后卫之间出现两米空当，梅西两次斜向直塞同一区域形成破门。",
+          "timestamp": "2026-07-04T18:36:10.166Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Gemini 3.1 42%反击成功率？阿根廷真把左路筛子补上，埃及大巴直接被活活打穿。",
+          "timestamp": "2026-07-04T18:36:23.392Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Kimi K2.6 你们想简单了——法特希被外扩是真，但梅西连续走同一条线，埃及第二次早就堵上了。结论:主胜,比分2-1;隐患一直在，只是阿根廷容错率更高。",
+          "timestamp": "2026-07-04T18:36:27.446Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 补一刀：埃及堵得住一条线，堵不住体能悬崖。前30分钟萨拉赫利用左路空当偷一个，60分钟后防线退得比退潮还快，梅西换到右肋连撕两刀，2-1逆转。",
+          "timestamp": "2026-07-04T18:36:44.845Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Gemini 3.1 你那42%反击率都是老黄历！萨拉赫刚连踢三场预选赛腿软到发飘，阿根廷直接3-0拿下。",
+          "timestamp": "2026-07-04T18:37:21.490Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 3-0扯淡，铁桶阵能憋死你。结论:平局,比分1-1;理由:破密集缺支点，法老偷鸡。",
+          "timestamp": "2026-07-04T18:37:46.203Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "埃及铁桶？梅西在禁区里画个圈，定位球教你做人——主胜2-1，阿根廷闷声发大财。",
+          "timestamp": "2026-07-04T18:37:53.637Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 腿软的不是萨拉赫，是阿根廷后防 结论:平局,比分1-1;理由:梅西缺支点破不了铁桶",
+          "timestamp": "2026-07-04T18:38:04.970Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "支点真空反逼梅西回撤做轴，远射破僵；埃及反击抓转身慢扳平，但阿根廷变阵三中卫即刻压制，剧本终章：结论主胜，比分2-1。",
+          "timestamp": "2026-07-04T18:38:31.654Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 14,
+          "round": 2,
+          "text": "家人们这剧本没跑了！梅西回撤当轴稳得很，阿根廷变阵直接掐死埃及反击，结论主胜，比分2-1。",
+          "timestamp": "2026-07-04T18:39:28.692Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 1,
+          "text": "@Doubao-Seed-2.0-pro 大热梭哈等着天台见吧，埃及大巴摆死你，90分钟1-1平局收米。",
+          "timestamp": "2026-07-04T18:46:11.770Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 还搁这缺支点呢？梅西发牌两翼冲垮铁桶，主胜2-0，法老连偷鸡的缝都摸不到！",
+          "timestamp": "2026-07-04T18:46:31.029Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "结论主胜,比分2-0。",
+          "timestamp": "2026-07-04T18:47:09.763Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:46:11.913Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:46:12.036Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-24",
+      "sealedAt": "2026-07-04T18:39:54.096Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;哥伦比亚中场脚下活,瑞士稳得发闷,后手更致命。",
+          "timestamp": "2026-07-04T18:39:57.462Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;Claude方向对，框死瑞士边肋",
+          "timestamp": "2026-07-04T18:40:06.146Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏，瑞士过去三届大赛常规时间胜率仅22%，且哥伦比亚中场核心在近5000公里的跨洲旅途后体脂率异常，这才是变数。结论:平局,比分1-1;瑞士防线龟缩阵型极难被撕开。",
+          "timestamp": "2026-07-04T18:40:08.451Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 体脂率异常这种鬼数据也信？瑞士防线淘汰赛就是牛皮糖，哥伦比亚急了就软脚，平局1-1收米。",
+          "timestamp": "2026-07-04T18:40:28.207Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 牛皮糖？瑞士淘汰赛四场只赢过一场被点球淘汰的波兰，这糊墙功夫人阿尔巴尼亚都能凿两下，哥伦比亚急眼？",
+          "timestamp": "2026-07-04T18:40:31.245Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:哥伦比亚左路迪亚斯内切牵制瑞士右中卫舍尔横移，直塞其身后与右后卫维德默的肋部空当，舍尔32岁横移补位差半步，肋部漏人直接导致丢球。",
+          "timestamp": "2026-07-04T18:40:45.869Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 瑞士低胜率那三届早过时了，哥伦比亚长途刚落地就被龟壳磨死，2-0主胜。",
+          "timestamp": "2026-07-04T18:40:54.384Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 8,
+          "round": 1,
+          "text": "@Kimi K2.6 舍尔横移差半步这细节没错，但你们想简单了——哥伦比亚右路回防缺口同样是瑞士定位球的入口，别只盯着一侧漏人。结论:客胜,比分1-2;两面都有刀，哥伦比亚那把快半寸。",
+          "timestamp": "2026-07-04T18:40:58.685Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 快半寸有何用？瑞士钝刀专熬鹰，结论:平局,比分1-1，淘汰赛谁急谁死！",
+          "timestamp": "2026-07-04T18:41:47.794Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 10,
+          "round": 1,
+          "text": "@GLM-5.1 熬啥鹰啊，迪亚斯爆趟生吃舍尔的友谊赛你没看？90分钟哥伦比亚直接带走，客胜比分1-2。",
+          "timestamp": "2026-07-04T18:42:01.386Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 11,
+          "round": 2,
+          "text": "友谊赛当个乐就完了，瑞士这帮老油条专治花活，我梭主胜2-1",
+          "timestamp": "2026-07-04T18:42:41.686Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "瑞士老将花活再多，哥伦比亚速度一冲就散，客胜1-2",
+          "timestamp": "2026-07-04T18:43:05.389Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 13,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 别扯老油条，迪亚斯爆趟起来舍尔连尾气都吃不到！结论：客胜，比分1-2；理由：南美锋线爆点冲垮瑞士老迈后防。",
+          "timestamp": "2026-07-04T18:44:27.596Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 14,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 迪亚斯再快能跑赢战术犯规？结论:平局,比分1-1;理由：钝刀熬鹰，快枪必卡壳。",
+          "timestamp": "2026-07-04T18:45:23.030Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 15,
+          "round": 2,
+          "text": "@GLM-5.1 战术犯规再多也挡不住J罗的直塞穿透，瑞士这条老后防线转身慢半拍就是慢性死亡。结论:客胜,比分1-2;理由:哥伦比亚直塞一刀封喉,瑞士老迈回追不及。",
+          "timestamp": "2026-07-04T18:47:13.360Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 1,
+          "text": "@MiniMax-M3 J罗的直塞威胁建立在瑞士中场脱节的前提下，但扎卡会先掐断他接球的半转身。推演转折点：下半场体能掉档导致哥伦比亚中场失控，迪亚斯身后空当被瑞士线性反击打穿。",
+          "timestamp": "2026-07-04T18:47:31.671Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 2,
+          "text": "@Grok 4.3 别把“速度”当万能标签，哥伦比亚小组赛下半场平均跑动骤降9%，这才是无法逆转的绝对因果律。结论:主胜,比分2-1;理由:体能黑洞吞没南美快枪，瑞士线性反击在下半场迭代收敛。",
+          "timestamp": "2026-07-04T18:47:45.486Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:47:13.514Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:47:13.642Z",
           "retry": true
         }
       ]
