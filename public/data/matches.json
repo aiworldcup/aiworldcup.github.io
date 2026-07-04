@@ -7,7 +7,7 @@
     "totalMatches": 104,
     "placeholders": 8,
     "syncedAt": "2026-06-16T10:22:59.587Z",
-    "oddsSyncedAt": "2026-06-29T07:39:55.780Z",
+    "oddsSyncedAt": "2026-07-04T17:53:41.725Z",
     "knockoutSyncedAt": "2026-07-04T14:00:00.000Z"
   },
   "matches": [
@@ -4519,11 +4519,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 5,
+          "draw": 3.3,
+          "away": 1.8
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760502",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760502",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:33.625Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4562,11 +4570,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 19,
+          "draw": 6.5,
+          "away": 1.17
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760503",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760503",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:35.152Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4605,11 +4621,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.8,
+          "draw": 3.85,
+          "away": 4.2
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760504",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760504",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:36.401Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4648,11 +4672,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 3.05,
+          "draw": 3.2,
+          "away": 2.4
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760505",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760505",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:37.031Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4691,11 +4723,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 3.95,
+          "draw": 3.65,
+          "away": 1.91
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760506",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760506",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:38.243Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4734,11 +4774,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 2.55,
+          "draw": 3.4,
+          "away": 2.7
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760507",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760507",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:38.942Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4777,11 +4825,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 1.35,
+          "draw": 4.8,
+          "away": 9.5
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760509",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760509",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:40.482Z"
       },
       "sealedAt": null,
       "actual": null,
@@ -4820,11 +4876,19 @@
       },
       "odds": {
         "result": {
-          "home": null,
-          "draw": null,
-          "away": null
+          "home": 3.45,
+          "draw": 3.2,
+          "away": 2.2
         },
-        "scores": {}
+        "scores": {},
+        "provider": "espn-draftkings",
+        "source": "espn-public-scoreboard",
+        "sourceEventId": "760508",
+        "sourceMatchId": null,
+        "sourceMatchNum": null,
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760508",
+        "sourceLabel": "ESPN DraftKings 欧赔格式",
+        "syncedAt": "2026-07-04T17:53:41.725Z"
       },
       "sealedAt": null,
       "actual": null,
