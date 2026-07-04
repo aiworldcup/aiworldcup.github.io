@@ -5,10 +5,10 @@
     "season": "2026",
     "apiFixtures": 72,
     "totalMatches": 104,
-    "placeholders": 16,
+    "placeholders": 8,
     "syncedAt": "2026-06-16T10:22:59.587Z",
     "oddsSyncedAt": "2026-06-29T07:39:55.780Z",
-    "knockoutSyncedAt": "2026-06-29T03:35:20.090Z"
+    "knockoutSyncedAt": "2026-07-04T14:00:00.000Z"
   },
   "matches": [
     {
@@ -4465,15 +4465,17 @@
       "id": "wc2026-ko-17",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-04",
-      "kickoff": null,
+      "dateKey": "2026-07-05",
+      "kickoff": "2026-07-04T17:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "加拿大",
+        "flag": "CA",
+        "teamEn": "Canada"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "摩洛哥",
+        "flag": "MA",
+        "teamEn": "Morocco"
       },
       "odds": {
         "result": {
@@ -4486,24 +4488,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 89,
+      "venue": "Houston Stadium",
+      "bracketSlot": {
+        "home": "W73",
+        "away": "W75"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-18",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-04",
-      "kickoff": null,
+      "dateKey": "2026-07-05",
+      "kickoff": "2026-07-04T21:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "巴拉圭",
+        "flag": "PY",
+        "teamEn": "Paraguay"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "法国",
+        "flag": "FR",
+        "teamEn": "France"
       },
       "odds": {
         "result": {
@@ -4516,24 +4531,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 90,
+      "venue": "Philadelphia Stadium",
+      "bracketSlot": {
+        "home": "W74",
+        "away": "W77"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-19",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-05",
-      "kickoff": null,
+      "dateKey": "2026-07-06",
+      "kickoff": "2026-07-05T20:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "巴西",
+        "flag": "BR",
+        "teamEn": "Brazil"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "挪威",
+        "flag": "NO",
+        "teamEn": "Norway"
       },
       "odds": {
         "result": {
@@ -4546,24 +4574,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 91,
+      "venue": "New York/New Jersey Stadium",
+      "bracketSlot": {
+        "home": "W76",
+        "away": "W78"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-20",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-05",
-      "kickoff": null,
+      "dateKey": "2026-07-06",
+      "kickoff": "2026-07-06T00:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "墨西哥",
+        "flag": "MX",
+        "teamEn": "Mexico"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "英格兰",
+        "flag": "GB",
+        "teamEn": "England"
       },
       "odds": {
         "result": {
@@ -4576,24 +4617,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 92,
+      "venue": "Mexico City Stadium",
+      "bracketSlot": {
+        "home": "W79",
+        "away": "W80"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-21",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-06",
-      "kickoff": null,
+      "dateKey": "2026-07-07",
+      "kickoff": "2026-07-06T19:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "葡萄牙",
+        "flag": "PT",
+        "teamEn": "Portugal"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "西班牙",
+        "flag": "ES",
+        "teamEn": "Spain"
       },
       "odds": {
         "result": {
@@ -4606,24 +4660,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 93,
+      "venue": "Dallas Stadium",
+      "bracketSlot": {
+        "home": "W83",
+        "away": "W84"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-22",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-06",
-      "kickoff": null,
+      "dateKey": "2026-07-07",
+      "kickoff": "2026-07-07T00:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "美国",
+        "flag": "US",
+        "teamEn": "USA"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "比利时",
+        "flag": "BE",
+        "teamEn": "Belgium"
       },
       "odds": {
         "result": {
@@ -4636,24 +4703,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 94,
+      "venue": "Seattle Stadium",
+      "bracketSlot": {
+        "home": "W81",
+        "away": "W82"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-23",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-07",
-      "kickoff": null,
+      "dateKey": "2026-07-08",
+      "kickoff": "2026-07-07T16:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "阿根廷",
+        "flag": "AR",
+        "teamEn": "Argentina"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "埃及",
+        "flag": "EG",
+        "teamEn": "Egypt"
       },
       "odds": {
         "result": {
@@ -4666,24 +4746,37 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 95,
+      "venue": "Atlanta Stadium",
+      "bracketSlot": {
+        "home": "W86",
+        "away": "W88"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-24",
       "sourceFixtureId": null,
       "stage": "World Cup · Round of 16",
-      "dateKey": "2026-07-07",
-      "kickoff": null,
+      "dateKey": "2026-07-08",
+      "kickoff": "2026-07-07T20:00:00+00:00",
       "home": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "瑞士",
+        "flag": "CH",
+        "teamEn": "Switzerland"
       },
       "away": {
-        "team": "待定",
-        "flag": "🏆"
+        "team": "哥伦比亚",
+        "flag": "CO",
+        "teamEn": "Colombia"
       },
       "odds": {
         "result": {
@@ -4696,10 +4789,21 @@
       "sealedAt": null,
       "actual": null,
       "predictions": [],
-      "placeholder": true,
-      "dataSource": "fifa-schedule-placeholder",
-      "syncedAt": "2026-06-16T10:22:59.587Z",
-      "preservedAt": "2026-06-14T09:54:33.164Z"
+      "placeholder": false,
+      "dataSource": "fifa-round-of-16-derived",
+      "syncedAt": "2026-07-04T14:00:00.000Z",
+      "preservedAt": "2026-06-14T09:54:33.164Z",
+      "fifaMatchNumber": 96,
+      "venue": "BC Place Vancouver",
+      "bracketSlot": {
+        "home": "W85",
+        "away": "W87"
+      },
+      "knockoutSource": {
+        "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+        "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
+        "generatedAt": "2026-07-04T14:00:00.000Z"
+      }
     },
     {
       "id": "wc2026-ko-25",
