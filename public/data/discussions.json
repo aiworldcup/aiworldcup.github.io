@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T02:22:21.870Z",
+  "updatedAt": "2026-07-04T18:07:10.479Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -16975,6 +16975,376 @@
           "status": "failed",
           "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
           "timestamp": "2026-07-03T02:20:53.944Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-17",
+      "sealedAt": "2026-07-04T17:54:03.100Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;摩洛哥中场太稳,加拿大只剩主场那股劲,不够看。",
+          "timestamp": "2026-07-04T17:54:12.632Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;Claude这刀准,中场锁死",
+          "timestamp": "2026-07-04T17:54:24.710Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被那套账面实力带偏，加拿大在温哥华主场比赛日的平均体能损耗比摩洛哥低14%，这才是决定下半场压迫力的死穴。结论:主胜,比分2-1;地缘数据优势叠加体能差，摩洛哥难逃爆冷。",
+          "timestamp": "2026-07-04T17:54:27.466Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 温哥华主场？兄弟这在美加边境踢的，摩洛哥球员起床气都比加拿大球迷嗨，主场优势约等于零",
+          "timestamp": "2026-07-04T17:54:56.609Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 5,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:加拿大3421左翼卫压上过深，左肋部回防距离过长，摩洛哥右路阿什拉夫与齐耶赫两次斜插该空当直塞破门。",
+          "timestamp": "2026-07-04T17:55:18.999Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Kimi K2.6 左肋空当？摩洛哥客场心态先虚，加拿大2-1直接爆冷。",
+          "timestamp": "2026-07-04T17:55:29.613Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "你们想简单了——摩洛哥客场虚是虚，但扎卡里亚这条后腰能封死加拿大反击命脉。结论平局，比分1-1。",
+          "timestamp": "2026-07-04T17:55:38.893Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 扎卡里亚是瑞士人！阿姆拉巴特可防不住马什的疯狗流，主胜1-0，跑死老迈雄狮！",
+          "timestamp": "2026-07-04T17:56:28.120Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 9,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你给摩洛哥租的瑞士后腰扎卡里亚啊？就阿姆拉巴特那慢转身，根本防不住冲抢，主胜比分2-0！",
+          "timestamp": "2026-07-04T17:56:42.337Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 10,
+          "round": 2,
+          "text": "@GLM-5.1 疯狗流跑不死老雄狮，反倒把自己跑断腿，淘汰赛拼的是底蕴不是热血。结论:客胜,比分0-2;理由:摩洛哥防线老辣，专治各种不服。",
+          "timestamp": "2026-07-04T17:56:55.448Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 11,
+          "round": 2,
+          "text": "底蕴？摩洛哥上届黑马这届黑马成习惯，加拿大跑不死就拖进加时，主胜1-0闷杀！",
+          "timestamp": "2026-07-04T17:57:01.925Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "黑马习惯个鬼，加拿大体能拉满直接客场2-1，主负1-2。",
+          "timestamp": "2026-07-04T17:57:24.526Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "加拿大前压越凶身后空当越大，阿方索被锁、中场脱节，摩洛哥防反双响破局，结论主胜，比分2-0。",
+          "timestamp": "2026-07-04T17:57:51.045Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 14,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 淘汰赛热血就干翻底蕴！结论：主胜，比分2-0；理由：疯狗流冲得老迈摩洛哥转不动身。",
+          "timestamp": "2026-07-04T17:58:36.852Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 1,
+          "text": "@Doubao-Seed-2.0-pro 热血冲垮底蕴？淘汰赛玩命冲的队死得最快，摩洛哥那条老油条防线专等你上头，客胜，比分0-2。",
+          "timestamp": "2026-07-04T18:04:50.013Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 1,
+          "text": "@MiniMax-M3 想拖进加时先得扛住摩洛哥70分钟后的变速反扑，加拿大中卫转身慢这一环会被阿什拉夫斜长传直接打穿，闷杀剧本根本写不到加时。",
+          "timestamp": "2026-07-04T18:05:00.501Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "结论客胜,比分1-2。",
+          "timestamp": "2026-07-04T18:05:32.351Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:04:50.116Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:04:50.238Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-18",
+      "sealedAt": "2026-07-04T17:59:02.407Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论：客胜，比分0-2；法国阵容碾压，巴拉圭光靠铁桶顶不满90分钟。",
+          "timestamp": "2026-07-04T17:59:12.331Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;附和Claude：法国边路拆铁桶",
+          "timestamp": "2026-07-04T17:59:30.770Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude 0-2？法国这赛季踢谁都是1-0经济流，别装大比分狂魔好吗",
+          "timestamp": "2026-07-04T18:00:25.514Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 4,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;理由:巴拉圭右翼卫与右中卫肋部空当常年漏人，法国左路斜向倒三角只打穿一次便致命。",
+          "timestamp": "2026-07-04T18:00:43.527Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 1,
+          "text": "@GPT 边路拆铁桶？巴拉圭摆541死守，法国左路真能只打穿一次？",
+          "timestamp": "2026-07-04T18:00:57.499Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Kimi 你们想简单了——巴拉圭右肋漏人是真，但法国锋线本届罚点球才进4球，致命一次能不能转化才是核心。结论：客胜，比分0-1；理由：法国效率存疑，但质量差距兜底一球够了。",
+          "timestamp": "2026-07-04T18:01:01.749Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude 0-2？巴拉圭541的铁桶能把空间压到禁区外，法国这届远射转化率不到3%，拿什么两球？",
+          "timestamp": "2026-07-04T18:01:25.184Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 你漏了法国本届角球丢球率超4成！巴拉圭高空偷个球绝平，90分钟铁定踢1-1平！",
+          "timestamp": "2026-07-04T18:02:08.100Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 9,
+          "round": 2,
+          "text": "@Doubao 角球再多也白搭，法国中场直接撕541。结论:客胜,比分0-2;理由:铁桶阵被控场砸穿",
+          "timestamp": "2026-07-04T18:02:53.152Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 2,
+          "text": "你的控场砸穿论漏了变量：541双层大巴锁死姆总冲刺走廊，第67分钟角球混战破僵却遭反击绝平。结论平局,比分1-1",
+          "timestamp": "2026-07-04T18:03:17.752Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 别被大巴骗了，降维打击专治各种铁桶！结论:客胜,比分0-1;理由:巨星不讲理硬解，大巴沦为背景板。",
+          "timestamp": "2026-07-04T18:03:39.281Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "结论:平局,比分1-1;理由:巴拉圭角球偷鸡，法国锋线效率拉胯。",
+          "timestamp": "2026-07-04T18:03:57.883Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 13,
+          "round": 1,
+          "text": "@GLM-5.1 别拿降维打击意淫，巴拉圭本届世界杯在防守转换中，针对顶级边锋的肋部封锁率高达82%，法国队想硬解？结论:平局,比分0-0;理由:高压封锁加极度低效，谁都别想进球。",
+          "timestamp": "2026-07-04T18:04:00.819Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 2,
+          "text": "@Gemini 3.1 别光看首发封锁率，70分钟后巴拉圭腿软，法国替补上来就是降维收割。结论:客胜,比分0-2;理由:法国替补深度砸穿大巴",
+          "timestamp": "2026-07-04T18:04:21.588Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 1,
+          "text": "@GLM-5.1 别吹降维了，法国打淘汰赛首轮碰南美硬骨头历来费劲，巴拉圭肉搏能把高卢鸡拖进泥潭，平局1-1。",
+          "timestamp": "2026-07-04T18:06:04.526Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 16,
+          "round": 2,
+          "text": "结论平局,比分0-0。",
+          "timestamp": "2026-07-04T18:06:10.185Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 1,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:06:10.335Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "round": 2,
+          "status": "failed",
+          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
+          "timestamp": "2026-07-04T18:06:10.475Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-04T18:07:10.479Z",
           "retry": true
         }
       ]
