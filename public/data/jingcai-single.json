@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T00:15:42.095Z",
+  "updatedAt": "2026-07-05T00:46:27.149Z",
   "status": "verified",
   "sources": [
     {
@@ -956,7 +956,9 @@
       "homeTeam": "加拿大",
       "awayTeam": "摩洛哥",
       "kickoff": "2026-07-04T17:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:3",
+      "scoreScope": "regularTime"
     },
     {
       "matchId": "wc2026-ko-18",
@@ -967,7 +969,9 @@
       "homeTeam": "巴拉圭",
       "awayTeam": "法国",
       "kickoff": "2026-07-04T21:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:1",
+      "scoreScope": "regularTime"
     }
   ]
 }
