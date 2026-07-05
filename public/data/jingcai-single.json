@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T04:13:21.876Z",
+  "updatedAt": "2026-07-05T00:15:42.095Z",
   "status": "verified",
   "sources": [
     {
@@ -946,6 +946,28 @@
       "sourceScope": "single-fixed",
       "officialScore": "1:0",
       "scoreScope": "regularTime"
+    },
+    {
+      "matchId": "wc2026-ko-17",
+      "jingcaiMatchId": "2040359",
+      "matchNum": "周六089",
+      "matchDate": "2026-07-05",
+      "league": "世界杯",
+      "homeTeam": "加拿大",
+      "awayTeam": "摩洛哥",
+      "kickoff": "2026-07-04T17:00:00+00:00",
+      "sourceScope": "single-fixed"
+    },
+    {
+      "matchId": "wc2026-ko-18",
+      "jingcaiMatchId": "2040373",
+      "matchNum": "周六090",
+      "matchDate": "2026-07-05",
+      "league": "世界杯",
+      "homeTeam": "巴拉圭",
+      "awayTeam": "法国",
+      "kickoff": "2026-07-04T21:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
