@@ -4716,19 +4716,9 @@
         "sourceLabel": "ESPN DraftKings 欧赔格式",
         "syncedAt": "2026-07-04T17:53:37.031Z"
       },
-      "sealedAt": "2026-07-06T00:17:31.016Z",
+      "sealedAt": null,
       "actual": null,
-      "predictions": [
-        {
-          "modelId": "mimo-v2-5-pro",
-          "track": "open",
-          "result": "away",
-          "score": "0-1",
-          "reasoning": "赔率显示英格兰更被看好，预计常规时间内小胜。",
-          "timestamp": "2026-07-06T00:17:31.016Z",
-          "hash": "sha256:595eca59bd6d57f5ae8af8dc0139374bcadc864659843fcf362ee4a3f9b88a93"
-        }
-      ],
+      "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-round-of-16-derived",
       "syncedAt": "2026-07-04T14:00:00.000Z",
@@ -4777,19 +4767,9 @@
         "sourceLabel": "ESPN DraftKings 欧赔格式",
         "syncedAt": "2026-07-04T17:53:38.243Z"
       },
-      "sealedAt": "2026-07-06T00:17:31.016Z",
+      "sealedAt": null,
       "actual": null,
-      "predictions": [
-        {
-          "modelId": "mimo-v2-5-pro",
-          "track": "open",
-          "result": "away",
-          "score": "1-2",
-          "reasoning": "赔率显示西班牙胜率较高，淘汰赛中小胜可能性大。",
-          "timestamp": "2026-07-06T00:17:31.016Z",
-          "hash": "sha256:de0243a3fb462ebd08e3cb6f564b2330104b1cee38c194283c807274fc5fc260"
-        }
-      ],
+      "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-round-of-16-derived",
       "syncedAt": "2026-07-04T14:00:00.000Z",
@@ -4838,19 +4818,9 @@
         "sourceLabel": "ESPN DraftKings 欧赔格式",
         "syncedAt": "2026-07-04T17:53:38.942Z"
       },
-      "sealedAt": "2026-07-06T00:17:31.016Z",
+      "sealedAt": null,
       "actual": null,
-      "predictions": [
-        {
-          "modelId": "mimo-v2-5-pro",
-          "track": "open",
-          "result": "home",
-          "score": "2-1",
-          "reasoning": "赔率显示美国略占优势，预测常规时间主队小胜。",
-          "timestamp": "2026-07-06T00:17:31.016Z",
-          "hash": "sha256:abbe9bf84596b2b691f55d906956984cb71af33a772c00bb8d96882bb34fc74d"
-        }
-      ],
+      "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-round-of-16-derived",
       "syncedAt": "2026-07-04T14:00:00.000Z",
@@ -4899,19 +4869,9 @@
         "sourceLabel": "ESPN DraftKings 欧赔格式",
         "syncedAt": "2026-07-04T17:53:40.482Z"
       },
-      "sealedAt": "2026-07-06T00:17:31.016Z",
+      "sealedAt": null,
       "actual": null,
-      "predictions": [
-        {
-          "modelId": "mimo-v2-5-pro",
-          "track": "open",
-          "result": "home",
-          "score": "2-1",
-          "reasoning": "赔率显示阿根廷胜率极高，预测其凭借实力小胜埃及。",
-          "timestamp": "2026-07-06T00:17:31.016Z",
-          "hash": "sha256:dd822f48654c38ec2af43ce351ce0c7136a184d3b2213a08989af7849e9835ea"
-        }
-      ],
+      "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-round-of-16-derived",
       "syncedAt": "2026-07-04T14:00:00.000Z",
@@ -4960,19 +4920,9 @@
         "sourceLabel": "ESPN DraftKings 欧赔格式",
         "syncedAt": "2026-07-04T17:53:41.725Z"
       },
-      "sealedAt": "2026-07-06T00:17:31.016Z",
+      "sealedAt": null,
       "actual": null,
-      "predictions": [
-        {
-          "modelId": "mimo-v2-5-pro",
-          "track": "open",
-          "result": "away",
-          "score": "1-2",
-          "reasoning": "赔率显示哥伦比亚胜率最高，因此预测客队获胜。",
-          "timestamp": "2026-07-06T00:17:31.016Z",
-          "hash": "sha256:a02fd999452175b8d8c508ad2b81c09846512bfa5de66bd6e3f0012eec16f8ef"
-        }
-      ],
+      "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-round-of-16-derived",
       "syncedAt": "2026-07-04T14:00:00.000Z",
