@@ -13,6 +13,7 @@ const {
   summarizeRound,
   buildModelPrompt,
   parseModelJson,
+  generateRoundData,
 } = require("./champion-gauntlet");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
@@ -21,12 +22,27 @@ function readMatches() {
   return JSON.parse(fs.readFileSync(MATCHES_PATH, "utf8")).matches;
 }
 
+function round32OpeningSnapshot(matches) {
+  return (matches || []).map((match) => {
+    if (match.stage !== "World Cup · Round of 32" || match.id === "wc2026-ko-01") return match;
+    const next = { ...match, actual: null };
+    delete next.actualSource;
+    delete next.finalActual;
+    delete next.finalActualSource;
+    return next;
+  });
+}
+
+function readOpeningSnapshotMatches() {
+  return round32OpeningSnapshot(readMatches());
+}
+
 function byTeam(candidates, team) {
   return candidates.find((item) => item.team === team);
 }
 
 function sampleRound32Context() {
-  const matches = readMatches();
+  const matches = readOpeningSnapshotMatches();
   const candidateMatches = candidateMatchesForRound(matches, "round32");
   const candidateTeams = candidateTeamsForRound(candidateMatches);
   return { roundId: "round32", candidateMatches, candidateTeams, allowedPicks: 3 };
@@ -37,7 +53,7 @@ function testRoundOrderIsStable() {
 }
 
 function testRound32SkipsCompletedOpener() {
-  const matches = candidateMatchesForRound(readMatches(), "round32");
+  const matches = candidateMatchesForRound(readOpeningSnapshotMatches(), "round32");
   const teams = candidateTeamsForRound(matches);
 
   assert.strictEqual(matches.length, 15);
@@ -90,10 +106,14 @@ function testModelStateUsesSurvivorCount() {
 }
 
 function testSettlementRequiresWholeRoundAndEliminatesZeroAlive() {
-  const matches = readMatches().map((match) => ({ ...match }));
+  const matches = readOpeningSnapshotMatches().map((match) => ({ ...match }));
   const roundMatches = matches.filter((match) => match.stage === "World Cup · Round of 32" && match.id !== "wc2026-ko-01");
   roundMatches.forEach((match) => {
     match.actual = { result: "home", score: "1-0" };
+    delete match.advanceResult;
+    delete match.advanceSource;
+    delete match.finalActual;
+    delete match.finalActualSource;
   });
 
   const round = {
@@ -134,9 +154,42 @@ function testSettlementRequiresWholeRoundAndEliminatesZeroAlive() {
   assert.strictEqual(settled.summary.eliminatedModels, 1);
 
   assert.throws(
-    () => settleRoundData(round, readMatches(), "2026-06-29T12:00:00.000Z"),
+    () => settleRoundData(round, readOpeningSnapshotMatches(), "2026-06-29T12:00:00.000Z"),
     /pending round32 matches/
   );
+}
+
+function testSettlementUsesAdvancementResultForKnockoutDraws() {
+  const matches = readMatches().map((match) => ({ ...match }));
+  const drawMatch = matches.find((match) => match.id === "wc2026-ko-03");
+  drawMatch.actual = { result: "draw", score: "1-1" };
+  drawMatch.advanceResult = "away";
+
+  const round = {
+    roundId: "round32",
+    status: "locked",
+    candidateTeams: candidateTeamsForRound([drawMatch]),
+    entries: [
+      {
+        modelId: "alpha",
+        status: "alive",
+        picks: [{ team: "巴拉圭", matchId: "wc2026-ko-03" }],
+        issues: [],
+      },
+      {
+        modelId: "beta",
+        status: "alive",
+        picks: [{ team: "德国", matchId: "wc2026-ko-03" }],
+        issues: [],
+      },
+    ],
+  };
+
+  const settled = settleRoundData(round, matches, "2026-07-04T12:00:00.000Z");
+
+  assert.strictEqual(settled.entries[0].status, "alive");
+  assert.deepStrictEqual(settled.entries[0].alivePicks.map((item) => item.team), ["巴拉圭"]);
+  assert.strictEqual(settled.entries[1].status, "eliminated");
 }
 
 function testMergePreservesChampionRadarData() {
@@ -192,12 +245,92 @@ function testParseModelJsonAcceptsTrailingBanter() {
   assert.deepStrictEqual(withSecondObject.picks, ["阿根廷", "法国", "德国"]);
 }
 
-testRoundOrderIsStable();
-testRound32SkipsCompletedOpener();
-testValidationRejectsBadPicks();
-testModelStateUsesSurvivorCount();
-testSettlementRequiresWholeRoundAndEliminatesZeroAlive();
-testMergePreservesChampionRadarData();
-testSummaryAndPromptExposeVotesAndRules();
-testParseModelJsonAcceptsTrailingBanter();
-console.log("[champion-gauntlet.test] ok");
+async function testMissingOnlyPreservesExistingCandidatePool() {
+  const matches = [
+    {
+      id: "m1",
+      stage: "World Cup · Round of 16",
+      home: { team: "甲队", flag: "AA" },
+      away: { team: "乙队", flag: "BB" },
+      actual: { result: "home", score: "1-0" },
+    },
+    {
+      id: "m2",
+      stage: "World Cup · Round of 16",
+      home: { team: "丙队", flag: "CC" },
+      away: { team: "丁队", flag: "DD" },
+    },
+  ];
+  const candidateTeams = candidateTeamsForRound(matches);
+  const existingBeta = {
+    modelId: "beta",
+    status: "alive",
+    allowedPicks: 1,
+    picks: [{ team: "丙队", flag: "CC", matchId: "m2", opponent: "丁队", side: "home" }],
+    issues: [],
+    calledAt: "old",
+  };
+  const championData = {
+    gauntlet: {
+      rounds: [
+        {
+          roundId: "round32",
+          status: "settled",
+          entries: [
+            { modelId: "alpha", status: "alive", alivePicks: [{ team: "甲队" }] },
+            { modelId: "beta", status: "alive", alivePicks: [{ team: "丙队" }] },
+          ],
+        },
+        {
+          roundId: "round16",
+          status: "open",
+          candidateTeams,
+          excludedMatches: [{ matchId: "old-skip", reason: "keep me" }],
+          entries: [
+            { modelId: "alpha", status: "issue", allowedPicks: 1, picks: [], issues: [{ type: "timeout" }], calledAt: "old" },
+            existingBeta,
+          ],
+        },
+      ],
+    },
+  };
+
+  const round = await generateRoundData({
+    roundId: "round16",
+    matches,
+    models: [{ id: "alpha", name: "Alpha" }, { id: "beta", name: "Beta" }],
+    championData,
+    missingOnly: true,
+    generatedAt: "2026-07-05T12:00:00.000Z",
+    askModelFn: async (modelId, prompt) => {
+      assert.strictEqual(modelId, "alpha");
+      assert.match(prompt, /甲队/);
+      assert.match(prompt, /丙队/);
+      return { ok: true, text: '{"picks":["甲队"],"line":"补上。"}', durationMs: 1 };
+    },
+  });
+
+  assert.deepStrictEqual(round.candidateTeams.map((item) => item.matchId), ["m1", "m1", "m2", "m2"]);
+  assert.deepStrictEqual(round.excludedMatches, championData.gauntlet.rounds[1].excludedMatches);
+  assert.strictEqual(round.entries.find((entry) => entry.modelId === "beta"), existingBeta);
+  assert.deepStrictEqual(round.entries.find((entry) => entry.modelId === "alpha").picks.map((item) => item.team), ["甲队"]);
+}
+
+async function main() {
+  testRoundOrderIsStable();
+  testRound32SkipsCompletedOpener();
+  testValidationRejectsBadPicks();
+  testModelStateUsesSurvivorCount();
+  testSettlementRequiresWholeRoundAndEliminatesZeroAlive();
+  testSettlementUsesAdvancementResultForKnockoutDraws();
+  testMergePreservesChampionRadarData();
+  testSummaryAndPromptExposeVotesAndRules();
+  testParseModelJsonAcceptsTrailingBanter();
+  await testMissingOnlyPreservesExistingCandidatePool();
+  console.log("[champion-gauntlet.test] ok");
+}
+
+main().catch((err) => {
+  console.error(err.stack || err);
+  process.exit(1);
+});

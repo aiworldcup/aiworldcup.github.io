@@ -87,6 +87,25 @@ function candidateTeamsForRound(matches) {
   ]);
 }
 
+function candidateMatchesFromExistingRound(matches, existingRound) {
+  const existingTeams = Array.isArray(existingRound?.candidateTeams) ? existingRound.candidateTeams : [];
+  if (!existingTeams.length) return [];
+  const matchById = new Map((matches || []).map((match) => [match.id, match]));
+  const matchIds = Array.from(new Set(existingTeams.map((item) => item.matchId).filter(Boolean)));
+  return matchIds.map((matchId) => {
+    const match = matchById.get(matchId);
+    if (match) return match;
+    const teams = existingTeams.filter((item) => item.matchId === matchId);
+    const home = teams.find((item) => item.side === "home") || teams[0] || {};
+    const away = teams.find((item) => item.side === "away") || teams[1] || {};
+    return {
+      id: matchId,
+      home: { team: home.team || "", flag: home.flag || "" },
+      away: { team: away.team || "", flag: away.flag || "" },
+    };
+  });
+}
+
 function excludedMatchesForRound(matches, roundId) {
   if (roundId !== "round32") return [];
   const opener = (matches || []).find((match) => match.id === ROUND32_EXCLUDED_OPENER);
@@ -422,8 +441,13 @@ async function generateRoundData({ roundId, matches, models, championData, askMo
   const existingGauntlet = championData.gauntlet || {};
   const existingRound = latestRound(existingGauntlet, roundId);
   const existingEntries = new Map((existingRound?.entries || []).map((entry) => [entry.modelId, entry]));
-  const candidateMatches = candidateMatchesForRound(matches, roundId);
-  const candidateTeams = candidateTeamsForRound(candidateMatches);
+  const preserveExistingCandidates = missingOnly && Array.isArray(existingRound?.candidateTeams) && existingRound.candidateTeams.length > 0;
+  const candidateMatches = preserveExistingCandidates
+    ? candidateMatchesFromExistingRound(matches, existingRound)
+    : candidateMatchesForRound(matches, roundId);
+  const candidateTeams = preserveExistingCandidates
+    ? existingRound.candidateTeams
+    : candidateTeamsForRound(candidateMatches);
   const modelList = models || enabledModels();
 
   const entries = await runPool(modelList, concurrency, async (model) => {
@@ -454,7 +478,9 @@ async function generateRoundData({ roundId, matches, models, championData, askMo
       ? { type: "fixed", count: 3, description: "首轮剩余 15 场 30 队,每个大模型固定 3 票。" }
       : { type: "survivor_count", description: "本轮可选数量等于上一整轮活口数;0 活口永久出局。" },
     candidateTeams,
-    excludedMatches: excludedMatchesForRound(matches, roundId),
+    excludedMatches: preserveExistingCandidates && Array.isArray(existingRound?.excludedMatches)
+      ? existingRound.excludedMatches
+      : excludedMatchesForRound(matches, roundId),
     entries,
   };
   round.summary = summarizeRound(round);
@@ -462,7 +488,12 @@ async function generateRoundData({ roundId, matches, models, championData, askMo
 }
 
 function resultWinnerTeam(match) {
-  const result = match?.actual?.result;
+  const candidates = [
+    match?.advanceResult,
+    match?.finalActual?.result,
+    match?.actual?.result,
+  ];
+  const result = candidates.find((item) => item === "home" || item === "away") || "";
   if (result === "home") return match.home.team;
   if (result === "away") return match.away.team;
   return "";
