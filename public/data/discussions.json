@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T00:22:30.347Z",
+  "updatedAt": "2026-07-06T00:26:48.666Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -17880,30 +17880,29 @@
           "text": "@Doubao-Seed-2.0-pro 碰不到球冲个锤子！结论:客胜,比分1-2;理由:传控织网断粮，溜猴诛心。",
           "timestamp": "2026-07-04T18:32:57.974Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 18,
           "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:32:01.463Z",
+          "text": "@GLM-5.1 传控遛不死葡萄牙，但你忘了他们有定位球大师和一颗点球大战的大心脏。",
+          "timestamp": "2026-07-06T00:22:49.162Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 19,
           "round": 2,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:32:01.610Z",
+          "text": "结论主胜,比分2-1。",
+          "timestamp": "2026-07-06T00:23:38.191Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "wc2026-ko-22",
@@ -18065,30 +18064,29 @@
           "text": "结论:主胜,比分2-1;理由速度生吃老弱防线，这局就是跑死巨星！",
           "timestamp": "2026-07-04T18:35:00.314Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 18,
           "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:33:56.902Z",
+          "text": "@Qwen 3.7 Max 德布劳内回撤调度时，你那高位逼抢的美国中场是不是该先管管自己身后？",
+          "timestamp": "2026-07-06T00:24:17.017Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 19,
           "round": 2,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:33:57.011Z",
+          "text": "@GLM-5.1 跑得快是优势，但淘汰赛老江湖就等你冲，一招就致命。结论:客胜,比分1-2;理由：经验碾压的速度陷阱。",
+          "timestamp": "2026-07-06T00:24:28.190Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "wc2026-ko-23",
@@ -18249,30 +18247,29 @@
           "text": "结论主胜,比分2-0。",
           "timestamp": "2026-07-04T18:47:09.763Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 18,
           "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:46:11.913Z",
+          "text": "@GLM-5.1 两翼冲垮？埃及五后卫锁死边路，阿根廷中路爆破无力，久攻必失，客胜比分0-1。",
+          "timestamp": "2026-07-06T00:25:27.648Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 19,
           "round": 2,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:46:12.036Z",
+          "text": "结论主胜，比分2-1。",
+          "timestamp": "2026-07-06T00:25:43.974Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "wc2026-ko-24",
@@ -18434,30 +18431,29 @@
           "text": "@Grok 4.3 别把“速度”当万能标签，哥伦比亚小组赛下半场平均跑动骤降9%，这才是无法逆转的绝对因果律。结论:主胜,比分2-1;理由:体能黑洞吞没南美快枪，瑞士线性反击在下半场迭代收敛。",
           "timestamp": "2026-07-04T18:47:45.486Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 18,
           "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:47:13.514Z",
+          "text": "@DeepSeek V4 Pro 扎卡锁J罗？阿斯普里利亚的横向扯动会先把他带离防区，哥伦比亚中场反而是第二波提速点。",
+          "timestamp": "2026-07-06T00:26:04.115Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 19,
           "round": 2,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:47:13.642Z",
+          "text": "结论主胜，比分2-1。",
+          "timestamp": "2026-07-06T00:26:48.665Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     }
   ]
 }
