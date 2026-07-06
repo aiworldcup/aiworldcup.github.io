@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T03:07:45.766Z",
+  "updatedAt": "2026-07-06T03:28:13.964Z",
   "status": "verified",
   "sources": [
     {
@@ -995,7 +995,9 @@
       "homeTeam": "墨西哥",
       "awayTeam": "英格兰",
       "kickoff": "2026-07-06T00:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "2:3",
+      "scoreScope": "regularTime"
     },
     {
       "matchId": "wc2026-ko-21",
