@@ -4717,7 +4717,10 @@
         "syncedAt": "2026-07-04T17:53:37.031Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "away",
+        "score": "2-3"
+      },
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-round-of-16-derived",
@@ -4733,6 +4736,13 @@
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule",
         "generatedAt": "2026-07-04T14:00:00.000Z"
+      },
+      "actualSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760505",
+        "scoreScope": "regularTime",
+        "syncedAt": "2026-07-06T03:07:54.987Z"
       }
     },
     {
