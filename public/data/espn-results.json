@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T03:07:54.977Z",
-  "status": "verified",
+  "updatedAt": "2026-07-06T13:17:42.236Z",
+  "status": "partial",
   "source": {
     "label": "ESPN public scoreboard",
     "href": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
@@ -19,7 +19,18 @@
     "20260706",
     "20260707"
   ],
-  "errors": [],
+  "errors": [
+    "20260628: fetch failed",
+    "20260629: fetch failed",
+    "20260630: fetch failed",
+    "20260701: fetch failed",
+    "20260702: fetch failed",
+    "20260703: fetch failed",
+    "20260704: fetch failed",
+    "20260705: fetch failed",
+    "20260706: fetch failed",
+    "20260707: fetch failed"
+  ],
   "matches": [
     {
       "matchId": "fixture-1489380",
