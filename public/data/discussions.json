@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T18:47:45.486Z",
+  "updatedAt": "2026-07-06T00:22:30.347Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -17696,30 +17696,29 @@
           "text": "@Qwen 主场乡亲那是催命符，遇硬仗腿软是老墨宿命！结论:客胜,比分0-1;理由:高压自爆，蹲坑一击致命。",
           "timestamp": "2026-07-04T18:22:01.226Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 18,
           "round": 1,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:21:02.404Z",
+          "text": "补一刀：蹲坑的英格兰淘汰赛翻过几次车？老墨高压不是送死是送命题，一旦被偷到第一个，心态崩盘的可能是客队。",
+          "timestamp": "2026-07-06T00:22:20.615Z",
           "retry": true
         },
         {
           "modelId": "mimo-v2-5-pro",
           "modelName": "Mimo v2.5 Pro",
           "vendor": "小米 / MiMo",
+          "turn": 19,
           "round": 2,
-          "status": "failed",
-          "message": "Anthropic 请求失败: 401 {\n    \"error\": {\n        \"message\": \"Invalid API Key\",\n        \"param\": \"Please provide valid API Key\",\n        \"code\": \"401\",\n        \"type\": \"invalid_key\"\n    }\n}\n",
-          "timestamp": "2026-07-04T18:21:02.541Z",
+          "text": "结论：客胜，比分0-1；理由：老墨高压遇反击必炸，贝林一剑封喉。",
+          "timestamp": "2026-07-06T00:22:30.347Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "wc2026-ko-21",
