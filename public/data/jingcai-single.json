@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T03:28:13.964Z",
+  "updatedAt": "2026-07-07T00:15:02.628Z",
   "status": "verified",
   "sources": [
     {
@@ -1007,7 +1007,8 @@
       "league": "世界杯",
       "homeTeam": "葡萄牙",
       "awayTeam": "西班牙",
-      "kickoff": "2026-07-06T19:00:00+00:00"
+      "kickoff": "2026-07-06T19:00:00+00:00",
+      "sourceScope": "single-fixed"
     },
     {
       "matchId": "wc2026-ko-22",
@@ -1017,7 +1018,8 @@
       "league": "世界杯",
       "homeTeam": "美国",
       "awayTeam": "比利时",
-      "kickoff": "2026-07-07T00:00:00+00:00"
+      "kickoff": "2026-07-07T00:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
