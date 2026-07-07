@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T02:28:29.581Z",
+  "updatedAt": "2026-07-07T03:09:26.642Z",
   "status": "verified",
   "sources": [
     {
@@ -1024,6 +1024,16 @@
       "sourceScope": "single-fixed",
       "officialScore": "1:4",
       "scoreScope": "regularTime"
+    },
+    {
+      "matchId": "wc2026-ko-24",
+      "jingcaiMatchId": "2040428",
+      "matchNum": "周二096",
+      "matchDate": "2026-07-08",
+      "league": "世界杯",
+      "homeTeam": "瑞士",
+      "awayTeam": "哥伦比亚",
+      "kickoff": "2026-07-07T20:00:00+00:00"
     }
   ]
 }
