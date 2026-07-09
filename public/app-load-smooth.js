@@ -46,7 +46,7 @@ const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
 const DATA_REFRESH_MS = 60 * 1000;
-const DATA_VERSION = '20260629-champion-cn-2';
+const DATA_VERSION = '20260710-qf-vs';
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -1153,7 +1153,7 @@ function renderBracket() {
         <h3>${stageShortName(stage)}</h3>
         ${items.map(match => {
           const winner = winnerName(match);
-          const score = match.actual?.score || '待定';
+          const score = match.actual?.score || (match.placeholder ? '待定' : 'vs');
           return `<button type="button" class="bracket-match ${match.actual ? 'is-settled' : ''}" data-match="${escapeHTML(match.id)}">
             <span class="${winner === match.home.team ? 'is-winner' : ''}">${teamFlag(match.home.team)} ${escapeHTML(match.home.team)}</span>
             <b>${escapeHTML(score)}</b>
