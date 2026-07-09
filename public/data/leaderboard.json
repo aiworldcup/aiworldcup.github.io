@@ -1,13 +1,14 @@
 {
-  "updatedAt": "2026-07-08T00:34:34.519Z",
+  "updatedAt": "2026-07-09T16:33:18.611Z",
   "settlement": {
     "rule": "match.actual 存在即结算;actual 固定为90分钟常规时间赛果;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-07-08T00:34:34.498Z",
+    "generatedAt": "2026-07-09T16:33:18.590Z",
     "graceMinutes": 150,
     "scoring": "赛果榜按90分钟常规时间胜平负命中率排序;比分榜按90分钟常规时间具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
       "settled": 96,
-      "placeholder": 8
+      "pre_match": 4,
+      "placeholder": 4
     },
     "pendingResult": [],
     "nextAction": "暂无待赛果结算队列"

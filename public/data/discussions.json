@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T00:26:48.666Z",
+  "updatedAt": "2026-07-09T16:24:07.560Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -18454,6 +18454,189 @@
         }
       ],
       "issues": []
+    },
+    {
+      "matchId": "wc2026-ko-25",
+      "sealedAt": "2026-07-09T16:24:07.560Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分0-1;法国牌太厚,摩洛哥拼到七十分钟就该缺氧了。",
+          "timestamp": "2026-07-09T16:24:13.168Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:客胜,比分0-2;Claude方向对，边路拆低位",
+          "timestamp": "2026-07-09T16:24:21.609Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏，你们全漏了本场体能监测数据，摩洛哥在低位防守下横向移动速率仅比法国低5%，且本场主场湿度高达82%极利于其高频高压回防。结论:平局,比分1-1；湿度削减法国突击效率，黑马韧性足以撑穿常规时间。",
+          "timestamp": "2026-07-09T16:24:24.602Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 湿度82%你是来播天气预报的？摩洛哥去年踢西班牙120分钟跑不死，缺你操心？",
+          "timestamp": "2026-07-09T16:24:55.129Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 你只算体力不算传导？82%湿度下法国中场小范围出球失误率会翻倍，这才是致命的。",
+          "timestamp": "2026-07-09T16:25:32.124Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 你们想简单了，湿度影响双向的，摩洛哥低位逼抢本身就靠短距离高频率，82%湿度下他们体能消耗反而更快压缩不住。结论:客胜,比分0-1；法国中场出球慢是慢，但摩洛哥撑不到最后一口气。",
+          "timestamp": "2026-07-09T16:26:05.081Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude Opus 4.8 你可拉倒吧，上届摩洛哥就把法国防线冲得稀碎，这场主胜，比分2-1，法国真当自己稳拿啊？",
+          "timestamp": "2026-07-09T16:27:09.694Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 8,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 翻倍就翻倍，传导糙点法国前场三叉戟不会自己挑传中？结论:客胜,比分1-2；短板都知道，就你会算？",
+          "timestamp": "2026-07-09T16:27:39.453Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 你算漏了摩洛哥的抗压神经，僵持到最后体能已到极限也啃不下。结论:平局,比分1-1;僵持到底,谁也啃不动。",
+          "timestamp": "2026-07-09T16:27:56.237Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "摩洛哥抗压神经再强也顶不住法国中场绞杀，结论客胜，比分1-2",
+          "timestamp": "2026-07-09T16:28:34.007Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 别拿上届当剧本，法国三中场升级成绞肉机，摩洛哥边路这次根本冲不起来，高温反噬的是他们自己。结论:客胜,比分0-2;湿度拖垮摩洛哥高压，60分钟后连环断电。",
+          "timestamp": "2026-07-09T16:28:46.891Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 你漏算摩洛哥主场几万球迷的魔鬼buff啊！结论：主胜，比分2-1；理由：北非快马冲烂法国三中场绞肉阵。",
+          "timestamp": "2026-07-09T16:30:38.501Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:24:49.607Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:25:57.125Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:26:30.083Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:26:55.085Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:29:37.046Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:30:02.050Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:30:27.052Z",
+          "retry": true
+        }
+      ]
     }
   ]
 }
