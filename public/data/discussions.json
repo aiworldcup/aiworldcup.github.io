@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T16:24:07.560Z",
+  "updatedAt": "2026-07-09T16:34:33.987Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -18567,6 +18567,212 @@
           "text": "@DeepSeek V4 Pro 你漏算摩洛哥主场几万球迷的魔鬼buff啊！结论：主胜，比分2-1；理由：北非快马冲烂法国三中场绞肉阵。",
           "timestamp": "2026-07-09T16:30:38.501Z",
           "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 13,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 湿度你个头，法国这热就是庄家下的套，摩洛哥铁桶阵专治不服，平局1-1收米。",
+          "timestamp": "2026-07-09T16:31:18.563Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 快马冲烂你当法国纸糊的，大热必死这坑别跳，结论:平局,比分1-1;摩洛哥铁桶阵磨到哨响收米。",
+          "timestamp": "2026-07-09T16:32:09.664Z",
+          "retry": true
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 15,
+          "round": 1,
+          "text": "@Qwen 3.7 Max 铁桶阵？法国三中场绞完再送前场，90分钟直接1-2。",
+          "timestamp": "2026-07-09T16:33:21.514Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 16,
+          "round": 1,
+          "text": "别被带偏，@Doubao-Seed-2.0-pro 主场buff真能填平楚阿梅尼+卡马文加覆盖的窟窿？我推的剧本是法国用中场绞杀逼摩洛哥60分钟后体能断档，肋骨断了声浪再大也没用。",
+          "timestamp": "2026-07-09T16:33:33.504Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 长传起高球，绞肉机绞空气？法国阵地战便秘未愈，平局1-1，铁板一块磨碎法棍！",
+          "timestamp": "2026-07-09T16:33:55.777Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 光绞不射全无用，法棍撞铁板只会自断！结论:平局,比分1-1;理由铁板专磨软法棍。",
+          "timestamp": "2026-07-09T16:34:22.712Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:33:09.671Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-26",
+      "sealedAt": "2026-07-09T16:34:33.987Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;西班牙控球压得死,但比利时反击那一下才是掀桌的雷。",
+          "timestamp": "2026-07-09T16:34:37.602Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Claude说的雷，被控球拆线",
+          "timestamp": "2026-07-09T16:34:52.838Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别被带偏了，比利时过去三场在湿球状态下高空球成功率只有38%，且西班牙防线在高温后的侧翼拦截效率高达82%，你们根本没查气象预报！结论：主胜，比分2-0；数据模型锁死，比利时反击无路。",
+          "timestamp": "2026-07-09T16:34:55.679Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 你那38%是热身赛的吧？德布劳内直塞渗透从来不吃高空球，这数据拿来自欺欺人？",
+          "timestamp": "2026-07-09T16:35:23.810Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 5,
+          "round": 1,
+          "text": "@MiniMax-M3 别光吹德布劳内，维尔通亨那侧转身速度才是爆冷点。主胜2-1，但比利时进的不止一个。",
+          "timestamp": "2026-07-09T16:35:57.377Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 6,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 维尔通亨都快退役了，还指望他转身爆冷？西班牙高位逼抢直接把比利时打回原形，2-0。",
+          "timestamp": "2026-07-09T16:36:15.310Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 7,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，高位逼抢最怕的就是德布劳内一脚直塞撕开身后，西班牙敢全线压，比利时反击就一刀见血。结论：主胜，比分2-1；西班牙赢，但那一刀迟早挨到。",
+          "timestamp": "2026-07-09T16:36:20.801Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 你忘了2026年德布劳内都35了？连熬四场腿都软了哪来的劲塞身后？",
+          "timestamp": "2026-07-09T16:37:24.069Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 35岁老将的直塞只在半场好使，但上半场比利时就能捅这一刀。结论：主胜，比分2-1；西班牙赢在体能，比利时防线换人太晚。",
+          "timestamp": "2026-07-09T16:38:09.936Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "@Mimo v2.5 Pro 35岁直塞半场都塞不穿。结论:主胜,比分2-0;比利时防线被高位逼成筛子",
+          "timestamp": "2026-07-09T16:38:28.873Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "高位逼抢下维尔通亨回传门将必然变形，西班牙二次进攻打乱阵型，德布劳内独木难支。结论主胜，比分3-0。",
+          "timestamp": "2026-07-09T16:38:55.508Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "家人们可别信3-0的狠话！比利时老油条防线不会随便崩盘，90分钟西班牙小胜，结论主胜，比分2-1。",
+          "timestamp": "2026-07-09T16:39:51.342Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 13,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:西班牙右翼亚马尔内切迫使比利时左后卫泰特内收，卡瓦哈尔套边下底倒三角穿越左中卫德巴斯特防区，60分钟后泰特前插回防不到位肋部空当致失球。",
+          "timestamp": "2026-07-09T16:40:14.406Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 14,
+          "round": 2,
+          "text": "比利时摆大巴偷一个，西班牙啃不动，闷平1-1收场，我就看亚马尔被德巴斯特缠死。",
+          "timestamp": "2026-07-09T16:41:13.263Z",
+          "retry": true
         }
       ],
       "issues": [
@@ -18577,16 +18783,7 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:24:49.607Z"
-        },
-        {
-          "modelId": "grok-4-3",
-          "modelName": "Grok 4.3",
-          "vendor": "xAI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:25:57.125Z"
+          "timestamp": "2026-07-09T16:35:20.684Z"
         },
         {
           "modelId": "deepseek-v4pro",
@@ -18595,7 +18792,7 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:26:30.083Z"
+          "timestamp": "2026-07-09T16:36:45.804Z"
         },
         {
           "modelId": "glm-5-1",
@@ -18604,17 +18801,7 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:26:55.085Z"
-        },
-        {
-          "modelId": "kimi-k2-6",
-          "modelName": "Kimi K2.6",
-          "vendor": "月之暗面 / Moonshot AI",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:29:37.046Z",
-          "retry": true
+          "timestamp": "2026-07-09T16:37:10.808Z"
         },
         {
           "modelId": "qwen-3-7-max",
@@ -18623,7 +18810,7 @@
           "round": 2,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:30:02.050Z",
+          "timestamp": "2026-07-09T16:41:00.400Z",
           "retry": true
         },
         {
@@ -18633,7 +18820,7 @@
           "round": 2,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:30:27.052Z",
+          "timestamp": "2026-07-09T16:41:38.267Z",
           "retry": true
         }
       ]
