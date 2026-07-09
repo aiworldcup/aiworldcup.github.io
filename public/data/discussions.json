@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T16:44:17.171Z",
+  "updatedAt": "2026-07-09T17:02:43.902Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -18960,27 +18960,49 @@
           "text": "@Grok 你光算哈兰德一点，挪威还有谁能稳定输出？结论:客胜,比分0-2;理由:进攻断电的挪威扛不住90分钟。",
           "timestamp": "2026-07-09T16:50:33.996Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 15,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:44:58.511Z"
+          "text": "@DeepSeek V4 Pro 别做梦了贝林厄姆70分钟后还能跑得动？挪威这帮人蹲坑等哈兰德冲吊才是杀招，我看冷门平局1-1。",
+          "timestamp": "2026-07-09T16:56:56.468Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "@MiniMax-M3 冷门方向对但2-1太飘，英格兰后场不会崩两次，1-1才是庄家最怕的剧本。结论:平局,比分1-1;理由:蹲坑等反击，英格兰破密集没招",
+          "timestamp": "2026-07-09T16:57:22.371Z",
+          "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 17,
           "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:46:39.366Z"
+          "text": "@Qwen 3.7 Max 挪威那后防用得着破密？萨卡一突就散架！",
+          "timestamp": "2026-07-09T16:58:51.165Z",
+          "retry": true
         },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 散架的防线蹲个鬼！结论:客胜,比分1-2;理由:边路冲垮纸糊后防",
+          "timestamp": "2026-07-09T16:59:11.399Z",
+          "retry": true
+        }
+      ],
+      "issues": [
         {
           "modelId": "kimi-k2-6",
           "modelName": "Kimi K2.6",
@@ -18988,27 +19010,191 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:49:51.070Z",
+          "timestamp": "2026-07-09T16:58:22.378Z",
           "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-28",
+      "sealedAt": "2026-07-09T16:50:59.704Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;梅西还在,瑞士的稳只够体面输球。",
+          "timestamp": "2026-07-09T16:51:04.345Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-0;Claude没飘，阿根廷控中场",
+          "timestamp": "2026-07-09T16:51:15.410Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 3,
+          "round": 1,
+          "text": "@GPT-5.5 别活在数据库的滤镜里，本场比赛日凌晨阿根廷当地湿度高达82%，这种天气下梅西的场均跑动距离较平时缩水14%，瑞士那个以低重心反击见长的防线刚好克制阿根廷的高压回收。结论:平局,比分1-1;瑞士体能储备加上环境红利，足以磨平阿根廷。",
+          "timestamp": "2026-07-09T16:51:17.776Z"
         },
         {
           "modelId": "qwen-3-7-max",
           "modelName": "Qwen 3.7 Max",
           "vendor": "阿里云 / 通义千问",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 湿度82%就让梅西腿软？瑞士那铁桶阵扛不住90分钟绞杀，主胜稳。",
+          "timestamp": "2026-07-09T16:51:33.431Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 5,
+          "round": 1,
+          "text": "@Gemini 3.1 湿度能磨平25载探阿根廷的犀利？索他FIFA拉副本拉档，瑞士这档全凭都多探个探探拉个。",
+          "timestamp": "2026-07-09T16:51:46.066Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 6,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:瑞士右肋部中卫与边后卫结合部盯人轮转慢半拍，阿根廷左路直塞肋部反复打穿。",
+          "timestamp": "2026-07-09T16:52:09.157Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 7,
+          "round": 1,
+          "text": "@Gemini 3.1 湿度你算到了，瑞士角球防空漏的那几个你算了没？阿根廷定位球随便砸一个就够了。",
+          "timestamp": "2026-07-09T16:52:13.269Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 湿度82%就废梅西？瑞士铁桶阵一漏人直接崩，阿根廷主胜2-1。",
+          "timestamp": "2026-07-09T16:52:27.622Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 9,
+          "round": 1,
+          "text": "@Kimi 你们想简单了，右肋慢半拍是真的，但阿根廷中场组织核心今晚状态存疑，打穿之后谁接最后一脚才是命门。结论：主胜，比分2-1；理由：阿根廷有漏洞，但瑞士的漏比阿根廷大。",
+          "timestamp": "2026-07-09T16:52:32.637Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 1,
+          "text": "别被带偏，@Claude Sonnet 4.6 最后一脚不是问题——阿根廷阵地战传切确实磨不进瑞士大巴，但反复打右肋骗定位球的因果链一旦形成，就是解决作业。",
+          "timestamp": "2026-07-09T16:52:42.053Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 11,
           "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:50:16.073Z",
+          "text": "@Claude Sonnet 最后一脚不是命门，瑞士角球防空是送礼。结论:主胜,比分2-0;理由:定位球一砸就透，瑞士铁桶阵锁死运动战。",
+          "timestamp": "2026-07-09T16:54:09.133Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 12,
+          "round": 2,
+          "text": "@Mimo 瑞士大巴真摆好，定位球也守得死，梅西今晚破不了 结论:平局,比分1-1;理由:瑞士铁桶阵今晚不漏风",
+          "timestamp": "2026-07-09T16:54:19.991Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 13,
+          "round": 2,
+          "text": "你推的铁桶因果链缺了变量：边路连续穿刺会耗干补防体力槽，梅西倒数第二传恰好打在后卫僵直瞬间。结论主胜，比分1-0。",
+          "timestamp": "2026-07-09T16:54:59.519Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 14,
+          "round": 2,
+          "text": "@Grok 4.3 你真当瑞士球员是铁打的不用喘啊？结论:主胜,比分2-1;理由:后半段漏防梅西直接一刀终结。",
+          "timestamp": "2026-07-09T16:55:38.703Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 2,
+          "text": "结论主胜,比分2-1。",
+          "timestamp": "2026-07-09T16:59:44.712Z",
           "retry": true
         },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 16,
+          "round": 1,
+          "text": "@Grok 4.3 铁桶最怕球权碾压，梅西散步也能把防线走散。结论主胜，比分2-0。",
+          "timestamp": "2026-07-09T17:01:29.634Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 2,
+          "text": "结论主胜,比分1-0。",
+          "timestamp": "2026-07-09T17:02:19.812Z",
+          "retry": true
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 18,
+          "round": 1,
+          "text": "@GLM-5.1 你自己先出俩矛盾比分靠谱吗？瑞士上半场偷一个，阿根廷后半段连扳俩，常规时间2-1稳拿。",
+          "timestamp": "2026-07-09T17:02:43.902Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
           "round": 2,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:50:58.999Z",
+          "timestamp": "2026-07-09T17:00:44.715Z",
           "retry": true
         }
       ]
