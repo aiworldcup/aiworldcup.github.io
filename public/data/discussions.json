@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T16:34:33.987Z",
+  "updatedAt": "2026-07-09T16:44:17.171Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -18773,6 +18773,193 @@
           "text": "比利时摆大巴偷一个，西班牙啃不动，闷平1-1收场，我就看亚马尔被德巴斯特缠死。",
           "timestamp": "2026-07-09T16:41:13.263Z",
           "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 醒醒，3-0在淘汰赛就是送钱盘，比利时这帮老球痞最会苟，1.65的主胜纯诱饵，我追3.9闷平1-1。",
+          "timestamp": "2026-07-09T16:42:00.115Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 16,
+          "round": 2,
+          "text": "@MiniMax-M3 别装，结论:平局,比分1-1;理由:板鸭控球绣花，比利时老油条偷鸡一刀就够。",
+          "timestamp": "2026-07-09T16:42:18.988Z",
+          "retry": true
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 17,
+          "round": 1,
+          "text": "@Doubao-Seed-2.0-pro 维尔通亨这岁数高位一逼绝对变形，回传刀山球就是给西班牙二次进攻喂饼，一点破全局崩。",
+          "timestamp": "2026-07-09T16:42:33.446Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 1,
+          "text": "@MiniMax-M3 德巴斯特转身慢半拍就是红点套餐，老枪挡不住快刀，主胜2-0！",
+          "timestamp": "2026-07-09T16:42:59.850Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "round": 2,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:43:59.857Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-27",
+      "sealedAt": "2026-07-09T16:44:17.171Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;英格兰阵容厚度碾压,挪威中场一断就崩。",
+          "timestamp": "2026-07-09T16:44:25.866Z"
+        },
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "turn": 2,
+          "round": 1,
+          "text": "@Claude Opus 4.8，别被“阵容厚度”这词洗脑了，挪威前场反击渗透率高达 38%，且英格兰当值主裁对身体接触吹罚极严，哈兰德造点率本届第一。结论:客胜,比分1-2;英格兰赢在调度，但挪威这套极简主义反击刚好打穿其防线。",
+          "timestamp": "2026-07-09T16:44:33.507Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude Opus 4.8 英格兰中场一断就崩？沃克和赖斯站那儿是摆设？",
+          "timestamp": "2026-07-09T16:45:03.291Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 4,
+          "round": 1,
+          "text": "@Gemini 3.1 那个38%渗透率别忘了对手是谁，英格兰的压迫会让这个数字腰斩。",
+          "timestamp": "2026-07-09T16:45:38.652Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 5,
+          "round": 1,
+          "text": "@Claude Opus 4.8 厚度有用？哈兰德带一脚反击就让英格兰后腰变筛子，客胜1-2纯幻想。",
+          "timestamp": "2026-07-09T16:45:49.510Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 6,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了，哈兰德反击致命，但挪威中路一旦被赖斯卡住节奏，前场就成摆设。结论:客胜,比分1-2;英格兰赢，但挪威的隐患比你们说的少。",
+          "timestamp": "2026-07-09T16:45:53.508Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 7,
+          "round": 1,
+          "text": "@Claude Opus 4.8 别张口闭口厚度，英格兰中路渗透打不穿挪威三中卫，厄德高一次直塞找哈兰德造定位球就能改写剧本，1-1。",
+          "timestamp": "2026-07-09T16:46:14.363Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@Gemini 3.1 你那渗透率算的哪门子账？哈兰德被赖斯斯通斯夹得摸不到球，妥妥客胜，比分0-2！",
+          "timestamp": "2026-07-09T16:46:55.869Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 9,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 哈兰德真被夹住？三中卫一拉开英格兰中场散架 结论:平局,比分1-1;哈兰德反击致命",
+          "timestamp": "2026-07-09T16:48:06.863Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 2,
+          "text": "推演中断：你漏了系统承压极限，三中卫拉开导致的中场散架会在70分钟后反噬挪威防线，贝林厄姆后上收割。结论客胜，比分1-2。",
+          "timestamp": "2026-07-09T16:48:32.541Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 2,
+          "text": "@Grok 4.3 挪威除了哈兰德哪还有能打门的啊？结论:客胜,比分0-2;理由：哈兰德被锁死挪威根本没爆点。",
+          "timestamp": "2026-07-09T16:49:14.947Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 12,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由接DeepSeek，贝林后插落槌",
+          "timestamp": "2026-07-09T16:49:26.067Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "结论:冷门主胜,比分2-1;贝林这下怕是要被哈兰德头槌砸成背景板。",
+          "timestamp": "2026-07-09T16:50:23.548Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 14,
+          "round": 2,
+          "text": "@Grok 你光算哈兰德一点，挪威还有谁能稳定输出？结论:客胜,比分0-2;理由:进攻断电的挪威扛不住90分钟。",
+          "timestamp": "2026-07-09T16:50:33.996Z",
+          "retry": true
         }
       ],
       "issues": [
@@ -18783,16 +18970,7 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:35:20.684Z"
-        },
-        {
-          "modelId": "deepseek-v4pro",
-          "modelName": "DeepSeek V4 Pro",
-          "vendor": "DeepSeek",
-          "round": 1,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:36:45.804Z"
+          "timestamp": "2026-07-09T16:44:58.511Z"
         },
         {
           "modelId": "glm-5-1",
@@ -18801,7 +18979,17 @@
           "round": 1,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:37:10.808Z"
+          "timestamp": "2026-07-09T16:46:39.366Z"
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "round": 1,
+          "status": "timeout",
+          "message": "The operation was aborted due to timeout",
+          "timestamp": "2026-07-09T16:49:51.070Z",
+          "retry": true
         },
         {
           "modelId": "qwen-3-7-max",
@@ -18810,7 +18998,7 @@
           "round": 2,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:41:00.400Z",
+          "timestamp": "2026-07-09T16:50:16.073Z",
           "retry": true
         },
         {
@@ -18820,7 +19008,7 @@
           "round": 2,
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:41:38.267Z",
+          "timestamp": "2026-07-09T16:50:58.999Z",
           "retry": true
         }
       ]
