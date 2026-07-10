@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-09T20:08:56.353Z",
+  "updatedAt": "2026-07-09T23:02:35.680Z",
   "status": "verified",
   "source": {
     "label": "ESPN public scoreboard",
@@ -8,7 +8,6 @@
     "note": "No API key. ESPN dates use North American match-day buckets, so the sync checks adjacent UTC dates around local kickoff."
   },
   "checkedDateKeys": [
-    "20260701",
     "20260702",
     "20260703",
     "20260704",
@@ -1048,7 +1047,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760497",
-      "syncedAt": "2026-07-09T20:08:51.216Z"
+      "syncedAt": "2026-07-09T23:02:31.463Z"
     },
     {
       "matchId": "wc2026-ko-12",
@@ -1063,7 +1062,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760496",
-      "syncedAt": "2026-07-09T20:08:51.217Z"
+      "syncedAt": "2026-07-09T23:02:31.464Z"
     },
     {
       "matchId": "wc2026-ko-13",
@@ -1078,7 +1077,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760498",
-      "syncedAt": "2026-07-09T20:08:51.217Z"
+      "syncedAt": "2026-07-09T23:02:31.464Z"
     },
     {
       "matchId": "wc2026-ko-14",
@@ -1093,7 +1092,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760499",
-      "syncedAt": "2026-07-09T20:08:51.900Z"
+      "syncedAt": "2026-07-09T23:02:32.087Z"
     },
     {
       "matchId": "wc2026-ko-15",
@@ -1108,7 +1107,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760500",
-      "syncedAt": "2026-07-09T20:08:51.900Z"
+      "syncedAt": "2026-07-09T23:02:32.087Z"
     },
     {
       "matchId": "wc2026-ko-16",
@@ -1123,7 +1122,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760501",
-      "syncedAt": "2026-07-09T20:08:51.900Z"
+      "syncedAt": "2026-07-09T23:02:32.088Z"
     },
     {
       "matchId": "wc2026-ko-17",
@@ -1138,7 +1137,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760502",
-      "syncedAt": "2026-07-09T20:08:52.560Z"
+      "syncedAt": "2026-07-09T23:02:32.680Z"
     },
     {
       "matchId": "wc2026-ko-18",
@@ -1153,7 +1152,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760503",
-      "syncedAt": "2026-07-09T20:08:52.560Z"
+      "syncedAt": "2026-07-09T23:02:32.680Z"
     },
     {
       "matchId": "wc2026-ko-19",
@@ -1168,7 +1167,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760504",
-      "syncedAt": "2026-07-09T20:08:53.218Z"
+      "syncedAt": "2026-07-09T23:02:33.267Z"
     },
     {
       "matchId": "wc2026-ko-20",
@@ -1183,7 +1182,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760505",
-      "syncedAt": "2026-07-09T20:08:53.219Z"
+      "syncedAt": "2026-07-09T23:02:33.267Z"
     },
     {
       "matchId": "wc2026-ko-21",
@@ -1198,7 +1197,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760506",
-      "syncedAt": "2026-07-09T20:08:53.872Z"
+      "syncedAt": "2026-07-09T23:02:33.905Z"
     },
     {
       "matchId": "wc2026-ko-22",
@@ -1213,7 +1212,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760507",
-      "syncedAt": "2026-07-09T20:08:53.872Z"
+      "syncedAt": "2026-07-09T23:02:33.906Z"
     },
     {
       "matchId": "wc2026-ko-23",
@@ -1228,7 +1227,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760509",
-      "syncedAt": "2026-07-09T20:08:54.476Z"
+      "syncedAt": "2026-07-09T23:02:34.354Z"
     },
     {
       "matchId": "wc2026-ko-24",
@@ -1243,7 +1242,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760508",
-      "syncedAt": "2026-07-09T20:08:54.477Z"
+      "syncedAt": "2026-07-09T23:02:34.355Z"
     }
   ]
 }

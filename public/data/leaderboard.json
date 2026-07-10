@@ -1,18 +1,26 @@
 {
-  "updatedAt": "2026-07-09T20:08:56.395Z",
+  "updatedAt": "2026-07-09T22:32:11.310Z",
   "settlement": {
     "rule": "match.actual 存在即结算;actual 固定为90分钟常规时间赛果;开赛后 150 分钟仍无 actual 则进入 pending_result 队列",
-    "generatedAt": "2026-07-09T20:08:56.377Z",
+    "generatedAt": "2026-07-09T22:32:11.290Z",
     "graceMinutes": 150,
     "scoring": "赛果榜按90分钟常规时间胜平负命中率排序;比分榜按90分钟常规时间具体比分命中数排序。不再使用下注、积分或赔率结算。",
     "counts": {
       "settled": 96,
-      "in_progress": 1,
+      "pending_result": 1,
       "pre_match": 3,
       "placeholder": 4
     },
-    "pendingResult": [],
-    "nextAction": "暂无待赛果结算队列"
+    "pendingResult": [
+      {
+        "matchId": "wc2026-ko-25",
+        "kickoff": "2026-07-09T20:00:00+00:00",
+        "home": "摩洛哥",
+        "away": "法国",
+        "reason": "开赛已超过结算缓冲,但 match.actual 为空"
+      }
+    ],
+    "nextAction": "同步或录入真实赛果后运行 npm run score"
   },
   "resultRankings": [
     {

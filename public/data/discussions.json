@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T17:02:43.902Z",
+  "updatedAt": "2026-07-10T02:00:32.271Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -18813,20 +18813,19 @@
           "text": "@MiniMax-M3 德巴斯特转身慢半拍就是红点套餐，老枪挡不住快刀，主胜2-0！",
           "timestamp": "2026-07-09T16:42:59.850Z",
           "retry": true
-        }
-      ],
-      "issues": [
+        },
         {
           "modelId": "glm-5-1",
           "modelName": "GLM-5.1",
           "vendor": "智谱 AI",
+          "turn": 19,
           "round": 2,
-          "status": "timeout",
-          "message": "The operation was aborted due to timeout",
-          "timestamp": "2026-07-09T16:43:59.857Z",
+          "text": "@Qwen 3.7 Max 别做诱饵梦了，朽木一冲就碎！结论:主胜,比分2-0;理由快刀斩朽木，苟门焊死！",
+          "timestamp": "2026-07-10T02:00:32.270Z",
           "retry": true
         }
-      ]
+      ],
+      "issues": []
     },
     {
       "matchId": "wc2026-ko-27",
