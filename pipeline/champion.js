@@ -66,6 +66,26 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+function comparableChampionData(value) {
+  if (Array.isArray(value)) return value.map(comparableChampionData);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => key !== "updatedAt")
+      .map(([key, item]) => [key, comparableChampionData(item)]),
+  );
+}
+
+function championDataChanged(existing, next) {
+  return JSON.stringify(comparableChampionData(existing)) !== JSON.stringify(comparableChampionData(next));
+}
+
+function writeJsonIfChanged(filePath, data, existing) {
+  if (existing && !championDataChanged(existing, data)) return false;
+  writeJson(filePath, data);
+  return true;
+}
+
 function argValue(name, fallback = null) {
   const prefix = `--${name}=`;
   const found = process.argv.find((arg) => arg.startsWith(prefix));
@@ -452,9 +472,9 @@ function main() {
     console.log(JSON.stringify({ ok: true, teams: data.teams.length, top: data.teams.slice(0, 5).map((item) => item.team) }, null, 2));
     return data;
   }
-  writeJson(outputPath, data);
-  console.log(`[champion] wrote ${outputPath} teams=${data.teams.length}`);
-  return data;
+  const changed = writeJsonIfChanged(outputPath, data, existing);
+  console.log(`[champion] ${changed ? "wrote" : "unchanged"} ${outputPath} teams=${data.teams.length}`);
+  return changed ? data : existing;
 }
 
 if (require.main === module) {
@@ -469,4 +489,5 @@ if (require.main === module) {
 module.exports = {
   TEAM_POWER,
   buildChampionData,
+  championDataChanged,
 };

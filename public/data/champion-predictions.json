@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-11T21:24:00.819Z",
+  "updatedAt": "2026-07-11T21:25:43.246Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
     "matches": 104,
     "qualifiedTeams": 32,
-    "aliveTeams": 8,
-    "settledKnockout": 24
+    "aliveTeams": 7,
+    "settledKnockout": 25
   },
   "highlights": {
     "favorite": {
@@ -135,61 +135,10 @@
       }
     },
     {
-      "team": "西班牙",
-      "flag": "ES",
-      "teamEn": "Spain",
-      "rank": 3,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "H",
-        "rank": 1,
-        "points": 7,
-        "record": "2-1-0",
-        "gf": 5,
-        "ga": 0,
-        "gd": 5
-      },
-      "scores": {
-        "total": 88.6,
-        "form": 94,
-        "strength": 94,
-        "path": 84,
-        "fun": 64
-      },
-      "tags": [
-        "不败金身",
-        "低失球护城河",
-        "盘口顺风",
-        "签运舒适",
-        "强队牌面",
-        "毒奶预警"
-      ],
-      "badges": [
-        "低失球护城河",
-        "盘口顺风",
-        "毒奶预警"
-      ],
-      "reason": "小组第一7分,净胜+5,硬实力94,路径84,下一场对比利时",
-      "script": "防线先把地基打稳了,剧本不花,但特别适合熬死人。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-26",
-        "stage": "World Cup · Quarter-finals",
-        "stageShort": "8 强",
-        "dateKey": "2026-07-11",
-        "kickoff": "2026-07-10T19:00:00+00:00",
-        "opponent": "比利时",
-        "opponentFlag": "BE",
-        "side": "home",
-        "winChance": 69.7
-      }
-    },
-    {
       "team": "英格兰",
       "flag": "GB",
       "teamEn": "England",
-      "rank": 4,
+      "rank": 3,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -233,6 +182,46 @@
         "opponentFlag": "NO",
         "side": "away",
         "winChance": 63.9
+      }
+    },
+    {
+      "team": "西班牙",
+      "flag": "ES",
+      "teamEn": "Spain",
+      "rank": 4,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "H",
+        "rank": 1,
+        "points": 7,
+        "record": "2-1-0",
+        "gf": 5,
+        "ga": 0,
+        "gd": 5
+      },
+      "scores": {
+        "total": 82.6,
+        "form": 94,
+        "strength": 94,
+        "path": 59,
+        "fun": 64
+      },
+      "tags": [
+        "不败金身",
+        "低失球护城河",
+        "强队牌面"
+      ],
+      "badges": [
+        "低失球护城河",
+        "不败金身",
+        "强队牌面"
+      ],
+      "reason": "小组第一7分,净胜+5,硬实力94,路径59,等待下轮对阵落位",
+      "script": "防线先把地基打稳了,剧本不花,但特别适合熬死人。",
+      "nextMatch": {
+        "status": "waiting",
+        "label": "等待下轮落位"
       }
     },
     {
@@ -333,59 +322,10 @@
       }
     },
     {
-      "team": "比利时",
-      "flag": "BE",
-      "teamEn": "Belgium",
-      "rank": 7,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "G",
-        "rank": 1,
-        "points": 5,
-        "record": "1-2-0",
-        "gf": 6,
-        "ga": 2,
-        "gd": 4
-      },
-      "scores": {
-        "total": 71,
-        "form": 73,
-        "strength": 84,
-        "path": 56,
-        "fun": 54
-      },
-      "tags": [
-        "不败金身",
-        "防线可控",
-        "冷门按钮",
-        "硬仗开门"
-      ],
-      "badges": [
-        "冷门按钮",
-        "不败金身",
-        "防线可控"
-      ],
-      "reason": "小组第一5分,净胜+4,硬实力84,路径56,下一场对西班牙",
-      "script": "没有大热包袱,反而适合偷偷往前拱。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-26",
-        "stage": "World Cup · Quarter-finals",
-        "stageShort": "8 强",
-        "dateKey": "2026-07-11",
-        "kickoff": "2026-07-10T19:00:00+00:00",
-        "opponent": "西班牙",
-        "opponentFlag": "ES",
-        "side": "away",
-        "winChance": 30.3
-      }
-    },
-    {
       "team": "挪威",
       "flag": "NO",
       "teamEn": "Norway",
-      "rank": 8,
+      "rank": 7,
       "status": "alive",
       "qualification": "小组第二",
       "group": {

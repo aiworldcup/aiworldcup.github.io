@@ -1,7 +1,7 @@
 const assert = require("assert");
 const fs = require("fs");
 const path = require("path");
-const { buildChampionData } = require("./champion");
+const { buildChampionData, championDataChanged } = require("./champion");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const GROUPS_PATH = path.join(__dirname, "..", "public", "data", "groups.json");
@@ -129,9 +129,27 @@ function testUsesAdvancementResultForKnockoutDraws() {
   });
 }
 
+function testTimestampOnlyRefreshDoesNotCreateDataChange() {
+  const existing = {
+    updatedAt: "old",
+    teams: [{ team: "阿根廷", rank: 1 }],
+    gauntlet: { updatedAt: "old", rounds: [{ roundId: "quarterfinal", status: "locked" }] },
+  };
+  const timestampOnly = {
+    ...existing,
+    updatedAt: "new",
+    gauntlet: { ...existing.gauntlet, updatedAt: "new" },
+  };
+  const changedTeam = { ...timestampOnly, teams: [{ team: "西班牙", rank: 1 }] };
+
+  assert.strictEqual(championDataChanged(existing, timestampOnly), false);
+  assert.strictEqual(championDataChanged(existing, changedTeam), true);
+}
+
 testBuildsAliveChampionBoard();
 testScoresGroupFormAndStrengthSeparately();
 testAddsReadableHooksAndNextMatchContext();
 testTopContendersUseDistinctScriptsAndBadges();
 testUsesAdvancementResultForKnockoutDraws();
+testTimestampOnlyRefreshDoesNotCreateDataChange();
 console.log("[champion.test] ok");
