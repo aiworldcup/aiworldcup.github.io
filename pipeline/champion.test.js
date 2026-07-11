@@ -10,11 +10,51 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
+function round32OpeningSnapshot(matches) {
+  return (matches || []).map((match) => {
+    if (String(match.stage || "").includes("Group Stage") || match.id === "wc2026-ko-01") return match;
+    const next = { ...match, actual: null };
+    delete next.actualSource;
+    delete next.finalActual;
+    delete next.finalActualSource;
+    delete next.advanceResult;
+    delete next.advanceSource;
+    return next;
+  });
+}
+
 function sampleData() {
   return {
-    matches: readJson(MATCHES_PATH).matches,
+    matches: round32OpeningSnapshot(readJson(MATCHES_PATH).matches),
     groups: readJson(GROUPS_PATH).groups,
     generatedAt: "2026-06-29T12:00:00.000Z",
+  };
+}
+
+function settledRound32Data() {
+  const advanceResults = new Map([
+    ["wc2026-ko-03", "away"],
+    ["wc2026-ko-04", "away"],
+    ["wc2026-ko-09", "home"],
+    ["wc2026-ko-14", "away"],
+    ["wc2026-ko-15", "home"],
+  ]);
+  return {
+    matches: readJson(MATCHES_PATH).matches.map((match) => {
+      if (String(match.stage || "").includes("Group Stage")) return match;
+      if (match.stage === "World Cup · Round of 32") {
+        return { ...match, advanceResult: advanceResults.get(match.id) || match.advanceResult };
+      }
+      const next = { ...match, actual: null };
+      delete next.actualSource;
+      delete next.finalActual;
+      delete next.finalActualSource;
+      delete next.advanceResult;
+      delete next.advanceSource;
+      return next;
+    }),
+    groups: readJson(GROUPS_PATH).groups,
+    generatedAt: "2026-07-04T12:00:00.000Z",
   };
 }
 
@@ -30,7 +70,7 @@ function testBuildsAliveChampionBoard() {
   assert.ok(data.teams.length < 48);
   assert.ok(findTeam(data, "加拿大"));
   assert.ok(!findTeam(data, "南非"));
-  assert.ok(!findTeam(data, "海地"));
+  assert.ok(!findTeam(data, "伊朗"));
 }
 
 function testScoresGroupFormAndStrengthSeparately() {
@@ -76,8 +116,22 @@ function testTopContendersUseDistinctScriptsAndBadges() {
   assert.ok(france.badges.includes("火力压迫"));
 }
 
+function testUsesAdvancementResultForKnockoutDraws() {
+  const data = buildChampionData(settledRound32Data());
+
+  assert.strictEqual(data.source.settledKnockout, 16);
+  assert.strictEqual(data.teams.length, 16);
+  ["德国", "荷兰", "塞内加尔", "澳大利亚", "佛得角"].forEach((team) => {
+    assert.ok(!findTeam(data, team), `${team} should be eliminated`);
+  });
+  ["巴拉圭", "摩洛哥", "比利时", "埃及", "阿根廷"].forEach((team) => {
+    assert.ok(findTeam(data, team), `${team} should still be alive`);
+  });
+}
+
 testBuildsAliveChampionBoard();
 testScoresGroupFormAndStrengthSeparately();
 testAddsReadableHooksAndNextMatchContext();
 testTopContendersUseDistinctScriptsAndBadges();
+testUsesAdvancementResultForKnockoutDraws();
 console.log("[champion.test] ok");

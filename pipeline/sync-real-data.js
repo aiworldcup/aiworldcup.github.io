@@ -186,15 +186,19 @@ function readExistingMatches() {
   }
 }
 
-function readExistingChampionPredictions() {
+function readExistingChampionData() {
   try {
-    if (!fs.existsSync(CHAMPIONS_OUT)) return [];
-    const data = JSON.parse(fs.readFileSync(CHAMPIONS_OUT, "utf8"));
-    return data.predictions || [];
+    if (!fs.existsSync(CHAMPIONS_OUT)) return { predictions: [] };
+    return JSON.parse(fs.readFileSync(CHAMPIONS_OUT, "utf8"));
   } catch (err) {
-    console.warn(`[sync] existing champion predictions ignored: ${err.message}`);
-    return [];
+    console.warn(`[sync] existing champion data ignored: ${err.message}`);
+    return { predictions: [] };
   }
+}
+
+function preserveChampionGauntlet(fresh, existing) {
+  if (!existing?.gauntlet) return fresh;
+  return { ...fresh, gauntlet: existing.gauntlet };
 }
 
 function readGroups() {
@@ -304,6 +308,18 @@ function mergeExistingMatch(fresh, existing) {
   if (existing.actualSource || fresh.actualSource) {
     merged.actualSource = existing.actualSource || fresh.actualSource;
   }
+  if (existing.finalActual || fresh.finalActual) {
+    merged.finalActual = existing.finalActual || fresh.finalActual;
+  }
+  if (existing.finalActualSource || fresh.finalActualSource) {
+    merged.finalActualSource = existing.finalActualSource || fresh.finalActualSource;
+  }
+  if (existing.advanceResult || fresh.advanceResult) {
+    merged.advanceResult = existing.advanceResult || fresh.advanceResult;
+  }
+  if (existing.advanceSource || fresh.advanceSource) {
+    merged.advanceSource = existing.advanceSource || fresh.advanceSource;
+  }
   return merged;
 }
 
@@ -377,12 +393,17 @@ async function syncRealData() {
 
   const matchesChanged = writeJsonIfChanged(MATCHES_OUT, outputData);
 
-  const championsChanged = writeJsonIfChanged(CHAMPIONS_OUT, buildChampionData({
+  const existingChampionData = readExistingChampionData();
+  const freshChampionData = buildChampionData({
     matches: outputData.matches,
     groups: readGroups(),
     generatedAt: syncedAt,
-    predictions: readExistingChampionPredictions(),
-  }));
+    predictions: existingChampionData.predictions || [],
+  });
+  const championsChanged = writeJsonIfChanged(
+    CHAMPIONS_OUT,
+    preserveChampionGauntlet(freshChampionData, existingChampionData),
+  );
 
   console.log(`[sync] ${matchesChanged ? "wrote" : "unchanged"} ${outputData.matches.length} fixtures at ${MATCHES_OUT} (${matches.length} API + ${outputData.source.placeholders} placeholders)`);
   console.log(`[sync] ${championsChanged ? "wrote" : "unchanged"} champion predictions at ${CHAMPIONS_OUT}`);
@@ -396,6 +417,8 @@ if (require.main === module) {
 }
 
 module.exports = {
+  mergeExistingMatch,
+  preserveChampionGauntlet,
   syncRealData,
   fetchWorldCupFixtures,
 };

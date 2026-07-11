@@ -101,8 +101,17 @@ function isKnockoutMatch(match) {
   return match && !isGroupMatch(match) && String(match.stage || "").includes("World Cup");
 }
 
+function winningSide(match) {
+  const candidates = [
+    match && match.advanceResult,
+    match && match.finalActual && match.finalActual.result,
+    match && match.actual && match.actual.result,
+  ];
+  return candidates.find((result) => result === "home" || result === "away") || "";
+}
+
 function winnerName(match) {
-  const result = match && match.actual && match.actual.result;
+  const result = winningSide(match);
   if (result === "home") return match.home && match.home.team;
   if (result === "away") return match.away && match.away.team;
   return "";

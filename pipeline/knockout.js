@@ -1,11 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const { SCORE_SCOPE_REGULAR_TIME } = require("./result-scope");
 
 const DEFAULT_MATCHES = path.join(__dirname, "..", "public", "data", "matches.json");
 const DEFAULT_GROUPS = path.join(__dirname, "..", "public", "data", "groups.json");
 
 const BRACKET_SOURCE_HREF = "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage";
 const SCHEDULE_SOURCE_HREF = "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32";
+const QUARTER_FINAL_SOURCE_HREF = "https://www.sbnation.com/soccer/1122036/world-cup-2026-quarterfinals-schedule-scores";
+const FIFA_KNOCKOUT_SOURCE_HREF = "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums";
+const SWITZERLAND_ADVANCE_SOURCE_HREF = "https://www.theguardian.com/football/live/2026/jul/08/world-cup-2026-egypt-fury-after-argentina-win-thriller-switzerland-triumph-in-shootout-live";
 
 const ROUND_OF_32_SPECS = [
   {
@@ -135,6 +139,82 @@ const THIRD_PLACE_ASSIGNMENTS = {
     87: "L",
   },
 };
+
+const KNOWN_ADVANCE_RESULTS = {
+  "wc2026-ko-24": {
+    result: "home",
+    method: "penalties",
+    score: "4-3",
+    sourceLabel: "The Guardian live blog",
+    sourceHref: SWITZERLAND_ADVANCE_SOURCE_HREF,
+  },
+};
+
+const DERIVED_KNOCKOUT_SPECS = [
+  {
+    id: "wc2026-ko-25",
+    fifaMatchNumber: 97,
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-09T20:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-17", fifaMatchNumber: 89 },
+    away: { winnerOf: "wc2026-ko-18", fifaMatchNumber: 90 },
+    scheduleHref: QUARTER_FINAL_SOURCE_HREF,
+  },
+  {
+    id: "wc2026-ko-26",
+    fifaMatchNumber: 98,
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-10T19:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-21", fifaMatchNumber: 93 },
+    away: { winnerOf: "wc2026-ko-22", fifaMatchNumber: 94 },
+    scheduleHref: QUARTER_FINAL_SOURCE_HREF,
+  },
+  {
+    id: "wc2026-ko-27",
+    fifaMatchNumber: 99,
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-11T21:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-19", fifaMatchNumber: 91 },
+    away: { winnerOf: "wc2026-ko-20", fifaMatchNumber: 92 },
+    scheduleHref: QUARTER_FINAL_SOURCE_HREF,
+  },
+  {
+    id: "wc2026-ko-28",
+    fifaMatchNumber: 100,
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-12T01:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-23", fifaMatchNumber: 95 },
+    away: { winnerOf: "wc2026-ko-24", fifaMatchNumber: 96 },
+    scheduleHref: QUARTER_FINAL_SOURCE_HREF,
+  },
+  {
+    id: "wc2026-ko-29",
+    fifaMatchNumber: 101,
+    stage: "World Cup · Semi-finals",
+    kickoff: "2026-07-14T20:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-25", fifaMatchNumber: 97 },
+    away: { winnerOf: "wc2026-ko-26", fifaMatchNumber: 98 },
+    scheduleHref: FIFA_KNOCKOUT_SOURCE_HREF,
+  },
+  {
+    id: "wc2026-ko-30",
+    fifaMatchNumber: 102,
+    stage: "World Cup · Semi-finals",
+    kickoff: "2026-07-15T19:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-27", fifaMatchNumber: 99 },
+    away: { winnerOf: "wc2026-ko-28", fifaMatchNumber: 100 },
+    scheduleHref: FIFA_KNOCKOUT_SOURCE_HREF,
+  },
+  {
+    id: "wc2026-ko-32",
+    fifaMatchNumber: 104,
+    stage: "World Cup · Final",
+    kickoff: "2026-07-19T19:00:00+00:00",
+    home: { winnerOf: "wc2026-ko-29", fifaMatchNumber: 101 },
+    away: { winnerOf: "wc2026-ko-30", fifaMatchNumber: 102 },
+    scheduleHref: FIFA_KNOCKOUT_SOURCE_HREF,
+  },
+];
 
 function readJson(filePath, fallback = null) {
   if (!fs.existsSync(filePath)) return fallback;
@@ -296,7 +376,30 @@ function knownActualSource(generatedAt) {
     provider: "manual-verified",
     sourceLabel: "Round of 32 scoreboard",
     sourceHref: SCHEDULE_SOURCE_HREF,
+    scoreScope: SCORE_SCOPE_REGULAR_TIME,
     syncedAt: generatedAt,
+  };
+}
+
+function knownAdvanceSource(entry, generatedAt) {
+  return {
+    provider: "manual-verified",
+    sourceLabel: entry.sourceLabel,
+    sourceHref: entry.sourceHref,
+    method: entry.method,
+    score: entry.score,
+    syncedAt: generatedAt,
+  };
+}
+
+function applyKnownAdvanceResult(match, generatedAt) {
+  const entry = KNOWN_ADVANCE_RESULTS[match && match.id];
+  if (!entry || match.advanceResult) return match;
+  if (!match.actual || match.actual.result !== "draw") return match;
+  return {
+    ...match,
+    advanceResult: entry.result,
+    advanceSource: knownAdvanceSource(entry, generatedAt),
   };
 }
 
@@ -337,18 +440,80 @@ function resolveMatch(existing, spec, standings, thirdAssignment, metaByName, ge
   return next;
 }
 
+function advancingSide(match) {
+  const candidates = [
+    match && match.advanceResult,
+    match && match.finalActual && match.finalActual.result,
+    match && match.actual && match.actual.result,
+  ];
+  return candidates.find((result) => result === "home" || result === "away") || "";
+}
+
+function winnerTeamObject(match, metaByName) {
+  const side = advancingSide(match);
+  if (side !== "home" && side !== "away") return null;
+  const team = match[side];
+  if (!team || !team.team) return null;
+  return teamObject({ team: team.team }, metaByName) || {
+    team: team.team,
+    flag: team.flag || "",
+    ...(team.teamEn ? { teamEn: team.teamEn } : {}),
+  };
+}
+
+function resolveDerivedMatch(existing, spec, matchesById, metaByName, generatedAt) {
+  const homeSource = matchesById.get(spec.home.winnerOf);
+  const awaySource = matchesById.get(spec.away.winnerOf);
+  const home = winnerTeamObject(homeSource, metaByName);
+  const away = winnerTeamObject(awaySource, metaByName);
+  if (!home || !away) return existing;
+
+  return {
+    ...existing,
+    stage: spec.stage,
+    dateKey: beijingDateKey(spec.kickoff),
+    kickoff: spec.kickoff,
+    home,
+    away,
+    placeholder: false,
+    fifaMatchNumber: spec.fifaMatchNumber,
+    bracketSlot: {
+      home: `W${spec.home.fifaMatchNumber}`,
+      away: `W${spec.away.fifaMatchNumber}`,
+    },
+    dataSource: "fifa-knockout-derived",
+    syncedAt: generatedAt,
+    knockoutSource: {
+      bracketHref: BRACKET_SOURCE_HREF,
+      scheduleHref: spec.scheduleHref || SCHEDULE_SOURCE_HREF,
+      generatedAt,
+    },
+  };
+}
+
 function resolveKnockoutMatches(matches, groups, options = {}) {
   const generatedAt = options.generatedAt || new Date().toISOString();
   const standings = buildGroupStandings(matches, groups);
   const thirdAssignment = thirdAssignmentFor(standings);
   const metaByName = teamMetaByName(matches);
   const specsById = new Map(ROUND_OF_32_SPECS.map((spec) => [spec.id, spec]));
-
-  return (matches || []).map((match) => {
+  const round32Resolved = (matches || []).map((match) => {
     const spec = specsById.get(match.id);
-    if (!spec) return match;
-    return resolveMatch(match, spec, standings, thirdAssignment, metaByName, generatedAt);
+    const next = spec ? resolveMatch(match, spec, standings, thirdAssignment, metaByName, generatedAt) : match;
+    return applyKnownAdvanceResult(next, generatedAt);
   });
+  const resolved = [...round32Resolved];
+  const indexById = new Map(resolved.map((match, index) => [match.id, index]));
+  const matchesById = new Map(resolved.map((match) => [match.id, match]));
+
+  for (const spec of DERIVED_KNOCKOUT_SPECS) {
+    const index = indexById.get(spec.id);
+    if (index === undefined) continue;
+    const next = resolveDerivedMatch(resolved[index], spec, matchesById, metaByName, generatedAt);
+    resolved[index] = next;
+    matchesById.set(spec.id, next);
+  }
+  return resolved;
 }
 
 function resolveKnockoutData(data, groups, options = {}) {
@@ -395,6 +560,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  DERIVED_KNOCKOUT_SPECS,
   ROUND_OF_32_SPECS,
   buildGroupStandings,
   resolveKnockoutMatches,

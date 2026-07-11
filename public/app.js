@@ -46,7 +46,7 @@ const ASIA_SHANGHAI = 'Asia/Shanghai';
 const DAY_MS = 24 * 60 * 60 * 1000;
 const MATCH_SETTLEMENT_GRACE_MS = 150 * 60 * 1000;
 const DATA_REFRESH_MS = 60 * 1000;
-const DATA_VERSION = '20260710-qf-vs';
+const DATA_VERSION = '20260711-champion-auto';
 
 window.addEventListener('error', event => {
   const el = document.getElementById('matches');
@@ -1988,8 +1988,20 @@ function championTeamCard(item) {
 function championGauntletStatusText(status) {
   if (status === 'settled') return '已结算';
   if (status === 'locked') return '已封盘';
-  if (status === 'open') return '进行中';
+  if (status === 'open') return '待补调用';
+  if (status === 'skipped') return '已跳过';
   return '待开盘';
+}
+
+function championGauntletEffectiveStatus(round, now = Date.now()) {
+  const status = round?.status || '';
+  const deadline = Date.parse(round?.deadlineAt || '');
+  if (status === 'open' && Number.isFinite(deadline) && deadline <= now) return 'locked';
+  return status;
+}
+
+function championGauntletIssueCanRetry(round) {
+  return championGauntletEffectiveStatus(round) === 'open';
 }
 
 function championGauntletCurrentRound(gauntlet) {
@@ -2055,7 +2067,7 @@ function renderGauntletRuleSteps(firstRound, currentRound) {
     <summary>
       <span>
         <strong>冠军毒圈规则</strong>
-        <small>首轮固定 ${firstCount} 注;第二轮只继承上一轮活口。</small>
+        <small>首轮固定 ${firstCount} 注;后续轮次只继承上一轮活口。</small>
       </span>
       <b>查看规则</b>
     </summary>
@@ -2083,11 +2095,15 @@ function renderGauntletRoundCard(round, index) {
   const summary = round.summary || {};
   const tickets = championGauntletRoundTickets(round);
   const topTeams = summary.topTeams || [];
-  const statusText = championGauntletStatusText(round.status);
-  const statusClass = round.status || 'pending';
-  const detail = round.status === 'settled'
-    ? `${tickets.alive}/${tickets.total} 张冠军票存活,${tickets.eliminated} 张阵亡`
-    : `${summary.totalPicks ?? tickets.total} 张本轮有效下注,${summary.issueModels || 0} 个待补调用`;
+  const statusClass = championGauntletEffectiveStatus(round) || 'pending';
+  const statusText = championGauntletStatusText(statusClass);
+  const issueCanRetry = championGauntletIssueCanRetry(round);
+  const issueCountText = issueCanRetry ? '待补调用' : '调用异常';
+  const detail = round.status === 'skipped'
+    ? (round.skipReason || '本轮没有可被可信封盘的未开赛对阵。')
+    : round.status === 'settled'
+      ? `${tickets.alive}/${tickets.total} 张冠军票存活,${tickets.eliminated} 张阵亡`
+      : `${summary.totalPicks ?? tickets.total} 张本轮有效下注,${summary.issueModels || 0} 个${issueCountText}`;
   const topTeamRows = topTeams.length ? topTeams.slice(0, 4).map(team => {
     const voters = (team.modelIds || []).slice(0, 3).map(id => modelMeta(id).name).join('、');
     const extra = (team.modelIds || []).length > 3 ? ` 等 ${team.modelIds.length} 个模型` : '';
@@ -2109,7 +2125,7 @@ function renderGauntletRoundCard(round, index) {
     <div class="gauntlet-round-metrics">
       <div><strong>${summary.aliveModels ?? 0}</strong><span>仍有活口</span></div>
       <div><strong>${summary.eliminatedModels ?? 0}</strong><span>已出局</span></div>
-      <div><strong>${summary.issueModels ?? 0}</strong><span>待补跑</span></div>
+      <div><strong>${summary.issueModels ?? 0}</strong><span>${issueCanRetry ? '待补跑' : '技术出局'}</span></div>
     </div>
     <div class="gauntlet-round-votes">${topTeamRows}</div>
   </article>`;
@@ -2134,7 +2150,7 @@ function championGauntletEntry(round, modelId) {
 
 function championGauntletEntrySummary(entry, round) {
   if (!entry) return '未入局';
-  if (entry.status === 'issue') return '待补跑';
+  if (entry.status === 'issue') return championGauntletIssueCanRetry(round) ? '待补跑' : '技术出局';
   if (entry.status === 'eliminated') return '已出局';
   if (round?.status === 'settled') {
     return `${entry.alivePicks?.length || 0}/${entry.picks?.length || 0} 活口`;
@@ -2151,11 +2167,16 @@ function championGauntletIssueLabel(issues = []) {
   return text ? '调用异常' : '待补跑';
 }
 
-function championGauntletModelState(currentEntry, previousEntry) {
+function championGauntletModelState(currentEntry, previousEntry, round) {
   const previousAlive = previousEntry?.alivePicks?.length ?? currentEntry?.allowedPicks ?? currentEntry?.picks?.length ?? 0;
   const previousTotal = previousEntry?.picks?.length || currentEntry?.allowedPicks || currentEntry?.picks?.length || 0;
   if (!currentEntry) return { key: 'missing', label: '未入局', previousAlive, previousTotal };
-  if (currentEntry.status === 'issue') return { key: 'issue', label: '待补', previousAlive, previousTotal };
+  if (currentEntry.status === 'issue') return {
+    key: 'issue',
+    label: championGauntletIssueCanRetry(round) ? '待补' : '技术出局',
+    previousAlive,
+    previousTotal,
+  };
   if (currentEntry.status === 'eliminated' || previousAlive <= 0) return { key: 'out', label: '出局', previousAlive, previousTotal };
   if (previousAlive >= previousTotal && previousTotal > 0) return { key: 'full', label: '满血', previousAlive, previousTotal };
   return { key: 'reduced', label: '减员', previousAlive, previousTotal };
@@ -2165,10 +2186,11 @@ function renderGauntletModelStatusBoard(rounds) {
   const currentRound = rounds[rounds.length - 1];
   const previousRound = rounds.length > 1 ? rounds[rounds.length - 2] : null;
   const modelIds = championGauntletModelIds(rounds);
+  const issueCanRetry = championGauntletIssueCanRetry(currentRound);
   const rows = modelIds.map(modelId => {
     const currentEntry = championGauntletEntry(currentRound, modelId);
     const previousEntry = previousRound ? championGauntletEntry(previousRound, modelId) : null;
-    const state = championGauntletModelState(currentEntry, previousEntry);
+    const state = championGauntletModelState(currentEntry, previousEntry, currentRound);
     return { modelId, currentEntry, previousEntry, state };
   });
   const order = { full: 0, reduced: 1, issue: 2, out: 3, missing: 4 };
@@ -2185,7 +2207,7 @@ function renderGauntletModelStatusBoard(rounds) {
     return acc;
   }, {});
   const totalPicks = currentRound?.summary?.totalPicks ?? rows.reduce((sum, row) => sum + (row.currentEntry?.picks?.length || 0), 0);
-  const currentStatusText = championGauntletStatusText(currentRound?.status);
+  const currentStatusText = championGauntletStatusText(championGauntletEffectiveStatus(currentRound));
   const cards = rows.map(row => {
     const meta = modelMeta(row.modelId);
     const currentEntry = row.currentEntry;
@@ -2212,14 +2234,14 @@ function renderGauntletModelStatusBoard(rounds) {
     <div class="gauntlet-section-head">
       <div>
         <div class="champion-title">模型当前战况</div>
-        <p>${escapeHTML(currentRound?.label || '当前轮')} · ${escapeHTML(currentStatusText)}。先看谁满血、谁减员、谁还没补上。</p>
+        <p>${escapeHTML(currentRound?.label || '当前轮')} · ${escapeHTML(currentStatusText)}。满血、减\u2060员、${issueCanRetry ? '待补' : '技术出局'}一眼看清。</p>
       </div>
       <span>${modelIds.length} 个模型</span>
     </div>
     <div class="gauntlet-overview-kpis">
       <div><strong>${counts.full || 0}</strong><span>满血模型</span></div>
       <div><strong>${counts.reduced || 0}</strong><span>减员模型</span></div>
-      <div><strong>${counts.issue || 0}</strong><span>待补调用</span></div>
+      <div><strong>${counts.issue || 0}</strong><span>${issueCanRetry ? '待补调用' : '技术出局'}</span></div>
       <div><strong>${totalPicks}</strong><span>本轮有效注</span></div>
     </div>
     <div class="gauntlet-model-status-grid">${cards}</div>
@@ -2227,7 +2249,7 @@ function renderGauntletModelStatusBoard(rounds) {
 }
 
 function renderGauntletLedgerRound(round, entry) {
-  const statusText = championGauntletStatusText(round.status);
+  const statusText = championGauntletStatusText(championGauntletEffectiveStatus(round));
   if (!entry) {
     return `<div class="gauntlet-ledger-round missing">
       <div class="gauntlet-ledger-round-head">
@@ -2259,12 +2281,16 @@ function renderGauntletModelCard(modelId, rounds) {
   const entries = rounds.map(round => championGauntletEntry(round, modelId));
   const currentEntry = [...entries].reverse().find(Boolean);
   const currentRound = rounds[rounds.length - 1];
-  const currentRoundEntry = championGauntletEntry(currentRound, modelId) || currentEntry;
-  const hasIssue = entries.some(entry => entry?.status === 'issue');
+  const directCurrentEntry = championGauntletEntry(currentRound, modelId);
+  const currentRoundEntry = directCurrentEntry || currentEntry;
+  const hasIssue = directCurrentEntry?.status === 'issue';
+  const issueCanRetry = championGauntletIssueCanRetry(currentRound);
   const isOut = currentRoundEntry?.status === 'eliminated';
   const statusClass = hasIssue ? 'issue' : (isOut ? 'out' : 'alive');
-  const badge = hasIssue
-    ? '待补跑'
+  const badge = currentRound?.status === 'skipped'
+    ? '本轮跳过'
+    : hasIssue
+    ? (issueCanRetry ? '待补跑' : '技术出局')
     : (isOut ? '场边席' : `${currentRoundEntry?.allowedPicks || currentRoundEntry?.picks?.length || 0} 注继续`);
   const latestLine = currentRoundEntry?.status === 'issue'
     ? championGauntletIssueText(currentRoundEntry.issues || [])
@@ -2301,29 +2327,41 @@ function renderChampionGauntlet(gauntlet) {
   const summary = round.summary || {};
   const firstTickets = championGauntletRoundTickets(firstRound);
   const updated = championUpdatedLabel(gauntlet.updatedAt);
-  const statusText = championGauntletStatusText(round.status);
+  const effectiveStatus = championGauntletEffectiveStatus(round);
+  const issueCanRetry = championGauntletIssueCanRetry(round);
+  const statusText = championGauntletStatusText(effectiveStatus);
   const modelIds = championGauntletModelIds(rounds);
   const roundCards = rounds.map(renderGauntletRoundCard).join('');
   const ledgerRows = modelIds.map(id => renderGauntletModelCard(id, rounds)).join('');
   const modelOverview = renderGauntletModelStatusBoard(rounds);
-  const headline = rounds.length > 1
-    ? '首轮已结算,第二轮下注中'
-    : `${escapeHTML(round.label || '冠军毒圈圆桌')}`;
+  const gauntletNote = String(gauntlet.note || '首轮下注已封盘存证,后续轮次只继承上一轮活口。')
+    .replaceAll('场边发言', '场边\u2060发言');
+  const headline = effectiveStatus === 'skipped'
+    ? `${round.label || '当前轮'}未做赛后补录`
+    : `${round.label || '冠军毒圈圆桌'} · ${statusText}`;
+  const excludedMatches = round.excludedMatches || [];
+  const lateExcluded = excludedMatches.filter(item => /已开赛|赛后/.test(item.reason || ''));
+  const roundNotice = effectiveStatus === 'skipped'
+    ? (round.skipReason || '本轮没有可被可信封盘的未开赛对阵。')
+    : lateExcluded.length
+      ? `${lateExcluded.length} 场因已开赛未纳入本轮封盘,未做赛后补录。`
+      : '';
 
   return `<section class="champion-gauntlet-panel">
     <div class="champion-gauntlet-hero">
       <div>
         <div class="champion-kicker">大模型冠军毒圈</div>
-        <h3>${headline}</h3>
-        <p>${escapeHTML(`${gauntlet.note || '首轮下注已封盘存证,后续轮次只继承上一轮活口。'}${updated ? ` 毒圈更新:${updated}` : ''}`)}</p>
+        <h3>${escapeHTML(headline)}</h3>
+        <p>${escapeHTML(`${gauntletNote}${updated ? ` 毒圈更新:${updated}` : ''}`)}</p>
       </div>
-      <span class="gauntlet-status ${round.status}">${statusText}</span>
+      <span class="gauntlet-status ${effectiveStatus}">${statusText}</span>
     </div>
+    ${roundNotice ? `<div class="gauntlet-round-notice">${escapeHTML(roundNotice)}</div>` : ''}
     <div class="gauntlet-stats">
       <div><strong>${firstTickets.alive}/${firstTickets.total}</strong><span>首轮活口</span></div>
-      <div><strong>${summary.totalPicks ?? 0}</strong><span>第二轮下注</span></div>
+      <div><strong>${summary.totalPicks ?? 0}</strong><span>当前轮有效注</span></div>
       <div><strong>${summary.aliveModels ?? 0}</strong><span>仍可竞猜</span></div>
-      <div><strong>${summary.issueModels ?? 0}</strong><span>待补调用</span></div>
+      <div><strong>${summary.issueModels ?? 0}</strong><span>${issueCanRetry ? '待补调用' : '技术出局'}</span></div>
     </div>
     ${modelOverview}
     ${renderGauntletRuleSteps(firstRound, round)}
@@ -2331,7 +2369,7 @@ function renderChampionGauntlet(gauntlet) {
       <div class="gauntlet-section-head">
         <div>
           <div class="champion-title">轮次状态</div>
-          <p>首轮结果保留在这里;第二轮展示当前有效下注和缺口。</p>
+          <p>每轮封盘、结算和跳过原因都保留在这里;当前状态以最新轮次为准。</p>
         </div>
       </div>
       <div class="gauntlet-rounds">${roundCards}</div>
@@ -2340,7 +2378,7 @@ function renderChampionGauntlet(gauntlet) {
       <div class="gauntlet-section-head">
         <div>
           <div class="champion-title">模型活口账本</div>
-          <p>每张卡从首轮下注结果接到第二轮下注,看得出谁还剩几条冠军线。</p>
+          <p>每张卡按轮次串联下注与赛后存活结果,看得出谁还剩几条冠军线。</p>
         </div>
         <span>${modelIds.length} 个模型</span>
       </div>

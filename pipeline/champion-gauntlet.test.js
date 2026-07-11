@@ -192,6 +192,68 @@ function testSettlementUsesAdvancementResultForKnockoutDraws() {
   assert.strictEqual(settled.entries[1].status, "eliminated");
 }
 
+function testSettlementWaitsForAdvancingSideOnKnockoutDraw() {
+  // Given: a knockout match has a regular-time draw but no advancement result.
+  const match = {
+    id: "qf-draw",
+    stage: "World Cup · Quarter-finals",
+    home: { team: "甲队", flag: "AA" },
+    away: { team: "乙队", flag: "BB" },
+    actual: { result: "draw", score: "1-1" },
+  };
+  const round = {
+    roundId: "quarterfinal",
+    status: "locked",
+    candidateTeams: candidateTeamsForRound([match]),
+    entries: [{
+      modelId: "alpha",
+      status: "alive",
+      picks: [{ team: "甲队", matchId: "qf-draw" }],
+      issues: [],
+    }],
+  };
+
+  // When/Then: settlement remains blocked instead of eliminating every pick.
+  assert.throws(
+    () => settleRoundData(round, [match], "2026-07-11T00:00:00.000Z"),
+    /pending quarterfinal matches: qf-draw/
+  );
+}
+
+function testSettlementIncludesMatchesReferencedBySealedPicks() {
+  // Given: a historical candidate snapshot was narrowed after a valid pick was sealed.
+  const visibleMatch = {
+    id: "visible-match",
+    home: { team: "甲队" },
+    away: { team: "乙队" },
+    actual: { result: "home", score: "1-0" },
+  };
+  const sealedPickMatch = {
+    id: "sealed-pick-match",
+    home: { team: "法国" },
+    away: { team: "对手" },
+    actual: { result: "home", score: "2-0" },
+  };
+  const round = {
+    roundId: "round16",
+    status: "locked",
+    candidateTeams: candidateTeamsForRound([visibleMatch]),
+    entries: [{
+      modelId: "alpha",
+      status: "alive",
+      picks: [{ team: "法国", matchId: "sealed-pick-match" }],
+      issues: [],
+    }],
+  };
+
+  // When: the narrowed round is settled against the complete match ledger.
+  const settled = settleRoundData(round, [visibleMatch, sealedPickMatch], "2026-07-11T00:00:00.000Z");
+
+  // Then: the sealed France pick uses its own match result and remains alive.
+  assert.strictEqual(settled.entries[0].status, "alive");
+  assert.deepStrictEqual(settled.entries[0].alivePicks.map((item) => item.team), ["法国"]);
+}
+
 function testMergePreservesChampionRadarData() {
   const existing = { updatedAt: "old", teams: [{ team: "阿根廷" }], highlights: { favorite: { team: "阿根廷" } } };
   const round = {
@@ -316,6 +378,226 @@ async function testMissingOnlyPreservesExistingCandidatePool() {
   assert.deepStrictEqual(round.entries.find((entry) => entry.modelId === "alpha").picks.map((item) => item.team), ["甲队"]);
 }
 
+async function testGenerationUsesFrozenCandidateOverrideAndDeadline() {
+  // Given: one quarter-final has started and one remains eligible for sealing.
+  const started = {
+    id: "qf-started",
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-10T20:00:00.000Z",
+    home: { team: "甲队", flag: "AA" },
+    away: { team: "乙队", flag: "BB" },
+    actual: null,
+  };
+  const eligible = {
+    id: "qf-eligible",
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-11T20:00:00.000Z",
+    home: { team: "丙队", flag: "CC" },
+    away: { team: "丁队", flag: "DD" },
+    actual: null,
+  };
+  const championData = {
+    gauntlet: {
+      rounds: [{
+        roundId: "round16",
+        status: "settled",
+        entries: [{ modelId: "alpha", status: "alive", alivePicks: [{ team: "甲队" }] }],
+      }],
+    },
+  };
+  const excludedMatches = [{ matchId: started.id, home: "甲队", away: "乙队", reason: "已开赛" }];
+
+  // When: generation receives the pre-kickoff pool frozen by the automation planner.
+  const round = await generateRoundData({
+    roundId: "quarterfinal",
+    matches: [started, eligible],
+    models: [{ id: "alpha", name: "Alpha" }],
+    championData,
+    candidateMatchesOverride: [eligible],
+    excludedMatchesOverride: excludedMatches,
+    deadlineAt: eligible.kickoff,
+    generatedAt: "2026-07-11T00:00:00.000Z",
+    askModelFn: async () => ({
+      ok: true,
+      text: '{"picks":["丙队"],"line":"只押未开赛对阵。"}',
+      durationMs: 1,
+    }),
+  });
+
+  // Then: the started match never enters the candidate pool or prompt contract.
+  assert.deepStrictEqual(round.candidateTeams.map((item) => item.matchId), ["qf-eligible", "qf-eligible"]);
+  assert.deepStrictEqual(round.excludedMatches, excludedMatches);
+  assert.strictEqual(round.deadlineAt, eligible.kickoff);
+  assert.deepStrictEqual(round.entries[0].picks.map((item) => item.team), ["丙队"]);
+}
+
+async function testLateModelResponseIsDiscarded() {
+  // Given: a model starts one second before kickoff but finishes after the deadline.
+  const eligible = {
+    id: "qf-deadline",
+    stage: "World Cup · Quarter-finals",
+    kickoff: "2026-07-11T01:00:00.000Z",
+    home: { team: "甲队", flag: "AA" },
+    away: { team: "乙队", flag: "BB" },
+  };
+  const championData = {
+    gauntlet: {
+      rounds: [{
+        roundId: "round16",
+        status: "settled",
+        entries: [{ modelId: "alpha", status: "alive", alivePicks: [{ team: "甲队" }] }],
+      }],
+    },
+  };
+  const ticks = [
+    Date.parse("2026-07-11T00:59:59.000Z"),
+    Date.parse("2026-07-11T01:00:01.000Z"),
+  ];
+  let observedTimeout = null;
+
+  // When: the otherwise valid response arrives too late.
+  const round = await generateRoundData({
+    roundId: "quarterfinal",
+    matches: [eligible],
+    models: [{ id: "alpha", name: "Alpha" }],
+    championData,
+    candidateMatchesOverride: [eligible],
+    deadlineAt: eligible.kickoff,
+    generatedAt: "2026-07-11T00:59:59.000Z",
+    nowFn: () => ticks.shift() ?? Date.parse("2026-07-11T01:00:01.000Z"),
+    timeoutMs: 90000,
+    askModelFn: async (_modelId, _prompt, options) => {
+      observedTimeout = options.timeoutMs;
+      return { ok: true, text: '{"picks":["甲队"],"line":"压哨。"}', durationMs: 2000 };
+    },
+  });
+
+  // Then: the timeout is capped to the remaining second and no pick is sealed.
+  assert.strictEqual(observedTimeout, 1000);
+  assert.strictEqual(round.entries[0].status, "issue");
+  assert.strictEqual(round.entries[0].issues[0].type, "deadline_exceeded");
+  assert.deepStrictEqual(round.entries[0].picks, []);
+  assert.strictEqual(round.entries[0].calledAt, "2026-07-11T00:59:59.000Z");
+}
+
+async function testMissingOnlyPreservesDisabledLegacyEntry() {
+  // Given: Beta has a valid sealed pick but is no longer in the enabled roster.
+  const match = {
+    id: "m1",
+    stage: "World Cup · Round of 16",
+    home: { team: "甲队", flag: "AA" },
+    away: { team: "乙队", flag: "BB" },
+  };
+  const beta = {
+    modelId: "beta",
+    modelName: "Beta",
+    status: "alive",
+    allowedPicks: 1,
+    picks: [{ team: "乙队", flag: "BB", matchId: "m1", opponent: "甲队", side: "away" }],
+    issues: [],
+  };
+  const championData = {
+    gauntlet: {
+      rounds: [
+        {
+          roundId: "round32",
+          status: "settled",
+          entries: [
+            { modelId: "alpha", status: "alive", alivePicks: [{ team: "甲队" }] },
+            { modelId: "beta", status: "alive", alivePicks: [{ team: "乙队" }] },
+          ],
+        },
+        {
+          roundId: "round16",
+          status: "open",
+          candidateTeams: candidateTeamsForRound([match]),
+          entries: [
+            { modelId: "alpha", status: "issue", allowedPicks: 1, picks: [], issues: [{ type: "timeout" }] },
+            beta,
+          ],
+        },
+      ],
+    },
+  };
+
+  // When: only Alpha is callable during missing-only repair.
+  const round = await generateRoundData({
+    roundId: "round16",
+    matches: [match],
+    models: [{ id: "alpha", name: "Alpha" }],
+    championData,
+    missingOnly: true,
+    generatedAt: "2026-07-05T12:00:00.000Z",
+    askModelFn: async () => ({ ok: true, text: '{"picks":["甲队"],"line":"补齐。"}', durationMs: 1 }),
+  });
+
+  // Then: Beta stays byte-for-byte present even without calledAt or a live config entry.
+  assert.deepStrictEqual(round.entries.map((entry) => entry.modelId), ["alpha", "beta"]);
+  assert.strictEqual(round.entries[1], beta);
+}
+
+async function testNormalGenerationCannotReplaceExistingRound() {
+  // Given: a round already has a sealed entry.
+  const championData = {
+    gauntlet: {
+      rounds: [{
+        roundId: "round32",
+        status: "locked",
+        entries: [{ modelId: "alpha", status: "alive", allowedPicks: 3, picks: [{ team: "甲" }], issues: [] }],
+      }],
+    },
+  };
+
+  // When/Then: a non-missing-only regeneration is rejected before any model call.
+  await assert.rejects(
+    () => generateRoundData({ roundId: "round32", matches: [], models: [], championData }),
+    /already exists/,
+  );
+}
+
+async function testMissingOnlyDoesNotAddReenabledModel() {
+  const match = {
+    id: "m1",
+    stage: "World Cup · Round of 16",
+    home: { team: "甲队", flag: "AA" },
+    away: { team: "乙队", flag: "BB" },
+  };
+  const championData = {
+    gauntlet: {
+      rounds: [
+        {
+          roundId: "round32",
+          status: "settled",
+          entries: [{ modelId: "alpha", status: "alive", alivePicks: [{ team: "甲队" }] }],
+        },
+        {
+          roundId: "round16",
+          status: "open",
+          candidateTeams: candidateTeamsForRound([match]),
+          entries: [{ modelId: "alpha", status: "issue", allowedPicks: 1, picks: [], issues: [{ type: "timeout" }] }],
+        },
+      ],
+    },
+  };
+  const calls = [];
+
+  const round = await generateRoundData({
+    roundId: "round16",
+    matches: [match],
+    models: [{ id: "alpha", name: "Alpha" }, { id: "beta", name: "Beta" }],
+    championData,
+    missingOnly: true,
+    generatedAt: "2026-07-05T12:00:00.000Z",
+    askModelFn: async (modelId) => {
+      calls.push(modelId);
+      return { ok: true, text: '{"picks":["甲队"],"line":"补齐。"}', durationMs: 1 };
+    },
+  });
+
+  assert.deepStrictEqual(calls, ["alpha"]);
+  assert.deepStrictEqual(round.entries.map((entry) => entry.modelId), ["alpha"]);
+}
+
 async function main() {
   testRoundOrderIsStable();
   testRound32SkipsCompletedOpener();
@@ -323,10 +605,17 @@ async function main() {
   testModelStateUsesSurvivorCount();
   testSettlementRequiresWholeRoundAndEliminatesZeroAlive();
   testSettlementUsesAdvancementResultForKnockoutDraws();
+  testSettlementWaitsForAdvancingSideOnKnockoutDraw();
+  testSettlementIncludesMatchesReferencedBySealedPicks();
   testMergePreservesChampionRadarData();
   testSummaryAndPromptExposeVotesAndRules();
   testParseModelJsonAcceptsTrailingBanter();
   await testMissingOnlyPreservesExistingCandidatePool();
+  await testGenerationUsesFrozenCandidateOverrideAndDeadline();
+  await testLateModelResponseIsDiscarded();
+  await testMissingOnlyPreservesDisabledLegacyEntry();
+  await testNormalGenerationCannotReplaceExistingRound();
+  await testMissingOnlyDoesNotAddReenabledModel();
   console.log("[champion-gauntlet.test] ok");
 }
 

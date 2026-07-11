@@ -5,35 +5,14 @@ const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json"
 const JINGCAI_PATH = path.join(__dirname, "..", "public", "data", "jingcai-single.json");
 const ESPN_RESULTS_PATH = path.join(__dirname, "..", "public", "data", "espn-results.json");
 const RESULT_FALLBACK_PATH = path.join(__dirname, "..", "public", "data", "result-fallback.json");
+const {
+  SCORE_SCOPE_REGULAR_TIME,
+  actualForEntry,
+} = require("./result-scope");
 
 function readJson(filePath, fallback = null) {
   if (!fs.existsSync(filePath)) return fallback;
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
-}
-
-function normalizedScore(value) {
-  const match = String(value || "").trim().match(/^(\d+)\s*[:-]\s*(\d+)$/);
-  if (!match) return "";
-  return `${Number(match[1])}-${Number(match[2])}`;
-}
-
-function resultFromScore(score) {
-  const match = String(score || "").match(/^(\d+)-(\d+)$/);
-  if (!match) return "";
-  const home = Number(match[1]);
-  const away = Number(match[2]);
-  if (home === away) return "draw";
-  return home > away ? "home" : "away";
-}
-
-function scoreForEntry(entry) {
-  return normalizedScore(entry.officialScore || entry.score || entry.actualScore);
-}
-
-function resultForEntry(entry, score) {
-  const explicit = String(entry.result || entry.actualResult || "").trim();
-  if (["home", "draw", "away"].includes(explicit)) return explicit;
-  return resultFromScore(score);
 }
 
 function sourceRows() {
@@ -44,27 +23,26 @@ function sourceRows() {
   ];
 }
 
-function validateResults() {
-  const matches = readJson(MATCHES_PATH, { matches: [] }).matches || [];
+function validateResultData(data, rowsBySource = sourceRows()) {
+  const matches = data.matches || [];
   const byId = new Map(matches.map((match) => [match.id, match]));
   const conflicts = [];
 
-  sourceRows().forEach(([sourceName, rows]) => {
+  rowsBySource.forEach(([sourceName, rows]) => {
     (rows || []).forEach((entry) => {
       if (!entry.matchId) return;
       const match = byId.get(entry.matchId);
       if (!match || !match.actual) return;
-      const score = scoreForEntry(entry);
-      const result = resultForEntry(entry, score);
-      if (!score || !result) return;
-      if (match.actual.score !== score || match.actual.result !== result) {
+      const actual = actualForEntry(entry, sourceName);
+      if (!actual || actual.scoreScope !== SCORE_SCOPE_REGULAR_TIME) return;
+      if (match.actual.score !== actual.score || match.actual.result !== actual.result) {
         conflicts.push({
           matchId: match.id,
           home: match.home && match.home.team,
           away: match.away && match.away.team,
           sourceName,
           existing: match.actual,
-          source: { result, score },
+          source: { result: actual.result, score: actual.score, scoreScope: actual.scoreScope },
         });
       }
     });
@@ -77,8 +55,15 @@ function validateResults() {
     throw new Error(`[validate-results] result source conflicts=${conflicts.length}`);
   }
 
-  console.log(`[validate-results] ok matches=${matches.length} sources=${sourceRows().map(([, rows]) => rows.length).join("/")}`);
   return { conflicts };
+}
+
+function validateResults() {
+  const matches = readJson(MATCHES_PATH, { matches: [] });
+  const rows = sourceRows();
+  const result = validateResultData(matches, rows);
+  console.log(`[validate-results] ok matches=${(matches.matches || []).length} sources=${rows.map(([, items]) => items.length).join("/")}`);
+  return result;
 }
 
 if (require.main === module) {
@@ -90,4 +75,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { validateResults };
+module.exports = { validateResultData, validateResults };

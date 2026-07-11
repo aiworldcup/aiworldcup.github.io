@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getConfig } = require("./config");
+const { scoreScopeFromEspnEvent } = require("./result-scope");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "espn-results.json");
@@ -228,6 +229,17 @@ function entryFromEvent(event, match) {
   const homeScore = toScore(home && home.score);
   const awayScore = toScore(away && away.score);
   if (homeScore === null || awayScore === null) return null;
+  const advanceResult = home?.winner === true && away?.winner !== true
+    ? "home"
+    : away?.winner === true && home?.winner !== true
+      ? "away"
+      : null;
+  const statusText = `${status.description || ""} ${status.shortDetail || ""}`;
+  const advanceMethod = /pen/i.test(statusText)
+    ? "penalties"
+    : /extra|aet/i.test(statusText)
+      ? "extra-time"
+      : "regulation";
   return {
     matchId: match.id,
     espnEventId: String(event.id || ""),
@@ -238,6 +250,8 @@ function entryFromEvent(event, match) {
     awayTeam: match.away && match.away.team,
     score: `${homeScore}:${awayScore}`,
     result: resultFromScore(homeScore, awayScore),
+    ...(advanceResult ? { advanceResult, advanceMethod } : {}),
+    scoreScope: scoreScopeFromEspnEvent(event),
     sourceLabel: "ESPN Scoreboard",
     sourceHref: event.id ? `${ESPN_MATCH_URL}${event.id}` : ESPN_SCOREBOARD_API,
     syncedAt: new Date().toISOString(),
@@ -262,6 +276,9 @@ function mergeEntry(existing, fresh) {
     ...fresh,
     score: fresh.score || existing.score,
     result: fresh.result || existing.result,
+    advanceResult: fresh.advanceResult || existing.advanceResult,
+    advanceMethod: fresh.advanceMethod || existing.advanceMethod,
+    scoreScope: fresh.scoreScope || existing.scoreScope,
     sourceLabel: fresh.sourceLabel || existing.sourceLabel,
     sourceHref: fresh.sourceHref || existing.sourceHref,
   };

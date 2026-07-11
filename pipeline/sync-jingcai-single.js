@@ -3,6 +3,7 @@ const path = require("path");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const OUTPUT_PATH = path.join(__dirname, "..", "public", "data", "jingcai-single.json");
+const { SCORE_SCOPE_REGULAR_TIME } = require("./result-scope");
 const SPORTTERY_URL = "https://www.sporttery.cn/jc/zqsgkj/";
 const SPORTTERY_API = "https://webapi.sporttery.cn/gateway/uniform/football/getUniformMatchResultV1.qry";
 const SPORTTERY_MATCH_LIST_URL = "https://www.sporttery.cn/jc/zqspf/";
@@ -406,6 +407,7 @@ function mapOfficialRows(rows, matches) {
         awayTeam: match.away.team,
         kickoff: match.kickoff || null,
         officialScore: row.officialScore || undefined,
+        scoreScope: row.officialScore ? SCORE_SCOPE_REGULAR_TIME : undefined,
         sourceScope: row.sourceScope || undefined,
       };
     })

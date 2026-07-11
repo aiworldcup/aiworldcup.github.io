@@ -26,8 +26,8 @@ assert(html.includes('id="compensation-dismiss"'), 'dismiss button is missing');
 assert(html.includes('id="compensation-reveal"'), 'reveal button is missing');
 assert(html.includes('id="compensation-copy"'), 'copy button is missing');
 assert(html.includes('id="compensation-code-panel"'), 'red packet code panel is missing');
-assert(html.includes('styles.css?v=20260630-compensation-disabled'), 'stylesheet cache key must change for disabled popup fix');
-assert(html.includes('app-load-smooth.js?v=20260630-compensation-disabled'), 'script cache key must change for disabled popup fix');
+assert(html.includes('styles.css?v=20260711-champion-auto'), 'stylesheet cache key must keep the current release version');
+assert(html.includes('app-load-smooth.js?v=20260711-champion-auto'), 'script cache key must keep the current release version');
 
 assert(js.includes('const COMPENSATION_MODAL_ENABLED = false;'), 'compensation modal must be disabled without deleting its code');
 assert(js.includes("const COMPENSATION_CAMPAIGN_ID = '20260630-red-packet-claimed';"), 'compensation modal needs a campaign id for future reuse');

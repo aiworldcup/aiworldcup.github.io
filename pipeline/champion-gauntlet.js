@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 const { askModel, enabledModels } = require("./legion");
@@ -11,7 +12,7 @@ const ROUND_ORDER = ["round32", "round16", "quarterfinal", "semifinal", "final"]
 const ROUND_LABELS = {
   round32: "32 强毒圈",
   round16: "16 强毒圈",
-  quarterfinal: "8 强毒圈",
+  quarterfinal: "8强毒圈",
   semifinal: "半决赛毒圈",
   final: "决赛毒圈",
 };
@@ -31,7 +32,9 @@ function readJson(filePath) {
 }
 
 function writeJson(filePath, data) {
-  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`);
+  const tempPath = `${filePath}.${process.pid}.tmp`;
+  fs.writeFileSync(tempPath, `${JSON.stringify(data, null, 2)}\n`);
+  fs.renameSync(tempPath, filePath);
 }
 
 function roundIndex(roundId) {
@@ -327,10 +330,29 @@ async function runPool(items, concurrency, worker) {
 }
 
 function entryIsReusable(entry) {
-  return entry && entry.status !== "issue" && (!entry.issues || entry.issues.length === 0) && entry.calledAt;
+  if (!entry || entry.status === "issue" || (entry.issues || []).length) return false;
+  const picks = Array.isArray(entry.picks) ? entry.picks : [];
+  if (entry.status === "eliminated") return picks.length === 0;
+  return entry.status === "alive"
+    && Number(entry.allowedPicks) > 0
+    && picks.length === Number(entry.allowedPicks);
 }
 
-async function buildEntry({ model, state, roundId, candidateMatches, candidateTeams, championData, askModelFn, timeoutMs, generatedAt }) {
+function publicModelIssue(error) {
+  const raw = String(error || "");
+  if (/timeout|timed out|abort/i.test(raw)) return { type: "timeout", message: "模型调用超时,未采纳任何选择。" };
+  if (/api.?key|missing.?key|未配置.*key/i.test(raw)) return { type: "missing_api_key", message: "模型密钥未配置,未发起有效预测。" };
+  if (/\b404\b|invalid.?model|model.*not found/i.test(raw)) return { type: "invalid_model", message: "模型配置无效,未采纳任何选择。" };
+  if (/fetch failed|network|socket|econn/i.test(raw)) return { type: "fetch_failed", message: "模型网络调用失败,未采纳任何选择。" };
+  return { type: "model_call_failed", message: "模型调用失败,未采纳任何选择。" };
+}
+
+function numericNow(nowFn) {
+  const value = Number(nowFn());
+  return Number.isFinite(value) ? value : Date.now();
+}
+
+async function buildEntry({ model, state, roundId, candidateMatches, candidateTeams, championData, askModelFn, timeoutMs, generatedAt, deadlineAt, nowFn }) {
   if (state.status === "blocked") {
     return {
       modelId: model.id,
@@ -357,7 +379,9 @@ async function buildEntry({ model, state, roundId, candidateMatches, candidateTe
     championData,
     previousAlivePicks: state.previousAlivePicks,
   });
-  const result = await askModelFn(model.id, prompt, { timeoutMs });
+  const callStartedMs = numericNow(nowFn);
+  const deadlineMs = Date.parse(deadlineAt || "");
+  const calledAt = new Date(callStartedMs).toISOString();
   const base = {
     modelId: model.id,
     modelName: model.name,
@@ -368,21 +392,49 @@ async function buildEntry({ model, state, roundId, candidateMatches, candidateTe
     alivePicks: [],
     eliminatedPicks: [],
     line: "",
-    calledAt: generatedAt,
-    durationMs: result?.durationMs || 0,
+    calledAt,
+    completedAt: null,
+    durationMs: 0,
     issues: [],
   };
 
-  if (!result?.ok) {
+  if (Number.isFinite(deadlineMs) && callStartedMs >= deadlineMs) {
     return {
       ...base,
       status: "issue",
-      issues: [{ type: result?.error || "model_call_failed", message: result?.error || "模型调用失败。" }],
+      issues: [{ type: "deadline_passed", message: "模型调用开始时已到封盘时间,未发起预测。" }],
+    };
+  }
+
+  const remainingMs = Number.isFinite(deadlineMs) ? deadlineMs - callStartedMs : timeoutMs;
+  const callTimeoutMs = Math.max(1, Math.min(timeoutMs, remainingMs));
+  const result = await askModelFn(model.id, prompt, { timeoutMs: callTimeoutMs });
+  const completedMs = numericNow(nowFn);
+  const durationMs = Math.max(Number(result?.durationMs) || 0, completedMs - callStartedMs);
+  const completedBase = {
+    ...base,
+    completedAt: new Date(completedMs).toISOString(),
+    durationMs,
+  };
+
+  if (Number.isFinite(deadlineMs) && completedMs >= deadlineMs) {
+    return {
+      ...completedBase,
+      status: "issue",
+      issues: [{ type: "deadline_exceeded", message: "模型在封盘截止后返回,结果未采纳。" }],
+    };
+  }
+
+  if (!result?.ok) {
+    return {
+      ...completedBase,
+      status: "issue",
+      issues: [publicModelIssue(result?.error)],
     };
   }
   if (!String(result.text || "").trim()) {
     return {
-      ...base,
+      ...completedBase,
       status: "issue",
       issues: [{ type: "empty", message: "模型空返回,未提供可校验结构化内容。" }],
     };
@@ -392,17 +444,17 @@ async function buildEntry({ model, state, roundId, candidateMatches, candidateTe
     const parsed = parseModelJson(result.text);
     if (state.status === "eliminated") {
       const checked = validateSidelineOutput(parsed);
-      if (!checked.valid) return { ...base, status: "issue", issues: checked.issues };
-      return { ...base, status: "eliminated", line: checked.line };
+      if (!checked.valid) return { ...completedBase, status: "issue", issues: checked.issues };
+      return { ...completedBase, status: "eliminated", line: checked.line };
     }
     const checked = validateModelOutput(parsed, { roundId, candidateMatches, candidateTeams, allowedPicks: state.allowedPicks });
-    if (!checked.valid) return { ...base, status: "issue", line: checked.line, issues: checked.issues };
-    return { ...base, picks: checked.picks, line: checked.line };
+    if (!checked.valid) return { ...completedBase, status: "issue", line: checked.line, issues: checked.issues };
+    return { ...completedBase, picks: checked.picks, line: checked.line };
   } catch (err) {
     return {
-      ...base,
+      ...completedBase,
       status: "issue",
-      issues: [{ type: "invalid_json", message: String(err && err.message || err) }],
+      issues: [{ type: "invalid_json", message: "模型返回格式无效,未采纳任何选择。" }],
     };
   }
 }
@@ -437,23 +489,82 @@ function summarizeRound(round) {
   return summary;
 }
 
-async function generateRoundData({ roundId, matches, models, championData, askModelFn = askModel, missingOnly = false, concurrency = DEFAULT_CONCURRENCY, timeoutMs = DEFAULT_TIMEOUT_MS, generatedAt = new Date().toISOString() }) {
+function computeSealedPicksHash(round) {
+  const entries = (round?.entries || [])
+    .map((entry) => ({ modelId: entry.modelId, picks: entry.picks || [] }))
+    .sort((a, b) => String(a.modelId).localeCompare(String(b.modelId)));
+  return crypto.createHash("sha256")
+    .update(JSON.stringify({ roundId: round?.roundId || "", entries }))
+    .digest("hex");
+}
+
+function withSealedPicksHash(round) {
+  if (!["locked", "settled"].includes(round?.status)) return round;
+  return { ...round, sealedPicksHash: computeSealedPicksHash(round) };
+}
+
+async function generateRoundData({
+  roundId,
+  matches,
+  models,
+  championData,
+  askModelFn = askModel,
+  missingOnly = false,
+  concurrency = DEFAULT_CONCURRENCY,
+  timeoutMs = DEFAULT_TIMEOUT_MS,
+  generatedAt = new Date().toISOString(),
+  candidateMatchesOverride,
+  excludedMatchesOverride,
+  deadlineAt,
+  nowFn = Date.now,
+}) {
   const existingGauntlet = championData.gauntlet || {};
   const existingRound = latestRound(existingGauntlet, roundId);
+  if (existingRound && !missingOnly) {
+    throw new Error(`round already exists: ${roundId}; use --missing-only to preserve sealed entries`);
+  }
   const existingEntries = new Map((existingRound?.entries || []).map((entry) => [entry.modelId, entry]));
   const preserveExistingCandidates = missingOnly && Array.isArray(existingRound?.candidateTeams) && existingRound.candidateTeams.length > 0;
-  const candidateMatches = preserveExistingCandidates
-    ? candidateMatchesFromExistingRound(matches, existingRound)
-    : candidateMatchesForRound(matches, roundId);
-  const candidateTeams = preserveExistingCandidates
+  const hasCandidateOverride = Array.isArray(candidateMatchesOverride);
+  const candidateMatches = hasCandidateOverride
+    ? candidateMatchesOverride
+    : preserveExistingCandidates
+      ? candidateMatchesFromExistingRound(matches, existingRound)
+      : candidateMatchesForRound(matches, roundId);
+  const candidateTeams = preserveExistingCandidates && !hasCandidateOverride
     ? existingRound.candidateTeams
     : candidateTeamsForRound(candidateMatches);
-  const modelList = models || enabledModels();
+  const configuredModels = models || enabledModels();
+  const configuredById = new Map(configuredModels.map((model) => [model.id, model]));
+  const participantIds = missingOnly
+    ? Array.from(new Set((existingRound?.entries || []).map((entry) => entry.modelId)))
+    : configuredModels.map((model) => model.id);
+  let effectiveDeadlineAt = deadlineAt || existingRound?.deadlineAt || null;
+  const candidateKickoffs = candidateMatches
+    .map((match) => Date.parse(match.kickoff || ""))
+    .filter(Number.isFinite);
+  if (candidateKickoffs.length) {
+    const frozenDeadline = Math.min(...candidateKickoffs);
+    const explicitDeadline = Date.parse(effectiveDeadlineAt || "");
+    effectiveDeadlineAt = new Date(Number.isFinite(explicitDeadline)
+      ? Math.min(explicitDeadline, frozenDeadline)
+      : frozenDeadline).toISOString();
+  }
 
-  const entries = await runPool(modelList, concurrency, async (model) => {
-    const existing = existingEntries.get(model.id);
-    if (missingOnly && entryIsReusable(existing)) return existing;
-    const state = modelStateForRound(existingGauntlet, roundId, model.id);
+  if (!missingOnly && !hasCandidateOverride) {
+    const generatedMs = Date.parse(generatedAt);
+    const kickoffValues = candidateMatches.map((match) => Date.parse(match.kickoff || ""));
+    if (!candidateMatches.length || !Number.isFinite(generatedMs) || kickoffValues.some((value) => !Number.isFinite(value) || value <= generatedMs)) {
+      throw new Error(`unsafe manual generation for ${roundId}: candidate match started or kickoff missing`);
+    }
+    effectiveDeadlineAt = new Date(Math.min(...kickoffValues)).toISOString();
+  }
+
+  const entries = await runPool(participantIds, concurrency, async (modelId) => {
+    const existing = existingEntries.get(modelId);
+    const model = configuredById.get(modelId);
+    if (missingOnly && (entryIsReusable(existing) || !model)) return existing;
+    const state = modelStateForRound(existingGauntlet, roundId, modelId);
     return buildEntry({
       model,
       state,
@@ -464,6 +575,8 @@ async function generateRoundData({ roundId, matches, models, championData, askMo
       askModelFn,
       timeoutMs,
       generatedAt,
+      deadlineAt: effectiveDeadlineAt,
+      nowFn,
     });
   });
 
@@ -474,17 +587,20 @@ async function generateRoundData({ roundId, matches, models, championData, askMo
     startedAt: existingRound?.startedAt || generatedAt,
     lockedAt: entries.some((entry) => entry.status === "issue") ? null : generatedAt,
     settledAt: null,
+    deadlineAt: effectiveDeadlineAt,
     pickCountRule: roundId === "round32"
       ? { type: "fixed", count: 3, description: "首轮剩余 15 场 30 队,每个大模型固定 3 票。" }
       : { type: "survivor_count", description: "本轮可选数量等于上一整轮活口数;0 活口永久出局。" },
     candidateTeams,
-    excludedMatches: preserveExistingCandidates && Array.isArray(existingRound?.excludedMatches)
-      ? existingRound.excludedMatches
-      : excludedMatchesForRound(matches, roundId),
+    excludedMatches: Array.isArray(excludedMatchesOverride)
+      ? excludedMatchesOverride
+      : preserveExistingCandidates && Array.isArray(existingRound?.excludedMatches)
+        ? existingRound.excludedMatches
+        : excludedMatchesForRound(matches, roundId),
     entries,
   };
   round.summary = summarizeRound(round);
-  return round;
+  return withSealedPicksHash(round);
 }
 
 function resultWinnerTeam(match) {
@@ -500,9 +616,12 @@ function resultWinnerTeam(match) {
 }
 
 function settleRoundData(round, matches, settledAt = new Date().toISOString()) {
-  const matchIds = Array.from(new Set((round.candidateTeams || []).map((item) => item.matchId).filter(Boolean)));
+  const matchIds = Array.from(new Set([
+    ...(round.candidateTeams || []).map((item) => item.matchId),
+    ...(round.entries || []).flatMap((entry) => (entry.picks || []).map((pick) => pick.matchId)),
+  ].filter(Boolean)));
   const matchById = new Map((matches || []).map((match) => [match.id, match]));
-  const pending = matchIds.filter((matchId) => !matchById.get(matchId)?.actual);
+  const pending = matchIds.filter((matchId) => !resultWinnerTeam(matchById.get(matchId)));
   if (pending.length) throw new Error(`pending ${round.roundId} matches: ${pending.join(",")}`);
 
   const winners = new Map(matchIds.map((matchId) => [matchId, resultWinnerTeam(matchById.get(matchId))]));
@@ -525,7 +644,7 @@ function settleRoundData(round, matches, settledAt = new Date().toISOString()) {
   });
   const settled = { ...round, status: "settled", settledAt, entries };
   settled.summary = summarizeRound(settled);
-  return settled;
+  return withSealedPicksHash(settled);
 }
 
 function mergeGauntletRound(championData, round, updatedAt = new Date().toISOString()) {
@@ -660,9 +779,12 @@ module.exports = {
   modelStateForRound,
   buildModelPrompt,
   parseModelJson,
+  computeSealedPicksHash,
   generateRoundData,
+  resultWinnerTeam,
   settleRoundData,
   mergeGauntletRound,
   summarizeRound,
+  withSealedPicksHash,
   main,
 };

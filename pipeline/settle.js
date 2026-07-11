@@ -5,6 +5,14 @@ const { syncRealData } = require("./sync-real-data");
 const { syncJingcaiSingle } = require("./sync-jingcai-single");
 const { syncEspnResults } = require("./sync-espn-results");
 const { makeLeaderboard } = require("./score");
+const { resolveKnockoutData } = require("./knockout");
+const {
+  SCORE_SCOPE_FINAL,
+  SCORE_SCOPE_REGULAR_TIME,
+  actualForEntry,
+  normalizeScoreScope,
+  scoreForEntry,
+} = require("./result-scope");
 
 const MATCHES_PATH = path.join(__dirname, "..", "public", "data", "matches.json");
 const LEADERBOARD_PATH = path.join(__dirname, "..", "public", "data", "leaderboard.json");
@@ -12,6 +20,7 @@ const DISCUSSIONS_PATH = path.join(__dirname, "..", "public", "data", "discussio
 const JINGCAI_PATH = path.join(__dirname, "..", "public", "data", "jingcai-single.json");
 const ESPN_RESULTS_PATH = path.join(__dirname, "..", "public", "data", "espn-results.json");
 const RESULT_FALLBACK_PATH = path.join(__dirname, "..", "public", "data", "result-fallback.json");
+const GROUPS_PATH = path.join(__dirname, "..", "public", "data", "groups.json");
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -44,31 +53,6 @@ function writeJsonIfChanged(filePath, data) {
   return true;
 }
 
-function resultFromScore(score) {
-  const match = String(score || "").match(/^(\d+)-(\d+)$/);
-  if (!match) return "";
-  const home = Number(match[1]);
-  const away = Number(match[2]);
-  if (home === away) return "draw";
-  return home > away ? "home" : "away";
-}
-
-function normalizedScore(value) {
-  const match = String(value || "").trim().match(/^(\d+)\s*[:-]\s*(\d+)$/);
-  if (!match) return "";
-  return `${Number(match[1])}-${Number(match[2])}`;
-}
-
-function scoreForEntry(entry) {
-  return normalizedScore(entry.officialScore || entry.score || entry.actualScore);
-}
-
-function resultForEntry(entry, score) {
-  const explicit = String(entry.result || entry.actualResult || "").trim();
-  if (["home", "draw", "away"].includes(explicit)) return explicit;
-  return resultFromScore(score);
-}
-
 function applyActualEntries(data, entries, sourceName, options = {}) {
   const conflicts = Array.isArray(options.conflicts) ? options.conflicts : null;
   const byId = new Map((entries || [])
@@ -78,39 +62,103 @@ function applyActualEntries(data, entries, sourceName, options = {}) {
   (data.matches || []).forEach((match) => {
     const entry = byId.get(match.id);
     if (!entry) return;
-    const score = scoreForEntry(entry);
-    const result = resultForEntry(entry, score);
-    if (!score || !result) return;
+    if (setAdvanceResult(match, entry, sourceName)) changed += 1;
+    const actual = actualForEntry(entry, sourceName);
+    if (!actual) return;
+    if (actual.scoreScope !== SCORE_SCOPE_REGULAR_TIME) {
+      if (actual.scoreScope === SCORE_SCOPE_FINAL && setFinalActual(match, actual, entry, sourceName)) changed += 1;
+      return;
+    }
     if (match.actual) {
-      if (match.actual.score !== score || match.actual.result !== result) {
-        console.warn(`[settle] keep existing actual for ${match.id}; ${sourceName}=${score} existing=${match.actual.score}`);
+      if (match.actual.score !== actual.score || match.actual.result !== actual.result) {
+        if (canReplaceExistingActual(match)) {
+          preserveExistingActualAsFinal(match);
+          setRegularActual(match, actual, entry, sourceName);
+          changed += 1;
+          return;
+        }
+        console.warn(`[settle] keep existing actual for ${match.id}; ${sourceName}=${actual.score} existing=${match.actual.score}`);
         if (conflicts) {
           conflicts.push({
             matchId: match.id,
             home: match.home && match.home.team,
             away: match.away && match.away.team,
             sourceName,
-            sourceScore: score,
-            sourceResult: result,
+            sourceScore: actual.score,
+            sourceResult: actual.result,
             existingScore: match.actual.score,
             existingResult: match.actual.result,
             sourceLabel: entry.sourceLabel || entry.source || null,
             sourceHref: entry.sourceHref || entry.href || null,
+            scoreScope: actual.scoreScope,
           });
         }
+      } else if (actualSourceScope(match) !== SCORE_SCOPE_REGULAR_TIME) {
+        setRegularActual(match, actual, entry, sourceName);
+        changed += 1;
       }
       return;
     }
-    match.actual = { result, score };
-    match.actualSource = {
-      provider: sourceName,
-      sourceLabel: entry.sourceLabel || entry.source || null,
-      sourceHref: entry.sourceHref || entry.href || null,
-      syncedAt: new Date().toISOString(),
-    };
+    setRegularActual(match, actual, entry, sourceName);
     changed += 1;
   });
   return changed;
+}
+
+function actualSourceScope(match) {
+  return normalizeScoreScope(match && match.actualSource && match.actualSource.scoreScope);
+}
+
+function canReplaceExistingActual(match) {
+  return false;
+}
+
+function sourceMeta(entry, sourceName, scoreScope) {
+  return {
+    provider: sourceName,
+    sourceLabel: entry.sourceLabel || entry.source || null,
+    sourceHref: entry.sourceHref || entry.href || null,
+    scoreScope,
+    syncedAt: new Date().toISOString(),
+  };
+}
+
+function setRegularActual(match, actual, entry, sourceName) {
+  match.actual = { result: actual.result, score: actual.score };
+  match.actualSource = sourceMeta(entry, sourceName, SCORE_SCOPE_REGULAR_TIME);
+}
+
+function setAdvanceResult(match, entry, sourceName) {
+  if (!["home", "away"].includes(entry?.advanceResult) || match.advanceResult) return false;
+  match.advanceResult = entry.advanceResult;
+  match.advanceSource = {
+    ...sourceMeta(entry, sourceName, "advancementIncludingExtraTimeAndPenalties"),
+    method: entry.advanceMethod || null,
+  };
+  return true;
+}
+
+function preserveExistingActualAsFinal(match) {
+  if (!match.actual || match.finalActual) return;
+  match.finalActual = { ...match.actual };
+  match.finalActualSource = {
+    ...(match.actualSource || {}),
+    scoreScope: normalizeScoreScope(match.actualSource && match.actualSource.scoreScope) || SCORE_SCOPE_FINAL,
+  };
+}
+
+function setFinalActual(match, actual, entry, sourceName) {
+  const finalActual = { result: actual.result, score: actual.score };
+  if (
+    match.finalActual
+    && match.finalActual.result === finalActual.result
+    && match.finalActual.score === finalActual.score
+  ) {
+    return false;
+  }
+  match.finalActual = finalActual;
+  match.finalActualSource = sourceMeta(entry, sourceName, actual.scoreScope);
+  return true;
 }
 
 function applyJingcaiActuals(data, options = {}) {
@@ -130,6 +178,10 @@ function applyFallbackActuals(data, options = {}) {
 
 function hasFlag(name) {
   return process.argv.includes(`--${name}`);
+}
+
+function resolveSettlementKnockoutData(data, groups, generatedAt = new Date().toISOString()) {
+  return resolveKnockoutData(data, groups, { generatedAt });
 }
 
 async function settle() {
@@ -152,10 +204,12 @@ async function settle() {
   const espnActualsChanged = applyEspnActuals(data, conflictOptions);
   const fallbackActualsChanged = applyFallbackActuals(data, conflictOptions);
   const actualsChanged = jingcaiActualsChanged + espnActualsChanged + fallbackActualsChanged;
-  const matchesChanged = writeJsonIfChanged(MATCHES_PATH, data);
+  const groups = fs.existsSync(GROUPS_PATH) ? readJson(GROUPS_PATH).groups || {} : {};
+  const resolvedData = resolveSettlementKnockoutData(data, groups);
+  const matchesChanged = writeJsonIfChanged(MATCHES_PATH, resolvedData);
   const discussionsData = fs.existsSync(DISCUSSIONS_PATH) ? readJson(DISCUSSIONS_PATH) : { discussions: [] };
   const settlementGraceMinutes = Number(process.env.SETTLEMENT_GRACE_MINUTES || 150);
-  const leaderboard = makeLeaderboard(data.matches || [], {
+  const leaderboard = makeLeaderboard(resolvedData.matches || [], {
     discussions: discussionsData.discussions || [],
     settlementGraceMinutes,
   });
@@ -193,5 +247,6 @@ module.exports = {
   applyEspnActuals,
   applyFallbackActuals,
   applyJingcaiActuals,
+  resolveSettlementKnockoutData,
   settle,
 };
