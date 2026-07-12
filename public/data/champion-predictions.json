@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-11T21:25:43.246Z",
+  "updatedAt": "2026-07-12T00:47:31.594Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
     "matches": 104,
     "qualifiedTeams": 32,
-    "aliveTeams": 7,
-    "settledKnockout": 25
+    "aliveTeams": 6,
+    "settledKnockout": 26
   },
   "highlights": {
     "favorite": {
@@ -18,9 +18,9 @@
     },
     "darkHorse": {
       "label": "黑马剧本",
-      "team": "挪威",
-      "flag": "NO",
-      "score": 68.2,
+      "team": "摩洛哥",
+      "flag": "MA",
+      "score": 72.4,
       "hook": "不是最大牌,但路径和状态给了它偷剧本的空间。"
     },
     "jinxRisk": {
@@ -135,60 +135,10 @@
       }
     },
     {
-      "team": "英格兰",
-      "flag": "GB",
-      "teamEn": "England",
-      "rank": 3,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "L",
-        "rank": 1,
-        "points": 7,
-        "record": "2-1-0",
-        "gf": 6,
-        "ga": 2,
-        "gd": 4
-      },
-      "scores": {
-        "total": 84.7,
-        "form": 90,
-        "strength": 92,
-        "path": 80,
-        "fun": 54
-      },
-      "tags": [
-        "不败金身",
-        "防线可控",
-        "签运舒适",
-        "强队牌面",
-        "毒奶预警"
-      ],
-      "badges": [
-        "毒奶预警",
-        "不败金身",
-        "防线可控"
-      ],
-      "reason": "小组第一7分,净胜+4,硬实力92,路径80,下一场对挪威",
-      "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-27",
-        "stage": "World Cup · Quarter-finals",
-        "stageShort": "8 强",
-        "dateKey": "2026-07-12",
-        "kickoff": "2026-07-11T21:00:00+00:00",
-        "opponent": "挪威",
-        "opponentFlag": "NO",
-        "side": "away",
-        "winChance": 63.9
-      }
-    },
-    {
       "team": "西班牙",
       "flag": "ES",
       "teamEn": "Spain",
-      "rank": 4,
+      "rank": 3,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -219,6 +169,46 @@
       ],
       "reason": "小组第一7分,净胜+5,硬实力94,路径59,等待下轮对阵落位",
       "script": "防线先把地基打稳了,剧本不花,但特别适合熬死人。",
+      "nextMatch": {
+        "status": "waiting",
+        "label": "等待下轮落位"
+      }
+    },
+    {
+      "team": "英格兰",
+      "flag": "GB",
+      "teamEn": "England",
+      "rank": 4,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "L",
+        "rank": 1,
+        "points": 7,
+        "record": "2-1-0",
+        "gf": 6,
+        "ga": 2,
+        "gd": 4
+      },
+      "scores": {
+        "total": 79.7,
+        "form": 90,
+        "strength": 92,
+        "path": 59,
+        "fun": 54
+      },
+      "tags": [
+        "不败金身",
+        "防线可控",
+        "强队牌面"
+      ],
+      "badges": [
+        "不败金身",
+        "防线可控",
+        "强队牌面"
+      ],
+      "reason": "小组第一7分,净胜+4,硬实力92,路径59,等待下轮对阵落位",
+      "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
       "nextMatch": {
         "status": "waiting",
         "label": "等待下轮落位"
@@ -319,54 +309,6 @@
         "opponentFlag": "FR",
         "side": "home",
         "winChance": 28.2
-      }
-    },
-    {
-      "team": "挪威",
-      "flag": "NO",
-      "teamEn": "Norway",
-      "rank": 7,
-      "status": "alive",
-      "qualification": "小组第二",
-      "group": {
-        "name": "I",
-        "rank": 2,
-        "points": 6,
-        "record": "2-0-1",
-        "gf": 8,
-        "ga": 7,
-        "gd": 1
-      },
-      "scores": {
-        "total": 68.2,
-        "form": 68,
-        "strength": 71,
-        "path": 60,
-        "fun": 78
-      },
-      "tags": [
-        "进攻在线",
-        "黑马剧本",
-        "硬仗开门"
-      ],
-      "badges": [
-        "黑马剧本",
-        "进攻在线",
-        "硬仗开门"
-      ],
-      "reason": "小组第二6分,净胜+1,硬实力71,路径60,下一场对英格兰",
-      "script": "进球很上头,丢球也刺激,这队像把过山车开进淘汰赛。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-27",
-        "stage": "World Cup · Quarter-finals",
-        "stageShort": "8 强",
-        "dateKey": "2026-07-12",
-        "kickoff": "2026-07-11T21:00:00+00:00",
-        "opponent": "英格兰",
-        "opponentFlag": "GB",
-        "side": "home",
-        "winChance": 36.1
       }
     }
   ],
