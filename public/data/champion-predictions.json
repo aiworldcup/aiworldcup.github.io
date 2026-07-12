@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-07-12T04:01:11.063Z",
+  "updatedAt": "2026-07-12T04:11:25.728Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
     "matches": 104,
     "qualifiedTeams": 32,
-    "aliveTeams": 6,
-    "settledKnockout": 26
+    "aliveTeams": 5,
+    "settledKnockout": 27
   },
   "highlights": {
     "favorite": {
       "label": "最大热门",
-      "team": "阿根廷",
-      "flag": "AR",
-      "score": 92.4,
+      "team": "法国",
+      "flag": "FR",
+      "score": 92,
       "hook": "数据最硬,但热度也最容易挨毒奶。"
     },
     "darkHorse": {
@@ -33,61 +33,10 @@
   },
   "teams": [
     {
-      "team": "阿根廷",
-      "flag": "AR",
-      "teamEn": "Argentina",
-      "rank": 1,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "J",
-        "rank": 1,
-        "points": 9,
-        "record": "3-0-0",
-        "gf": 8,
-        "ga": 1,
-        "gd": 7
-      },
-      "scores": {
-        "total": 92.4,
-        "form": 99,
-        "strength": 97,
-        "path": 84,
-        "fun": 76
-      },
-      "tags": [
-        "冠军相",
-        "小组赛满血",
-        "不败金身",
-        "进攻在线",
-        "低失球护城河",
-        "盘口顺风"
-      ],
-      "badges": [
-        "冠军相",
-        "低失球护城河",
-        "盘口顺风"
-      ],
-      "reason": "小组第一9分,净胜+7,硬实力97,路径84,下一场对瑞士",
-      "script": "攻守都没露大破绽,现在最大的对手可能是被提前封神。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-28",
-        "stage": "World Cup · Quarter-finals",
-        "stageShort": "8 强",
-        "dateKey": "2026-07-12",
-        "kickoff": "2026-07-12T01:00:00+00:00",
-        "opponent": "瑞士",
-        "opponentFlag": "CH",
-        "side": "home",
-        "winChance": 69.4
-      }
-    },
-    {
       "team": "法国",
       "flag": "FR",
       "teamEn": "France",
-      "rank": 2,
+      "rank": 1,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -132,6 +81,57 @@
         "opponentFlag": "MA",
         "side": "away",
         "winChance": 71.8
+      }
+    },
+    {
+      "team": "阿根廷",
+      "flag": "AR",
+      "teamEn": "Argentina",
+      "rank": 2,
+      "status": "alive",
+      "qualification": "小组第一",
+      "group": {
+        "name": "J",
+        "rank": 1,
+        "points": 9,
+        "record": "3-0-0",
+        "gf": 8,
+        "ga": 1,
+        "gd": 7
+      },
+      "scores": {
+        "total": 89.3,
+        "form": 99,
+        "strength": 97,
+        "path": 71,
+        "fun": 76
+      },
+      "tags": [
+        "小组赛满血",
+        "不败金身",
+        "进攻在线",
+        "低失球护城河",
+        "强队牌面",
+        "毒奶预警"
+      ],
+      "badges": [
+        "低失球护城河",
+        "满血通关",
+        "毒奶预警"
+      ],
+      "reason": "小组第一9分,净胜+7,硬实力97,路径71,下一场对英格兰",
+      "script": "攻守都没露大破绽,现在最大的对手可能是被提前封神。",
+      "nextMatch": {
+        "status": "scheduled",
+        "matchId": "wc2026-ko-30",
+        "stage": "World Cup · Semi-finals",
+        "stageShort": "半决赛",
+        "dateKey": "2026-07-16",
+        "kickoff": "2026-07-15T19:00:00+00:00",
+        "opponent": "英格兰",
+        "opponentFlag": "GB",
+        "side": "away",
+        "winChance": null
       }
     },
     {
@@ -224,59 +224,10 @@
       }
     },
     {
-      "team": "瑞士",
-      "flag": "CH",
-      "teamEn": "Switzerland",
-      "rank": 5,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "B",
-        "rank": 1,
-        "points": 7,
-        "record": "2-1-0",
-        "gf": 7,
-        "ga": 3,
-        "gd": 4
-      },
-      "scores": {
-        "total": 75.4,
-        "form": 90,
-        "strength": 82,
-        "path": 56,
-        "fun": 54
-      },
-      "tags": [
-        "不败金身",
-        "进攻在线",
-        "冷门按钮",
-        "硬仗开门"
-      ],
-      "badges": [
-        "冷门按钮",
-        "不败金身",
-        "进攻在线"
-      ],
-      "reason": "小组第一7分,净胜+4,硬实力82,路径56,下一场对阿根廷",
-      "script": "没有大热包袱,反而适合偷偷往前拱。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-28",
-        "stage": "World Cup · Quarter-finals",
-        "stageShort": "8 强",
-        "dateKey": "2026-07-12",
-        "kickoff": "2026-07-12T01:00:00+00:00",
-        "opponent": "阿根廷",
-        "opponentFlag": "AR",
-        "side": "away",
-        "winChance": 30.6
-      }
-    },
-    {
       "team": "摩洛哥",
       "flag": "MA",
       "teamEn": "Morocco",
-      "rank": 6,
+      "rank": 5,
       "status": "alive",
       "qualification": "小组第二",
       "group": {
