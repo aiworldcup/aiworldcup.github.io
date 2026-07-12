@@ -8,7 +8,7 @@
     "placeholders": 4,
     "syncedAt": "2026-06-16T10:22:59.587Z",
     "oddsSyncedAt": "2026-07-09T16:23:33.916Z",
-    "knockoutSyncedAt": "2026-07-09T16:22:32.219Z"
+    "knockoutSyncedAt": "2026-07-12T01:59:00.831Z"
   },
   "matches": [
     {
@@ -3582,7 +3582,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 73,
       "bracketSlot": {
@@ -3592,7 +3592,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -3642,7 +3642,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 76,
       "bracketSlot": {
@@ -3652,7 +3652,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -3702,7 +3702,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 74,
       "bracketSlot": {
@@ -3712,7 +3712,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -3781,7 +3781,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 75,
       "bracketSlot": {
@@ -3791,7 +3791,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -3852,7 +3852,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 78,
       "bracketSlot": {
@@ -3862,7 +3862,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -3904,7 +3904,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 77,
       "bracketSlot": {
@@ -3914,7 +3914,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -3956,7 +3956,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 79,
       "bracketSlot": {
@@ -3966,7 +3966,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -4008,7 +4008,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 80,
       "bracketSlot": {
@@ -4018,7 +4018,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -4060,7 +4060,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 82,
       "bracketSlot": {
@@ -4070,7 +4070,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -4131,7 +4131,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 81,
       "bracketSlot": {
@@ -4141,7 +4141,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "jingcai",
@@ -4183,7 +4183,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 84,
       "bracketSlot": {
@@ -4193,7 +4193,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "espn",
@@ -4201,6 +4201,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760497",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-02T21:05:50.438Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760497",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4235,7 +4244,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 83,
       "bracketSlot": {
@@ -4245,7 +4254,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "espn",
@@ -4253,6 +4262,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760496",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-03T01:10:53.797Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760496",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4287,7 +4305,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 85,
       "bracketSlot": {
@@ -4297,7 +4315,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "espn",
@@ -4305,6 +4323,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760498",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-03T05:06:30.965Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760498",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4339,7 +4366,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 88,
       "bracketSlot": {
@@ -4349,7 +4376,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "finalActual": {
         "result": "draw",
@@ -4410,7 +4437,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 86,
       "bracketSlot": {
@@ -4420,7 +4447,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "finalActual": {
         "result": "home",
@@ -4481,7 +4508,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 87,
       "bracketSlot": {
@@ -4491,7 +4518,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1120771/world-cup-schedule-scores-round-32",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       },
       "actualSource": {
         "provider": "espn",
@@ -4499,6 +4526,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760501",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-04T03:42:18.541Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760501",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4560,6 +4596,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760502",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-04T19:08:33.119Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760502",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4621,6 +4666,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760503",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-04T23:14:36.007Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760503",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4682,6 +4736,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760504",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-05T22:10:49.122Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760504",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4743,6 +4806,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760505",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-06T03:07:54.987Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760505",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4804,6 +4876,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760506",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-06T21:11:23.241Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760506",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4865,6 +4946,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760507",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-07T02:07:52.744Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760507",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -4926,6 +5016,15 @@
         "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760509",
         "scoreScope": "regularTime",
         "syncedAt": "2026-07-07T18:06:33.254Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760509",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-10T19:17:24.107Z",
+        "method": "regulation"
       }
     },
     {
@@ -5046,7 +5145,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 97,
       "bracketSlot": {
@@ -5056,7 +5155,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1122036/world-cup-2026-quarterfinals-schedule-scores",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       }
     },
     {
@@ -5092,11 +5191,14 @@
         "syncedAt": "2026-07-09T16:23:19.655Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "home",
+        "score": "2-1"
+      },
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 98,
       "bracketSlot": {
@@ -5106,7 +5208,23 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1122036/world-cup-2026-quarterfinals-schedule-scores",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
+      },
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "scoreScope": "regularTime",
+        "syncedAt": "2026-07-11T21:24:13.764Z"
+      },
+      "advanceResult": "home",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760511",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-11T21:24:13.765Z",
+        "method": "regulation"
       }
     },
     {
@@ -5142,11 +5260,14 @@
         "syncedAt": "2026-07-09T16:23:33.382Z"
       },
       "sealedAt": null,
-      "actual": null,
+      "actual": {
+        "result": "draw",
+        "score": "1-1"
+      },
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 99,
       "bracketSlot": {
@@ -5156,7 +5277,34 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1122036/world-cup-2026-quarterfinals-schedule-scores",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
+      },
+      "advanceResult": "away",
+      "advanceSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760512",
+        "scoreScope": "advancementIncludingExtraTimeAndPenalties",
+        "syncedAt": "2026-07-11T23:56:50.180Z",
+        "method": "extra-time"
+      },
+      "finalActual": {
+        "result": "away",
+        "score": "1-2"
+      },
+      "finalActualSource": {
+        "provider": "espn",
+        "sourceLabel": "ESPN Scoreboard",
+        "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760512",
+        "scoreScope": "finalIncludingExtraTime",
+        "syncedAt": "2026-07-11T23:56:50.180Z"
+      },
+      "actualSource": {
+        "provider": "jingcai",
+        "sourceLabel": null,
+        "sourceHref": null,
+        "scoreScope": "regularTime",
+        "syncedAt": "2026-07-12T00:37:31.173Z"
       }
     },
     {
@@ -5196,7 +5344,7 @@
       "predictions": [],
       "placeholder": false,
       "dataSource": "fifa-knockout-derived",
-      "syncedAt": "2026-07-09T16:22:32.219Z",
+      "syncedAt": "2026-07-12T01:59:00.831Z",
       "preservedAt": "2026-06-14T09:54:33.164Z",
       "fifaMatchNumber": 100,
       "bracketSlot": {
@@ -5206,7 +5354,7 @@
       "knockoutSource": {
         "bracketHref": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
         "scheduleHref": "https://www.sbnation.com/soccer/1122036/world-cup-2026-quarterfinals-schedule-scores",
-        "generatedAt": "2026-07-09T16:22:32.219Z"
+        "generatedAt": "2026-07-12T01:59:00.831Z"
       }
     },
     {
