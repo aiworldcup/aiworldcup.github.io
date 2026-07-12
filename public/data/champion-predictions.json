@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12T00:47:31.594Z",
+  "updatedAt": "2026-07-12T04:01:11.063Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -191,27 +191,36 @@
         "gd": 4
       },
       "scores": {
-        "total": 79.7,
+        "total": 82.6,
         "form": 90,
         "strength": 92,
-        "path": 59,
-        "fun": 54
+        "path": 68,
+        "fun": 62
       },
       "tags": [
         "不败金身",
         "防线可控",
-        "强队牌面"
+        "强队牌面",
+        "硬仗开门"
       ],
       "badges": [
         "不败金身",
         "防线可控",
         "强队牌面"
       ],
-      "reason": "小组第一7分,净胜+4,硬实力92,路径59,等待下轮对阵落位",
+      "reason": "小组第一7分,净胜+4,硬实力92,路径68,下一场对阿根廷",
       "script": "牌面够硬,现在拼的是淘汰赛别犯低级错。",
       "nextMatch": {
-        "status": "waiting",
-        "label": "等待下轮落位"
+        "status": "scheduled",
+        "matchId": "wc2026-ko-30",
+        "stage": "World Cup · Semi-finals",
+        "stageShort": "半决赛",
+        "dateKey": "2026-07-16",
+        "kickoff": "2026-07-15T19:00:00+00:00",
+        "opponent": "阿根廷",
+        "opponentFlag": "AR",
+        "side": "home",
+        "winChance": null
       }
     },
     {
@@ -314,7 +323,7 @@
   ],
   "predictions": [],
   "gauntlet": {
-    "updatedAt": "2026-07-10T19:38:39.214Z",
+    "updatedAt": "2026-07-12T04:01:11.063Z",
     "mode": "real-model",
     "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
@@ -2161,10 +2170,10 @@
       {
         "roundId": "quarterfinal",
         "label": "8强毒圈",
-        "status": "locked",
+        "status": "settled",
         "startedAt": "2026-07-10T18:18:26.223Z",
         "lockedAt": "2026-07-10T19:00:00.000Z",
-        "settledAt": null,
+        "settledAt": "2026-07-12T04:01:11.063Z",
         "deadlineAt": "2026-07-10T19:00:00.000Z",
         "pickCountRule": {
           "type": "survivor_count",
@@ -2245,12 +2254,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "阿根廷冠军相拉满,梅老板带我上分;西班牙护城河深得能养鱼,毒奶归毒奶,盘口顺风我先上车,比利时的冷门按钮我摁住不让按。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 6048,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "gpt-5-5",
@@ -2274,12 +2299,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "阿根廷是航母压瑞士，西班牙有低失球护城河；毒奶我先喝，活口我先锁。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 6702,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "gemini-3-1",
@@ -2322,12 +2363,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "斗牛士88.6雷达配低失球护城河稳得一批，潘帕斯雄鹰92.4冠军相拉满，毒奶退散这轮必须活！",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 18028,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "minimax-m3",
@@ -2351,12 +2408,28 @@
                 "side": "away"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "英格兰",
+                "flag": "GB",
+                "matchId": "wc2026-ko-27",
+                "opponent": "挪威",
+                "side": "away"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "梅西的剧本还没写完，英格兰这回该把三喵帽子摘了——但别跟他们在同一场让我押注，我选决赛见。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 3094,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "kimi-k2-6",
@@ -2406,12 +2479,35 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "英格兰",
+                "flag": "GB",
+                "matchId": "wc2026-ko-27",
+                "opponent": "挪威",
+                "side": "away"
+              },
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "梅西卫冕光环加持，英格兰青春无敌，西班牙技术碾压，这三队联手，夺冠概率高到让其他队伍直呼‘卷不动了’！",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 23767,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "grok-4-3",
@@ -2435,12 +2531,28 @@
                 "side": "away"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "英格兰",
+                "flag": "GB",
+                "matchId": "wc2026-ko-27",
+                "opponent": "挪威",
+                "side": "away"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "阿根廷冠军相+低失球，英格兰不败金身防线在线，毒圈先锁这两条大命不翻车。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 5888,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "claude-sonnet-4-6",
@@ -2464,12 +2576,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              },
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "雷达88.6的西班牙配雷达92.4的梅西退役纪念馆,毒奶就毒吧,反正上轮法阿都活了。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 3239,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "deepseek-v4pro",
@@ -2493,12 +2621,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "潘帕斯雷达不掺水，斗牛士的低失球护城河比利时的冷门按钮厚一堵墙。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 12392,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "glm-5-1",
@@ -2522,12 +2666,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "潘帕斯雄鹰稳如老狗保基本盘，斗牛士低失球护城河强吃比利时冷门按钮",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 33034,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           },
           {
             "modelId": "doubao-seed-2-0-pro",
@@ -2551,12 +2711,28 @@
                 "side": "home"
               }
             ],
-            "alivePicks": [],
+            "alivePicks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-28",
+                "opponent": "瑞士",
+                "side": "home"
+              },
+              {
+                "team": "西班牙",
+                "flag": "ES",
+                "matchId": "wc2026-ko-26",
+                "opponent": "比利时",
+                "side": "home"
+              }
+            ],
             "eliminatedPicks": [],
             "line": "潘帕斯连庄buff焊死晋级路，斗牛士铜墙铁壁踹走冷门坑。",
             "calledAt": "2026-07-10T18:18:57.443Z",
             "durationMs": 24890,
-            "issues": []
+            "issues": [],
+            "settledAt": "2026-07-12T04:01:11.063Z"
           }
         ],
         "summary": {
