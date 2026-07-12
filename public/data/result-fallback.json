@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T11:11:15.002Z",
+  "updatedAt": "2026-07-12T16:38:07.092Z",
   "status": "verified-manual-fallback",
   "note": "当 API-Sports 与中国竞彩网赛果接口未覆盖某场已完赛比赛时,settle 会使用这里的人工核验备用赛果。只追加已核验结果,不得覆盖 matches.json 既有 actual。",
   "sources": [
@@ -31,6 +31,14 @@
     {
       "label": "ESPN match page",
       "href": "https://www.espn.com/soccer/match/_/gameId/760430"
+    },
+    {
+      "label": "FIFA match report",
+      "href": "https://www.fifa.com/fr/articles/resume-temps-forts-france-maroc-quarts"
+    },
+    {
+      "label": "ESPN match page",
+      "href": "https://www.espn.com/soccer/match/_/gameId/760510"
     }
   ],
   "matches": [
@@ -73,6 +81,18 @@
       "result": "away",
       "sourceLabel": "中国竞彩网 / ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760430"
+    },
+    {
+      "matchId": "wc2026-ko-25",
+      "matchDate": "2026-07-09",
+      "homeTeam": "摩洛哥",
+      "awayTeam": "法国",
+      "score": "0:2",
+      "result": "away",
+      "advanceResult": "away",
+      "advanceMethod": "regulation",
+      "sourceLabel": "FIFA / ESPN Scoreboard",
+      "sourceHref": "https://www.fifa.com/fr/articles/resume-temps-forts-france-maroc-quarts"
     }
   ]
 }
