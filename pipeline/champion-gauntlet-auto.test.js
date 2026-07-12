@@ -128,8 +128,8 @@ async function testAutomationSettlesPreviousRoundAndGeneratesNextRound() {
   assert.deepStrictEqual(Array.from(new Set(current.candidateTeams.map((item) => item.matchId))), ["qf-2", "qf-3", "qf-4"]);
 }
 
-async function testAutomationSkipsWhenRemainingMatchesCannotFitAllowance() {
-  // Given: only two distinct matches remain but the model must place three non-hedged picks.
+async function testAutomationCapsPicksToRemainingMatches() {
+  // Given: only two distinct matches remain and the model carried three surviving picks.
   const matches = quarterfinals().map((item, index) => index < 2
     ? { ...item, kickoff: "2026-07-10T20:00:00.000Z" }
     : item);
@@ -142,18 +142,19 @@ async function testAutomationSkipsWhenRemainingMatchesCannotFitAllowance() {
     models: [{ id: "alpha", name: "Alpha", vendor: "Test" }],
     askModelFn: async () => {
       calls += 1;
-      return validModelResponse("戊");
+      return { ok: true, text: JSON.stringify({ picks: ["戊", "庚"], line: "剩几场就投几票。" }), durationMs: 1 };
     },
     now: NOW,
     clock: () => Date.parse(NOW),
   });
 
-  // Then: it records a transparent skip and makes no retrospective or weakened call.
+  // Then: it caps the ballot at two matches and generates a real pre-kickoff round.
   const current = result.data.gauntlet.rounds.at(-1);
-  assert.deepStrictEqual(result.actions, ["skipped:quarterfinal"]);
-  assert.strictEqual(calls, 0);
-  assert.strictEqual(current.status, "skipped");
-  assert.match(current.skipReason, /不足以满足/);
+  assert.deepStrictEqual(result.actions, ["generated:quarterfinal"]);
+  assert.strictEqual(calls, 1);
+  assert.strictEqual(current.status, "locked");
+  assert.strictEqual(current.entries[0].allowedPicks, 2);
+  assert.deepStrictEqual(current.entries[0].picks.map((item) => item.team), ["戊", "庚"]);
 }
 
 async function testIssueRepairStopsAtDeadline() {
@@ -344,7 +345,7 @@ async function testRepairFailsWhenFrozenMatchDisappears() {
 async function main() {
   testPlannerExcludesStartedMatchWithoutUsingResult();
   await testAutomationSettlesPreviousRoundAndGeneratesNextRound();
-  await testAutomationSkipsWhenRemainingMatchesCannotFitAllowance();
+  await testAutomationCapsPicksToRemainingMatches();
   await testIssueRepairStopsAtDeadline();
   await testLockedRoundWithoutResultsIsIdempotent();
   await testStoredDeadlineIsClampedToFrozenKickoff();

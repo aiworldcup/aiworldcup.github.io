@@ -417,6 +417,7 @@ async function testGenerationUsesFrozenCandidateOverrideAndDeadline() {
     excludedMatchesOverride: excludedMatches,
     deadlineAt: eligible.kickoff,
     generatedAt: "2026-07-11T00:00:00.000Z",
+    nowFn: () => Date.parse("2026-07-11T00:00:00.000Z"),
     askModelFn: async () => ({
       ok: true,
       text: '{"picks":["丙队"],"line":"只押未开赛对阵。"}',

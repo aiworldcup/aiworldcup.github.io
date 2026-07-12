@@ -565,6 +565,7 @@ async function generateRoundData({
     const model = configuredById.get(modelId);
     if (missingOnly && (entryIsReusable(existing) || !model)) return existing;
     const state = modelStateForRound(existingGauntlet, roundId, modelId);
+    if (state.status === "alive") state.allowedPicks = Math.min(state.allowedPicks, candidateMatches.length);
     return buildEntry({
       model,
       state,
@@ -590,7 +591,7 @@ async function generateRoundData({
     deadlineAt: effectiveDeadlineAt,
     pickCountRule: roundId === "round32"
       ? { type: "fixed", count: 3, description: "首轮剩余 15 场 30 队,每个大模型固定 3 票。" }
-      : { type: "survivor_count", description: "本轮可选数量等于上一整轮活口数;0 活口永久出局。" },
+      : { type: "survivor_count", description: "本轮可选数量取上一整轮活口数与未开赛场次数的较小值;0 活口永久出局。" },
     candidateTeams,
     excludedMatches: Array.isArray(excludedMatchesOverride)
       ? excludedMatchesOverride

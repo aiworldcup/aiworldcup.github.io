@@ -148,7 +148,7 @@ function skippedRound(roundId, plan, generatedAt, allowance) {
     deadlineAt: plan.deadlineAt,
     pickCountRule: {
       type: "survivor_count",
-      description: "本轮可选数量等于上一整轮活口数;0 活口永久出局。",
+      description: "本轮可选数量取上一整轮活口数与未开赛场次数的较小值;0 活口永久出局。",
     },
     candidateTeams: [],
     excludedMatches: plan.excludedMatches,
@@ -249,7 +249,7 @@ async function runGauntletAutomation({
     return { data, actions };
   }
   const allowance = maxAllowedPicks(previous);
-  if (!plan.eligibleMatches.length || plan.eligibleMatches.length < allowance) {
+  if (!plan.eligibleMatches.length) {
     const round = skippedRound(nextRoundId, plan, generatedAt, allowance);
     data = mergeGauntletRound(data, round, generatedAt);
     actions.push(`skipped:${nextRoundId}`);
