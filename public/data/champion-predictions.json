@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T21:56:24.805Z",
+  "updatedAt": "2026-07-13T22:06:30.461Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -236,7 +236,7 @@
   ],
   "predictions": [],
   "gauntlet": {
-    "updatedAt": "2026-07-13T21:56:24.805Z",
+    "updatedAt": "2026-07-13T22:06:30.461Z",
     "mode": "real-model",
     "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
@@ -2814,9 +2814,9 @@
             "alivePicks": [],
             "eliminatedPicks": [],
             "line": "",
-            "calledAt": "2026-07-13T21:56:24.811Z",
-            "completedAt": "2026-07-13T21:56:26.709Z",
-            "durationMs": 1898,
+            "calledAt": "2026-07-13T22:06:30.467Z",
+            "completedAt": "2026-07-13T22:06:32.617Z",
+            "durationMs": 2150,
             "issues": [
               {
                 "type": "invalid_model",
