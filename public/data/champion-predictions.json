@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-07-14T20:30:45.568Z",
+  "updatedAt": "2026-07-14T21:01:39.290Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
     "matches": 104,
     "qualifiedTeams": 32,
-    "aliveTeams": 4,
-    "settledKnockout": 28
+    "aliveTeams": 3,
+    "settledKnockout": 29
   },
   "highlights": {
     "favorite": {
       "label": "最大热门",
-      "team": "法国",
-      "flag": "FR",
-      "score": 89.4,
+      "team": "阿根廷",
+      "flag": "AR",
+      "score": 89.3,
       "hook": "数据最硬,但热度也最容易挨毒奶。"
     },
     "darkHorse": {
@@ -25,69 +25,18 @@
     },
     "jinxRisk": {
       "label": "毒奶高危",
-      "team": "法国",
-      "flag": "FR",
-      "score": 89.4,
+      "team": "阿根廷",
+      "flag": "AR",
+      "score": 89.3,
       "hook": "越像冠军相,越要小心淘汰赛第一脚打滑。"
     }
   },
   "teams": [
     {
-      "team": "法国",
-      "flag": "FR",
-      "teamEn": "France",
-      "rank": 1,
-      "status": "alive",
-      "qualification": "小组第一",
-      "group": {
-        "name": "I",
-        "rank": 1,
-        "points": 9,
-        "record": "3-0-0",
-        "gf": 10,
-        "ga": 2,
-        "gd": 8
-      },
-      "scores": {
-        "total": 89.4,
-        "form": 99,
-        "strength": 98,
-        "path": 71,
-        "fun": 74
-      },
-      "tags": [
-        "小组赛满血",
-        "不败金身",
-        "火力压迫",
-        "防线可控",
-        "强队牌面",
-        "毒奶预警"
-      ],
-      "badges": [
-        "火力压迫",
-        "满血通关",
-        "毒奶预警"
-      ],
-      "reason": "小组第一9分,净胜+8,硬实力98,路径71,下一场对西班牙",
-      "script": "小组赛像开了高压水枪,淘汰赛先看火力能不能续杯。",
-      "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-29",
-        "stage": "World Cup · Semi-finals",
-        "stageShort": "半决赛",
-        "dateKey": "2026-07-15",
-        "kickoff": "2026-07-14T20:00:00+00:00",
-        "opponent": "西班牙",
-        "opponentFlag": "ES",
-        "side": "home",
-        "winChance": null
-      }
-    },
-    {
       "team": "阿根廷",
       "flag": "AR",
       "teamEn": "Argentina",
-      "rank": 2,
+      "rank": 1,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -138,7 +87,7 @@
       "team": "西班牙",
       "flag": "ES",
       "teamEn": "Spain",
-      "rank": 3,
+      "rank": 2,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
@@ -151,44 +100,34 @@
         "gd": 5
       },
       "scores": {
-        "total": 85.6,
+        "total": 82.6,
         "form": 94,
         "strength": 94,
-        "path": 68,
-        "fun": 72
+        "path": 59,
+        "fun": 64
       },
       "tags": [
         "不败金身",
         "低失球护城河",
-        "强队牌面",
-        "毒奶预警",
-        "硬仗开门"
+        "强队牌面"
       ],
       "badges": [
         "低失球护城河",
-        "毒奶预警",
-        "不败金身"
+        "不败金身",
+        "强队牌面"
       ],
-      "reason": "小组第一7分,净胜+5,硬实力94,路径68,下一场对法国",
+      "reason": "小组第一7分,净胜+5,硬实力94,路径59,等待下轮对阵落位",
       "script": "防线先把地基打稳了,剧本不花,但特别适合熬死人。",
       "nextMatch": {
-        "status": "scheduled",
-        "matchId": "wc2026-ko-29",
-        "stage": "World Cup · Semi-finals",
-        "stageShort": "半决赛",
-        "dateKey": "2026-07-15",
-        "kickoff": "2026-07-14T20:00:00+00:00",
-        "opponent": "法国",
-        "opponentFlag": "FR",
-        "side": "away",
-        "winChance": null
+        "status": "waiting",
+        "label": "等待下轮落位"
       }
     },
     {
       "team": "英格兰",
       "flag": "GB",
       "teamEn": "England",
-      "rank": 4,
+      "rank": 3,
       "status": "alive",
       "qualification": "小组第一",
       "group": {
