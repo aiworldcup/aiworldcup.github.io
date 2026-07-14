@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-14T20:30:58.180Z",
+  "updatedAt": "2026-07-14T21:01:39.102Z",
   "status": "verified",
   "source": {
     "label": "ESPN public scoreboard",
@@ -1286,7 +1286,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760511",
-      "syncedAt": "2026-07-14T20:30:55.177Z"
+      "syncedAt": "2026-07-14T21:01:36.082Z"
     },
     {
       "matchId": "wc2026-ko-27",
@@ -1303,7 +1303,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760512",
-      "syncedAt": "2026-07-14T20:30:55.764Z"
+      "syncedAt": "2026-07-14T21:01:36.809Z"
     },
     {
       "matchId": "wc2026-ko-28",
@@ -1320,7 +1320,24 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760513",
-      "syncedAt": "2026-07-14T20:30:55.765Z"
+      "syncedAt": "2026-07-14T21:01:36.809Z"
+    },
+    {
+      "matchId": "wc2026-ko-29",
+      "espnEventId": "760514",
+      "matchDate": "2026-07-14",
+      "eventDate": "2026-07-14T19:00Z",
+      "league": "FIFA World Cup",
+      "homeTeam": "法国",
+      "awayTeam": "西班牙",
+      "score": "0:2",
+      "result": "away",
+      "advanceResult": "away",
+      "advanceMethod": "regulation",
+      "scoreScope": "regularTime",
+      "sourceLabel": "ESPN Scoreboard",
+      "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760514",
+      "syncedAt": "2026-07-14T21:01:38.518Z"
     }
   ]
 }
