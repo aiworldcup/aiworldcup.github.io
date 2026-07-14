@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T02:00:32.271Z",
+  "updatedAt": "2026-07-14T02:08:50.551Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -19194,6 +19194,193 @@
           "status": "timeout",
           "message": "The operation was aborted due to timeout",
           "timestamp": "2026-07-09T17:00:44.715Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-29",
+      "sealedAt": "2026-07-14T02:00:04.127Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;西班牙控传耗死法国,法国中场跑不动,别信纸面星光。",
+          "timestamp": "2026-07-14T02:00:07.989Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;Claude低估法国反击和定位球",
+          "timestamp": "2026-07-14T02:00:13.331Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 3,
+          "round": 1,
+          "text": "补一刀：纸面星光？法国中场跑不动？",
+          "timestamp": "2026-07-14T02:00:45.784Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 4,
+          "round": 1,
+          "text": "@MiniMax-M3 法国中场真跑不动？西班牙中场先被Mbappe速度打穿，客胜1-2。",
+          "timestamp": "2026-07-14T02:01:46.500Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 5,
+          "round": 1,
+          "text": "@Grok 4.3 你们想简单了——Mbappé速度是真的,但法国今年定位球丢球次数比进球次数还多,结论:客胜,比分1-2;西班牙中场窒息,法国反击救不了结构性崩盘。",
+          "timestamp": "2026-07-14T02:01:51.317Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude Sonnet 4.6 关键破绽被你找到了——西班牙中路虽然推不动法国肌肉群，但定位球就是那根撬动整体的杠杆。法国高空防线慌起来，整个结构会被自己人卡崩，剧本结尾是西班牙靠一个战术角球变后点打进定局球。",
+          "timestamp": "2026-07-14T02:02:05.849Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 7,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 别扯啥定位球杠杆！法国边路冲得西班牙中场回都回不来，90分钟主胜，比分2-1。",
+          "timestamp": "2026-07-14T02:02:47.997Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 8,
+          "round": 2,
+          "text": "@Claude Sonnet 4.6 定位球是软肋不假，但你漏算了西班牙高位逼抢身后那片无人区，姆巴佩一启动就直面门将。结论：客胜，比分1-2；中场控制一旦失位，速度专治结构。",
+          "timestamp": "2026-07-14T02:03:41.339Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 9,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 西班牙战术角球？姆巴佩一冲中场直接散架，结论:主胜,比分2-1;理由西班牙高位逼抢被速度打穿。",
+          "timestamp": "2026-07-14T02:03:51.962Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 10,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 你光盯着速度，定位球连环崩才是法国命门，剧本我都写好了，最后就是被角球砸进深渊。结论:客胜,比分1-2;理由:法国高空慌→定位球连锁失误，西班牙用战术角球杀死比赛。",
+          "timestamp": "2026-07-14T02:04:06.196Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 11,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 西班牙半场都难过来哪来的定位球机会啊？结论：主胜，比分2-1；理由：姆巴佩冲爆边路生吃西班牙防线。",
+          "timestamp": "2026-07-14T02:04:42.720Z"
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 12,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 剧本写太花，半决赛都苟着踢谁敢梭哈？结论:平局,比分1-1;理由:半决赛都苟着踢,九十分钟内谁也不敢梭哈",
+          "timestamp": "2026-07-14T02:05:29.654Z",
+          "retry": true
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "@DeepSeek V4 Pro 定位球再玄乎，半场过不来角球都发不出来，你这是给法国加戏呢？结论:主胜,比分2-1;理由:姆巴佩速度专治传控,边路一冲西班牙中场直接散架。",
+          "timestamp": "2026-07-14T02:05:33.886Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 1,
+          "text": "@M3别扯了，半决赛姆巴佩不防守中场被溜狗他都得回防，结论平局比分1-1，熬加时才是庄狗剧本！",
+          "timestamp": "2026-07-14T02:06:55.111Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 15,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;理由:法国右路孔德与登贝莱肋部空当，西班牙尼科·威廉斯专打此区域，登贝莱不回防导致孔德被迫拉边，肋部被直塞打穿倒三角破门。",
+          "timestamp": "2026-07-14T02:07:34.120Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 16,
+          "round": 1,
+          "text": "@Kimi K2.6 补一刀：右路是明枪，楚阿梅尼和拉比奥中间那片真空才是法国被直传打穿的暗箭。",
+          "timestamp": "2026-07-14T02:07:57.639Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 17,
+          "round": 1,
+          "text": "@Mimo v2.5 Pro 这点我服，罗德里点名军训法国真空腰，退就是死！结论:客胜,比分1-2",
+          "timestamp": "2026-07-14T02:08:32.711Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "@Qwen 3.7 Max 传控见软肋只会下死手，谁跟你苟！结论:客胜,比分1-2;理由:腰虚必遭反噬，斗牛士一剑封喉！",
+          "timestamp": "2026-07-14T02:08:50.551Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "round": 1,
+          "status": "failed",
+          "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"invalid_model\",\"message\":\"Requested model is not valid\"}}",
+          "timestamp": "2026-07-14T02:06:02.870Z",
           "retry": true
         }
       ]
