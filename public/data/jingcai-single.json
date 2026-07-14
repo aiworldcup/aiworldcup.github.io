@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-12T04:01:16.788Z",
+  "updatedAt": "2026-07-14T03:07:55.543Z",
   "status": "verified",
   "sources": [
     {
@@ -1089,6 +1089,16 @@
       "sourceScope": "single-fixed",
       "officialScore": "1:1",
       "scoreScope": "regularTime"
+    },
+    {
+      "matchId": "wc2026-ko-29",
+      "jingcaiMatchId": "2040507",
+      "matchNum": "周二101",
+      "matchDate": "2026-07-15",
+      "league": "世界杯",
+      "homeTeam": "法国",
+      "awayTeam": "西班牙",
+      "kickoff": "2026-07-14T20:00:00+00:00"
     }
   ]
 }
