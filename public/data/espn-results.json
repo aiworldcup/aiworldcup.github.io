@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T19:50:31.512Z",
+  "updatedAt": "2026-07-15T21:12:21.543Z",
   "status": "verified",
   "source": {
     "label": "ESPN public scoreboard",
@@ -1287,7 +1287,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760511",
-      "syncedAt": "2026-07-15T19:50:27.931Z"
+      "syncedAt": "2026-07-15T21:12:17.188Z"
     },
     {
       "matchId": "wc2026-ko-27",
@@ -1304,7 +1304,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760512",
-      "syncedAt": "2026-07-15T19:50:28.655Z"
+      "syncedAt": "2026-07-15T21:12:17.768Z"
     },
     {
       "matchId": "wc2026-ko-28",
@@ -1321,7 +1321,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760513",
-      "syncedAt": "2026-07-15T19:50:28.655Z"
+      "syncedAt": "2026-07-15T21:12:17.768Z"
     },
     {
       "matchId": "wc2026-ko-29",
@@ -1338,7 +1338,24 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760514",
-      "syncedAt": "2026-07-15T19:50:30.372Z"
+      "syncedAt": "2026-07-15T21:12:20.382Z"
+    },
+    {
+      "matchId": "wc2026-ko-30",
+      "espnEventId": "760515",
+      "matchDate": "2026-07-15",
+      "eventDate": "2026-07-15T19:00Z",
+      "league": "FIFA World Cup",
+      "homeTeam": "英格兰",
+      "awayTeam": "阿根廷",
+      "score": "1:2",
+      "result": "away",
+      "advanceResult": "away",
+      "advanceMethod": "regulation",
+      "scoreScope": "regularTime",
+      "sourceLabel": "ESPN Scoreboard",
+      "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760515",
+      "syncedAt": "2026-07-15T21:12:20.984Z"
     }
   ]
 }
