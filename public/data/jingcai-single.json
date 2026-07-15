@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T00:24:52.027Z",
+  "updatedAt": "2026-07-15T00:55:08.106Z",
   "status": "verified",
   "sources": [
     {
@@ -1099,7 +1099,9 @@
       "homeTeam": "法国",
       "awayTeam": "西班牙",
       "kickoff": "2026-07-14T20:00:00+00:00",
-      "sourceScope": "single-fixed"
+      "sourceScope": "single-fixed",
+      "officialScore": "0:2",
+      "scoreScope": "regularTime"
     }
   ]
 }
