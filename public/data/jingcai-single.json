@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T00:55:08.106Z",
+  "updatedAt": "2026-07-15T03:07:53.347Z",
   "status": "verified",
   "sources": [
     {
@@ -1102,6 +1102,16 @@
       "sourceScope": "single-fixed",
       "officialScore": "0:2",
       "scoreScope": "regularTime"
+    },
+    {
+      "matchId": "wc2026-ko-30",
+      "jingcaiMatchId": "2040508",
+      "matchNum": "周三102",
+      "matchDate": "2026-07-16",
+      "league": "世界杯",
+      "homeTeam": "英格兰",
+      "awayTeam": "阿根廷",
+      "kickoff": "2026-07-15T19:00:00+00:00"
     }
   ]
 }
