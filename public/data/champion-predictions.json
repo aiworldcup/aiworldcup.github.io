@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T21:12:21.872Z",
+  "updatedAt": "2026-07-15T21:23:04.375Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -136,7 +136,7 @@
   ],
   "predictions": [],
   "gauntlet": {
-    "updatedAt": "2026-07-15T21:12:21.872Z",
+    "updatedAt": "2026-07-15T21:23:04.375Z",
     "mode": "real-model",
     "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
@@ -3280,9 +3280,9 @@
             "alivePicks": [],
             "eliminatedPicks": [],
             "line": "",
-            "calledAt": "2026-07-15T21:12:21.904Z",
-            "completedAt": "2026-07-15T21:12:24.547Z",
-            "durationMs": 2643,
+            "calledAt": "2026-07-15T21:23:04.382Z",
+            "completedAt": "2026-07-15T21:23:06.928Z",
+            "durationMs": 2546,
             "issues": [
               {
                 "type": "invalid_model",
@@ -3424,21 +3424,24 @@
             "modelId": "deepseek-v4pro",
             "modelName": "DeepSeek V4 Pro",
             "vendor": "DeepSeek",
-            "status": "issue",
+            "status": "alive",
             "allowedPicks": 1,
-            "picks": [],
+            "picks": [
+              {
+                "team": "阿根廷",
+                "flag": "AR",
+                "matchId": "wc2026-ko-32",
+                "opponent": "西班牙",
+                "side": "away"
+              }
+            ],
             "alivePicks": [],
             "eliminatedPicks": [],
-            "line": "潘帕斯雄鹰专治不败金身，雷达89.8满血通关，梅西走廊今夜不设毒奶岗亭。",
-            "calledAt": "2026-07-15T21:12:36.649Z",
-            "completedAt": "2026-07-15T21:12:45.280Z",
-            "durationMs": 8631,
-            "issues": [
-              {
-                "type": "unknown_team",
-                "message": "AR 不在本轮候选池。"
-              }
-            ]
+            "line": "满血通关不奶自己奶对手，顶级毒奶对冲阿根廷，潘帕斯雄鹰专治不败金身，今晚就送西班牙回家吃tapas。",
+            "calledAt": "2026-07-15T21:23:04.416Z",
+            "completedAt": "2026-07-15T21:23:13.074Z",
+            "durationMs": 8658,
+            "issues": []
           },
           {
             "modelId": "glm-5-1",
@@ -3488,15 +3491,15 @@
           }
         ],
         "summary": {
-          "aliveModels": 9,
+          "aliveModels": 10,
           "eliminatedModels": 1,
-          "issueModels": 2,
-          "totalPicks": 9,
+          "issueModels": 1,
+          "totalPicks": 10,
           "topTeams": [
             {
               "team": "阿根廷",
               "flag": "AR",
-              "votes": 9,
+              "votes": 10,
               "modelIds": [
                 "claude-opus-4-8",
                 "gpt-5-5",
@@ -3505,6 +3508,7 @@
                 "mimo-v2-5-pro",
                 "grok-4-3",
                 "claude-sonnet-4-6",
+                "deepseek-v4pro",
                 "glm-5-1",
                 "doubao-seed-2-0-pro"
               ]
