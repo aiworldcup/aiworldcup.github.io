@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T05:31:59.635Z",
-  "status": "partial",
+  "updatedAt": "2026-07-15T05:42:22.819Z",
+  "status": "verified",
   "source": {
     "label": "ESPN public scoreboard",
     "href": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
@@ -17,9 +17,7 @@
     "20260714",
     "20260715"
   ],
-  "errors": [
-    "20260708: fetch failed"
-  ],
+  "errors": [],
   "matches": [
     {
       "matchId": "fixture-1489380",
@@ -1288,7 +1286,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760511",
-      "syncedAt": "2026-07-15T05:31:56.480Z"
+      "syncedAt": "2026-07-15T05:42:19.846Z"
     },
     {
       "matchId": "wc2026-ko-27",
@@ -1305,7 +1303,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760512",
-      "syncedAt": "2026-07-15T05:31:57.108Z"
+      "syncedAt": "2026-07-15T05:42:20.461Z"
     },
     {
       "matchId": "wc2026-ko-28",
@@ -1322,7 +1320,7 @@
       "scoreScope": "finalIncludingExtraTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760513",
-      "syncedAt": "2026-07-15T05:31:57.108Z"
+      "syncedAt": "2026-07-15T05:42:20.461Z"
     },
     {
       "matchId": "wc2026-ko-29",
@@ -1339,7 +1337,7 @@
       "scoreScope": "regularTime",
       "sourceLabel": "ESPN Scoreboard",
       "sourceHref": "https://www.espn.com/soccer/match/_/gameId/760514",
-      "syncedAt": "2026-07-15T05:31:58.881Z"
+      "syncedAt": "2026-07-15T05:42:22.219Z"
     }
   ]
 }
