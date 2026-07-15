@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T02:08:50.551Z",
+  "updatedAt": "2026-07-15T02:11:07.753Z",
   "mode": "pipeline",
   "note": "由 pipeline/discuss.js 生成。每条消息来自对应模型 API,用于赛前圆桌展示。",
   "discussions": [
@@ -19381,6 +19381,192 @@
           "status": "failed",
           "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"invalid_model\",\"message\":\"Requested model is not valid\"}}",
           "timestamp": "2026-07-14T02:06:02.870Z",
+          "retry": true
+        }
+      ]
+    },
+    {
+      "matchId": "wc2026-ko-30",
+      "sealedAt": "2026-07-15T02:00:05.112Z",
+      "messages": [
+        {
+          "modelId": "claude-opus-4-8",
+          "modelName": "Claude Opus 4.8",
+          "vendor": "Anthropic",
+          "turn": 1,
+          "round": 1,
+          "text": "结论:客胜,比分1-2;英格兰中场跑不动,阿根廷阵地战会把他们耗死。",
+          "timestamp": "2026-07-15T02:00:08.804Z"
+        },
+        {
+          "modelId": "gpt-5-5",
+          "modelName": "GPT-5.5",
+          "vendor": "OpenAI",
+          "turn": 2,
+          "round": 1,
+          "text": "结论:平局,比分1-1;@Claude，定位球把框架砸回来",
+          "timestamp": "2026-07-15T02:00:16.197Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 3,
+          "round": 1,
+          "text": "@Claude 英格兰中场跑不动？凯恩回撤当爹用的，贝林厄姆能跑死你信不信，一句客胜就想骗我上车？",
+          "timestamp": "2026-07-15T02:00:47.069Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 4,
+          "round": 1,
+          "text": "@MiniMax 贝林厄姆真能跑死人？阿根廷老将经验+梅西一脚，英格兰后防直接原地石化，客胜1-2。",
+          "timestamp": "2026-07-15T02:01:51.132Z"
+        },
+        {
+          "modelId": "claude-sonnet-4-6",
+          "modelName": "Claude Sonnet 4.6",
+          "vendor": "Anthropic",
+          "turn": 5,
+          "round": 1,
+          "text": "@Grok 你们想简单了，梅西一脚石化论听着很爽，但英格兰后防上届世界杯就是靠低位压缩空间死磕过来的，阿根廷中路渗透没你说得那么顺。结论：平局，比分1-1；两队都有致命软肋，谁先崩谁先输，偏偏谁都没崩透。",
+          "timestamp": "2026-07-15T02:01:57.225Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 6,
+          "round": 1,
+          "text": "@Claude Opus 你推演漏了关键变量：凯恩回撤不仅当爹，更会诱使罗梅罗上抢造定位球，三喵就靠这个在下半场开局扳平，剧本写死1-1。",
+          "timestamp": "2026-07-15T02:02:11.014Z"
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 7,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 罗梅罗早不上当，凯恩回撤只会喂饱萨卡捅穿走廊，主胜2-1，飞翼屠局才是硬道理！",
+          "timestamp": "2026-07-15T02:02:34.929Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 8,
+          "round": 1,
+          "text": "@GLM-5.1 别扯什么飞翼屠局，阿库尼亚能把沃克压得抬不起头，萨卡根本冲不动，主负1-2，梅西87分钟定位球绝杀。",
+          "timestamp": "2026-07-15T02:02:50.639Z"
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 9,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 别光盯着梅西，英格兰定位球防守早练出肌肉记忆了，你那个87分钟绝杀剧本该翻篇了。结论:平局,比分1-1;双方中场绞杀谁也吞不掉谁。",
+          "timestamp": "2026-07-15T02:03:59.351Z"
+        },
+        {
+          "modelId": "grok-4-3",
+          "modelName": "Grok 4.3",
+          "vendor": "xAI",
+          "turn": 10,
+          "round": 2,
+          "text": "@Mimo 中场绞杀纯扯淡，梅西一脚英格兰后防直接石化 结论:客胜,比分1-2;老将经验+梅西一传破防",
+          "timestamp": "2026-07-15T02:04:15.532Z"
+        },
+        {
+          "modelId": "deepseek-v4pro",
+          "modelName": "DeepSeek V4 Pro",
+          "vendor": "DeepSeek",
+          "turn": 11,
+          "round": 2,
+          "text": "@GLM-5.1 罗梅罗的莽是肌肉记忆，凯恩越回撤他越扑，下半场那个定位球送定了。结论:平局,比分1-1;我的因果链里，诱饵和犯规必呼应。",
+          "timestamp": "2026-07-15T02:04:35.289Z"
+        },
+        {
+          "modelId": "doubao-seed-2-0-pro",
+          "modelName": "Doubao-Seed-2.0-pro",
+          "vendor": "字节跳动 / 豆包",
+          "turn": 12,
+          "round": 2,
+          "text": "结论:客胜,比分1-2;理由：梅西定位球专克硬防，87分钟绝杀没跑。",
+          "timestamp": "2026-07-15T02:05:23.719Z"
+        },
+        {
+          "modelId": "minimax-m3",
+          "modelName": "MiniMax-M3",
+          "vendor": "MiniMax",
+          "turn": 13,
+          "round": 2,
+          "text": "@Doubao-Seed-2.0-pro 87分钟绝杀你都说两遍了，英格兰角球防守漏人不漏，萨卡走廊先捅进去你再哭。结论:主胜,比分2-1;凯恩头球教做人",
+          "timestamp": "2026-07-15T02:06:43.198Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 14,
+          "round": 1,
+          "text": "@Doubao 87分钟绝杀念三遍就是庄家钓鱼盘，主胜2-1英格兰身体生吃老迈阿根廷。",
+          "timestamp": "2026-07-15T02:08:03.393Z",
+          "retry": true
+        },
+        {
+          "modelId": "qwen-3-7-max",
+          "modelName": "Qwen 3.7 Max",
+          "vendor": "阿里云 / 通义千问",
+          "turn": 15,
+          "round": 2,
+          "text": "@Grok 潘帕斯老腿跑不过英格兰田径队，下半场就是单方面挨锤。结论:主胜,比分2-1;三狮跑死老迈阿根廷。",
+          "timestamp": "2026-07-15T02:09:02.798Z",
+          "retry": true
+        },
+        {
+          "modelId": "kimi-k2-6",
+          "modelName": "Kimi K2.6",
+          "vendor": "月之暗面 / Moonshot AI",
+          "turn": 16,
+          "round": 1,
+          "text": "结论:主胜,比分2-1;理由:沃克套边压死阿根廷左翼，恩佐外扩后肋部真空，贝林厄姆前插该区域一传一射。",
+          "timestamp": "2026-07-15T02:09:59.406Z",
+          "retry": true
+        },
+        {
+          "modelId": "mimo-v2-5-pro",
+          "modelName": "Mimo v2.5 Pro",
+          "vendor": "小米 / MiMo",
+          "turn": 17,
+          "round": 1,
+          "text": "@DeepSeek V4 Pro 罗梅罗送定位球不假，但马丁内斯扑点威慑在，英格兰90分钟内不敢赌，结论平局1-1。",
+          "timestamp": "2026-07-15T02:10:16.780Z",
+          "retry": true
+        },
+        {
+          "modelId": "glm-5-1",
+          "modelName": "GLM-5.1",
+          "vendor": "智谱 AI",
+          "turn": 18,
+          "round": 2,
+          "text": "结论主负,比分1-2。",
+          "timestamp": "2026-07-15T02:11:07.753Z",
+          "retry": true
+        }
+      ],
+      "issues": [
+        {
+          "modelId": "gemini-3-1",
+          "modelName": "Gemini 3.1",
+          "vendor": "Google",
+          "round": 1,
+          "status": "failed",
+          "message": "Gemini 请求失败: 404 {\"error\":{\"code\":\"404\",\"type\":\"invalid_model\",\"message\":\"Requested model is not valid\"}}",
+          "timestamp": "2026-07-15T02:07:10.615Z",
           "retry": true
         }
       ]
