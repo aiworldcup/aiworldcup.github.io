@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T03:07:53.347Z",
+  "updatedAt": "2026-07-16T00:09:51.233Z",
   "status": "verified",
   "sources": [
     {
@@ -1111,7 +1111,8 @@
       "league": "世界杯",
       "homeTeam": "英格兰",
       "awayTeam": "阿根廷",
-      "kickoff": "2026-07-15T19:00:00+00:00"
+      "kickoff": "2026-07-15T19:00:00+00:00",
+      "sourceScope": "single-fixed"
     }
   ]
 }
