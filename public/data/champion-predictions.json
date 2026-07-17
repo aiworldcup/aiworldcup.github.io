@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T16:55:24.762Z",
+  "updatedAt": "2026-07-17T17:05:31.285Z",
   "mode": "derived",
   "note": "冠军雷达由小组赛果、淘汰赛存活状态、下一场赔率/对手强度和项目内强队基准派生;模型冠军封盘后会继续展示逐模型选择。",
   "source": {
@@ -136,7 +136,7 @@
   ],
   "predictions": [],
   "gauntlet": {
-    "updatedAt": "2026-07-17T16:55:24.762Z",
+    "updatedAt": "2026-07-17T17:05:31.285Z",
     "mode": "real-model",
     "note": "大模型冠军毒圈圆桌: 0 活口永久出局,出局后只能场边发言。",
     "rounds": [
@@ -3280,13 +3280,13 @@
             "alivePicks": [],
             "eliminatedPicks": [],
             "line": "",
-            "calledAt": "2026-07-17T16:55:24.769Z",
-            "completedAt": "2026-07-17T16:55:27.706Z",
-            "durationMs": 2937,
+            "calledAt": "2026-07-17T17:05:31.291Z",
+            "completedAt": "2026-07-17T17:05:34.336Z",
+            "durationMs": 3045,
             "issues": [
               {
-                "type": "invalid_model",
-                "message": "模型配置无效,未采纳任何选择。"
+                "type": "fetch_failed",
+                "message": "模型网络调用失败,未采纳任何选择。"
               }
             ]
           },
